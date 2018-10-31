@@ -1,5 +1,5 @@
 ---
-title: 查询性能优化——《高性能MySQL》第五章
+title: 查询性能优化
 date: 2018-10-31 10:15:24
 tags: [mysql]
 copyright: true
