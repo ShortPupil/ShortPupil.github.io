@@ -1,4 +1,4 @@
-# Hexo Configuration
+﻿# Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
@@ -82,15 +82,6 @@ deploy:
   type: git
   repo: https://github.com/ShortPupil/ShortPupil.github.io
 
-toc:
-  maxdepth: 3
-  class: toc
-  slugify: false
-  decodeEntities: false
-  anchor:
-    position: after
-    symbol: '#'
-    style: header-anchor
 
 menu:
   home: /
@@ -103,3 +94,17 @@ feed: # RSS订阅插件
   limit: 0
 
 plugins: hexo-generate-feed
+
+markdown_it_plus:
+    highlight: true
+    html: true
+    xhtmlOut: true
+    breaks: true
+    langPrefix:
+    linkify: true
+    typographer:
+    quotes: “”‘’
+    plugins:
+        - plugin:
+            name: markdown-it-toc-and-anchor
+            enable: false
