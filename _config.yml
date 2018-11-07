@@ -107,4 +107,4 @@ markdown_it_plus:
     plugins:
         - plugin:
             name: markdown-it-toc-and-anchor
-            enable: false
+            enable: true
