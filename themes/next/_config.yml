@@ -1,4 +1,4 @@
-# ---------------------------------------------------------------
+﻿# ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
 
@@ -435,8 +435,8 @@ busuanzi_count:
   site_uv_header: 本站访客数
   site_uv_footer: 人次
   # custom pv span for the whole site
-  site_pv: true
-  site_pv_header: 本站访问量
+  site_pv: false
+  site_pv_header: 本站总访问量
   site_pv_footer: 次
   # custom pv span for one page only
   page_pv: true
