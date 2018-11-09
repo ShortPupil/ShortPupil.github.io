@@ -52,7 +52,7 @@ factory.getSession().getTransaction().hascode = 2119928380;
 
 ### 2.1.3 如果不断的调用getTransaction，是否会返回同一个transaction对象？
 
-### 2.1.4 通过getTransaction创建的transaction对象begin之后，再次调用session.beginTransaction是否会开启两个事务？
+### 2.1.4 通过getTransaction创建transaction对象begin之后，再调用session.beginTransaction是否会开启两个事务？
 
 ### 2.1.5 当transaction.commit()调用之后再次调用session.beginTransaction是否会继续沿用之前的transaction？ 
 
@@ -78,12 +78,12 @@ factory.getSession().getTransaction().hascode = 2119928380;
 
 - 长时间运行的对话（conversation）例子
 
-- - 在界面的第一屏，打开对话框，用户所看到的数据是被一个特定的 `Session` 和数据 库事务载入(load)的。用户可以随意修改对话框中的数据对象。
-- - 5分钟后，用户点击“保存”，期望所做出的修改被持久化；同时他也期望自己是唯一修改这个信息的人，不会出现 修改冲突。
+  - 在界面的第一屏，打开对话框，用户所看到的数据是被一个特定的 `Session` 和数据 库事务载入(load)的。用户可以随意修改对话框中的数据对象。
+  - 5分钟后，用户点击“保存”，期望所做出的修改被持久化；同时他也期望自己是唯一修改这个信息的人，不会出现 修改冲突。
 - 我们必须使用**多个数据库事务**来实现这个对话。
 - 如果仅仅只有一 个数据库事务（最后的那个事务）保存更新过的数据，而所有其他事务只是单纯的读取数据（例如在一个跨越多个请求/响应周期的向导风格的对话框中），那么应用程序事务将保证其**原子性**。
 - hibernate有用的特性
-- - *自动版本化* - Hibernate能够自动进行乐观并发控制 ，如果在用户思考 的过程中发生并发修改，Hibernate能够自动检测到。一般我们只在**对话结束**时才检查。
+  - *自动版本化* - Hibernate能够自动进行乐观并发控制 ，如果在用户思考 的过程中发生并发修改，Hibernate能够自动检测到。一般我们只在**对话结束**时才检查。
   - *脱管对象*（Detached  Objects）- 如果你决定采用前面已经讨论过的 _session-per-request_模式，所有载入的实例在用户思考的过程  中都处于与Session脱离的状态。Hibernate允许你**把与Session脱离的对象重新关联到Session上**，**并且对修改进行持久化**，这种模式被称为 *session-per-request-with-detached-objects*。自动版本化被用来隔离并发修改。
   - *Extended (or Long) Session* - Hibernate 的`Session`  可以在数据库事务提交之后和底层的JDBC连接断开，当一个新的客户端请求到来的时候，它又重新连接上底层的  JDBC连接。这种模式被称之为**_session-per-conversation_**，这种情况可 能会造成不必要的Session和JDBC连接的重新关联。自动版本化被用来隔离并发修改, **`Session`通常不允许自动flush,而是明确flush**。
 
@@ -92,7 +92,7 @@ factory.getSession().getTransaction().hascode = 2119928380;
 ### 2.1.3 关注对象标识（Considering object identity）
 
 - 当应用程序在两个不同的session中并发访问具有同一持久化标 识的业务对象实例的时候，这个业务对象的**两个实例事实上是不相同的**（从 JVM识别来看）。这种冲突可以通过在同步和提交的时候使用**自动版本化**和**乐观锁定**方法来解决。
-- **只要在单个线程只持有一个 `Session`，应用程序就不需要同步任何业务对象。**在`Session` 的范围内，应用程序可以放心的使用`==`进行对象比较。
+- **只要在单个线程只持有一个** `Session`，**应用程序就不需要同步任何业务对象**。在`Session` 的范围内，应用程序可以放心的使用`==`进行对象比较。
 - 应用程序在`Session`的外面使用`==`进行对象比较可能会导致**无法预期的结果**。例如，如果你把两个脱管对象实例放进同一个 `Set`的时候，就可能发生。开发人员必须**覆盖持久化类的`equals()`方法和 `hashCode()` 方法，从而实现自定义的对象相等语义**。
 - 不要使用数据库标识 来实现对象相等，应该使用**业务键值**，由**唯一的，通常不变的属性**组成。
 
@@ -100,7 +100,7 @@ factory.getSession().getTransaction().hascode = 2119928380;
 
 ### 2.1.4 问题
 
-- 决不要使用反模式**_session-per-user-session_或者 *session-per-application***（这个规定几乎没有例外）
+- 决不要使用反模式**_session-per-user-session_或者 session-per-application**（这个规定几乎没有例外）
 - `Session` 对象是非线程安全的。
 - 一个由Hibernate抛出的异常意味着你必须立即回滚数据库事务，并立即关闭`Session` 
 - `Session` 缓存了处于持久化状态的每个对象（Hibernate会监视和检查脏数据）。
@@ -213,7 +213,7 @@ finally {
 
 # 3. 缓存懒加载
 
-##3.1 常见使用Q&A
+## 3.1 常见使用Q&A
 
 ### 3.1.1 对于ManyToOne注解默认FetchType.EAGER 
 
