@@ -18,7 +18,7 @@ copyright: false
 1. 使用fdisk命令在硬盘上创建分区。 `fdisk -l /dev/sdb`
 2. 使用mkfs命令在分区上创建文件系统。`mkfs -t ext4 /dev/sdb1`
 3. 使用mount命令挂载文件系统，或修改/etc/fstab文件使得开机自动挂载文件系统`mount -o ro /dev/sdb1 /mnt/kk`
-4. 使用umount卸载文件系统。
+4. 使用umount卸载文件0系统。
 
 
 
@@ -32,7 +32,7 @@ copyright: false
 
 1行包含着1个设备或分区的信息。
 
-第1列是设备名或者设备UUID号
+第1列是设备名或者设备UUID+号
 
 第2列是它的挂载点
 
@@ -182,7 +182,21 @@ systemctl start/stop service_name
 
 ## 第十一章
 
+### 网卡配置、命名
 
+#### ifconfig
+
+```shell
+ifconfig [网络设备][down up -allmulti -arp -promisc][add<地址>][del<地址>][<硬件地址>][mtu<字节>][netmask<子网掩码>][IP地址]
+```
+
+
+
+### 网络服务管理
+
+- ntsysv
+- systemctl
+- chkconfig、service
 
 
 
