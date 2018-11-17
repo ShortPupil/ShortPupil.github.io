@@ -84,9 +84,9 @@ deploy:
 
 
 menu:
-  主页: /
-  归档: /archives
-  标签: /tags
+  home: /
+  archive: /archives
+  tag: /tags
   
 feed: # RSS订阅插件
   type: atom
