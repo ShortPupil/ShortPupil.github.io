@@ -84,9 +84,10 @@ deploy:
 
 
 menu:
-  home: /
-  archive: /archives
-  tag: /tags
+  主页: /
+  归档: /archives
+  标签: /tags
+  分类: /categories	
   
 feed: # RSS订阅插件
   type: atom
@@ -108,3 +109,7 @@ markdown_it_plus:
         - plugin:
             name: markdown-it-toc-and-anchor
             enable: true
+
+search: 
+  on: true
+  onload: false

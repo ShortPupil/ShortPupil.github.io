@@ -47,7 +47,7 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   主页: /
-  #categories: /categories/
+  分类: /categories/
   关于: /about/
   归档: /archives/
   标签: /tags/
@@ -93,7 +93,7 @@ scheme: Mist
 social:
   #LinkLabel: Link
   GitHub: https://github.com/ShortPupil
-  E-Mail: zzh2625@Gmail.com
+  E-Mail: mailto:zzh2625@Gmail.com
 
 # Social Links Icons
 # Icon Mapping:
