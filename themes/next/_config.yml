@@ -203,11 +203,11 @@ post_meta:
 
 # Post wordcount display settings
 # Dependencies: https://github.com/willin/hexo-wordcount
-post_wordcount:
-  item_text: true
-  wordcount: true
-  min2read: true
-  separated_meta: true
+# post_wordcount:
+#   item_text: true
+#   wordcount: true
+#   min2read: true
+#   separated_meta: true
 
 # Wechat Subscriber
 #wechat_subscriber:
