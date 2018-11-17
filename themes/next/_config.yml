@@ -526,6 +526,12 @@ tabs:
     labels: true
   border_radius: 0
 
+# Blog rolls 友情链接
+links_icon: link
+links_title: 项目链接
+links_layout: block
+links:
+  总包标注: http://www.baidu.com
 
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
