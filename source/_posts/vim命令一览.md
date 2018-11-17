@@ -3,6 +3,7 @@ title: vim命令一览
 date: 2018-10-18 18:47:24
 tags: vim
 copyright: false
+categories: linux
 ---
 
 ### 文件命令

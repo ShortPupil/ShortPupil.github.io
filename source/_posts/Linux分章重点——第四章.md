@@ -3,6 +3,7 @@ title: Linux分章重点——第四章
 date: 2018-10-18 18:47:24
 tags: linux
 copyright: false
+categories: linux
 ---
 
 # Ch4 Linux字符界面操作 重点
@@ -20,11 +21,11 @@ copyright: false
 
 ## 系统关机/重启
 `shutdown halt reboot init`
-	
+​	
 `shutdown`：安全地关闭系统
 
 shutdown [选项] [时间] [警告信息]
-				
+​				
 				`shutdown -h now` 立即关闭系统
 				
 				`shutdown -h 45`定时45分钟后关闭系统
@@ -32,11 +33,11 @@ shutdown [选项] [时间] [警告信息]
 				`shutdown -r now`重新启动系统,并发出警告信息
 
 `halt`：引发主机关闭系统=调用 “shutdown —h”命令执行关闭系统 
-       
+​       
 			 [root@PC-LINUX ~]# halt
 
 `reboot`：引发主机重启,参数与“halt”相似。 
-         
+​         
 			 [root@PC-LINUX ~]# reboot 
 
 `init`：“init”命令是所有进程的祖先,它的进程号始终为“1”,所以发送“TERM”信号给 “init”会终止所有的用户进程和守护进程等。
@@ -70,7 +71,7 @@ man命令格式化并显示在线的手册页。
 
 `help`使用help命令可以查找Shell命令的用法
 查看mkdir命令帮助：
-	[root@PC-LINUX ~]# mkdir --help 
+​	[root@PC-LINUX ~]# mkdir --help 
 （注意help前有两条-）
 
 `whereis`命令可以查找命令所在的位置
@@ -127,9 +128,9 @@ vi编辑器有3种基本工作模式,分别是**命令行模式**、**插入模�
 
 屏幕向前移动一页、向后移动一页、向前移动半页、向后移动半页
 ![](https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/yidongbanye.png)
-       
+​       
  注：0和^的效果是一样的，都是所在行的行首；$是在行尾
-	
+​	
 ### 字符、字或行的删除
 `X` 删除光标所在位置前面一个字符  x 删除光标所在位置的一个字符
 

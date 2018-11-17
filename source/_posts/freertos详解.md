@@ -1,7 +1,8 @@
 ---
 title: FreeRTOS详解
 date: 2018-10-18 18:47:24
-tags: Embedded System
+tags: [embedded system]
+categories: 嵌入式
 copyright: true
 ---
 

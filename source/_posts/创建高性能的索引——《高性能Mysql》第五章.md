@@ -3,6 +3,7 @@ title: 高性能索引策略——《高性能MySQL》第五章
 date: 2018-10-27 00:15:24
 tags: [mysql]
 copyright: true
+categories: 数据库
 ---
 
 # 前言

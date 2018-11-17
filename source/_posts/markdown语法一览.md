@@ -3,6 +3,7 @@ title: markdown语法一览
 date: 2018-10-18 18:47:24
 tags: markdown
 copyright: true
+categories: 文本排版
 ---
 
 用typora多了，markdown源码模式看的少，需要整理一下，以便查看

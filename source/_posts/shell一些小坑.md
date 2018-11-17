@@ -3,6 +3,7 @@ title: shell一些小坑
 date: 2018-10-24 23:46:19
 tags: [linux, shell]
 copyright: true
+categories: linux
 ---
 
 ## 条件判断
