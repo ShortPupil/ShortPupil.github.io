@@ -144,9 +144,8 @@ tar调用gzip、bzip2
 ```shell
 ps ax|grep less #查看less进程是否在运行。
 kill -9 5975 #强制杀死进程号是5975的进程。
+
 ```
-
-
 
 ### 10.4 任务计划：cron“分时日月周”+命令；at在命令行上写，或者-f文件+脚本
 
@@ -193,6 +192,16 @@ ifconfig [网络设备][down up -allmulti -arp -promisc][add<地址>][del<地址
 
 
 
+#### 修改好ip地址之后，如何起作用、如何生效？
+
+第四节：网络服务的管理
+
+- ntsysv：基于文本的程序。它允许为每个运行级别配置引导时要启动的服务。对于独立服务而言，改变不会立即生效。
+- systemctl命令：Fedora 17中新的管理服务的命令，用来替换chkconfig和service命令。
+- chkconfig和service命令：允许在不同运行级别启动和关闭服务的命令行工具。
+
+
+
 ### 网络服务管理
 
 - ntsysv
@@ -203,7 +212,45 @@ ifconfig [网络设备][down up -allmulti -arp -promisc][add<地址>][del<地址
 
 ## 第十二章
 
+### SSH、SFTP、Scopy的格式
+#### SSH
 
+```shell
+ssh -l username ip_address
+```
+
+```shell
+ssh username@ip_address [command]
+```
+
+#### SCP
+
+将本地文件传输到远程主机
+
+```shell
+scp [本地文件][用户名@远程主机IP地址:/目标文件]
+```
+
+把远程文件传输到本地主机
+
+```shell
+scp [用户名@远程主机IP地址:/源文件] [本地文件]
+```
+
+#### SFTP
+
+```shell
+sftp [用户名@远程主机IP地址]
+```
+
+
+
+### VNC稍微看一下
+#### apache配置文件：端口、目录
+
+Apache服务器的配置文件是/etc/httpd/conf/httpd.conf。
+
+修改配置需要在这个配置文件下修改。
 
 
 
