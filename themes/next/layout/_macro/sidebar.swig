@@ -125,7 +125,10 @@
           </div>
         {% endif %}
 
+
+	<a href="https://clustrmaps.com/site/1ahvt" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=c2Osvv-0GdEXObJA7hwlVug2hoGU5__9a5mDaMuSrZw&cl=ffffff"></a>
 	
+
         {% include '../_custom/sidebar.swig' %}
 
       </section>
