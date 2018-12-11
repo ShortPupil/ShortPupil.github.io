@@ -536,12 +536,6 @@ links_layout: block
 links:
   众包标注: http://120.79.214.137:8080
 
-## 看板娘
-live2d:
-  model: hijiki
-  position: left
-  bottom: -30
-  mobileShow: false  #手机端不显示
 
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
