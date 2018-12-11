@@ -125,8 +125,7 @@
           </div>
         {% endif %}
 
-	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=5151519&auto=0&height=66">
-	</iframe>
+	<script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=c2Osvv-0GdEXObJA7hwlVug2hoGU5__9a5mDaMuSrZw"></script>
 
         {% include '../_custom/sidebar.swig' %}
 
@@ -162,7 +161,6 @@
           {% endif %}
         </div>
       {% endif %}
-	<script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=c2Osvv-0GdEXObJA7hwlVug2hoGU5__9a5mDaMuSrZw"></script>
     </div>
   </aside>
 {% endmacro %}
