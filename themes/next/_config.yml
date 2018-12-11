@@ -438,7 +438,7 @@ busuanzi_count:
   site_uv_header: <i class="fa fa-user"></i>
   site_uv_footer:
   # custom pv span for the whole site
-  site_pv: true
+  site_pv: false
   site_pv_header: <i class="fa fa-eye"></i>
   site_pv_footer:
   # custom pv span for one page only
@@ -535,6 +535,13 @@ links_title: 项目链接
 links_layout: block
 links:
   众包标注: http://120.79.214.137:8080
+
+## 看板娘
+live2d:
+  model: hijiki
+  position: left
+  bottom: -30
+  mobileShow: false  #手机端不显示
 
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
