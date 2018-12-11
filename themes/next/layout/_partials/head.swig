@@ -14,6 +14,7 @@
       {% set pace_css_uri = theme.vendors.pace_css %}
     {% endif %}
   <script src="{{ pace_js_uri }}"></script>
+<script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=c2Osvv-0GdEXObJA7hwlVug2hoGU5__9a5mDaMuSrZw"></script>
   <link href="{{ pace_css_uri }}" rel="stylesheet">
 {% endif %}
 
