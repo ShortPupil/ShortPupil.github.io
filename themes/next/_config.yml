@@ -22,6 +22,8 @@ authoricon: snowflake-o
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
 
+language: zh-Hans
+
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -46,13 +48,13 @@ index_with_subtitle: false
 
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
-  home: 
-  categories: /categories/
-  about: /about/
-  archives: /archives/
-  tags: /tags/
+  home: /
+  categories: /categories
+  about: /about
+  archives: /archives
+  tags: /tags
   #sitemap: /sitemap.xml
-  #commonweal: /404/
+  #commonweal: /404
 
   
 # Enable/Disable menu icons.
@@ -63,12 +65,12 @@ menu:
 menu_icons:
   enable: true
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
-  主页: home
-  关于: user
-  分类: th
+  home: home
+  about: user
+  categories: th
   schedule: calendar
-  标签: tags
-  归档: archive
+  tags: tags
+  archives: archive
   sitemap: sitemap
   commonweal: heartbeat
 
