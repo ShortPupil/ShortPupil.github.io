@@ -46,14 +46,13 @@ index_with_subtitle: false
 
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
-  主页: /
-  分类: /categories/
-  关于: /about/
-  归档: /archives/
-  标签: /tags/
-  #sitemap: /sitemap.xml
-  #commonweal: /404/
+  home: / || home
+  archives: /archives || archive
+  categories: /categories || th
+  tags: /tags || tags
+  about: /about || user
 
+  
 # Enable/Disable menu icons.
 # Icon Mapping:
 #   Map a menu item to a specific FontAwesome icon name.
