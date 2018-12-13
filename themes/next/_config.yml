@@ -46,11 +46,11 @@ index_with_subtitle: false
 
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
-  主页: 
-  分类: /categories/
-  关于: /about/
-  归档: /archives/
-  标签: /tags/
+  home: 
+  categories: /categories/
+  about: /about/
+  archives: /archives/
+  tags: /tags/
   #sitemap: /sitemap.xml
   #commonweal: /404/
 
