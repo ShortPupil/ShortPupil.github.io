@@ -6,6 +6,10 @@ copyright: false
 categories: linux
 ---
 
+# 目录
+
+@[toc]
+
 # Ch5 文件和目录
 
 文件类型，ls -l所看到的信息，每一段都要搞得很清楚（作业第4题） ⽬目录常用命令，选项挑一些重点的看

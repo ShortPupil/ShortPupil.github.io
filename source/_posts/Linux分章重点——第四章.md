@@ -6,6 +6,10 @@ copyright: false
 categories: linux
 ---
 
+# 目录
+
+@[toc]
+
 # Ch4 Linux字符界面操作 重点
 
 ## 进入命令行的方式
@@ -26,19 +30,19 @@ categories: linux
 
 shutdown [选项] [时间] [警告信息]
 ​				
-				`shutdown -h now` 立即关闭系统
-				
+​				`shutdown -h now` 立即关闭系统
+​				
 				`shutdown -h 45`定时45分钟后关闭系统
 				
 				`shutdown -r now`重新启动系统,并发出警告信息
 
 `halt`：引发主机关闭系统=调用 “shutdown —h”命令执行关闭系统 
 ​       
-			 [root@PC-LINUX ~]# halt
+​			 [root@PC-LINUX ~]# halt
 
 `reboot`：引发主机重启,参数与“halt”相似。 
 ​         
-			 [root@PC-LINUX ~]# reboot 
+​			 [root@PC-LINUX ~]# reboot 
 
 `init`：“init”命令是所有进程的祖先,它的进程号始终为“1”,所以发送“TERM”信号给 “init”会终止所有的用户进程和守护进程等。
 

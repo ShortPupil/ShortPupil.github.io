@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `hexo-site/source/` directory.
-favicon: /favicon.ico
+favicon: /images/favicon-32.png  //32X32大图
 
 # Set default keywords (Use a comma to separate)
 keywords: "Hexo, NexT"
@@ -52,6 +52,8 @@ menu:
   about: /about
   archives: /archives
   tags: /tags
+  schedule: /schedule/ || calendar   //日程表
+  sitemap: /sitemap.xml || sitemap   //站点地图
   #sitemap: /sitemap.xml
   #commonweal: /404
 
@@ -205,11 +207,12 @@ post_meta:
 
 # Post wordcount display settings
 # Dependencies: https://github.com/willin/hexo-wordcount
-# post_wordcount:
-#   item_text: true
-#   wordcount: true
-#   min2read: true
-#   separated_meta: true
+post_wordcount:
+  item_text: true
+  wordcount: true
+  min2read: true
+  totalcount: true
+  separated_meta: true
 
 # Wechat Subscriber
 #wechat_subscriber:
@@ -253,7 +256,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: night bright
+highlight_theme: night blue
 
 
 # ---------------------------------------------------------------
@@ -676,3 +679,5 @@ images: images
 
 # Theme version
 version: 5.1.2
+
+since: 2018

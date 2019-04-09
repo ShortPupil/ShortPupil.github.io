@@ -6,6 +6,12 @@ copyright: true
 categories: 数据库
 ---
 
+# 目录
+
+@[toc]
+
+
+
 # 前言
 
 这是阅读《高性能mysql》第五章的记录。
