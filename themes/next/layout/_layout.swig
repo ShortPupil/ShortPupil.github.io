@@ -12,6 +12,13 @@
   {% include '_third-party/analytics/index.swig' %}
 </head>
 
+<script type="text/javascript">
+    var host = "songzi.info";
+    if ((host == window.location.host) \
+		&&(window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script>
+
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
 
   {% set container_class = "container " %}

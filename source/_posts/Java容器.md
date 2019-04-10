@@ -111,7 +111,36 @@ public boolean add(E e) {
 
 ## List辨析
 
+### ArrayList和LinkedList
 
+- ArrayList是实现了基于**动态数组**的数据结构，而LinkedList是基于**链表**的数据结构；
+
+- 对于**随机访问get和set**，ArrayList要优于LinkedList，因为LinkedList要移动指针；
+
+- 对于添加和删除操作add和remove，在**非首尾的增加的操作**，LinkedList要比ArrayList快，因为ArrayList要移动数据。
+
+### 数据与List之间的转化
+
+- 数组转List：使用Arrays.asList(array)进行转换
+- List转数组：使用List自带的toArray()方法
+
+
+
+## 迭代器
+
+### Iterator是什么
+
+Iterator提供遍历任何Collection的接口。
+
+### Iterator的特点
+
+**更加安全**，因为可以确保在当前遍历的集合原色被更改时，就会抛出ConcurrentModificationException异常。
+
+### Iterator和ListIterator的区别
+
+- Iterator可以遍历Set和List集合，ListIterator只能遍历List
+- Iterator只能**单向**遍历， ListIterator可以**双向（向前/后）遍历**
+- ListIterator从Iterator中继承，并添加了一些额外的功能
 
 
 
