@@ -2,7 +2,7 @@
 title: Java容器
 date: 2019-04-08 23:17:01
 tags: [java]
-categories: java基础
+categories: java
 copyright: true
 ---
 
