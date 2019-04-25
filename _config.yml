@@ -114,6 +114,8 @@ search:
   on: true
   onload: false
 
+sitemap:
+  path: sitemap.xml
 
 # Live2D
 ## https://github.com/xiazeyu/live2d-widget.js
