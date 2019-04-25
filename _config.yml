@@ -16,7 +16,7 @@ avatar: /uploads/avatar.jpg
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://songzi.info
 root: /
-permalink: :year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
 permalink_defaults:
 
 # Directory
@@ -119,7 +119,7 @@ search:
 ## https://github.com/xiazeyu/live2d-widget.js
 ## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
 live2d:
-  enable: true
+  enable: false
   scriptFrom: local
   model:
     use: live2d-widget-model-hijiki
