@@ -4,8 +4,8 @@
 
 # Put your favicon.ico into `hexo-site/source/` directory.
 favicon: 
-  medium: /images/favicon.ico
-  small: /images/favicon_16.png
+  # medium: /images/favicon.ico
+  # small: /images/favicon_16.png
 
 # Set default keywords (Use a comma to separate)
 keywords: "Hexo, NexT"
