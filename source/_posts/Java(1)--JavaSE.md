@@ -8,6 +8,8 @@ categories: java
 
 ## java 基础
 
+@[toc]
+
 ### 1. == 与 equals
 
 `==`
@@ -27,7 +29,7 @@ System.out.println(x.equals(z)); //true
 //equals比较的一直是值，所以为true
 ```
 
-`equals`本质同`==`, 但String和Integer等进行了重写，`equals`变成值比较，源码如下
+`equals`本质同`==`,若对一个类不重写，**`equals`比较的是对象的地址**, 但String和Integer等进行了重写，`equals`变成值比较，源码如下
 
 ```java
 //这是未经重写的equals代码
@@ -91,4 +93,49 @@ Java为图的映射定义了一个接口 `java.util.Map`,分为四个实现类Ha
 | HashTable     | y与HashMap类似，继承自Dictionary类。不同点：**不允许记录的键和值为Null**；支持线程的同步，虽然保持了数据的一致性，但**写入时会比较慢**。 |                                 |
 | LinkedHashMap | HashMap的一个子类，**保存了记录的插入顺序**，在用Iterator遍历LinkedHashMap时，先得到的记录一定是先插入的，但遍历比HashMap慢。但**LinkedHashMap的遍历速度只和实际数据有关，和容量无关；HashMap的遍历速度和他的容量有关**。 | x需要输出的顺序和输入的相同     |
 | TreeMap       | 实现SortMap接口，能够把它保存的记录根据键**排序**，默认是按键值升序排序，也可以指定排序的比较器——**用Iterator遍历TreeMap时，得到的记录是排过序的**。 | 按自然顺序或自定义顺序遍历键    |
+
+
+
+### 4. Lamda表达式
+
+优点
+
+1. 简洁
+2. 非常容易并行运算
+
+缺点
+
+1. 如不用并行计算，很多时候计算速度没有比传统的for循环快（并行计算有时也需要预热才能显示出效率优势）
+2. 不容易调试
+3. 不容易被看懂
+
+```shell
+Lambda> I = \x.x
+Lambda> I a
+a
+Lambda> SWAP = \x.\y.y x 
+Lambda> SWAP a b 
+b a
+Lambda> S = \x.\y.\z.x z(y z) 
+Lambda> S a b c
+a c (b c)
+Lambda> l = S I
+Lambda> l m n
+n (m n)
+
+# 模拟自然数
+Lambda> ZERO = \f.\x.x 
+Lambda> SUCC = \n.\f.\x.f (n f x)
+# 模拟逻辑
+Lambda> TRUE = \x.\y.x 
+Lambda> FALSE = \x.\y.y
+# 模拟谓词
+Lambda> ISZERO = \n.n (\x.FALSE) TRUE 
+Lambda> LEQ = \m.\n.ISZERO (SUB m n) 
+Lambda> EQ = \m.\n. AND (LEQ m n) (LEQ n m)
+# 模拟函数
+Lambda> MAX = \m.\n.IF (LEQ m n) n m 
+Lambda> MAX ONE TWO 
+\f.\x.f (f x)
+```
 
