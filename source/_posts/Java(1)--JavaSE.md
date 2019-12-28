@@ -271,5 +271,180 @@ volatile关键字是用来保证**有序性**和**可见性**。这与Java内存
 
 ## 面向对象
 
-### 1. 
+### 1. Java特性
 
+封装
+
+继承
+
+多态：允许不同类的对象对同一消息做出响应。即同一消息可以根据发送对象的不同而采用不同的行为方式。（发送消息就是函数调用）
+
+
+
+### 2. String StringBuffer StringBuilder
+
+String属于不可变对象：**一个对象的状态在对象被创建之后就不再变化**。即不能改变对象内的成员变量，包括基本数据类型的值不能改变，引用类型变量不能指向其他的对象，引用类型指向的对象的状态也不能改变。
+
+String不能被继承，char数据用final修饰
+
+StringBuffer线程安全，StringBuffer线程不安全，底层实现上，StringBuffer其实就是比StringBuilder多了synchronized修饰符。
+
+
+
+### 3. 类和对象的区别
+
+- 类是对某一类事物的描述，是抽象的。对象是一个实实在在的个体，是类的一个实例。class :人  实例 : 教师
+- 对象是**函数、变量的集合体**。类时一组函数和变量的集合体，即类是**一组具有相同属性的对象集合体**。
+
+
+
+### 4. Object类的方法
+
+- Object() 默认构造方法
+- clone() 创建并返回此对象的一个副本
+- equals(Object obj) 某个其他对象是否与此对象“相等
+- finalize() 当垃圾回收器不存在对该对象的更多引用时，由对象的垃圾回收器调用此方法
+- getClass() 返回一个对象的运行时类
+- notify() 唤醒在此对象监视器上等待的单个线程
+- notifyAll() 唤醒在此对象监视器上等待的所有线程
+- toString() 返回该对象的字符串显示
+- wait() 导致当前线程等待，知道其他线程调用此对象的notify() notifyAll()方法
+- wait(long timeout) 导致当前线程等待，知道其他线程调用此对象的notify() notifyAll()方法；或者超过指定时间量timeout
+- wait(long timeout, int nanos)导致当前线程等待，知道其他线程调用此对象的notify() notifyAll()方法；或者超过指定时间量timeout；或是其他某个线程中断当前线程
+
+
+
+### 5. 重载和重写
+
+**重载Overloading**
+
+1. 方法重载是让类以统一的方式处理不同类型数据的一种手段。多个同名函数同时存在，具有不同的参数个数、类型。
+
+   Overloading是一个类中**多态性的一种表现**。
+
+2. Java的方法重载，就是在类中可以创建多个方法，他们具有相同的名字，但是**具有不同的参数和不同的定义**。
+
+   **调用方法时通过传递给它们的不同参数个数和参数类型来决定具体使用哪个方法**，这就是多态性。
+
+3. 重载的时候，**方法名要一样，但参数类型和个数不一样，返回值类型可以相同or不同**。无法以返回类型作为重载函数的区分标准。
+
+**重写Overriding**
+
+1. **父类与子类之间的多态性，对父类的函数进行重新定义**。如果在子类中定义某方法与其父类有相通的名称和参数，该方法即被重写。或称方法覆盖。
+
+2. 若子类中方法与父类中某一方法具有相同的方法名、返回类型和参数表，则新方法将覆盖原有的方法。
+
+   如需父类中原有方法，可使用super关键字，该关键字直接引用当前类的父类
+
+3. 子类函数的**访问修饰权限不能少于父类**的。
+
+
+
+### 6. static
+
+static 表明**一个成员变量或是一个成员方法可以在没有所属的类的实例变量的情况下被访问**。
+
+java中的static方法不能被覆盖。因为方法覆盖是基于运行时动态绑定的，而static方法时**编译时静态绑定**的。static方法跟类的任何实例都不相关。
+
+static变量存在方法区。
+
+static变量在java中是属于类的，它在所有实例中的值是一样的。当类被Java虚拟机载入时，会对static变量进行初始化。如果**不用实例来访问非static的变量，编译器会报错**。因为非static变量还没被创建出来。
+
+
+
+### 7. 类加载机制、双亲委派模型
+
+?
+
+
+
+### 8. 泛型
+
+泛型，即“**参数化类型**”。
+
+参数——定义方法时的形参，调用该方法时传递实参。
+
+参数化类型——讲类型由原来具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数ixngshi，在使用调用时传入具体的类型（类型实参）。
+
+```java
+public class GenericTest{
+    public static void main(String [] args){
+ 
+        List<String> list = new ArrayList<String>();
+        list.addlist.add("121");
+        list.add("ccc");
+        //list.add(100); // 1 
+        for(int i=0 ; i<list.size() ; i++)
+        {
+            String name = list.get(i); // 2
+            System.out.println("name" + name);
+        }
+    }
+}
+```
+
+
+
+### 9. extends super泛型限定符
+
+1. 泛型中上界和下界的定义
+   - 上界 <? extend Fruit>
+   - 下界 <? super Apple>
+2. 上界和下界的特点
+   - 上届的list只能get，不能add
+   - 下界的list只能add，不能get
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+class Fruit {}
+class Apple extends Fruit {}
+class Jonathan extends Apple {}
+class Orange extends Fruit {}
+
+public class CovariantArrays {
+    public static void main(String [] args){
+        //上界
+        List<? extend Fruit> flistTop = new ArrayList<Apple>();
+        flistTop.add(null); 
+        //flistTop.add(new Fruit()); //add Fruit对象会报错
+        Fruit fruit1 = flistTop.get(0);
+        
+        //下界
+        List<? super Apple> flistBottem = new ArrayList<Apple>();
+        flistBottem.add(new Apple());
+        flistBottem.add(new Jonathan());
+        //Apple apple = flistBottem.get(0); //get Apple对象会报错
+    }
+}
+```
+
+3. 上界<? extend Fruit>，**表示所有继承Fruit的子类**，但具体是哪个子类，无法确定，所以调用add的时候，要add什么类型，谁也不知道。但是get的时候，不管是什么子类，不管追溯多少辈，必定有个父类是Fruit，所以也就是**把所有子类向上转型为Fruit**；
+
+   Fruit可get，不可add，add相应子类。
+
+4. 下界<? super Apple>，**表示Apple的所有父类**，包括Fruit，一直可以追溯到Object！当我add时，我不能add Apple的父类，因为不确定List里面存放的到底是哪个父类。但可以add Apple及其子类。因为不管我的子类是什么类型，它都可以向上转型为Apple及其所有的父类甚至转型为Object。
+
+
+
+### 10. 反射对应的关键字
+
+**创建对象**
+
+1. 通过类对象调用newInstance()方法，例如：String.class.newInstance()
+2. 通过类对象的getConstructor()/ getDeclaredConstructor()方法获取构造器对象并调用其newInstance()方法创建对象，例如：String.class.getConstructor(String.class).newInstance("Hello");
+
+
+
+### 11. 接口与抽象类的区别
+
+接口与抽象类的实现具有共同点，但是存在很多不同点
+
+- 接口所有方法隐含的都是抽象的。而抽象类则可以同时包含抽象和非抽象方法
+- 类可以实现很多个接口，但只能继承一个抽象类
+- 类可以不实现抽象类合和接口声明的所有方法，此时类也应当是抽象的。
+- 抽象类可以在不提供接口方法实现的情况下实现接口
+- Java接口中声明的变量默认都是final的。抽象类可以包含非final变量
+- Java接口中成员函数默认是public的。抽象类的成员函数可以是private、protected或者public
+- 接口是绝对抽象的，不可被实例化。抽象类也不可被实例化，但是若包含main方法则可以被调用
