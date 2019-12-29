@@ -199,11 +199,53 @@ select * from users where age between 10 and 30; # 事务A
 
 ### 1. 反射
 
+1. 首先通过反射com.mysql.jdbc.Driver类，实例化该类的时候会执行该类内部的静态代码块，该代码块会在Java实现的DriverManager类中注册自己,DriverManager管理所有已经注册的驱动类，当调用DriverManager.geConnection方法时会遍历这些驱动类，并尝试去连接数据库，只要有一个能连接成功，就返回Connection对象，否则则报异常。
+2. 通过使用DriverManager.geConnection(url,user,password)函数，传入url，数据库用户名，数据库密码，得到数据库的Connection对象。
+
 ```java
 public void testJDBC(){
     try{
-        //通过
+        //通过反射实例化com.mysql.jdbc.Driver
+        Driver driver = (Driver)Class.forName("com.mysql.jdbc.Driver").newInstance();
+        //得到数据库的连接对象
+        Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/notedb", "root", "");
+        System.out.println(conn);
+    } catch(InstantiationException e){
+        e.printStackTrace();
+	} catch (IllegalAccessException e) {
+		e.printStackTrace();
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	} catch (SQLException e) {
+		e.printStackTrace();
     }
 }
 ```
 
+
+
+### 2. Jdo
+
+Jdo--java data obkect，一个用于存取某种数据仓库中的对象标准化的API。
+
+JDO提供透明的对象存储，因此存储数据对象完全不需要额外的代码。
+
+JDBC只是面向关系数据库(RDBMS)；JDO更通用，提供到任何数据底层的存储功能。
+
+
+
+### 3. Statement PreparedStatement
+
+**区别**——主要谈PreparedStatement
+
+1. PreparedStatement接口代表预编译的语句，主要优势在于可以减少sql编译错误并且增加sql的安全性
+2. PreparedStatement中的sql是可以带参数的，避免使用字符串拼接sql语句的不安全
+3. 批量处理sql或频繁执行相同的查询，PreparedStatement有明显的性能优势，因为数据库会**把编译优化的sql语句缓存起来**。
+
+
+
+### 4. JDBC读取数据的性能优化
+
+**用空间换时间**：结果集（ResultSet）对象的setFetchSize() 方法指定每次抓取的记录数；
+
+提升**更新数据的性能**：可以用PreparedStatement语句构建批处理，将若干sql语句置于一个批处理执行
