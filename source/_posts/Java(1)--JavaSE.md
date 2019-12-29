@@ -6,9 +6,9 @@ copyright: false
 categories: java
 ---
 
-## java 基础
-
 @[toc]
+
+## java 基础
 
 ### 1. == 与 equals
 
