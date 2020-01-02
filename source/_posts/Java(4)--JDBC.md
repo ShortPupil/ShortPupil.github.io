@@ -1,6 +1,6 @@
 ---
 title: Java(4)--JDBC
-date: 2019-12-29 10:12:00
+date: 2018-12-29 10:12:00
 tags: [java]
 copyright: false
 categories: java
@@ -74,6 +74,12 @@ InnoDB主要面向在线事务处理OLTP的应用。MyISAM主要面向一些OLAP
 2. 使用时间戳*timestamp*。也是为数据增加一个字段，但是字段类型使用时间戳*timestamp*
 
 提交更新是，将version或timestamp进行比对，如果相等则更新，若不同则为**版本冲突**。
+
+**悲观锁 Pessimistic Lock**
+
+**假定会发生并发冲突，只在提交操作时检查是否违反数据完整性**。每次去拿数据的时候都认为别人会修改，每次拿数据都会上锁，这样别人想拿这个数据的时候会block直到它拿到锁。
+
+java synchronized，每次线程要修改数据时都先获得锁，保证同一时刻只有一个线程能操作数据，其他线程会被block.
 
 
 
@@ -196,6 +202,41 @@ select * from users where age between 10 and 30; # 事务A
 
 
 ## JDBC
+
+### 基本概念
+
+#### JDBC架构
+
+双层![Two-tier-Architecture-for-Data-Access](https://www.runoob.com/wp-content/uploads/2015/05/Two-tier-Architecture-for-Data-Access.gif)
+
+三层![Three-tier-Architecture-for-Data-Access](https://www.runoob.com/wp-content/uploads/2015/05/Three-tier-Architecture-for-Data-Access.gif)
+
+#### 编程步骤
+
+1. 加载驱动程序
+
+   ```java
+   //加载MySql驱动
+   Class.forName("com.mysql.jdbc.Driver")
+   //加载Oracle驱动
+   Class.forName("oracle.jdbc.driver.OracleDriver")
+   ```
+
+2. 获得数据库连接
+
+   ```java
+   //url 用户名 密码
+   DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/imooc", "root", "root");
+   ```
+
+3. 创建Statement\ PreparedStatement对象
+
+   ```java
+   conn.createStatement();
+   conn.prepareStatement(sql);
+   ```
+
+   
 
 ### 1. 反射
 
