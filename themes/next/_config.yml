@@ -101,10 +101,6 @@ social:
   GitHub: https://github.com/ShortPupil
   E-Mail: mailto:zzh2625@Gmail.com
 
-favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-
 # Social Links Icons
 # Icon Mapping:
 #   Map a menu item to a specific FontAwesome icon name.

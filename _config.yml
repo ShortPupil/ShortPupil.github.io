@@ -11,6 +11,9 @@ author: 松子
 language: zh-CN
 timezone:
 avatar: /uploads/avatar.jpg
+favicon:
+  small: /uploads/favicon-16x16-next.png
+  medium: /uploads/favicon-32x32-next.png
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
