@@ -15,7 +15,7 @@ avatar: /uploads/avatar.jpg
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://songzi.info
+url: https://songzi.info
 root: /
 permalink: /:year/:month/:day/:title/
 permalink_defaults:
@@ -117,13 +117,6 @@ search:
 
 sitemap:
   path: sitemap.xml
-
-math:
-  engine: mathjax
-  mathjax:
-    # src: custom_mathjax_source
-    config:
-      # MathJax config
 
 # Live2D
 ## https://github.com/xiazeyu/live2d-widget.js
