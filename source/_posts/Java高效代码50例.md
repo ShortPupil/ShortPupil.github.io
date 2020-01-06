@@ -350,6 +350,8 @@ public class Rectangle{
 }
 ```
 
+
+
 ## 4. 表达式
 
 ### 4.1 尽量减少方法的重复调用
@@ -374,6 +376,8 @@ int num2 = a >> 2; //除4
 和面向对象原则不太一样。
 
 原因：switch语句进行了跳转优化，Java中采用`tableswitch`或`lookupswitch`指令实现，对于多常量选择分支处理效率更高。
+
+
 
 ## 5. 字符串
 
@@ -451,4 +455,96 @@ Integer[] integers = integerList.toArray(new Integer[0]);
 List<Object> objectList =Arrays.asList(1,"2",3,"4",5,...);
 Object[] objects = objectList.toArray();
 ```
+
+
+
+## 7. 集合
+
+### 7.1 初始化集合时，尽量指定集合大小
+
+原因：当默认大小不再满足数据需求时就会扩容，**每次扩容的时间复杂度有可能是O(n)**。所以，尽量指定预知的集合大小，就能避免或减少集合的扩容次数。
+
+### 7.2 不要用循环拷贝集合
+
+原因：尽量使用JDK提供的方法拷贝集合，底层用`System.arraycopy`实现，进行数据的批量拷贝效率高
+
+```java
+//反例
+for(UserDO user1 : user1List) {
+    userList.add(user1);
+}
+//正例
+userList.addAll(user1List);
+```
+
+### 7.3 尽量使用Arrays.asList转化数组为列表
+
+### 7.4 直接迭代需要使用的集合
+
+```java
+//反例
+Map<Long, UserDO> userMap = ...;
+for(Long userId : userMap.keySet()){
+    //用其他操作获取user
+    UserDO user = userMap.get(userId);
+    ...
+}
+//正例
+Map<Long, UserDO> userMap = ...;
+for(Map.Entry<Long, UserDO> userEntry: userMap.entrySet()){
+    Long userId = userEntry.getKey();
+    UserDO user = userMap.getValue();
+    ...
+}
+```
+
+### 7.5 不要使用size方法检测空，必须使用isEmpty方法检测空
+
+原因：使用size方法来检测空逻辑上没有问题，但使用isEmpty方法使得代码**更易读**，并且可以获得更好的性能。任何isEmpty方法实现的时间复杂度都是O(1)，但是**某些size方法实现的时间复杂度有可能是O(n)**。
+
+### 7.6 非随机访问的List，尽量使用迭代代替随机访问
+
+### 7.7 尽量使用HashSet判断值存在
+
+原因：在Java集合类库中，List的contains方法普遍时间复杂度是O(n)，而HashSet的时间复杂度为O(1)。
+
+### 7.8 避免先判断存在再进行获取
+
+原因：如果需要先判断存在再进行获取，可以直接获取并判断空，**从而避免了二次查找操作**。
+
+
+
+## 8. 异常
+
+### 8.1 避免在循环中捕获异常
+
+原因：当循环体抛出异常后，**无需循环继续执行**（注意前提）时，没有必要在循环体中捕获异常。因为，过多的捕获异常会降低程序执行效率。
+
+### 8.2 禁止使用异常控制业务流程
+
+原因：异常处理效率比条件表达式低
+
+```java
+//反例
+public static boolean isValid(UserDO user){
+    try{
+        return Boolean.TRUE.equals(user.getIsValid());
+    } catch(NullPointerException e){
+        return false; //用异常控制业务
+    }
+}
+//正例
+public static boolean isValid(UserDO user){
+    if(Objects.isNull(user)) return false;
+    return Boolean.TRUE.equals(user.getIsValid());
+}
+```
+
+
+
+## 9. 缓冲区
+
+
+
+## 10. 线程
 

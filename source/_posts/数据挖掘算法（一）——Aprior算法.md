@@ -4,8 +4,6 @@ date: 2019-05-05 08:16:06
 tags: [Data Mining]
 categories: 商务智能
 copyright: true
-mathjax: true
-
 ---
 
 # 目录
