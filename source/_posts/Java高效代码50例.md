@@ -544,7 +544,97 @@ public static boolean isValid(UserDO user){
 
 ## 9. 缓冲区
 
+### 9.1 初始化时尽量指定缓冲区大小
+
+原因同数组指定缓冲区一样。
+
+### 9.2 尽量重复使用同一缓冲区
+
+针对缓冲区，Java虚拟机需要花时间生成对象，还要花时间进行垃圾回收处理。所以，尽量重复利用缓冲区。
+
+### 9.3 尽量使用缓冲流减少IO操作
+
+使用缓冲流：
+
+- BufferedReader
+
+- BufferedWriter
+- BufferedInputStream
+- BufferedOutputStream
+- ...
+
+可以大幅减少IO次数并提升IO速度。
+
+```java
+//反例
+FileInputStream input = new FileInputStream("a");
+FileOutputStream output = new FileInputStream("b");
+//正例
+BufferInputStream input = new BufferInputStream(new FileInputStream("a"));
+BufferOutputStream output = new BufferOutputStream(new FileInputStream("b"));
+```
+
+
+
 
 
 ## 10. 线程
+
+### 10.1 在单线程中，尽量使用非线程安全类
+
+原因：避免不必要的同步开销
+
+```java
+//反例
+StringBuffer buffer = new StringBuffer(128);
+buffer.append("select * from").append(T_USER).append(" where id = ?");
+//正例
+StringBuilder buffer = new StringBuilder(128); //这是非线程安全类
+buffer.append("select * from").append(T_USER).append(" where id = ?");
+```
+
+### 10.2 在多线程中，尽量使用线程安全类
+
+原因：代码更简洁高效
+
+### 10.3 尽量减少同步代码块范围
+
+原因：在一个方法中，可能只有一小部分的逻辑是需要同步控制的，如果同步控制了整个方法会影响执行效率。
+
+```java
+//反例
+private volatile int counter = 0;
+public synchronized void access(Long userId) {
+    counter++;
+    ...//一些非同步操作
+}
+//正例
+private volatile int counter = 0;
+public void access(Long userId) {
+    synchronized（this）{
+        counter++;
+    }
+    ...//一些非同步操作
+}
+```
+
+### 10.4 尽量合并为同一同步代码块
+
+同步代码块是有性能开销的，如果确定可以合并为同一同步代码块，就应该尽量合并为同一同步代码块。
+
+### 10.5 尽量使用线程池减少线程开销
+
+原因：多线程中两个必要的开销：线程的创建和上下文切换。采用线程池，可以尽量地避免这些开销。
+
+```java
+//反例
+public void executeTask(Runnable runnable){
+    new Thread(runnable).start();
+}
+//正例
+public static final ExecutorService EXECUTOR_SERVICE = Executors.newFixedThreadPool(10);
+public void executeTask(Runnable runnable){
+    executorService.execute(runnable);
+}
+```
 

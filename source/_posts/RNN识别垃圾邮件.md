@@ -180,5 +180,3 @@ x_text =[
 
 
 
-to be continued
-
