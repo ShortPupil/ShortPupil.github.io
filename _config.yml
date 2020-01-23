@@ -113,7 +113,7 @@ markdown_it_plus:
 
 search: 
   on: true
-  onload: false
+  onload: true
 
 sitemap:
   path: sitemap.xml
