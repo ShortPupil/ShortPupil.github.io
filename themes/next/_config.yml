@@ -273,7 +273,7 @@ font:
   enable: true
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
   # 亲测这个可用，如果不可用，自己搜索 [Google 字体 国内镜像]，找个能用的就行
-  host: https://fonts.cat.net
+  host:
   # Global font settings used on <body> element.
     # 全局字体，应用在 body 元素上
   global:
