@@ -1,0 +1,432 @@
+---
+title: 设计模式(8) 面试问题
+date: 2018-12-01 09:04:24
+tags: [design pattern]
+categories: 软件设计
+copyright: false
+---
+
+## 单例模式
+
+在一个应用程序中，某个类的实例对象只有一个，没有办法去new，因为构造器是被private修饰的，所以通过getInstance()的方法来获取它们的实例。getInstance()的返回值是**一个对象的引用**，并不是一个新的实例，所以不要错误地理解成多个对象。
+
+### 懒汉模式 线程不安全
+
+多线程不能正常工作
+
+```java
+public class Singleton {
+    private static Singleton singleton;
+    private Singleton() {
+    }
+    
+    public static Singleton getInstance() {
+        if(singleton == null){
+            singleton = new Singleton();
+        }
+        return singleton;
+    }
+}
+```
+
+### 懒汉模式 线程安全
+
+可以在多线程中很好地工作，但每次调用getInstance()方法时都需要进行同步，造成不必要的同步开销，而且大部分时候我们用不到同步。
+
+```java
+public class Singleton{
+    private static Singleton instance;
+    private Singleton(){}
+    public static synchronized Singleton getInstance(){
+        if(instance == null){
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+```
+
+### 双重检查模式（DCL）
+
+```java
+public class Singleton{
+    private volatile static Singleton singleton;
+    private Singleton(){
+    }
+    public static Singleton getInstance(){
+        if(instance == null){
+            synchronized (Singleton.class){
+                if(instance == null){
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+```
+
+getSingleton方法中对singleton进行了两次判空，第一次为了避免不必要的更新，第二次是在singleton等于null下才创建实例。
+
+**volatile**: 双重检查模式是正确使用volatile关键字的场景之一。
+
+资源利用率高，第一次执行getInstance时单例对象才被实例化，效率高。缺点是第一次加载时反应稍慢一些，在高并发环境下也有一定的缺陷，虽然发生的概率很小。DCL虽然在一定程度解决了资源的消耗和多余的同步，线程安全等问题，但是他还是在某些情况会出现失效的问题，也就是DCL失效，在《java并发编程实践》一书建议用**静态内部类单例模式**来替代DCL。
+
+### 静态内部类单例模式
+
+```java
+public class Singleton{
+	private Singleton(){}
+    public static Singleton getInstance(){
+        return SingletonHolder.sInstance;
+    }
+    private static class SingletonHolder {  
+        private static final Singleton sInstance = new Singleton();  
+    }  
+}
+```
+
+第一次加载Singleton类时并不会初始化sInstance，只有第一次调用getInstance方法时虚拟机加载SingletonHolder 并初始化sInstance ，这样不仅能确保线程安全也能保证Singleton类的唯一性，所以推荐使用静态内部类单例模式。
+
+
+
+## 观察者模式
+
+对象间一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。
+
+比如安卓中的各种Listener就用了这一设计模式，只要用户对手机进行操作，对应的listener就会被通知，并作出响应的处理。
+
+![](https://gitee.com/songzi2625/resources/raw/master/image/观察者模式.PNG)
+
+被观察者发出一条信息，观察者进行相应的处理
+
+```java
+public interface Person{
+    //通过这个接口接受被观察者发来的消息
+    void getMessage(String s);
+}
+```
+
+
+
+```java
+public class Wang implements Person{
+    private String name = "wang";
+    public Wang(){}
+    
+    @Override
+    public void getMessage(String s){
+        System.out.println(name + "收到信息：" + s);
+    }
+}
+
+public class Li implements Person{
+    private String name = "li";
+    public Li(){}
+    
+    @Override
+    public void getMessage(String s){
+        System.out.println(name + "收到信息：" + s);
+    }
+}
+```
+
+发送信息的小美代码
+
+```java
+public class Mei{
+    List<Person> list = new ArrayList<Person>();
+    public Mei(){}
+    public void addPerson(Person person){
+        list.add(person);
+    }
+    //遍历list，把自己的通知发送给所有观察者
+     public void notifyPerson() {
+         for(Person person:list){
+             person.getMessage("谁先过来!");
+         }
+     }
+}
+```
+
+
+
+## 装饰者模式
+
+对已有的业务逻辑进一步的封装，使其增加额外的功能，如java中的IO流就使用了装饰者模式，用户在使用的时候，可以任意组装，达到自己想要的效果。
+
+例子：我想吃三明治，首先我需要一根大大的香肠，我喜欢吃奶油，在香肠上面加一点奶油，再放一点蔬菜，最后再用两片面包加一下，代码？
+
+首先，我们需要写一个Food类，让其他所有食物都来继承这个类
+
+```java
+public class Food {
+
+    private String food_name;
+
+    public Food() {
+    }
+
+    public Food(String food_name) {
+        this.food_name = food_name;
+    }
+
+    public String make() {
+        return food_name;
+    };
+}
+```
+
+继承food类的子类
+
+```java
+//面包类
+public class Bread extends Food {
+
+    private Food basic_food;
+
+    public Bread(Food basic_food) {
+        this.basic_food = basic_food;
+    }
+
+    public String make() {
+        return basic_food.make()+"+面包";
+    }
+}
+
+//奶油类
+public class Cream extends Food {
+
+    private Food basic_food;
+
+    public Cream(Food basic_food) {
+        this.basic_food = basic_food;
+    }
+
+    public String make() {
+        return basic_food.make()+"+奶油";
+    }
+}
+
+//蔬菜类
+public class Vegetable extends Food {
+
+    private Food basic_food;
+
+    public Vegetable(Food basic_food) {
+        this.basic_food = basic_food;
+    }
+
+    public String make() {
+        return basic_food.make()+"+蔬菜";
+    }
+
+}
+```
+
+
+
+## 适配器模式
+
+将两种完全不同的事物联系到一起，就像现实生活中的变压器。假设一个手机充电器需要的电压是20V，但是正常的电压是220V，这时候就需要一个变压器，将220V的电压转换成20V的电压，这样，变压器就将20V的电压和手机联系起来了。
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        Phone phone = new Phone();
+        VoltageAdapter adapter = new VoltageAdapter();
+        phone.setAdapter(adapter);
+        phone.charge();
+    }
+}
+
+// 手机类
+class Phone {
+
+    public static final int V = 220;// 正常电压220v，是一个常量
+
+    private VoltageAdapter adapter;
+
+    // 充电
+    public void charge() {
+        adapter.changeVoltage();
+    }
+
+    public void setAdapter(VoltageAdapter adapter) {
+        this.adapter = adapter;
+    }
+}
+
+// 变压器
+class VoltageAdapter {
+    // 改变电压的功能
+    public void changeVoltage() {
+        System.out.println("正在充电...");
+        System.out.println("原始电压：" + Phone.V + "V");
+        System.out.println("经过变压器转换之后的电压:" + (Phone.V - 200) + "V");
+    }
+}
+```
+
+
+
+## 工厂模式
+
+### 简单工厂模式
+
+一个抽象的接口，多个抽象接口的实现类，一个工厂类，用来实例化抽象的接口
+
+```java
+// 抽象产品类
+abstract class Car {
+    public void run();
+
+    public void stop();
+}
+
+// 具体实现类
+class Benz implements Car {
+    public void run() {
+        System.out.println("Benz开始启动了。。。。。");
+    }
+
+    public void stop() {
+        System.out.println("Benz停车了。。。。。");
+    }
+}
+
+class Ford implements Car {
+    public void run() {
+        System.out.println("Ford开始启动了。。。");
+    }
+
+    public void stop() {
+        System.out.println("Ford停车了。。。。");
+    }
+}
+
+// 工厂类
+class Factory {
+    public static Car getCarInstance(String type) {
+        Car c = null;
+        if ("Benz".equals(type)) {
+            c = new Benz();
+        }
+        if ("Ford".equals(type)) {
+            c = new Ford();
+        }
+        return c;
+    }
+}
+
+public class Test {
+
+    public static void main(String[] args) {
+        Car c = Factory.getCarInstance("Benz");
+        if (c != null) {
+            c.run();
+            c.stop();
+        } else {
+            System.out.println("造不了这种汽车。。。");
+        }
+
+    }
+
+}
+```
+
+### 工厂方法模式
+
+有四个角色，抽象工厂模式，具体工厂模式，抽象产品模式，具体产品模式。不再是由一个工厂类去实例化具体的产品，而是由抽象工厂的子类去实例化产品
+
+```java
+// 抽象产品角色
+public interface Moveable {
+    void run();
+}
+
+// 具体产品角色
+public class Plane implements Moveable {
+    @Override
+    public void run() {
+        System.out.println("plane....");
+    }
+}
+
+public class Broom implements Moveable {
+    @Override
+    public void run() {
+        System.out.println("broom.....");
+    }
+}
+
+// 抽象工厂
+public abstract class VehicleFactory {
+    abstract Moveable create();
+}
+
+// 具体工厂
+public class PlaneFactory extends VehicleFactory {
+    public Moveable create() {
+        return new Plane();
+    }
+}
+
+public class BroomFactory extends VehicleFactory {
+    public Moveable create() {
+        return new Broom();
+    }
+}
+
+// 测试类
+public class Test {
+    public static void main(String[] args) {
+        VehicleFactory factory = new BroomFactory();
+        Moveable m = factory.create();
+        m.run();
+    }
+}
+```
+
+
+
+### 抽象工厂模式
+
+与工厂方法模式不同的是，工厂方法模式中的工厂只生产单一的产品，而抽象工厂模式中的工厂生产多个产品
+
+```java
+/抽象工厂类
+public abstract class AbstractFactory {
+    public abstract Vehicle createVehicle();
+    public abstract Weapon createWeapon();
+    public abstract Food createFood();
+}
+//具体工厂类，其中Food,Vehicle，Weapon是抽象类，
+public class DefaultFactory extends AbstractFactory{
+    @Override
+    public Food createFood() {
+        return new Apple();
+    }
+    @Override
+    public Vehicle createVehicle() {
+        return new Car();
+    }
+    @Override
+    public Weapon createWeapon() {
+        return new AK47();
+    }
+}
+//测试类
+public class Test {
+    public static void main(String[] args) {
+        AbstractFactory f = new DefaultFactory();
+        Vehicle v = f.createVehicle();
+        v.run();
+        Weapon w = f.createWeapon();
+        w.shoot();
+        Food a = f.createFood();
+        a.printName();
+    }
+}
+```
+
