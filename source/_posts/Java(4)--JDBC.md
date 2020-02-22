@@ -290,3 +290,89 @@ JDBC只是面向关系数据库(RDBMS)；JDO更通用，提供到任何数据底
 **用空间换时间**：结果集（ResultSet）对象的setFetchSize() 方法指定每次抓取的记录数；
 
 提升**更新数据的性能**：可以用PreparedStatement语句构建批处理，将若干sql语句置于一个批处理执行
+
+
+
+## hibernate
+
+hibernate操作数据库
+
+1. 读取并解析配置文件
+
+   ```java
+   Configuration conf = new Configuration().configure();
+   ```
+
+2. 读取并解析映射信息，创建SessionFactory
+
+   ```java
+   SessionFactory sf = conf.buildSessionFactory();
+   ```
+
+3. 打开Session
+
+   ```java
+   Session session = sf.openSession();
+   ```
+
+4. 开始一个事务（增删改操作必须，查询操作可选）
+
+   ```java
+   Transaction tx = session.beginTransaction();
+   ```
+
+5. 数据库操作
+
+   ```java
+   session.save(user);//或其它操作
+   ```
+
+6. 提交事务/回滚事务
+
+   ```java
+   tx.commit();
+   tx.rollback();
+   ```
+
+7. 关闭session
+
+   ```java
+   session.close();
+   ```
+
+**Configuration**
+
+**SessionFactiory**
+
+**Session**
+
+**事务transaction**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

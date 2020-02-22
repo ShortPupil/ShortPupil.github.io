@@ -12,11 +12,23 @@ categories: java
 
 $\color{#FF0000}{红}$ 
 
-自己加的
 
-问了io，设计模式，并发，主要针对简历和你笔试的两道算法问，让你想一想你的算法怎么优化
 
-问了bufferedinputstream是什么设计模式
+## 记录
+
+StringBuffer  StringBuild
+
+字符串
+
+泛型
+
+面向对象三大特性：多态、封装、继承
+
+重载、重写的区别
+
+
+
+
 
 - java io运用了什么设计模式。 主要运用了俩个设计模式，**适配器**和**装饰者模式**。
 - 装饰者模式：对已有的业务逻辑进一步的封装，使其增加额外的功能，如java中的IO流就使用了装饰者模式，用户在使用的时候，可以任意组装，达到自己想要的效果。；一个父类，多个子类
@@ -53,6 +65,546 @@ $\color{#FF0000}{红}$
 2. 装饰者模式和策略模式的不同在于，原有类和装饰器类必须继承同一个父类。装饰器对象除了需要完成持有对象的操作外，还有一些附加操作，这些附加操作随着装饰器的不同而变化。持有对象本身的操作是主体，装饰器的操作是补充。而策略模式中，具体策略才是主体。
 
 3. **代理模式主要是控制对某个特定对象访问，而装饰模式主要是为了给对象添加行为**。
+
+
+
+
+
+
+
+### SpringBoot、SpringMVC和Spring区别
+
+Spring最初利用“工厂模式”（DI）和“代理模式”（AOP），大家觉得很好用，就按照这种模式搞了MVC框架（用Spring解耦的一些组件），开发web应用。后来发现每次开发都写很多样板代码，于是开发出了spring boot作为快速配置包
+
+1. - Spring boot只是一个配置工具、整合工具、辅助工具
+   - SpringMVC是框架，项目中实际运行的代码
+   - Spring框架是一个家族，有许多衍生品。但基础都是Spring的ioc、aop，ioc提供依赖注入的容器，aop是面向切面的变成
+2. - Spring MVC提供一种轻度耦合的方式来开发web应用。通过Dispatcher Servlet、ModelAndView、View Resolver，开发web应用更容易
+   - Spring boot实现自动配置，降低了项目搭建的复杂度，主要解决使用spring框架需要大量配置过于麻烦，但不是spring的代替解决方案，而是提升开发者体验额工具。同时继承大量常用第三方库配置（jdbc、mongo、redis等），这些第三方库可以零配置开箱即用
+   - 如果承载的是web项目，使用sping mvc作为mvc框架，流程一样，因为这部分工作就是spring mvc做的而不是spring boot
+3. - spring是一个“引擎”
+   - spring mvc是基于spring的一个mvc框架
+   - spring boot是基于spring4条件祖册的一套快速开发整合包
+
+### Spring的IOC、DI、AOP
+
+#### 控制反转IOC
+
+Spring**容器**来实现这些相互依赖对象的创建、协调工作。对象只需要关系业务逻辑本身就可以了。从这方面来说，对象如何得到他的协作对象的责任被反转了，由容器控制程序之间的关系，把控件权交给了外部容器。
+
+中介：所有的类都会在Spring容器中登记，告诉Spring你是个什么东西，你需要什么东西。然后Spring会在系统运行到适当的时候，把东西主动给你。所有的类的创建、销毁都有spring来控制，也就是说控制对象生存周期的不再是引用他的对象，而是spring。
+
+- Spring BeanFactory容器
+- Spring ApplicationContext 容器
+
+##### 理解ioc：
+
+- 解耦：
+- 对象生命周期管理：
+
+
+
+#### 依赖注入DI
+
+注意是应用的工厂模式
+
+- **没有用依赖注入**：每个POJO（简单的java对象）在创建时候会主动去获取依赖。在代码上就是一个雷中有实例化另一个类的对象。
+- **三种依赖注入方法**：setter方法注入、构造器注入、接口注入
+- **依赖注入作用**：相互协作的模块保持松散耦合
+
+#### 基于构造函数的依赖注入
+
+```java
+//两个接口
+public interface People{
+    void eat();
+}
+
+public interface Fruit{
+    void speak();
+}
+```
+
+```java
+//实现类
+public class Watermelon implements Fruit{// 西瓜类
+    @Override
+    public void speak() {
+        System.out.println("我是西瓜，我被吃");
+    }
+}
+
+public class Student implements People {// 学生类
+    private Fruit fruit;
+
+    public Student(Fruit fruit) {// 构造器注入依赖的对象
+        this.fruit = fruit;
+    }
+
+    @Override
+    public void eat() {
+        fruit.speak();
+    }
+}
+```
+
+可以看出student类依赖watermelon类，调用student的eat方法时会调用watermelon的speak方法，于是通过xml对两个应用组件进行装配，注意`constructor-arg`
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--水果声明为Spring的bean-->
+    <bean id="fruit" class="com.qsh.springaction.Watermelon"/>
+    <!--人声明为Spring的bean-->
+    <bean id="people" class="com.qsh.springaction.Student">
+        <constructor-arg ref="fruit"/>
+    </bean>
+</beans>
+```
+
+以上内容等价于
+
+```java
+Watermelon watermelon = new Watermelon();
+Student student = new Student(watermelon);
+student.eat();
+```
+
+
+
+启动类测试
+
+```java
+public class TestEat {
+    public static void main(String[] args) {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("eat.xml");
+        People people = context.getBean(People.class);
+        people.eat();
+        context.close();
+    }
+    //输出：我是西瓜，我被吃
+}
+```
+
+#### 基于设置函数的依赖注入
+
+唯一的区别就是在基于构造函数注入中，我们使用的是〈bean〉标签中的`constructor-arg`元素，而在基于设值函数的注入中，我们使用的是〈bean〉标签中的`property`元素。
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <!-- Definition for textEditor bean -->
+   <bean id="textEditor" class="com.tutorialspoint.TextEditor">
+      <property name="spellChecker" ref="spellChecker"/>
+   </bean>
+
+   <!-- Definition for spellChecker bean -->
+   <bean id="spellChecker" class="com.tutorialspoint.SpellChecker">
+   </bean>
+
+</beans>
+
+```
+
+#### 依赖注入源码实现
+
+通过**反射机制**实现，在**1.** 实例化一个类时，通过**2.** 反射调用类中set方法将实现保存在HashMap中的类属性注入类中
+
+实例化一个类
+
+```java
+public static Object newInstance(String className){
+    Class<?> cls = null;
+    Object obj = null;
+	try {
+		cls = Class.forName(className);
+		obj = cls.newInstance();
+	} catch (ClassNotFoundException e) {
+		throw new RuntimeException(e);
+	} catch (InstantiationException e) {
+		throw new RuntimeException(e);
+	} catch (IllegalAccessException e) {
+		throw new RuntimeException(e);
+	}
+	return obj;
+}
+```
+
+反射实例化一个类，接着把类的依赖注入
+
+```java
+public static void setProperty(Object obj, String name, String value){
+    Class<? extends Object> clazz = obj.getClass();
+	try {
+		String methodName = returnSetMthodName(name);
+		Method[] ms = clazz.getMethods();
+		for (Method m : ms) {
+			if (m.getName().equals(methodName)) {
+				if (m.getParameterTypes().length == 1) {
+					Class<?> clazzParameterType = m.getParameterTypes()[0];
+					setFieldValue(clazzParameterType.getName(), value, m,
+							obj);
+					break;
+				}
+			}
+		}
+	} catch (SecurityException e) {
+		throw new RuntimeException(e);
+	} catch (IllegalArgumentException e) {
+		throw new RuntimeException(e);
+	} catch (IllegalAccessException e) {
+		throw new RuntimeException(e);
+	} catch (InvocationTargetException e) {
+		throw new RuntimeException(e);
+	}
+}
+```
+
+#### 面向切面编程 AOP
+
+注意使用代理模式
+
+Spring 支持 @Aspectj注解 的方法和基于配置的方法来实现自定义切面。
+
+- 软件系统实现关注点分离。横切关注点，会横跨多个组件
+- 场景很多Authentication 权限
+  Caching 缓存
+  Context passing 内容传递
+  Error handling 错误处理
+  Lazy loading 懒加载
+  Debugging 调试
+  logging, tracing, profiling and monitoring 记录跟踪 优化 校准
+  Performance optimization 性能优化
+  Persistence 持久化
+  Resource pooling 资源池
+  Synchronization 同步
+  Transactions 事务
+- 每个组件除了实现自身的功能，还需要实现其他的如事务管理等功能（横切关注点）。我们把这功能单独抽取出来成一个模块，每个组件在工作的过程中，这个模块会为组件实现额外功能
+  - 应用组件：实现各自功能的代码
+  - 横切关注点：每个组件的额外业务，相同代码
+  - 切面：横切关注点模块化出来一个类
+  - 连接点：应用执行时能够插入切面的点
+  - 切点：匹配其中一个或多个连接点
+
+![](https://gitee.com/songzi2625/resources/raw/master/image/AOP.png)
+
+```java
+//行为类
+public class Action{
+    public void beforeEat(){
+        System.out.println("吃前拿刀");
+    }
+    public void afterEat(){
+        System.out.println("吃后洗手");
+    }
+}
+```
+
+xml中加入AOP命名空间，将Action方法声明为spring的bean，然后切面引用这个bean。
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+    <!--水果声明为Spring的bean-->
+    <bean id="fruit" class="com.qsh.springaction.Watermelon"/>
+    <!--人声明为Spring的bean-->
+    <bean id="people" class="com.qsh.springaction.Student">
+        <constructor-arg ref="fruit"/>
+    </bean>
+    <!--行为声明为Spring的bean-->
+    <bean id="action" class="com.qsh.springaction.Action"/>
+
+    <!--用spring aop的命名空间把Action声明为一个切面-->
+    <aop:config>
+        <!--引用Action的bean-->
+        <aop:aspect ref="action">
+            <!--声明Student的eat方法为一个切点-->
+            <aop:pointcut id="eating" expression="execution(* *.eat(..))"/>
+            <!--前置通知，在调用eat方法前调用Action的beforeEat方法-->
+            <aop:before pointcut-ref="eating" method="beforeEat"/>
+            <!--后置通知，在调用eat方法后调用Action的afterEat方法-->
+            <aop:after pointcut-ref="eating" method="afterEat"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
+```
+
+
+
+### Spring注解实现
+
+1. 类级别的注解：如@Component、@Repository、@Controller、@Service以及JavaEE6的@ManagedBean和@Named注解，都是添加在类上面的类级别注解。
+   Spring容器根据注解的过滤规则扫描读取注解Bean定义类，并将其注册到Spring IoC容器中。
+
+2. 类内部的注解：如@Autowire、@Value、@Resource以及EJB和WebService相关的注解等，都是添加在类内部的字段或者方法上的类内部注解。
+   SpringIoC容器通过Bean后置注解处理器解析Bean内部的注解
+
+
+
+项目用 Spring 比较多，有没有了解 Spring 的原理？AOP 和 IOC 的原理
+
+
+
+Spring Boot除了自动配置，相比传统的 Spring 有什么其他的区别？
+
+- 通过starter这一个依赖，以简化构建和复杂的应用程序配置。
+- 可以直接main函数启动，嵌入式web服务器，避免了应用程序部署的复杂性，Metrics度量，Helth check健康检查和外部化配置。
+- 尽可能的自动化配置Spring功能
+- 继承大量常用第三方库配置（jdbc、mongo、redis等），这些第三方库可以零配置开箱即用
+
+
+
+Spring Cloud 有了解多少？
+
+Spring Bean 的生命周期
+
+HashMap 和 hashTable 区别？
+
+Object 的 hashcode 方法重写了，equals 方法要不要改？
+
+Hashmap 线程不安全的出现场景
+
+线上服务 CPU 很高该怎么做？有哪些措施可以找到问题
+
+JDK 中有哪几个线程池？顺带把线程池讲了个遍
+
+SQL 优化的常见方法有哪些
+
+SQL 索引的顺序，字段的顺序
+
+查看 SQL 是不是使用了索引？（有什么工具）
+
+TCP 和 UDP 的区别？TCP 数据传输过程中怎么做到可靠的？
+
+说下你知道的排序算法吧
+
+查找一个数组的中位数？
+
+
+
+
+
+
+
+阿里妈妈
+
+JVM运行时区域，本地方法栈干啥的？ 
+
+  堆，推荐从gcroots到安全点到回收算法（GC）到收集器  
+
+  final，语法上用处和JMM语义相关，final修饰的引用可以指向null吗（可以，但是就不能修改了，null是任何引用类型的默认值，不严格的说是所有object类型的默认值）  
+
+  抽象类和接口（尽量讲讲自己的实践）  
+
+  为啥JDK8之前的接口不加default方法？（因为多接口有相同的方法时会冲突，类似C++的多继承问题，JDK8解决：https://blog.csdn.net/weixin_34144848/article/details/92419772，这里能回答出来是阿里的老哥引导的，吹爆）  
+
+  hashmap、concurrenthashmap和hashtable的区别（害，没有深入问我，好像第一面就是问问广度，后面应该就会往死里锤我了）  
+
+  IOC、AOP整一个  
+
+  动态代理讲一讲（jdk的、cglib的）  
+
+  cglib可以为抽象类生成代理不
+
+
+
+一面：
+ 进程和线程，区别，哪个效率高，为什么
+
+- 
+
+ 事务的特性，具体介绍
+ 隔离级别，具体介绍
+ 幻读
+ 死锁的条件，如何解决
+ java的基本数据类型和字节数
+ Java，volatile关键字
+ 进程如何同步
+ mysql索引结构，特点，为什么使用这个
+ 如果查询比较高效
+ 查询学生成绩大于等于60的所有人的姓名和编号
+ 聚集索引和非聚集索引
+ String，StringBuffer，StringBuilder区别
+ HashMap，为什么使用红黑树
+ 垃圾回收机制GC，cms，G1，垃圾回收的算法
+ TCP连接和释放
+
+ 编程题：
+ 36进制由0-9，a-z，共36个字符表示，最小为'0'
+ '0'~'9'对应十进制的0~9，'a'~'z'对应十进制的10~35
+ 例如：'1b' 换算成10进制等于 1 36^1 + 11 36^0 = 36 + 11 = 47
+ 要求按照加法规则计算出任意两个36进制正整数的和
+ 如：按照加法规则，计算'1b' + '2x' = '48'
+ 要求：不允许把36进制数字整体转为10进制数字，计算出10进制累加结果再转回为36进制
+
+
+ 二面：
+ 谈谈项目？？？
+ mongodb底层原理或者数据结构是什么，事务处理，插入和mysql有什么区别，为什么会慢
+ 类加载过程（Java），每一步做了什么
+ 子类和父类的实例变量和方法有什么区别
+ 重载和覆盖区别，返回值类型不同，可以重载吗，为什么，底层如何实现的
+ java多线程，状态图，画出来，阻塞的状态有哪几种，运行顺序，多线程的一些方法
+ java泛型
+ ThreadLocal，Concurrent下面的包，原理是什么，
+ AtomicInteger，原理是什么，如何做到高效率的，有什么优化措施
+ 悲观锁和乐观锁
+ @Transaction的原理，还有比如在一个类中两个方法，一个是B方法，一个是C方法，B上没有注解，C上有那么在外面调用B方***有事务，为什么，根据底层原理能不能推断出来（给提示问你能不能推断出来）
+ 查询学生成绩不及格的所有人的姓名和编号，根据这个语句，如何建立索引，为什么，
+ mysql底层是什么，为什么效率高，主键能不能太大，为什么，如果太大，底层数据结构会不会变化，为什么
+ linux查询tcp连接处理CLOSE_WAIT的状态的数目
+ 了不了解RabbitMQ，kafka，RocketMQ，ActiveMQ，以及其他消息中间件
+ redis为什么效率高，线程，数据结构，网络模型，aio，nio，bio，为什么这么设计？如何处理高并发
+
+ 编程题：
+ 这是一个多叉树，Node应该是这样，当时并没有给，这是我觉得是这样的，当时只给了方法和说明是多叉树
+ Node <T>{
+ T value;
+ Node[] children;
+ }
+ public Integer getValue(Node<Integer> root, int level, int index){
+ }
+ 找到第 i 层的第 index 个结点的值，如果没有，返回null，时间复杂度是多少
+
+
+ 三面：
+ 数据仓库，雪花模型和星型模型区别和用处，数据仓库的过程（分层），如何设计
+ 数据仓库和数据湖的区别
+ 分布系统的设计，分布式系统CAP，分布式系统的模型
+ linux环境下的线上业务管理 有没有，如何管理
+ redis的集合有没有限制，限制是多少
+ redis的1w条的插入和更新有什么区别
+ mysql join的底层原理是什么，有哪几种（不是左右连接这种）
+ linux命令查询一个文件内出现重复最多的数字的
+ linux命令查询一个文件的行数
+
+ 编程题：
+ 使用程序如何查询一个文件内的重复最多的次数的数字，如何高效实现，时间复杂度，空间复杂度
+ 镜像二叉树
+ 快排或堆排
+ 还一个智力，也很简单，就不写了
+
+
+
+mysql底层是什么，为什么效率高，主键能不能太大，为什么，如果太大，底层数据结构会不会变化，为什么 想请问一个楼主 ，这道题目和问mysql的索引有什么区别啊，我去百度 也都是说索引什么 不是很清楚这个题目的重点怎么回答
+
+
+
+作者：被遗忘的角落2
+链接：https://www.nowcoder.com/discuss/360337?type=2
+来源：牛客网
+
+
+
+一面
+
+手写算法 求最长子序列
+
+MySQL 索引原理 聚簇索引 auto_increment有什么好处
+
+redis数据类型
+
+redis持久化方式
+
+aof文件比较大怎么办
+
+写sql 学生成绩教师三个表、 查询平均成绩大于等于60分的同学的学生编号和学生姓名和平均成绩
+
+事物隔离级别
+
+脏读和幻读
+
+MVCC
+
+四次挥手
+
+https原理
+
+二面
+
+redis数据类型
+
+redis zset大小限制
+
+Linux查看文件第n行
+
+Linux文件系统原理
+
+类加载过程
+
+spring bean生命周期
+
+springboot启动流程
+
+springboot特点
+
+spring aop实现原理
+
+算法 求下一个大的数 半小时没写出来
+
+写sql 找出语文成绩及格平均成绩不及格的学生姓名语文成绩
+
+三面
+
+nio原理
+
+nio核心对象
+
+aio bio oio区别
+
+面相对象
+
+重载和重写
+
+堆外内存
+
+你印象最深的bug
+
+列举常用的并发工具
+
+synchronized实现原理
+
+Reentranlock底层实现
+
+垃圾回收方法
+
+类加载器
+
+手写代码 实现阻塞队列
+
+优化方案，采用reentranlock的condition实现
+
+HR
+
+自我介绍
+
+三句话总结你
+
+头条看法
+
+喜欢个人开发还是团队
+
+用过什么公公司产品
+
+加班 大小周
+
+说一下你自己的职业规划吧
 
 
 
@@ -569,9 +1121,175 @@ Java为图的映射定义了一个接口 `java.util.Map`,分为四个实现类Ha
 | Map           | 存储键值对，根据键得到值，因此不允许键重复，但允许值重复     | 适用情况                        |
 | ------------- | ------------------------------------------------------------ | ------------------------------- |
 | HashMap       | 最常用，根据键的HashCode值存储数据，根据键直接获取它的值，具有很快的访问速度。遍历时，取得数据的顺序是**完全随机**的。HashMap最多只允许一条记录的键为Null；允许多条记录的值为Null。HashMap**不支持线程的同步**，即任意时刻可以有多个线程同时写HashMap；**可能导致数据的不一致**。如果需要同步，可以用Collections的**synchronizedMap方法**使HashMap具有同步的能力；或改用**ConcurrentHashMap** | 最常用，在Map中插入删除定位元素 |
-| HashTable     | y与HashMap类似，继承自Dictionary类。不同点：**不允许记录的键和值为Null**；支持线程的同步，虽然保持了数据的一致性，但**写入时会比较慢**。 |                                 |
+| HashTable     | 与HashMap类似，继承自Dictionary类。不同点：**不允许记录的键和值为Null**；支持线程的同步，虽然保持了数据的一致性，但**写入时会比较慢**。 |                                 |
 | LinkedHashMap | HashMap的一个子类，**保存了记录的插入顺序**，在用Iterator遍历LinkedHashMap时，先得到的记录一定是先插入的，但遍历比HashMap慢。但**LinkedHashMap的遍历速度只和实际数据有关，和容量无关；HashMap的遍历速度和他的容量有关**。 | x需要输出的顺序和输入的相同     |
 | TreeMap       | 实现SortMap接口，能够把它保存的记录根据键**排序**，默认是按键值升序排序，也可以指定排序的比较器——**用Iterator遍历TreeMap时，得到的记录是排过序的**。 | 按自然顺序或自定义顺序遍历键    |
+
+#### hashMap数据结构
+
+内部维护一个数组，然后数组上维护一个单链表
+
+```java
+//此处略过其他代码，只截取出了hashMap的数组结构相关的数组与链表
+public class HashMap<K,V> extends AbstractMap<K,V>
+    implements Map<K,V>, Cloneable, Serializable {
+
+    private static final long serialVersionUID = 362498820763181265L;
+
+    /* ---------------- Fields -------------- */
+
+    /**
+     * The table, initialized on first use, and resized as
+     * necessary. When allocated, length is always a power of two.
+     * (We also tolerate length zero in some operations to allow
+     * bootstrapping mechanics that are currently not needed.)
+     */
+     //这个是hashMap内部维护的数组
+    transient Node<K,V>[] table;
+
+
+    /**
+     * Basic hash bin node, used for most entries.  (See below for
+     * TreeNode subclass, and in LinkedHashMap for its Entry subclass.)
+     */
+     //这个是数组元素的节点类，next的属性表示下一个节点，即数组的节点元素维护的下一个节点的元素，那不是就是链表吗
+    static class Node<K,V> implements Map.Entry<K,V> {
+        final int hash; //数组的脚标值，下面会详细描述这个内容
+        final K key; //map的key
+        V value; //map的value
+        Node<K,V> next; //下一个节点
+
+        Node(int hash, K key, V value, Node<K,V> next) {
+            this.hash = hash;
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
+
+        public final K getKey()        { return key; }
+        public final V getValue()      { return value; }
+        public final String toString() { return key + "=" + value; }
+
+        public final int hashCode() {
+            return Objects.hashCode(key) ^ Objects.hashCode(value);
+        }
+
+        public final V setValue(V newValue) {
+            V oldValue = value;
+            value = newValue;
+            return oldValue;
+        }
+
+        public final boolean equals(Object o) {
+            if (o == this)
+                return true;
+            if (o instanceof Map.Entry) {
+                Map.Entry<?,?> e = (Map.Entry<?,?>)o;
+                if (Objects.equals(key, e.getKey()) &&
+                    Objects.equals(value, e.getValue()))
+                    return true;
+            }
+            return false;
+        }
+    }
+```
+
+Hash值的计算
+
+```java
+	static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }
+```
+
+#### HashTable数据结构
+
+```java
+public class Hashtable<K,V>
+    extends Dictionary<K,V>
+    implements Map<K,V>, Cloneable, java.io.Serializable {
+
+    private transient Entry<?,?>[] table; //数组
+    private int threshold; //数组扩容阈值
+    private float loadFactor;
+
+	//链表实体类
+	private static class Entry<K,V> implements Map.Entry<K,V> {
+        final int hash;
+        final K key;
+        V value;
+        Entry<K,V> next;
+
+	//put方法
+	public synchronized V put(K key, V value) {
+        // Make sure the value is not null
+        if (value == null) {
+            throw new NullPointerException();
+        }
+
+ 	//remove方法
+	public synchronized V remove(Object key) {
+        Entry<?,?> tab[] = table;
+        int hash = key.hashCode();
+        int index = (hash & 0x7FFFFFFF) % tab.length;
+
+ 	//get方法
+ 	public synchronized V get(Object key) {
+        Entry<?,?> tab[] = table;
+        int hash = key.hashCode();
+        int index = (hash & 0x7FFFFFFF) % tab.length;
+        for (Entry<?,?> e = tab[index] ; e != null ; e = e.next) {
+            if ((e.hash == hash) && e.key.equals(key)) {
+                return (V)e.value;
+            }
+        }
+        return null;
+    }
+```
+
+**内部也是维护了一个数组与链表，然后在 put、get 等方法上都加上 synchronized 关键字，**那这样就能确保 HashTable 在任何场景都是线程安全的吗？
+
+#### ConCurrentHashMap数据结构
+
+```java
+//jdk1.7的ConcurrentHashMap的源码
+public class ConcurrentHashMap<K, V> extends AbstractMap<K, V>
+        implements ConcurrentMap<K, V>, Serializable {  
+    /**
+     * Mask value for indexing into segments. The upper bits of a
+     * key's hash code are used to choose the segment.
+     */
+    final int segmentMask;
+
+    /**
+     * Shift value for indexing within segments.
+     */
+    final int segmentShift;
+
+    /**
+     * The segments, each of which is a specialized hash table.
+     */
+    //Segment是继承了可重入锁的子类，所以在Segment的操作方法中，包含了tryLock、unLock等方法
+    final Segment<K,V>[] segments;
+
+    /**
+     * Segments are specialized versions of hash tables.  This
+     * subclasses from ReentrantLock opportunistically, just to
+     * simplify some locking and avoid separate construction.
+     */
+    static final class Segment<K,V> extends ReentrantLock implements Serializable {
+
+        /**
+         * The per-segment table. Elements are accessed via
+         * entryAt/setEntryAt providing volatile semantics.
+         */
+        transient volatile HashEntry<K,V>[] table;
+    }
+}
+```
+
+
 
 
 
