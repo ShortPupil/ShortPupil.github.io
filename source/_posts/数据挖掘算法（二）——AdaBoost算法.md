@@ -45,7 +45,7 @@ AdaBoost算法工作机制同上。
 2. 通过分类器Ci对数据进行分类，计算此时误差率
 3. 把上步骤中的分错的数据的权重提高，分对的权重降低，以此凸显了分错的数据。为什么这么做呢，后面会做出解释。
 
-![adaboost算法伪码](https://raw.githubusercontent.com/ShortPupil/ShortPupil.github.io/hexo/source/_posts/pictures/1335428125_1739.png)
+![adaboost算法伪码](https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/1335428125_1739.png)
 
 
 
