@@ -10,6 +10,8 @@ categories: java
 
 [TOC]
 
+
+
 $\color{#FF0000}{红}$ 
 
 
@@ -25,50 +27,6 @@ StringBuffer  StringBuild
 面向对象三大特性：多态、封装、继承
 
 重载、重写的区别
-
-
-
-
-
-- java io运用了什么设计模式。 主要运用了俩个设计模式，**适配器**和**装饰者模式**。
-- 装饰者模式：对已有的业务逻辑进一步的封装，使其增加额外的功能，如java中的IO流就使用了装饰者模式，用户在使用的时候，可以任意组装，达到自己想要的效果。；一个父类，多个子类
-- 将两种完全不同的事物联系到一起，就像现实生活中的变压器。假设一个手机充电器需要的电压是20V，但是正常的电压是220V，这时候就需要一个变压器，将220V的电压转换成20V的电压，这样，变压器就将20V的电压和手机联系起来了。
-
-策略模式、装饰模式、静态代理模式区别
-
-- 单一职责原则 、开闭原则、里氏替换原则  、依赖倒转原则、接口隔离原则、合成复用原则、迪米特原则
-
-- 单一职责原则
-
-- 开放-封闭原则
-
-- 依赖倒转原则
-
-- 策略模式通过将一些易变的计算抽象为策略实体，通过多态，让实际调用者尽可能的不用感知这种变化。
-
-  ![img](https://img2018.cnblogs.com/blog/586700/201904/586700-20190407134415807-796326898.png)
-
-- 代理模式
-
-  ![img](https://img2018.cnblogs.com/blog/586700/201904/586700-20190407134715681-747251066.png)
-
-- 装饰者模式
-
-  ![img](https://img2018.cnblogs.com/blog/586700/201904/586700-20190407134733065-2115257767.png)
-
-
-
-1. 代理模式与策略模式不同的是，代理类必须和被代理类具有相同的父类或接口，即代理类要么继承或实现被代理类的父类，要么直接记成被代理类本身。这两种情况分别对应java的jdk代理和cglib代理实现。
-
-   代理模式不是为了封装变化，而是为了隐藏实际执行者本身。
-
-2. 装饰者模式和策略模式的不同在于，原有类和装饰器类必须继承同一个父类。装饰器对象除了需要完成持有对象的操作外，还有一些附加操作，这些附加操作随着装饰器的不同而变化。持有对象本身的操作是主体，装饰器的操作是补充。而策略模式中，具体策略才是主体。
-
-3. **代理模式主要是控制对某个特定对象访问，而装饰模式主要是为了给对象添加行为**。
-
-
-
-
 
 
 
@@ -100,13 +58,103 @@ Spring**容器**来实现这些相互依赖对象的创建、协调工作。对�
 ##### 理解ioc：
 
 - 解耦：假如要输出各种各样的东西，比如各种操作信息、教程、日志等等，如果都堆在一个类里面，
-- 对象生命周期管理：
+
+- 对象生命周期管理
+
+- ```java
+  public class PersonServiceBean{
+      private PersonDao personDao = new PersonDaoBean();
+      public void save(Person person){
+          personDao.save(person);
+      }
+  }
+  ```
+
+- PersonDaoBean 是在应用内部创建及维护的。所谓控制反转就是**应用本身不负责依赖对象的创建及维护，依赖对象的创建及维护是由外部容器负责的。**这样控制权就由应用转移到了外部容器，控制权的转移就是所谓反转。
+
+- [解耦是什么](<https://blog.csdn.net/HRZIT/article/details/77450549>)
+
+  - 例子 函数输出
+
+  - ```java
+    //输出生成器接口
+    public interface IOutputGenerator{
+        public void generateOutput();
+    }
+    
+    //一个csv输出生成器用来实现IOutputGenator接口
+    public class CsvOutputGenerator implements IOutputGenerator
+    {
+    	public void generateOutput(){
+    		System.out.println("Csv Output Generator");
+    	}
+    }
+    
+    //一个JSON输出生成器用来实现IOutputGenerator接口
+    public class JsonOutputGenerator implements IOutputGenerator
+    {
+    	public void generateOutput(){
+    		System.out.println("Json Output Generator");
+    	}
+    }
+    ```
+
+  - 直接调用、辅助类调用都不行
+
+  - Spring依赖注入DI的调用
+
+    ```java
+    public class OutputHelper{
+    	IOutputGenerator outputGenerator;
+    	
+    	public void generateOutput(){
+    		outputGenerator.generateOutput();
+    	}
+    	
+    	public void setOutputGenerator(IOutputGenerator outputGenerator){
+    		this.outputGenerator = outputGenerator;
+    	}
+    }
+    ```
+
+    ```xml
+    <!-- Spring-Common.xml -->
+    <beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    
+    	<bean id="OutputHelper" class="com.yiibai.output.OutputHelper">
+    		<property name="outputGenerator" ref="CsvOutputGenerator" />
+    	</bean>
+    	
+    	<bean id="CsvOutputGenerator" class="com.yiibai.output.impl.CsvOutputGenerator" />
+    	<bean id="JsonOutputGenerator" class="com.yiibai.output.impl.JsonOutputGenerator" />
+    		
+    </beans>
+    ```
+
+    ```java
+    public class App 
+    {
+        public static void main( String[] args )
+        {
+        	ApplicationContext context = 
+        	   new ClassPathXmlApplicationContext(new String[] {"Spring-Common.xml"});
+    
+        	OutputHelper output = (OutputHelper)context.getBean("OutputHelper");
+        	output.generateOutput();
+        	  
+        }
+    }
+    ```
+
 
 
 
 #### 依赖注入DI
 
-注意是应用的工厂模式
+在运行期，由外部容器动态地将依赖对象注入到组件中
 
 - **没有用依赖注入**：每个POJO（简单的java对象）在创建时候会主动去获取依赖。在代码上就是一个雷中有实例化另一个类的对象。
 - **三种依赖注入方法**：setter方法注入、构造器注入、接口注入
@@ -295,7 +343,7 @@ Spring 支持 @Aspectj注解 的方法和基于配置的方法来实现自定义
   - 连接点：应用执行时能够插入切面的点
   - 切点：匹配其中一个或多个连接点
 
-![](https://gitee.com/songzi2625/resources/raw/master/image/AOP.png)
+![](https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/AOP.png)
 
 ```java
 //行为类
@@ -762,6 +810,17 @@ HR
 
 
 
+- 默认端口号
+  - http服务器：80
+  - https服务器：443/tcp, 443/udp
+  - FTP协议代理服务器：21
+  - telnet协议代理服务器：23
+  - ssh、scp、端口号重定向默认：22
+  - smtp默认端口号：25
+  - pop3：110
+
+
+
 ### **数据库**
 
 - 数据库常用的操作
@@ -978,14 +1037,43 @@ HR
 
 操作系统我觉得常问的也就那几个问题，一般面试官自己对于操作系统底层也不是特别懂，我这里只说几个常被问的。
 
-- 进程和线程的区别是什么？
-  这个问题基本上已经被问烂了，你肯定得会的。进程是CPU分配资源的最小单元，线程是CPU调度的基本单元、一个进程可以包含多个线程、巴拉巴拉。如果你觉得这个概念在你心里不是特别清楚的话，一定要到网上看一下，最好能够理解为什么有些时候要使用线程不使用进程。因为进程启动的时候cpu需要给他分配资源，对系统压力比进程大，你可以把线程看成是轻量级的进程。
+进程和线程的区别是什么？
+
+- 这个问题基本上已经被问烂了，你肯定得会的。进程是CPU分配资源的最小单元，线程是CPU调度的基本单元、一个进程可以包含多个线程、巴拉巴拉。如果你觉得这个概念在你心里不是特别清楚的话，一定要到网上看一下，最好能够理解为什么有些时候要使用线程不使用进程。因为进程启动的时候cpu需要给他分配资源，对系统压力比进程大，你可以把线程看成是轻量级的进程。
+
+- 线程**拥有自己独立的栈**，因此也有自己独立的局部变量。
+- 线程间是**共享全局变量**的；这说明线程间是**不共享局部变量**的（有趣的是可以通过指针直接访问另个一个线程的局部变量，这也不奇怪，图1可知多个线程虽然都有自己的栈区域，但总体上都是在进程的栈中）。
+- 因为**进程间PCB是各自独立的**，而**线程间进程的PCB是共享的**。因为线程间是共享全局变量的，这说明了线程间的虚拟地址空间是一样的，pthread_create函数底层也复制了一份一模一样的PCB，所以说一个线程修改了数据空间的数据的话，其他线程都会因此受到影响。
+
+
+
+线程同步机制：Java平台提供的线程同步机制包括**锁**、**volatile关键字**、**final关键字**、**static关键字**和**一些相关的API**，如Object.wait( )/.notify( )等
 
 
 
 
+同步和异步的区别：与**消息通信机制**有关
 
-- 进程间通信的方式有什么？线程间通信的方式有什么？
+- 同步：在发出一个调用时，在没有得到结果之前，该调用就不返回。但是一旦调用返回，就得到返回值了。也就是**调用者主动等待这个调用的结果**。
+- 异步：调用在发出之后，这个调用就直接返回了，所以没有返回结果。也就是，当一个异步过程调用发出后，调用者不会立即得到结果。而是在调用发出后，被调用者通过状态、通知来通知调用者。或者通过回调函数处理这个调用。
+- 你打电话问书店老板有没有《分布式系统》这本书，如果是同步通信机制，书店老板会说，你稍等，”我查一下"，然后开始查啊查，等查好了（可能是5秒，也可能是一天）告诉你结果（返回结果）。
+  而异步通信机制，书店老板直接告诉你我查一下啊，查好了打电话给你，然后直接挂电话了（不返回结果）。然后查好了，他会主动打电话给你。在这里老板通过“回电”这种方式来回调。
+
+
+
+
+阻塞和非阻塞的区别：**程序在等待调用结果（消息、返回值）时的状态**
+
+- 阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。
+- 非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。
+- 你打电话问书店老板有没有《分布式系统》这本书，你如果是阻塞式调用，你会一直把自己“挂起”，直到得到这本书有没有的结果，如果是非阻塞式调用，你不管老板有没有告诉你，你自己先一边去玩了， 当然你也要偶尔过几分钟check一下老板有没有返回结果。
+  在这里阻塞与非阻塞与是否同步异步无关。跟老板通过什么方式回答你结果无关
+- 
+
+
+
+进程间通信的方式有什么？线程间通信的方式有什么？
+
 - 管道
 - FIFO 命名管道
 - 消息队列
@@ -1090,6 +1178,253 @@ public boolean equals(Object anObject){
 ```
 
 这提醒我们在构造自己的对象class且需要使用euqals比较时，不能直接继承自Object，而应该尽量**按需求重写**。
+
+
+
+java八大类型、每个类型占的字节
+
+- 整数型 四种
+  - byte: 8
+  - short: 16
+  - int: 32
+  - long：64
+- 浮点型 两种
+  - float: 32
+  - double: 64
+- 字符型
+  - char: 16
+- 布尔型
+  - boolean: 1
+
+8 byte, 16 short char, 32 int float, 64 long double
+
+
+
+String类的api
+
+- **构造**方法：String(**Strng original**); String(**char [] value**); String(**char[] value, int index, int count**)
+- **判断**功能：boolean equals(Object obj); boolean equalsIgnoreCase(String str); boolean startsWith(String str); boolean endsWith(String str)
+- **获取**功能：int length(); char charAt(int index); int indexOf(String str); String substring(int start); String substring(int start, int end);
+- **转换**功能：char[] toCharArray(); String toLowerCase(); String toUpperCase();
+- **去空格**功能：String trim();
+- **分割**功能：String[] split(String str);
+
+
+
+抽象类和普通类的区别
+
+- 抽象类不能被实例化
+
+- 抽象类可以有构造函数，被继承时子类必须继承父类一个构造方法，抽象方法不能声明为静态
+
+- 抽象方法只需要声明，不需要实现，**抽象类中可以允许普通方法有主体**——也就是抽象类中允许方法有实现
+
+- 含有抽象方法的类必须声明为抽象类
+
+- 抽象的子类必须实现抽象类中所有抽象方法，否则该类也是抽象类
+
+- ```java
+  public abstract class Animal{ //抽象类
+      private String name;
+      //抽象方法
+      public abstract void eat();
+      public String getName(){
+          return name;
+      }
+      public void setName(String name){
+          this.name = name;
+      }
+      public final class Cat extends Animal{ //final修饰类，断子绝孙；修饰方法，无法被子类重写；修饰引用，基本数据类型，无法修改，引用数据类型，该对象或数组的地址的引用不能修改，成员变量必须当场赋值
+          @Override
+          public void eat(){
+              System.out.println("猫");
+          }
+      }
+  }
+  ```
+
+- 
+
+
+
+重载与返回值无关：java虚拟机并不知道你要赋给的是String型的方法还是int型的方法，所以重载跟返回值无关。
+
+
+
+**char和varchar的区别**
+
+1. char的长度是不可变的，varchar的长度是可变的，
+2. 定义一个char[10]和varchar[10],如果存进去的是‘abcd’,那么char所占的长度依然为10，除了字符‘abcd’外，后面跟六个空格，而varchar就立马把长度变为4了，**取数据的时候，char类型的要用trim()去掉多余的空格**，而varchar是不需要的，
+3. char的存取速度还是要比varchar要快得多，因为其长度固定，方便程序的存储与查找；但是char也为此付出的是空间的代价，因为其长度固定，所以难免会有多余的空格占位符占据空间，可谓是**以空间换取时间效率，**而varchar是以空间效率为首位的。
+4. char的存储方式是，对英文字符（ASCII）占用1个字节，对一个汉字占用两个字节；而varchar的存储方式是，对每个英文字符占用2个字节，汉字也占用2个字节，两者的存储数据都**非unicode**的字符数据。
+
+
+
+### 泛型
+
+- java泛型是什么？使用泛型的好处是什么？
+
+  - 编译器的类型安全，确保只能把正确类型的对象放进集合，避免运行中出现ClassCastException；因为在集合存储对象并在使用前进行类型转换很不方便
+
+- 泛型如何工作？什么是类型擦除？
+
+  - 泛型通过**类型擦除**来实现，**编译器在编译时擦除了所有类型相关信息**，所以运行时候不存在任何类型相关的信息。如List<String>在运行时候仅用一个List来表示，无法在运行时访问到类型参数，因为编译器已经把泛型类型转化成了该类型的上限
+
+  - ```java
+    List<String> list = new ArrayList<>();
+    
+    //类型被擦除了，保留的是类型的上限，String的上限就是Object
+    List list1 = list;
+    ```
+
+  - 
+
+- 如何编写一个泛型方法，让他能接受泛型参数并返回泛型类型
+
+  - T, E or K, V
+
+  - ```java
+    public V put(K key, V value){
+        return cache.put(key, value);
+    }
+    ```
+
+  - 
+
+- 如何使用泛型编写带有参数的类?
+
+  - ```java
+    public class TwoGen<T, V> { //指定类型参数，需要用逗号分隔参数列表
+        private T ob1;
+        private V ob2;
+        public TwoGen(T o1,V o2) {
+            ob1 = o1;
+            ob2 = o2;
+        }
+    }
+    
+    
+    ```
+
+- 泛型程序来实现LRU缓存
+
+  - ```java
+    //LRU Cache的linkedHashMap实现
+    public LRUCache<K, V> extends LinkedHashMap<K, v>{
+        private int cacheSize;
+        
+        public LRUCache(int cacheSize){
+        	super(16, 0.75, true);
+            this.cacheSize = cacheSize;
+        }
+        
+        protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
+            return size() >= cacheSize;
+        }
+    }
+    ```
+
+- 可以把List传递给一个接受List参数的方法吗
+
+  - 编译错误。`List<Object>`可以存储任何类型的对象包括String, Integer等，`List<String>`却只能存储String
+
+  - ```java
+    List<Object> objectList;
+    List<String> stringList;
+    objectList = stringList; //compilation error incompatible types
+    ```
+
+- Array不支持泛型，所以建议用List代替Array，List可以提供编译期的类型安全保证
+
+- 如何阻止Java中类型未检查的警告？
+
+
+### 异常
+
+结构：
+
+```java
+try{
+    //程序代码块
+}catch(Exceptiontype1变量类型 e变量名){
+	//对Exceptiontype1的处理
+}catch(Exceptiontype2 e){
+	//对Exceptiontype2得处理
+}finally{
+	//程序块
+}
+```
+
+finally: 异常处理结构的最后执行部分; 包含finally就是无论try-catch语句块代码是否顺利执行，都会执行finally
+
+**自定义异常**：
+
+1. 创建自定义异常类
+2. 在方法中通过throw关键字抛出异常对象
+3. 如果在当时抛出异常的方法中处理异常，可以使用try-catch语句块捕获并处理，否则在方法的声明处通过throws关键字指明要抛出方法调用者的异常，继续进行下一个操作。
+4. 在出现异常方法的调用者中捕获并处理异常
+
+```java
+public class MyException extends Exception{
+    public MyException(String ErrorMessage){
+        super(ErrorMessage);
+    }
+}
+```
+
+自定义异常可以抛出吗:*自定义异常可以抛出*我们自己想要抛出的信息
+
+
+
+### 集合类 ArrayList LinkedList区别
+
+![](https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E9%9B%86%E5%90%88%E7%B1%BB.jpg)
+
+ArrayList: <https://blog.csdn.net/weixin_42468526/article/details/81178698>
+
+LinkedList: 
+
+HashSet
+
+TreeSet
+
+HashMap
+
+TreeMap
+
+
+
+### 线程状态 五种
+
+- 新建 new：新建线程
+- 可运行 runnable：线程在**可运行线程池**，等待被线程调用选中
+- 运行 running：线程获取时间片，执行
+- 阻塞 blocked：线程因故放弃cpu使用权，要再次成为runnable态
+  - 等待阻塞
+  - 同步阻塞
+  - 其他阻塞
+- 死亡 dead：线程run() main()结束，线程死亡
+
+
+
+### 死锁
+
+竞争资源或彼此通信造成阻塞
+
+四个产生条件：互斥条件、请求和保持条件：占了一直占、不可剥夺条件：占了不能抢、环路等待条件：资源相互占用
+
+避免死锁：银行家算法
+
+检测死锁：
+
+
+
+### 一致性哈希算法 明天
+
+
+
+### cookies session生命周期
+
 
 
 
@@ -1468,13 +1803,19 @@ volatile关键字是用来保证**有序性**和**可见性**。这与Java内存
 
 ## 面向对象
 
+“万物皆对象”，任何物体都可以归为一类事物，每一个个体都是一类事物的实例。面向对象的编程是以对象为中心，以**消息（软件对象通过相互间传递消息来通信；包括接受消息的对象、接受对象要采取的方法、方法需要的参数）**为驱动，程序=对象+消息
+
+
+
 ### 1. Java特性
 
-封装
+封装：把事物的属性和行为抽象为一个类，使其属性私有化、行为公开化、提高数据隐秘性同时，使代码模块化
 
-继承
+继承：共有的属性和行为抽象成父类，子类是一个特殊的父类，提高复用性
 
-多态：允许不同类的对象对同一消息做出响应。即同一消息可以根据发送对象的不同而采用不同的行为方式。（发送消息就是函数调用）
+**多态**：**接口重用**；允许不同类的对象对同一消息做出响应。即同一消息可以根据发送对象的不同而采用不同的行为方式。（发送消息就是函数调用）；多态一大作用是解耦，允许父类引用（或接口）指向子类（或实现类）对象。
+
+
 
 
 
@@ -1482,9 +1823,45 @@ volatile关键字是用来保证**有序性**和**可见性**。这与Java内存
 
 String属于不可变对象：**一个对象的状态在对象被创建之后就不再变化**。即不能改变对象内的成员变量，包括基本数据类型的值不能改变，引用类型变量不能指向其他的对象，引用类型指向的对象的状态也不能改变。
 
+每次对String类型进行改变都是**生成一个新的String对象**，然后指针指向新的String，所以经常改变内容的字符串最好不要用String，这样会产生很多无引用对象。
+
 String不能被继承，char数据用final修饰
 
-StringBuffer线程安全，StringBuffer线程不安全，底层实现上，StringBuffer其实就是比StringBuilder多了synchronized修饰符。
+**StringBuffer线程安全**，一个类似String的字符缓冲区，但不能修改，**StringBuffer线程不安全**，底层实现上，StringBuffer其实就是比StringBuilder多了synchronized修饰符。主要方法`append`, `insert`
+
+对StringBuffer对象本身进行操作，而不**是生成新的对象**，再改变对象引用。某些特别情况下，String对象是字符串拼接其实是被JVM解释成StringBuffer对象的拼接。
+
+以下情况String效率远比StringBuffer快的
+
+```java
+String S1 = "this is" + "simple";//因为这个等同于“this is simple”
+StringBuffer sb = new StringBuffer("this is").append("simple");
+```
+
+但是以下情况String速度不会那么快
+
+```java
+Stirng str2 = "how"; String str3 = "are"; String str4 = "you";
+String str1 = str2+str3+str4;
+```
+
+大部分StringBuffer > String
+
+
+
+在大部分情况下 **StringBuilder（线程不安全） > StringBuffer（线程安全）**
+
+java.lang.StringBuilder算是StringBuffer的一个简易替换，用在字符串缓冲区被单个线程使用时。如果可以没建议有限采用此类，因为在大多数实现中它比StringBuffer快。
+
+StringBuilder一般使用在方法内部来完成类似"+"功能，因为是线程不安全的,所以用完以后可以丢弃。StringBuffer要用在全局变量中。
+
+#### 总结
+
+- 如果你偶尔对简单的字符串常量进行拼接，那么可以使用String，它足够简单而且轻量级；
+- 如果你需要经常进行字符串的拼接、累加操作，请使用StringBuffer或StringBuilder；
+- 如果是在单线程的环境中，建议使用StringBuilder，它要比StringBuffer快；如果是在多线程的环境中，建议使用StringBuffer，它是线程安全的；
+
+因此，StringBuilder实际上是我们的**首选**，只有在**多线程**时才可以考虑使用StringBuffer，只有在**字符串的拼接**足够简单时才使用String。
 
 
 
@@ -1523,7 +1900,24 @@ StringBuffer线程安全，StringBuffer线程不安全，底层实现上，Strin
 
    **调用方法时通过传递给它们的不同参数个数和参数类型来决定具体使用哪个方法**，这就是多态性。
 
-3. 重载的时候，**方法名要一样，但参数类型和个数不一样，返回值类型可以相同or不同**。无法以返回类型作为重载函数的区分标准。
+3. 重载的时候，**方法名要一样，但参数类型和个数不一样，返回值类型可以相同or不同**。**无法以返回类型作为重载函数的区分标准。**
+
+   ```java
+   public View(Context context, AttributeSet attrs , int defStyle){
+       super(context, attrs, defStyle);
+       initView();
+   }
+   public View(Context context, AttributeSet attrs){
+       super(context, attrs);
+       initView();
+   }
+   public View(Context context){
+       super(context);
+       initView();
+   }
+   
+   ```
+
 
 **重写Overriding**
 
@@ -1640,11 +2034,11 @@ public class CovariantArrays {
 
 - 接口所有方法隐含的都是抽象的。而抽象类则可以同时包含抽象和非抽象方法
 - 类可以实现很多个接口，但只能继承一个抽象类
-- 类可以不实现抽象类合和接口声明的所有方法，此时类也应当是抽象的。
+- 类可以不实现抽象类和接口声明的所有方法，此时类也应当是抽象的。
 - 抽象类可以在不提供接口方法实现的情况下实现接口
 - Java接口中声明的变量默认都是final的。抽象类可以包含非final变量
 - Java接口中成员函数默认是public的。抽象类的成员函数可以是private、protected或者public
-- 接口是绝对抽象的，不可被实例化。抽象类也不可被实例化，但是若包含main方法则可以被调用
+- 接口是绝对抽象的，不可被实例化。**抽象类也不可被实例化，但是若包含main方法则可以被调用**
 
 
 
@@ -1665,12 +2059,25 @@ Java提供了包含compare()和equals()两个方法的Comparator接口
 
 #### 2. 继承
 
-一种连接类的层次模型，并且允许和鼓励类的重用。提供了一种明确表述共性的方法。
+一种连接类的层次模型，并且允许和鼓励类的**重用**。提供了一种明确表述共性的方法。
 
-对象的一个新类可以从现有的类中派生，这个过程称为类继承。新类继承了原始类的特性，新类称为原始类的子类，原始类称为新类的父类。
+对象的一个新类可以从现有的类中派生，这个过程称为类继承。新类继承了原始类的特性，新类称为原始类的子类，原始类称为新类的父类。派生类可以从基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要。
 
 #### 3. 封装
 
-
+把过程和数据包围起来，对数据的访问只能通过已定义的界面。面向对象也就是基于这个改变，现实世界被描绘成一系列自治、封装的对象，这些对象通过一个受保护的接口访问其他对象。
 
 #### 4. 多态性
+
+允许不同类的对象对同一个消息进行响应。多态性里面包含了参数多态性、包含多态性。灵活、抽象、代码共享、行为共享，解决应用程序函数同名问题。
+
+返回值：虚拟机不知道他返回什么
+
+
+
+## Linux
+
+-rf：
+
+- -r或-R：递归处理，将指定目录下的所有文件与子目录一并处理；
+- -f：强制删除文件或目录；

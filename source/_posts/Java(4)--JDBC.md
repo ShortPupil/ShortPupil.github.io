@@ -8,6 +8,12 @@ categories: java
 
 @[toc]
 
+#### 事务四大特性
+
+ACID：Atomicity原子性、consistency 一致性、isolation 隔离性、durability 持久性
+
+
+
 ## 数据库
 
 ### 1. 垂直切分、水平切分
@@ -24,6 +30,20 @@ categories: java
 
 
 
+### 一些小问题
+
+#### 如何查看sql语句执行效率
+
+使用explain 命令 `explain select … from … [where ...]`
+
++----+-------------+-------+-------+-------------------+---------+---------+-------+------+-------+
+
+| id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
+
++----+-------------+-------+-------+-------------------+---------+---------+-------+------+-------+
+
+
+
 ### 2. 数据库索引
 
 索引：**对数据库表的一列或多列的值进行排序的结构**，使用索引可以快速访问数据库表中的特定信息。
@@ -33,6 +53,12 @@ categories: java
 注意事项：B+树实现，没有遵循最左匹配原则，一些关键字会导致索引失效——`or` `!=` `not in` `is null` `is not null`， like查询是用%开头， 隐式转换会导致索引失效
 
 InnoDB主要面向在线事务处理OLTP的应用。MyISAM主要面向一些OLAP应用。
+
+#### 最左匹配原则
+
+<https://www.cnblogs.com/u013533289/p/11695122.html>
+
+针对联合索引，最左有限，以最左边的为起点任何连续的索引都能匹配，但遇到范围查询(>, <, between, like)就会停止查询
 
 
 
@@ -45,7 +71,7 @@ InnoDB主要面向在线事务处理OLTP的应用。MyISAM主要面向一些OLAP
 
 ### 4. 数据库隔离级别
 
-| 隔离级别                   | 脏读（Dirty Read） | 不可重复读（NonRepeatable Read） | 幻读（Phantom Read） |
+| 四个隔离级别\三个问题      | 脏读（Dirty Read） | 不可重复读（NonRepeatable Read） | 幻读（Phantom Read） |
 | -------------------------- | ------------------ | -------------------------------- | -------------------- |
 | 未提交读(Read uncommitted) | Y                  | Y                                | Y                    |
 | 已提交读(Read committed)   | N                  | Y                                | Y                    |
@@ -236,7 +262,6 @@ select * from users where age between 10 and 30; # 事务A
    conn.prepareStatement(sql);
    ```
 
-   
 
 ### 1. 反射
 
@@ -290,6 +315,17 @@ JDBC只是面向关系数据库(RDBMS)；JDO更通用，提供到任何数据底
 **用空间换时间**：结果集（ResultSet）对象的setFetchSize() 方法指定每次抓取的记录数；
 
 提升**更新数据的性能**：可以用PreparedStatement语句构建批处理，将若干sql语句置于一个批处理执行
+
+
+
+### 如何预防sql注入，有几种方式呢
+
+<https://www.cnblogs.com/baizhanshi/p/6002898.html>
+
+- jdbc方式查询，用PreparedStatement，不要拼接字符串
+- hibernate查询，用name:parameter `
+- 正则表达式过滤传入的参数 
+- 字符串过滤
 
 
 
