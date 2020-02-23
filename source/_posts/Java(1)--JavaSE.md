@@ -12,8 +12,6 @@ categories: java
 
 
 
-$\color{#FF0000}{红}$ 
-
 
 
 ## 记录
