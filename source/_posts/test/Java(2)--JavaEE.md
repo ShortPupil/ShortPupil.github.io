@@ -416,6 +416,8 @@ ORM object relational mapping：用元数据来描述对象与关系映射的细
    
    ```
 
+   
+
 2. **hibernate.cfg.xml文件作为配置文件**
 
 
