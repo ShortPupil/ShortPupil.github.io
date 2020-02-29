@@ -72,8 +72,6 @@ select ... where to_days(current_date) - to_days(date_col) <= 10;
 
 并非一种单独的索引类型，而是一种数据存储方式。InnoDB的聚簇索引在同一个结构中保存了B-Tree索引和数据行。
 
-![1540904104771](/tmp/1540904104771.png)
-
 
 
 
