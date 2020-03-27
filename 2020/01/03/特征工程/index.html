@@ -128,18 +128,18 @@
 
 
 
-<meta name="description" content="特征选择从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果。  filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性 优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。 缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。   wrapper（封装器）和Embeded(集成方法)">
+<meta name="description" content="特征选择 从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果。  filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性  优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。 缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。   wrapper（封装器）和Embeded(集成">
 <meta name="keywords" content="data mining">
 <meta property="og:type" content="article">
 <meta property="og:title" content="特征工程">
 <meta property="og:url" content="https://songzi.info/2020/01/03/特征工程/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="特征选择从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果。  filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性 优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。 缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。   wrapper（封装器）和Embeded(集成方法)">
+<meta property="og:description" content="特征选择 从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果。  filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性  优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。 缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。   wrapper（封装器）和Embeded(集成">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-03-27T17:44:48.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="特征工程">
-<meta name="twitter:description" content="特征选择从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果。  filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性 优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。 缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。   wrapper（封装器）和Embeded(集成方法)">
+<meta name="twitter:description" content="特征选择 从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果。  filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性  优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。 缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。   wrapper（封装器）和Embeded(集成">
 
 
 
@@ -467,27 +467,32 @@
       
 
       
-        <h3><span id="特征选择">特征选择</span></h3><p><strong>从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果</strong>。</p>
+        <h3><span id="特征选择"> 特征选择</span></h3>
+<p><strong>从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果</strong>。</p>
 <ul>
-<li>filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性<ul>
+<li>filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性
+<ul>
 <li>优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。</li>
 <li>缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。</li>
 </ul>
 </li>
-<li>wrapper（封装器）和Embeded(集成方法)<ul>
+<li>wrapper（封装器）和Embeded(集成方法)
+<ul>
 <li>优点是考虑了特征与特征之间的关联性</li>
 <li>缺点是当观测数据较少时容易过拟合，而当特征数量较多时,计算时间又会增长。</li>
 </ul>
 </li>
 <li>Embeded集成方法</li>
 </ul>
-<h3><span id="特征提取">特征提取</span></h3><p><strong>自动地构建新的特征，将原始特征转换为一组具有明显物理意义（Gabor、几何特征[角点、不变量]、纹理[LBP HOG]）或者统计意义或核的特征</strong>。</p>
+<h3><span id="特征提取"> 特征提取</span></h3>
+<p><strong>自动地构建新的特征，将原始特征转换为一组具有明显物理意义（Gabor、几何特征[角点、不变量]、纹理[LBP HOG]）或者统计意义或核的特征</strong>。</p>
 <ul>
 <li>PCA (Principal component analysis，主成分分析)</li>
 <li>ICA (Independent component analysis，独立成分分析)</li>
 <li>LDA （Linear Discriminant Analysis，线性判别分析）</li>
 </ul>
-<h3><span id="特征构建">特征构建</span></h3><p><strong>从原始数据中人工的构建新的特征</strong></p>
+<h3><span id="特征构建"> 特征构建</span></h3>
+<p><strong>从原始数据中人工的构建新的特征</strong></p>
 
       
     </div>
@@ -644,7 +649,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -655,7 +660,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -666,7 +671,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -775,7 +780,7 @@
 </div>
 
 <div class="theme-info">
-  <span class="post-count">Total Words:109.5k</span>
+  <span class="post-count">Total Words:107.5k</span>
 </div>
 
 

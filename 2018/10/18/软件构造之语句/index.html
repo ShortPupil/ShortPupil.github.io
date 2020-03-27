@@ -128,18 +128,18 @@
 
 
 
-<meta name="description" content="补：指针构造技巧按照正确的顺序删除链表中的指针可以先新后旧 不要吝啬指针变量的使用、要专建专用避免之争的强制类型转换错误示范123int a = l;int *p = &amp;amp;a;float *p1 = (float*)p; 删除和释放指针指针、动态内存…　　悬空指针、二次释放 123Assert(NULL!=pointers, &amp;quot;...&amp;quot;);delete pointers;">
+<meta name="description" content="补：指针构造技巧  按照正确的顺序删除链表中的指针 可以先新后旧  不要吝啬指针变量的使用、要专建专用  避免之争的强制类型转换 错误示范 123int a = l;int *p = &amp;amp;a;float *p1 = (float*)p;  删除和释放指针 指针、动态内存…　　悬空指针、二次释放 123Assert(NULL!=pointers, &amp;quot;...&amp;quot;);delet">
 <meta name="keywords" content="software">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软件构造之语句">
 <meta property="og:url" content="https://songzi.info/2018/10/18/软件构造之语句/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="补：指针构造技巧按照正确的顺序删除链表中的指针可以先新后旧 不要吝啬指针变量的使用、要专建专用避免之争的强制类型转换错误示范123int a = l;int *p = &amp;amp;a;float *p1 = (float*)p; 删除和释放指针指针、动态内存…　　悬空指针、二次释放 123Assert(NULL!=pointers, &amp;quot;...&amp;quot;);delete pointers;">
+<meta property="og:description" content="补：指针构造技巧  按照正确的顺序删除链表中的指针 可以先新后旧  不要吝啬指针变量的使用、要专建专用  避免之争的强制类型转换 错误示范 123int a = l;int *p = &amp;amp;a;float *p1 = (float*)p;  删除和释放指针 指针、动态内存…　　悬空指针、二次释放 123Assert(NULL!=pointers, &amp;quot;...&amp;quot;);delet">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-03-27T17:44:48.800Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软件构造之语句">
-<meta name="twitter:description" content="补：指针构造技巧按照正确的顺序删除链表中的指针可以先新后旧 不要吝啬指针变量的使用、要专建专用避免之争的强制类型转换错误示范123int a = l;int *p = &amp;amp;a;float *p1 = (float*)p; 删除和释放指针指针、动态内存…　　悬空指针、二次释放 123Assert(NULL!=pointers, &amp;quot;...&amp;quot;);delete pointers;">
+<meta name="twitter:description" content="补：指针构造技巧  按照正确的顺序删除链表中的指针 可以先新后旧  不要吝啬指针变量的使用、要专建专用  避免之争的强制类型转换 错误示范 123int a = l;int *p = &amp;amp;a;float *p1 = (float*)p;  删除和释放指针 指针、动态内存…　　悬空指针、二次释放 123Assert(NULL!=pointers, &amp;quot;...&amp;quot;);delet">
 
 
 
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  684
+                  687
                 </span>
               
 
@@ -467,51 +467,88 @@
       
 
       
-        <h1><span id="补指针构造技巧">补：指针构造技巧</span></h1><h2><span id="按照正确的顺序删除链表中的指针">按照正确的顺序删除链表中的指针</span></h2><p>可以先新后旧</p>
-<h2><span id="不要吝啬指针变量的使用-要专建专用">不要吝啬指针变量的使用、要专建专用</span></h2><h2><span id="避免之争的强制类型转换">避免之争的强制类型转换</span></h2><p>错误示范<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a = l;</span><br><span class="line">int *p = &amp;a;</span><br><span class="line">float *p1 = (float*)p;</span><br></pre></td></tr></table></figure></p>
-<h2><span id="删除和释放指针">删除和释放指针</span></h2><p>指针、动态内存…　　悬空指针、二次释放</p>
+        <h1><span id="补指针构造技巧"> 补：指针构造技巧</span></h1>
+<h2><span id="按照正确的顺序删除链表中的指针"> 按照正确的顺序删除链表中的指针</span></h2>
+<p>可以先新后旧</p>
+<h2><span id="不要吝啬指针变量的使用-要专建专用"> 不要吝啬指针变量的使用、要专建专用</span></h2>
+<h2><span id="避免之争的强制类型转换"> 避免之争的强制类型转换</span></h2>
+<p>错误示范</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a = l;</span><br><span class="line">int *p = &amp;a;</span><br><span class="line">float *p1 = (float*)p;</span><br></pre></td></tr></table></figure>
+<h2><span id="删除和释放指针"> 删除和释放指针</span></h2>
+<p>指针、动态内存…　　悬空指针、二次释放</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Assert(NULL!=pointers, &quot;...&quot;);</span><br><span class="line">delete pointers;</span><br><span class="line">point = NULL;</span><br></pre></td></tr></table></figure>
-<p>删除变量之前检查非法指针<br>在删除或释放指针后把他们设为NULL</p>
-<h2><span id="cs-auto_ptr">c++’s AUTO_PTR</span></h2><p><a href="http://https://en.cppreference.com/w/cpp/memory/auto_ptr" target="_blank" rel="noopener">智能指针</a></p>
+<p>删除变量之前检查非法指针<br>
+在删除或释放指针后把他们设为NULL</p>
+<h2><span id="cs-auto_ptr"> c++'s AUTO_PTR</span></h2>
+<p><a href="http://https://en.cppreference.com/w/cpp/memory/auto_ptr" target="_blank" rel="noopener">智能指针</a></p>
 <p>注意：拷贝和赋值会转移指针所有权</p>
 <hr>
-<h1><span id="语句-statement">语句　statement</span></h1><p><strong>正确性</strong>、<strong>可读性</strong>、<strong>可维护性</strong></p>
-<h2><span id="条件语句">条件语句</span></h2><h3><span id="首先写正常路径">首先写正常路径</span></h3><h3><span id="检查最后一位else">检查最后一位<code>else</code></span></h3><h3><span id="检查等量的分支">检查等量的分支</span></h3><h3><span id="if后跟一个有意义的子句"><code>if</code>后跟一个有意义的子句</span></h3><h3><span id="布尔函数的策略"><strong>布尔函数</strong>的策略</span></h3><p>——例如，短路求值：c++和java以下是正确的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">while(i &lt; MAX_ELEMENTS and item[i] &lt;&gt; 0)</span><br></pre></td></tr></table></figure></p>
-<p>利用短路求值的判断<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if((debominator != 0 &amp;&amp; ((item / denominator) &gt; MIN_VALUE))...</span><br></pre></td></tr></table></figure></p>
+<h1><span id="语句-statement"> 语句　statement</span></h1>
+<p><strong>正确性</strong>、<strong>可读性</strong>、<strong>可维护性</strong></p>
+<h2><span id="条件语句"> 条件语句</span></h2>
+<h3><span id="首先写正常路径"> 首先写正常路径</span></h3>
+<h3><span id="检查最后一位else"> 检查最后一位<code>else</code></span></h3>
+<h3><span id="检查等量的分支"> 检查等量的分支</span></h3>
+<h3><span id="if后跟一个有意义的子句"> <code>if</code>后跟一个有意义的子句</span></h3>
+<h3><span id="布尔函数的策略"> <strong>布尔函数</strong>的策略</span></h3>
+<p>——例如，短路求值：c++和java以下是正确的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">while(i &lt; MAX_ELEMENTS and item[i] &lt;&gt; 0)</span><br></pre></td></tr></table></figure>
+<p>利用短路求值的判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if((debominator != 0 &amp;&amp; ((item / denominator) &gt; MIN_VALUE))...</span><br></pre></td></tr></table></figure>
 <p>效率用上面的写法，保证正确性的写法是使用嵌套例子</p>
-<h3><span id="问题深层嵌套-避免的方法">问题——<strong>深层嵌套</strong> 避免的方法</span></h3><ol>
-<li>重复判断某一部分条件——判断会变得更复杂</li>
-<li><p>转换为<code>if-then-else</code></p>
+<h3><span id="问题深层嵌套-避免的方法"> 问题——<strong>深层嵌套</strong> 避免的方法</span></h3>
+<ol>
+<li>
+<p>重复判断某一部分条件——判断会变得更复杂</p>
+</li>
+<li>
+<p>转换为<code>if-then-else</code></p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//不合理的嵌套,需要用更利于理解逻辑的写法</span><br><span class="line">if(10 &lt; quantity)&#123;</span><br><span class="line">	if(100 &lt; quantity)&#123;</span><br><span class="line">		if(1000 &lt; quantity)&#123;</span><br><span class="line">			...</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			...</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>转换为<code>case</code></p>
+<li>
+<p>转换为<code>case</code></p>
 </li>
-<li>使用单独的子程序——循环体提取为子程序</li>
-<li>使用OO方法——多态，不同的类封装不同的子程序</li>
-</ol>
-<h2><span id="循环语句">循环语句</span></h2><h3><span id="判断循环是否会终止死循环">判断循环是否会终止（死循环）</span></h3><p>循环种类:<strong>计数循环</strong>、无限循环、迭代器循环、</p>
-<h3><span id="循环灵活性和检查位置">循环灵活性和检查位置</span></h3><ol>
-<li><p><strong>带出口循环</strong>：半循环 改为 带出口的无限循环</p>
-<p>把所有退出条件放在一起，防止检测调试时遗漏</p>
+<li>
+<p>使用单独的子程序——循环体提取为子程序</p>
 </li>
-<li>使循环尽量模块化</li>
+<li>
+<p>使用OO方法——多态，不同的类封装不同的子程序</p>
+</li>
 </ol>
-<h3><span id="三方面考虑循环控制">三方面考虑循环控制</span></h3><h4><span id="如何进入循环">如何进入循环</span></h4><ol>
+<h2><span id="循环语句"> 循环语句</span></h2>
+<h3><span id="判断循环是否会终止死循环"> 判断循环是否会终止（死循环）</span></h3>
+<p>循环种类:<strong>计数循环</strong>、无限循环、迭代器循环、</p>
+<h3><span id="循环灵活性和检查位置"> 循环灵活性和检查位置</span></h3>
+<ol>
+<li><strong>带出口循环</strong>：半循环 改为 带出口的无限循环</li>
+</ol>
+<p>把所有退出条件放在一起，防止检测调试时遗漏<br>
+2. 使循环尽量模块化</p>
+<h3><span id="三方面考虑循环控制"> 三方面考虑循环控制</span></h3>
+<h4><span id="如何进入循环"> 如何进入循环</span></h4>
+<ol>
 <li>只从一个位置进入循环——goto不用于跳出循环</li>
 <li>初始化代码放在循环前面</li>
 <li>while(true) 无限循环</li>
 <li>多使用for循环——控制代码集中在一起</li>
 <li>在while循环更适用时，不用for——控制部分比较复杂</li>
 </ol>
-<h4><span id="如何退出循环">如何退出循环</span></h4><ol>
+<h4><span id="如何退出循环"> 如何退出循环</span></h4>
+<ol>
 <li>要确认循环是否终止</li>
 <li>终止条件要明显</li>
 <li>为了终止循环，改变for的下标值</li>
 <li>避免出现依赖于循环下标最终取值的行为——不要在循环终止后继续使用循环下标，因为下标值不可确定，且不易读</li>
 </ol>
-<p>……</p>
-<h3><span id="决策点decision-point度量法">决策点（DECISION POINT）度量法</span></h3><h3><span id="子程序的多处返回">子程序的多处返回</span></h3><h3><span id="缩进层次过深的循环">缩进层次过深的循环</span></h3><h3><span id="使用防卫子句重写">使用防卫子句重写</span></h3><h3><span id="留心栈空间">留心栈空间</span></h3><p><em>递归 = 循环+栈……</em></p>
-<h3><span id="goto">GOTO</span></h3>
+<p>…</p>
+<h3><span id="决策点decision-point度量法"> 决策点（DECISION POINT）度量法</span></h3>
+<h3><span id="子程序的多处返回"> 子程序的多处返回</span></h3>
+<h3><span id="缩进层次过深的循环"> 缩进层次过深的循环</span></h3>
+<h3><span id="使用防卫子句重写"> 使用防卫子句重写</span></h3>
+<h3><span id="留心栈空间"> 留心栈空间</span></h3>
+<p><em>递归 = 循环+栈…</em></p>
+<h3><span id="goto"> GOTO</span></h3>
+
       
     </div>
     
@@ -663,7 +700,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -674,7 +711,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -685,7 +722,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -794,7 +831,7 @@
 </div>
 
 <div class="theme-info">
-  <span class="post-count">Total Words:109.5k</span>
+  <span class="post-count">Total Words:107.5k</span>
 </div>
 
 

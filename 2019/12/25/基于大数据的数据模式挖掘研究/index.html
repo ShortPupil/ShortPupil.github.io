@@ -128,18 +128,18 @@
 
 
 
-<meta name="description" content="目录@[toc] 2. 日志数据挖掘2.1 特征工程难点 难以快速理解复杂的业务逻辑和业务背景 基础数据不全面、不完整 某些数据的采集非常有难度，或是暂时没有行之有效的采集和处理方法，如某些自然语言的特征  2.2 日志数据挖掘目标2.2.1 多维分析在不同维度上对数据进行汇总和整理，并通过结合业务问题，或者与其他对象进行对比，以期发现相同的规律或业务内在流程和提升方式。通过对数据进行定期的总结，">
+<meta name="description" content="目录  2. 日志数据挖掘  2.1 特征工程难点 2.2 日志数据挖掘目标  2.2.1 多维分析 2.2.2 关联分析 2.2.3 分类和预测 2.2.4 聚类分析 2.2.5 孤立点分析 2.2.6 时间序列分析   2.3 日志数据挖掘常用算法  2.3.1  分类与回归预测算法 2.3.2 聚类算法 2.3.3 关联规则        2. 日志数据挖掘  2.1 特征工程难点  难以">
 <meta name="keywords" content="data mining">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阅读笔记——基于大数据的数据模式挖掘研究">
 <meta property="og:url" content="https://songzi.info/2019/12/25/基于大数据的数据模式挖掘研究/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录@[toc] 2. 日志数据挖掘2.1 特征工程难点 难以快速理解复杂的业务逻辑和业务背景 基础数据不全面、不完整 某些数据的采集非常有难度，或是暂时没有行之有效的采集和处理方法，如某些自然语言的特征  2.2 日志数据挖掘目标2.2.1 多维分析在不同维度上对数据进行汇总和整理，并通过结合业务问题，或者与其他对象进行对比，以期发现相同的规律或业务内在流程和提升方式。通过对数据进行定期的总结，">
+<meta property="og:description" content="目录  2. 日志数据挖掘  2.1 特征工程难点 2.2 日志数据挖掘目标  2.2.1 多维分析 2.2.2 关联分析 2.2.3 分类和预测 2.2.4 聚类分析 2.2.5 孤立点分析 2.2.6 时间序列分析   2.3 日志数据挖掘常用算法  2.3.1  分类与回归预测算法 2.3.2 聚类算法 2.3.3 关联规则        2. 日志数据挖掘  2.1 特征工程难点  难以">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-03-27T17:44:48.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阅读笔记——基于大数据的数据模式挖掘研究">
-<meta name="twitter:description" content="目录@[toc] 2. 日志数据挖掘2.1 特征工程难点 难以快速理解复杂的业务逻辑和业务背景 基础数据不全面、不完整 某些数据的采集非常有难度，或是暂时没有行之有效的采集和处理方法，如某些自然语言的特征  2.2 日志数据挖掘目标2.2.1 多维分析在不同维度上对数据进行汇总和整理，并通过结合业务问题，或者与其他对象进行对比，以期发现相同的规律或业务内在流程和提升方式。通过对数据进行定期的总结，">
+<meta name="twitter:description" content="目录  2. 日志数据挖掘  2.1 特征工程难点 2.2 日志数据挖掘目标  2.2.1 多维分析 2.2.2 关联分析 2.2.3 分类和预测 2.2.4 聚类分析 2.2.5 孤立点分析 2.2.6 时间序列分析   2.3 日志数据挖掘常用算法  2.3.1  分类与回归预测算法 2.3.2 聚类算法 2.3.3 关联规则        2. 日志数据挖掘  2.1 特征工程难点  难以">
 
 
 
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  1.5k
+                  1.6k
                 </span>
               
 
@@ -467,25 +467,60 @@
       
 
       
-        <h1><span id="目录">目录</span></h1><p>@[toc]</p>
-<h2><span id="2-日志数据挖掘">2. 日志数据挖掘</span></h2><h3><span id="21-特征工程难点">2.1 特征工程难点</span></h3><ul>
+        <h1><span id="目录"> 目录</span></h1>
+<p><ul class="markdownIt-TOC">
+<li><a href="#2-%E6%97%A5%E5%BF%97%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98">2. 日志数据挖掘</a>
+<ul>
+<li><a href="#21-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E9%9A%BE%E7%82%B9">2.1 特征工程难点</a></li>
+<li><a href="#22-%E6%97%A5%E5%BF%97%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%9B%AE%E6%A0%87">2.2 日志数据挖掘目标</a>
+<ul>
+<li><a href="#221-%E5%A4%9A%E7%BB%B4%E5%88%86%E6%9E%90">2.2.1 多维分析</a></li>
+<li><a href="#222-%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90">2.2.2 关联分析</a></li>
+<li><a href="#223-%E5%88%86%E7%B1%BB%E5%92%8C%E9%A2%84%E6%B5%8B">2.2.3 分类和预测</a></li>
+<li><a href="#224-%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90">2.2.4 聚类分析</a></li>
+<li><a href="#225-%E5%AD%A4%E7%AB%8B%E7%82%B9%E5%88%86%E6%9E%90">2.2.5 孤立点分析</a></li>
+<li><a href="#226-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90">2.2.6 时间序列分析</a></li>
+</ul>
+</li>
+<li><a href="#23-%E6%97%A5%E5%BF%97%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95">2.3 日志数据挖掘常用算法</a>
+<ul>
+<li><a href="#231-%E5%88%86%E7%B1%BB%E4%B8%8E%E5%9B%9E%E5%BD%92%E9%A2%84%E6%B5%8B%E7%AE%97%E6%B3%95">2.3.1  分类与回归预测算法</a></li>
+<li><a href="#232-%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95">2.3.2 聚类算法</a></li>
+<li><a href="#233-%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99">2.3.3 关联规则</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+<h2><span id="2-日志数据挖掘"> 2. 日志数据挖掘</span></h2>
+<h3><span id="21-特征工程难点"> 2.1 特征工程难点</span></h3>
+<ul>
 <li>难以快速理解复杂的业务逻辑和业务背景</li>
 <li>基础数据不全面、不完整</li>
 <li>某些数据的采集非常有难度，或是暂时没有行之有效的采集和处理方法，如某些自然语言的特征</li>
 </ul>
-<h3><span id="22-日志数据挖掘目标">2.2 日志数据挖掘目标</span></h3><h4><span id="221-多维分析">2.2.1 多维分析</span></h4><p>在不同维度上对数据进行汇总和整理，并通过结合业务问题，或者与其他对象进行对比，以期发现相同的规律或业务内在流程和提升方式。通过对数据进行定期的总结，可以实现<em>对业务在实际数据上的全盘掌握</em>。</p>
+<h3><span id="22-日志数据挖掘目标"> 2.2 日志数据挖掘目标</span></h3>
+<h4><span id="221-多维分析"> 2.2.1 多维分析</span></h4>
+<p>在不同维度上对数据进行汇总和整理，并通过结合业务问题，或者与其他对象进行对比，以期发现相同的规律或业务内在流程和提升方式。通过对数据进行定期的总结，可以实现<em>对业务在实际数据上的全盘掌握</em>。</p>
 <p>利用<em>传统的统计方法来统计数据库中的数据或进行多维数据查询和计算</em>。</p>
 <p>日志数据挖掘——使用平台对日志进行统计分析和可视化。</p>
-<h4><span id="222-关联分析">2.2.2 关联分析</span></h4><p>通过<em>对数据项集之间的共现关系的计算</em>，以及<em>对于项集间的<strong>支持度</strong>和<strong>置信度</strong>的要求</em>，从而导出项集之间的<strong>关联规则</strong>。</p>
+<h4><span id="222-关联分析"> 2.2.2 关联分析</span></h4>
+<p>通过<em>对数据项集之间的共现关系的计算</em>，以及<em>对于项集间的<strong>支持度</strong>和<strong>置信度</strong>的要求</em>，从而导出项集之间的<strong>关联规则</strong>。</p>
 <p>日志数据挖掘——对warning日志的因果关联分析，进行错误检测。</p>
-<h4><span id="223-分类和预测">2.2.3 分类和预测</span></h4><p>通过对已有数据和结论进行分析来对未知事物进行判断。</p>
+<h4><span id="223-分类和预测"> 2.2.3 分类和预测</span></h4>
+<p>通过对已有数据和结论进行分析来对未知事物进行判断。</p>
 <p>日志数据挖掘——对warning日志的分析来进行故障的预测。</p>
-<h4><span id="224-聚类分析">2.2.4 聚类分析</span></h4><p>根据对象在各维度上的<strong>相似性判别指标</strong>进行聚类，使得在同一个类中的对象可以无监督地进行类别区分。</p>
+<h4><span id="224-聚类分析"> 2.2.4 聚类分析</span></h4>
+<p>根据对象在各维度上的<strong>相似性判别指标</strong>进行聚类，使得在同一个类中的对象可以无监督地进行类别区分。</p>
 <p>日志数据挖掘——通过对web日志数据的聚类分析，对web日志进行聚类以减少页面数据量。</p>
-<h4><span id="225-孤立点分析">2.2.5 孤立点分析</span></h4><p>虽然孤立点在进行规律总结是会被认为是异常点或是噪声，从而被排除。但是在某些应用中国，孤立点本省就是挖掘的目的所在。</p>
+<h4><span id="225-孤立点分析"> 2.2.5 孤立点分析</span></h4>
+<p>虽然孤立点在进行规律总结是会被认为是异常点或是噪声，从而被排除。但是在某些应用中国，孤立点本省就是挖掘的目的所在。</p>
 <p>日志数据挖掘——通过对使用日志的异常点分析，从而发现登录数据中的异常登录行为。</p>
-<h4><span id="226-时间序列分析">2.2.6 时间序列分析</span></h4><p>数据的属性值随时间不断变化，而且这类变化还可能与时间周期有一定关系。这些数据一般在相等或不等的时间间隔内取得，通过<strong>时间序列图</strong>的方法还可以对时间序列数据进行可视化，更直观地发现序列规律。</p>
-<h3><span id="23-日志数据挖掘常用算法">2.3 日志数据挖掘常用算法</span></h3><h4><span id="231-分类与回归预测算法">2.3.1  分类与回归预测算法</span></h4><div class="table-container">
+<h4><span id="226-时间序列分析"> 2.2.6 时间序列分析</span></h4>
+<p>数据的属性值随时间不断变化，而且这类变化还可能与时间周期有一定关系。这些数据一般在相等或不等的时间间隔内取得，通过<strong>时间序列图</strong>的方法还可以对时间序列数据进行可视化，更直观地发现序列规律。</p>
+<h3><span id="23-日志数据挖掘常用算法"> 2.3 日志数据挖掘常用算法</span></h3>
+<h4><span id="231-分类与回归预测算法"> 2.3.1  分类与回归预测算法</span></h4>
 <table>
 <thead>
 <tr>
@@ -554,11 +589,11 @@
 <td style="text-align:left">贝叶斯网络</td>
 <td style="text-align:left">基于<strong>概率推理</strong>的图形化网络</td>
 <td style="text-align:left">解决复杂设备不确定性和关联性引起的故障</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h4><span id="232-聚类算法">2.3.2 聚类算法</span></h4><div class="table-container">
+<h4><span id="232-聚类算法"> 2.3.2 聚类算法</span></h4>
 <table>
 <thead>
 <tr>
@@ -636,11 +671,11 @@
 <tr>
 <td></td>
 <td>神经网络方法</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h4><span id="233-关联规则">2.3.3 关联规则</span></h4><div class="table-container">
+<h4><span id="233-关联规则"> 2.3.3 关联规则</span></h4>
 <table>
 <thead>
 <tr>
@@ -668,10 +703,10 @@
 <tr>
 <td>HotSpot</td>
 <td>挖掘得到通过树状结构显示的感兴趣的目标最大化/最小化的一套规则，最大化/最小化的利益目标变量/值</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
 <p><a href="http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CMFD&amp;dbname=CMFD201802&amp;filename=1018168975.nh&amp;uid=WEEvREcwSlJHSldRa1FhcTdWa2FjcW9ydkpoNVhhbm45WFhxV0VMYzRMQT0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;v=MjU2NTExVDNxVHJXTTFGckNVUkxPZVplUnJGQ2puVkwzS1ZGMjZGcksrRnRqTHFwRWJQSVI4ZVgxTHV4WVM3RGg=" target="_blank" rel="noopener">参考文献</a></p>
 
       
@@ -720,8 +755,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/20/算法_4/" rel="next" title="算法_4 动态规划">
-                <i class="fa fa-chevron-left"></i> 算法_4 动态规划
+              <a href="/2019/05/06/数据挖掘算法（二）——AdaBoost算法/" rel="next" title="数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法">
+                <i class="fa fa-chevron-left"></i> 数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法
               </a>
             
           </div>
@@ -800,7 +835,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -811,7 +846,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -822,7 +857,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -931,7 +966,7 @@
 </div>
 
 <div class="theme-info">
-  <span class="post-count">Total Words:109.5k</span>
+  <span class="post-count">Total Words:107.5k</span>
 </div>
 
 

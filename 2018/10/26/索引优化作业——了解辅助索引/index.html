@@ -128,18 +128,18 @@
 
 
 
-<meta name="description" content="前言辣鸡的我写索引优化作业遇到一个很奇怪的问题。 大概就是，在500w行数据的order表中，找出年龄小于20order列表，看能否使用索引进行查询优化。 创建索引、查询时间、查询计划一套做下来，发现优化器没有用创建的索引。于是开始寻找问题。 过程首先很自然地用下面的语句进行测试 1select * from orders where age &amp;lt; 20; 发现在没加索引的时候，查询时间，ex">
+<meta name="description" content="前言 辣鸡的我写索引优化作业遇到一个很奇怪的问题。 大概就是，在500w行数据的order表中，找出年龄小于20order列表，看能否使用索引进行查询优化。 创建索引、查询时间、查询计划一套做下来，发现优化器没有用创建的索引。于是开始寻找问题。  过程 首先很自然地用下面的语句进行测试 1select * from orders where age &amp;lt; 20; 发现在没加索引的时候，查询时">
 <meta name="keywords" content="mysql,index">
 <meta property="og:type" content="article">
 <meta property="og:title" content="索引优化作业">
 <meta property="og:url" content="https://songzi.info/2018/10/26/索引优化作业——了解辅助索引/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="前言辣鸡的我写索引优化作业遇到一个很奇怪的问题。 大概就是，在500w行数据的order表中，找出年龄小于20order列表，看能否使用索引进行查询优化。 创建索引、查询时间、查询计划一套做下来，发现优化器没有用创建的索引。于是开始寻找问题。 过程首先很自然地用下面的语句进行测试 1select * from orders where age &amp;lt; 20; 发现在没加索引的时候，查询时间，ex">
+<meta property="og:description" content="前言 辣鸡的我写索引优化作业遇到一个很奇怪的问题。 大概就是，在500w行数据的order表中，找出年龄小于20order列表，看能否使用索引进行查询优化。 创建索引、查询时间、查询计划一套做下来，发现优化器没有用创建的索引。于是开始寻找问题。  过程 首先很自然地用下面的语句进行测试 1select * from orders where age &amp;lt; 20; 发现在没加索引的时候，查询时">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-03-27T17:44:48.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="索引优化作业">
-<meta name="twitter:description" content="前言辣鸡的我写索引优化作业遇到一个很奇怪的问题。 大概就是，在500w行数据的order表中，找出年龄小于20order列表，看能否使用索引进行查询优化。 创建索引、查询时间、查询计划一套做下来，发现优化器没有用创建的索引。于是开始寻找问题。 过程首先很自然地用下面的语句进行测试 1select * from orders where age &amp;lt; 20; 发现在没加索引的时候，查询时间，ex">
+<meta name="twitter:description" content="前言 辣鸡的我写索引优化作业遇到一个很奇怪的问题。 大概就是，在500w行数据的order表中，找出年龄小于20order列表，看能否使用索引进行查询优化。 创建索引、查询时间、查询计划一套做下来，发现优化器没有用创建的索引。于是开始寻找问题。  过程 首先很自然地用下面的语句进行测试 1select * from orders where age &amp;lt; 20; 发现在没加索引的时候，查询时">
 
 
 
@@ -467,10 +467,12 @@
       
 
       
-        <h1><span id="前言">前言</span></h1><p>辣鸡的我写索引优化作业遇到一个很奇怪的问题。</p>
+        <h1><span id="前言"> 前言</span></h1>
+<p>辣鸡的我写索引优化作业遇到一个很奇怪的问题。</p>
 <p>大概就是，在500w行数据的order表中，找出年龄小于20order列表，看能否使用索引进行查询优化。</p>
 <p>创建索引、查询时间、查询计划一套做下来，发现优化器没有用创建的索引。于是开始寻找问题。</p>
-<h1><span id="过程">过程</span></h1><p>首先很自然地用下面的语句进行测试</p>
+<h1><span id="过程"> 过程</span></h1>
+<p>首先很自然地用下面的语句进行测试</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from orders where age &lt; 20;</span><br></pre></td></tr></table></figure>
 <p>发现在没加索引的时候，查询时间，explain计划如下</p>
 <p>加了个单列普通索引</p>
@@ -483,14 +485,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id from orders where age &lt; 20;</span><br></pre></td></tr></table></figure>
 <p>突然峰回路转，索引被使用，查询时间立刻降低</p>
 <p>原来<code>select *</code>才是罪魁祸首</p>
-<h1><span id="深入">深入</span></h1><p><a href="https://www.zhihu.com/topic/19617529" target="_blank" rel="noopener">SQL语句为什么使用select * 会降低查询速度?</a></p>
+<h1><span id="深入"> 深入</span></h1>
+<p><a href="https://www.zhihu.com/topic/19617529" target="_blank" rel="noopener">SQL语句为什么使用select * 会降低查询速度?</a></p>
 <p>大佬说了，select* 杜绝了覆盖索引的可能性。虽然上面的索引在查询计划里看起来过滤了大量数据，但</p>
 <blockquote>
 <p>首先通过辅助索引过滤数据，然后通过聚集索引获取所有的列，这就多了一次b+树查询，速度必然会慢很多。首先通过辅助索引过滤数据，然后通过聚集索引获取所有的列，这就多了一次b+树查询，速度必然会慢很多。</p>
 </blockquote>
 <p>磁盘io导致查询开销陡增，反倒不如全表顺序查询时间少。当索引节约的成本能以抵消、甚至远远低于磁盘io要付出的代价时，优化器自然选择放弃索引。</p>
 <p>所以假如要求是select *，在不考虑维护的情况下，不如建立包含全列的多列索引。</p>
-<h1><span id="最后">最后</span></h1><p>索引是个很重要的优化方法，经过这么多年的发展，网上已经有很多各种经验之谈，不过了解原理还是很重要啊。</p>
+<h1><span id="最后"> 最后</span></h1>
+<p>索引是个很重要的优化方法，经过这么多年的发展，网上已经有很多各种经验之谈，不过了解原理还是很重要啊。</p>
 <p>《高性能mysql》得好好看一看才行。</p>
 
       
@@ -650,7 +654,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -661,7 +665,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -672,7 +676,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -781,7 +785,7 @@
 </div>
 
 <div class="theme-info">
-  <span class="post-count">Total Words:109.5k</span>
+  <span class="post-count">Total Words:107.5k</span>
 </div>
 
 

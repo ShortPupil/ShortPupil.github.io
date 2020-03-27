@@ -128,18 +128,18 @@
 
 
 
-<meta name="description" content="前言 关于时间数据库优化，最重要的目标是时间，最大的敌人也是时间。 套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。 1. 为什么查询速度会慢查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调用需要在">
+<meta name="description" content="前言 关于时间 数据库优化，最重要的目标是时间，最大的敌人也是时间。 套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。  1. 为什么查询速度会慢 查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="查询性能优化——《高性能MySQL》第六章">
 <meta property="og:url" content="https://songzi.info/2018/10/31/查询性能优化——《高性能MySQL》第六章/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="前言 关于时间数据库优化，最重要的目标是时间，最大的敌人也是时间。 套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。 1. 为什么查询速度会慢查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调用需要在">
+<meta property="og:description" content="前言 关于时间 数据库优化，最重要的目标是时间，最大的敌人也是时间。 套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。  1. 为什么查询速度会慢 查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-03-27T17:44:48.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="查询性能优化——《高性能MySQL》第六章">
-<meta name="twitter:description" content="前言 关于时间数据库优化，最重要的目标是时间，最大的敌人也是时间。 套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。 1. 为什么查询速度会慢查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调用需要在">
+<meta name="twitter:description" content="前言 关于时间 数据库优化，最重要的目标是时间，最大的敌人也是时间。 套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。  1. 为什么查询速度会慢 查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调">
 
 
 
@@ -467,27 +467,41 @@
       
 
       
-        <h1><span id="前言-关于时间">前言 关于时间</span></h1><p>数据库优化，最重要的目标是时间，最大的敌人也是时间。</p>
+        <h1><span id="前言-关于时间"> 前言 关于时间</span></h1>
+<p>数据库优化，最重要的目标是时间，最大的敌人也是时间。</p>
 <p>套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是<strong>查询优化</strong>、<strong>索引优化</strong>、<strong>库表结构优化</strong>。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。</p>
-<h1><span id="1-为什么查询速度会慢">1. 为什么查询速度会慢</span></h1><p>查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是<strong>向底层存储引擎检索数据的调用</strong>操作，这些调用需要在内存操作、CPU操作和内存不足时导致的I/O操作上消耗时间。可能会产生<strong>大量的上下文切换以及系统调用</strong>。</p>
+<h1><span id="1-为什么查询速度会慢"> 1. 为什么查询速度会慢</span></h1>
+<p>查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是<strong>向底层存储引擎检索数据的调用</strong>操作，这些调用需要在内存操作、CPU操作和内存不足时导致的I/O操作上消耗时间。可能会产生<strong>大量的上下文切换以及系统调用</strong>。</p>
 <p>不必要的额外操作、某些操作被额外地重复了很多次、某次操作执行得太慢等。优化查询的目的就是<strong>减少和消除这些操作花费时间</strong>。</p>
-<h1><span id="2-慢查询基础优化数据访问">2. 慢查询基础：优化数据访问</span></h1><p>基础：大部分性能低下的查询都可以通过<strong>减少访问的数据量的方式</strong>进行优化。</p>
+<h1><span id="2-慢查询基础优化数据访问"> 2. 慢查询基础：优化数据访问</span></h1>
+<p>基础：大部分性能低下的查询都可以通过<strong>减少访问的数据量的方式</strong>进行优化。</p>
 <p>有效的两步：</p>
 <ul>
 <li>确认application是否在检索大量超过需要的数据</li>
 <li>确认MySQL server是否在分析大量超过需要的数据行</li>
 </ul>
-<h2><span id="21-是否向数据库请求了不需要的数据">2.1 是否向数据库请求了不需要的数据</span></h2><h3><span id="错误案例尽量避免">错误案例，尽量避免</span></h3><h4><span id="查询不需要的记录">查询不需要的记录</span></h4><p>Mysql会先返回全部结果集再进行计算</p>
-<h4><span id="多表关联时返回全部列">多表关联时返回全部列</span></h4><h4><span id="总是取出全部列">总是取出全部列</span></h4><p>（想起了索引作业返回所有列）取出全部列，会<strong>让优化器无法完成索引覆盖扫描这类优化</strong>！还会<strong>为服务器带来额外的I/O、内存、CPU的消耗</strong>。</p>
+<h2><span id="21-是否向数据库请求了不需要的数据"> 2.1 是否向数据库请求了不需要的数据</span></h2>
+<h3><span id="错误案例尽量避免"> 错误案例，尽量避免</span></h3>
+<h4><span id="查询不需要的记录"> 查询不需要的记录</span></h4>
+<p>Mysql会先返回全部结果集再进行计算</p>
+<h4><span id="多表关联时返回全部列"> 多表关联时返回全部列</span></h4>
+<h4><span id="总是取出全部列"> 总是取出全部列</span></h4>
+<p>（想起了索引作业返回所有列）取出全部列，会<strong>让优化器无法完成索引覆盖扫描这类优化</strong>！还会<strong>为服务器带来额外的I/O、内存、CPU的消耗</strong>。</p>
 <p>注：虽然会浪费数据库资源，但有时候可以简化开发，提高代码复用性。但要注意使用缓存机制。</p>
-<h4><span id="重复查询相同的数据">重复查询相同的数据。</span></h4><p>注意利用缓存。（查询缓存之后之后要看看）</p>
-<h2><span id="22-mysql是否在扫描额外的记录">2.2 MySQL是否在扫描额外的记录</span></h2><h3><span id="简单的衡量查询开销的三个指标">简单的衡量查询开销的三个指标</span></h3><h4><span id="响应时间">响应时间</span></h4><p>包括<strong>服务时间</strong>、<strong>排队时间</strong>之和。</p>
+<h4><span id="重复查询相同的数据"> 重复查询相同的数据。</span></h4>
+<p>注意利用缓存。（查询缓存之后之后要看看）</p>
+<h2><span id="22-mysql是否在扫描额外的记录"> 2.2 MySQL是否在扫描额外的记录</span></h2>
+<h3><span id="简单的衡量查询开销的三个指标"> 简单的衡量查询开销的三个指标</span></h3>
+<h4><span id="响应时间"> 响应时间</span></h4>
+<p>包括<strong>服务时间</strong>、<strong>排队时间</strong>之和。</p>
 <ul>
 <li>服务时间——数据库处理这个查询真正花了多长时间</li>
 <li>排队时间——服务器因为等待某些资源而没有真正执行查询的时间——可能等I/O操作完成，也可能是等待行锁等。</li>
 </ul>
-<h4><span id="扫描的行数和返回的行数">扫描的行数和返回的行数</span></h4><p>查看查询扫描的行数是非常有帮助的，在一定程度能够说明该查询找到需要的数据的效率高不高。</p>
-<h3><span id="扫描的行数和访问类型">扫描的行数和访问类型</span></h3>
+<h4><span id="扫描的行数和返回的行数"> 扫描的行数和返回的行数</span></h4>
+<p>查看查询扫描的行数是非常有帮助的，在一定程度能够说明该查询找到需要的数据的效率高不高。</p>
+<h3><span id="扫描的行数和访问类型"> 扫描的行数和访问类型</span></h3>
+
       
     </div>
     
@@ -643,7 +657,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -654,7 +668,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -665,7 +679,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -774,7 +788,7 @@
 </div>
 
 <div class="theme-info">
-  <span class="post-count">Total Words:109.5k</span>
+  <span class="post-count">Total Words:107.5k</span>
 </div>
 
 

@@ -128,18 +128,18 @@
 
 
 
-<meta name="description" content="条件判断 按着书上的输入都出了问题 if [] then  这些中间都要加空格  123if [ 判断式 ]; thenelse fi  ||和&amp;amp;&amp;amp;要用两个独立的[],如下  如果a&amp;gt;b且a&amp;lt;c  123if [[ $a &amp;gt; $b ]] &amp;amp;&amp;amp; [[ $a &amp;lt; $c ]] if [ $a -gt $b -a $a -lt $c ]  如果a&amp;g">
+<meta name="description" content="条件判断  按着书上的输入都出了问题 if [] then  这些中间都要加空格  123if [ 判断式 ]; thenelse fi   ||和&amp;amp;&amp;amp;要用两个独立的[],如下   如果a&amp;gt;b且a&amp;lt;c 123if [[ $a &amp;gt; $b ]] &amp;amp;&amp;amp; [[ $a &amp;lt; $c ]] if [ $a -gt $b -a $a -lt $c ]   如">
 <meta name="keywords" content="linux,shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="shell一些小坑">
 <meta property="og:url" content="https://songzi.info/2018/10/24/shell一些小坑/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="条件判断 按着书上的输入都出了问题 if [] then  这些中间都要加空格  123if [ 判断式 ]; thenelse fi  ||和&amp;amp;&amp;amp;要用两个独立的[],如下  如果a&amp;gt;b且a&amp;lt;c  123if [[ $a &amp;gt; $b ]] &amp;amp;&amp;amp; [[ $a &amp;lt; $c ]] if [ $a -gt $b -a $a -lt $c ]  如果a&amp;g">
+<meta property="og:description" content="条件判断  按着书上的输入都出了问题 if [] then  这些中间都要加空格  123if [ 判断式 ]; thenelse fi   ||和&amp;amp;&amp;amp;要用两个独立的[],如下   如果a&amp;gt;b且a&amp;lt;c 123if [[ $a &amp;gt; $b ]] &amp;amp;&amp;amp; [[ $a &amp;lt; $c ]] if [ $a -gt $b -a $a -lt $c ]   如">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-03-27T17:44:48.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell一些小坑">
-<meta name="twitter:description" content="条件判断 按着书上的输入都出了问题 if [] then  这些中间都要加空格  123if [ 判断式 ]; thenelse fi  ||和&amp;amp;&amp;amp;要用两个独立的[],如下  如果a&amp;gt;b且a&amp;lt;c  123if [[ $a &amp;gt; $b ]] &amp;amp;&amp;amp; [[ $a &amp;lt; $c ]] if [ $a -gt $b -a $a -lt $c ]  如果a&amp;g">
+<meta name="twitter:description" content="条件判断  按着书上的输入都出了问题 if [] then  这些中间都要加空格  123if [ 判断式 ]; thenelse fi   ||和&amp;amp;&amp;amp;要用两个独立的[],如下   如果a&amp;gt;b且a&amp;lt;c 123if [[ $a &amp;gt; $b ]] &amp;amp;&amp;amp; [[ $a &amp;lt; $c ]] if [ $a -gt $b -a $a -lt $c ]   如">
 
 
 
@@ -467,20 +467,25 @@
       
 
       
-        <h2><span id="条件判断">条件判断</span></h2><ul>
+        <h2><span id="条件判断"> 条件判断</span></h2>
+<ul>
 <li>按着书上的输入都出了问题 if [] then  这些中间都要加空格</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [ 判断式 ]; then</span><br><span class="line">else </span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p><code>||</code>和<code>&amp;&amp;</code>要用两个独立的<code>[]</code>,如下</p>
+<li>
+<p><code>||</code>和<code>&amp;&amp;</code>要用两个独立的<code>[]</code>,如下</p>
 </li>
-<li><p>如果a&gt;b且a&lt;c </p>
+<li>
+<p>如果a&gt;b且a&lt;c</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [[ $a &gt; $b ]] &amp;&amp; [[ $a &lt; $c ]] </span><br><span class="line"></span><br><span class="line">if [ $a -gt $b -a $a -lt $c ]</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>如果a&gt;b或a&lt;c</p>
+<li>
+<p>如果a&gt;b或a&lt;c</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [[ $a &gt; $b ]] || [[ $a &lt; $c ]] </span><br><span class="line"></span><br><span class="line">if [ $a -gt $b -o $a -lt $c ]</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>别忘了<strong>-o = or , -a = and</strong></p>
+<li>
+<p>别忘了**-o = or , -a = and**</p>
 </li>
 </ul>
 <p>后续慢慢加</p>
@@ -642,7 +647,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -653,7 +658,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -664,7 +669,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -773,7 +778,7 @@
 </div>
 
 <div class="theme-info">
-  <span class="post-count">Total Words:109.5k</span>
+  <span class="post-count">Total Words:107.5k</span>
 </div>
 
 

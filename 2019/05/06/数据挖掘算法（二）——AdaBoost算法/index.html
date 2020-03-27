@@ -128,19 +128,19 @@
 
 
 
-<meta name="description" content="目录@[toc] 如何理解Boosting算法Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到">
+<meta name="description" content="目录  如何理解  Boosting算法 AdaBoost算法   算法原理 算法实现    如何理解  Boosting算法 Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做">
 <meta name="keywords" content="Data Mining">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法">
 <meta property="og:url" content="https://songzi.info/2019/05/06/数据挖掘算法（二）——AdaBoost算法/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录@[toc] 如何理解Boosting算法Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到">
+<meta property="og:description" content="目录  如何理解  Boosting算法 AdaBoost算法   算法原理 算法实现    如何理解  Boosting算法 Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/1335428125_1739.png">
 <meta property="og:updated_time" content="2020-03-27T17:44:48.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法">
-<meta name="twitter:description" content="目录@[toc] 如何理解Boosting算法Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到">
+<meta name="twitter:description" content="目录  如何理解  Boosting算法 AdaBoost算法   算法原理 算法实现    如何理解  Boosting算法 Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做">
 <meta name="twitter:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/1335428125_1739.png">
 
 
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  363
+                  382
                 </span>
               
 
@@ -469,21 +469,37 @@
       
 
       
-        <h1><span id="目录">目录</span></h1><p>@[toc]</p>
-<h2><span id="如何理解">如何理解</span></h2><h3><span id="boosting算法">Boosting算法</span></h3><p><strong>Boosting 提升算法</strong>是<strong>一系列</strong>将罗学习器提升为强学习器的算法。</p>
+        <h1><span id="目录"> 目录</span></h1>
+<p><ul class="markdownIt-TOC">
+<li><a href="#%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3">如何理解</a>
+<ul>
+<li><a href="#boosting%E7%AE%97%E6%B3%95">Boosting算法</a></li>
+<li><a href="#adaboost%E7%AE%97%E6%B3%95">AdaBoost算法</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86">算法原理</a></li>
+<li><a href="#%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0">算法实现</a></li>
+</ul>
+</p>
+<h2><span id="如何理解"> 如何理解</span></h2>
+<h3><span id="boosting算法"> Boosting算法</span></h3>
+<p><strong>Boosting 提升算法</strong>是<strong>一系列</strong>将罗学习器提升为强学习器的算法。</p>
 <p>思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。</p>
 <p>大致工作机制：</p>
 <p>先从初始训练集训练出一个<strong>基学习器</strong>，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定值。</p>
-<h3><span id="adaboost算法">AdaBoost算法</span></h3><p>AdaBoost算法工作机制同上。</p>
+<h3><span id="adaboost算法"> AdaBoost算法</span></h3>
+<p>AdaBoost算法工作机制同上。</p>
 <p>对于弱分类器的组合，AdaBoost算法采取<strong>加权多数表决</strong>的方法——加大分类误差率小的弱分类器的权值，使其在表决中起到较大的作用；减小分类误差率大的弱分类器的权值，使其在表决中起较小的作用。</p>
 <p>应用集中于<strong>提高分类准确率</strong>。</p>
-<h2><span id="算法原理">算法原理</span></h2><ol>
+<h2><span id="算法原理"> 算法原理</span></h2>
+<ol>
 <li>对D训练集数据训练处一个分类器Ci</li>
 <li>通过分类器Ci对数据进行分类，计算此时误差率</li>
 <li>把上步骤中的分错的数据的权重提高，分对的权重降低，以此凸显了分错的数据。为什么这么做呢，后面会做出解释。</li>
 </ol>
 <p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/1335428125_1739.png" alt="adaboost算法伪码"></p>
-<h2><span id="算法实现">算法实现</span></h2>
+<h2><span id="算法实现"> 算法实现</span></h2>
+
       
     </div>
     
@@ -569,8 +585,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/20/算法_4/" rel="prev" title="算法_4 动态规划">
-                算法_4 动态规划 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/12/25/基于大数据的数据模式挖掘研究/" rel="prev" title="阅读笔记——基于大数据的数据模式挖掘研究">
+                阅读笔记——基于大数据的数据模式挖掘研究 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -639,7 +655,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -650,7 +666,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -661,7 +677,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -770,7 +786,7 @@
 </div>
 
 <div class="theme-info">
-  <span class="post-count">Total Words:109.5k</span>
+  <span class="post-count">Total Words:107.5k</span>
 </div>
 
 
