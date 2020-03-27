@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=c2Osvv-0GdEXObJA7hwlVug2hoGU5__9a5mDaMuSrZw"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="hibernate,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="毫末室" type="application/atom+xml">
+
+
+
+
+
+
+
+
+
+<meta name="description" content="目录@[toc] 了解hibernate的底层实现对于使用还是很重要的 今天有个用hibernate进行查询出了不少错误，问题在于没有理解其持久状态和事务机制 1. 三种状态1.1 临时状态(Transient)当new一个实体对象后, 这个对象处于临时状态, 即这个对象只是一个保存临时数据的内存区域, 如果没有变量引用这个对象, 则会被jre垃圾回收机制回收. 这个对象所保存的数据与数据库没有任">
+<meta name="keywords" content="hibernate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hibernate的三种状态、事务机制、缓存懒加载">
+<meta property="og:url" content="https://songzi.info/2018/10/29/Hibernate的三种状态/index.html">
+<meta property="og:site_name" content="毫末室">
+<meta property="og:description" content="目录@[toc] 了解hibernate的底层实现对于使用还是很重要的 今天有个用hibernate进行查询出了不少错误，问题在于没有理解其持久状态和事务机制 1. 三种状态1.1 临时状态(Transient)当new一个实体对象后, 这个对象处于临时状态, 即这个对象只是一个保存临时数据的内存区域, 如果没有变量引用这个对象, 则会被jre垃圾回收机制回收. 这个对象所保存的数据与数据库没有任">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-27T17:44:48.763Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hibernate的三种状态、事务机制、缓存懒加载">
+<meta name="twitter:description" content="目录@[toc] 了解hibernate的底层实现对于使用还是很重要的 今天有个用hibernate进行查询出了不少错误，问题在于没有理解其持久状态和事务机制 1. 三种状态1.1 临时状态(Transient)当new一个实体对象后, 这个对象处于临时状态, 即这个对象只是一个保存临时数据的内存区域, 如果没有变量引用这个对象, 则会被jre垃圾回收机制回收. 这个对象所保存的数据与数据库没有任">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://songzi.info/2018/10/29/Hibernate的三种状态/">
+
+
+
+
+
+  <title>Hibernate的三种状态、事务机制、缓存懒加载 | 毫末室</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<script type="text/javascript">
+    var host = "songzi.info";
+    if ((host == window.location.host) \
+		&&(window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <a href="https://github.com/ShortPupil" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">毫末室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">合抱之木，生于毫末</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://songzi.info/2018/10/29/Hibernate的三种状态/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毫末室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hibernate的三种状态、事务机制、缓存懒加载</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T23:33:44+08:00">
+                2018-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/10/29/Hibernate的三种状态/" class="leancloud_visitors" data-flag-title="Hibernate的三种状态、事务机制、缓存懒加载">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+		<span class="post-meta-divider">|</span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  2.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1><span id="目录">目录</span></h1><p>@[toc]</p>
+<p>了解hibernate的底层实现对于使用还是很重要的</p>
+<p>今天有个用hibernate进行查询出了不少错误，问题在于没有理解其持久状态和事务机制</p>
+<h1><span id="1-三种状态">1. 三种状态</span></h1><h2><span id="11-临时状态transient">1.1 临时状态(Transient)</span></h2><p>当new一个实体对象后, 这个对象处于临时状态, 即这个对象只是一个<strong>保存临时数据的内存区域</strong>, 如果没有变量引用这个对象, 则会被jre垃圾回收机制回收. 这个对象所保存的数据与数据库没有任何关系, 除非通过<strong>Session的save或者SaveOrUpdate</strong>把临时对象与数据库关联, 并把数据插入或者更新到数据库, 这个对象才转换为持久对象.</p>
+<h2><span id="12-持久状态persistent">1.2 持久状态(Persistent)</span></h2><p>持久化对象的实例在<strong>数据库中有对应的记录, 并拥有一个持久化表示（ID）</strong>. 对持久化对象进行delete操作后, 数据库中对应的记录将被删除, 那么持久化对象与数据库记录不再存在对应关系, 持久化对象变成临时状态. 持久化对象被修改变更后, 不会马上同步到数据库, 直到数据库事务提交. 在同步之前, 持久化对象是脏的（Dirty）.</p>
+<h2><span id="13-游离状态detached">1.3 游离状态(Detached)</span></h2><p>当Session进行了Close、Clear或者evict后, <strong>持久化对象虽然拥有持久化标识符和与数据库对应记录一致的值, 但是因为会话已经消失, 对象不在持久化管理之内</strong>, 所以处于游离. 游离状态的对象与临时状态对象是十分相似的, 只是它还含有持久化标识.</p>
+<h1><span id="2-事务机制">2 事务机制</span></h1><h2><span id="21-常见的qampa">2.1 常见的Q&amp;A</span></h2><h3><span id="211-gettransaction-begintransaction">2.1.1 getTransaction、beginTransaction</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">factory.getSession().getTransaction().hasCode = <span class="number">832665667</span>;</span><br><span class="line">factory.getSession().beginTransaction().hasCode = <span class="number">2119928380</span>;</span><br><span class="line">factory.getSession().getTransaction().hascode = <span class="number">2119928380</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>调用session.getTransaction()的时候，会创建一个全新的Transaction对象；</li>
+<li>调用session.beginTransaction()的时候，会创建一个全新的Transaction对象，没有使用上一步的Transaction对象哦；</li>
+<li>再次调用session.getTransaction()的时候，会看到这时返回的是第2步创建的Transaction对象；</li>
+<li>这时调用session.getCurrentTransaction()，会看到仍然返回第2步创建的Transaction对象；</li>
+</ul>
+<p><strong>结论</strong>：通常情况下一个session内只会处理一个事务，所以大多数时候可直接调用session.beginTransaction()方法创建一个全新的transaction对象，并开始该事务。 </p>
+<h3><span id="212-gettransaction-getcurrenttransaction">2.1.2 getTransaction、getCurrentTransaction</span></h3><h3><span id="213-如果不断的调用gettransaction是否会返回同一个transaction对象">2.1.3 如果不断的调用getTransaction，是否会返回同一个transaction对象？</span></h3><h3><span id="214-通过gettransaction创建transaction对象begin之后再调用sessionbegintransaction是否会开启两个事务">2.1.4 通过getTransaction创建transaction对象begin之后，再调用session.beginTransaction是否会开启两个事务？</span></h3><h3><span id="215-当transactioncommit调用之后再次调用sessionbegintransaction是否会继续沿用之前的transaction">2.1.5 当transaction.commit()调用之后再次调用session.beginTransaction是否会继续沿用之前的transaction？</span></h3><h3><span id="216-是否总是需要手工调用transactionrollback实现事务回滚">2.1.6 是否总是需要手工调用transaction.rollback实现事务回滚？</span></h3><h2><span id="22-session-amp-transaction-scope事务范围">2.2 session &amp; transaction scope（事务范围）</span></h2><h3><span id="221-操作单元">2.2.1 操作单元</span></h3><ul>
+<li>别用<em>session-per-operation</em>这种反模式了，也就是说，在单个线程中， 不要因为一次简单的数据库调用，就打开和关闭一次<code>Session</code>！数据库事务也是如此。</li>
+<li>最常用的模式是 <em>每个请求一个会话(<strong>session-per-request</strong>)</em>——一 个新的Hibernate <code>Session</code>被打开，并且<strong>执行这个操作单元中所有的数据库操作</strong>。 一旦操作完成（同时对客户端的响应也准备就绪），session被同步，然后关闭。</li>
+<li>key：<strong>在服务器端要处理请求的时候，开启事务，在响应发送给客户之前结束事务。</strong></li>
+<li>通常的方案有<code>ServletFilter</code>，在service方法中进行pointcut的AOP拦截器，或者proxy/interception容器。</li>
+<li>在任何时间，任何地方，你的应用代码可以通过简单的调用<code>sessionFactory.getCurrentSession()</code>来访问”当前session”，用于处理请求。你总是会得到当前数据库事务范围内的<code>Session</code>。</li>
+</ul>
+<h3><span id="222-长对话">2.2.2 长对话</span></h3><ul>
+<li><p>长时间运行的对话（conversation）例子</p>
+<ul>
+<li>在界面的第一屏，打开对话框，用户所看到的数据是被一个特定的 <code>Session</code> 和数据 库事务载入(load)的。用户可以随意修改对话框中的数据对象。</li>
+<li>5分钟后，用户点击“保存”，期望所做出的修改被持久化；同时他也期望自己是唯一修改这个信息的人，不会出现 修改冲突。</li>
+</ul>
+</li>
+<li>我们必须使用<strong>多个数据库事务</strong>来实现这个对话。</li>
+<li>如果仅仅只有一 个数据库事务（最后的那个事务）保存更新过的数据，而所有其他事务只是单纯的读取数据（例如在一个跨越多个请求/响应周期的向导风格的对话框中），那么应用程序事务将保证其<strong>原子性</strong>。</li>
+<li>hibernate有用的特性<ul>
+<li><em>自动版本化</em> - Hibernate能够自动进行乐观并发控制 ，如果在用户思考 的过程中发生并发修改，Hibernate能够自动检测到。一般我们只在<strong>对话结束</strong>时才检查。</li>
+<li><em>脱管对象</em>（Detached  Objects）- 如果你决定采用前面已经讨论过的 <em>session-per-request</em>模式，所有载入的实例在用户思考的过程  中都处于与Session脱离的状态。Hibernate允许你<strong>把与Session脱离的对象重新关联到Session上</strong>，<strong>并且对修改进行持久化</strong>，这种模式被称为 <em>session-per-request-with-detached-objects</em>。自动版本化被用来隔离并发修改。</li>
+<li><em>Extended (or Long) Session</em> - Hibernate 的<code>Session</code>  可以在数据库事务提交之后和底层的JDBC连接断开，当一个新的客户端请求到来的时候，它又重新连接上底层的  JDBC连接。这种模式被称之为<strong><em>session-per-conversation</em></strong>，这种情况可 能会造成不必要的Session和JDBC连接的重新关联。自动版本化被用来隔离并发修改, <strong><code>Session</code>通常不允许自动flush,而是明确flush</strong>。</li>
+</ul>
+</li>
+</ul>
+<h3><span id="213-关注对象标识considering-object-identity">2.1.3 关注对象标识（Considering object identity）</span></h3><ul>
+<li>当应用程序在两个不同的session中并发访问具有同一持久化标 识的业务对象实例的时候，这个业务对象的<strong>两个实例事实上是不相同的</strong>（从 JVM识别来看）。这种冲突可以通过在同步和提交的时候使用<strong>自动版本化</strong>和<strong>乐观锁定</strong>方法来解决。</li>
+<li><strong>只要在单个线程只持有一个</strong> <code>Session</code>，<strong>应用程序就不需要同步任何业务对象</strong>。在<code>Session</code> 的范围内，应用程序可以放心的使用<code>==</code>进行对象比较。</li>
+<li>应用程序在<code>Session</code>的外面使用<code>==</code>进行对象比较可能会导致<strong>无法预期的结果</strong>。例如，如果你把两个脱管对象实例放进同一个 <code>Set</code>的时候，就可能发生。开发人员必须<strong>覆盖持久化类的<code>equals()</code>方法和 <code>hashCode()</code> 方法，从而实现自定义的对象相等语义</strong>。</li>
+<li>不要使用数据库标识 来实现对象相等，应该使用<strong>业务键值</strong>，由<strong>唯一的，通常不变的属性</strong>组成。</li>
+</ul>
+<h3><span id="214-问题">2.1.4 问题</span></h3><ul>
+<li>决不要使用反模式<strong><em>session-per-user-session</em>或者 session-per-application</strong>（这个规定几乎没有例外）</li>
+<li><code>Session</code> 对象是非线程安全的。</li>
+<li>一个由Hibernate抛出的异常意味着你必须立即回滚数据库事务，并立即关闭<code>Session</code> </li>
+<li><code>Session</code> 缓存了处于持久化状态的每个对象（Hibernate会监视和检查脏数据）。</li>
+</ul>
+<h2><span id="23-事务声明">2.3 事务声明</span></h2><p>手工启动，提交，或者回滚数据库事务</p>
+<p>通常情况下，结束 <code>Session</code> 包含了四个不同的阶段:</p>
+<ul>
+<li>同步session(flush,刷出到磁盘）</li>
+<li>提交事务</li>
+<li>关闭session</li>
+<li>处理异常</li>
+</ul>
+<h3><span id="231-非托管环境">2.3.1 非托管环境</span></h3><p>session/transaction常见处理方式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Non-managed environment idiom</span></span><br><span class="line">Session sess = factory.openSession();</span><br><span class="line">Transaction tx = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    tx = sess.beginTransaction();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// do some work</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    tx.commit(); <span class="comment">//自动触发session的同步</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (RuntimeException e) &#123;</span><br><span class="line">    <span class="keyword">if</span> (tx != <span class="keyword">null</span>) tx.rollback();</span><br><span class="line">    <span class="keyword">throw</span> e; <span class="comment">// or display error message</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">finally</span> &#123;</span><br><span class="line">    sess.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Hibernate内置的<strong>“current session”上下文管理</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Non-managed environment idiom with getCurrentSession()</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    factory.getCurrentSession().beginTransaction();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// do some work</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    factory.getCurrentSession().getTransaction().commit();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (RuntimeException e) &#123;</span><br><span class="line">    factory.getCurrentSession().getTransaction().rollback();</span><br><span class="line">    <span class="keyword">throw</span> e; <span class="comment">// or display error message</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你所有的一切就是<code>SessionFactory</code></p>
+<h3><span id="232-使用jta">2.3.2 使用JTA</span></h3><h3><span id="233-异常处理">2.3.3 异常处理</span></h3><p>标准的 <code>JDBCException</code>子类型是：</p>
+<ul>
+<li><code>JDBCConnectionException</code> - 指明底层的JDBC通讯出现错误</li>
+<li><code>SQLGrammarException</code> - 指明发送的SQL语句的语法或者格式错误</li>
+<li><code>ConstraintViolationException</code> - 指明某种类型的约束违例错误</li>
+<li><code>LockAcquisitionException</code> - 指明了在执行请求操作时，获取 所需的锁级别时出现的错误。</li>
+<li><code>GenericJDBCException</code> - 不属于任何其他种类的原生异常</li>
+</ul>
+<h3><span id="234-事务超时">2.3.4 事务超时</span></h3><p>在托管环境中，Hibernate会把事务超时转交给JTA。这一功能通过<strong>Hibernate <code>Transaction</code>对象进行抽象</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Session sess = factory.openSession();</span><br><span class="line">try &#123;</span><br><span class="line">    //set transaction timeout to 3 seconds</span><br><span class="line">    sess.getTransaction().setTimeout(3);</span><br><span class="line">    sess.getTransaction().begin();</span><br><span class="line"></span><br><span class="line">    // do some work</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    sess.getTransaction().commit()</span><br><span class="line">&#125;</span><br><span class="line">catch (RuntimeException e) &#123;</span><br><span class="line">    sess.getTransaction().rollback();</span><br><span class="line">    throw e; // or display error message</span><br><span class="line">&#125;</span><br><span class="line">finally &#123;</span><br><span class="line">    sess.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1><span id="3-缓存懒加载">3. 缓存懒加载</span></h1><h2><span id="31-常见使用qampa">3.1 常见使用Q&amp;A</span></h2><h3><span id="311-对于manytoone注解默认fetchtypeeager">3.1.1 对于ManyToOne注解默认FetchType.EAGER</span></h3><p>EAGER是什么意思呢？比如User类有个role属性，当加载user对象的时候，就会同时加载role对象，也就是你期望的只有一条简单sql从user表查询，但是却执行了两条sql（或者是join查询）。</p>
+<p>所以，通常情况下对于ManyToOne注解，都需要<strong>手工设置fetch = FetchType.LAZY</strong>，否则会出现严重性能问题。</p>
+<h2><span id="32-缓存机制">3.2 缓存机制</span></h2><h3><span id="321-一级缓存">3.2.1 一级缓存</span></h3><p>Session缓存表示将查询结果放置到Session的临时存储空间（一级缓存中），一旦session关闭，则缓存关闭。方法有<code>load</code>、<code>save</code>、<code>update</code>、<code>delete</code></p>
+<h3><span id="322-二级缓存">3.2.2 二级缓存</span></h3><p>二级缓存是将查询的数据放置在SessionFactory临时存储空间中，因为一个SessionFactory可以创建多个Session对象，所以范围比Session缓存的要大，多个Session可以共享二级缓存的数据。</p>
+<h2><span id="33-懒加载">3.3 懒加载</span></h2><p>表示<strong>查询当前对象或关联对象数据时，不真正访问数据库，当使用对象非主键属性时，才真正发送查询语句，访问数据库。</strong>由于在某些情况下，查的数据在后续流程到可能用不上，如果做查询处理就多余了，所以延迟加载功能可以提高性能，合理使用即可。当然了Hibernate框架是通过Cglib代理来完成延迟加载功能的扩展的。</p>
+<h3><span id="331-延迟加载会出现的问题">3.3.1 延迟加载会出现的问题</span></h3><p>延迟加载功能是<strong>运用的一级缓存</strong>，也就是利用的是session的内存，一般情况下，我们在用完session后会进行关闭，但是关闭后我们就无法进行延迟查询数据了，也就是说，延迟加载功能就将失效，剖出异常：<strong>No Sesssion</strong>，所以这是需要我们解决的。</p>
+<h3><span id="332-处理no-session">3.3.2 处理No  Session</span></h3><p>在处理父子表中经常出现No Session</p>
+<h4><span id="3321-解决原理">3.3.2.1 解决原理</span></h4><p>基于对Hibernate和JPA的理解，在ORM中，其为了提升性能使用了Lazy加载，就是在使用的时候，才会加载额外的数据，故导致了在使用之时再加载数据之时， session失效的问题出现。所以问题的目标点实现提前加载数据</p>
+<h4><span id="3322-方法">3.3.2.2 方法</span></h4><p>查看hibernate配置</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"current_session_context_class"</span>&gt;</span>thread<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>In order to overcome this problem you could change the configuration of  session factory or open another session and only than ask for those lazy loaded objects. But what I would suggest here is to initialize this  lazy collection in getModelByModelGroup itself and call:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hibernate.initialize(subProcessModel.getElement())</span><br></pre></td></tr></table></figure>
+<p> <a href="https://www.zhihu.com/question/24863332/answer/48376158" target="_blank" rel="noopener">AOP编程思想</a></p>
+<p><a href="https://www.cnblogs.com/leotsai/p/hibernate-transaction-session-flush-commit-rollback.html" target="_blank" rel="noopener">参考博客</a> <a href="https://www.kancloud.cn/wizardforcel/hibernate-doc/103753" target="_blank" rel="noopener">hibernate中文文档</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/10/29/Hibernate的三种状态/">Hibernate的三种状态、事务机制、缓存懒加载</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
+  <p><span>发布时间:</span>2018年10月29日 - 23:10</p>
+  <p><span>最后更新:</span>2020年03月28日 - 01:03</p>
+  <p><span>原始链接:</span><a href="/2018/10/29/Hibernate的三种状态/" title="Hibernate的三种状态、事务机制、缓存懒加载">https://songzi.info/2018/10/29/Hibernate的三种状态/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi.info/2018/10/29/Hibernate的三种状态/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hibernate/" rel="tag"># hibernate</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/27/创建高性能的索引——《高性能Mysql》第五章/" rel="next" title="高性能索引策略——《高性能MySQL》第五章">
+                <i class="fa fa-chevron-left"></i> 高性能索引策略——《高性能MySQL》第五章
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/31/查询性能优化——《高性能MySQL》第六章/" rel="prev" title="查询性能优化——《高性能MySQL》第六章">
+                查询性能优化——《高性能MySQL》第六章 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+ 	<div id="gitalk-container"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="松子">
+          <p class="site-author-name" itemprop="name">松子</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ShortPupil" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:zzh2625@Gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              项目链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://github.com/ShortPupil" title="Github" target="_blank">Github</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+
+	<a href="https://clustrmaps.com/site/1ahvt" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=c2Osvv-0GdEXObJA7hwlVug2hoGU5__9a5mDaMuSrZw&cl=ffffff"></a>
+	
+
+        
+
+      </section>
+
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松子</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div class="theme-info">
+  <span class="post-count">Total Words:109.5k</span>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '839f93bb1c0392738521',
+          clientSecret: 'fa692a2086510e51849da4866e7f42aaa5069b7d',
+          repo: 'ShortPupil.github.io',
+          owner: 'ShortPupil',
+          admin: ['ShortPupil'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("TXwuuRE3HqSy5PtWjHHudpW7-gzGzoHsz", "IKibQiAiE2EnII8Q32RkNYRQ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 17904,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
