@@ -136,10 +136,19 @@
 <meta property="og:site_name" content="毫末室">
 <meta property="og:description" content="1.*  信息的定义 信息的特点 信息化的概念 信息化对组织的意义 信息化标准、法律和规定 信息系统的生命周期 信息系统战略规划 - 方法   2.  政府信息化和电子政务（*） 企业信息化与电子商务（***）  1. 企业资源计划（ERP） 客户关系管理（CRM） 供应链管理（SCM） 商业智能（BI） 数据仓库 数据挖掘 决策支持系统（DSS） 业务流程重组（BPR) 业务流程管理 企业门户">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-02T16:08:05.962Z">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/SA.PNG">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/DFD.PNG">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/STD.PNG">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/E-R.PNG">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/OOA.PNG">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E5%8F%98%E6%9B%B4%E6%8E%A7%E5%88%B6.PNG">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%BB%BA%E6%A8%A1.PNG">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E9%97%AD%E7%8E%AF%E6%8E%A7%E5%88%B6%E6%9E%B6%E6%9E%84.PNG">
+<meta property="og:updated_time" content="2020-04-09T08:24:12.939Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软件架构 笔记">
 <meta name="twitter:description" content="1.*  信息的定义 信息的特点 信息化的概念 信息化对组织的意义 信息化标准、法律和规定 信息系统的生命周期 信息系统战略规划 - 方法   2.  政府信息化和电子政务（*） 企业信息化与电子商务（***）  1. 企业资源计划（ERP） 客户关系管理（CRM） 供应链管理（SCM） 商业智能（BI） 数据仓库 数据挖掘 决策支持系统（DSS） 业务流程重组（BPR) 业务流程管理 企业门户">
+<meta name="twitter:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/SA.PNG">
 
 
 
@@ -430,7 +439,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  2.9k
+                  8.7k
                 </span>
               
 
@@ -446,7 +455,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  9
+                  30
                 </span>
               
             </div>
@@ -506,14 +515,146 @@
 <li><a href="#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B">软件开发模型</a></li>
 </ul>
 </li>
-<li><a href="#%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B">需求工程</a></li>
-<li><a href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1">系统设计</a>
+<li><a href="#%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B">需求工程</a>
 <ul>
-<li><a href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%AE%BE%E8%AE%A1">面向对象的设计</a>
+<li><a href="#1-%E6%A6%82%E8%BF%B0">1. 概述</a></li>
+<li><a href="#2-%E9%9C%80%E6%B1%82%E5%BC%80%E5%8F%91">2. 需求开发</a>
 <ul>
-<li><a href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a></li>
+<li><a href="#21-%E9%9C%80%E6%B1%82%E8%8E%B7%E5%8F%96">2.1 需求获取</a></li>
+<li><a href="#22-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90">2.2 需求分析</a>
+<ul>
+<li><a href="#221-sa">2.2.1 SA</a></li>
+<li><a href="#222-ooa">2.2.2 OOA（*）</a></li>
 </ul>
 </li>
+<li><a href="#23-%E9%9C%80%E6%B1%82%E5%AE%9A%E4%B9%89">2.3 需求定义</a></li>
+<li><a href="#24-%E9%9C%80%E6%B1%82%E9%AA%8C%E8%AF%81">2.4 需求验证</a></li>
+</ul>
+</li>
+<li><a href="#3-%E9%9C%80%E6%B1%82%E7%AE%A1%E7%90%86">3. 需求管理</a>
+<ul>
+<li><a href="#31-%E5%AE%9A%E4%B9%89%E9%9C%80%E6%B1%82%E5%9F%BA%E7%BA%BF">3.1 定义需求基线</a></li>
+<li><a href="#32-%E9%9C%80%E6%B1%82%E8%B7%9F%E8%B8%AA">3.2 需求跟踪</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%98%E6%9B%B4%E6%8E%A7%E5%88%B6">变更控制</a></li>
+<li><a href="#%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%BB%BA%E6%A8%A1">软件系统建模</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1">系统设计</a>
+<ul>
+<li><a href="#1-%E4%BA%BA%E6%9C%BA%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1">1. 人机界面设计</a></li>
+<li><a href="#2-%E7%BB%93%E6%9E%84%E5%8C%96%E8%AE%BE%E8%AE%A1">2. 结构化设计</a></li>
+<li><a href="#3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%AE%BE%E8%AE%A1">3. 面向对象的设计</a>
+<ul>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99">设计原则</a></li>
+<li><a href="#31-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">3.1 设计模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95">软件测试</a>
+<ul>
+<li><a href="#%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B">测试类型</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1">测试用例设计</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E9%98%B6%E6%AE%B5">测试阶段</a></li>
+<li><a href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%B5%8B%E8%AF%95">面向对象测试</a></li>
+<li><a href="#%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95">软件调试</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E8%BD%AF%E4%BB%B6%E7%BB%B4%E6%8A%A4">系统运行与软件维护</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E4%B8%8E%E8%BF%81%E7%A7%BB">数据转换与迁移</a></li>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4">系统运行与维护</a></li>
+</ul>
+</li>
+<li><a href="#1-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E5%BF%B5">1. 软件架构的概念</a>
+<ul>
+<li><a href="#11-%E6%A6%82%E5%BF%B5">1.1 概念</a></li>
+<li><a href="#12-%E5%8F%91%E5%B1%95%E5%8F%B2">1.2 发展史</a></li>
+<li><a href="#13-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E5%BB%BA%E6%A8%A1">1.3 软件架构建模</a></li>
+</ul>
+</li>
+<li><a href="#2-%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%8F%8F%E8%BF%B0%E8%AF%AD%E8%A8%80adl">2. 体系结构描述语言（ADL）</a></li>
+<li><a href="#3-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC">3. 软件架构风格</a>
+<ul>
+<li><a href="#31-%E6%95%B0%E6%8D%AE%E6%B5%81%E9%A3%8E%E6%A0%BC">3.1 数据流风格</a>
+<ul>
+<li><a href="#311-%E6%89%B9%E5%A4%84%E7%90%86%E5%BA%8F%E5%88%97">3.1.1 批处理序列</a></li>
+<li><a href="#312-%E7%AE%A1%E9%81%93-%E8%BF%87%E6%BB%A4%E5%99%A8">3.1.2 管道-过滤器</a></li>
+</ul>
+</li>
+<li><a href="#32-%E8%B0%83%E7%94%A8%E8%BF%94%E5%9B%9E%E9%A3%8E%E6%A0%BC">3.2 调用/返回风格</a>
+<ul>
+<li><a href="#321-%E4%B8%BB%E7%A8%8B%E5%BA%8F%E5%AD%90%E7%A8%8B%E5%BA%8F">3.2.1 主程序/子程序</a></li>
+<li><a href="#322-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">3.2.2 面向对象</a></li>
+<li><a href="#323-%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84">3.2.3 层次结构</a>
+<ul>
+<li><a href="#%E4%BC%98%E7%82%B9">优点</a></li>
+<li><a href="#%E7%BC%BA%E7%82%B9">缺点</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#33-%E7%8B%AC%E7%AB%8B%E6%9E%84%E4%BB%B6%E9%A3%8E%E6%A0%BC">3.3 独立构件风格</a>
+<ul>
+<li><a href="#331-%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1">3.3.1 进程通信</a></li>
+<li><a href="#332-%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E7%B3%BB%E7%BB%9F%E9%9A%90%E5%BC%8F%E8%B0%83%E7%94%A8">3.3.2 事件驱动系统（隐式调用）</a></li>
+</ul>
+</li>
+<li><a href="#34-%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%A3%8E%E6%A0%BC">3.4 虚拟机风格</a>
+<ul>
+<li><a href="#341-%E8%A7%A3%E9%87%8A%E5%99%A8">3.4.1 解释器</a></li>
+<li><a href="#342-%E5%9F%BA%E4%BA%8E%E8%A7%84%E5%88%99%E7%9A%84%E7%B3%BB%E7%BB%9F">3.4.2 基于规则的系统</a></li>
+</ul>
+</li>
+<li><a href="#35-%E4%BB%93%E5%BA%93%E9%A3%8E%E6%A0%BC%E4%BB%A5%E6%95%B0%E6%8D%AE%E4%B8%BA%E4%B8%AD%E5%BF%83%E7%9A%84%E9%A3%8E%E6%A0%BC">3.5 仓库风格（以数据为中心的风格）</a>
+<ul>
+<li><a href="#351-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F">3.5.1 数据库系统</a></li>
+<li><a href="#352-%E9%BB%91%E6%9D%BF%E7%B3%BB%E7%BB%9F">3.5.2 黑板系统</a></li>
+<li><a href="#353-%E8%B6%85%E6%96%87%E6%9C%AC%E7%B3%BB%E7%BB%9F">3.5.3 超文本系统</a></li>
+</ul>
+</li>
+<li><a href="#36-%E9%97%AD%E7%8E%AF%E6%8E%A7%E5%88%B6%E6%9E%B6%E6%9E%84%E8%BF%87%E7%A8%8B%E6%8E%A7%E5%88%B6">3.6 闭环控制架构（过程控制）</a></li>
+</ul>
+</li>
+<li><a href="#4-%E9%87%8D%E8%A6%81%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC">4. 重要软件架构风格</a>
+<ul>
+<li><a href="#41-%E5%B1%82%E6%AC%A1%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC">4.1 层次架构风格</a></li>
+</ul>
+</li>
+<li><a href="#5-%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95">5. 基于架构的软件开发方法</a></li>
+<li><a href="#6-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0">6. 软件架构评估</a>
+<ul>
+<li><a href="#61-%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7">6.1 质量属性</a>
+<ul>
+<li><a href="#611-%E6%80%A7%E8%83%BD">6.1.1 性能</a></li>
+<li><a href="#612-%E5%8F%AF%E9%9D%A0%E6%80%A7">6.1.2 可靠性</a></li>
+<li><a href="#613-%E5%8F%AF%E7%94%A8%E6%80%A7">6.1.3 可用性</a></li>
+<li><a href="#614-%E5%AE%89%E5%85%A8%E6%80%A7">6.1.4 安全性</a></li>
+<li><a href="#615-%E5%8F%AF%E4%BF%AE%E6%94%B9%E6%80%A7">6.1.5 可修改性</a></li>
+<li><a href="#616-%E5%8A%9F%E8%83%BD%E6%80%A7">6.1.6 功能性</a></li>
+<li><a href="#617-%E5%8F%AF%E5%8F%98%E6%80%A7">6.1.7 可变性</a></li>
+<li><a href="#618-%E4%BA%92%E6%93%8D%E4%BD%9C%E6%80%A7">6.1.8 互操作性</a></li>
+<li><a href="#%E5%85%B7%E4%BD%93%E4%B8%BE%E4%BE%8B">具体举例</a></li>
+</ul>
+</li>
+<li><a href="#62-%E5%9F%BA%E4%BA%8E%E5%9C%BA%E6%99%AF%E7%9A%84%E6%96%B9%E5%BC%8F">6.2 基于场景的方式</a>
+<ul>
+<li><a href="#621-atam">6.2.1 ATAM</a></li>
+<li><a href="#622-cbam">6.2.2 CBAM</a></li>
+<li><a href="#623-saam">6.2.3 SAAM</a></li>
+<li><a href="#624-%E8%B4%A8%E9%87%8F%E6%95%88%E7%94%A8%E6%A0%91">6.2.4 质量效用树</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#7-%E8%BD%AF%E4%BB%B6%E4%BA%A7%E5%93%81%E7%BA%BF">7. 软件产品线</a></li>
+<li><a href="#8-%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF">8. 中间件技术</a></li>
+<li><a href="#9-%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84">9. 典型应用架构</a></li>
+<li><a href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%88%86%E7%B1%BB">1. 计算机体系结构分类</a>
+<ul>
+<li><a href="#11-flynn">1.1 Flynn</a></li>
 </ul>
 </li>
 </ul>
@@ -811,9 +952,156 @@
 <p><strong>逆向工程</strong></p>
 <p><strong>净室软件工程</strong></p>
 <h2><span id="需求工程"> 需求工程</span></h2>
+<h3><span id="1-概述"> 1. 概述</span></h3>
+<ul>
+<li>软件需求是指，用户对系统在功能、行为、性能、设计约束等方面的期望</li>
+<li>软件需求是指，用户解决问题或达到目标所需的条件或能力，是系统或系统不见要满足合同、标准、规范或其他正式规定文档所需具有的条件或能力，以及反映这些条件或能力的文档说明</li>
+</ul>
+<p>需求管理（变更控制、版本控制、需求跟踪、需求状态跟踪）</p>
+<p>支持 需求开发（需求获取、需求分析、需求定义、需求验证）</p>
+<h3><span id="2-需求开发"> 2. 需求开发</span></h3>
+<h4><span id="21-需求获取"> 2.1 需求获取</span></h4>
+<p>需求分类</p>
+<ul>
+<li>业务需求、用户需求、系统需求</li>
+<li>功能需求、性能需求、设计约束</li>
+<li>基本需求、期望需求、兴奋需求</li>
+</ul>
+<p><strong>获取方法</strong>：收集资料、联合讨论会、用户访谈、书面调查、现场观摩、参加业务时间、阅读历史文档、抽样调查</p>
+<h4><span id="22-需求分析"> 2.2 需求分析</span></h4>
+<h5><span id="221-sa"> 2.2.1 SA</span></h5>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/SA.PNG" alt="SA图"></p>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/DFD.PNG" alt="DFD图"></p>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/STD.PNG" alt="STD图"></p>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/E-R.PNG" alt="E-R图"></p>
+<h5><span id="222-ooa"> 2.2.2 OOA（*）</span></h5>
+<ul>
+<li>对象</li>
+<li>类
+<ul>
+<li>实体类：映射需求中的每个实体，实体类保存需要存储在永久存储体中的信息</li>
+<li>控制类：用于控制用例工作的类</li>
+<li>边界类：用于封装在用例内、外流动的信息或数据流</li>
+</ul>
+</li>
+<li>抽象</li>
+<li>封装</li>
+<li>继承与泛化</li>
+<li>多态</li>
+<li>接口</li>
+<li>消息</li>
+<li>组件</li>
+<li>模式和复用</li>
+</ul>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/OOA.PNG" alt="OOA"></p>
+<p>UML 2.0</p>
+<ul>
+<li>结构图（静态图）
+<ul>
+<li>类图</li>
+<li>对象图</li>
+<li><strong>包图</strong></li>
+<li><strong>组合结构图</strong></li>
+<li>构件图</li>
+<li>部署图：软硬件之间映射</li>
+<li><strong>制品图</strong></li>
+</ul>
+</li>
+<li>行为图（动态图）
+<ul>
+<li>用例图：系统与外部参与者的交互</li>
+<li>顺序图：强调按时间顺序</li>
+<li>通信图（协作图）</li>
+<li><strong>定时图</strong></li>
+<li>状态图：状态转换变迁</li>
+<li>活动图：类似程序流程图，并行行为</li>
+<li><strong>交互概览图</strong></li>
+</ul>
+</li>
+</ul>
+<h4><span id="23-需求定义"> 2.3 需求定义</span></h4>
+<p>严格定义法：所有需求都能够被预先定义、开发人员与用户之间能够准确而清晰地交流、采用图形文字可以充分体现最终系统</p>
+<ul>
+<li>用结构化、自然语言编写文本型文档</li>
+<li>建立图形化模型</li>
+<li>编写形式化规格说明</li>
+</ul>
+<p>原型法：并非所有地需求都能在开发前被准确说明、项目参加者站之间通常都存在交流上地困难、需要实际地可供用户参与地系统模型、有合适地系统开发环境、反复是完全需要和值得提倡地</p>
+<h4><span id="24-需求验证"> 2.4 需求验证</span></h4>
+<p>需求评审：正式、非正式</p>
+<p>需求测试</p>
+<p>用户签字确认… 验收标准之一</p>
+<h3><span id="3-需求管理"> 3. 需求管理</span></h3>
+<h4><span id="31-定义需求基线"> 3.1 定义需求基线</span></h4>
+<h4><span id="32-需求跟踪"> 3.2 需求跟踪</span></h4>
+<h3><span id="变更控制"> 变更控制</span></h3>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E5%8F%98%E6%9B%B4%E6%8E%A7%E5%88%B6.PNG" alt="变更控制"></p>
+<h3><span id="软件系统建模"> 软件系统建模</span></h3>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%BB%BA%E6%A8%A1.PNG" alt="软件系统建模"></p>
 <h2><span id="系统设计"> 系统设计</span></h2>
-<h3><span id="面向对象的设计"> 面向对象的设计</span></h3>
-<h4><span id="设计模式"> 设计模式</span></h4>
+<h3><span id="1-人机界面设计"> 1. 人机界面设计</span></h3>
+<ul>
+<li>置于用户控制之下
+<ul>
+<li>以不强迫用户进入不必要的或不希望的动作的方式来定义交互方式</li>
+<li>提供灵活的交互</li>
+<li>允许用户交互可以被中断或撤销</li>
+<li>当技能级别增加时可以使交互流水话并允许定制交互</li>
+<li>使用户隔离内部技术细节</li>
+<li>设计应允许用户和出现在屏幕上的对象直接交互</li>
+</ul>
+</li>
+<li>减少用户的记忆负担
+<ul>
+<li>减少对短期记忆的要求</li>
+<li>建立有意义的缺省</li>
+<li>定义直接性的捷径</li>
+<li>界面的视觉布局应该基于真实世界的隐喻</li>
+<li>以不断进展的方式揭示信息</li>
+</ul>
+</li>
+<li>保持界面的一致性
+<ul>
+<li>允许用户将当前任务放入有意义的语境</li>
+<li>在应用系列内保持一致性</li>
+<li>如过去的交互模型已建立起了用户期望，除非有迫不得已的理由，不要改变</li>
+</ul>
+</li>
+</ul>
+<h3><span id="2-结构化设计"> 2. 结构化设计</span></h3>
+<p>概要设计、详细设计</p>
+<p>抽象化；自顶而下、逐步求精；信息隐蔽；模块独立（高内聚、低耦合）</p>
+<ul>
+<li>保持模块的大小适中</li>
+<li>尽可能减少调用的深度</li>
+<li>多扇入，少扇出</li>
+<li>单入口，单出口</li>
+<li>模块的作用域应该在模块之内</li>
+<li>功能应该是可预测的</li>
+</ul>
+<h3><span id="3-面向对象的设计"> 3. 面向对象的设计</span></h3>
+<p>基本过程</p>
+<p>分析模型：用例模型、分析模型（领域模型）</p>
+<p>设计师：设计用例实现方案、设计技术支撑实施、设计用户界面、细化设计模型</p>
+<p>设计模型：架构图（用包图表示）、用例实现图（用交互图表示）、类图（完整、精确）、其他（状态图、活动图）</p>
+<h4><span id="设计原则"> 设计原则</span></h4>
+<ul>
+<li>单一职责原则：设计目的单一的类</li>
+<li>开放-封闭原则：对扩展开放，对修改封闭</li>
+<li>Liskov替换原则：子类可以替换父类</li>
+<li>依赖倒置原则：要依赖于抽象，而不是具体实现；针对接口编程，不要针对实现编程</li>
+<li>接口隔离原则：使用多个专门的接口比使用单一的总接口要好</li>
+<li>组合重用原则：要尽量使用组合，而不是继承关系达到重用目的</li>
+<li>迪米特原则（最少知识法则）：一个对象应当对其他对象有尽可能少的了解</li>
+</ul>
+<h4><span id="31-设计模式"> 3.1 设计模式</span></h4>
+<p>概念：</p>
+<ul>
+<li>架构模式：软件设计中的高层决策，例如C/S结构就属于架构模式，架构模式反映了开发软件系统过程中所作的基本设计决策</li>
+<li>设计模式：主要关注软件系统的设计，与具体的实现语言无关</li>
+<li>惯用法：用最底层的模式，关注软件系统的设计与实现，实现时通过某种特定的程序设计语言来描述构件与构件之间的关系</li>
+</ul>
+<p>包括：</p>
 <ul>
 <li>创建型模式
 <ul>
@@ -851,6 +1139,305 @@
 </ul>
 </li>
 </ul>
+<h2><span id="软件测试"> 软件测试</span></h2>
+<h3><span id="测试类型"> 测试类型</span></h3>
+<p>动态测试：黑盒测试法、白盒测试法、灰盒测试法</p>
+<p>静态测试：桌前测试、代码审查、代码走查</p>
+<ul>
+<li>尽早、不断地进行测试</li>
+<li>程序员避免测试在自己设计的程序</li>
+<li>既要选择有效、合理的数据，也要选择无效、不合理的数据</li>
+<li>修改后要进行回归测试</li>
+<li>尚未发现的错误数量与该程序已发现错误数成正比</li>
+</ul>
+<h3><span id="测试用例设计"> 测试用例设计</span></h3>
+<p>黑盒测试法：等价类划分、边界值分析、错误推测、因果图</p>
+<p>白盒测试法：基本路径测试、循环覆盖测试、逻辑覆盖测试</p>
+<h3><span id="测试阶段"> 测试阶段</span></h3>
+<ol>
+<li>冒烟测试</li>
+<li>
+<ul>
+<li>单元测试</li>
+<li>集成测试
+<ul>
+<li>一次性组装</li>
+<li>增量式组装
+<ul>
+<li>自顶向下</li>
+<li>自底向上</li>
+<li>混合式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>确认测试
+<ul>
+<li>内部确认测试</li>
+<li>Alpha测试</li>
+<li>Beta测试</li>
+<li>验收测试</li>
+</ul>
+</li>
+<li>系统测试
+<ul>
+<li>恢复测试</li>
+<li>安全性测试
+<ul>
+<li>负载测试、强度测试、容量测试</li>
+</ul>
+</li>
+<li>压力测试</li>
+<li>性能测试</li>
+<li>可靠性测试</li>
+<li>可用性测试</li>
+<li>可维护性测试</li>
+<li>安装测试</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>V模型测试</p>
+<ul>
+<li>单元测试：模块测试，模块功能、性能、接口等</li>
+<li>集成测试：模块间的接口</li>
+<li>确认测试：验证软件与需求的一致性。内部确认测试、Alpha测试、Beta测试、验收测试</li>
+<li>系统测试：真实环境下，验证完整的软件配置之项能否与系统正确连接</li>
+<li>回归测试：测试软件变更之后，变更部分的正确性对变更需求的符合性</li>
+</ul>
+<h3><span id="面向对象测试"> 面向对象测试</span></h3>
+<ul>
+<li>算法层（单元测试）：包括等价类划分测试、组合功能测试（基于判定表的测试）、递归函数测试、多态消息测试</li>
+<li>类层（模块测试）：包括不变式边界测试、模态类测试、非模态类测试</li>
+<li>模块层/类树层（集成测试）：包括多态服务测试、展平测试</li>
+<li>系统层（系统测试）</li>
+</ul>
+<h3><span id="软件调试"> 软件调试</span></h3>
+<ul>
+<li>软件调试方法
+<ul>
+<li>蛮力法：主要思想是通过计算机找错，低效、耗时</li>
+<li>回溯法：从出错处人工沿控制流程往会追踪，直至发现出错的根源。复杂程序由于回溯路径多，难以实施</li>
+<li>原因排除法：主要思想是演绎和归纳，用二分法实现</li>
+</ul>
+</li>
+<li>软件测试与调试的区别
+<ul>
+<li>测试的目的是找出存在的错误，调试的目的是定位错误并修改程序以修正错误</li>
+<li>调试是测试之后的活动，目标、方法、思路都有所不同</li>
+<li>测试从一个已知的条件开始，使用预先定义的过程，有预知的结果；调试从一个未知的条件开始，结束的过程不可预计</li>
+<li>测试过程可以实现设计，进度可以事先确认；调试不能描述过程或持续时间</li>
+</ul>
+</li>
+</ul>
+<h2><span id="系统运行与软件维护"> 系统运行与软件维护</span></h2>
+<h3><span id="数据转换与迁移"> 数据转换与迁移</span></h3>
+<p>从旧数据库到新数据库：抽取、转换、装载</p>
+<ul>
+<li>系统切换前通过工具迁移</li>
+<li>系统切换前采用手工录入</li>
+<li>系统切换后通过新系统生产</li>
+</ul>
+<h3><span id="系统运行与维护"> 系统运行与维护</span></h3>
+<p>软件维护是生命周期的一个完整部分</p>
+<p>可以将软件维护定义为需要提供软件支持的全部活动，这些活动包括在交付前完成的活动，以及交付后完成的活动。</p>
+<p>交付前完成的活动包括交付后运行的计划和维护计划等；交付后的活动包括软件修改、培训、帮助资料等</p>
+<h1><span id="软件架构设计"> 软件架构设计</span></h1>
+<p>概念-&gt; 风格 -&gt; 设计 -&gt; 评估</p>
+<h2><span id="1-软件架构的概念"> 1. 软件架构的概念</span></h2>
+<h3><span id="11-概念"> 1.1 概念</span></h3>
+<p>需求分析 ——架构——软件设计</p>
+<p>架构设计就是需求分配，即将满足需求的职责分配到组件上</p>
+<ul>
+<li></li>
+</ul>
+<h3><span id="12-发展史"> 1.2 发展史</span></h3>
+<ol>
+<li>无架构阶段（汇编语言）</li>
+<li>萌芽阶段（程序结构设计）</li>
+<li>初级阶段（统一建模语言）</li>
+<li>高级阶段（4+1视图）</li>
+</ol>
+<h3><span id="13-软件架构建模"> 1.3 软件架构建模</span></h3>
+<ul>
+<li>结构模型：以架构的构件、连接件和其他概念来刻画结构</li>
+<li>架构模型：不太侧重描述结构的细节而更侧重于整体的结构</li>
+<li>动态模型：系统的“大颗粒”的行为性质</li>
+<li>过程模型：构建系统的步骤和过程</li>
+<li>功能模型：由一组功能构件按层次组成，下层向上层提供服务</li>
+</ul>
+<p><img src="" alt=""></p>
+<h2><span id="2-体系结构描述语言adl"> 2. 体系结构描述语言（ADL）</span></h2>
+<h2><span id="3-软件架构风格"> 3. 软件架构风格</span></h2>
+<ul>
+<li>架构设计的一个核心问题是<strong>能否达到架构级的软件复用</strong></li>
+<li>架构风格反映了领域众多系统所共有的结构和语义特性，并指导如何将各个构件有效地组织成一个完整地系统</li>
+<li>架构风格定义了用于描述系统地术语表和一组指导构件系统的规则</li>
+</ul>
+<p>风格包括</p>
+<ul>
+<li>数据流风格：批处理序列、管道-过滤器</li>
+<li>调用/返回风格：主程序/子程序、面向对象、层次结构</li>
+<li>独立构件风格：进程通信、事件驱动系统（隐式调用）</li>
+<li>虚拟机风格：解释器、基于规则的系统</li>
+<li>仓库风格：数据库系统、超文本系统、黑板系统</li>
+</ul>
+<h3><span id="31-数据流风格"> 3.1 数据流风格</span></h3>
+<h4><span id="311-批处理序列"> 3.1.1 批处理序列</span></h4>
+<p>构件为一系列固定顺序的计算单元，构件之间只通过数据传递交互。</p>
+<p>每个处理步骤是一个独立的程序，每一步必须在其前一步结束后才能开始，数据必须是完整的，以整体的方式传递。</p>
+<h4><span id="312-管道-过滤器"> 3.1.2 管道-过滤器</span></h4>
+<p>每个构件都有一组输入和输出，构件读输入的数据流，经过内部处理，然后产生输出数据流。这个过程通常是通过对输入数据流的变换或计算来完成的，包括通过计算和增加信息以丰富数据、通过浓缩和删除以精简数据、通过改变记录方式以转换数据和递增地转化数据等。这里地构件称为过滤器，连接件就是数据流传输地管道，将一个过滤器地输出传到另一个过滤器地输入。</p>
+<h3><span id="32-调用返回风格"> 3.2 调用/返回风格</span></h3>
+<h4><span id="321-主程序子程序"> 3.2.1 主程序/子程序</span></h4>
+<p>单线程控制，把问题划分为若干个处理步骤，构件即为主程序和子程序，子程序通常可合成为模块。</p>
+<p>过程调用作为交互机制，即充当连接件地角色。</p>
+<p>调用关系具有层次性，其语义逻辑表现为主程序的正确性取决于它调用的子程序的正确性。</p>
+<h4><span id="322-面向对象"> 3.2.2 面向对象</span></h4>
+<p>构件是对象，对象是抽象数据类型的实例。在抽象数据类型中，数据的表示和它们的相应操作被封装起来，对象的行为体现在其接受和请求的动作。</p>
+<p>连接件即是对象间交互的方式，对象是通过函数和过程的调用来交互的。</p>
+<h4><span id="323-层次结构"> 3.2.3 层次结构</span></h4>
+<p>构件组织成一个层次结构，连接件通过决定层间如何交互的协议来定义。每层为上一次提供服务，使用下一层的服务，只能见到与自己邻接的层。</p>
+<p>通过层次结构，可以将大的问题分解为若干个渐进的小问题逐步解决，可以隐藏问题的复杂度。修改一层，最多影响相邻的两层。</p>
+<h5><span id="优点"> 优点</span></h5>
+<ol>
+<li>这种风格支持基于可增加抽象层地设计，允许将一个复杂问题分解成一个增量步骤序列地实现</li>
+<li>不同的层次处于不同的抽象级别</li>
+<li>由于每一层最多只影响两层，同时只要给相邻层提供相同的接口，允许每层用不同的方法实现，同样为软件复用提供强大的支持</li>
+</ol>
+<h5><span id="缺点"> 缺点</span></h5>
+<ol>
+<li>并不是每个系统都可以很容易地划分为分层地模式</li>
+<li>很难找到一个合适的、正确地层次抽象方法</li>
+</ol>
+<h3><span id="33-独立构件风格"> 3.3 独立构件风格</span></h3>
+<h4><span id="331-进程通信"> 3.3.1 进程通信</span></h4>
+<p>构件是独立的过程，连接件是消息传递。</p>
+<p>构件通常是命名过程，消息传递的方式可以是点对点、异步或同步方式、远程过程（方法）调用等</p>
+<h4><span id="332-事件驱动系统隐式调用"> 3.3.2 事件驱动系统（隐式调用）</span></h4>
+<p>构件不直接调用一个过程，而是出发或广播一个或多个事件。构件中的过程在一个或多个事件中注册，当某个事件被触发时，系统自动调用在这个事件中注册的所有过程。</p>
+<h3><span id="34-虚拟机风格"> 3.4 虚拟机风格</span></h3>
+<h4><span id="341-解释器"> 3.4.1 解释器</span></h4>
+<p>解释器通常包括一个完成解释工作的解释引擎、一个包含将被解释的代码的存储区、一个包含将被解释的代码的存储区、一个记录解释引擎当前工作状态的数据结构、以及一个记录源代码被解释执行的进度的数据结构。</p>
+<p>具有解释器风格的软件中含有一个虚拟机，可以仿真硬件的执行过程和一些关键应用，缺点是执行效率比较低。</p>
+<h4><span id="342-基于规则的系统"> 3.4.2 基于规则的系统</span></h4>
+<p>基于规则的的系统包括规则集、规则解释器、规则/数据选择器和工作内存，一般用在人工职能领域和DSS中</p>
+<h3><span id="35-仓库风格以数据为中心的风格"> 3.5 仓库风格（以数据为中心的风格）</span></h3>
+<h4><span id="351-数据库系统"> 3.5.1 数据库系统</span></h4>
+<p>构件主要由两大类，一类是中央共享数据源，保持当前系统的数据状态；另一类是多个独立处理单元，处理单元对数据元素进行操作</p>
+<h4><span id="352-黑板系统"> 3.5.2 黑板系统</span></h4>
+<p>包括<strong>知识源</strong>、<strong>黑板</strong>、<strong>控制</strong>三部分</p>
+<p>知识源包括若干独立计算的不同单元，提供解决问题的知识。知识源响应黑板的变化，也只修改黑板；黑板是一个全局数据库，包含问题域解空间的全部状态，是知识源相互作用的唯一每阶；知识源响应是通过黑板状态的变化来控制的。黑板系统通常应用在对于解决问题没有确定性算法的软件中（信号处理、问题规划、编译器优化等）</p>
+<h4><span id="353-超文本系统"> 3.5.3 超文本系统</span></h4>
+<p><strong>现代集成编译环境一般用这种架构风格。</strong></p>
+<p>构件以网状链接方式相互连接，用户可以在构件之间进行按照人类的联想思维方式任何跳转到相关构件。超文本是一种非线性的网状信息组织方法，它以节点为基本单位，链作为结点之间的联想式关联。</p>
+<h3><span id="36-闭环控制架构过程控制"> 3.6 闭环控制架构（过程控制）</span></h3>
+<p>当软件被用来操作一个物理系统时，软件与硬件之间可以粗略地表示为一个反馈循环，这个反馈循环通过接受一个的输入，确定一系列的输出，最终使环境达到一个新的状态。适用于嵌入式系统，涉及连续的动作与状态。</p>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E9%97%AD%E7%8E%AF%E6%8E%A7%E5%88%B6%E6%9E%B6%E6%9E%84.PNG" alt=""></p>
+<h2><span id="4-重要软件架构风格"> 4. 重要软件架构风格</span></h2>
+<h3><span id="41-层次架构风格"> 4.1 层次架构风格</span></h3>
+<h2><span id="5-基于架构的软件开发方法"> 5. 基于架构的软件开发方法</span></h2>
+<h2><span id="6-软件架构评估"> 6. 软件架构评估</span></h2>
+<ol>
+<li>为什么要进行架构评估？</li>
+<li>架构评估到底评什么？</li>
+<li>架构评估怎么评？</li>
+</ol>
+<h3><span id="61-质量属性"> 6.1 质量属性</span></h3>
+<h4><span id="611-性能"> 6.1.1 性能</span></h4>
+<p>performance 是指系统的响应能力，即经过多长时间才能对某个事件制作出响应，或者在某段时间内系统所能处理的事件个数</p>
+<p>代表参数：响应事件、吞吐量</p>
+<p>设计策略：优先级队列、资源调度</p>
+<h4><span id="612-可靠性"> 6.1.2 可靠性</span></h4>
+<p>reliability 是软件系统在应用或系统错误面前，在意外或错误使用的情况下维持软件系统的功能特性的基本能力</p>
+<p>代表参数：MTTF、MTBF</p>
+<p>设计策略：冗余、心跳线</p>
+<h4><span id="613-可用性"> 6.1.3 可用性</span></h4>
+<p>availability 是系统能够正常运行的事件比例。经常用两次故障之间的时间长度或在出现故障时系统能够恢复正常的速度来表示。</p>
+<p>代表参数：故障间隔时间</p>
+<p>设计策略：冗余、心跳线</p>
+<h4><span id="614-安全性"> 6.1.4 安全性</span></h4>
+<p>security 是指系统在向合法用户提供服务的同时能够阻止非授权用户使用的企图或拒绝服务的能力。安全性可划分为机密性、完整性、不可否认性以及可控性等特性。</p>
+<p>设计策略：追踪审计、信息隐藏</p>
+<h4><span id="615-可修改性"> 6.1.5 可修改性</span></h4>
+<p>modifiability 是指能够快速地以较高的性能价格比对系统进行变更的能力。通常以某些具体的变更为基准，通过考察这些变更的代价衡量可修改性。</p>
+<h4><span id="616-功能性"> 6.1.6 功能性</span></h4>
+<p>functionality 是系统所能完成所期望的工作的能力。一项任务的完成需要系统中许多或大多数构件的相互协作。</p>
+<h4><span id="617-可变性"> 6.1.7 可变性</span></h4>
+<p>changeability 是指体系结构经扩充或变更而成为新体系结构的能力。这种新体系结构应该符合预先定义的规则，在某些具体方面不同于原有的体系结构。当要将某个体系结构作为一系列相关产品的基础时，可变性是很重要的。</p>
+<h4><span id="618-互操作性"> 6.1.8 互操作性</span></h4>
+<p>interoperation 软件体系结构必须为外部可视的功能特性和数据结构提供精心设计的软件入口。程序和用其他编程语言编写的软件系统的交互作用就是互操作性的问题.</p>
+<h4><span id="具体举例"> 具体举例</span></h4>
+<ol>
+<li>用户提交搜索请求后,系统必须在1秒内显示结果</li>
+<li>用户信息数据库授权必须保证99.9%可用</li>
+<li>系统由MySQL数据库升级为Oracle数据库,必须在1人月内完成</li>
+<li>主服务器出现严重问题无法提供服务时,备用系统10分钟内能接替工作</li>
+<li>需要在3人周内为系统添加一种新的支付方式</li>
+<li>视频点播时,超清模式必须保证画面具有1280*720的分辨率</li>
+<li>主站点断电后,需要在3s内将访问请求重定向到备用站点</li>
+</ol>
+<p><strong>风险点</strong>: 指架构设计中潜在的 存在问题的架构决策所带来的隐患.</p>
+<p><strong>敏感点</strong>:指为了实现某种特定的质量属性,一个或多个构件所具有的特性</p>
+<p><strong>权衡点</strong>:影响多个质量属性的特性,是多个在质量属性的敏感点</p>
+<h3><span id="62-基于场景的方式"> 6.2 基于场景的方式</span></h3>
+<h4><span id="621-atam"> 6.2.1 ATAM</span></h4>
+<h4><span id="622-cbam"> 6.2.2 CBAM</span></h4>
+<h4><span id="623-saam"> 6.2.3 SAAM</span></h4>
+<h4><span id="624-质量效用树"> 6.2.4 质量效用树</span></h4>
+<h2><span id="7-软件产品线"> 7. 软件产品线</span></h2>
+<h2><span id="8-中间件技术"> 8. 中间件技术</span></h2>
+<h2><span id="9-典型应用架构"> 9. 典型应用架构</span></h2>
+<h1><span id="系统安全分析与设计"> 系统安全分析与设计</span></h1>
+<h1><span id="项目管理"> 项目管理</span></h1>
+<h1><span id="系统架构设计案例分析"> 系统架构设计案例分析</span></h1>
+<h1><span id="系统架构设计论文"> 系统架构设计论文</span></h1>
+<h1><span id="计算机组成与体系结构"> 计算机组成与体系结构</span></h1>
+<h2><span id="1-计算机体系结构分类"> 1. 计算机体系结构分类</span></h2>
+<h3><span id="11-flynn"> 1.1 Flynn</span></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">体系结构类型</th>
+<th style="text-align:center">结构</th>
+<th style="text-align:center">关键特性</th>
+<th style="text-align:center">代表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单指令流单数据流SISD</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">单指令流多数据流SIMD</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">多指令流单数据流MISD</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">多指令流多数据流MIMD</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h1><span id="系统配置与性能评价"> 系统配置与性能评价</span></h1>
+<h1><span id="操作系统"> 操作系统</span></h1>
+<h1><span id="计算机网络"> 计算机网络</span></h1>
+<h1><span id="数据库系统"> 数据库系统</span></h1>
+<h1><span id="数学与经济管理"> 数学与经济管理</span></h1>
+<h1><span id="知识产权与标准化"> 知识产权与标准化</span></h1>
 
       
     </div>
@@ -870,7 +1457,7 @@
   <p><span>本文标题:</span><a href="/2020/04/01/架构师/">软件架构 笔记</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
   <p><span>发布时间:</span>2020年04月01日 - 14:04</p>
-  <p><span>最后更新:</span>2020年04月03日 - 00:04</p>
+  <p><span>最后更新:</span>2020年04月09日 - 16:04</p>
   <p><span>原始链接:</span><a href="/2020/04/01/架构师/" title="软件架构 笔记">https://songzi.info/2020/04/01/架构师/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi.info/2020/04/01/架构师/" aria-label="复制成功！"></i></span>
   </p>
@@ -936,6 +1523,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/09/架构师_2/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -1003,7 +1594,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1134,7 +1725,7 @@
 </div>
 
 <div class="theme-info">
-  <span class="post-count">Total Words:113.1k</span>
+  <span class="post-count">Total Words:172.1k</span>
 </div>
 
 
