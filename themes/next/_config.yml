@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `hexo-site/source/` directory.
-favicon: 
+favicon:
   # small: /images/favicon.ico
   # small: /images/favicon_16.png
 
@@ -16,7 +16,7 @@ keywords: "Hexo, NexT"
 rss: /atom.xml
 
 # Specify the date when the site was setup
-since: 2018
+since: 2017
 
 # icon between year and author @Footer
 authoricon: snowflake-o
@@ -59,7 +59,7 @@ menu:
   sitemap: /sitemap
   #commonweal: /404
 
-  
+
 # Enable/Disable menu icons.
 # Icon Mapping:
 #   Map a menu item to a specific FontAwesome icon name.
@@ -176,7 +176,7 @@ sidebar:
 
   # Scroll percent label in b2t button
   scrollpercent: true
-  
+
   # Enable sidebar on narrow view
   onmobile: false
 
@@ -514,7 +514,7 @@ local_search:
 
 gitalk:
   enable: true
-  githubID: ShortPupil  # 例：asdfv1929   
+  githubID: ShortPupil  # 例：asdfv1929
   repo: ShortPupil.github.io   # 例：asdfv1929.github.io
   ClientID: 839f93bb1c0392738521
   ClientSecret: fa692a2086510e51849da4866e7f42aaa5069b7d
