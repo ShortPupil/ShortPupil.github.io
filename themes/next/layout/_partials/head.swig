@@ -14,7 +14,6 @@
       {% set pace_css_uri = theme.vendors.pace_css %}
     {% endif %}
   <script src="{{ pace_js_uri }}"></script>
-  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=4ZaYSsWosgi48-7L6q0ydwdZUaeweNZ4-XdvAJ5fsto&cl=ffffff&w=a"></script>
   <link href="{{ pace_css_uri }}" rel="stylesheet">
 {% endif %}
 
