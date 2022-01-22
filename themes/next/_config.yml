@@ -138,13 +138,15 @@ social_icons:
 
 # Table Of Contents in the Sidebar
 toc:
-  enable: false
-
+  enable: true                                  # 是否开启目录
   # Automatically add list number to toc.
-  number: false
-
+  number: false                                  # 自动增加列表数，比如`1.1 1.2 1.3`
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: false
+  wrap: true                                   # 标题内容大于侧边栏宽，是否再下一行显示
+  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+  expand_all: true                             # 是否自动扩展所有列表，而不是仅扩展当前二级标题下的列表
+  # Maximum heading depth of generated toc.
+  max_depth: 6
 
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
