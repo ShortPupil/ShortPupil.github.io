@@ -63,3 +63,5 @@ Utility Function 收益函数：决定一个局中人对于特定情况的喜恶
 
 ![](https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/2022%E5%B9%B41%E6%9C%8822%E6%97%A5160819.PNG)
 
+## Nash Equilibrium  纳什均衡
+
