@@ -6,7 +6,7 @@ copyright: true
 categories: java
 ---
 
-@[toc]
+<!-- toc -->
 
 
 

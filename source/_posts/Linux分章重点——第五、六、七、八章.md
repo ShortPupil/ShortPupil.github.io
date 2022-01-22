@@ -8,7 +8,7 @@ categories: linux
 
 # 目录
 
-@[toc]
+<!-- toc -->
 
 # Ch5 文件和目录
 

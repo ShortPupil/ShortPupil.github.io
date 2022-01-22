@@ -8,7 +8,7 @@ categories: linux
 
 # 目录
 
-@[toc]
+<!-- toc -->
 
 # Ch4 Linux字符界面操作 重点
 

@@ -6,7 +6,7 @@ copyright: true
 categories: C语言
 ---
 
-@[toc]
+<!-- toc -->
 
 
 

@@ -9,7 +9,7 @@ categories: linux
 
 # 目录
 
-@[toc]
+<!-- toc -->
 
 # Ch1 认识Linux系统
 

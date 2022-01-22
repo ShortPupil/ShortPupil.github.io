@@ -8,7 +8,7 @@ categories: linux
 
 # 目录
 
-@[toc]
+<!-- toc -->
 
 
 

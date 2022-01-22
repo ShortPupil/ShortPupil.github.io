@@ -6,7 +6,7 @@ tags: [machine learning]
 categories: 机器学习
 ---
 
-@[toc]
+<!-- toc -->
 
 ## 1. 获取数据集及处理思路
 
