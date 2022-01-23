@@ -124,7 +124,7 @@
             </ul>
           </div>
         {% endif %}
-        <a href="https://clustrmaps.com/site/1bmem"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=4ZaYSsWosgi48-7L6q0ydwdZUaeweNZ4-XdvAJ5fsto&cl=ffffff" /></a>
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5z7o1y5w71y&amp;m=8&amp;c=54ff00&amp;cr1=ff007e&amp;sx=0" async="async"></script>
         {% include '../_custom/sidebar.swig' %}
 
       </section>

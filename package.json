@@ -12,6 +12,7 @@
     "version": "5.4.1"
   },
   "dependencies": {
+    "eslint": "^8.7.0",
     "hexo": "^5.0.0",
     "hexo-deployer-git": "^3.0.0",
     "hexo-generator-archive": "^1.0.0",
@@ -24,7 +25,10 @@
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-renderer-swig": "^1.1.0",
     "hexo-server": "^2.0.0",
+    "hexo-symbols-count-time": "^0.7.1",
     "hexo-theme-next": "^8.9.0",
-    "hexo-word-counter": "^0.0.3"
+    "hexo-toc": "^1.1.0",
+    "hexo-word-counter": "^0.0.3",
+    "highlight.js": "^11.4.0"
   }
 }
