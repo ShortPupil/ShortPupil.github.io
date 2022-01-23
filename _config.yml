@@ -111,12 +111,24 @@ markdown_it_plus:
             name: markdown-it-toc-and-anchor
             enable: true
 
-search: 
-  on: true
-  onload: true
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 sitemap:
   path: sitemap.xml
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+  awl: 4
+  wpm: 275
+  suffix: "mins."
 
 # Live2D
 ## https://github.com/xiazeyu/live2d-widget.js
