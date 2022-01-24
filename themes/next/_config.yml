@@ -452,7 +452,7 @@ leancloud_visitors:
 # 不蒜子统计功能
 busuanzi_count:
   # count values only if the other configs are false
-  enable: true
+  enable: false
   # custom uv span for the whole site
   site_uv: false
   site_uv_header: <i class="fa fa-user"></i>
