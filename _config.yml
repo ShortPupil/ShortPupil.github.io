@@ -132,7 +132,6 @@ symbols_count_time:
   total_time: true
   exclude_codeblock: false
 
-
 # Live2D
 ## https://github.com/xiazeyu/live2d-widget.js
 ## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
