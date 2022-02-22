@@ -1,5 +1,5 @@
 ---
-title: leetcode整理
+title: 算法题整理
 date: 2019-04-23 21:23:24
 tags: [leetcode]
 copyright: true
@@ -8,7 +8,7 @@ categories: 题目
 
 
 
-整理一下
+# Leetcode
 
 | ID    | Title                                          | Difficulty | Java                                                         | Python                                                       | C++                                                          | SQL                                                          |
 | ----- | ---------------------------------------------- | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -36,6 +36,18 @@ categories: 题目
 | 985   | Sum of Even Numbers After Queries              | Easy       | [YES](<https://github.com/ShortPupil/Leetcode_questions/blob/master/0985.%20Sum%20of%20Even%20Numbers%20After%20Queries/Solution.java>) |                                                              |                                                              |                                                              |
 | 994   | Rotting Oranges                                | Easy       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/0994.%20Rotting%20Oranges/Solution.cpp) |                                                              |                                                              |                                                              |
 | 1262  | Greatest Sum Divisible by Three                | Medium     |                                                              |                                                              | [YES](<https://github.com/ShortPupil/Leetcode_questions/blob/master/1262.%20Greatest%20Sum%20Divisible%20by%20Three/Solution.cpp>) |                                                              |
+
+
+
+# 剑指
+
+| ID                           | Difficulty | Java    | Python | C++  | SQL  |
+| ---------------------------- | ---------- | ------- | ------ | ---- | ---- |
+| **JZ3** **数组中重复的数字** | Easy       | [YES]() |        |      |      |
+|                              |            |         |        |      |      |
+|                              |            |         |        |      |      |
+
+
 
 第4题
 
