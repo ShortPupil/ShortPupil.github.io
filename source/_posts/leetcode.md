@@ -8,11 +8,11 @@ categories: 题目
 
 
 
-# Leetcode
+# Leetcode 没维护链接
 
 | ID    | Title                                          | Difficulty | Java                                                         | Python                                                       | C++                                                          | SQL                                                          |
 | ----- | ---------------------------------------------- | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 1     | Two Sum                                        | Easy       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/0001.%20Two%20Sum/Solution.java) | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/0001.%20Two%20Sum/Solution.py) |                                                              |                                                              |
+| 1     | Two Sum                                        | Easy       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/LeetCode/0001. Two Sum/Solution.java) | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/LeetCode/0001. Two Sum/Solution.py) |                                                              |                                                              |
 | 2     | Add Two Numbers                                | Medium     | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/0002.%20Add%20Two%20Numbers/Solution.java) | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/0002.%20Add%20Two%20Numbers/Solution.py) |                                                              |                                                              |
 | 3     | Longest Substring Without Repeating Characters | Medium     | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/0003.%20Longest%20Substring%20Without%20Repeating%20Characters/Solution.java) | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/0003.%20Longest%20Substring%20Without%20Repeating%20Characters/Solution.py) |                                                              |                                                              |
 | 4     | Median of Two Sorted Arrays                    | Hard       | [YES]()                                                      |                                                              |                                                              |                                                              |
@@ -41,14 +41,20 @@ categories: 题目
 
 # 剑指
 
-| ID                           | Difficulty | Java    | Python | C++  | SQL  |
-| ---------------------------- | ---------- | ------- | ------ | ---- | ---- |
-| **JZ3** **数组中重复的数字** | Easy       | [YES]() |        |      |      |
-| **JZ4** **二维数组中的查找** | Medium     |         |        |      |      |
-| **JZ5** **替换空格**         | Easy       |         |        |      |      |
-| **JZ6** **从尾到头打印链表** | Easy       |         |        |      |      |
-|                              |            |         |        |      |      |
-|                              |            |         |        |      |      |
+| ID                              | Difficulty | Java                                                         | Python | C++  | SQL  |
+| ------------------------------- | ---------- | ------------------------------------------------------------ | ------ | ---- | ---- |
+| **JZ3** **数组中重复的数字**    | Easy       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ3/Solution.java) |        |      |      |
+| **JZ4** **二维数组中的查找**    | Medium     | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ4/Solution.java) |        |      |      |
+| **JZ5** **替换空格**            | Easy       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ5/Solution.java) |        |      |      |
+| **JZ6** **从尾到头打印链表**    | Easy       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ6/Solution.java) |        |      |      |
+| **JZ7** **重建二叉树**          | Medium     | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ7/Solution.java) |        |      |      |
+| **JZ8** **二叉树的下一个结点**  | Medium     | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ8/Solution.java) |        |      |      |
+| **JZ9** **用两个栈实现队列**    | Easy       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ9/Solution.java) |        |      |      |
+| **JZ10** **斐波那契数列**       | Easy       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ10/Solution.java) |        |      |      |
+| **JZ11** **旋转数组的最小数字** | Easy       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ11/Solution.java) |        |      |      |
+| **JZ12** **矩阵中的路径**       | Medium     | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ12/Solution.java) |        |      |      |
+| **JZ13** **机器人的运动范围**   | Hard       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ13/Solution.java) |        |      |      |
+| **JZ13** **机器人的运动范围**   | Medium     | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ14/Solution.java) |        |      |      |
 
 
 
