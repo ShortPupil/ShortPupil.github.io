@@ -1,5 +1,5 @@
 ---
-title: redis命令总结
+title: redis总结
 date: 2018-11-18 01:12:24
 tags: [redis, nosql]
 categories: database
@@ -952,16 +952,15 @@ l **UNWATCH**
 
 l Redis语法错误（可以理解为编译期错误）
 
- 
-
 l Redis类型错误（可以理解为运行期错误）
-
- 
 
 l **Redis****不支持事务回滚**
 
-​    **为什么redis不支持事务回滚？**
+**为什么redis不支持事务回滚？**
 
 1、 大多数事务失败是因为**语法错误或者类型错误**，这两种错误，在开发阶段都是可以预见的
 
 2、 redis为了**性能方面**就忽略了事务回滚
+
+
+

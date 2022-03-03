@@ -17,16 +17,17 @@ MongoDB和MySQL一样都是数据库, 都是存储数据的仓库,
 ## 2.什么是非关系型数据库?
 
 - 在'关系型数据库'中, 数据都是存储在表中的, 对存储的内容有严格的要求
-  因为在创建表的时候我们就已经规定了表中有多少个字段,
-                          已经规定了每个字段将来要存储什么类型数据,
-                          已经规定了每个字段将来是否可以为空,是否必须唯一等等
+  因为在创建表的时候我们就
+  
+  已经规定了表中有多少个字段,已经规定了每个字段将来要存储什么类型数据,已经规定了每个字段将来是否可以为空,是否必须唯一等等
 
 - 在'非关系型数据库'中, 没有表概念, 所以存储数据更加灵活
-  因为不需要创建表,所以也没有规定有哪些字段,
-                       也没有规定每个字段数据类型,
-                       也没有规定每个字段将来是否可以为空,是否必须唯一等等
+  因为不需要创建表,所以也
+  
+  没有规定有哪些字段,也没有规定每个字段数据类型,也没有规定每个字段将来是否可以为空,是否必须唯一等等
 
 - '关系型数据库'由于操作的都是结构化的数据, 所以我们需要使用结构化语言SQL来操作
+
 - '非关系型数据库'由于数据没有严格的结构要求, 所以无需使用SQL来操作
 
 ## 3.什么是MongoDB?
@@ -44,13 +45,13 @@ MongoDB和MySQL一样都是数据库, 都是存储数据的仓库,
 但是我们不能再次将     'zs', 33        保存到表中
 ```
 例如在MongoDB中:
-```
+
 我们可以把         {name: 'zs', age: 33};              保存到集合中
 我们也可以把       {name: 33, age: 'zs'};              保存到集合中
 我们也可以把       {name: null, age: 33};              保存到集合中
 我们也可以把       {name: 'zs', age: 33, gender:'男'}; 保存到集合中
 但是我们可以再次将 {name: 'zs', age: 33};              保存到集合中
-```
+
 - '非关系型数据库'可以看做是'关系型数据库'的功能阉割版本,
   通过减少用不到或很少用的功能，从而提升数据库的性能
 
@@ -87,6 +88,53 @@ MySQL中所有的数据都是存储在表中的, 而MongoDB中所有的数据都
 
 
 # 二、 基本操作学习
+
+```js
+// 1.导入mongoose
+const mongoose = require('mongoose');
+
+/*
+mongodb://MongoDB服务器IP地址:MongoDB服务器端口号/需要打开的数据库名称
+* */
+// 2.利用mongoose链接MongoDB服务器
+mongoose.connect('mongodb://127.0.0.1:27017/my_mongodb');
+
+// 3.监听链接成功还是失败
+let db = mongoose.connection;
+db.on('error', (err)=>{
+    console.log(err, '连接失败');
+});
+db.once('open', function() {
+    console.log('连接成功');
+});
+db.once('close', function() {
+    console.log('断开连接');
+});
+
+// 1.定义集合中存储数据规则
+let userSchema = new mongoose.Schema({
+    name: String,
+    age: Number
+});
+// 2.利用规则创建集合
+// 注意点: 只要创建好了模型, 那么以后就可以使用模型来操作这个集合
+// 注意点: mongoose会自动将我们指定的集合名称变成复数
+let User = mongoose.model('User', userSchema);
+
+// 3.利用集合创建文档
+// 注意点: 只要创建好了对象, 那么以后就可以使用对象来操作文档
+let u = new User({ name: 'zs', age:18 });
+
+// 4.操作文档
+u.save((err, product) => {
+    if (!err){
+        console.log('文档保存成功');
+        console.log(product);
+    }
+});
+```
+
+
 
 1.连接MongoDB服务器
 通过mongo连接MongoDB服务器
@@ -201,7 +249,134 @@ db.person.insert({_id: {name:'it66', gender: '男'}, name: 'lnj', age: 33});
 db.person.insert({_id: {gender: '男', name:'it66'}, name: 'lnj', age: 33});
 ```
 
-# 四、文档操作
+# 四、文档操作 增删改查
+
+```js
+// 1.导入mongoose
+const mongoose = require('mongoose');
+
+// 2.利用mongoose链接MongoDB服务器
+mongoose.connect('mongodb://127.0.0.1:27017/my');
+
+// 3.监听链接成功还是失败
+let db = mongoose.connection;
+db.on('error', (err)=>{
+    console.log(err, '连接失败');
+});
+db.once('open', function() {
+    console.log('连接成功');
+});
+db.once('close', function() {
+    console.log('断开连接');
+});
+
+// 1.定义集合中存储数据规则
+let userSchema = new mongoose.Schema({
+    name: String,
+    age: Number
+});
+
+// 2.利用规则创建集合
+let User = mongoose.model('User', userSchema);
+
+// 增加
+User.create({name:'zs', age:666}, (err, result)=>{
+    if(!err){
+        console.log('插入成功');
+        console.log(result);
+    }
+});
+User.create([
+        {name:'ls', age:18},
+        {name:'ls', age:22},
+        {name:'ww', age:21},
+        {name:'zl', age:23},
+        {name:'lnj', age:33},
+    ],
+    (err, result)=>{
+    if(!err){
+        console.log('插入成功');
+        console.log(result);
+    }
+});
+(async ()=>{
+    let result = await User.create([
+            {name:'ls', age:18},
+            {name:'ls', age:22},
+            {name:'ww', age:21},
+            {name:'zl', age:23},
+            {name:'lnj', age:33},
+        ]);
+    console.log(result);
+})();
+
+
+// 查询
+User.find({},{},(err, docs)=>{
+    if(!err){
+        console.log(docs);
+    }
+});
+User.find({},{_id:0, name:1, age:1},(err, docs)=>{
+    if(!err){
+        console.log(docs);
+    }
+});
+User.find({name:'ls'},{_id:0, name:1, age:1},(err, docs)=>{
+    if(!err){
+        console.log(docs);
+    }
+});
+User.find({},{_id:0, name:1, age:1},{ skip: 5, limit: 5},(err, docs)=>{
+    if(!err){
+        console.log(docs);
+    }
+});
+(async ()=>{
+    let result = await User.find({},{_id:0, name:1, age:1},{ skip: 5, limit: 5});
+    console.log(result);
+})();
+
+// 修改
+User.update({name:'ls'},{$set:{age:888}},(err, docs)=>{
+    if(!err){
+        console.log('更新成功');
+        console.log(docs);
+    }
+});
+User.update({name:'ls'},{$set:{age:888}}, {multi: true},(err, docs)=>{
+    if(!err){
+        console.log('更新成功');
+        console.log(docs);
+    }
+});
+(async ()=>{
+   let result = await User.update({name:'ls'},{$set:{age:123}}, {multi: true});
+   console.log(result);
+})();
+
+
+// 删除
+User.remove({name:'ww'}, {}, (err, docs)=>{
+    if(!err){
+        console.log('删除成功');
+        console.log(docs);
+    }
+});
+User.deleteOne({name:'lnj'}, (err, docs)=>{
+    if(!err){
+        console.log('删除成功');
+        console.log(docs);
+    }
+});
+
+(async ()=>{
+    let result = await User.deleteOne({name:'lnj'});
+    console.log(result);
+})();
+```
+
+
 
 
 

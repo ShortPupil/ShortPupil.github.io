@@ -10,6 +10,10 @@ categories: java
 
 
 
+
+
+
+
 ## Disruptor核心原理与源码
 
 LMAX架构：很低的延迟产生大量交易；建立在JVM上，核心是业务逻辑处理器
@@ -42,28 +46,6 @@ disruptor创建步骤
 生产者扔芝麻、消费者捡芝麻需要考虑速度问题
 
 - 随着不停地填充这个buffer（可能也会有相应的读取），这个序号会一直增长，直到绕过这个环
-
-
-
-
-
-### Sequence、Sequence Barrier
-
-
-
-### WaitStrategy等待策略
-
-
-
-### Event、EventProcess策略
-
-
-
-### EventHandler消费者处理器
-
-
-
-### WorkProcessor核心处理器
 
 
 

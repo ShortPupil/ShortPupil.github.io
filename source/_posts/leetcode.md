@@ -54,7 +54,8 @@ categories: 题目
 | **JZ11** **旋转数组的最小数字** | Easy       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ11/Solution.java) |        |      |      |
 | **JZ12** **矩阵中的路径**       | Medium     | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ12/Solution.java) |        |      |      |
 | **JZ13** **机器人的运动范围**   | Hard       | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ13/Solution.java) |        |      |      |
-| **JZ13** **机器人的运动范围**   | Medium     | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ14/Solution.java) |        |      |      |
+| **JZ14** **剪绳子**             | Medium     | [YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/JZ/JZ14/Solution.java) |        |      |      |
+| **JZ15** **二进制中1的个数**    | Easy       | YES                                                          |        |      |      |
 
 
 
