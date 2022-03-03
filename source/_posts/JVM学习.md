@@ -1,6 +1,6 @@
 ---
 title: JVM学习
-date: 2019-12-08 23:17:01
+date: 2020-12-08 23:17:01
 tags: [java]
 categories: java
 copyright: true
@@ -32,11 +32,9 @@ copyright: true
 
 - JVM虚拟机规范和Java语言规范的关系
 
-  - ```
-    Java        ->  Java语言规范
+  - Java        ->  Java语言规范
     ---------Java 字节码--------
     Hotspot VM  ->  Java虚拟机规范
-    ```
     
   - 两者没有必然的联系，但是要提高代码效率，需要了解一些执行层面的指示
     
@@ -227,7 +225,7 @@ java包括 基本数据类型、普通对象
 
 - 问：`<cinit>` 方法 和`<init>`方法有什么区别？
 
-- ```java
+``` java
   public class A {
       static {
           System.out.println("1");
@@ -253,7 +251,7 @@ java包括 基本数据类型、普通对象
   // 输出： 1 a 2 b 2 b
   // static 在<cinit> 类加载阶段就已经执行，且只会执行一次
   // <init> 在对象初始化阶段执行，且每次对象初始化都会执行一次
-  ```
+```
 
 #### 3.3 类加载器
 
