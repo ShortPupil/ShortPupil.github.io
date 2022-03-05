@@ -1,8 +1,8 @@
 ---
-title: redis总结
+title: 总结
 date: 2018-11-18 01:12:24
 tags: [redis, nosql]
-categories: database
+categories: 数据库
 copyright: true
 ---
 
