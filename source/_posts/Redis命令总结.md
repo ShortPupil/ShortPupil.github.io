@@ -1,6 +1,6 @@
 ---
-title: 总结
-date: 2018-11-18 01:12:24
+title: Redis命令总结
+date: 2020-01-21 01:12:24
 tags: [redis, nosql]
 categories: 数据库
 copyright: true
