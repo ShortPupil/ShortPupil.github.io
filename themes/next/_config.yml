@@ -558,10 +558,6 @@ links_layout: block
 links:
   Github: http://github.com/ShortPupil
 
-running_time:
-  enable: true
-  create_time: '10/31/2018 00:00:00' #此处修改你的建站时间或者网站上线时间
-
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
