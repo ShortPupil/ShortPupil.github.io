@@ -35,7 +35,7 @@
 		seconds - 0-59之间的整数，做为date对象的秒数
 		microseconds - 0-999之间的整数，做为date对象的毫秒数
         */
-		var t1 = Date.UTC(2018,10,31,00,00,00); //北京时间2018-10-31 00:00:00
+		var t1 = Date.UTC(2016,10,31,00,00,00); //北京时间2018-10-31 00:00:00
 		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
 		var diff = t2-t1;
 		var diffYears = Math.floor(diff/years);
@@ -46,6 +46,7 @@
 		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
 	}
 	siteTime();
+	alert("\n");
 </script>
 <!-- 添加网站运行时间 -->
 
@@ -60,5 +61,9 @@
     NexT.{{ theme.scheme }}
   </a>
 </div>
+<div>
+{% endif %}
 
+{% if theme.footer.counter %}
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 {% endif %}
