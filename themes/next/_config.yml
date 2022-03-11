@@ -210,15 +210,6 @@ post_meta:
   updated_at: false
   categories: true
 
-# Post wordcount display settings
-# Dependencies: https://github.com/willin/hexo-wordcount
-post_wordcount:
-  item_text: true
-  wordcount: true
-  min2read: true
-  totalcount: true
-  separated_meta: true
-
 # Reward
 #reward_comment: Donate comment here
 #wechatpay: /images/wechatpay.jpg
