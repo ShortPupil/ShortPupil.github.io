@@ -194,15 +194,15 @@
 		<span class="post-meta-divider">|</span>
           {% endif %}
 
-          {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv">{{ theme.busuanzi_count.page_pv_header }}
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>{{ theme.busuanzi_count.page_pv_footer }}
+          {% if theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
             </span>
           {% endif %}
 
           {% if theme.post_wordcount.wordcount or theme.post_wordcount.min2read %}
 
+            <span class="post-meta-divider">|</span>
             <div class="post-wordcount">
               {% if theme.post_wordcount.wordcount %}
                 {% if not theme.post_wordcount.separated_meta %}

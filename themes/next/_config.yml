@@ -210,6 +210,15 @@ post_meta:
   updated_at: false
   categories: true
 
+# Post wordcount display settings
+# Dependencies: https://github.com/willin/hexo-wordcount
+post_wordcount:
+  item_text: true
+  wordcount: true
+  min2read: true
+  totalcount: true
+  separated_meta: true
+
 # Reward
 #reward_comment: Donate comment here
 #wechatpay: /images/wechatpay.jpg
@@ -435,6 +444,12 @@ leancloud_visitors:
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
   enable: true
+  total_visitors: true   #统计访客数
+  total_visitors_icon: user
+  total_views: true    #统计访问数
+  total_views_icon: eye
+  post_views: true   #统计文章阅读数
+  post_views_icon: eye
 
 footer:
   counter: true
@@ -672,7 +687,7 @@ vendors:
 symbols_count_time:
   separated_meta: true     # 是否另起一行（true的话不和发表时间等同一行）
   item_text_post: true     # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）
-  item_text_total: true   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）
+  item_text_total: false   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）
   awl: 4                   # Average Word Length
   wpm: 275                 # Words Per Minute（每分钟阅读词数）
   suffix: mins.
