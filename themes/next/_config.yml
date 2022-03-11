@@ -4,8 +4,8 @@
 
 # Put your favicon.ico into `hexo-site/source/` directory.
 favicon:
-  small: /images/favicon_32.png
-  medium: /images/favicon_16.png
+  small: /images/favicon-32x32-next.ico
+  medium: /images/favicon-16x16-next.ico
   # small: /images/favicon_16.png
 
 # Set default keywords (Use a comma to separate)
@@ -135,7 +135,10 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: /images/avatar.jpg
+avatar: /images/avatar.jpg # 图片地址
+
+# Posts / Categories / Tags in sidebar.
+site_state: true
 
 # Table Of Contents in the Sidebar
 toc:
@@ -510,6 +513,18 @@ gitalk:
   ClientSecret: fa692a2086510e51849da4866e7f42aaa5069b7d
   adminUser: ShortPupil #指定可初始化评论账户
   distractionFreeMode: true
+
+custom_file_path:
+  head: source/_data/head.swig #添加自定义内容在 head
+  #header: source/_data/header.swig #添加自定义内容在顶栏
+  #sidebar: source/_data/sidebar.swig #添加自定义内容在边栏
+  #postMeta: source/_data/post-meta.swig #添加自定义文章的 meta 信息
+  postBodyEnd: source/_data/post-body-end.swig #添加自定义内容在文章尾部
+  footer: source/_data/footer.swig #添加自定义内容在页脚
+  #bodyEnd: source/_data/body-end.swig
+  #variable: source/_data/variables.styl
+  #mixin: source/_data/mixins.styl
+  style: source/_data/styles.styl #添加自定义css
 
 # ---------------------------------------------------------------
 # Tags Settings
