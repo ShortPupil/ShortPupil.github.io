@@ -435,7 +435,7 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: true
+  enable: false
   app_id: UsLssQzBXzzoGiu5rYxSXDno-MdYXbMMI
   app_key: XYkkF1LCSzvalu3mxlYE01I1
 
@@ -507,7 +507,7 @@ local_search:
   trigger: auto
   # show top n results per article, show all results by setting to -1
   top_n_per_article: 1
-  
+
 gitalk:
   enable: true
   githubID: ShortPupil  # 例：asdfv1929
@@ -558,6 +558,9 @@ links_layout: block
 links:
   Github: http://github.com/ShortPupil
 
+running_time:
+  enable: true
+  create_time: '10/31/2018 00:00:00' #此处修改你的建站时间或者网站上线时间
 
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
