@@ -10,7 +10,7 @@
 
 <!--添加网站运行时间 -->
 <span id="timeDate">载入天数...</span>
-<span id="times">载入时分秒...</span>  Sometimes your whole life boils down to one insame move.
+<span id="times">载入时分秒...</span>
 <script>
     var now = new Date();
     function createtime() {

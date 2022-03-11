@@ -122,19 +122,12 @@ sitemap:
 
 # 设置博客单词统计
 symbols_count_time:
-  # 文章字数统计
-  symbols: true
-  # 文章阅读时间统计
-  time: true
-  # 站点总字数统计
-  total_symbols: true
-  # 站点总阅读时间统计
-  total_time: true
-  exclude_codeblock: false
+  symbols: true                # 文章字数统计
+  time: true                   # 文章阅读时长
+  total_symbols: true          # 站点总字数统计
+  total_time: true             # 站点总阅读时长
+  exclude_codeblock: false     # 排除代码字数统计
 
-# Live2D
-## https://github.com/xiazeyu/live2d-widget.js
-## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
 live2d:
   enable: false
   scriptFrom: local
