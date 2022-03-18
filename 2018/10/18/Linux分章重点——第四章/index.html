@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="linux," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="毫末室" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/%5Bobject%20Object%5D?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="目录   Ch4 Linux字符界面操作 重点 进入命令行的方式 虚拟控制台的切换 系统关机&#x2F;重启 运行级别 0～6 要很清楚，3字符、5图形、0关机、6重启 man帮助命令 Shell里技巧性的 命令行自动补全 光标上翻下翻 一行上执行多个命令   管道，管道什么意思，管道有什么作用，具体怎么使用 vi （编辑的是ASCII文本） 三种模式，三种模式之间的转换及命令 屏幕光标的移动 字符、字或行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux分章重点——第四章">
+<meta property="og:url" content="https://songzi2693.cn/2018/10/18/Linux%E5%88%86%E7%AB%A0%E9%87%8D%E7%82%B9%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0/index.html">
+<meta property="og:site_name" content="毫末室">
+<meta property="og:description" content="目录   Ch4 Linux字符界面操作 重点 进入命令行的方式 虚拟控制台的切换 系统关机&#x2F;重启 运行级别 0～6 要很清楚，3字符、5图形、0关机、6重启 man帮助命令 Shell里技巧性的 命令行自动补全 光标上翻下翻 一行上执行多个命令   管道，管道什么意思，管道有什么作用，具体怎么使用 vi （编辑的是ASCII文本） 三种模式，三种模式之间的转换及命令 屏幕光标的移动 字符、字或行">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/ok.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/more1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/more2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/yidongbanye.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/fuzhimoquyu.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/tihuancaozuo.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/tiaozhizhidingdehang.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/yigezifu.png">
+<meta property="article:published_time" content="2018-10-18T10:47:24.000Z">
+<meta property="article:modified_time" content="2022-03-04T00:05:32.579Z">
+<meta property="article:author" content="松子">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/ok.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://songzi2693.cn/2018/10/18/Linux分章重点——第四章/"/>
+
+
+
+
+
+  <title>Linux分章重点——第四章 | 毫末室</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<script type="text/javascript">
+    var host = "songzi2693.cn";
+    if ((host == window.location.host) \
+		&&(window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <a target="_blank" rel="noopener" href="https://github.com/ShortPupil" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">毫末室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">合抱之木，生于毫末</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/2018/10/18/Linux%E5%88%86%E7%AB%A0%E9%87%8D%E7%82%B9%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毫末室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux分章重点——第四章</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-18T18:47:24+08:00">
+                2018-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+            <span class="post-meta-divider">|</span>
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  7 mins.
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1><span id="目录">目录</span></h1><!-- toc -->
+
+<ul>
+<li><a href="#ch4-linux%E5%AD%97%E7%AC%A6%E7%95%8C%E9%9D%A2%E6%93%8D%E4%BD%9C-%E9%87%8D%E7%82%B9">Ch4 Linux字符界面操作 重点</a><ul>
+<li><a href="#%E8%BF%9B%E5%85%A5%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E6%96%B9%E5%BC%8F">进入命令行的方式</a></li>
+<li><a href="#%E8%99%9A%E6%8B%9F%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E5%88%87%E6%8D%A2">虚拟控制台的切换</a></li>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF">系统关机/重启</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB-0~6-%E8%A6%81%E5%BE%88%E6%B8%85%E6%A5%9A3%E5%AD%97%E7%AC%A6-5%E5%9B%BE%E5%BD%A2-0%E5%85%B3%E6%9C%BA-6%E9%87%8D%E5%90%AF">运行级别 0～6 要很清楚，3字符、5图形、0关机、6重启</a></li>
+<li><a href="#man%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4">man帮助命令</a></li>
+<li><a href="#shell%E9%87%8C%E6%8A%80%E5%B7%A7%E6%80%A7%E7%9A%84">Shell里技巧性的</a><ul>
+<li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8">命令行自动补全</a></li>
+<li><a href="#%E5%85%89%E6%A0%87%E4%B8%8A%E7%BF%BB%E4%B8%8B%E7%BF%BB">光标上翻下翻</a></li>
+<li><a href="#%E4%B8%80%E8%A1%8C%E4%B8%8A%E6%89%A7%E8%A1%8C%E5%A4%9A%E4%B8%AA%E5%91%BD%E4%BB%A4">一行上执行多个命令</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AE%A1%E9%81%93%E7%AE%A1%E9%81%93%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%E7%AE%A1%E9%81%93%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%E5%85%B7%E4%BD%93%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8">管道，管道什么意思，管道有什么作用，具体怎么使用</a></li>
+<li><a href="#vi-%E7%BC%96%E8%BE%91%E7%9A%84%E6%98%AFascii%E6%96%87%E6%9C%AC">vi （编辑的是ASCII文本）</a><ul>
+<li><a href="#%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2%E5%8F%8A%E5%91%BD%E4%BB%A4">三种模式，三种模式之间的转换及命令</a></li>
+<li><a href="#%E5%B1%8F%E5%B9%95%E5%85%89%E6%A0%87%E7%9A%84%E7%A7%BB%E5%8A%A8">屏幕光标的移动</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6-%E5%AD%97%E6%88%96%E8%A1%8C%E7%9A%84%E5%88%A0%E9%99%A4">字符、字或行的删除</a></li>
+<li><a href="#%E5%A4%8D%E5%88%B6%E6%9F%90%E5%8C%BA%E5%9F%9F">复制某区域</a></li>
+<li><a href="#%E5%A4%8D%E5%88%B6">复制</a></li>
+<li><a href="#%E6%9B%BF%E6%8D%A2%E6%93%8D%E4%BD%9C">替换操作</a></li>
+<li><a href="#%E6%92%A4%E9%94%80%E4%B8%8A%E4%B8%80%E6%AC%A1%E6%93%8D%E4%BD%9C">撤销上一次操作</a></li>
+<li><a href="#%E8%B7%B3%E8%87%B3%E6%8C%87%E5%AE%9A%E7%9A%84%E8%A1%8C">跳至指定的行</a></li>
+<li><a href="#%E9%80%80%E5%87%BA">退出</a></li>
+<li><a href="#%E8%BF%9B%E5%85%A5%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F">进入插入模式</a></li>
+<li><a href="#%E8%BF%9B%E5%85%A5%E6%9C%AB%E8%A1%8C%E6%A8%A1%E5%BC%8F">进入末行模式</a></li>
+<li><a href="#%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6">保存文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="ch4-linux字符界面操作-重点">Ch4 Linux字符界面操作 重点</span></h1><h2><span id="进入命令行的方式">进入命令行的方式</span></h2><ul>
+<li>字符界面</li>
+<li>图形界面下的终端</li>
+<li>虚拟控制台</li>
+</ul>
+<h2><span id="虚拟控制台的切换">虚拟控制台的切换</span></h2><ul>
+<li>在<strong>字符界面</strong>下，虚拟控制台的切换可以通过按<code>Alt+F1</code>~`Alt+F6`键实现</li>
+<li>在<strong>图形界面</strong>下，可以使用<code>Ctrl+Alt+F2</code>～<code>Ctrl+Alt+F6</code>键切换不同的字符虚拟控制台，在 使用<code>Ctrl+Alt+F1</code>切换会图形界面</li>
+</ul>
+<h2><span id="系统关机重启">系统关机/重启</span></h2><p><code>shutdown halt reboot init</code><br>​<br><code>shutdown</code>：安全地关闭系统</p>
+<p>shutdown [选项] [时间] [警告信息]<br>​<br>​                <code>shutdown -h now</code> 立即关闭系统<br>​<br>                <code>shutdown -h 45</code>定时45分钟后关闭系统</p>
+<pre><code>            `shutdown -r now`重新启动系统,并发出警告信息
+</code></pre>
+<p><code>halt</code>：引发主机关闭系统=调用 “shutdown —h”命令执行关闭系统<br>​<br>​             [root@PC-LINUX ~]# halt</p>
+<p><code>reboot</code>：引发主机重启,参数与“halt”相似。<br>​<br>​             [root@PC-LINUX ~]# reboot </p>
+<p><code>init</code>：“init”命令是所有进程的祖先,它的进程号始终为“1”,所以发送“TERM”信号给 “init”会终止所有的用户进程和守护进程等。</p>
+<p>“init” 定义了7个运行级别,其中<code>init 0</code>为关闭系统,<code>init 6</code>为重启，通过init可以完成不同运行级别之间的切换 </p>
+<p>shutdown和init都是既可以关机又可以重启：</p>
+<p><code>shutdown –h now</code>和<code>init 0</code>用于关机 + halt</p>
+<p><code>shutdown –r now</code>和<code>init 6</code>用户重启  + reboot</p>
+<h2><span id="运行级别-0~6-要很清楚3字符-5图形-0关机-6重启">运行级别 0～6 要很清楚，3字符、5图形、0关机、6重启</span></h2><p>Linux运行级别有如下7种：</p>
+<pre><code>0:*停止运行*,所有进程中止,关闭系统。 
+1:*单用户模式*,用于维护系统,只有少数进程运行。
+2:*多用户模式*,除了NFS服务没有启动外,其他和运行级别3一样。
+3:*完整的多用户模式*,进入Linux系统的字符界面。 
+4:*没有使用*(可由用户定义)。 
+5:*完整的多用户模式*(带有基于X Window的图形界面)。
+6:*重新引导计算机*。
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/ok.png"></p>
+<h2><span id="man帮助命令">man帮助命令</span></h2><p>man是一种显示Unix/Linux在线手册的命令。可以用来<strong>查看命令、函数或文件</strong>的帮助手册,另外它还可以显示一些gzip压缩格式的文件。<br>man命令格式化并显示在线的手册页。 </p>
+<p><code>help</code>使用help命令可以查找Shell命令的用法<br>查看mkdir命令帮助：<br>​    [root@PC-LINUX ~]# mkdir –help<br>（注意help前有两条-）</p>
+<p><code>whereis</code>命令可以查找命令所在的位置</p>
+<h2><span id="shell里技巧性的">Shell里技巧性的</span></h2><h3><span id="命令行自动补全">命令行自动补全</span></h3><p>输入第一个之后按下Tab键,自动补齐</p>
+<h3><span id="光标上翻下翻">光标上翻下翻</span></h3><pre><code>[Ctrl+k]:删除从光标到行尾的部分。 
+[Ctrl+u]:删除从光标到行首的部分。
+[Alt+d]:删除从光标到当前单词结尾的部分。 
+[Ctrl+w]:删除从光标到当前单词开头的部分。 
+[Ctrl+a]:将光标移到行首。 
+[Ctrl+e]:将光标移到行尾。 
+[Alt+a]:将光标移到当前单词头部。 
+[Alt+e]:将光标移到当前单词尾部。
+[Ctrl+y]:插入最近删除的单词。
+[!$]:重复前一个命令最后的参数。
+</code></pre>
+<h3><span id="一行上执行多个命令">一行上执行多个命令</span></h3><p><img src="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/more1.png"></p>
+<p><img src="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/more2.png"></p>
+<h2><span id="管道管道什么意思管道有什么作用具体怎么使用">管道，管道什么意思，管道有什么作用，具体怎么使用</span></h2><p>管道可以通过组合许多小程序共同完成复杂的任务，可以将某个命令的输出信息当作某个命令的输入，由管道符号“|”来标识。</p>
+<p><strong>命令语法</strong>：[命令1] | [命令2] | [命令3]</p>
+<p>|more之后就可以分页显示上一个命令的输出</p>
+<h2><span id="vi-编辑的是ascii文本">vi （编辑的是ASCII文本）</span></h2><h3><span id="三种模式三种模式之间的转换及命令">三种模式，三种模式之间的转换及命令</span></h3><p>vi编辑器有3种基本工作模式,分别是<strong>命令行模式</strong>、<strong>插入模式</strong>和<strong>末行模式</strong>。</p>
+<p>当在Shell提示符下输入“vi文件名”之后就进入了命令行模式,在命令行模式下是不能输入任何数据的。</p>
+<p>在命令行模式下输入文本插入命令就可以进入插入模式,这时候就可以开始输入文字了。</p>
+<p>从插入模式切换为命令行模式只需按“Esc”键。</p>
+<p>在命令行模式下,按转义命令冒号键“:”可以进入末行模式。</p>
+<p>命令行模式：控制屏幕光标的移动，字符、字或行的删除，移动、复制某区域及进入插入模式，或者到末行模式<br>注：下面操作都是只能在命令行模式下控制，在输入模式下会变成输入</p>
+<h3><span id="屏幕光标的移动">屏幕光标的移动</span></h3><p><code>h j k l</code>分别对应：左 下 上 右</p>
+<p><code>Ctrl + b f u d</code> 分别对应：</p>
+<p>屏幕向前移动一页、向后移动一页、向前移动半页、向后移动半页<br><img src="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/yidongbanye.png"><br>​<br> 注：0和^的效果是一样的，都是所在行的行首；$是在行尾<br>​    </p>
+<h3><span id="字符-字或行的删除">字符、字或行的删除</span></h3><p><code>X</code> 删除光标所在位置前面一个字符  x 删除光标所在位置的一个字符</p>
+<p><code>nX</code> 例20X，删除光标所在位置前面20个字符</p>
+<p><code>nx</code> 例6x，删除光标所在位置开始的6个字符</p>
+<h3><span id="复制某区域">复制某区域</span></h3><p><img src="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/fuzhimoquyu.png"></p>
+<h3><span id="复制">复制</span></h3><p>y，以字为单位</p>
+<h3><span id="替换操作">替换操作</span></h3><p><img src="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/tihuancaozuo.png"></p>
+<h3><span id="撤销上一次操作">撤销上一次操作</span></h3><p><code>u</code>，多次u，多次撤销</p>
+<h3><span id="跳至指定的行">跳至指定的行</span></h3><p><img src="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/tiaozhizhidingdehang.png"><br>第一个g小写，第二个行后的G大写</p>
+<h3><span id="退出">退出</span></h3><p>存盘退出：<code>ZZ</code><br>不存盘退出：<code>ZQ</code></p>
+<h3><span id="进入插入模式">进入插入模式</span></h3><p> (仍然必须在命令行模式下，输入下面操作，光标移到这些位置，然后进入插入模式，从这些位置开始可以被编辑)</p>
+<ul>
+<li>I行首<br> i光标当前位置<br>  A行末        </li>
+<li>a光标下一个位置<br> O 光标上一行插入一行        </li>
+<li>o 光标下一行插入一行，从行首开始输<br> S 删除光标所在行        </li>
+<li>s 删除光标位置的一个字符</li>
+<li><img src="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/yigezifu.png"></li>
+</ul>
+<p>S和dd的区别是，dd只删，S删完之后进入插入模式</p>
+<h3><span id="进入末行模式">进入末行模式</span></h3><p>确保先按“ESC”进入命令行模式，再按“：”进入末行模式</p>
+<p>末行模式：将文件保存或退出编辑器，也可以设置编辑环境，如寻找字符串、列出行号等。</p>
+<h3><span id="保存文件">保存文件</span></h3><p><code>w</code>:在冒号后输入字母“w”就可以将文件保存起来。</p>
+<p>离开vi编辑器操作如下</p>
+<p><code>q</code>:按“q”即退出vi,如果无法离开vi,可以在“q”后跟一个“!”强制符离开vi </p>
+<p><code>wq</code>:一般建议离开时,搭配“w”一起使用,这样在退出的时候还可以保存文件</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/18/Linux%E5%88%86%E7%AB%A0%E9%87%8D%E7%82%B9%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E3%80%81%E5%85%AD%E3%80%81%E4%B8%83%E3%80%81%E5%85%AB%E7%AB%A0/" rel="prev" title="Linux分章重点——第五、六、七、八章">
+                Linux分章重点——第五、六、七、八章 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+ 	<div id="gitalk-container"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">100</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ShortPupil" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:zzh2625@Gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              项目链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://github.com/ShortPupil" title="Github" target="_blank">Github</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5z7o1y5w71y&amp;m=8&amp;c=54ff00&amp;cr1=ff007e&amp;sx=0" async="async"></script>
+        
+
+      </section>
+
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松子</span>
+</div>
+
+<!--添加网站运行时间 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("10/10/2018 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+document.write("<br>")
+</script>
+<!-- 添加网站运行时间 -->
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<div>
+
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span>次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数 <span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '839f93bb1c0392738521',
+          clientSecret: 'fa692a2086510e51849da4866e7f42aaa5069b7d',
+          repo: 'ShortPupil.github.io',
+          owner: 'ShortPupil',
+          admin: ['ShortPupil'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<div id="wpac-rating"></div>
+<script type="text/javascript">
+wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'Rating', id: 17904});
+(function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = 'https://cdn.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();
+</script>
+
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
+
+  
+
+</body>
+</html>

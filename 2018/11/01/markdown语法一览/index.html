@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="markdown," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="毫末室" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/%5Bobject%20Object%5D?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="用typora多了，markdown源码模式看的少，需要整理一下，以便查看     数学公式待补充 标题 一级标题 二级标题 三级标题     一级标题 二级标题   文本 斜体和粗体 删除线 外链接 列表 数字列表自动排序 多级数字列表 复选框列表 文字引用 代码块 加强的代码块 插入图像 显示表格 Html 标签 待办事宜 Todo 列表    数学公式待补充标题行首加井号表示不同级别的标题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown语法一览">
+<meta property="og:url" content="https://songzi2693.cn/2018/11/01/markdown%E8%AF%AD%E6%B3%95%E4%B8%80%E8%A7%88/index.html">
+<meta property="og:site_name" content="毫末室">
+<meta property="og:description" content="用typora多了，markdown源码模式看的少，需要整理一下，以便查看     数学公式待补充 标题 一级标题 二级标题 三级标题     一级标题 二级标题   文本 斜体和粗体 删除线 外链接 列表 数字列表自动排序 多级数字列表 复选框列表 文字引用 代码块 加强的代码块 插入图像 显示表格 Html 标签 待办事宜 Todo 列表    数学公式待补充标题行首加井号表示不同级别的标题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/gnipbao/gnipbao.github.io/blob/master/images/markdown.jpg">
+<meta property="og:image" content="https://github.com/gnipbao/gnipbao.github.io/blob/master/images/markdown.jpg">
+<meta property="article:published_time" content="2018-11-01T00:47:24.000Z">
+<meta property="article:modified_time" content="2022-03-11T02:42:42.905Z">
+<meta property="article:author" content="松子">
+<meta property="article:tag" content="markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/gnipbao/gnipbao.github.io/blob/master/images/markdown.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://songzi2693.cn/2018/11/01/markdown语法一览/"/>
+
+
+
+
+
+  <title>markdown语法一览 | 毫末室</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<script type="text/javascript">
+    var host = "songzi2693.cn";
+    if ((host == window.location.host) \
+		&&(window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <a target="_blank" rel="noopener" href="https://github.com/ShortPupil" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">毫末室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">合抱之木，生于毫末</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/2018/11/01/markdown%E8%AF%AD%E6%B3%95%E4%B8%80%E8%A7%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毫末室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">markdown语法一览</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-01T08:47:24+08:00">
+                2018-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E6%9C%AC%E6%8E%92%E7%89%88/" itemprop="url" rel="index">
+                    <span itemprop="name">文本排版</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+            <span class="post-meta-divider">|</span>
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  13k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  11 mins.
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>用typora多了，markdown源码模式看的少，需要整理一下，以便查看</p>
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E5%BE%85%E8%A1%A5%E5%85%85">数学公式待补充</a></li>
+<li><a href="#%E6%A0%87%E9%A2%98">标题</a></li>
+<li><a href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98">一级标题</a><ul>
+<li><a href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98">二级标题</a><ul>
+<li><a href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98">三级标题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98-1">一级标题</a><ul>
+<li><a href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98-1">二级标题</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E6%9C%AC">文本</a></li>
+<li><a href="#%E6%96%9C%E4%BD%93%E5%92%8C%E7%B2%97%E4%BD%93">斜体和粗体</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E7%BA%BF">删除线</a></li>
+<li><a href="#%E5%A4%96%E9%93%BE%E6%8E%A5">外链接</a></li>
+<li><a href="#%E5%88%97%E8%A1%A8">列表</a></li>
+<li><a href="#%E6%95%B0%E5%AD%97%E5%88%97%E8%A1%A8%E8%87%AA%E5%8A%A8%E6%8E%92%E5%BA%8F">数字列表自动排序</a></li>
+<li><a href="#%E5%A4%9A%E7%BA%A7%E6%95%B0%E5%AD%97%E5%88%97%E8%A1%A8">多级数字列表</a></li>
+<li><a href="#%E5%A4%8D%E9%80%89%E6%A1%86%E5%88%97%E8%A1%A8">复选框列表</a></li>
+<li><a href="#%E6%96%87%E5%AD%97%E5%BC%95%E7%94%A8">文字引用</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%9D%97">代码块</a></li>
+<li><a href="#%E5%8A%A0%E5%BC%BA%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97">加强的代码块</a></li>
+<li><a href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E5%83%8F">插入图像</a></li>
+<li><a href="#%E6%98%BE%E7%A4%BA%E8%A1%A8%E6%A0%BC">显示表格</a></li>
+<li><a href="#html-%E6%A0%87%E7%AD%BE">Html 标签</a></li>
+<li><a href="#%E5%BE%85%E5%8A%9E%E4%BA%8B%E5%AE%9C-todo-%E5%88%97%E8%A1%A8">待办事宜 Todo 列表</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="数学公式待补充">数学公式待补充</span></h1><h1><span id="标题">标题</span></h1><p>行首加井号表示不同级别的标题 (H1-H6),例如：# H1, ## H2, ### H3，#### H4.</p>
+<h1><span id="一级标题">一级标题</span></h1><h2><span id="二级标题">二级标题</span></h2><h3><span id="三级标题">三级标题</span></h3><h4><span id="四级标题">四级标题</span></h4><h5><span id="五级标题">五级标题</span></h5><h6><span id="六级标题">六级标题</span></h6><hr>
+<p> 也可以使用在文字下放加 === 表示一级标题,使用 — 表示二级标题. </p>
+<h1><span id="一级标题">一级标题</span></h1><h2><span id="二级标题">二级标题</span></h2><h1><span id="文本">文本</span></h1><ul>
+<li>普通文本</li>
+</ul>
+<p> 直接输入的文字就是普通文本。需要注意的是要换行的时候不<br>能直接通过回车来换行，需要使用&lt;br&gt;.也就是html里面的标签. 注意第三行的<code>&lt;br&gt;</code>前加了反斜杠 \ .目的就是像其他语言那样实现转义，也就是 &lt;  的转义.</p>
+<ul>
+<li><p>单行文本</p>
+<pre><code>  使用两个Tab符实现单行文本.
+</code></pre>
+</li>
+<li><p>多行文本</p>
+<pre><code>  多行文本和
+  单行文本异曲同工，只要在
+  每行行首加两个Tab.
+</code></pre>
+</li>
+<li><p>文字高亮</p>
+</li>
+</ul>
+<p>如果你想使一段话中部分文字高亮显示，来起到突出强调的作用，那么可以把它用 `  ` 包围起来.<code>注意</code>这不是单引号，而是<code>Tab</code>上方，<code>数字1</code>左边的按键（注意使用<code>英文</code>输入法).<br>​        </p>
+<h1><span id="斜体和粗体">斜体和粗体</span></h1><p>使用 * 和 ** 表示斜体和粗体.</p>
+<p>这是 <em>斜体</em>,这是 <strong>粗体</strong>.</p>
+<h1><span id="删除线">删除线</span></h1><p><del>使用~~表示删除线.</del></p>
+<h1><span id="外链接">外链接</span></h1><p>使用 [描述](链接地址) 为文字增加外链接。</p>
+<p>这是去往 <a target="_blank" rel="noopener" href="https://gnipbao.github.io/h5-test/3dtag.html">有趣的HTML5和CSS3特效在线演示地址</a> 的链接。</p>
+<h1><span id="列表">列表</span></h1><p>使用 *，+，- 表示无序列表。</p>
+<ul>
+<li>无序列表项 一</li>
+<li>无序列表项 二</li>
+<li>无序列表项 三</li>
+</ul>
+<p>二级三级原点</p>
+<ul>
+<li>编程语言<ul>
+<li>脚本语言<ul>
+<li>Python</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>使用数字和点表示有序列表。</p>
+<ol>
+<li>有序列表项 一</li>
+<li>有序列表项 二</li>
+<li>有序列表项 三</li>
+</ol>
+<h1><span id="数字列表自动排序">数字列表自动排序</span></h1><p>也可以在第一行指定<code>1. </code>，而接下来的几行用星号<code>*</code>（或者继续用数字1. ）就可以了，它会自动显示成2、3、4……<br>面向对象的七大原则：<br>​      </p>
+<ol>
+<li>开闭原则</li>
+</ol>
+<ul>
+<li>里氏转换原则</li>
+<li>依赖倒转原则</li>
+</ul>
+<ol>
+<li>接口隔离原则</li>
+<li>组合聚合复用原则</li>
+<li>迪米特法则</li>
+<li>单一直则原则 </li>
+</ol>
+<h1><span id="多级数字列表">多级数字列表</span></h1><p>和圆点的列表一样，数字列表也有多级结构：  </p>
+<ol>
+<li>这是一级的数字列表，数字1还是1<ol>
+<li>这是二级的数字列表，阿拉伯数字在显示的时候变成了罗马数字<ol>
+<li>这是三级的数字列表，数字在显示的时候变成了英文字母</li>
+<li>四级的数字列表显示效果，就不再变化了，依旧是英文字母</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1><span id="复选框列表">复选框列表</span></h1><ul>
+<li><input checked disabled type="checkbox"> C</li>
+<li><input checked disabled type="checkbox"> C++</li>
+<li><input checked disabled type="checkbox"> Java</li>
+<li><input checked disabled type="checkbox"> Qt</li>
+<li><input checked disabled type="checkbox"> Android</li>
+<li><input disabled type="checkbox"> C#</li>
+<li><input disabled type="checkbox"> .NET</li>
+</ul>
+<h1><span id="文字引用">文字引用</span></h1><p>使用 &gt; 表示文字引用。</p>
+<p>单个引用：</p>
+<blockquote>
+<p>1111</p>
+</blockquote>
+<p>字符包围：</p>
+<blockquote>
+<p>数据结构</p>
+<blockquote>
+<p>树</p>
+<blockquote>
+<p>二叉树</p>
+<blockquote>
+<p>平衡二叉树</p>
+<blockquote>
+<p>满二叉树</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1><span id="代码块">代码块</span></h1><p>使用 四个缩进空格 表示代码块。</p>
+<p>示例：</p>
+<pre><code>这是一个代码块，此行左侧有四个不可见的空格。
+</code></pre>
+<h1><span id="加强的代码块">加强的代码块</span></h1><p>支持四十一种编程语言的语法高亮的显示，行号显示。</p>
+<p>非代码示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install </span><br></pre></td></tr></table></figure>
+
+<p>Python 示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@requires_authorization</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">somefunc</span>(<span class="params">param1=<span class="string">&#x27;&#x27;</span>, param2=<span class="number">0</span></span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;A docstring&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> param1 &gt; param2: <span class="comment"># interesting</span></span><br><span class="line">        <span class="built_in">print</span> <span class="string">&#x27;Greater&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> (param2 - param1 + <span class="number">1</span>) <span class="keyword">or</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>message = <span class="string">&#x27;&#x27;&#x27;interpreter</span></span><br><span class="line"><span class="string"><span class="meta">... </span>prompt&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>JavaScript 示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* nth element in the fibonacci series.</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param </span>n &gt;= 0</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return </span>the nth element, &gt;= 0.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fib</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span>, b = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> tmp;</span><br><span class="line">  <span class="keyword">while</span> (--n &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">    tmp = a;</span><br><span class="line">    a += b;</span><br><span class="line">    b = tmp;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(fib(<span class="number">10</span>));</span><br></pre></td></tr></table></figure>
+
+
+<h1><span id="插入图像">插入图像</span></h1><p>使用 ![描述](图片链接地址) 插入图像。</p>
+<p>插入图片示例：</p>
+<p><img src="https://github.com/gnipbao/gnipbao.github.io/blob/master/images/markdown.jpg" alt="Markdown"></p>
+<p>给图片添加链接:</p>
+<p><a target="_blank" rel="noopener" href="http://gnipbao.github.io/css3-test/src/Funny-demo/Button/index.html">![V]</a><br>[V]:<a target="_blank" rel="noopener" href="https://github.com/gnipbao/gnipbao.github.io/blob/master/images/markdown.jpg">https://github.com/gnipbao/gnipbao.github.io/blob/master/images/markdown.jpg</a></p>
+<h1><span id="显示表格">显示表格</span></h1><pre><code>表头1  | 表头2
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>表头1</th>
+<th>表头2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>名字</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Help</td>
+<td>Display the help window.</td>
+</tr>
+<tr>
+<td>Close</td>
+<td>Closes a window</td>
+</tr>
+<tr>
+<td>​</td>
+<td></td>
+</tr>
+<tr>
+<td>表格中也可以使用普通文本的删除线，斜体等效果</td>
+<td></td>
+</tr>
+<tr>
+<td>​</td>
+<td></td>
+</tr>
+<tr>
+<td>名字</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>—–</td>
+<td>—————————-</td>
+</tr>
+<tr>
+<td>Help</td>
+<td><del>Display the</del> help window.</td>
+</tr>
+<tr>
+<td>Close</td>
+<td><em>Closes</em> a window</td>
+</tr>
+</tbody></table>
+<p>表格可以指定对齐方式<br>​<br>| 左对齐        |      居中       | 右对齐 |<br>| :———— | :————-: | —–: |<br>| col 3 is      | some wordy text |  $1600 |<br>| col 2 is      |    centered     |    $12 |<br>| zebra stripes |    are neat     |     $1 |</p>
+<p>表格中嵌入图片</p>
+<table>
+<thead>
+<tr>
+<th>图片</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://github.com/gnipbao/gnipbao.github.io/blob/master/images/markdown.jpg" alt="Markdown"></td>
+<td>图片</td>
+</tr>
+</tbody></table>
+<h1><span id="html-标签">Html 标签</span></h1><p>本站支持在 Markdown 语法中嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：</p>
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th rowspan=&quot;2&quot;&gt;值班人员&lt;/th&gt;
+        &lt;th&gt;星期一&lt;/th&gt;
+        &lt;th&gt;星期二&lt;/th&gt;
+        &lt;th&gt;星期三&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;李强&lt;/td&gt;
+        &lt;td&gt;张明&lt;/td&gt;
+        &lt;td&gt;王平&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<table>
+    <tr>
+        <th rowspan="2">值班人员</th>
+        <th>星期一</th>
+        <th>星期二</th>
+        <th>星期三</th>
+    </tr>
+    <tr>
+        <td>李强</td>
+        <td>张明</td>
+        <td>王平</td>
+    </tr>
+</table>
+
+<h1><span id="待办事宜-todo-列表">待办事宜 Todo 列表</span></h1><p>使用带有 [ ] 或 [x] （未完成或已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法，例如：</p>
+<pre><code>- [ ] **Cmd Markdown 开发**
+    - [ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率
+    - [ ] 支持以 PDF 格式导出文稿
+    - [x] 新增Todo列表功能 
+    - [x] 改进 LaTex 功能
+        - [x] 修复 LaTex 公式渲染问题
+        - [x] 新增 LaTex 公式编号功能 
+- [ ] **七月旅行准备**
+    - [ ] 准备邮轮上需要携带的物品
+    - [ ] 浏览日本免税店的物品
+    - [x] 购买蓝宝石公主号七月一日的船票
+</code></pre>
+<p>对应显示如下待办事宜 Todo 列表：<br>​        </p>
+<ul>
+<li><input disabled type="checkbox"> <strong>Cm Markdown 开发</strong><ul>
+<li><input disabled type="checkbox"> 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率</li>
+<li><input disabled type="checkbox"> 支持以 PDF 格式导出文稿</li>
+<li><input checked disabled type="checkbox"> 新增Todo列表功能 </li>
+<li><input checked disabled type="checkbox"> 改进 LaTex 功能<ul>
+<li><input checked disabled type="checkbox"> 修复 LaTex 公式渲染问题</li>
+<li><input checked disabled type="checkbox"> 新增 LaTex 公式编号功能 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled type="checkbox"> <strong>七月旅行准备</strong><ul>
+<li><input disabled type="checkbox"> 准备邮轮上需要携带的物品</li>
+<li><input disabled type="checkbox"> 浏览日本免税店的物品</li>
+<li><input checked disabled type="checkbox"> 购买蓝宝石公主号七月一日的船票</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/11/01/markdown%E8%AF%AD%E6%B3%95%E4%B8%80%E8%A7%88/">markdown语法一览</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+  <p><span>发布时间:</span>2018年11月01日 - 08:11</p>
+  <p><span>最后更新:</span>2022年03月11日 - 10:03</p>
+  <p><span>原始链接:</span><a href="/2018/11/01/markdown%E8%AF%AD%E6%B3%95%E4%B8%80%E8%A7%88/" title="markdown语法一览">https://songzi2693.cn/2018/11/01/markdown%E8%AF%AD%E6%B3%95%E4%B8%80%E8%A7%88/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/2018/11/01/markdown%E8%AF%AD%E6%B3%95%E4%B8%80%E8%A7%88/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/markdown/" rel="tag"># markdown</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/31/%E8%BD%AF%E5%B7%A5%E4%B8%80/" rel="next" title="软工一">
+                <i class="fa fa-chevron-left"></i> 软工一
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/01/%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%AE%A1%E7%90%86/" rel="prev" title="软件过程与管理">
+                软件过程与管理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+ 	<div id="gitalk-container"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">100</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ShortPupil" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:zzh2625@Gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              项目链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://github.com/ShortPupil" title="Github" target="_blank">Github</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5z7o1y5w71y&amp;m=8&amp;c=54ff00&amp;cr1=ff007e&amp;sx=0" async="async"></script>
+        
+
+      </section>
+
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松子</span>
+</div>
+
+<!--添加网站运行时间 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("10/10/2018 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+document.write("<br>")
+</script>
+<!-- 添加网站运行时间 -->
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<div>
+
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span>次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数 <span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '839f93bb1c0392738521',
+          clientSecret: 'fa692a2086510e51849da4866e7f42aaa5069b7d',
+          repo: 'ShortPupil.github.io',
+          owner: 'ShortPupil',
+          admin: ['ShortPupil'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<div id="wpac-rating"></div>
+<script type="text/javascript">
+wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'Rating', id: 17904});
+(function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = 'https://cdn.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();
+</script>
+
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
+
+  
+
+</body>
+</html>

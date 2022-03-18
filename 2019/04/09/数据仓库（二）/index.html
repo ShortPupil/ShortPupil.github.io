@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="BI,Data Warehouse," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="毫末室" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/%5Bobject%20Object%5D?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="目录   《Building the Data Warehouse》第二章 数据仓库环境 词汇表 数据仓库的特性 结构 面向主题 随时间变化 粒度——第一个主要涉及问题 分隔问题——第二个主要设计问题 样本数据库 数据分割——不同于数据分隔 数据仓库中的数据组织 标准手册 审计和数据仓库 成本合理性 清理仓库数据 报表和体系结构设计环境 机遇性的操作型窗口      《Building the D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据仓库（二）">
+<meta property="og:url" content="https://songzi2693.cn/2019/04/09/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
+<meta property="og:site_name" content="毫末室">
+<meta property="og:description" content="目录   《Building the Data Warehouse》第二章 数据仓库环境 词汇表 数据仓库的特性 结构 面向主题 随时间变化 粒度——第一个主要涉及问题 分隔问题——第二个主要设计问题 样本数据库 数据分割——不同于数据分隔 数据仓库中的数据组织 标准手册 审计和数据仓库 成本合理性 清理仓库数据 报表和体系结构设计环境 机遇性的操作型窗口      《Building the D">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190409152310.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410182844.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410183413.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410184523.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410190235.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192258.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192752.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192855.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192959.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410193115.png">
+<meta property="article:published_time" content="2019-04-09T02:23:24.000Z">
+<meta property="article:modified_time" content="2022-03-04T00:05:32.610Z">
+<meta property="article:author" content="松子">
+<meta property="article:tag" content="BI">
+<meta property="article:tag" content="Data Warehouse">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190409152310.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://songzi2693.cn/2019/04/09/数据仓库（二）/"/>
+
+
+
+
+
+  <title>数据仓库（二） | 毫末室</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<script type="text/javascript">
+    var host = "songzi2693.cn";
+    if ((host == window.location.host) \
+		&&(window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <a target="_blank" rel="noopener" href="https://github.com/ShortPupil" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">毫末室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">合抱之木，生于毫末</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/2019/04/09/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%88%E4%BA%8C%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毫末室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据仓库（二）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-09T10:23:24+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%95%86%E5%8A%A1%E6%99%BA%E8%83%BD/" itemprop="url" rel="index">
+                    <span itemprop="name">商务智能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+            <span class="post-meta-divider">|</span>
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  6.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  6 mins.
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1><span id="目录">目录</span></h1><!-- toc -->
+
+<ul>
+<li><a href="#building-the-data-warehouse%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%8E%AF%E5%A2%83">《Building the Data Warehouse》第二章 数据仓库环境</a></li>
+<li><a href="#%E8%AF%8D%E6%B1%87%E8%A1%A8">词汇表</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%9A%84%E7%89%B9%E6%80%A7">数据仓库的特性</a><ul>
+<li><a href="#%E7%BB%93%E6%9E%84">结构</a></li>
+<li><a href="#%E9%9D%A2%E5%90%91%E4%B8%BB%E9%A2%98">面向主题</a></li>
+<li><a href="#%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96">随时间变化</a></li>
+<li><a href="#%E7%B2%92%E5%BA%A6%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%BB%E8%A6%81%E6%B6%89%E5%8F%8A%E9%97%AE%E9%A2%98">粒度——第一个主要涉及问题</a></li>
+<li><a href="#%E5%88%86%E9%9A%94%E9%97%AE%E9%A2%98%E7%AC%AC%E4%BA%8C%E4%B8%AA%E4%B8%BB%E8%A6%81%E8%AE%BE%E8%AE%A1%E9%97%AE%E9%A2%98">分隔问题——第二个主要设计问题</a></li>
+<li><a href="#%E6%A0%B7%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%BA%93">样本数据库</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%88%86%E5%89%B2%E4%B8%8D%E5%90%8C%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%88%86%E9%9A%94">数据分割——不同于数据分隔</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%84%E7%BB%87">数据仓库中的数据组织</a></li>
+<li><a href="#%E6%A0%87%E5%87%86%E6%89%8B%E5%86%8C">标准手册</a></li>
+<li><a href="#%E5%AE%A1%E8%AE%A1%E5%92%8C%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93">审计和数据仓库</a></li>
+<li><a href="#%E6%88%90%E6%9C%AC%E5%90%88%E7%90%86%E6%80%A7">成本合理性</a></li>
+<li><a href="#%E6%B8%85%E7%90%86%E4%BB%93%E5%BA%93%E6%95%B0%E6%8D%AE">清理仓库数据</a></li>
+<li><a href="#%E6%8A%A5%E8%A1%A8%E5%92%8C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E7%8E%AF%E5%A2%83">报表和体系结构设计环境</a></li>
+<li><a href="#%E6%9C%BA%E9%81%87%E6%80%A7%E7%9A%84%E6%93%8D%E4%BD%9C%E5%9E%8B%E7%AA%97%E5%8F%A3">机遇性的操作型窗口</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h2><span id="building-the-data-warehouse第二章-数据仓库环境">《Building the Data Warehouse》第二章 数据仓库环境</span></h2><h2><span id="词汇表">词汇表</span></h2><table>
+<thead>
+<tr>
+<th align="center">简称</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">DSS</td>
+<td align="center">决策支持系统</td>
+</tr>
+<tr>
+<td align="center">DASD</td>
+<td align="center">直接存取设备</td>
+</tr>
+<tr>
+<td align="center">DBMS</td>
+<td align="center">数据库管理系统</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2><span id="数据仓库的特性">数据仓库的特性</span></h2><p>数据仓库是一个<strong>面向主题的</strong>、<strong>集成的</strong>、<strong>非易失的</strong>且<strong>随时间变化</strong>的<strong>数据集合</strong>，用来支持管理人员的决策。</p>
+<h3><span id="结构">结构</span></h3><p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190409152310.png"></p>
+<p>不同的<strong>细节级</strong>——早期细节级（备用的、批量的存储）、当前细节级、轻度综合数据集（数据集市）、高度综合数据集。</p>
+<h3><span id="面向主题">面向主题</span></h3><p>数据仓库是面向在数据模型中已定义好的公司的主要主题领域的。典型的主题领域例如：</p>
+<ul>
+<li>顾客。</li>
+<li>产品。</li>
+<li>事务或活动。</li>
+<li>保险单。</li>
+<li>索赔。</li>
+<li>帐目。</li>
+</ul>
+<p>在数据仓库中，主要主题领域是以一组相关的表来具体实现的。</p>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410182844.png"></p>
+<p>有的数据存储在直接存取DASD上，有的数据存储在磁带上。数据存储在不同介质上意味着在数据仓库中可能有多个DBMS对数据进行管理，或者某些数据根本没有被某个DBMS管理。<strong>不能仅仅因为数据存储在磁带上，就认为它不是数据仓库的一部分。</strong></p>
+<h3><span id="随时间变化">随时间变化</span></h3><p>建立数据仓库是<strong>进化性</strong>的——数据仓库只能一次一步地进行设计和载入数据。由于建立数据仓库的成本，数据仓库的建立要采用<strong>有序地反复和一次一步地方式</strong>。</p>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410183413.png"></p>
+<h3><span id="粒度第一个主要涉及问题">粒度——第一个主要涉及问题</span></h3><p>粒度是指<strong>数据仓库的数据单位中保存数据的细化或综合程度的级别</strong>。细化程度越高，粒度级就越小；反之则反。</p>
+<p>粒度是<strong>主要的设计问题</strong>——<strong>数据仓库的数据量大小和查询的详细程度的权衡</strong>——它深深地影响存放在数据仓库中的数据量的大小，同时影响数据仓库所能回答的查询类型。</p>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410184523.png"></p>
+<h4><span id="粒度的例子">粒度的例子</span></h4><p>暂时还不太理解</p>
+<h4><span id="粒度的双重级别">粒度的双重级别</span></h4><p>当一个企业或组织的数据仓库中拥有大量数据时，在数据仓库的细节部分考虑双重 (或多重)粒度级是很有意义的。事实上，需要多个粒度级而不是一个粒度级的需求，是因为<strong>粒度级设计采用双重级别应该是几乎每个机构默认的选择</strong>。</p>
+<h3><span id="分隔问题第二个主要设计问题">分隔问题——第二个主要设计问题</span></h3><p>如果粒度和分隔做得很好，则数据仓库的设计和实现的几乎所有其他问题都容易解决。</p>
+<p>数据分隔是<strong>把数据分散到各自的物理单元中去，它们能独立地处理</strong>。分隔问题的焦点是<strong>如何</strong>去进行分隔。</p>
+<h3><span id="样本数据库">样本数据库</span></h3><p>数据仓库的一种特殊形式，只是真实档案数据或轻度综合数据的子集。</p>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410190235.png"></p>
+<p>在人口统计分析等情况下，样本数据库是非常有用的，其最大好处是存取效率非常高。一个分析员可能花24小时来浏阅与分析一个大数据库，而浏览与分析一个样本数据库则可能只需10分钟。在进行启发式分析中，周转时间对可以进行的分析而言是至关重要的。</p>
+<p>但是其存在一些<strong>苛刻的限制</strong>，假如设计者知道这些限制，否则就不应该创建这种数据库作为数据仓库的一部分。</p>
+<h3><span id="数据分割不同于数据分隔">数据分割——不同于数据分隔</span></h3><p><strong>问题</strong>：如何对当前细节数据进行分割。</p>
+<p><strong>准确含义</strong>：当结构相同的数据被分成多个数据物理单元时，数据便被分割了。此外，任何给定的数据单元属于且仅属于一个分割。</p>
+<p>总体<strong>目的</strong>：把数据划分成小的物理单元。</p>
+<p><strong>重要性</strong>：因为小的物理单元能为操作者和设计者在管理数据时提供比对大的物理单元<strong>更大的灵活性</strong>。</p>
+<p>数据库放在大的物理单元，不容易实现的——重构、自由索引、顺序扫描、重组、恢复、监控。</p>
+<p>数据仓库的<strong>本质</strong>之一就是<strong>灵活地访问数据</strong>。如果是大块的数据，就达不到这一要求。</p>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192258.png"></p>
+<p>常见的数据分隔的标准有：时间、商业线、地理位置、组织单位等等</p>
+<p>主要问题之一：在<strong>系统层</strong>上还是在<strong>应用层</strong>上对数据进行分割</p>
+<h3><span id="数据仓库中的数据组织">数据仓库中的数据组织</span></h3><h4><span id="简单堆积结构最简单最常见">简单堆积结构——最简单最常见</span></h4><p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192752.png"></p>
+<h4><span id="轮转综合数据存储简单~的一种变种">轮转综合数据存储——简单~的一种变种</span></h4><p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192855.png"></p>
+<h4><span id="上面的对比">上面的对比</span></h4><p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192959.png"></p>
+<h4><span id="简单直接文件">简单直接文件</span></h4><p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410193115.png"></p>
+<h4><span id="连续文件">连续文件</span></h4><p>创建的两种方法</p>
+<ul>
+<li>依据两个或更多的简单直接文件能生成一种连续文件</li>
+<li>通过把一个快照追加到一个以前生成的连续文件上来创建</li>
+</ul>
+<h3><span id="标准手册">标准手册</span></h3><h3><span id="审计和数据仓库">审计和数据仓库</span></h3><h3><span id="成本合理性">成本合理性</span></h3><h3><span id="清理仓库数据">清理仓库数据</span></h3><h3><span id="报表和体系结构设计环境">报表和体系结构设计环境</span></h3><h3><span id="机遇性的操作型窗口">机遇性的操作型窗口</span></h3>
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/04/09/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%88%E4%BA%8C%EF%BC%89/">数据仓库（二）</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+  <p><span>发布时间:</span>2019年04月09日 - 10:04</p>
+  <p><span>最后更新:</span>2022年03月04日 - 08:03</p>
+  <p><span>原始链接:</span><a href="/2019/04/09/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%88%E4%BA%8C%EF%BC%89/" title="数据仓库（二）">https://songzi2693.cn/2019/04/09/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%88%E4%BA%8C%EF%BC%89/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/2019/04/09/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%88%E4%BA%8C%EF%BC%89/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/BI/" rel="tag"># BI</a>
+          
+            <a href="/tags/Data-Warehouse/" rel="tag"># Data Warehouse</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/08/Java%E5%AE%B9%E5%99%A8/" rel="next" title="Java容器">
+                <i class="fa fa-chevron-left"></i> Java容器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/09/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%EF%BC%88%E4%B8%80%EF%BC%89/" rel="prev" title="数据仓库（一）">
+                数据仓库（一） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+ 	<div id="gitalk-container"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">100</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ShortPupil" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:zzh2625@Gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              项目链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://github.com/ShortPupil" title="Github" target="_blank">Github</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5z7o1y5w71y&amp;m=8&amp;c=54ff00&amp;cr1=ff007e&amp;sx=0" async="async"></script>
+        
+
+      </section>
+
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松子</span>
+</div>
+
+<!--添加网站运行时间 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("10/10/2018 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+document.write("<br>")
+</script>
+<!-- 添加网站运行时间 -->
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<div>
+
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span>次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数 <span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '839f93bb1c0392738521',
+          clientSecret: 'fa692a2086510e51849da4866e7f42aaa5069b7d',
+          repo: 'ShortPupil.github.io',
+          owner: 'ShortPupil',
+          admin: ['ShortPupil'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<div id="wpac-rating"></div>
+<script type="text/javascript">
+wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'Rating', id: 17904});
+(function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = 'https://cdn.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();
+</script>
+
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
+
+  
+
+</body>
+</html>

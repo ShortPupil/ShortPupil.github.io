@@ -1,0 +1,3375 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="framework," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="毫末室" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/%5Bobject%20Object%5D?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="第1章 操作系统 操作系统的类型与结构 操作系统的类型 操作系统的结构 处理器管理 进程的状态 1．三态模型 2．五态模型   信号量与PV操作 1．互斥控制 2．同步控制 3．生产者-消费者问题 4．理解P、V操作 5．实际应用   死锁问题 1．死锁发生的必要条件 2．银行家算法 例子 3．解决死锁的策略   管程与线程 文件管理 文件的逻辑组织 文件的物理组织 树形目录结构 存储空间管">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件架构 笔记2">
+<meta property="og:url" content="https://songzi2693.cn/2020/08/01/%E6%9E%B6%E6%9E%84%E5%B8%88_2/index.html">
+<meta property="og:site_name" content="毫末室">
+<meta property="og:description" content="第1章 操作系统 操作系统的类型与结构 操作系统的类型 操作系统的结构 处理器管理 进程的状态 1．三态模型 2．五态模型   信号量与PV操作 1．互斥控制 2．同步控制 3．生产者-消费者问题 4．理解P、V操作 5．实际应用   死锁问题 1．死锁发生的必要条件 2．银行家算法 例子 3．解决死锁的策略   管程与线程 文件管理 文件的逻辑组织 文件的物理组织 树形目录结构 存储空间管">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps6.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps7.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps9.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps10.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps11.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps21.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps27.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps28.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps32.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps38.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps43.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps50.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps51.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml13728/wps10.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml13728/wps20.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml13728/wps22.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml13728/wps23.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml13728/wps24.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml13728/wps32.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml13728/wps33.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml17296/wps1.png">
+<meta property="og:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml17296/wps2.png">
+<meta property="article:published_time" content="2020-08-01T06:23:24.000Z">
+<meta property="article:modified_time" content="2022-03-04T00:05:32.624Z">
+<meta property="article:author" content="松子">
+<meta property="article:tag" content="framework">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="file:///C:/Users/m1885/AppData/Local/Temp/ksohtml24672/wps6.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://songzi2693.cn/2020/08/01/架构师_2/"/>
+
+
+
+
+
+  <title>软件架构 笔记2 | 毫末室</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<script type="text/javascript">
+    var host = "songzi2693.cn";
+    if ((host == window.location.host) \
+		&&(window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <a target="_blank" rel="noopener" href="https://github.com/ShortPupil" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">毫末室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">合抱之木，生于毫末</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/2020/08/01/%E6%9E%B6%E6%9E%84%E5%B8%88_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毫末室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">软件架构 笔记2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-01T14:23:24+08:00">
+                2020-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" itemprop="url" rel="index">
+                    <span itemprop="name">软件架构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+            <span class="post-meta-divider">|</span>
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  147k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  2:13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!-- toc -->
+
+<ul>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">第1章 操作系统</a><ul>
+<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%BB%93%E6%9E%84">操作系统的类型与结构</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B1%BB%E5%9E%8B">操作系统的类型</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84">操作系统的结构</a></li>
+<li><a href="#%E5%A4%84%E7%90%86%E5%99%A8%E7%AE%A1%E7%90%86">处理器管理</a></li>
+<li><a href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81">进程的状态</a><ul>
+<li><a href="#1%E4%B8%89%E6%80%81%E6%A8%A1%E5%9E%8B">1．三态模型</a></li>
+<li><a href="#2%E4%BA%94%E6%80%81%E6%A8%A1%E5%9E%8B">2．五态模型</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E4%B8%8Epv%E6%93%8D%E4%BD%9C">信号量与PV操作</a><ul>
+<li><a href="#1%E4%BA%92%E6%96%A5%E6%8E%A7%E5%88%B6">1．互斥控制</a></li>
+<li><a href="#2%E5%90%8C%E6%AD%A5%E6%8E%A7%E5%88%B6">2．同步控制</a></li>
+<li><a href="#3%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98">3．生产者-消费者问题</a></li>
+<li><a href="#4%E7%90%86%E8%A7%A3p-v%E6%93%8D%E4%BD%9C">4．理解P、V操作</a></li>
+<li><a href="#5%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8">5．实际应用</a></li>
+</ul>
+</li>
+<li><a href="#%E6%AD%BB%E9%94%81%E9%97%AE%E9%A2%98">死锁问题</a><ul>
+<li><a href="#1%E6%AD%BB%E9%94%81%E5%8F%91%E7%94%9F%E7%9A%84%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6">1．死锁发生的必要条件</a></li>
+<li><a href="#2%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95">2．银行家算法</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90">例子</a></li>
+<li><a href="#3%E8%A7%A3%E5%86%B3%E6%AD%BB%E9%94%81%E7%9A%84%E7%AD%96%E7%95%A5">3．解决死锁的策略</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AE%A1%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B">管程与线程</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86">文件管理</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%84%E7%BB%87">文件的逻辑组织</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E7%9A%84%E7%89%A9%E7%90%86%E7%BB%84%E7%BB%87">文件的物理组织</a></li>
+<li><a href="#%E6%A0%91%E5%BD%A2%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">树形目录结构</a></li>
+<li><a href="#%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86">存储空间管理</a><ul>
+<li><a href="#1%E7%A9%BA%E9%97%B2%E8%A1%A8%E6%B3%95">1．空闲表法</a></li>
+<li><a href="#2%E7%A9%BA%E9%97%B2%E9%93%BE%E8%A1%A8%E6%B3%95">2．空闲链表法</a></li>
+<li><a href="#3%E4%BD%8D%E5%9B%BE%E6%B3%95">3．位图法</a></li>
+<li><a href="#4%E6%88%90%E7%BB%84%E9%93%BE%E6%8E%A5%E6%B3%95">4．成组链接法</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86">存储管理</a></li>
+<li><a href="#%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2">地址变换</a></li>
+<li><a href="#%E5%AD%98%E5%82%A8%E7%BB%84%E7%BB%87">存储组织</a></li>
+<li><a href="#%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86-1">存储管理</a><ul>
+<li><a href="#1%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95">1．置换算法</a></li>
+<li><a href="#2%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86">2．局部性原理</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86">作业管理</a><ul>
+<li><a href="#%E4%BD%9C%E4%B8%9A%E7%9A%84%E7%8A%B6%E6%80%81">作业的状态</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%9C%E4%B8%9A%E8%B0%83%E5%BA%A6">作业调度</a></li>
+<li><a href="#%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86">设备管理</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F">数据传输控制方式</a></li>
+<li><a href="#%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95">磁盘调度算法</a></li>
+<li><a href="#%E8%99%9A%E8%AE%BE%E5%A4%87%E4%B8%8Espooling%E6%8A%80%E6%9C%AF">虚设备与SPOOLING技术</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">网络操作系统</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0">网络操作系统概述</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90">网络操作系统的组成</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F">第2章 数据库系统</a><ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F">数据库管理系统</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%BC%8F">数据库模式</a><ul>
+<li><a href="#1%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F">1．三级模式</a></li>
+<li><a href="#2%E4%B8%89%E4%B8%AA%E7%BA%A7%E5%88%AB">2．三个级别</a></li>
+<li><a href="#3%E4%B8%A4%E7%BA%A7%E7%8B%AC%E7%AB%8B%E6%80%A7">3．两级独立性</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B">数据模型</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%88%86%E7%B1%BB">数据模型的分类</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B">关系模型</a></li>
+<li><a href="#%E8%A7%84%E8%8C%83%E5%8C%96%E7%90%86%E8%AE%BA">规范化理论</a><ul>
+<li><a href="#1%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96">1．函数依赖</a></li>
+<li><a href="#2%E8%8C%83%E5%BC%8F">2．范式</a></li>
+<li><a href="#3%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%E5%88%86%E8%A7%A3">3．关系模式分解</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%8D%E8%A7%84%E8%8C%83%E5%8C%96%E7%90%86%E8%AE%BA">反规范化理论</a><ul>
+<li><a href="#1%E5%A2%9E%E5%8A%A0%E6%B4%BE%E7%94%9F%E5%88%97">1．增加派生列</a></li>
+<li><a href="#2%E5%A2%9E%E5%8A%A0%E5%86%97%E4%BD%99%E5%88%97">2．增加冗余列</a></li>
+<li><a href="#3%E9%87%8D%E6%96%B0%E7%BB%84%E8%A1%A8">3．重新组表</a></li>
+<li><a href="#4%E5%88%86%E5%89%B2%E8%A1%A8">4．分割表</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8A%9F%E8%83%BD">数据库的控制功能</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6">并发控制</a><ul>
+<li><a href="#1%E5%B9%B6%E5%8F%91%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98">1．并发操作的问题</a></li>
+<li><a href="#2%E5%B0%81%E9%94%81%E7%9A%84%E7%B1%BB%E5%9E%8B">2．封锁的类型</a></li>
+<li><a href="#3%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE">3．封锁协议</a></li>
+<li><a href="#4%E6%AD%BB%E9%94%81">4．死锁</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D%E6%8A%80%E6%9C%AF">备份与恢复技术</a><ul>
+<li><a href="#1%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD">1．数据备份</a></li>
+<li><a href="#2%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6">2．日志文件</a></li>
+<li><a href="#3%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D">3．数据恢复</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7">数据库的安全性</a><ul>
+<li><a href="#1%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81">1．用户认证</a></li>
+<li><a href="#2%E7%94%A8%E6%88%B7%E8%A7%92%E8%89%B2">2．用户角色</a></li>
+<li><a href="#3%E6%95%B0%E6%8D%AE%E6%8E%88%E6%9D%83">3．数据授权</a></li>
+<li><a href="#4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%86%E5%9B%BE">4．数据库视图</a></li>
+<li><a href="#5%E5%AE%A1%E8%AE%A1%E5%8A%9F%E8%83%BD">5．审计功能</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7">数据库的完整性</a><ul>
+<li><a href="#1%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6">1．完整性约束条件</a></li>
+<li><a href="#2%E5%AE%8C%E6%95%B4%E6%80%A7%E6%8E%A7%E5%88%B6">2．完整性控制</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%80%A7%E8%83%BD">数据库性能</a><ul>
+<li><a href="#1sql%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">1．SQL的性能优化</a></li>
+<li><a href="#2%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">2．数据库的性能优化</a></li>
+<li><a href="#3%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96">3．查询优化</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B7%A5%E7%A8%8B">数据库工程</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E9%98%B6%E6%AE%B5">数据库设计阶段</a><ul>
+<li><a href="#1%E8%A7%84%E5%88%92">1．规划</a></li>
+<li><a href="#2%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90">2．需求分析</a></li>
+<li><a href="#3%E6%A6%82%E5%BF%B5%E8%AE%BE%E8%AE%A1">3．概念设计</a></li>
+<li><a href="#4%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1">4．逻辑设计</a></li>
+<li><a href="#5%E7%89%A9%E7%90%86%E8%AE%BE%E8%AE%A1">5．物理设计</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E7%BA%A6%E6%9D%9F%E5%92%8C%E5%8E%9F%E5%88%99">设计约束和原则</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BB%BA%E6%A8%A1">数据库建模</a></li>
+<li><a href="#e-r%E5%9B%BE%E7%9A%84%E7%94%BB%E6%B3%95">E-R图的画法</a></li>
+<li><a href="#e-r%E5%9B%BE%E7%9A%84%E9%9B%86%E6%88%90">E-R图的集成</a></li>
+<li><a href="#%E5%9B%BE%E5%90%91%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%E7%9A%84%E8%BD%AC%E6%8D%A2">图向关系模式的转换</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F">常见的数据库管理系统</a></li>
+<li><a href="#oracle">Oracle</a></li>
+<li><a href="#sybase">Sybase</a></li>
+<li><a href="#informix">Informix</a></li>
+<li><a href="#sqlserver">SQLServer</a></li>
+<li><a href="#db2">DB2</a></li>
+<li><a href="#mysql">MySQL</a></li>
+<li><a href="#%E5%B9%B6%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F">并行数据库系统</a></li>
+<li><a href="#%E5%B9%B6%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BB%93%E6%9E%84">并行数据库的结构</a><ul>
+<li><a href="#1sm%E7%BB%93%E6%9E%84">1.SM结构</a></li>
+<li><a href="#2sd%E7%BB%93%E6%9E%84">2.SD结构</a></li>
+<li><a href="#3sn%E7%BB%93%E6%9E%84">3.SN结构</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B9%B6%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BB%84%E7%BB%87">并行数据库的组织</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98">数据仓库与数据挖掘</a></li>
+<li><a href="#%E8%81%94%E6%9C%BA%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86">联机分析处理</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%9A%84%E6%A6%82%E5%BF%B5">数据仓库的概念</a><ul>
+<li><a href="#1%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%9A%84%E7%89%B9%E5%BE%81">1．数据仓库的特征</a></li>
+<li><a href="#2%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E4%BC%A0%E7%BB%9F%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8C%BA%E5%88%AB">2．数据仓库与传统数据的区别</a></li>
+<li><a href="#3%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%9A%84%E5%88%86%E7%B1%BB">3．数据仓库的分类</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%9A%84%E7%BB%93%E6%9E%84">数据仓库的结构</a><ul>
+<li><a href="#1%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%9A%84%E5%8F%82%E8%80%83%E6%A1%86%E6%9E%B6">1．数据仓库的参考框架</a></li>
+<li><a href="#2%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E7%9A%84%E6%9E%B6%E6%9E%84">2．数据仓库的架构</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%9A%84%E6%A6%82%E5%BF%B5">数据挖掘的概念</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF">数据挖掘常用技术</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%9A%84%E6%B5%81%E7%A8%8B">数据挖掘的流程</a></li>
+<li><a href="#nosql">NoSQL</a></li>
+<li><a href="#%E5%A4%A7%E6%95%B0%E6%8D%AE">大数据</a><ul>
+<li><a href="#1%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E7%89%B9%E7%82%B9">1．大数据的特点</a></li>
+<li><a href="#2%E4%BC%A0%E7%BB%9F%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E6%AF%94%E8%BE%83">2．传统数据与大数据的比较</a></li>
+<li><a href="#3%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF">3．大数据处理关键技术</a></li>
+<li><a href="#4%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8">4．大数据应用</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">第4章 数据通信与计算机网络</a><ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86">数据通信基础知识</a></li>
+<li><a href="#%E4%BF%A1%E9%81%93%E7%89%B9%E6%80%A7">信道特性</a><ul>
+<li><a href="#1-%E4%BF%A1%E9%81%93%E7%9A%84%E6%9C%80%E9%AB%98%E7%A0%81%E5%85%83%E4%BC%A0%E8%BE%93%E9%80%9F%E7%8E%87">1. 信道的最高码元传输速率</a></li>
+<li><a href="#2%E4%BF%A1%E9%81%93%E7%9A%84%E6%9E%81%E9%99%90%E4%BF%A1%E6%81%AF%E4%BC%A0%E8%BE%93%E9%80%9F%E7%8E%87">2．信道的极限信息传输速率</a></li>
+<li><a href="#3%E7%A0%81%E5%85%83%E4%B8%8E%E8%B0%83%E5%88%B6%E6%8A%80%E6%9C%AF">3．码元与调制技术</a></li>
+<li><a href="#4%E4%BF%A1%E9%81%93%E9%80%9F%E7%8E%87%E8%AE%A1%E7%AE%97">4．信道速率计算</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E8%B0%83%E5%88%B6%E4%B8%8E%E7%BC%96%E7%A0%81">数据调制与编码</a><ul>
+<li><a href="#1%E6%A8%A1%E6%8B%9F%E9%80%9A%E9%81%93%E4%BC%A0%E9%80%81%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE">1．模拟通道传送模拟数据</a></li>
+<li><a href="#2%E6%95%B0%E5%AD%97%E9%80%9A%E9%81%93%E4%BC%A0%E9%80%81%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE">2．数字通道传送模拟数据</a></li>
+<li><a href="#3%E6%A8%A1%E6%8B%9F%E9%80%9A%E9%81%93%E4%BC%A0%E9%80%81%E6%95%B0%E5%AD%97%E6%95%B0%E6%8D%AE">3．模拟通道传送数字数据</a></li>
+<li><a href="#4%E6%95%B0%E5%AD%97%E9%80%9A%E9%81%93%E4%BC%A0%E9%80%81%E6%95%B0%E5%AD%97%E6%95%B0%E6%8D%AE">4．数字通道传送数字数据</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84">网络架构</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E7%9A%84%E5%88%86%E7%B1%BB">网络的分类</a><ul>
+<li><a href="#1%E5%B1%80%E5%9F%9F%E7%BD%91">1．局域网</a></li>
+<li><a href="#2%E5%B9%BF%E5%9F%9F%E7%BD%91">2．广域网</a></li>
+<li><a href="#3%E5%9F%8E%E5%9F%9F%E7%BD%91">3．城域网</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E4%BA%92%E8%BF%9E%E6%A8%A1%E5%9E%8B">网络互连模型</a><ul>
+<li><a href="#1%E7%89%A9%E7%90%86%E5%B1%82">1．物理层</a></li>
+<li><a href="#2%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82">2．数据链路层</a></li>
+<li><a href="#3%E7%BD%91%E7%BB%9C%E5%B1%82">3．网络层</a></li>
+<li><a href="#4%E4%BC%A0%E8%BE%93%E5%B1%82">4．传输层</a></li>
+<li><a href="#5%E4%BC%9A%E8%AF%9D%E5%B1%82">5．会话层</a></li>
+<li><a href="#6%E8%A1%A8%E7%A4%BA%E5%B1%82">6．表示层</a></li>
+<li><a href="#7%E5%BA%94%E7%94%A8%E5%B1%82">7．应用层</a></li>
+<li><a href="#8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F">8．模型的工作模式</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE">常用的网络协议</a><ul>
+<li><a href="#1%E5%BA%94%E7%94%A8%E5%B1%82">1．应用层</a></li>
+<li><a href="#2%E4%BC%A0%E8%BE%93%E5%B1%82">2．传输层</a></li>
+<li><a href="#3%E7%BD%91%E9%99%85%E5%B1%82">3．网际层</a></li>
+<li><a href="#4%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%B1%82">4．网络接口层</a></li>
+<li><a href="#5%E7%AB%AF%E5%8F%A3">5．端口</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E4%B8%8E%E6%8E%A9%E7%A0%81">网络地址与掩码</a><ul>
+<li><a href="#1ip%E5%9C%B0%E5%9D%80%E7%9A%84%E5%88%86%E7%B1%BB">1．IP地址的分类</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="第1章-操作系统">第1章 操作系统</span></h1><h2><span id="操作系统的类型与结构">操作系统的类型与结构</span></h2><p>根据考试大纲要求，在操作系统方面，要求考生掌握以下知识点：</p>
+<p>（1）操作系统的类型和结构；</p>
+<p>（2）操作系统基本原理；</p>
+<p>（3）网络操作系统及网络管理；</p>
+<p>（4）嵌入式操作系统与实时操作系统。</p>
+<p>本章主要介绍操作系统方面的基本知识，有关网络管理方面的知识，将在第4章中介绍；有关嵌入式操作系统与实时操作系统方面的知识，将在第3章介绍。操作系统是计算机系统中的核心系统软件，负责管理和控制计算机系统中硬件和软件资源，合理地组织计算机工作流程和有效利用资源，在计算机与用户之间起接口的作用。</p>
+<h2><span id="操作系统的类型">操作系统的类型</span></h2><p>根据使用环境和对作业的处理方式，操作系统可分为<strong>批处理操作系统</strong>、<strong>分时操作系统</strong>、<strong>实时操作系统</strong>、<strong>网络操作系统</strong>和<strong>分布式操作系统</strong>。</p>
+<p>（1）批处理操作系统把用户提交的作业分类，把一批中的作业编成一个作业执行序列。批处理又可分为联机批处理和脱机批处理。批处理系统的主要特征有：用户脱机使用计算机、成批处理、多道程序运行。批处理操作系统主要用在早起的大型机上，现在基本上已经被淘汰了。</p>
+<p>（2）分时操作系统采用分时技术，使多个用户同时以会话方式控制自己程序的运行，每个用户都感到似乎各自有一台独立的、支持自己请求服务的系统。分时技术把处理机的运行时间分成很短的时间片，按时间片轮流把处理机分配给各联机作业使用。若某个作业在分配给它的时间片内不能完成其计算，则该作业暂时中断，把处理机让给另一作业使用，等待下一轮时再继续运行。分时系统的主要特征有：交互性、多用户同时性、独立性。例如，Unix和Linux就是典型的分时操作系统。</p>
+<p>（3）实时操作系统往往是专用的，系统与应用很难分离，常常紧密结合在一起。实时系统并不强调资源利用率，而更关心及时性(时间紧迫性)、可靠性和完整性。实时系统又分为实时过程控制与实时信息处理两种。实时系统的主要特征有：提供即时响应、高可靠性。例如，Windows CE、嵌入式Linux、VxWorks等都属于实时操作系统。</p>
+<p>（4）网络操作系统按照网络架构的各个协议标准进行开发，包括网络管理、通信、资源共享、系统安全和多种网络应用服务等。在网络系统中，各计算机的操作系统可以互不相同，它需要一种机制来支持互连的网络环境下的异种计算机系统之间的进程通信，实现协同工作和应用集成。网络操作系统的主要特征有：互操作性、协作处理。例如，Windows Server、Unix等都可以看作是网络操作系统。</p>
+<p>（5）分布式操作系统要求一个统一的操作系统，实现系统操作的统一性，负责全系统的资源分配和调度，为用户提供统一的界面。它是一个逻辑上紧密耦合的系统。目前还没有真正实现的分布式操作系统。</p>
+<p>不管哪种操作系统，都应该具有五个基本功能，即<strong>处理机管理</strong>、<strong>存储管理</strong>、<strong>设备管理</strong>、<strong>文件管理</strong>和<strong>作业管理</strong>。</p>
+<h2><span id="操作系统的结构">操作系统的结构</span></h2><p>操作系统的结构可以分为<strong>无序结构</strong>、<strong>层次结构</strong>、<strong>面向对象结构</strong>、<strong>对称多处理结构</strong>和<strong>微内核结构</strong>。</p>
+<p>（1）无序结构，又称整体结构或模块组合结构。它以大型表格和队列为中心，操作系统的各部分程序围绕着表格运行，整个系统是一个程序。这种操作系统常称为面向过程的操作系统。操作系统由许多标准的、可兼容的基本单位构成（称为模块），各模块相对独立，模块之间通过规定的接口相互调用。模块化设计方法的优点是缩短了系统的开发周期，缺点是模块之间调用关系复杂、相互依赖，从而使分析、移植和维护系统较易出错。</p>
+<p>（2）层次结构。把一个大型复杂的操作系统分解成若干个单向依赖的层次，由多层的正确性保证操作系统的可靠性。层次结构清晰，大大地简化了接口的设计，且有利于系统功能的增加或删改，易于保证可靠性，也便于维护和移植。</p>
+<p>（3）面向对象结构。基于面向对象程序设计的概念，采用了各种不同的对象技术。在计算机系统中对象是操作系统管理的信息和资源的抽象，是一种抽象的数据类型。可以把对象作为系统中的最小单位，由对象、对象操作、对象保护组成的操作系统，就是面向对象的操作系统。如Windows Server中有执行体对象（例如，进程、线程、文件和令牌等）和内核对象（例如，时钟、事件和信号等）。面向对象结构的优点是适用于网络操作系统和分布式操作系统中。</p>
+<p>（4）对称多处理结构。如果一个操作系统在系统中的所有处理机运行且共享同一内存（内存储器、主存、实存），这样的系统就是一个对称多处理系统。优点是适合共享存储器结构的多处理机系统，即紧耦合的多处理机系统。</p>
+<p>（5）微内核结构。把系统的公共部分抽象出来，形成一个底层核心，提供最基本的服务，其他功能以服务器形式建立在微内核之上。它具有良好的模块化和结构化特征，模块之间和上下层之间通过消息来通信。建立在微内核上的服务器可以根据不同的需要构造，从而形成不同的操作系统。</p>
+<p>现代操作系统大多拥有两种工作状态：核心态和用户态。我们使用的一般应用程序工作在用户态，而内核模块和最基本的操作系统核心工作在核心态。</p>
+<p>微内核结构由一个非常简单的硬件抽象层和一组比较关键的原语或系统调用组成，这些原语仅仅包括了建立一个系统必需的几个部分，如线程管理，地址空间和进程间通信等。微内核的目标是将系统服务的实现和系统的基本操作规则分离开来。例如，进程的输入/输出锁定服务可以由运行在微内核之外的一个服务组件来提供。这些非常模块化的用户态服务用于完成操作系统中比较高级的操作，这样的设计使内核中最核心的部分的设计更简单。一个服务组件的失效并不会导致整个系统的崩溃，内核需要做的，仅仅是重新启动这个组件，而不必影响其它的部分。</p>
+<p>微内核技术的主要优点如下：</p>
+<p>（1）统一的接口，在用户态和核心态之间无需进程识别。</p>
+<p>（2）可伸缩性好，能适应硬件更新和应用变化。</p>
+<p>（3）可移植性好，所有与具体机器特征相关的代码，全部隔离在微内核中，如果操作系统要移植到不同的硬件平台上，只需修改微内核中极少代码即可。</p>
+<p>（4）实时性好，微内核可以方便地支持实时处理。</p>
+<p>（5）安全可靠性高，微内核将安全性作为系统内部特性来进行设计，对外仅使用少量应用编程接口。</p>
+<p>（6）支持分布式系统，支持多处理器的架构和高度并行的应用程序。</p>
+<p>（7）真正面向对象的操作系统。</p>
+<p>由于操作系统核心常驻内存，而微内核结构精简了操作系统的核心功能，内核规模比较小，一些功能都移到了外存上，所以微内核结构十分适合嵌入式的专用系统，对于通用性较广的系统，将使CPU（Central Processing Unit，中央处理单元）的通信开销增大，从而影响到计算机的运行速度。</p>
+<h2><span id="处理器管理">处理器管理</span></h2><p>在单用户多任务的操作系统中，或者多用户多任务的操作系统中，系统同时运行多个程序，这些程序的并行运行势必形成对系统资源的竞争使用。因此，操作系统必须能够处理和管理这种并行运行的程序，使之对资源的使用按照良性的顺序进行。</p>
+<h2><span id="进程的状态">进程的状态</span></h2><p>进程是一个程序关于某个数据集的一次运行。进程是程序的一次运行活动，是一个动态的概念，而程序是静态的概念，是指令的集合。进程具有动态性和并发性，程序是进程运行所对应的运行代码，一个进程对应于一个程序，一个程序可以同时对应于多个进程。在操作系统中进程是进行系统资源分配、调度和管理的最小单位（注意，现代操作系统中还引入了线程（thread）这一概念，它是处理器分配资源的最小单位）。从静态的观点看，进程由程序、数据和进程控制块（Process Control Block，PCB）组成；从动态的观点看，进程是计算机状态的一个有序集合。</p>
+<p>PCB是进程存在的唯一标志，PCB描述了进程的基本情况。其中的内容可分成为调度信息和执行信息两大部分。调度信息供进程调度使用，包括进程当前的一些基本属性；执行信息即现场，规划了进程的执行情况。PCB随着进程的建立而产生，随着进程的完成而撤消。一个进程从创建而产生至撤销而消亡的整个生命周期，可以用一组状态加以刻画，为了便于管理进程，把进程划分为几种状态，分别有三态模型和五态模型。</p>
+<h3><span id="1三态模型">1．三态模型</span></h3><p>按照进程在执行过程中的不同状况，至少可以定义三种不同的进程状态：</p>
+<p>（1）运行态：占有处理器正在运行。</p>
+<p>（2）就绪态：具备运行条件，等待系统分配处理器以便运行。</p>
+<p>（3）等待态（阻塞态）：不具备运行条件，正在等待某个事件的完成。</p>
+<p>一个进程在创建后将处于就绪状态。每个进程在执行过程中，任一时刻当且仅当处于上述三种状态之一。同时，在一个进程执行过程中，它的状态将会发生改变。图1-1表示进程的状态转换。</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps6.png" alt="img"> </p>
+<p> 运行状态的进程将由于出现等待事件而进入等待状态，当等待事件结束之后等待状态的进程将进入就绪状态，而处理器的调度策略又会引起运行状态和就绪状态之间的切换。引起进程状态转换的具体原因如下：</p>
+<p>（1）运行态→等待态：等待使用资源，如等待外设传输；等待人工干预。</p>
+<p>（2）等待态→就绪态：资源得到满足，如外设传输结束；人工干预完成。</p>
+<p>（3）运行态→就绪态：运行时间片到；出现有更高优先权进程。</p>
+<p>（4）就绪态→运行态：CPU空闲时选择一个就绪进程。</p>
+<h3><span id="2五态模型">2．五态模型</span></h3><p>在三态模型中，总是假设所有的进程都在内存中。事实上，可能出现这样一些情况，例如由于进程的不断创建，系统的资源已经不能满足进程运行的要求，这个时候就必须把某些进程挂起，对换到磁盘镜像区中，暂时不参与进程调度，起到平滑系统操作负荷的目的。引起进程挂起的原因是多样的，主要有：</p>
+<p>（1）系统中的进程均处于等待状态，处理器空闲，此时需要把一些阻塞进程对换出去，以腾出足够的内存装入就绪进程运行。</p>
+<p>（2）进程竞争资源，导致系统资源不足，负荷过重，此时需要挂起部分进程以调整系统负荷，保证系统的实时性或让系统正常运行。</p>
+<p>（3）把一些定期执行的进程（如审计程序、监控程序、记账程序）对换出去，以减轻系统负荷。</p>
+<p>（4）用户要求挂起自己的进程，以便根据中间执行情况和中间结果进行某些调试、检查和改正。</p>
+<p>（5）父进程要求挂起自己的后代子进程，以进行某些检查和改正。</p>
+<p>（6）操作系统需要挂起某些进程，检查运行中资源使用情况，以改善系统性能；或当系统出现故障或某些功能受到破坏时，需要挂起某些进程以排除故障。</p>
+<p> 给出了具有挂起进程功能的系统中的进程状态。在此类系统中，进程增加了两个新状态：<strong>静止就绪态</strong>和<strong>静止阻塞态</strong>。为了区别，而把三态模型中的等待态改名为活跃阻塞态，就绪态改名为活跃就绪态。静止就绪态表明进程具备运行条件但目前在二级存储器（外存储器、外存、辅存）中，只有当它被对换到内存才能被调度执行。静止阻塞态则表明进程正在等待某一个事件且在二级存储器中。</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps7.png" alt="img"> </p>
+<p> 具有挂起功能系统的进程状态及其转换引起进程状态转换的具体原因如下：</p>
+<p> （1）活跃阻塞态→静止阻塞态：如果当前不存在活跃就绪进程，那么至少有一个等待态进程将被对换出去成为静止阻塞态；操作系统根据当前资源状况和性能要求，可以决定把活跃阻塞态进程对换出去成为静止阻塞态。</p>
+<p>（2）静止阻塞态→静止就绪态：引起进程等待的事件发生之后，相应的静止阻塞态进程将转换为静止就绪态。</p>
+<p>（3）静止就绪态→活跃就绪态：当内存中没有活跃就绪态进程，或者静止就绪态进程具有比活跃就绪态进程更高的优先级，系统将把静止就绪态进程转换成活跃就绪态。</p>
+<p>（4）活跃就绪态→静止就绪态：操作系统根据当前资源状况和性能要求，也可以决定把活跃就绪态进程对换出去成为静止就绪态。</p>
+<p>（5）静止阻塞态→活跃阻塞态：当一个进程等待一个事件时，原则上不需要把它调入内存。但是，当一个进程退出后，内存已经有了一大块自由空间，而某个静止阻塞态进程具有较高的优先级并且操作系统已经得知导致它阻塞的事件即将结束，此时便发生了这一状态变化。</p>
+<p>不难看出：一个挂起进程等同于不在内存的进程，因此挂起的进程将不参与进程调度直到它们被对换进内存。一个挂起进程具有如下特征：</p>
+<p>（1）该进程不能立即被执行。</p>
+<p>（2）挂起进程可能会等待一个事件，但所等待的事件是独立于挂起条件的，事件结束并不能导致进程具备执行条件。</p>
+<p>（3）进程进入挂起状态是由于操作系统、父进程或进程本身阻止它的运行。</p>
+<p>（4）结束进程挂起状态的命令只能通过操作系统或父进程发出。</p>
+<p>（5）阻塞态：进入阻塞态通常是因为在等待I/O完成或等待分配到所需资源。</p>
+<h2><span id="信号量与pv操作">信号量与PV操作</span></h2><p>对于本知识点的考查，重点在于理解信号量与PV操作的基本概念，能够正确地理解在互斥、同步方面的控制应用，并能够灵活地运用，相对来说是个难点。</p>
+<p>在操作系统中，进程之间经常会存在<strong>互斥（都需要共享独占性资源时）</strong>和<strong>同步（完成异步的两个进程的协作）</strong>两种关系。为了有效地处理这两种情况，W·Dijkstra在1965年提出信号量和PV操作。</p>
+<p>（1）信号量：是一种特殊的变量，表现形式是一个整型S和一个队列。</p>
+<p>（2）P操作：S=S-1，若S&lt;0，进程暂停执行，进入等待队列。</p>
+<p>（3）V操作：S=S+1，若S≤0，唤醒等待队列中的一个进程。</p>
+<h3><span id="1互斥控制">1．互斥控制</span></h3><p>互斥控制是为了<strong>保护共享资源，不让多个进程同时访问这个共享资源</strong>，换句话说，就<strong>是阻止多个进程同时进入访问这些资源的代码段</strong>，这个代码段称为临界区，而这种一次只允许一个进程访问的资源称为临界资源。为了实现进程互斥地进入自己的临界区，代码可以如下所示：</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps9.png" alt="img"> </p>
+<p>由于只允许一个进程进入，因此信号量S的初值应该为1。该值表示可以允许多少个进程进入，当S&lt;0时，其绝对值就是等待使用临界资源的进程数，也就是等待队列中的进程数。而当一个进程从临界区出来时，执行V操作（S=S+1），如果等待队列中还有进程（S≤0），则调入一个新的进程进入（唤醒）。</p>
+<h3><span id="2同步控制">2．同步控制</span></h3><p>最简单的同步形式是<strong>进程A在另一个进程B到达L2以前，不应前进到超过点L1</strong>，这样就可以使用如下程序：</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps10.png" alt="img"> </p>
+<p>因此，要确保进程B执行V操作之前，不让进程A的运行超过L1，就要设置信号量S的初值为0。这样，如果进程A先执行到L1，那么执行P操作（S=S-1）后，则S&lt;0，就停止执行。直到进程B执行到L2时，将执行V操作（S=S+1），唤醒A以继续执行。</p>
+<h3><span id="3生产者-消费者问题">3．生产者-消费者问题</span></h3><p>生产者-消费者是一个经典的问题，它不仅要解决生产者进程与消费者进程的同步关系，还要处理缓冲区的互斥关系，因此通常需要三个信号量来实现，如表1-1所示。</p>
+<table>
+<thead>
+<tr>
+<th>信号量</th>
+<th>功能类别</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>empty</td>
+<td>同步</td>
+<td>说明<strong>空闲的缓冲区数量</strong>，因为程序开始时，缓冲区全部为空。所以，其初始值应为<strong>缓冲区的总个数</strong>。</td>
+</tr>
+<tr>
+<td>full</td>
+<td>同步</td>
+<td>说明<strong>已填充的缓冲区数量</strong>，因为程序开始时，所有缓冲区都为空（未填充）。所以，其<strong>初始值为0</strong>。</td>
+</tr>
+<tr>
+<td>mutex</td>
+<td>互斥</td>
+<td>保证同时只有一个进程在写缓冲区，因此其初始值为1</td>
+</tr>
+</tbody></table>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps11.png" alt="img"> </p>
+<p>如果对缓冲区的读写无须进行互斥控制的话，那么就可以省去mutex信号量。</p>
+<h3><span id="4理解p-v操作">4．理解P、V操作</span></h3><p>信号量与PV操作的概念比较抽象，在历年的考试中总是难倒许多考生，其实主要还是没有能够正确地理解信号量的含义。</p>
+<p>（1）信号量与P、V操作是用来<strong>解决并发问题</strong>的，而在并发问题中最重要的是互斥与同步两个关系，也就是说只要有这两个关系存在，信号量就有用武之地。因此，在解题时，应该先从寻找互斥与同步关系开始。这个过程可以套用简单互斥、简单同步、生产者-消费者问题。</p>
+<p>（2）通常来说，一个互斥或一个同步关系可以使用一个信号量来解决，但要注意经常会忽略一些隐藏的同步关系。例如：在生产者-消费者问题中，就有<strong>两个同步关系</strong>，<strong>一个是判断是否还有足够的空间给生产者存放产物</strong>，<strong>另一个是判断是否有足够的内容让消费者使用</strong>。</p>
+<p>（3）信号量的初值通常就是表示资源的可用数。而且通常对于初始为0的信号量，会先做V操作。</p>
+<p>（4）在资源使用之前，将会使用P操作；在资源用完之后，将会使用V操作。在互斥关系中，P、V操作是在一个进程中成对出现的；而在同步关系中，则P、V操作一定是在两个进程甚至是多个进程中成对出现的。</p>
+<h3><span id="5实际应用">5．实际应用</span></h3><p>……</p>
+<h2><span id="死锁问题">死锁问题</span></h2><p>死锁是指<strong>多个进程之间互相等待对方的资源，而在得到对方资源之前又不释放自己的资源，这样，造成循环等待的一种现象</strong>。如果一个进程在等待一个不可能发生的事件，则进程就死锁了。如果一个或多个进程产生死锁，就会造成系统死锁。</p>
+<h3><span id="1死锁发生的必要条件">1．死锁发生的必要条件</span></h3><p> 产生死锁的根本原因在于系统提供的资源个数少于并发进程所要求的该类资源数。产生死锁有四个必要条件：<strong>互斥条件</strong>，<strong>不可抢占条件</strong>，<strong>保持与等待条件（部分分配条件）</strong>、<strong>循环等待条件</strong>。</p>
+<p>（1）互斥条件：即一个资源每次只能被一个进程使用。</p>
+<p>（2）保持与等待条件：有一个进程已获得了一些资源，但因请求其他资源被阻塞时，对已获得的资源保持不放。</p>
+<p>（3）不可抢占条件：有些系统资源是不可抢占的，当某个进程已获得这种资源后，系统不能强行收回，只能由进程使用完时自己释放。</p>
+<p>（4）循环等待条件：若干个进程形成环形链，每个都占用对方要申请的下一个资源。</p>
+<h3><span id="2银行家算法">2．银行家算法</span></h3><p>所谓银行家算法，是指在分配资源之前先看清楚，资源分配后是否会导致系统死锁。如果会死锁，则不分配，否则就分配。</p>
+<p>按照银行家算法的思想，当进程请求资源时，系统将按如下原则分配资源：</p>
+<p> （1）当一个进程对资源的最大需求量不超过系统中的资源数时可以接纳该进程。</p>
+<p>（2）进程可以分期请求资源，但请求的总数不能超过最大需求量。</p>
+<p>（3）当系统现有的资源不能满足进程尚需资源数时，对进程的请求可以推迟分配，但总能使进程在有限的时间里得到资源。</p>
+<p>（4）当系统现有的资源能满足进程尚需资源数时，必须测试系统现存的资源能否满足该进程尚需的最大资源数，若能满足则按当前的申请量分配资源，否则也要推迟分配。</p>
+<h3><span id="例子">例子</span></h3><h3><span id="3解决死锁的策略">3．解决死锁的策略</span></h3><p> 对待死锁的策略主要有：</p>
+<p>（1）<strong>死锁预防</strong>：破坏导致死锁必要条件中的任意一个就可以预防死锁。例如，要求用户申请资源时一次性申请所需要的全部资源，这就破坏了保持和等待条件；将资源分层，得到上一层资源后，才能够申请下一层资源，它破坏了环路等待条件。预防通常会降低系统的效率。</p>
+<p>（2）<strong>死锁避免</strong>：避免是指进程在每次申请资源时判断这些操作是否安全，例如，使用银行家算法。死锁避免算法的执行会增加系统的开销。</p>
+<p>（3）<strong>死锁检测</strong>：死锁预防和避免都是事前措施，而死锁的检测则是判断系统是否处于死锁状态，如果是，则执行死锁解除策略。</p>
+<p>（4）<strong>死锁解除</strong>：这是与死锁检测结合使用的，它使用的方式就是剥夺。即将某进程所拥有的资源强行收回，分配给其他的进程。</p>
+<h2><span id="管程与线程">管程与线程</span></h2><p>管程由<strong>管程名</strong>、<strong>局部子管程的变量说明</strong>、<strong>使用共享资源并在数据集上进行操作的若干过程</strong>，以及<strong>对变量赋初值的语句</strong>等四个基本部分组成。每一个管程管理一个临界资源。当有几个进程调用某管程时，仅允许一个进程进入管程，其他调用者必须等待，也就是申请进程必须互斥地进入管程。方法是通过调用特定的管程入口进入管程，然后通过管程中的一个过程使用临界资源。当某进程通过调用请求访问某临界资源而未能满足时，管程调用相应同步原语使该进程等待，并将它排在等待队列上。当使用临界资源的进程访问完该临界资源并释放之后，管程又调用相应的同步原语唤醒等待队列中的队首进程。为了表示不同的等待原因，设置条件变量，条件变量是与普通变量不同的变量，条件变量不能取任何值，只是一个排队栈。</p>
+<p>线程是进程的活动成分，是处理器分配资源的最小单位，它可以共享进程的资源与地址空间，通过线程的活动，进程可以提供多种服务（对服务器进程而言）或实行子任务并行（对用户进程而言）。每个进程创建时只有一个线程，根据需要在运行过程中创建更多的线程（前者也可称“主线程”）。显然，只有主线程的进程才是传统意义下的进程。内核负责线程的调度，线程的优先级可以动态地改变。采用线程机制的最大优点是节省开销，传统的进程创建子进程的办法内存开销大，而且创建时间也长。</p>
+<p>在多线程系统中，一个进程可以由一个或多个线程构成，每一线程可以独立运行，一个进程的线程共享这个进程的地址空间。有多种方法可以实现多线程系统，一种方法是核心级线程，另一种方法是用户级线程，也可以把两者组合起来。</p>
+<p>多线程实现的并行避免了进程间并行的缺点：创建线程的开销比创建进程要小，同一进程的线程共享进程的地址空间，所以线程切换（处理器调度）比进程切换快。例如，Windows Server内核采用基于优先级的方案选定线程执行的次序。高优先级线程先于低优先级线程执行，内核周期性地改变线程的优先级，以确保所有线程均能执行。</p>
+<h2><span id="文件管理">文件管理</span></h2><p>文件管理是<strong>对外部存储设备上的以文件方式存放的信息的管理</strong>。文件的结构是指文件的组织形式，从用户观点所看到的文件组织形式，称为文件的逻辑结构。文件的物理结构是指文件在存储设备上的存放方法，侧重于提高存储器的利用效率和降低存取时间。文件的存储设备通常划分为大小相同的物理块，物理块是分配和传输信息的基本单位。用户通过对文件的访问（读写）来完成对文件的查找、修改、删除和添加等操作。常用的访问方法有两种，即顺序访问和随机访问。</p>
+<h2><span id="文件的逻辑组织">文件的逻辑组织</span></h2><p>文件的逻辑组织是<strong>为了方便用户的使用</strong>，逻辑结构是用户可见的结构。文件的逻辑结构可以分为<strong>无结构的字符流文件</strong>和<strong>有结构的记录</strong>（有格式文件）文件两种。记录文件由记录组成，即文件的内容划分成多个记录，以记录为单位组织和使用信息。</p>
+<p>常用的<strong>记录式结构</strong>有<strong>连续结构</strong>、<strong>多重结构</strong>、<strong>转置结构</strong>、<strong>顺序结构</strong>。</p>
+<p>（1）连续结构：连续结构是一种把记录按生成的先后顺序排列的逻辑结构。连续结构的特点是适用性强，可用于所有文件，且记录的排列顺序与记录的内容无关。缺点是搜索性能较差。</p>
+<p>（2）多重结构：多重文件把记录按键和记录名排列成行列式结构，一个包含n个记录名、m个键的文件构成一个m*n维行列式。</p>
+<p>（3）转置结构：转置结构把含有相同键的记录指针全部指向该键，也就是说，把所有与同一键对应的记录的指针连续地置于目录中该键的位置下。转置结构最适合于给定键后的记录搜索。</p>
+<p>（4）顺序结构：顺序结构把文件中的键按规定的顺序排列起来。</p>
+<p> 用户通过对文件的存取来完成对文件的修改、追加和搜索等操作，常用的存取方法有顺序存取法、随机存取法（直接存取法）和按键存取法。</p>
+<h2><span id="文件的物理组织">文件的物理组织</span></h2><p>在文件系统中，文件的存储设备通常划分为若干个大小相等的物理块。文件的物理结构是指文件在存储设备上的存储方法，常用的文件物理结构有连续文件、串联文件和索引文件。</p>
+<p> （1）<strong>连续文件（顺序文件）</strong>：连续文件是一种最简单的物理文件结构，它把一个在逻辑上连续的文件信息依次存放到物理块中。连续文件的优点是一旦知道文件在文件存储设备上的起始位置和文件长度，就能进行存取。连续文件适合于顺序存取，在连续存取相邻信息时，存取速度快。其缺点是在文件建立时必须指定文件的信息长度，以后不能动态增长，一般不宜于需要经常修改的文件。</p>
+<p>（2）<strong>串联文件（链接文件）</strong>：串联文件用非连续的物理块来存放文件信息，这些物理块之间没有顺序关系，其中每个物理块设有一个指针，指向下一个物理块的地址，这样，所有的物理块都被链接起来，形成一个链接队列。串联文件的优点是可以解决存储器的碎片问题，提高存储空间利用率。由于串联文件只能按照队列中的链接指针顺序查找，因此搜索效率低，一般只适用于顺序访问，不适用于随机存取。</p>
+<p>（3）<strong>索引文件</strong>：索引文件是另一种<strong>对文件存储不连续分配</strong>的方法。为每个文件建立一张索引表，索引表中的每一表项指出文件信息所在的逻辑块号和与之对应的物理块号。索引文件既可以满足文件动态增长的要求，又可以方便而迅速地实现随机存取。对一些大的文件，当索引表的大小超过一个物理块时，会发生索引表的分配问题。一般采用多级（间接索引）技术，这时在由<strong>索引表指出的物理块中存放的不是文件地址而是存放文件信息的物理块地址</strong>。这样，如果一个物理块能存储n个地址，则一级间接索引，将使可寻址的文件长度变成n2块，对于更大的文件可以采用二级甚至三级间接索引（例如，Unix操作系统采用三级索引结构）。索引文件的优点是既适用于顺序存取，又适用于随机存取。缺点是索引表增加了存储空间的开销。另外，在存取文件时至少需要访问两次磁盘，一次是访问索引表，另一次是根据索引表提供的物理块号访问文件信息。为了提高效率，一种改进的方法是，在对某个文件进行操作之前，预先把索引表调入内存。这样，文件的存取就能直接从在内存的索引表中确定相应的物理块号，从而只需要访问一次磁盘。</p>
+<h2><span id="树形目录结构">树形目录结构</span></h2><p>文件控制块的集合称为文件目录，文件目录也被组织成文件，常称为目录文件。文件管理的一个重要方面是对文件目录进行组织和管理。文件系统一般采用一级目录结构、二级目录结构和多级目录结构。DOS、Unix、Windows系统都是采用多级树形目录结构。</p>
+<p>在多级树形目录结构中，整个文件系统有一个根，然后在根上分枝，任何一个分枝上都可以再分枝，枝上也可以长出树叶。根和枝称为目录或文件夹。而树叶则是一个个的文件。实践证明，这种结构的文件系统效率比较高。例如：图1-5就是一个树形目录结构，其中方框代表目录，圆形代表文件。</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps21.png" alt="img"> </p>
+<p>在树形目录结构中，树的根节点为根目录，数据文件作为树叶，其他所有目录均作为树的节点。系统在建立每一个目录时，都会自动为它设定两个目录文件，一个是“.”，代表该目录自己，另一个是“..”，代表该目录的父目录。对于根目录，“.”和“..”都代表其自己。</p>
+<p>从逻辑上讲，用户在登录到系统中之后，每时每刻都处在某个目录之中，此目录被称作工作目录或当前目录，工作目录是可以随时改变的。</p>
+<p>对文件进行访问时，需要用到路径的概念。路径是指从树形目录中的某个目录层次到某个文件的一条道路。在树形目录结构中，从根目录到任何数据文件之间，只有一条唯一的通路，从树根开始，把全部目录文件名与数据文件名依次用“/”连接起来，构成该数据文件的路径名，且每个数据文件的路径名是唯一的。这样，可以解决文件重名问题，不同路径下的同名文件不一定是相同的文件。例如：在图1-5中，根目录下的文件f1和/D1/W1目录下的文件f1可能是相同的文件，也可能是不相同的文件。</p>
+<p>用户在对文件进行访问时，要给出文件所在的路径。路径又分相对路径和绝对路径。绝对路径是指从根目录开始的路径，也称为完全路径；相对路径是从用户工作目录开始的路径。应该注意到，在树形目录结构中到某一确定文件的绝对路径和相对路径均只有一条。绝对路径是确定不变的，而相对路径则随着用户工作目录的变化而不断变化。用户要访问一个文件时，可以通过路径名来引用。例如：在图1-5中，如果当前目录是D1，则访问文件f2的绝对路径是/D1/W2/f2，相对路径是W2/f2。如果当前目录是W1，则访问文件f2的绝对路径仍然是/D1/W2/f2，但相对路径变为../W2/f2。在Windows系统中，有两种格式的文件，分别是FAT32（FAT16）文件和NTFS文件。NTFS在使用中产生的磁盘碎片要比FAT32少，安全性也更高，而且支持单个文件的容量更大，超过了4GB，特别适合现在的大容量存储。NTFS可以支持的分区（如果采用动态磁盘则称为卷）大小可以达到2TB，而Windows 2000中的FAT32支持分区的大小最大为32GB。</p>
+<h2><span id="存储空间管理">存储空间管理</span></h2><p> 由于文件存储设备是分成许多大小相同的物理块，并以块为单位交换信息，因此，<strong>文件存储设备的管理，实质上是对空闲块的组织和管理问题，它包括空闲块的组织、空闲块的分配与空闲块的回收等问题。</strong></p>
+<h3><span id="1空闲表法">1．空闲表法</span></h3><p>空闲表法属于<strong>连续分配</strong>，系统为外存上的所有空闲区建立一张空闲表，每个空闲区对应一个空闲表项，包括序号、第一空闲盘块号和空闲盘块数。</p>
+<h3><span id="2空闲链表法">2．空闲链表法</span></h3><p>将所<strong>有空闲盘区，拉成一条空闲链</strong>，根据构成链所用的基本元素的不同，可把链表分成两种形式：</p>
+<p>（1）空闲盘块链。将磁盘上所有空闲区空间，以盘块为单位拉成一条链，当用户因创建文件而请求分配存储空间时，系统从链首开始，依次摘下适当数目的空闲盘块链给用户。当用户因删除文件而释放存储空间时，系统将回收的盘块依次插入空闲盘块链的末尾。空闲盘块链分配和回收一个盘块的过程非常简单，但在为一个文件分配盘块时，可能要重复多次操作。</p>
+<p>（2）空闲盘区链。将磁盘上所有空闲盘区拉成一条链，在每个盘区上包含若干用于指示下一个空闲盘区的指针，指明盘区大小的信息。分配盘块时，通常采用首次适应算法（显式链接法）。在回收时，要将回收区与空闲盘区相合并。</p>
+<h3><span id="3位图法">3．位图法</span></h3><p>位图（bitmap）用二进制位表示磁盘中的一个盘块的使用情况，0表示空闲，1表示已分配。磁盘上的所有盘块都与一个二进制位相对应，由所有的二进制位构成的集合，称为位图。位图法的优点是<strong>很容易找到一个或一组相邻的空闲盘块</strong>。位图小，可以把它保存在内存中，从而节省了磁盘的启动操作。</p>
+<h3><span id="4成组链接法">4．成组链接法</span></h3><p>成组链接法将<strong>空闲表和空闲链表法结合</strong>形成的一种空闲盘块管理方法，适用于大型文件系统。</p>
+<h2><span id="存储管理">存储管理</span></h2><p>对于本知识点，主要考查虚拟存储器（虚存），特别是页式存储管理。所谓虚拟存储技术，即在内存中保留一部分程序或数据，在外存中放置整个地址空间的副本。程序运行过程中可以随机访问内存中的数据或程序，但需要的程序或数据不在内存时，就将内存中部分内容根据情况写回外存，然后从外存调入所需程序或数据，实现作业内部的局部转换，从而允许程序的地址空间大于实际分配的存储区域。它在内存和外存之间建立了层次关系，使得程序能够像访问内存一样访问外存，主要用于解决内存的容量问题。其逻辑容量由内存和外存容量之和以及CPU可寻址的范围来决定，其运行速度接近于内存速度，成本也下降。可见，虚拟存储技术是一种性能非常优越的存储器管理技术，故被广泛地应用于大、中、小型及微型机中。</p>
+<h2><span id="地址变换">地址变换</span></h2><p>由进程中的目标代码、数据等的虚拟地址组成的虚拟空间称为虚拟存储器，虚拟存储器允许用户用比内存容量大得多的地址空间来编程，以运行比内存实际容量大得多的程序。<strong>用户编程所用的地址称为逻辑地址（虚地址</strong>），而<strong>实际的内存地址则称为物理地址（实地址）</strong>。每次访问内存时都要进行逻辑地址到物理地址的转换，这种转换是由硬件完成的，而内存和外存间的信息动态调度是硬件和操作系统两者配合完成的。</p>
+<p>（1）<strong>静态重定位</strong>：静态重定位是<strong>在虚空间程序执行之前由装配程序完成地址影射工作</strong>。静态重定位的优点是不需要硬件的支持。缺点是无法实现虚拟存储器，必须占用连续的内存空间且难以做到程序和数据的共享。</p>
+<p>（2）<strong>动态重定位</strong>：动态重定位是<strong>在程序执行过程中，在CPU访问内存之前，将要访问的程序或数据地址转换为内存地址</strong>。动态重定位依靠硬件地址变换机构完成，其优点主要有：可以对内存进行非连续分配；提供了虚拟存储器的基础；有利于程序段的共享。</p>
+<h2><span id="存储组织">存储组织</span></h2><p> 虚拟存储器可以分为单一连续分区、固定分区、可变分区、可重定位分区、页式、段式、段页式7种。</p>
+<p>（1）<strong>单一连续分区</strong>。把所有用户区都分配给唯一的用户作业，当作业被调度时，进程全部进入内存，一旦完成，所有内存恢复空闲，因此，它不支持多道程序设计。</p>
+<p>（2）<strong>固定分区</strong>。这是支持多道程序设计的最简单的存储管理方法，它把内存划分成若干个固定的和大小不同的分区，每个分区能够装入一个作业，分区的大小是固定的，算法简单，但是容易生成较多的存储器碎片。</p>
+<p>（3）<strong>可变分区</strong>。引入可变分区后虽然内存分配更灵活，也提高了内存利用率，但是由于系统在不断地分配和回收中，必定会出现一些不连续的小的空闲区，尽管这些小的空闲区的总和超过某一个作业要求的空间，但是由于不连续而无法分配，产生了碎片。解决碎片的方法是拼接（紧凑），即向一个方向（例如向低地址端）移动已分配的作业，使那些零散的小空闲区在另一方向连成一片。分区的拼接技术，一方面是要求能够对作业进行重定位，另一方面系统在拼接时要耗费较多的时间。</p>
+<p>（4）<strong>可重定位分区</strong>。这是克服固定分区碎片问题的一种存储分配方法，它能够把相邻的空闲存储空间合并成一个完整的空区，还能够整理存储器内各个作业的存储位置，以达到消除存储碎片和紧缩存储空间的目的。紧缩工作需要花费大量的时间和系统资源。</p>
+<p>（5）<strong>页式</strong>。页式存储组织的基本原理是将各进程的虚拟空间划分为若干个长度相等的页，把内存空间以与页相等的大小划分为大小相等的片或页面，采用请求调页或预调页技术实现内外存的统一管理。页式存储组织的主要优点是利用率高，产生的内存碎片小，内存空间分配及管理简单。主要缺点是要有相应的硬件支持，增加了系统开销；请求调页的算法如选择不当，有可能产生抖动现象。</p>
+<p>（6）<strong>段式</strong>：一个作业是由若干个具有逻辑意义的段（如主程序、子程序、数据段等）组成。段式存储管理中，允许程序（作业）占据内存中若干分离的分区。分段系统中的虚地址是一个有序对（段号，段内位移）。系统为每一个作业建立一个段表，其内容包括段号与内存起始地址的对应关系、段长和状态等。状态指出这个段是否已调入内存，若已调入内存，则指出这个段的起始地址位置，状态同时也指出这个段的访问权限。如果该段尚未调入内存，则产生缺段中断，以便装入所需要的段。段式存储管理的主要优点是便于多道程序共享内存，便于对存储器的保护，各段程序修改互不影响。其缺点是内存利用率低，内存碎片浪费大。</p>
+<p> （7）<strong>段页式</strong>。这是分段式和分页式结合的存储管理方法，充分利用了分段管理和分页管理的优点。作业按逻辑结构分段，段内分页，内存分块。作业只需部分页装入即可运行，所以支持虚拟存储，可实现动态连接和装配。现在，最常见的虚存组织有分段技术、分页技术、段页式技术三种。</p>
+<p>表1-3 常见的虚存组织</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>段式管理</th>
+<th>页式管理</th>
+<th>段页式管理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>划分方式</strong></td>
+<td>段（不定长），每个作业一张段表</td>
+<td>页（定长），每个进程一张页表</td>
+<td>先将内存分为等长页，每个作业一张段表（通常有一个基号指向它），每段对应一组页表</td>
+</tr>
+<tr>
+<td><strong>虚地址</strong></td>
+<td>(s,d), 即(段号，段内偏移)</td>
+<td>(p,d), 即(页号，页内偏移)</td>
+<td>(s,p,d)即(段号，段内页号，页内偏移)</td>
+</tr>
+<tr>
+<td><strong>虚实转换</strong></td>
+<td>段表内找出初始地址，然后+段内偏移</td>
+<td>页表内找出其实地址+页内偏移</td>
+<td>先在段表中找到页表的起始位置，然后在页表中找到起始地址，最后+页内偏移</td>
+</tr>
+<tr>
+<td><strong>主要优点</strong></td>
+<td>简化了任意增长和收缩的数据段管理，利于进程间共享过程和数据</td>
+<td>消除了页外碎片</td>
+<td>结合了段与页的优点；便于控制存取访问</td>
+</tr>
+<tr>
+<td><strong>主要缺点</strong></td>
+<td>段外碎片降低了利用率</td>
+<td>存在页内碎片</td>
+<td>增长复杂度，增加硬件；存在页内碎片</td>
+</tr>
+</tbody></table>
+<p>说明：段内偏移也称为段内地址，页内偏移也称为页内地址。</p>
+<p>例如：某页式存储系统的地址变换过程如图1-6所示。假定页面的大小为8K，图1-6中所示的十进制逻辑地址9612经过地址变换后，形成的物理地址a应为十进制多少呢？</p>
+<p>因为8K=213，所以页内地址有13位。逻辑地址9612转换成二进制，得到10 0101 1000 1100，这里的低13位为页内偏移量，最高一位则为页号，所以逻辑地址9612的页号为1，根据图1-6的对照表，即物理块号为3（二进制形式为11）。把物理块号和页内偏移地址拼合得到110 0101 1000 1100，再转换为十进制，得到25996。</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps27.png" alt="img"></p>
+<p>图1-6 页式存储系统的地址变换过程</p>
+<p>在现行的虚存组织方面，最常见的就是段页式管理。在进行虚实地址转换时，可以采用的公式如下：</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps28.png" alt="img"> 其中x为基号，s为段号，p为段内页号，d为页内偏移，n的值为d的总位数，（x）表示x里的内容。</p>
+<h2><span id="存储管理">存储管理</span></h2><p>在虚拟存储器的管理中，涉及载入（调入）、放置（放入分区）和置换（swapping）等问题。</p>
+<p> （1）<strong>调入策略</strong>：即<strong>何时将一页或一段从外存中调入内存</strong>，通常有两种策略，一种是请求调入法，即需要使用时才调入；另一种是先行调入法，即将预计要使用的页/段先行调入内存。</p>
+<p>（2）<strong>放置策略</strong>：也就是调入后，<strong>放在内存的什么位置</strong>，这与内存管理基本上是一致的。</p>
+<p>（3）<strong>置换策略</strong>：由于实际内存是小于虚存的，因此可能会发生内存中已满，但需要使用的页不在内存中这一情况（称为缺页中断）。这时就需要进行置换，即将<strong>一些内存中的页淘汰到外存，腾出空间给要使用的页</strong>，这个过程也称为Swapping。</p>
+<h3><span id="1置换算法">1．置换算法</span></h3><p>常见的置换算法如下：</p>
+<p>（1）<strong>最优（Optimized，OPT）算法</strong>：选择淘汰不再使用或最将来才使用的页，这是理想的算法，但难以实现，常用于淘汰算法的比较。</p>
+<p>（2）<strong>随机（Rand）算法</strong>：随机地选择淘汰的页，开销小，但可能选中立即就要访问的页。</p>
+<p>（3）<strong>先进先出（First In and First Out，FIFO）算法</strong>：选择淘汰在内存驻留时间最长的页，似乎合理，但可能淘汰立即要使用的页。另外，使用FIFO算法时，在未给予进程分配足够的页面时，有时会出现给予进程的页面数越多，缺页次数反而增加的异常现象，这称为Belady现象。例如，若某个进程访问页面的顺序（称页面访问序列）是432143543215，当进程拥有3个主存页面时，发生缺页率比拥有4个主存页面时要小。</p>
+<p>（4）<strong>最近最少使用（Least Recently Used，LRU）算法</strong>：选择淘汰离当前点时刻最近的一段内使用得最少的页。例如，若某个进程拥有3个主存页面，已访问页面的顺序是4314，现在如果要访问第2页，则需要淘汰第3页，因为第1、4页刚刚使用了。这个算法的主要出发点是，如果某页被访问了，则它可能马上就要被访问。OPT算法和LRU算法都不会发生Belady异常现象。</p>
+<h3><span id="2局部性原理">2．局部性原理</span></h3><p>存储管理策略的基础是局部性原理，即进程往往会不均匀地高度局部化地访问内存。局部性分为<strong>时间局部性</strong>和<strong>空间局部性</strong>。时间局部性是指最近访问存储位置，很可能不久的将来还要访问；空间局部性是指存储访问有成组的倾向：当访问了某个位置后，很可能也要访问其附近的位置。</p>
+<p>根据局部性原理的特征性，Denning阐述了程序性能的工作集理论。<strong>工作集</strong>是进程频繁访问的页面的集合。工作集理论指出，为使进程有效地运行，它的页面工作集应驻留内存中。否则，由于进程频繁地从外存请求页面，而出现称为“颠簸”（抖动）的过度的页面调度活动。此时，处理页面调度的时间超过了程序的执行时间。显然，此时CPU的有效利用率会急速下降。</p>
+<p>通常用两种等价的方法确定进程的工作集，一种是将工作集确定为在定长的页面访问序列（工作集窗口）中的页面集合，另一种是将工作集确定为在定长时间间隔中涉及到页面的集合。工作集的大小依赖于工作集窗口的大小，在进程执行时，工作集会发生变化。有时，当进程进入另一个完全不同的执行阶段时，工作集会出现显著的变化。不过在一个进程的执行过程中，工作集的大小处于稳定状态的时间基本上占绝大多数。</p>
+<p>另一种控制颠簸的技术是<strong>控制缺页率</strong>。操作系统规定缺页率的上下限，当一个进程的缺页率高于上限时，表明该进程需要更大的内存空间，则分配较多的内存页面给它，当进程的缺页率低于下限时，表明该进程占用的内存空间过大，可以适当地收回若干内存页面。</p>
+<h2><span id="作业管理">作业管理</span></h2><p>操作系统中用来控制作业的进入、执行和撤销的一组程序称为作业管理程序，这些控制功能也能通过把作业细化，通过进程的执行来实现。在作业管理中，系统为每一个作业建立—个作业控制块（Job Control Block，JCB）。系统通过JCB感知作业的存在。JCB包括的主要内容有作业名、作业状态、资源要求、作业控制方式、作业类型以及作业优先权等。</p>
+<h3><span id="作业的状态">作业的状态</span></h3><p> 一个作业从交给计算机系统到执行结束退出系统，一般都要经历<strong>提交、后备、执行和完成</strong>四个状态。其状态转换如图1-7所示。</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps32.png" alt="img"> （1）<strong>提交状态</strong>。作业由输入设备进入外存储器（也称输入井）的过程称为提交状态。处于提交状态的作业，其信息正在进入系统。</p>
+<p>（2）<strong>后备状态</strong>。当作业的全部信息进入外存后，系统就为该作业建立一个作业控制块。</p>
+<p>（3）<strong>执行状态</strong>。一个后备作业被作业调度程序选中分配了必要的资源并进入了内存，作业调度程序同时为其建立了相应的进程后，该作业就由后备状态变成了执行状态。</p>
+<p>（4）<strong>完成状态</strong>：当作业正常运行结束，它所占用的资源尚未全部被系统回收时的状态为完成状态。</p>
+<h2><span id="作业调度">作业调度</span></h2><p>处理器调度通常分为三级调度，即低级调度、中级调度和高级调度。</p>
+<p>（1）<strong>高级调度</strong>。高级调度也称为<strong>作业调度</strong>。高级调度的主要功能是在<strong>批处理作业的后备作业队列中选择一个或者一组作业</strong>，为它们建立进程，分配必要的资源，使它们能够运行起来。</p>
+<p>（2）<strong>中级调度</strong>。中级调度也称为<strong>交换调度</strong>，中级调度<strong>决定进程在内、外存之间的调入、调出</strong>。其主要功能是在内存资源不足时将某些处于等待状态或就绪状态的进程调出内存，腾出空间后，再将外存上的就绪进程调入内存。</p>
+<p>（3）<strong>低级调度</strong>。低级调度也称为<strong>进程调度</strong>，低级调度的主要功能是<strong>确定处理器在就绪进程间的分配</strong>。</p>
+<p> 作业调度主要完成从后备状态到执行状态的转变，及从执行状态到完成状态的转变。<strong>作业调度算法</strong>有：</p>
+<p>（1）<strong>先来先服务（First Come and First Served，FCFS）</strong>。按作业到达的先后次序调度，它不利于短作业。</p>
+<p>（2）<strong>短作业优先（Short Job First，SJF）</strong>。按作业的估计运行时间调度，估计运行时间短的作业优先调度。它不利于长作业，可能会使一个估计运行时间长的作业迟迟得不到服务。</p>
+<p>（3）<strong>响应比高者优先（Highest Response_ratio Next，HRN）</strong>。对FCFS方式和SJF方式的一种综合平衡。FCFS方式只考虑每个作业的等待时间而未考虑执行时间的长短，而SJF方式只考虑执行时间而未考虑等待时间的长短。因此，这两种调度算法在某些极端情况下会带来某些不便。HRN调度策略同时考虑每个作业的等待时间长短和估计需要的执行时间长短，从中选出响应比最高的作业投入执行。响应比R定义： <code>R = (W+T)/T = 1+W/T</code>. 其中T为该作业估计需要的执行时间，W为作业在后备状态队列中的等待时间。每当要进行作业调度时，系统计算每个作业的响应比，选择其中R最大者投入执行。这样，即使是长作业，随着它等待时间的增加，W/T也就随着增加，也就有机会获得调度执行。这种算法是介于FCFS和SJF之间的一种折中算法。由于长作业也有机会投入运行，在同一时间内处理的作业数显然要少于SJF法，从而采用HRN方式时其吞吐量将小于采用SJF 法时的吞吐量。另外，由于每次调度前要计算响应比，系统开销也要相应增加。</p>
+<p>（4）<strong>优先级调度</strong>。根据作业的优先级别，优先级高者先调度。</p>
+<h2><span id="设备管理">设备管理</span></h2><p>在计算机系统中，除了处理器和内存之外，其他的大部分硬设备称为外部设备。它包括输入/输出设备，外存设备及终端设备等。为了完成上述主要任务，设备管理程序一般要提供下述功能：</p>
+<p>（1）<strong>提供和进程管理系统的接口</strong>。当进程要求设备资源时，该接口将进程要求转达给设备管理程序。</p>
+<p>（2）<strong>进行设备分配</strong>。按照设备类型和相应的分配算法把设备和其他有关的硬件分配给请求该设备的进程，并把未分配到所请求设备或其他有关硬件的进程放入等待队列。</p>
+<p>（3）实现设备和设备、设备和CPU等之间的<strong>并行操作</strong>。</p>
+<p>（4）<strong>进行缓冲区管理</strong>。主要减少外部设备和内存与CPU之间的数据速度不匹配的问题，系统中一般设有缓冲区(器)来暂放数据。设备管理程序负责进行缓冲区分配、释放及有关的管理工作。</p>
+<h2><span id="数据传输控制方式">数据传输控制方式</span></h2><p>在计算机中，输入/输出（Input/Output，I/O）系统可以有5种不同的工作方式，分别是程序控制方式、程序中断方式、DMA（Direct Memory Access，直接内存存取）工作方式、通道方式、输入/输出处理机。</p>
+<p>（1）<strong>程序控制方式</strong>。CPU直接利用I/O指令编程，实现数据的输入输出。CPU发出I/O命令，命令中包含了外设的地址信息和所要执行的操作，相应的I/O系统执行该命令并设置状态寄存器；CPU不停地（定期地）查询I/O系统以确定该操作是否完成。由程序主动查询外设，完成主机与外设间的数据传送，方法简单，硬件开销小。</p>
+<p>（2）<strong>程序中断方式</strong>。CPU利用中断方式完成数据的输入/输出，当I/O系统与外设交换数据时，CPU无需等待也不必去查询I/O的状态，当I/O系统完成了数据传输后则以中断信号通知CPU。CPU然后保存正在执行程序的现场，转入I/O中断服务程序完成与I/O系统的数据交换。然后返回原主程序继续执行。与程序控制方式相比，中断方式因为CPU无需等待而提高了效率。在系统中具有多个中断源的情况下，常用的处理方法有：多中断信号线法、中断软件查询法、雏菊链法、总线仲裁法和中断向量表法。</p>
+<p>（3）<strong>DMA方式</strong>。使用DMA控制器（Direct Memory Access Controler，DMAC）来控制和管理数据传输。DMAC和CPU共享系统总线，并且具有独立访问存储器的能力。在进行DMA时，CPU放弃对系统总线的控制而由DMAC控制总线；由DMAC提供存储器地址及必需的读写控制信号，实现外设与存储器之间的数据交换。DMAC获取总线的3种方式：暂停方式、周期窃取方式和共享方式。</p>
+<p>（4）<strong>通道方式</strong>。通道是一种通过执行通道程序管理I/O操作的控制器，它使主机与I/O操作之间达到更高的并行程度。在具有通道处理机的系统中，当用户进程请求启动外设时，由操作系统根据I/O要求构造通道程序和通道状态字，将通道程序保存在内存中，并将通道程序的首地址放到通道地址字中，然后执行启动I/O指令。按照所采取的传送方式，可将通道分为字节多路通道、选择通道和数组多路通道三种。</p>
+<p>（5）<strong>输入输出处理机</strong>。输入输出处理机也称为外围处理机，它是一个专用处理机，也可以是一个通用的处理机，具有丰富的指令系统和完善的中断系统。专用于大型、高效的计算机系统处理外围设备的输入输出，并利用共享存储器或其他共享手段与主机交换信息。从而使大型、高效的计算机系统更加高效地工作。与通道相比，输入输出处理机具有比较丰富的指令系统，结构接近于一般的处理机，有自己的局部存储器。</p>
+<h2><span id="磁盘调度算法">磁盘调度算法</span></h2><p>访问磁盘的时间由三部分构成，它们是<strong>寻道（查找数据所在的磁道）时间</strong>、<strong>等待（旋转等待扇区）时间</strong>和<strong>数据传输时间</strong>，其中<strong>寻道时间（查找时间）是决定因素</strong>。</p>
+<p> （1）<strong>FCFS算法</strong>：有些文献称为FIFO算法。FCFS是一种最简单的磁盘调度算法，按先来先服务的次序，未作优化。这种算法的优点是公平、简单，且每个进程的请求都能依次得到处理，不会出现某一进程的请求长期得不满足的情况。此算法未对寻道进行优化，致使平均寻道时间可能较长。</p>
+<p>（2）<strong>SSTF（Shortest Seek Time First，最短寻道时间优先）算法</strong>：选择这样的进程，其要求访问的磁道距当前磁头所在的磁道距离最近，以使每次寻道的时间最短。FCFS会引起读写头在盘面上的大范围移动，SSTF查找距离磁头最短（也就是查找时间最短）的请求作为下一次服务的对象。SSTF查找模式有高度局部化的倾向，会推迟一些请求的服务，甚至引起无限拖延（这种现象称为“饥饿”）。</p>
+<p>（3）<strong>SCAN（电梯）算法</strong>：不仅考虑到欲访问的磁道与当前磁道的距离，而且优先考虑的是磁头的当前移动方向，是在磁头前进方向上的最短查找时间优先算法，它排除了磁头在盘面局部位置上的往复移动。SCAN算法在很大程度上消除了SSTF算法的不公平性，但仍有利于对中间磁道的请求。SCAN算法的缺陷是当磁头刚由里向外移动过某一磁道时，恰有一进程请求访问此磁道，这时进程必须等待，待磁头由里向外，然后再从外向里扫描完所有要访问的磁道后，才处理该进程的请求，致使该进程的请求被严重地推迟。</p>
+<p>（4）<strong>N-SCAN（N步SCAN）算法</strong>：这是对SCAN算法的改良，磁头的移动与SCAN算法是一样的，不同的是扫描期间只对那些在扫描开始前已等待服务的请求提供服务。在服务期间，新到达的请求即使在磁头前进方向上也得不到服务，直到下一个新扫描周期开始。。N-SCAN算法的实质是把FCFS和SCAN的优点结合起来，以便取得较好的性能。如果新到达的请求按优化次序排列，则下一个扫描周期必然花费最少的磁头移动时间。</p>
+<p>（5）<strong>C-SCAN（循环扫描）算法</strong>：这是对SCAN算法的另一种改良，是单向服务的N步SCAN算法，C-SCAN算法规定磁头单向移动。C-SCAN算法彻底消除了对两端磁道请求的不公平。</p>
+<h2><span id="虚设备与spooling技术">虚设备与SPOOLING技术</span></h2><p>SPOOLing（Simultaneous Peripheral Operation On Line）的意思是外部设备同时联机操作，又称为假脱机输入输出操作或排队转储技术，采用一组程序或进程模拟一台输入输出处理器。它在输入和输出之间增加了“输入井”和“输出井”的排队转储环节，SPOOLing系统的组成如图</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps38.png" alt="img"> </p>
+<p>从图1-8可以看出，SPOOLing系统主要包括以下3个部分：</p>
+<p> （1）<strong>输入井和输出井</strong>：这是在<strong>磁盘上开辟出来的两个存储区域</strong>。输入井模拟脱机输入时的磁盘，用于存放I/O设备输入的数据；输出井模拟脱机输出时的磁盘，用于存放用户程序的输出数据。因此，SPOOLing系统必须有高速、大容量、随机存取的外存的支持。</p>
+<p>（2）<strong>输入缓冲区和输出缓冲区</strong>：这是在<strong>内存中开辟的两个缓冲区</strong>。输入缓冲区用于<strong>暂存</strong>有输入设备送来的数据，以后在传送到输出井。输出缓冲区用于暂存从输出井送来的数据，以后再传送到输出设备。</p>
+<p>（3）<strong>输入进程和输出进程</strong>：输入进程模拟脱机输入时的外围控制机，将用户要求的数据有输入设备到输入缓冲区，再送到输入井。当CPU需要输入设备时，直接从输入井读入内存。输出进程模拟脱机输出时的外围控制机，把用户要求输入的数据，先从内存送到输出井，待输出设备空闲时，再将输出井中的数据，经过输出缓冲区送到输出设备上。</p>
+<p>SPOOLing技术的<strong>主要特点</strong>如下：</p>
+<p>（1）<strong>提高了I/O速度</strong>。从对低速I/O设备进行的I/O操作变为对输入井或输出井的操作，如同脱机操作一样，提高了I/O速度，缓和了CPU与低速I/O设备速度不匹配的矛盾。</p>
+<p>（2）<strong>设备并没有分配给任何进程</strong>。在输入井或输出井中，分配给进程的是一存储区和建立一张I/O请求表。</p>
+<p>（3）<strong>实现了虚拟设备功能</strong>。多个进程同时使用一独享设备，而对每一进程而言，都认为自己独占这一设备，不过，该设备是逻辑上的设备。采用SPOOLing技术，可以将低速的独占设备改造成一种可共享的设备，而且一台物理设备可以对应若干台虚拟的同类设备。</p>
+<p>第 1 章：操作系统</p>
+<h2><span id="网络操作系统">网络操作系统</span></h2><p>网络操作系统是指能使网络上个计算机方便而有效的共享网络资源，为用户提供所需的各种服务的操作系统软件。</p>
+<h2><span id="网络操作系统概述">网络操作系统概述</span></h2><p>如果网络操作系统相等地分布在网络上的所有节点，则称之为对等式网络操作系统；如果网络操作系统的主要部分驻留在中心节点，则称为集中式网络操作系统。集中式网络操作系统下的中心节点称为服务器，使用由中心节点所管理资源的应用称为客户。因此，集中式网络操作系统下的运行机制是C/S（Client/Server，客户/服务器）架构。</p>
+<p>网络操作系统除了具备单机操作系统所需的功能外，还应具有下列功能：</p>
+<p>（1）提供高效可靠的网络通讯能力。</p>
+<p>（2）提供多项网络服务功能，例如，远程管理、文件传输、电子邮件、远程打印等。</p>
+<p> 网络操作系统一般具有以下特征：</p>
+<p>（1）硬件独立。网络操作系统应当独立于具体的硬件平台，即系统应该可以运行于各种硬件平台之上。为此，Microsoft提出了HAL（Hardware Abstraction Layer，硬件抽象层）的概念。HAL与具体的硬件平台无关，一旦改变具体的硬件平台，只要改变其HAL，系统就可以作平稳转换。</p>
+<p>（2）网络特性。应当管理计算机资源并提供良好的用户界面。</p>
+<p>（3）可移植性和可集成性。</p>
+<p>（4）多用户、多任务。在多进程系统中，为了避免两个进程并行处理所带来的问题，可以采用多线程的处理方式。支持多处理机技术是对现代网络操作系统的基本要求。</p>
+<h2><span id="网络操作系统的组成">网络操作系统的组成</span></h2><p>网络操作系统由网络驱动程序、子网协议和应用层协议等3个方面组成。网络操作系统通过网络驱动程序与网络硬件通信，因此它是作为网卡和子网协议间的联系体来工作的。子网协议是经过网络发送应用和系统管理信息所必须的通信协议。应用层协议则与子网协议进行通信，并实现网络操作系统对网络用户的服务。</p>
+<p>（1）<strong>网络驱动程序</strong>。网络驱动程序涉及OSI/RM（Open System Interconnection ReferenceModel，开放系统互连参考模型）的第2层（数据链路层）和第3层（网络层），是网卡和高层协议间的接口。网络驱动程序把网卡如何对来自和发往高层的包所使用的方法进行了屏蔽，使高层不必了解收发操作的复杂性，而网络驱动程序本身则必须对网卡的操作有详细的了解。由于对标准的具体实现不同，网络驱动程序也就不同。正因为这样，网络集成商对所使用的网卡必须选择配对的驱动程序，并将所用的网络驱动程序同网络操作系统集成到一起。</p>
+<p>（2）<strong>子网协议</strong>。子网协议涉及OSI/RM的第3层、第4层（传输层）和第5层（会话层）。第3层建立在第2层提供的点到点连接上，主要任务是如何对通信量进行路由选择，提供拥塞和流量控制，提供统一的网络寻址方法，以便令牌环和以太网络能理解。第4层可对第3层提供的服务进行提高，能确保可靠的数据交付。第5层提供有序的会话服务，如在会话上可提供会话控制，权标管理和活动管理</p>
+<p>（3）<strong>应用层协议</strong>。应用层协议最重要的是NCP（Netware Core Proeocol）。NCP作为应用层的协议，提供了下述主要功能：在不同方式下打开文件；关闭打开的文件；从打开的文件读取数据块；将数据块写入打开的文件；获取目录项表；处理服务器数据库；提供高级连接服务；提供同步操作。</p>
+<h1><span id="第2章-数据库系统">第2章 数据库系统</span></h1><h2><span id="数据库管理系统">数据库管理系统</span></h2><p>现在的大型系统几乎都是基于数据库的系统，作为系统架构设计师，要深入了解数据库方面的知识，系统掌握有关数据库建模和设计的技术。根据考试大纲，本章要求考生掌握以下知识点：</p>
+<p>（1）<strong>信息系统综合知识</strong>：包括数据库管理系统的类型、数据库管理系统结构和性能评价、常用的关系型数据库管理系统、数据库模式、数据库规范化、分布式数据库系统、并行数据库系统、数据仓库与数据挖掘技术、数据库工程、备份恢复。</p>
+<p>（2）<strong>系统架构设计案例分析和论文</strong>：数据库建模、数据库设计、数据库系统的备份与恢复。数据管理技术的发展大致经历了人工管理阶段、文件系统阶段、数据库阶段和高级数据库技术阶段。数据库是长期储存在计算机内的、有组织的、可共享的数据的集合。</p>
+<p>数据库管理系统（DataBase Management System，DBMS）是一种负责数据库的定义、建立、操作、管理和维护的软件系统。其目的是保证数据安全可靠，提高数据库应用的简明性和方便性。DBMS的工作机理是把用户对数据的操作转化为对系统存储文件的操作，有效地实现数据库三级之间的转化。数据库管理系统的主要职能有：数据库的定义和建立、数据库的操作、数据库的控制、数据库的维护、故障恢复和数据通信。</p>
+<p> 数据库系统（DataBase System，DBS）是实现有组织地、动态地存储大量关联数据、方便多用户访问的计算机软件、硬件和数据资源组成的系统。一个典型的DBS包括数据库、硬件、软件（应用程序）和数据库管理员（DataBase Administrator，DBA）四个部分。根据计算机的系统结构，DBS可分成集中式、客户/服务器式、并行式和分布式四种。</p>
+<p>与文件系统阶段相比，数据库技术的数据管理方式具有以下特点：</p>
+<p>（1）采用复杂的数据模型表示数据结构，数据冗余小，易扩充，实现了数据共享。</p>
+<p>（2）具有较高的数据和程序独立性。包括数据库的独立性有物理独立性和逻辑独立性。</p>
+<p>（3）数据库系统为用户提供了方便的用户接口。</p>
+<p>（4）数据库系统提供四个方面的数据控制功能，分别是并发控制、恢复、完整性和安全性。数据库中各个应用程序所使用的数据由数据库系统统一规定，按照一定的数据模型组织和建立，由系统统一管理和集中控制。</p>
+<p>（5）增加了系统的灵活性。</p>
+<p>高级数据库技术阶段的主要标志是<strong>分布式数据库系统</strong>和<strong>面向对象数据库系统</strong>的出现。分布式数据库系统的主要特点是数据在物理上分散存储，在逻辑上是统一的。分布式数据库系统的多数处理就地完成，各地的计算机由数据通信网络相联系；面向对象数据库系统是面向对象的程序设计技术与数据库技术相结合的产物。面向对象数据库系统的主要特点是具有面向对象技术的封装性和继承性，提高了软件的可重用性。</p>
+<h2><span id="数据库模式">数据库模式</span></h2><p>DBS的设计目标是<strong>允许用户逻辑地处理数据</strong>、而不必涉及这些数据在计算机中是怎样存放的，在数据组织和用户应用之间提供某种程度的独立性。数据库技术中采用分级的方法，将数据库的结构划分为多个层次。最著名的是美国ANSI/SPARC数据库系统研究组1975年提出的三级划分法，如图2-1所示。</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps43.png" alt="img"> </p>
+<h3><span id="1三级模式">1．三级模式</span></h3><p> 数据库系统可以分为外模式、概念模式和内模式三个层次。</p>
+<p>（1）<strong>概念模式（模式、逻辑模式）</strong>：用以<strong>描述整个数据库中数据库的逻辑结构，描述现实世界中的实体及其性质与联系，定义记录、数据项、数据的完整性约束条件及记录之间的联系，是数据项值的框架。</strong>概念模式通常还包含有访问控制、保密定义、完整性检查等方面的内容，以及概念/物理之间的映射。概念模式是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图。一个数据库只有一个概念模式。</p>
+<p>（2）<strong>外模式（子模式、用户模式）</strong>：用以<strong>描述用户看到或使用的那部分数据的逻辑结构，用户根据外模式用数据操作语句或应用程序去操作数据库中的数据。</strong>外模式主要描述组成用户视图的各个记录的组成、相互关系、数据项的特征、数据的安全性和完整性约束条件。外模式是数据库用户（包括程序员和最终用户）能够看见和使用的局部数据的逻辑结构和特征的描述，是数据库用户的数据视图，是与某一应用有关的数据的逻辑表示。一个数据库可以有多个外模式。一个应用程序只能使用一个外模式。</p>
+<p>（3）<strong>内模式</strong>：是<strong>整个数据库的最低层表示，不同于物理层，它假设外存是一个无限的线性地址空间。</strong>内模式定义的是存储记录的类型、存贮域的表示、存贮记录的物理顺序，指引元、索引和存贮路径等数据的存贮组织。内模式是数据物理结构和存储方式的描述，是数据在数据库内部的表示方式。一个数据库只有一个内模式。概念模式是数据库的中心与关键；内模式依赖于概念模式，独立于外模式和存储设备；外模式面向具体的应用，独立于内模式和存储设备；应用程序依赖于外模式，独立于概念模式和内模式。</p>
+<h3><span id="2三个级别">2．三个级别</span></h3><p>与三级模式相对应，数据库系统可以划分为三个抽象级，分别是用户级、概念级和物理级。</p>
+<p>（1）<strong>用户级数据库</strong>：对应于外模式，是最接近于用户的一级数据库，是用户看到和使用的数据库，又称用户视图。用户级数据库主要由外部记录组成，不同用户视图可以互相重叠，用户的所有操作都是针对用户视图进行。一个数据库可有多个不同的用户视图，每个用户视图由数据库某一部分的抽象表示所组成。 </p>
+<p>（2）<strong>概念级数据库</strong>：对应于概念模式，介于用户级和物理级之间，是所有用户视图的最小并集，是DBA看到和使用的数据库，所以又称为DBA视图。概念级数据库由概念记录组成，一个数据库应用系统只有一个DBA视图，它把数据库作为一个整体的抽象表示。概念级模式把用户视图有机地结合成一个整体，综合平衡考虑所有用户要求，实现数据的一致性、最大限度降低数据冗余、准确地反映数据间的联系。</p>
+<p>（3）<strong>物理级数据库</strong>：对应于内模式，是数据库的低层表示，它描述数据的实际存储组织，是最接近于物理存储的级，又称为内部视图。<strong>物理级数据库由内部记录组成，物理级数据库并不是真正的物理存储，而是最接近于物理存储的级。</strong></p>
+<h3><span id="3两级独立性">3．两级独立性</span></h3><p>DBS两级独立性是指物理独立性和逻辑独立性。三个抽象级间通过两级映射（外模式/模式映射，模式/内模式映射）进行相互转换，使得数据库的三级形成一个统一的整体。</p>
+<p>（1）<strong>物理独立性</strong>。物理独立性是指用户的应用程序与存储在磁盘上的数据库中的数据是相互独立的。当数据的物理存储改变时，应用程序不需要改变。物理独立性存在于概念模式和内模式之间的映射转换，说明物理组织发生变化时应用程序的独立程度。</p>
+<p>（2）<strong>逻辑独立性</strong>。逻辑独立性是指用户的应用程序与数据库中的逻辑结构是相互独立的。当数据的逻辑结构改变时，应用程序不需要改变。逻辑独立性存在于外模式和概念模式之间的映射转换，说明概念模式发生变化时应用程序的独立程度。</p>
+<p>逻辑独立性比物理独立性更难实现。</p>
+<h2><span id="数据模型">数据模型</span></h2><p>设计DBS时，一般先用图或表的形式抽象地反映数据彼此之间的关系，称为建立数据模型。现有的数据库系统均是基于某种数据模型的，因此，了解数据模型的基本概念是学习数据库系统的基础。</p>
+<h2><span id="数据模型的分类">数据模型的分类</span></h2><p>数据模型主要有两大类，分别是<strong>概念数据模型（实体联系模型）</strong>和<strong>基本数据模型（结构数据模型）</strong>。 </p>
+<p>概念数据模型是按照用户的观点来对数据和信息建模，主要用于数据库设计。概念模型主要用实体-联系方法（Entity-Relationship Approach）表示，所以也称E-R模型。有关E-R模型的设计方法，请阅读2.5节。 </p>
+<p>基本数据模型是按照计算机系统的观点来对数据和信息建模，主要用于DBMS的实现。基本数据模型是数据库系统的核心和基础，通常由数据结构、数据操作和完整性约束三部分组成，其中数据结构是对系统静态特性的描述，数据操作是对系统动态特性的描述，完整性约束是一组完整性规则的集合。</p>
+<p>常用的基本数据模型有层次模型、网状模型、关系模型和面向对象模型。</p>
+<p>（1）<strong>层次模型</strong>：用树型结构表示实体类型及实体间联系。层次模型的优点是记录之间的联系通过指针来实现，查询效率较高。层次模型的缺点是只能表示1:n联系，虽然有多种辅助手段实现m:n联系，但较复杂，用户不易掌握。由于层次顺序的严格和复杂，引起数据的查询和更新操作很复杂，应用程序的编写也比较复杂。</p>
+<p>（2）<strong>网状模型</strong>：用有向图表示实体类型及实体间联系。网状模型的优点是记录之间的联系通过指针实现，m:n联系也容易实现，查询效率高。其缺点是编写应用程序比较复杂，程序员必须熟悉数据库的逻辑结构。</p>
+<p>（3）<strong>关系模型</strong>：用表格结构表达实体集，用外键（外码）表示实体间联系。其优点有：建立在严格的数学概念基础上；概念单一（关系），结构简单、清晰，用户易懂易用；存取路径对用户透明，从而数据独立性、安全性好，简化数据库开发工作。关系模型的缺点主要是由于存取路径透明，查询效率往往不如非关系数据模型。</p>
+<p>（4）<strong>面向对象模型</strong>：用面向对象观点来描述现实世界实体的逻辑组织、对象间限制、联系等的模型。一个面向对象数据库系统是一个持久的、可共享的对象库的存储和管理者，而一个对象库是由一个面向对象模型所定义的对象的集合体。面向对象数据库模式是类的集合，面向对象模型提供了一种类层次结构。在面向对象数据库模式中，一组类可以形成一个类层次，一个面向对象数据库可能有多个类层次。在一个类层次中，一个类继承其所有超类的全部属性、方法和消息。面向对象的数据库系统在逻辑上和物理上从面向记录上升为面向对象、面向可具有复杂结构的一个逻辑整体。允许用自然的方法，并结合数据抽象机制在结构和行为上对复杂对象建立模型，从而大幅度提高管理效率，降低用户使用复杂性。</p>
+<h2><span id="关系模型">关系模型</span></h2><p>我们先学习几个相关的基本概念。</p>
+<p>（1）<strong>域</strong>：一组具有相同数据类型的值的集合。</p>
+<p>（2）<strong>笛卡尔积</strong>：给定一组域D1、D2、…、Dn，这些域中可以有相同的。它们的笛卡尔积为：D1×D2×…×Dn = {(d1，d2，…，dn)|dj∈Dj，j＝1，2，…，n}。其中每一个元素（d1，d2，…，dn）叫作一个n元组（简称为元组）。元组中的每一个值dj叫作一个分量。</p>
+<p>（3）<strong>关系</strong>：D1×D2×…×Dn的子集叫作在域D1、D2、…、Dn上的关系，用R(D1，D2，…，Dn)表示。这里R表示关系的名字，n是关系的目或度。</p>
+<p>关系中的每个元素是关系中的元组，通常用t表示。关系是笛卡尔积的子集，所以关系也是一个二维表，表的每行对应一个元组，表的每列对应一个域。由于域可以相同，为了加以区分，必须对每列起一个名字，称为属性。</p>
+<p> 若关系中的某一属性组（一个或多个属性）的值能唯一地标识一个元组，则称该属性组为候选码（候选键）。若一个关系有多个候选码，则选定其中一个作为主码（主键）。主码的所有属性称为主属性。不包含在任何侯选码中的属性称为非码属性（非主属性）。在最简单的情况下，侯选码只包含一个属性。在最极端的情况下，关系模式所有属性的组合构成关系模式的侯选码，称为全码。</p>
+<p>关系可以有三种类型：基本关系（基本表、基表）、查询表和视图表。基本表是实际存在的表，它是实际存储数据的逻辑表示。查询表是查询结果对应的表。视图表是由基本表或其他视图表导出的表，是虚表，不对应实际存储的数据。</p>
+<p> 基本关系具有以下<strong>六条性质</strong>：</p>
+<p>（1）列是同质的，即每一列中的分量是同一类型的数据，来自同一个域。</p>
+<p>（2）不同的列可出自同一个域，称其中的每一列为一个属性，不同的属性要给予不同的属性名。</p>
+<p>（3）列的顺序无所谓，即列的次序可以任意交换。</p>
+<p>（4）任意两个元组不能完全相同。但在大多数实际关系数据库产品中，例如ORACLE等，如果用户没有定义有关的约束条件，它们都允许关系表中存在两个完全相同的元组。</p>
+<p>（5）行的顺序无所谓，即行的次序可以任意交换。</p>
+<p>（6）分量必须取原子值，即每一个分量都必须是不可分的数据项。关系的描述称为关系模式，一个关系模式应当是一个五元组，它可以形式化地表示为：R(U，D，DOM，F)。其中R为关系名，U为组成该关系的属性名集合，D为属性组U中属性所来自的域，DOM为属性向域的映象集合，F为属性间数据的依赖关系集合。关系模式通常可以简记为R(A1，A2，…，An)。其中R为关系名，A1、A2、…、An为属性名。</p>
+<p>关系实际上就是关系模式在某一时刻的状态或内容。也就是说，关系模式是型，关系是它的值。关系模式是静态的、稳定的，而关系是动态的、随时间不断变化的，因为关系操作在不断地更新着数据库中的数据。但在实际当中，常常把关系模式和关系统称为关系，读者可以从上下文中加以区别。</p>
+<p>在关系模型中，实体以及实体间的联系都是用关系来表示。在一个给定的现实世界领域中，相应于所有实体及实体之间的联系的关系的集合构成一个关系数据库。</p>
+<p>关系数据库也有型和值之分。关系数据库的型也称为关系数据库模式，是对关系数据库的描述，是关系模式的集合。关系数据库的值也称为关系数据库，是关系的集合。关系数据库模式与关系数据库通常统称为关系数据库。</p>
+<h2><span id="规范化理论">规范化理论</span></h2><p>设有一个关系模式R（SNAME，CNAME，TNAME TADDRESS），其属性分别表示学生姓名、选修的课程名、任课教师姓名和任课教师地址。仔细分析一下，我们就会发现这个模式存在下列存储异常的问题：</p>
+<p>（1）数据冗余：如果某门课程有100个学生选修，那么在R的关系中就要出现100个元组，这门课程的任课教师姓名和地址也随之重复出现100次。</p>
+<p>（2）修改异常：由于上述冗余问题，当需要修改这个教师的地址时，就要修改100个元组中的地址值，否则就会出现地址值不一致的现象。</p>
+<p>（3）插入异常：如果不知道听课学生名单，这个教师的任课情况和家庭地址就无法进入数据库；否则就要在学生姓名处插入空值。</p>
+<p>（4）删除异常：如果某门课程的任课教师要更改，那么原来任课教师的地址将随之丢失。因此，关系模式R虽然只有四个属性，但却是性能很差的模式。如果把R分解成下列两个关系模式：R1（SNAME，CNAME）和R2（CNAME，TNAME，TADDRESS），则能消除上述的存储异常现象。</p>
+<p>为什么会产生这些异常呢？与关系模式属性值之间的联系直接有关。在模式R中，学生与课程有直接联系，教师与课程有直接联系，而教师与学生无直接联系，这就产生了模式R的存储异常。因此，模式设计强调“每个联系单独表达”是一条重要的设计原则，把R分解成R1和R2是符合这条原则的。</p>
+<h3><span id="1函数依赖">1．函数依赖</span></h3><p>设R(U)是属性U上的一个关系模式，X和Y是U的子集，r为R的任一关系，如果对于r中的任意两个元组u，v，只要有u[X]=v[X]，就有u[Y]=v[Y]，则称X函数决定Y，或称Y函数依赖于X，记为X→ Y。</p>
+<p>从函数依赖的定义可以看出，如果有X→U在关系模式R(U)上成立，并且不存在X的任一真子集‘X′使X′→U成立，那么称X是R的一个候选键。也就是X值惟一决定关系中的元组。由此可见，函数依赖是键概念的推广，键是一种特殊的函数依赖。</p>
+<p> 在R(U)中，如果X→Y，并且对于X的任何一个真子集X′，都有X′→Y不成立，则称Y对X完全函数依赖。若X→Y，但Y不完全函数依赖于X，则称Y对X部分函数依赖。在R(U)中，如果X→Y（Y不是X的真子集），且Y→X不成立，Y→Z，则称Z对X传递函数依赖。设U是关系模式R的属性集，F是R上成立的只涉及到U中属性的FD集，则有以下三条推理规则：</p>
+<p>（1）自反性：若X Y U，则X→Y在R上成立；</p>
+<p>（2）增广性：若X→Y在R上成立，且Z U，则XZ→YZ在R上成立；</p>
+<p>（3）传递性：若X→Y和Y→Z在R上成立，则X→Z在R上成立。这里XZ，YZ等写法表示X∪Z，Y∪Z。</p>
+<p>上述三条推理规则是函数依赖的一个正确的和完备的推理系统。</p>
+<p>根据上述三条规则还可以推出其他三条常用的推理规则：</p>
+<p>（1）合并规则：若X→Y和X→Z在R上成立，则X→YZ在R上成立；</p>
+<p>（2）分解规则：若X→Y在R上成立，且Z∈Y，则X→Z在R上成立；</p>
+<p>（3）伪传递规则：若X→Y和WY→Z在R上成立，则WX→Z在R上成立。 在关系模式R(U，F)中为F所逻辑蕴含的函数依赖全体叫做F的闭包，记作F+。</p>
+<p>设F为属性集U上的一组函数依赖，X是U的子集，那么相对于F属性集X的闭包用X+表示，它是一个从F集使用推理规则推出的所有满足X→A的属性A的集合：X+={属性A|X→A在F+中}</p>
+<p>如果G+=F+，就说函数依赖集F覆盖G（F是G的覆盖，或G是F的覆盖），或F与G等价。如果函数依赖集F满足下列条件，则称F为一个极小函数依赖集，也称为最小依赖集或最小覆盖。</p>
+<p>（1）F中任一函数依赖的右部仅含有一个属性；</p>
+<p>（2）F中不存在这样的函数依赖X→A，使得F与F-{X→A}等价；</p>
+<p>（3）F中不存在这样的函数依赖X→A，X有真子集Z使得F-{X→A}∪{Z→A}与F等价。</p>
+<h3><span id="2范式">2．范式</span></h3><p>（1）第一范式（1NF）：如果关系模式R的每个关系r的属性值都是不可分的原子值，那么称 R是第一范式的模式，r是规范化的关系。关系数据库研究的关系都是规范化的关系。</p>
+<p>（2）第二范式（2NF）：若关系模式R是1NF，且每个非主属性完全函数依赖于候选键，那么称R是2NF模式。</p>
+<p>（3）第三范式（3NF）: 如果关系模式R是2NF，且每个非主属性都不传递依赖于R的候选码，则称R是3NF。</p>
+<p>（4）BC范式（BCNF）：若关系模式R是1NF，且每个属性都不传递依赖于R的候选键，那么称R是BCNF模式。</p>
+<p>上述四种范式之间有如下联系：</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps50.png" alt="img"> </p>
+<h3><span id="3关系模式分解">3．关系模式分解</span></h3><p>如果某关系模式存在存储异常问题，则可通过分解该关系模式来解决问题。把一个关系模式分解成几个子关系模式，需要考虑的是该分解是否保持函数依赖，是否是无损联接。</p>
+<p>无损联接分解的形式定义如下：设R是一个关系模式，F是R上的一个函数依赖（FD）集。R分解成数据库模式δ={R1，……，RK}。如果对R中每一个满足F的关系r 都有下式成立：</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml24672\wps51.png" alt="img"> 那么称分解δ相对于F是无损联接分解，否则称为损失联接分解。</p>
+<p>下面是一个很有用的无损联接分解判定定理。</p>
+<p>设ρ=｛R1，R2｝是R的一个分解，F是R上的FD集，那么分解ρ相对于F是无损分解的充分必要条件是：(R1∩R2)→(R1-R2)或(R1∩R2)→(R2-R1)。希赛教育专家提示：这两个条件只要有任意一个条件成立就可以了。</p>
+<p>设数据库模式δ={R1……，RK}是关系模式R的一个分解，F是R上的FD集，δ中每个模式Ri上的FD集是Fi。如果{F1，F2，……，Fk}与F是等价的（即相互逻辑蕴涵），那么我们称分解δ保持FD。如果分解不能保持FD，那么δ的实例上的值就可能有违反FD的现象</p>
+<h2><span id="反规范化理论">反规范化理论</span></h2><p>前文已经介绍了规范化理论，在对数据模型进行规范化时，主要通过<strong>拆分</strong>的方式达到目的，而不断的拆分带来了新的问题。因为<strong>对多个拆分后的表进行查询操作时，需要涉及大量的连接操作，这使得查询变得费时与低效</strong>。为了有效的解决此问题，提出了反规范化技术，该技术与规范化理论做法刚好相反，而希望达到的目标主要是<strong>提高查询效率</strong>。</p>
+<p>常用的反规范技术包括：<strong>增加冗余列</strong>、<strong>增加派生列</strong>、<strong>重新组表</strong>、<strong>分割表</strong>。</p>
+<h3><span id="1增加派生列">1．增加派生列</span></h3><p>加派生列指<strong>增加的列由表中其它数据计算生成</strong>。它的作用是<strong>在查询时减少连接操作，避免使用集函数</strong>。例如，表中有单价，也有数量，此时增加列“总额”，由于总额=单价*数量，所以总额就是一个派生列。 </p>
+<h3><span id="2增加冗余列">2．增加冗余列</span></h3><p>增加冗余列是指在多个表中具有相同的列，它常用来在查询时避免连接操作。</p>
+<h3><span id="3重新组表">3．重新组表</span></h3><p> 重新组表指如果许多用户需要查看两个表连接出来的结果数据，则<strong>把这两个表重新组成一个表来减少连接而提高性能</strong>。</p>
+<h3><span id="4分割表">4．分割表</span></h3><p>有时对表做分割可以提高性能。表分割有两种方式：</p>
+<p><strong>水平分割</strong>：根据一列或多列数据的值把数据行放到两个独立的表中。水平分割通常在下面的情况下使用：</p>
+<p>① 表很大，分割后可以降低在查询时需要读的数据和索引的页数，同时也降低了索引的层数，提高查询速度。</p>
+<p>② 表中的数据本来就有独立性。例如表中分别记录各个地区的数据或不同时期的数据，特别是有些数据常用，而另外一些数据不常用。</p>
+<p>③ 需要把数据存放到多个介质上。水平分割会给应用增加复杂度，它通常在查询时需要多个表名，查询所有数据需要union操作。</p>
+<p>在许多数据库应用中，这种复杂性会超过它带来的优点，因为只要索引关键字不大，则在索引用于查询时，表中增加两到三倍数据量，查询时也就增加读一个索引层的磁盘次数。</p>
+<p><strong>垂直分割</strong>：把主码和一些列放到一个表，然后把主码和另外的列放到另一个表中。如果一个表中某些列常用，而另外一些列不常用，则可以采用垂直分割，另外垂直分割可以使得数据行变小，一个数据页就能存放更多的数据，在查询时就会减少I/O次数。其缺点是需要管理冗余列，查询所有数据需要join操作。</p>
+<h3><span id="数据库的控制功能">数据库的控制功能</span></h3><p>DBMS运行的基本工作单位是事务，事务是用户定义的一个数据库操作序列，这些操作序列要么全做要么全都不做，是一个不可分割的工作单位。事务具有以下特性（ACID特性）：</p>
+<p>（1）原子性（Atomicity）：事务是数据库的逻辑工作单位，事务的所有操作在数据库中要么全做要么全都不做。</p>
+<p>（2）一致性（Consistency）：事务的执行使数据库从一个一致性状态变到另一个一致性状态。</p>
+<p>（3）隔离性（Isolation）：一个事务的执行不能被其他事务干扰。</p>
+<p>（4）持续性（Durability，永久性）：指一个事务一旦提交，它对数据库的改变必须是永久的，即便系统出现故障时也是如此。</p>
+<p>事务通常以BEGIN TRANSACTION（事务开始）语句开始，以COMMIT或ROLLBACK语句结束。COMMIT称为事务提交语句，表示事务执行成功地结束，把事务对数据库的修改写入磁盘（事务对数据库的操作首先是在缓冲区中进行的）。ROLLBACK称为事务回滚语句，表示事务执行不成功地结束，即把事务对数据库的修改进行恢复。</p>
+<p>从<strong>终端用户</strong>来看，<strong>事务是一个原子，是不可分割的操作序列</strong>。事务中包括的所有操作要么都做，要么都不做（就效果而言）。事务不应该丢失，或被分割地完成。</p>
+<h2><span id="并发控制">并发控制</span></h2><p>在多用户共享系统中，许多事务可能同时对同一数据进行操作，称为并发操作，此时数据库管理系统的并发控制子系统负责协调并发事务的执行，保证数据库的完整性不受破坏，同时避免用户得到不正确的数据。</p>
+<h3><span id="1并发操作的问题">1．并发操作的问题</span></h3><p>数据库的并发操作带来的主要问题有：丢失更新问题，不一致分析问题（读过时的数据），依</p>
+<p>赖于未提交更新的问题（读脏数据）。这3个问题需要DBMS的并发控制子系统来解决。</p>
+<p>（1）丢失更新（丢失修改）：两个事务T1和T2读入同一数据并修改，T2提交的结果破坏了T1提交的结果，T1的修改被丢失。</p>
+<p>（2）读过时的数据（不可重复读）：事务T1读取某一数据，事务T2读取并修改了同一数据，T1为了对读取值进行校对再读此数据，得到了不同的结果。例如，T1读取B＝100，T2读取B并把B改为200，T1再读B得200，与第一次读取值不一致。</p>
+<p>（3）读脏数据。事务T1修改某一数据，事务T2读取同一数据，而T1由于某种原因被撤销，则T2读到的数据就为“脏”数据，即不正确的数据。例如，T1把C由100改为200，T2读到C为200，而事务T1由于被撤销，其修改宣布无效，C恢复为原值100，而T2却读到了C为200，与数据库内容不一致。</p>
+<p>例如，假设某3个事务T1、T2和T3并发执行的过程如表2-1所示。</p>
+<p>表2-1事务并发执行的过程</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>T1</th>
+<th>T2</th>
+<th>T3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>t1</td>
+<td>读D1=50</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t2</td>
+<td>读D2=100</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t3</td>
+<td>读D3=300</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t4</td>
+<td>X1=D1+D2+D3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t5</td>
+<td></td>
+<td>读D2=100</td>
+<td></td>
+</tr>
+<tr>
+<td>t6</td>
+<td></td>
+<td>读D3=300</td>
+<td></td>
+</tr>
+<tr>
+<td>t7</td>
+<td></td>
+<td></td>
+<td>读D2=100</td>
+</tr>
+<tr>
+<td>t8</td>
+<td></td>
+<td>D2=D3-D2</td>
+<td></td>
+</tr>
+<tr>
+<td>t9</td>
+<td></td>
+<td>写D2</td>
+<td></td>
+</tr>
+<tr>
+<td>t10</td>
+<td>读D1=50</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t11</td>
+<td>读D2=200</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t12</td>
+<td>D3=300读</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t13</td>
+<td>X1=D1+D2+D3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t14</td>
+<td>验算不对</td>
+<td></td>
+<td>D2=D2+50</td>
+</tr>
+<tr>
+<td>t15</td>
+<td></td>
+<td></td>
+<td>写D2</td>
+</tr>
+</tbody></table>
+<p>在表2-1中，事务T1、T2分别对数据D1、D2和D3进行读写操作，在t4时刻，事务T1将D1、D2和D3相加存入X1，X1等于450。在t8时刻，事务T2将D3减去D2存入D2，D2等于200。在t13时刻，事务T1将D1、D2和D3相加存入X1，X1等于550，验算结果不对。这种情况就属于<strong>不可重复读</strong>。在t14时刻事务T3将D2加50存入D2，D2等于150。这样，就丢失了事务T2对D2的修改，这种情况就属于<strong>丢失更新</strong>。</p>
+<h3><span id="2封锁的类型">2．封锁的类型</span></h3><p>处理并发控制的主要方法是采用封锁技术，主要有有两种类型的封锁，分别是<strong>X封锁</strong>和<strong>S封锁</strong>。</p>
+<p>（1）排他型封锁（X封锁）：如果事务T对数据A（可以是数据项、记录、数据集以至整个数据库）实现了X封锁，那么只允许事务T读取和修改数据A，其他事务要等事务T解除X封锁以后，才能对数据A实现任何类型的封锁。可见X封锁只允许一个事务独锁某个数据，具有排他性。</p>
+<p>（2）共享型封锁（S封锁）：X封锁只允许一个事务独锁和使用数据，要求太严。需要适当从宽，如可以允许并发读，但不允许修改，这就产生了S封锁概念。S封锁的含义是：如果事务T对数据A实现了S封锁，那么允许事务T读取数据A，但不能修改数据A，在所有S封锁解除之前决不允许任何事务对数据A实现X封锁。</p>
+<h3><span id="3封锁协议">3．封锁协议</span></h3><p> 在多个事务并发执行的系统中，主要采取封锁协议来进行处理。</p>
+<p>（1）一级封锁协议：事务T在修改数据R之前必须先对其加X锁，直到事务结束才释放。一级封锁协议可防止丢失更新，并保证事务T是可恢复的。但不能保证可重复读和不读脏数据。</p>
+<p>（2）二级封锁协议：一级封锁协议加上事务T在读取数据R之前先对其加S锁，读完后即可释放S锁。二级封锁协议可防止丢失更新，还可防止读脏数据。但不能保证可重复读。</p>
+<p>（3）三级封锁协议：一级封锁协议加上事务T在读取数据R之前先对其加S锁，直到事务结束才释放。三级封锁协议可防止丢失更新、防止读脏数据与数据重复读。</p>
+<p>（4）两段锁协议：所有事务必须分两个阶段对数据项加锁和解锁。其中扩展阶段是在对任何数据进行读、写操作之前，首先要申请并获得对该数据的封锁；收缩阶段是在释放一个封锁之后，事务不能再申请和获得任何其他封锁。若并发执行的所有事务均遵守两段封锁协议，则对这些事务的任何并发调度策略都是可串行化的（可以避免丢失更新、不可重复读和读脏数据问题）。遵守两段封锁协议的事务可能发生死锁。</p>
+<p>所谓封锁的粒度即是被封锁数据目标的大小，在关系数据库中封锁粒度有属性值、属性值集、元组、关系、某索引项（或整个索引）、整个关系数据库、物理页（块）等几种。</p>
+<p><strong>封锁粒度小则并发性高，但开销大；封锁粒度大则并发性低，但开销小，综合平衡照顾不同需求以合理选取适当的封锁粒度是很重要的。</strong></p>
+<h3><span id="4死锁">4．死锁</span></h3><p>采用封锁的方法固然可以有效防止数据的不一致性，但封锁本身也会产生一些麻烦，最主要就是死锁问题。</p>
+<p>死锁是指<strong>多个用户申请不同封锁，由于申请者均拥有一部分封锁权而又需等待另外用户拥有的部分封锁而引起的永无休止的等待</strong>。</p>
+<p>死锁是可以避免的，目前采用的办法有如下几种。</p>
+<p>（1）<strong>预防法</strong>：采用一定的操作方式以避免死锁的出现，顺序申请法、一次申请法等即是此类方法。顺序申请法是指对封锁对象按序编号，用户申请封锁时必须按编号顺序（从小到大或反之）申请，这样能避免死锁发生；一次申请法是指用户在一个完整操作过程中必须一次性申请它所需要的所有封锁，并在操作结束后一次性归还所有封锁，这样能避免死锁的发生。</p>
+<p>（2）<strong>死锁的解除法</strong>：允许产生死锁，并在死锁产生后通过解锁程序以解除死锁。这种方法中需要有两个程序，一个是死锁检测程序，用它测定死锁是否发生；另一个是解锁程序，一旦检测到系统已产生死锁，则启动解锁程序以解除死锁。</p>
+<h2><span id="备份与恢复技术">备份与恢复技术</span></h2><p>数据库系统中可能发生各种各样的故障，大致可以分以下几类：</p>
+<p>（1）<strong>事务内部的故障</strong>。事务内部的故障有的是可以通过事务程序本身发现的，有的是非预期的，不能由事务程序处理。例如，输入数据违反完整性约束、运算溢出、并行事务发生死锁而被选中撤销该事务等。事务故障意味着事务没有到达预期的终点（COMMIT或者显式的ROLLBACK），因此，数据库可能处于不正确状态。这样，系统就要强行回滚此事务，即撤销该事务已经做出的任何对数据库的修改，使得该事务好像根本没有启动一样。</p>
+<p>（2）<strong>系统范围内的故障</strong>。系统故障是指造成系统停止运转的任何事件，使得系统要重新启动。例如，中央处理器故障、操作系统故障、突然停电等，这类故障影响正在运行的所有事务，但不破坏数据库。这时内存中的内容，尤其是数据库缓冲区中的内容都将丢失，使得运行事务都非正常终止，从而造成数据库可能处于不正确的状态，数据库恢复子系统必须在系统重新启动时让所有非正常终止的事务回滚，把数据库恢复到正确的状态。</p>
+<p>（3）<strong>介质故障</strong>。系统故障常称为软故障（SoftCrash），介质故障称为硬故障（HardCrash）。硬故障指外存故障，如磁盘的磁头碰撞、瞬时的强磁场干扰等。这类故障将破坏数据库或部分数据库，并影响正存取这部分数据的所有事务，这类故障比前两类故障发生的可能性小得多，但破坏性最大。</p>
+<p>（4）<strong>计算机病毒</strong>。计算机病毒是一种人为的故障或破坏，是一些恶作剧者研制的一种计算机程序，这种程序与其他程序不同，它像微生物学所称的病毒一样可以繁殖和传播，并造成对计算机系统包括数据库的危害。</p>
+<p>总结各类故障，对数据库的影响有两种可能性，<strong>一是数据库本身被破坏</strong>，<strong>二是数据库没有被破坏，但数据可能不正确，这是因为事务的运行被终止所造成的</strong>。</p>
+<h3><span id="1数据备份">1．数据备份</span></h3><p>备份（转储）是指DBA定期地将整个数据库复制到磁带或另一个磁盘上保存起来的过程。这些备用的数据文本称为后备副本（后援副本）。当数据库遭到破坏后就可以利用后备副本把数据库恢复，这时，数据库只能恢复到备份时的状态，从那以后的所有更新事务必须重新运行才能恢复到故障时的状态。备份可分为静态备份（冷备份）和动态备份（热备份）。静态备份是指备份期间不允许（或不存在）对数据库进行任何存取、修改活动。静态备份简单，但备份必须等待用户事务结束才能进行，同样，新的事务必须等待备份结束才能执行。显然，这会降低数据库的可用性；动态备份是指备份期间允许对数据库进行存取或修改，即备份和用户事务可以并发执行。动态备份可克服静态备份的缺点，但是，备份结束时后援副本上的数据并不能保证正确有效。备份还可以分为海量备份和增量备份。海量备份是指每次备份全部数据库。增量备份则指每次只备份上次备份后更新过的数据。如果数据库很大，事务处理又十分频繁，则增量备份方式是很有效的。</p>
+<h3><span id="2日志文件">2．日志文件</span></h3><p>事务日志是针对数据库改变所做的记录，它可以记录针对数据库的任何操作，并将记录结果保存在独立的文件中。这种文件就称为日志文件。对于任何一个事务，事务日志都有非常全面的记录，根据这些记录可以将数据文件恢复成事务前的状态。从事务动作开始，事务日志就处于记录状态，事务执行过程中对数据库的任何操作都记录在内，直到用户提交或回滚后才结束记录。日志文件是用来记录对数据库每一次更新活动的文件，在动态备份方式中，必须建立日志文件，后援副本和日志文件综合起来才能有效地恢复数据库；在静态备份方式中，也可以建立日志文件，当数据库毁坏后可重新装入后援副本把数据库恢复到备份结束时刻的正确状态，然后利用日志文件，把已完成的事务进行重做处理，对故障发生时尚未完成的事务进行撤销处理。这样不必重新运行那些已完成的事务程序就可把数据库恢复到故障前某一时刻的正确状态。例如，在热备份期间的某时刻t1，系统把数据A=100备份到了磁带上，而在时刻t2，某一事务对A进行了修改使A=200。备份结束，后备副本上的A已是过时的数据了。为此，必须把备份期间各事务对数据库的修改活动登记下来，建立日志文件。这样，后备副本加上日志文件就能把数据库恢复到某一时刻的正确状态。事务在运行过程中，系统把事务开始、事务结束（包括COMMIT和ROLLBACK），以及对数据库的插入、删除、修改等每一个操作作为一个登记记录存放到日志文件中。每个记录包括的主要内容有：执行操作的事务标识、操作类型、更新前数据的旧值（对插入操作而言此项为空值）、更新后的新值（对删除操作而言此项为空值）。登记的次序严格按并行事务操作执行的时间次序，同时遵循“先写日志文件”的规则。写一个修改到数据库中和写一个表示这个修改的日志记录到日志文件中是两个不同的操作，有可能在这两个操作之间发生故障，即这两个写操作只完成了一个，如果先写了数据库修改，而在日志记录中没有登记这个修改，则以后就无法恢复这个修改了。因此，为了安全，应该先写日志文件，即首先把修改记录写到日志文件上，然后再写数据库的修改。这就是“先写日志文件”的原则。</p>
+<h3><span id="3数据恢复">3．数据恢复</span></h3><p>把数据库从错误状态恢复到某一个已知的正确状态的功能，称为数据库的恢复。数据恢复的基本原理就是冗余，建立冗余的方法有数据备份和登录日志文件等。可根据故障的不同类型，采用不同的恢复策略。</p>
+<h4><span id="1事务故障的恢复">（1）事务故障的恢复</span></h4><p>事务故障的恢复是由<strong>系统自动完成</strong>的，对用户是透明的（不需要DBA的参与）。其步骤如下：</p>
+<p>①反向扫描日志文件，查找该事务的更新操作。</p>
+<p>②对该事务的更新操作执行逆操作。</p>
+<p>③继续反向扫描日志文件，查找该事务的其他更新操作，并做同样处理。</p>
+<p>④如此处理下去，直至读到此事务的开始标记，事务故障恢复完成。</p>
+<h4><span id="2系统故障的恢复">（2）系统故障的恢复</span></h4><p>系统故障的恢复在系统重新启动时自动完成，不需要用户干预。其步骤如下：</p>
+<p>①正向扫描日志文件，找出在故障发生前已经提交的事务，将其事务标识记入重做（Redo）队列。同时找出故障发生时尚未完成的事务，将其事务标识记入撤销（Undo）队列。</p>
+<p>②对撤销队列中的各个事务进行撤销处理：反向扫描日志文件，对每个Undo事务的更新操作执行逆操作。</p>
+<p>③对重做队列中的各个事务进行重做处理：正向扫描日志文件，对每个Redo事务重新执行日志文件登记的操作。</p>
+<h4><span id="3介质故障与病毒破坏的恢复">（3）介质故障与病毒破坏的恢复</span></h4><p>介质故障与病毒破坏的恢复步骤如下：</p>
+<p>①装入最新的数据库后备副本，使数据库恢复到最近一次备份时的一致性状态。</p>
+<p>②从故障点开始反向扫描日志文件，找出已提交事务标识并记入Redo队列。</p>
+<p>③从起始点开始正向扫描日志文件，根据Redo队列中的记录，重做已完成的任务，将数据库恢复至故障前某一时刻的一致状态。</p>
+<h4><span id="4有检查点的恢复技术">（4）有检查点的恢复技术</span></h4><p>检查点记录的内容可包括建立检查点时刻所有正在执行的事务清单，以及这些事务最近一个日志记录的地址。采用检查点的恢复步骤如下：</p>
+<p>①从重新开始文件中找到最后一个检查点记录在日志文件中的地址，由该地址在日志文件中找到最后一个检查点记录。</p>
+<p>②由该检查点记录得到检查点建立时所有正在执行的事务清单队列（A）。</p>
+<p>③建立重做队列（R）和撤销队列（U），把A队列放入U队列中，R队列为空。</p>
+<p>④从检查点开始正向扫描日志文件，若有新开始的事务T1，则把T1放入U队列；若有提交的事务T2，则把T2从U队列移到R队列；直至日志文件结束。</p>
+<p>⑤对U队列的每个事务执行Undo操作，对R队列的每个事务执行Redo操作。</p>
+<h2><span id="数据库的安全性">数据库的安全性</span></h2><p>DBS的信息安全性在技术上可以依赖于两种方式，一种是DBMS本身提供的用户身份识别、视图、使用权限控制、审计等管理措施，例如，大型数据库管理系统如Oracle和Sybase等均有此功能；另一种就是靠数据库的应用程序来实现对数据库访问进行控制和管理，例如，Dbase、Foxbase、Foxpro等开发的数据库应用程序，很多数据的安全控制都由应用程序里面的代码来实现。</p>
+<h3><span id="1用户认证">1．用户认证</span></h3><p>用户的身份认证是用户使用DBMS系统的第一个环节，用户的身份鉴别是DBMS识别什么用户能做什么事情的依据。</p>
+<h4><span id="1口令认证">（1）口令认证。</span></h4><p>口令（password，密码）是一种身份认证的基本形式，用户在建立与DBMS的访问连接前必须提供正确的用户账号（userid）和口令，DBMS与自身保存的用户列表中的用户标识和口令比较，如果匹配则认证成功，允许用户使用数据库系统；如果不匹配则返回拒绝信息。这种认证判断过程往往是数据库登录的第一步，用户账户（account）的账号和口令是口令认证方式中的核心，用户信息可以保存在数据库内、操作系统内或者集中的目录服务器（DirectoryServer）用户身份证书库内。</p>
+<h4><span id="2强身份认证">（2）强身份认证。</span></h4><p>在网络环境下，客户端到DBMS服务器可能经过多个环节，在身份认证期间，用户的信息和口令可能会经过很多不安全的结点（如路由器和服务器），而被信息的窃听者窃取。强身份认证过程使认证可以结合信息安全领域一些更深入的技术保障措施，来强化用户身份的鉴别，例如，与用户证书、智能卡、用户指纹识别等多种身份识别技术相结合。</p>
+<h3><span id="2用户角色">2．用户角色</span></h3><p>按每个用户指定操作权限在用户数目比较多的时候往往是一项非常繁重的工作，所以DBMS提供角色来描述具有相同操作权限的用户集合，不同角色的用户授予不同的数据管理和访问操作权限。一般可以将权限角色分为3类，分别是数据库登录权限类、资源管理权限类和DBA权限类。</p>
+<p>有了数据库登录权限的用户才能进入DBMS，才能使用DBMS所提供的各类工具和实用程序。同时，数据对象的创建者（owner）可以授予这类用户以数据查询、建立视图等权限。这类用户只能查阅部分数据库信息，不能修改数据库中的任何数据。</p>
+<p>具有资源管理权限的用户，除了拥有上一类的用户权限外，还有创建数据库表、索引等数据对象的管理权限，可以在权限允许的范围内修改、查询数据库，还能将自己拥有的权限授予其他用户，可以申请审计。具有DBA权限的用户将具有数据库管理的全部权限，包括访问任何用户的任何数据，授予（或回收）用户的各种权限，创建各种数据对象，完成数据库的整库备份、装入重组及进行全系统的审计等工作。</p>
+<p>当然，不同的DBMS，可能对用户角色的定义不尽相同，权限的划分的细致程度也远超过上面3种基本的类型，而基于角色的用户权限管理是现在每个主流数据库产品（例如，IBMDB2、Oracle、Sybase、MSSQLServer等）和一些专用的数据库产品（例如，NCRTeradata、HyperionEssbase等）都具有的特性。</p>
+<h3><span id="3数据授权">3．数据授权</span></h3><p>同一类功能操作权限的用户，对数据库中数据对象管理和使用的范围又可能是不同的，因此DBMS除了要提供基于功能角色的操作权限控制外，还提供了对数据对象的访问控制，访问控制可以根据对控制用户访问数据对象的粒度从大到小分为4个层次。</p>
+<p>（1）<strong>数据库级别</strong>：判断用户是否可以使用访问数据库里的数据对象，包括表、视图、存储过程。</p>
+<p>（2）<strong>表级</strong>：判断用户是否可以访问关系里面的内容。</p>
+<p>（3）<strong>行级</strong>：判断用户是否能访问关系中的一行记录的内容。</p>
+<p>（4）<strong>属性级</strong>：判断用户是否能访问表关系中的一个列（属性、字段）的内容。</p>
+<p>管理员把某用户可查询的数据和元素在逻辑上归并起来，简称一个或多个用户视图，并赋予名称，再把该视图的各种使用权限授予该用户（也可以授予多个用户）。DBMS对于用户的访问存取控制有以下两个基本的原则：</p>
+<p>（1）<strong>隔离原则</strong>：用户只能存取他自己所有的和已经取得授权的数据对象。</p>
+<p>（2）<strong>控制原则</strong>：用户只能按他所取得的数据存取方式存取数据，不能越权。</p>
+<p>数据库授权可以分为静态授权和动态授权。一般意义上，可以把静态授权理解成为是DBMS的隐性授权，也就是说用户（或DBA）对他自己拥有的信息是不需要有指定的授权动作就拥有全权管理和操作的权限的。与静态授权相对应，只有数据对象的所有者或者DBA默认地拥有对数据的存取权，动态授权则允许这些用户把这些权力授予其他的用户，现在DBMS支持的SQL（StructuredQueryLanguage，结构化查询语言）语言里面有专门的授权语句。</p>
+<h3><span id="4数据库视图">4．数据库视图</span></h3><p>视图可以被看成是虚拟表或存储查询。可通过视图访问的数据不作为独特的对象存储在数据库内。数据库内存储的是SELECT语句。SELECT语句的结果集构成视图所返回的虚拟表。用户可以用引用表时所使用的方法，在SQL语句中通过引用视图名称来使用虚拟表。使用视图可以实现下列功能：</p>
+<p>（1）将用户限定在表中的特定行上。例如，只允许雇员看见工作跟踪表内记录其工作的行。</p>
+<p>（2）将用户限定在特定列上。例如，对于那些不负责处理工资单的雇员，只允许他们看见雇员表中的姓名、工作电话和部门列，而不能看见任何包含工资信息或个人信息的列。</p>
+<p>（3）将多个表中的列连接起来，使它们看起来像一个表。</p>
+<p>（4）聚合信息而非提供详细信息。例如，显示一个列的和，或者列的最大值和最小值。</p>
+<p>如果需要限制用户使用的数据，可以将视图作为一种安全机制。通过定义SELECT语句以检索将在视图中显示的数据来创建视图。SELECT语句引用的数据表称为视图的基表。</p>
+<h3><span id="5审计功能">5．审计功能</span></h3><p>如果身份认证是一种事前的防范措施，审计则是一种事后监督的手段。跟踪也是DBMS提供的监视用户动作的功能，然而，审计和跟踪是两个不同的概念，主要是两者的目的不同。跟踪主要是满足系统调试的需要，捕捉到的用户行为记录往往只用于分析，而并不长久地保存，而审计作为一种安全检查的措施，会把系统的运行状况和用户访问数据库的行为记录以日志保存下来，这种日志往往作为一种稽查用户行为的一种证据。</p>
+<p>根据审计对象的区分，有两种方式的审计，即用户审计和系统审计。用户审计时，DBMS的审计系统记下所有对自己表或视图进行访问的企图（包括成功的和不成功的）及每次操作的用户名、时间、操作代码等信息。这些信息一般都被记录在操作系统或DBMS的日志文件里面，利用这些信息可以对用户进行审计分析。系统审计由DBA进行，其审计内容主要是系统一级命令及数据对象的使用情况。</p>
+<h2><span id="数据库的完整性">数据库的完整性</span></h2><p>数据库的完整性是指数据的正确性和相容性。数据库是否具备完整性关系到DBS能否真实地反映现实世界，因此维护数据库的完整性是非常重要的。</p>
+<h3><span id="1完整性约束条件">1．完整性约束条件</span></h3><p>保证数据完整性的方法之一是设置完整性检查，即对数据库中数据设置一些约束条件，这是数据的语义体现。数据的完整性约束条件一般在数据模式中给出，并在运行时做检查，当不满足条件时立即向用户通报以便采取措施。</p>
+<p>完整性约束条件一般指的是对数据库中数据本身的某些语法、语义限制，数据间的逻辑约束，以及数据变化时应遵守的规则等。所有这些约束条件一般均以谓词逻辑形式表示，即以具有真假值的原子公式及命题连接词（并且、或者、否定）所组成的逻辑公式表示。完整性约束条件作用对象可以是关系、元组、列三种。</p>
+<p>数据库中数据的语法、语义限制与数据间的逻辑约束称为静态约束。它反映了数据及数据间的固有的逻辑特性，是最重要的一类完整性约束。静态约束包括静态列级约束（对数据类型的约束、对数据格式的约束、对取值范围或取值集合的约束、对空值的约束、其他约束）、静态元组约束、静态关系约束（实体完整性约束、参照完整性约束、函数依赖约束、统计约束）。</p>
+<p>数据库中的数据变化应遵守的规则称为数据动态约束，它反映了数据库状态变迁的约束。动态约束包括动态列级约束（修改列定义时的约束、修改列值时的约束）、动态元组约束、动态关系约束。</p>
+<h3><span id="2完整性控制">2．完整性控制</span></h3><p>完整性控制机制应该具有定义功能（提供定义完整性约束条件的机制）和检查功能（检查用户发出的操作请求是否违背了完整性约束条件）。如果发现用户的操作请求违背了约束条件，则采取一定的动作来保证数据的完整性。数据库的完整性可分为实体完整性、参照完整性和用户定义的完整性。</p>
+<h4><span id="1实体完整性">（1）实体完整性</span></h4><p>实体完整性要求主码中的任一属性不能为空，所谓空值是“不知道”或“无意义”的值。之所以要保证实体完整性，主要是因为在关系中，每一个元组的区分是依据主码值的不同，若主码值取空值，则不能标明该元组的存在。</p>
+<h4><span id="2参照完整性">（2）参照完整性</span></h4><p>若基本关系R中含有与另一基本关系S的主码PK相对应的属性组FK（FK称为R的外码），则参照完整性要求，对R中的每个元组在FK上的值必须是S中某个元组的PK值，或者为空值。参照完整性的合理性在于，R中的外码只能对S中的主码引用，不能是S中主码没有的值。例如，对于学生和选课表两个关系，选课表中的学号是外码，它是学生表的主键，若选课表中出现了某个学生表中没有的学号，即某个学生还没有注册，却已有了选课记录，这显然是不合理的。</p>
+<p>对于参照完整性，需要明确以下问题：</p>
+<p>①外码能否接受空值问题，根据实际应用决定。</p>
+<p>②在被参照关系中删除元组的问题。</p>
+<ul>
+<li>级联删除：将参照关系中所有外码值与被参照关系中要删除元组主码值相同的元组一起删除。如果参照关系同时又是另一个关系的被参照关系，则这种删除操作会继续级联下去。</li>
+<li>受限删除（一般系统默认）：仅当参照关系中没有任何元组的外码值与被参照关系中要删除元组的主码值相同时，系统才可以执行删除操作，否则拒绝执行删除操作。</li>
+<li>置空删除：删除被参照关系的元组，并将参照关系中相应元组的外码值置为空值。</li>
+</ul>
+<p>③在参照关系中插入元组的问题。</p>
+<ul>
+<li>受限插入：仅当被参照关系中存在相应的元组时，其主码值与参照关系插入元组的外码值相同时，系统才执行插入操作，否则拒绝此操作.</li>
+<li>递归插入：首先向被参照关系中插入相应的元组，其主码值等于参照关系插入元组的外码值，然后向参照关系插入元组。</li>
+</ul>
+<h4><span id="3用户定义的完整性">（3）用户定义的完整性</span></h4><p>实体完整性和参照完整性适用于任何关系型DBMS。除此之外，不同的关系数据库系统根据其应用环境的不同，往往还需要一些特殊的约束条件。用户定义的完整性就是针对某一具体关系数据库的约束条件，它反映某一具体应用所涉及的数据必须满足的语义要求。</p>
+<p>如果在一条语句执行完后立即检查，则称立即执行约束；如果在整个事务执行结束后再进行检查，则称延迟执行约束。完整性规则的五元组表示为（D，O，A，C，P），其中D表示约束作用的数据对象，O表示触发完整性检查的数据库操作，A表示数据对象必须满足的断言或语义约束，C表示选择A作用的数据对象值的谓词，P表示违反完整性规则时触发的过程。</p>
+<h4><span id="4触发器">（4）触发器</span></h4><p>触发器是在关系型DBMS中应用得比较多的一种完整性保护措施。触发器的功能一般比完整性约束要强得多。一般而言，在完整性约束功能中，当系统检查出数据中有违反完整性约束条件时，则仅给出必要提示以通知用户，仅此而已。而触发器的功能则不仅仅起提示作用，它还会引起系统内自动进行某些操作以消除违反完整性约束条件所引起的负面影响。</p>
+<p>所谓触发器，其抽象的含义即是一个事件的发生必然触发（或导致）另外一些事件的发生，其中前面的事件称为触发事件，后面的事件称为结果事件。触发事件一般即为完整性约束条件的否定。而结果事件即为一组操作用以消除触发事件所引起的不良影响。在目前数据库中事件一般表示为数据的插入、修改、删除等操作。希赛教育专家提示：触发器除了有完整性保护功能外，还有安全性保护功能。</p>
+<h2><span id="数据库性能">数据库性能</span></h2><p>数据库性能的调整是数据库管理员的日常工作之一。性能调整工作可以从逻辑上和物理上两个方面进行。</p>
+<h3><span id="1sql的性能优化">1．SQL的性能优化</span></h3><p>SQL（STructuredQueryLanguage，结构化查询语言）语句是用户访问关系数据库中数据的唯一方法，通常在一个关系数据库上，服务器的SQL进程会使用该服务器60%～90%的资源，大部分数据库效率的问题都是由于SQL语句编写不善引起的，所以SQL语句的性能优化十分重要。</p>
+<p>为了编写出高效的SQL语句，首先应按照一定的具体规范来编写SQL语句，我们建议每一个DBA都应该收集和整理一份SQL编码规范。其次是在真实数据库上对这些SQL语句进行性能测试和跟踪并不断调整，达到最优后才正式上线运行。最后需要强调的是，随着数据量的变化和数据库版本升级后，往往会导致部分SQL性能下降，所以对SQL的跟踪优化是DBA的一项持续不断的工作。</p>
+<h3><span id="2数据库的性能优化">2．数据库的性能优化</span></h3><p>DBS是一组程序作用在数据文件上对外提供服务，所以其本身的性能优化也十分重要，对其的优化工作主要是相应的参数调整，步骤一般如下：</p>
+<p>（1）通过监视DBS的内存对象，获得系统性能指标，发现系统的性能缺陷及原因。</p>
+<p>（2）针对导致系统性能缺陷的原因，进行相应的参数调整（如增加数据缓冲区的大小）。</p>
+<p>（3）跟踪参数调整后系统的各项性能指标，看是否达到预期要求，否则继续调整。</p>
+<p>以上3步反复循环迭代，持续进行，保证数据库本身运行状态的最优。</p>
+<p>例如，Oracle通常利用定时执行statspacke.snap包收集数据库的运行状态，然后利用程序spreport.sql对两个采集点之间的数据产生报表，以分析这段时间数据库的各种运行指标。Sybase数据库用sp_sysmon、sp_monitor、sp_configure命令来采集和分析一定时间段内数据库的各种运行指标。</p>
+<h3><span id="3查询优化">3．查询优化</span></h3><p>可以通过如下方法来优化查询：</p>
+<p>（1）把数据、日志、索引放到不同的I/O设备上，增加读取速度。数据量（尺寸）越大，提高I/O越重要。</p>
+<p>（2）纵向、横向分割表，减少表的尺寸。</p>
+<p>（4）根据查询条件，建立索引，优化索引、优化访问方式，限制结果集的数据量。注意填充因子要适当（最好是使用默认值0）。索引应该尽量小，使用字节数小的列建索引好，不要对有限的几个值的列建单一索引。</p>
+<p>（5）用OR的子句可以分解成多个查询，并且通过UNION连接多个查询。它们的速度只与是否使用索引有关，如果查询需要用到联合索引，用UNIONall执行的效率更高。</p>
+<p>（6）在查询SELECT语句中用WHERE子句限制返回的行数，避免表扫描。如果返回不必要的数据，浪费了服务器的I/O资源，加重了网络的负担降低性能。如果表很大，在表扫描的期间将表锁住，禁止其他的联接访问表，后果严重。</p>
+<p>（7）注意使用DISTINCT，在没有必要时不要用，它同UNION一样会使查询变慢。</p>
+<p>（8）在IN后面值的列表中，将出现最频繁的值放在最前面，出现得最少的放在最后面，减少判断的次数。</p>
+<p>（9）一般在GROUPBY和HAVING子句之前就能剔除多余的行，所以尽量不要用它们来做剔除行的工作。</p>
+<p>（10）尽量将数据的处理工作放在服务器上，减少网络的开销，如使用存储过程。存储过程是编译好、优化过、并且被组织到一个执行规划里、且存储在数据库中的SQL语句（存储过程是数据库服务器端的一段程序），是控制流语言的集合，速度当然快。存储过程有两种类型。一种类似于SELECT查询，用于检索数据，检索到的数据能够以数据集的形式返回给客户。另一种类似于INSERT或DELETE查询，它不返回数据，只是执行一个动作。有的服务器允许同一个存储过程既可以返回数据又可以执行动作。</p>
+<p>（11）不要在一句话里再三地使用相同的函数，浪费资源，将结果放在变量里再调用更快。另外，还可以针对大量只读查询操作进行优化，常见的方法有：</p>
+<ol>
+<li>数据量小的数据，可以考虑不存储在数据库中，而是通过程序常量的方式解决。</li>
+<li>需要存储在数据库中的数据，可以考虑采用物化视图（索引视图）。当DBA在视图上创建索引时，这个视图就被物化（执行）了，并且结果集被永久地保存在唯一聚簇索引中，保存方式与一个有聚簇索引的表的保存方式相同。物化视图减除了为引用视图的查询动态建立结果集的管理开销，优化人员可以在查询中使用视图索引，而不需要在FROM子句中直接指定视图。</li>
+<li>数据存储时可以考虑适当的数据冗余，以减少数据库表之间的连接操作，提高查询效率。</li>
+<li>针对数据的特点，采取特定的索引类型。例如位图索引等。</li>
+</ol>
+<h2><span id="数据库工程">数据库工程</span></h2><p>数据库工程是指基于DBS生存周期的所有活动的集合，其中包括数据库的规划、设计、实现和管理等。在DBS的管理方面，主要是对数据库进行控制，也就是2.4节所讨论的内容。</p>
+<p>数据库设计是指对一个给定的应用环境，提供一个确定最优数据模型与处理模式的逻辑设计，以及一个确定数据库存储结构与存取方法的物理设计，建立起能反映现实世界信息和信息联系及满足用户数据要求和加工要求，以能够被某个DBMS所接受，同时能实现系统目标并有效存取数据的数据库。</p>
+<h2><span id="数据库设计阶段">数据库设计阶段</span></h2><p>基于DBS生存期的数据库设计分成5个阶段，分别为<strong>规划</strong>、<strong>需求分析</strong>、<strong>概念设计</strong>、<strong>逻辑设计</strong>和<strong>物理设计</strong>。</p>
+<h3><span id="1规划">1．规划</span></h3><p>规划阶段的主要任务是进行建立数据库的必要性及可行性分析，确定DBS在组织中和信息系统中的地位，以及各个数据库之间的联系。有关这方面的详细知识，请阅读8.5节。</p>
+<h3><span id="2需求分析">2．需求分析</span></h3><p>需求分析可以通过3步来完成，即需求信息的收集、分析整理和评审，其目的在于对系统的应用情况做全面详细的调查，确定企业组织的目标，收集支持系统总的设计目标的基础数据和对这些数据的要求，确定用户的需求，并把这些要求写成用户和数据设计者都能够接受的文档。有关这方面的详细知识，请阅读8.6节。</p>
+<h3><span id="3概念设计">3．概念设计</span></h3><p>概念设计（概念结构设计）阶段的目标是对需求说明书提供的所有数据和处理要求进行抽象与综合处理，按一定的方法构造反映用户环境的数据及其相互联系的概念模型，即用户的数据模型或企业数据模型。这种概念数据模型与DBMS无关，是面向现实世界的、极易为用户所理解的数据模型。为保证所设计的概念数据模型能正确、完全地反映用户的数据及其相互关系，便于进行所要求的各种处理，在本阶段设计中可吸收用户参与和评议设计。在进行概念结构设计时，可先设计各个应用的视图，即各个应用所看到的数据及其结构，然后再进行视图集成，以形成一个单一的概念数据模型。这样形成的初步数据模型还要经过数据库设计者和用户的审查与修改，最后形成所需的概念数据模型。</p>
+<p>有关概念模型的建立，请阅读2.6节。对概念模型的要求是：</p>
+<p>（1）概念模型是对现实世界的抽象和概括，它应真实、充分地反映现实世界中事物和事物之间的联系，有丰富的语义表达能力，能表达用户的各种需求，包括描述现实世界中各种对象及其复杂联系、用户对数据对象的处理要求和手段。</p>
+<p>（2）概念模型应简洁、明晰，独立于机器、容易理解、方便数据库设计人员与应用人员交换意见，使用户能积极地参与数据库的设计工作。</p>
+<p>（3）概念模型应易于变动。当应用环境和应用要求改变时，容易对概念模型修改和补充。</p>
+<p>（4）概念模型应很容易向关系、层次或网状等各种数据模型转换，易于从概念模式导出与DBMS有关的逻辑模式。</p>
+<h3><span id="4逻辑设计">4．逻辑设计</span></h3><p>逻辑设计（逻辑结构设计）主要是把概念模式转换成DBMS能处理的模式。转换过程中要对模式进行评价和性能测试，以便获得较好的模式设计。逻辑设计的主要内容包括初始模式的形成、子模式设计、应用程序设计梗概、模式评价、修正模式（通过模式分解或模式合并来实现规范化）。</p>
+<p>逻辑设计的目的是把概念设计阶段设计好的基本E-R图转换为与选用的具体机器上的DBMS所支持的数据模型相符合的逻辑结构，包括数据库模式和外模式。</p>
+<p>逻辑设计过程中的输入信息有：</p>
+<p>（1）独立于DBMS的概念模式，即概念设计阶段产生的所有局部和全局概念模式。</p>
+<p>（2）处理需求，即需求分析阶段产生的业务活动分析结果。</p>
+<p>（3）约束条件，即完整性、一致性、安全性要求及响应时间要求等。</p>
+<p>（4）DBMS特性，即特定的DBMS所支持的模式、子模式和程序语法的形式规则。</p>
+<p>逻辑设计过程输出的信息有DBMS可处理的模式、子模式、应用程序设计指南、物理设计指南。</p>
+<h3><span id="5物理设计">5．物理设计</span></h3><p>物理设计（物理结构设计）是指对一个给定的逻辑数据模型选取一个最适合应用环境的物理结构的过程，所谓数据库的物理结构主要指数据库在物理设备上的存储结构和存取方法。</p>
+<p>物理设计的步骤为：</p>
+<p>（1）设计存储记录结构，包括记录的组成、数据项的类型和长度，以及逻辑记录到存储记录的映射。</p>
+<p>（2）确定数据存储安排。</p>
+<p>（3）设计访问方法，为存储在物理设备上的数据提供存储和检索的能力。</p>
+<p>（4）进行完整性和安全性的分析、设计。</p>
+<p>（5）程序设计。</p>
+<h2><span id="设计约束和原则">设计约束和原则</span></h2><p>在进行数据库设计的过程中，性能标准和性能约束的要求是设计者必须考虑的。通常性能约束也被看做需求的一部分，而性能标准是从不同的性能约束中推导出来的。一些典型的约束有：查询响应时间的上限，系统破坏后的恢复时间，为维护安全性和完整性而需要的特殊数据，等等。对最终结构进行性能标准的估价除了上述的响应时间外，还有更新、存储，以及再组织的代价。数据库设计过程的输出，主要有两部分：一部分是完整的数据库结构，其中包括逻辑结构与物理结构；另一部分是基于数据库结构和处理需求的应用程序的设计准则。这些输出都是以说明书的形式出现的。</p>
+<p>为了使数据库设计更合理有效，需要有效的指导原则，这种指导原则称为数据库设计方法学。一个好的数据库设计方法学应该能在合理的期限内，以合理的工作量，产生一个有实用价值的数据库结构。这里“实用价值”是指满足用户关于功能、性能、安全性、完整性及发展需求等诸方面的要求，同时又服从于特定DBMS的约束，且可用简单的数据模型来表示。方法学还具有足够的通用</p>
+<p>性、灵活性和可再生产性（不同的设计者应用同一方法学于同一设计问题时，应得到相同或类似的结果）。它有自顶向下、逐步求精的数据库结构设计过程，它对数据库结构和应用软件采取“多步设计评审方法”，其目的是要尽早发现系统设计中的错误，并在生存期的早期阶段给予纠正，以减少系统研制的成本。它有分析式、启发式或过程式的设计技术和定量（前面已讲到的如查询响应时间等）及定性的数据库评价原则。数据库定性分析是指其灵活性、适应性、新用户对设计的可理解性、与其他系统兼容性、对新环境的可改变性、恢复和重启动能力、对模块增生的分割和接受能力等。在数据库设计方法学中，信息需求渗透到数据库设计的整个过程，并且需要有3种基本类型的描述机制：</p>
+<p>（1）实现设计过程的最终结果将用DBMS的DDL（DataDefinitionLanguage，数据定义语言）表示。DDL完全是针对现有的DBMS而言的。</p>
+<p>（2）信息输入的描述。包括需求信息的收集和分析，数据元素及其联系的同义词、异义词和重叠定义等。这些都不容易用软件工具实现，可能要用一些人工方式。</p>
+<p>（3）在信息输入和DDL描述之间的其他中间步骤的结果的描述。主要的中间结果是实体联系图，它是概念设计的产物，在概念设计和逻辑设计之间起桥梁作用。</p>
+<p><strong>基于生存期的设计方法学进行设计并不是数据库设计的唯一途径。近年来由于设计辅助工具、第四代语言和程序自动生成技术的发展，快速原型法也是数据库设计中常用的方法。</strong></p>
+<p>为了使数据库结构能适应应用中可能发生的变化，在数据库设计中，要充分注意数据库结构的可扩充性。例如，在设计数据库的时候要考虑到哪些数据字段将来可能会发生变更；给文本字段留足余量；估算未来5～10年的扩充数据量等。</p>
+<h2><span id="数据库建模">数据库建模</span></h2><p>本知识点主要考查E-R图的画法，各实体之间的关系，如何消除冲突，E-R图向关系模式的转换等。</p>
+<h2><span id="e-r图的画法">E-R图的画法</span></h2><p>E-R模型简称E-R图，它是描述概念世界，建立概念模型的实用工具。E-R图包括三个要素：</p>
+<p>（1）实体（型）：用矩形框表示，框内标注实体名称。</p>
+<p>（2）属性：用椭圆形表示，并用连线与实体连接起来。</p>
+<p>（3）实体之间的联系：用菱形框表示，框内标注联系名称，并用连线将菱形框分别与有关实体相连，并在连线上注明联系类型。</p>
+<p>例如，图2-2就是一个教学系统的E-R图（为了简单起见，省略了部分实体的属性和联系的属性）。<img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml13728\wps10.png" alt="img">图2-2某教学系统E-R图</p>
+<p>E-R图中的联系归结为三种类型：</p>
+<p>（1）一对一联系（1:1）。设A、B为两个实体集。若A中的每个实体至多和B中的一个实体有联系，反过来，B中的每个实体至多和A中的一个实体有联系，称A对B或B对A是1:1联系。注意：1:1联系不一定都是一一对应的关系。可能存在着无对应。例如，在图2-2中，一个班只有一个班主任，一个班主任不能同时在其他班再兼任班主任，由于老师紧缺，某个班的班主任也可能暂缺。</p>
+<p>（2）一对多联系（1:n）。如果A实体集中的每个实体可以和B中的几个实体有联系，而B中的每个实体至少和A中的一个实体有联系，那么A对B属于1:n联系。例如，在图2-2中，一个班级有多个学生，而一个学生只能编排在一个班级，班级与学生属于一对多的联系。</p>
+<p>（3）多对多联系（m:n）。若实体集A中的每个实体可与和B中的多个实体有联系，反过来，B中的每个实体也可以与A中的多个实体有联系，称A对B或B对A是m:n联系。例如，在图2-2中，一个学生可以选修多门课程，一门课程由多个学生选修，学生和课程间存在多对多的联系。希赛教育专家提示：有时联系也有属性，这类属性不属于任一实体，只能属于联系。</p>
+<h2><span id="e-r图的集成">E-R图的集成</span></h2><p>在数据库的概念结构设计过程中，先设计各子系统的局部E-R图，设计过程可分为以下几个步骤：</p>
+<p>（1）确定局部视图的范围。</p>
+<p>（2）识别实体及其标识。</p>
+<p>（3）确定实体间的联系。</p>
+<p>（4）分配实体及联系的属性。</p>
+<p>各子系统的局部E-R图设计好后，下一步就是要将所有的分E-R图综合成一个系统的总体E-R图，一般称为视图的集成。视图集成通常有两种方式：（1）多个局部E-R图一次集成。这种方式比较复杂，做起来难度较大。（2）逐步集成，用累加的方式一次集成两个局部E-R图。这种方式每次只集成两个局部E-R图，可以降低复杂度。</p>
+<p>由于各子系统应用所面临的问题不同，且通常是由不同的设计人员进行局部视图设计，这就导致各个局部E-R图之间必定会存在许多不一致的问题，称之为冲突。因此合并E-R图时并不能简单地将各个局部E-R图画到一起，而是必须着力消除各个局部E-R图中的不一致，以形成一个能为全系统中所有用户共同理解和接受的统一的概念模型。</p>
+<p>各局部E-R图之间的冲突主要有三类：</p>
+<p>（1）属性冲突：包括属性域冲突和属性取值冲突。属性冲突理论上好解决，只要换成相同的属性就可以了，但实际上需要各部门协商，解决起来并不简单。</p>
+<p>（2）命名冲突：包括同名异义和异名同义。处理命名冲突通常也像处理属性冲突一样，通过讨论和协商等行政手段加以解决。</p>
+<p>（3）结构冲突：包括同一对象在不同应用中具有不同的抽象，以及同一实体在不同局部E-R图中所包含的属性个数和属性排列次序不完全相同。对于前者的解决办法是把属性变换为实体或实体变换为属性，使同一对象具有相同的抽象。对于后者的解决办法是使该实体的属性取各局部E-R图中属性的并集，再适当调整属性的次序。</p>
+<p>另外，实体间的联系在不同的局部E-R图中可能为不同的类型，其解决方法是根据应用的语义对实体联系的类型进行综合或调整。</p>
+<p>在初步的E-R图中，可能存在一些冗余的数据和实体间冗余的联系。冗余数据和冗余联系容易破坏数据库的完整性，给数据库维护增加困难，应当予以消除。消除冗余的主要方法为分析方法，即以数据字典和数据流图为依据，根据数据字典中关于数据项之间逻辑关系的说明来消除冗余。</p>
+<p>在集成之后，还需要对E-R模型进行评审。评审的作用在于确认建模任务是否全部完成，通过评审可以避免重大的疏漏或错误。</p>
+<h2><span id="图向关系模式的转换">图向关系模式的转换</span></h2><p>E-R图向关系模式的转换属于数据库的逻辑设计阶段的工作，该阶段需要把E-R模型转换为某种DBMS能处理的关系模式，具体转换规则如下：</p>
+<p>（1）一个实体转换为一个关系模式，实体的属性就是关系的属性，实体的码（关键字）就是关系的码。</p>
+<p>（2）一个1:1联系可以转换为一个独立的关系模式，也可以与任意一端对应的关系模式合并。如果转换为一个独立的模式，则与该联系相连的各实体的码以及联系本身的属性均转换为关系的属性，每个实体的码均是该关系的候选键。如果与某一端实体对应的关系模式合并，则需要在该关系模式的属性中加入另一个关系模式的码和联系本身的属性。</p>
+<p>（3）一个1:n联系可以转换为一个独立的关系模式，也可以与任意n端对应的关系模式合并。如果转换为一个独立的模式，则与该联系相连的各实体的码以及联系本身的属性均转换为关系的属性，而关系的码为n端实体的码。如果与n端实体对应的关系模式合并，则需要在该关系模式的属性中加入1端关系模式的码和联系本身的属性。</p>
+<p>（4）一个m:n联系转换为一个独立的关系模式，与该联系相连的各实体的码以及联系本身的属性均转换为关系的属性，而关系的码为各实体码的组合。</p>
+<p>（5）三个以上实体间的一个多元联系可以转换为一个独立的关系模式，与该联系相连的各实体的码以及联系本身的属性均转换为关系的属性，而关系的码为各实体码的组合。</p>
+<p>另外，还有4种情况是需要特别注意的：</p>
+<p>（1）多值属性的处理。如果E-R图中某实体具有一个多值属性，则应该进行优化，把该属性提升为一个实体。或者在转化为关系模式时，将实体的码与多值属性单独构成一个关系模式。</p>
+<p>（2）BLOB型属性的处理。典型的BLOB是一张图片或一个声音文件，由于它们的容量比较大，必须使用特殊的方式来处理。处理BLOB的主要思想就是让文件处理器（如数据库管理器）不去理会文件是什么，而是关心如何去处理它。因此，从优化的角度考虑，应采用的设计方案是将BLOB字段与关系的码独立为一个关系模式。</p>
+<p>（3）派生属性的处理。因为派生属性可由其他属性计算得到，因此，在转化成关系模式时，通常不转换派生属性。</p>
+<p>（4）在对象-关系数据模型中，这里的关系模式就对应类，关系模式的属性就对应类的属性。</p>
+<h2><span id="常见的数据库管理系统">常见的数据库管理系统</span></h2><p>目前，常见的DBMS主要有Oracle、Sybase、DB2、MSSQLServer等，本节简单介绍这些DBMS。</p>
+<h2><span id="oracle">Oracle</span></h2><p>Oracle的结构包括数据库的内部结构、外存储结构、内存储结构和进程结构。在Oracle中，数据库不仅指物理上的数据，还包括处理这些数据的程序，即DBMS本身。Oracle提供了PL/SQL、Designer/2000、Forms等开发和设计工具。</p>
+<p>除了以关系格式存储数据外，Oracle8以上的版本支持面向对象的结构（如抽象数据类型）。一个对象可以与其他对象建立联系，也可以包含其他对象，还可以用一个对象视图支持面向对象的接口数据而无须对表做任何修改。</p>
+<p>无论是面向对象的结构还是关系结构，Oracle数据库都将其数据存储在物理的数据文件中。数据库结构提供数据存储到文件的逻辑图，允许不同类型的数据分开存储，这些逻辑划分即是表空间。在Oracle中，除了存储数据的文件外，还有DBMS的代码文件、日志文件和其他一些控制文件、跟踪文件等。外存储结构主要包括表空间和文件结构。</p>
+<p>Oracle数据库在运行中使用两种类型的内存结构，分别是系统全局区和程序全局区。系统全局区是数据库运行时存放系统数据的内存区域，它由所有服务器进程和客户进程共享；程序全局区是单个存放Oracle进程工作时需要的数据和控制信息的，程序全局区不能共享。</p>
+<h2><span id="sybase">Sybase</span></h2><p>为满足企业级分布式计算应用的要求，Sybase采用了基于构件方式的多层（常用三层）C/S架构。构件的主要优点是其自包含性和可重用性，系统中任何一个构件当被另一个具有同样功能的构件取代时，都无须对周围的构件进行重编码或修改。</p>
+<p>第一层为客户应用程序。负责实现在客户系统上的数据显示和操作以及对用户输入做合理性检验。Sybase的开发工具产品系列（例如，PowerBuilder等）处在这一层。</p>
+<p>第二层为基于构件方式的中间件层。该层能为分布式异构环境提供全局性的数据访问及事务管理控制。Sybase的中间件层产品主要有OmniConnect、OpenC1ient和OpenServer等。</p>
+<p>第三层为服务器应用软件。它负责数据存取及完整性控制。Sybase数据库产品系列（例如，AdaptiveServerEnterprise、SybaseMPP、SybaseIQ和SQLAnywhere等）处于这一层。</p>
+<p>Sybase这种架构的高适应性体现在企业可依据其特定的和变化中的分布式应用的需要来定制各个层次中的构件。Sybase的这些产品能优化地集成在一起协同运行，但它们彼此又是相互独立的，都能容易地与第三方产品实现集成，因而用户可灵活地构建一个完整的异构分布式系统。</p>
+<h2><span id="informix">Informix</span></h2><p>Informix是美国Informix公司（已被IBM公司收购）的主要产品。Informix是一个跨平台、全功能的关系型DBMS，后改造为面向对象型DBMS，它具有各种特性，并且能够十分方便地与各种图形用户界面前端工具相连接。</p>
+<p>Informix动态服务器采用多线程架构实现，这意味着只需较少的进程完成数据库活动，同时也意味着一个数据库进程可以通过线程形式为多于一个的应用服务。通常称这样一组进程为数据库服务器。根据需要，可以为数据库服务器动态分配一个进程，故称之为动态服务器。多线程架构还可以有更好的可伸缩性。这意味着，当增加更多用户时，数据库服务器只需要少量额外资源，这得益于多线程服务器实现本质上的可伸缩性的效率。</p>
+<p>Informix的软件开发工具主要有Informix-SQL、Informix-ESQL、Informix-4GL等，它们具有不同的功能和特点，既能单独使用，也可根据实际需要相互配合使用。</p>
+<h2><span id="sqlserver">SQLServer</span></h2><p>SQLServer是微软公司的数据库产品，SQLServer的分布式架构把应用程序对数据库的访问和数据库引擎分离开来。SQLServer的核心数据库服务器运行在基于Windows的服务器之上。基于Windows的服务器一般通过以太局域网与多个客户机系统连接。这些客户机系统一般是运行SQLServer客户机软件的PC机。这些PC机既可以是单独的桌面系统，又可以是其他网络服务的平台，如IISWeb服务器。</p>
+<p>SQLServer与流行的开发工具和桌面应用程序紧密集成，例如，可以从由VisualBasic、VisualC++、PowerBuilder、Delphi、VisualFoxPro和许多其他PC开发环境下开发的客户应用程序中访问SQLServer数据库。SQLServer与流行开发工具所使用的几种数据访问接口兼容，例如，可以通过MicrosoftJETEngine和DataAccessObjects（DAO）、RemoteDataObjects（RDO）、ActiveXDataObjects（ADO）、OLEDB、ODBC（OpenDatabaseConnectivity，开放数据库互连）、SQLServer内置DB-Library以及第三方开发工具来访问SQLServer数据库。对于无缝桌面数据库访问，SQLServer使用OLEDB提供者和ODBC驱动程序，这些驱动程序允许从任何与ODBC或者OLEDB兼容的桌面应用程序中访问SQLServer数据库。OLEDB和ODBC可以从数百个简化设计的桌面应用程序中为特定的查询、数据分析、自定义报表打开SQLServer数据库。桌面集成减少了自定义的编程工作。SQLSerevr对ODBC的支持允许其他平台，如Macintosh或各种Unix系统访问SQLServer数据库。</p>
+<p>SQLServer的4个基本服务器组件包括OpenDataServices、MSSQLServer、SQLServerAgent和MSDTC。</p>
+<h2><span id="db2">DB2</span></h2><p>DB2是IBM公司研制的一种关系型数据库系统。DB2主要应用于大型应用系统，具有较好的可伸缩性，可支持从大型机到单用户环境，应用于OS/2、Windows等平台下。</p>
+<p>DB2提供了高层次的数据利用性、完整性、安全性、可恢复性，以及小规模到大规模应用程序的执行能力，具有与平台无关的基本功能和SQL命令。DB2采用了数据分级技术，能够使大型机数据很方便地下载到局域网数据库服务器，使得C/S用户和基于局域网的应用程序可以访问大型机数据，并使数据库本地化及远程连接透明化。它以拥有一个非常完备的查询优化器而著称，其外部连接改善了查询性能，并支持多任务并行查询。</p>
+<p>DB2具有很好的网络支持能力，每个子系统可以连接十几万个分布式用户，可同时激活上千个活动线程，对大型分布式应用系统尤为适用。</p>
+<h2><span id="mysql">MySQL</span></h2><p>MySQL是一个开放源码的小型关联式数据库管理系统，开发者为瑞典MySQLAB公司。MySQL被广泛地应用在Internet上的中小型网站中。由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，许多中小型网站为了降低网站总体拥有成本而选择了MySQL作为网站数据库。</p>
+<h2><span id="并行数据库系统">并行数据库系统</span></h2><p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml13728\wps20.png" alt="img">并行DBS是在并行机上运行的具有并行处理能力的DBS。并行DBS是数据库技术与并行计算技术相结合的产物。并行计算技术利用多处理机并行处理产生的规模效益来提高系统的整体性能，为DBS提供了一个良好的硬件平台。</p>
+<p>一个并行DBS应该实现如下目标：</p>
+<p>（1）高性能：并行DBS通过将数据库管理技术与并行处理技术有机结合，发挥多处理机结构的优势，从而提供比相应的大型机系统要高得多的性能价格比和可用性。</p>
+<p>（2）高可用性：并行DBS可通过数据复制来增强数据库的可用性。</p>
+<p>（3）可扩充性：DBS的可扩充性指系统通过增加处理和存储能力而平滑地扩展性能的能力。</p>
+<h2><span id="并行数据库的结构">并行数据库的结构</span></h2><p>从硬件结构来看，根据处理机与磁盘及内存的相互关系可以将并行计算机分为3种基本的架构，分别是共享内存（ShareMemory，SM）结构、共享磁盘（ShareDisk，SD）结构和无共享资源（Share-Nothing，SN）结构，并行DBS以这3种架构为基础。</p>
+<h3><span id="1sm结构">1.SM结构</span></h3><p>SM结构由多个处理机、一个共享内存和多个磁盘存储器构成。多处理机和共享内存由高速通信网络连接，每个处理机可直接存取一个或多个磁盘，即所有内存与磁盘为所有处理机共享。SM结构如图2-3所示。<img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml13728\wps22.png" alt="img">图2-3SM结构SM结构的优势在于实现简单和负载均衡，但是这种结构的系统由于硬件成员之间的互连很复杂，故成本比较高。由于访问共享内存和磁盘会成为瓶颈，为了避免访问冲突增多而导致系统性能下降，节点数目必须限制在100个以下，可扩充性比较差。另外，内存的任何错误都将影响到多个处理机，系统的可用性不是很好。</p>
+<h3><span id="2sd结构">2.SD结构</span></h3><p>SD结构由多个具有独立内存的处理机和多个磁盘构成，每个处理机都可以读写任何磁盘，多个处理机和磁盘存储器由高速通信网络连接。SD结构如图2-4所示。<img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml13728\wps23.png" alt="img">图2-4SD结构SD结构具有成本低、可扩充性好、可用性强，容易从单处理机系统迁移，以及负载均衡等优点。该结构的不足之处在于实现起来比较复杂，以及存在潜在的性能问题。</p>
+<h3><span id="3sn结构">3.SN结构</span></h3><p>SN结构由多个处理节点构成，每个处理节点具有自己独立的处理机、内存和磁盘存储器，多个处理机节点由高速通信网络连接。SN结构如图2-5所示。</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml13728\wps24.png" alt="img">图2-5SN结构在SN结构中，由于每个节点可视为分布式DBS中的局部场地（拥有自己的数据库软件），因此分布式数据库设计中的多数设计思路，如数据库分片、分布事务管理和分布查询处理等，都可以借鉴。SN结构成本较低，它最大限度地减少了共享资源，具有极佳的可伸缩性，节点数目可达数千个，并可获得接近线性的伸缩比。而通过在多个节点上复制数据又可实现高可用性。SN结构的不足之处在于实现比较复杂，以及节点负荷难以均衡。往往只是根据数据的物理位置而不是系统的实际负载来分配任务。并且，系统中新节点的加入将导致重新组织数据库以均衡负载。</p>
+<h2><span id="并行数据库的组织">并行数据库的组织</span></h2><p>并行数据库的组织主要涉及到并行粒度和操作算法问题。</p>
+<p>并行粒度是指查询执行的并行程度，按照粒度从粗到细，主要有不同用户事务间的并行、同一事务内不同查询间的并行、同一查询内不同操作间的并行、同一操作内的并行性4种。</p>
+<p>并行操作算法有并行连接算法、并行扫描算法和并行排序算法等。由于连接运算是数据库系统中最常用且最耗时的操作，因此对并行连接操作的研究最多。学者们提出了基于嵌套循环的并行连接算法、基于合并扫描的并行连接算法、基于Hash的并行连接算法和基于索引的并行连接算法等。</p>
+<p>并行数据库以提高系统性能为宗旨，强调数据分布的均匀性。数据划分是并行查询处理的重要基础，根据存放关系的节点数目的不同，数据划分技术可分为完全划分（完全分布）和变量划分（部分分布）两种类型。完全划分将每一个关系分布存储到所有节点上，这种方法不适合小关系及节点数目大的系统；变量划分将每一个关系只分布存储到部分节点上，其中节点数目是关系大小和访问频率的一个函数，从而使数据分布更为灵活。</p>
+<p>划分数据时可以依据一个属性的值，也可以同时依据多个属性的值，前者称为一维数据划分，后者称为多维数据划分。常用的划分方法有轮转法、Hash法和值域划分法、用户定义划分法、模式划分法和Hybrid_Range划分法等。</p>
+<h2><span id="数据仓库与数据挖掘">数据仓库与数据挖掘</span></h2><p>企业常见的数据处理工作大致可以分成两大类，分别是OLTP（On-LineTransactionProcessing，联机事务处理）和OLAP（On-LineAnalyticalProcessing，联机分析处理）。OLTP是传统的关系型数据库的主要应用，OLAP是数据仓库系统的主要应用，支持复杂的分析操作，侧重决策支持，并且提供直观易懂的查询结果。</p>
+<h2><span id="联机分析处理">联机分析处理</span></h2><p>OLTP是传统关系型数据库的重要应用之一，主要是基本的、日常的事务处理，例如银行交易、电信计费、民航订票等，对响应时间要求比较高，强调的是密集数据更新处理的性能和系统的可靠性及效率。OLTP用短小和中等复杂程度的查询语句，读取或修改数据库中一个比较小的部分，数据访问方式是小的随机磁盘访问。</p>
+<p>OLTP是事件驱动、面向应用的。OLTP的基本特点是：对响应时间要求非常高；用户数量非常庞大，主要是操作人员；数据库的各种操作基于索引进行；对数据库的事务均已预先定义，查询简单，一般不牵涉到多表连接操作。</p>
+<p>OLAP使得数据分析人员能够从多角度对数据进行快速、一致、交互地存取，从而获得对数据的更深入的了解。OLAP的目标是满足决策支持或者在多维环境下特定的查询和报表需求。</p>
+<p>OLTP与OLAP之间的比较。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>OLTP</th>
+<th>OLAP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户</td>
+<td>操作人员，低层管理人员</td>
+<td>决策人员，高级管理人员</td>
+</tr>
+<tr>
+<td>功能</td>
+<td>日常操作处理</td>
+<td>分析决策</td>
+</tr>
+<tr>
+<td>DB设计</td>
+<td>面向应用</td>
+<td>面向主题</td>
+</tr>
+<tr>
+<td>数据</td>
+<td>当前的，最新的细节的，二维的分立的</td>
+<td>历史的，聚集的，多维的集成的，统一的</td>
+</tr>
+<tr>
+<td>存取</td>
+<td>读/写数十条事务</td>
+<td>读上百万条记录</td>
+</tr>
+<tr>
+<td>工作单位</td>
+<td>简单的事务</td>
+<td>复杂的查询</td>
+</tr>
+<tr>
+<td>用户数</td>
+<td>上千个</td>
+<td>上百个</td>
+</tr>
+<tr>
+<td>DB大小</td>
+<td>100MB-GB</td>
+<td>100GB-TB</td>
+</tr>
+</tbody></table>
+<p>OLAP是使分析人员、管理人员或执行人员能够从多角度对信息进行快速、一致、交互地存取，从而获得对数据的更深入了解的一类软件技术。OLAP的目标是满足决策支持或者满足在多维环境下特定的查询和报表需求，它的技术核心是“维”的概念。维是人们观察客观世界的角度，是一种高层次的类型划分。维一般包含着层次关系，这种层次关系有时会相当复杂。通过把一个实体的多项重要的属性定义为多个维，使用户能对不同维上的数据进行比较。因此OLAP也可以说是多维数据分析工具的集合。</p>
+<p>OLAP的基本多维分析操作有钻取、切片和切块、旋转等。</p>
+<p>（1）<strong>钻取</strong>：是改变维的层次，变换分析的粒度。它包括向上钻取和向下钻取。向上钻取是在某一维上将低层次的细节数据概括到高层次的汇总数据，或者减少维数；而向下钻取则相反，它从汇总数据深入到细节数据进行观察或增加新维</p>
+<p>（2）<strong>切片和切块</strong>：是在一部分维上选定值后，关心度量数据在剩余维上的分布。如果剩余的维只有两个，则是切片；如果有三个，则是切块。</p>
+<p>（3）<strong>旋转</strong>：是变换维的方向，即在表格中重新安排维的放置（例如行列互换）。</p>
+<p>OLAP有多种实现方法，根据存储数据的方式不同，可以分为ROLAP（RelationalOLAP，基于关系数据库的OLAP实现）、MOLAP（MultidimensionalOLAP，基于多维数据组织的OLAP实现）、HOLAP（HybridOLAP，基于混合数据组织的OLAP实现）。</p>
+<p>（1）ROLAP：以关系数据库为核心，以关系型结构进行多维数据的表示和存储。ROLAP将多维数据库的多维结构划分为两类表:一类是事实表，用来存储数据和维关键字;另一类是维表，即对每个维至少使用一个表来存放维的层次、成员类别等维的描述信息。维表和事实表通过主关键字和外关键字联系在一起，形成了“星型模式”。对于层次复杂的维，为避免冗余数据占用过大的存储空间，可以使用多个表来描述，这种星型模式的扩展称为“雪花模式”。</p>
+<p>（2）MOLAP：以多维数据组织方式为核心，也就是说，MOLAP使用多维数组存储数据。多维数据在存储中将形成立方块（Cube）的结构，在MOLAP中对立方块的旋转、切块、切片是产生多维数据报表的主要技术。</p>
+<p>（3）HOLAP：低层是关系型的，高层是多维矩阵型的；或者反之。这种方式具有更好的灵活性。</p>
+<p>还有其他的一些实现OLAP的方法，如提供一个专用的SQLServer，对某些存储模式（如星型、雪片型）提供对SQL查询的特殊支持。</p>
+<p>OLAP工具是针对特定问题的联机数据访问与分析，它通过多维的方式对数据进行分析、查询和报表。多维分析是指对以多维形式组织起来的数据采取切片、切块、钻取、旋转等各种分析动作，以求剖析数据，使用户能从多个角度、多侧面地观察数据库中的数据，从而深入理解包含在数据中的信息。</p>
+<h2><span id="数据仓库的概念">数据仓库的概念</span></h2><p>数据仓库（DataWarehouse）是一个面向主题的、集成的、相对稳定的、且随时间变化的的数据集合，用于支持管理决策。</p>
+<h3><span id="1数据仓库的特征">1．数据仓库的特征</span></h3><p>（1）面向主题。操作型数据库的数据组织面向事务处理任务（面向应用），各个业务系统之间各自分离，而数据仓库中的数据是按照一定的主题域进行组织。主题是一个抽象的概念，是指用户使用数据仓库进行决策时所关心的重点方面，一个主题通常与多个操作型信息系统相关。例如，一个保险公司所进行的事务处理（应用问题）可能包括汽车保险、人寿保险、健康保险和意外保险等，而公司的主要主题范围可能是顾客、保险单、保险费和索赔等。</p>
+<p>（2）集成的。在数据仓库的所有特性中，这是最重要的。面向事务处理的操作型数据库通常与某些特定的应用相关，数据库之间相互独立，并且往往是异构的。而数据仓库中的数据是在对原有分散的数据库数据抽取、清理的基础上经过系统加工、汇总和整理得到的，必须消除源数据中的不一致性，以保证数据仓库内的信息是关于整个企业的一致的全局信息。</p>
+<p>（3）相对稳定的（非易失的）。操作型数据库中的数据通常实时更新，数据根据需要及时发生变化。数据仓库的数据主要供企业决策分析之用，所涉及的数据操作主要是数据查询，一旦某个数据进入数据仓库以后，一般情况下将被长期保留，也就是数据仓库中一般有大量的查询操作，但修改和删除操作很少，通常只需要定期的加载、刷新。</p>
+<p>（4）随时间变化。操作型数据库主要关心当前某一个时间段内的数据，而数据仓库中的数据通常包含历史信息，系统记录了企业从过去某一时点（如开始应用数据仓库的时点）到目前的各个阶段的信息，通过这些信息，可以对企业的发展历程和未来趋势做出定量分析和预测。</p>
+<p>数据仓库反映历史变化的属性主要表现在：</p>
+<p>（1）数据仓库中的数据时间期限要远远长于传统操作型数据系统中的数据时间期限，传统操作型数据系统中的数据时间期限可能为数十天或数个月，数据仓库中的数据时间期限往往为数年甚至几十年。</p>
+<p>（2）传统操作型数据系统中的数据含有“当前值”的数据，这些数据在访问时是有效的，当然数据的当前值也能被更新，但数据仓库中的数据仅仅是一系列某一时刻（可能是传统操作型数据系统）生成的复杂的快照。</p>
+<p>（3）传统操作型数据系统中可能包含也可能不包含时间元素，如年、月、日、时、分、秒等，而数据仓库中一定会包含时间元素。</p>
+<h3><span id="2数据仓库与传统数据的区别">2．数据仓库与传统数据的区别</span></h3><p>数据仓库虽然是从传统数据库系统发展而来，但是两者还是存在着诸多差异，如：从数据存储的内容看，数据库只存放当前值，而数据仓库则存放历史值；数据库数据的目标是面向业务操作人员的，为业务处理人员提供数据处理的支持，而数据仓库则是面向中高层管理人员的，为其提供决策支持等。表2-3详细说明了数据仓库与传统数据库的区别。</p>
+<p>数据仓库与传统数据库的比较</p>
+<table>
+<thead>
+<tr>
+<th>比较项目</th>
+<th>数据库</th>
+<th>数据仓库</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据内容</td>
+<td>当前值</td>
+<td>历史的、归档的、归纳的、计算的数据（处理过的）</td>
+</tr>
+<tr>
+<td>数据目标</td>
+<td>面向业务操作程序、重复操作</td>
+<td>面向主体域，分析应用</td>
+</tr>
+<tr>
+<td>数据特性</td>
+<td>动态变化、更新</td>
+<td>静态、不能直接更新，只能定时添加、更新</td>
+</tr>
+<tr>
+<td>使用频率</td>
+<td>高</td>
+<td>低</td>
+</tr>
+<tr>
+<td>数据访问量</td>
+<td>每个事务一般只访问少量记录</td>
+<td>每个事务一般访问大量记录</td>
+</tr>
+<tr>
+<td>数据访问量</td>
+<td>每个事务一般只访问少量记录</td>
+<td>每个事务一般访问大量记录</td>
+</tr>
+<tr>
+<td>对响应事件的要求</td>
+<td>记时单位小，如秒</td>
+<td>记时单位相对较大，除了秒，还有分钟、小时</td>
+</tr>
+</tbody></table>
+<h3><span id="3数据仓库的分类">3．数据仓库的分类</span></h3><p>从结构的角度看，有三种数据仓库模型，分别是企业仓库、数据集市和虚拟仓库。</p>
+<p>企业仓库收集跨越整个企业的各个主题的所有信息，它提供全企业范围的数据集成，数据通常来自多个操作型数据库和外部信息提供者，并且是跨多个功能范围的。它通常包含详细数据和汇总数据。</p>
+<p>数据集市包含对特定用户有用的、企业范围数据的一个子集，它的范围限定选定的主题。虚拟仓库是操作型数据库上视图的集合。</p>
+<h2><span id="数据仓库的结构">数据仓库的结构</span></h2><p>从数据仓库的概念结构来看，一般来说，数据仓库系统要包含数据源、数据准备区、数据仓库数据库、数据集市/知识挖掘库以及各种管理工具和应用工具，如图2-6所示。</p>
+<p>数据仓库建立之后，首先要从数据源中抽取相关的数据到数据准备区，在数据准备区中经过净化处理后再加载到数据仓库数据库，最后根据用户的需求将数据导入数据集市和知识挖掘库中。当用户使用数据仓库时，可以利用包括OLAP在内的多种数据仓库应用工具向数据集市/知识挖掘库或数据仓库进行决策查询分析或知识挖掘。数据仓库的创建、应用可以利用各种数据仓库管理工具辅助完成。<img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml13728\wps32.png" alt="img">图2-6数据仓库的概念结构</p>
+<h3><span id="1数据仓库的参考框架">1．数据仓库的参考框架</span></h3><p>数据仓库的参考框架由数据仓库基本功能层、数据仓库管理层和数据仓库环境支持层组成。</p>
+<p>（1）数据仓库基本功能层。数据仓库的基本功能层部分包含数据源、数据准备区、数据仓库结构、数据集市或知识挖掘库，以及存取和使用部分。本层的功能是从数据源抽取数据，对所抽取的数据进行筛选、清理，将处理过的数据导入或者说加载到数据仓库中，根据用户的需求设立数据集市，完成数据仓库的复杂查询、决策分析和知识的挖掘等。</p>
+<p>（2）数据仓库管理层。数据仓库的正常运行除了需要数据仓库功能层提供的基本功能外，还需要对这些基本功能进行管理与支持的结构框架。数据仓库管理层由数据仓库的数据管理和数据仓库的元数据管理组成。数据仓库的数据管理层包含数据抽取、新数据需求与查询管理，数据加载、存储、刷新和更新系统，安全性与用户授权管理系统以及数据归档、恢复及净化系统等四部分。</p>
+<p>（3）数据仓库的环境支持层。数据仓库的环境支持层由数据仓库数据传输层和数据仓库基础层组成。数据仓库中不同结构之间的数据传输需要数据仓库的传输层来完成。数据仓库的传输层包含数据传输和传送网络、客户/服务器代理和中间件、复制系统以及数据传输层的安全保障系统。</p>
+<h3><span id="2数据仓库的架构">2．数据仓库的架构</span></h3><p>大众观点的数据仓库的架构如图2-7所示：</p>
+<p><img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml13728\wps33.png" alt="img">图2-7数据仓库架构</p>
+<p>（1）数据源。是数据仓库系统的基础，是整个系统的数据源泉。通常包括企业内部信息和外部信息。内部信息包括存放于RDBMS中的各种业务处理数据和各类文档数据。外部信息包括各类法律法规、市场信息和竞争对手的信息等等。</p>
+<p>（2）数据的存储与管理。是整个数据仓库系统的核心。数据仓库的真正关键是数据的存储和管理。数据仓库的组织管理方式决定了它有别于传统数据库，同时也决定了其对外部数据的表现形式。要决定采用什么产品和技术来建立数据仓库的核心，则需要从数据仓库的技术特点着手分析。针对现有各业务系统的数据，进行抽取、清理，并有效集成，按照主题进行组织。数据仓库按照数据的覆盖范围可以分为企业级数据仓库和部门级数据仓库（通常称为数据集市）。</p>
+<p>（3）OLAP服务器。对分析需要的数据进行有效集成，按多维模型予以组织，以便进行多角度、多层次的分析，并发现趋势。</p>
+<p>（4）前端工具。主要包括各种报表工具、查询工具、数据分析工具、数据挖掘工具以及各种基于数据仓库或数据集市的应用开发工具。其中数据分析工具主要针对OLAP服务器，报表工具、数据挖掘工具主要针对数据仓库。</p>
+<h2><span id="数据挖掘的概念">数据挖掘的概念</span></h2><p>数据挖掘（DataMining）技术是人们长期对数据库技术进行研究和开发的结果。</p>
+<p>从技术上来看，数据挖掘就是从大量的、不完全的、有噪声的、模糊的、随机的实际应用数据中，提取隐含在其中的、人们事先不知道的、但又是潜在有用的信息和知识的过程。这个定义包括好几层含义：数据源必须是真实的、大量的、含噪声的；发现的是用户感兴趣的知识；发现的知识要可接受、可理解、可运用；并不要求发现放之四海而皆准的知识，仅支持特定的发现问题。</p>
+<p>从业务角度来看，数据挖掘是一种新的业务信息处理技术，其主要特点是对业务数据库中的大量业务数据进行抽取、转换、分析和其他模型化处理，从中提取辅助业务决策的关键性数据。</p>
+<p>数据挖掘与传统的数据分析（如查询、报表、联机应用分析）的本质区别是数据挖掘是在没有明确假设的前提下去挖掘信息、发现知识。数据挖掘所得到的信息应具有先知、有效和可实用三个特征。先前未知的信息是指该信息是预先未曾预料到的，即数据挖掘是要发现那些不能靠直觉发现的信息或知识，甚至是违背直觉的信息或知识，挖掘出的信息越是出乎意料，就可能越有价值。</p>
+<p>数据挖掘通过预测未来趋势及行为，做出前摄的、基于知识的决策。数据挖掘的目标是从数据库中发现隐含的、有意义的知识，主要有以下五类功能：</p>
+<p>（1）<strong>自动预测趋势和行为。</strong>数据挖掘自动在大型数据库中寻找预测性信息，以往需要进行大量手工分析的问题如今可以迅速直接由数据本身得出结论。</p>
+<p>（2）<strong>关联分析。</strong>数据关联是数据库中存在的一类重要的可被发现的知识。若两个或多个变量的取值之间存在某种规律性，就称为关联。关联可分为简单关联、时序关联、因果关联。关联分析的目的是找出数据库中隐藏的关联网。有时并不知道数据库中数据的关联函数，即使知道也是不确定的，因此关联分析生成的规则带有可信度。</p>
+<p>（3）<strong>聚类。</strong>数据库中的记录可被划分为一系列有意义的子集，即聚类。聚类增强了人们对客观现实的认识，是概念描述和偏差分析的先决条件。聚类技术主要包括传统的模式识别方法和数学分类学。</p>
+<p>（4）<strong>概念描述。</strong>概念描述就是对某类对象的内涵进行描述，并概括这类对象的有关特征。概念描述分为特征性描述和区别性描述，前者描述某类对象的共同特征，后者描述不同类对象之间的区别。生成一个类的特征性描述只涉及该类对象中所有对象的共性。生成区别性描述的方法很多，如决策树方法、遗传算法等。</p>
+<p>（5）<strong>偏差检测。</strong>数据库中的数据常有一些异常记录，从数据库中检测这些偏差很有意义。偏差包括很多潜在的知识，如分类中的反常实例、不满足规则的特例、观测结果与模型预测值的偏差、量值随时间的变化等。偏差检测的基本方法是，寻找观测结果与参照值之间有意义的差别。</p>
+<h2><span id="数据挖掘常用技术">数据挖掘常用技术</span></h2><p>常见和应用最广泛的数据挖掘方法有：</p>
+<p>（1）<strong>决策树</strong>。利用信息论中的互信息（信息增益）寻找数据库中具有最大信息量的属性，建立决策树的一个结点，再根据该属性的不同取值建设树的分支；在每个分支子集中重复建立树的下层结点和分支的过程。国际上最早的、也是最有影响的决策树方法是Quiulan研究的ID3方法。</p>
+<p>（2）<strong>神经网络</strong>。模拟人脑神经元结构，完成类似统计学中的判别、回归、聚类等功能，是一种非线性的模型，主要有三种神经网络模型，分别是前馈式网络、反馈式网络和自组织网络。人工神经网络最大的长处是可以自动地从数据中学习，形成知识，这些知识有些是我们过去未曾发现的，因此它具有较强的创新性。神经网络的知识体现在网络连接的权值上，神经网络的学习主要表现在神经网络权值的逐步计算上。</p>
+<p>（3）<strong>遗传算法</strong>。模拟生物进化过程的算法，它由三个基本过程组成，分别是繁殖（选择）、交叉（重组）、变异（突变）。采用遗传算法可以产生优良的后代，经过若干代的遗传，将得到满足要求的后代即问题得解。</p>
+<p>（4）<strong>关联规则挖掘算法</strong>。关联规则是描述数据之间存在关系的规则，一般分为两个步骤：首先求出大数据项集，然后用大数据项集产生关联规则。</p>
+<p>除了上述的常用方法外，还有粗集方法、模糊集合方法、最邻近算法等。无论采用哪种方法完成数据挖掘，从功能上可以将数据挖掘的分析方法划分为6种，即关联分析、序列分析、分类分析、聚类分析、预测和时间序列分析。</p>
+<p>（1）<strong>关联分析</strong>。关联分析主要用于发现不同事件之间的关联性，即一个事件发生的同时，另一个事件也经常发生。关联分析的重点在于快速发现那些有实用价值的关联发生的事件。其主要依据是事件发生的概率和条件概率应该符合一定的统计意义。</p>
+<p>（2）<strong>序列分析</strong>。序列分析技术主要用于发现一定时间间隔内接连发生的事件。这些事件构成一个序列，发现的序列应该具有普遍意义，其依据除了统计上的概率之外，还要加上时间的约束。</p>
+<p>（3）<strong>分类分析</strong>。分类分析通过分析具有类别的样本的特点，得到决定样本属于各种类别的规则或方法。利用这些规则和方法对未知类别的样本分类时应该具有一定的准确度。其主要方法有基于统计学的贝叶斯方法、神经网络方法、决策树方法等。</p>
+<p>（4）<strong>聚类分析</strong>。聚类分析是根据物以类聚的原理，将本身没有类别的样本聚集成不同的组，并且对每一个这样的组进行描述的过程。其主要依据是聚到同一个组中的样本应该彼此相似，而属于不同组的样本应该足够不相似。</p>
+<p>（5）<strong>预测</strong>。预测与分类分析相似，但预测是根据样本的已知特征估算某个连续类型的变量的取值的过程，而分类则只是用于判别样本所属的离散类别而已。预测常用的技术是回归分析。</p>
+<p>（6）<strong>时间序列分析</strong>。时间序列分析的是随时间而变化的事件序列，目的是预测未来发展趋势，或者寻找相似发展模式或者是发现周期性发展规律。</p>
+<h2><span id="数据挖掘的流程">数据挖掘的流程</span></h2><p>数据挖掘是指一个完整的过程，该过程从大型数据库中挖掘先前未知的，有效的，可实用的信息，并使用这些信息做出决策或丰富知识。数据挖掘的流程大致如下：</p>
+<p>（1）<strong>问题定义</strong>。在开始数据挖掘之前最先的也是最重要的要求就是熟悉背景知识，弄清用户的需求。缺少了背景知识，就不能明确定义要解决的问题，就不能为挖掘准备优质的数据，也很难正确的解释得到的结果。要想充分发挥数据挖掘的价值，必须对目标要有一个清晰明确的定义，即决定到底想干什么。</p>
+<p>（2）<strong>建立数据挖掘库</strong>。要进行数据挖掘必须收集要挖掘的数据资源。一般建议把要挖掘的数据都收集到一个数据库中，而不是采用原有的数据库或数据仓库。这是因为大部分情况下需要修改要挖掘的数据，而且还会遇到采用外部数据的情况；另外，数据挖掘还要对数据进行各种纷繁复杂的统计分析，而数据仓库可能不支持这些数据结构。</p>
+<p>（3）<strong>分析数据</strong>。分析数据就是通常所进行的对数据深入调查的过程。从数据集中找出规律和趋势，用聚类分析区分类别，最终要达到的目的就是搞清楚多因素相互影响的、十分复杂的关系，发现因素之间的相关性。</p>
+<p>（4）<strong>调整数据</strong>。通过上述步骤的操作，对数据的状态和趋势有了进一步的了解，这时要尽可能对问题解决的要求能进一步明确化、进一步量化。针对问题的需求对数据进行增删，按照对整个数据挖掘过程的新认识组合或生成一个新的变量，以体现对状态的有效描述。</p>
+<p>（5）<strong>模型化</strong>。在问题进一步明确，数据结构和内容进一步调整的基础上，就可以建立形成知识的模型。这一步是数据挖掘的核心环节，一般运用神经网络、决策树、数理统计、时间序列分析等方法来建立模型。</p>
+<p>（6）<strong>评价和解释</strong>。上面得到的模式模型，有可能是没有实际意义或没有实用价值的，也有可能是其不能准确反映数据的真实意义，甚至在某些情况下是与事实相反的，因此需要评估，确定哪些是有效的、有用的模式。评估的一种办法是直接使用原先建立的挖掘数据库中的数据来进行检验，另一种办法是另找一批数据并对其进行检验，再一种办法是在实际运行的环境中取出新鲜数据进行检验。</p>
+<p>数据挖掘是一个多种专家合作的过程，也是一个在资金上和技术上高投入的过程。这一过程要反复进行，在反复过程中，不断地趋近事物的本质，不断地优选问题的解决方案。</p>
+<h2><span id="nosql">NoSQL</span></h2><p>NoSQL即NotOnlySQL，可直译“不仅仅是SQL”，这项技术正在掀起一场全新的数据库革命性运动。</p>
+<p>在本章2.3.1节曾提到数据的模式包括多种类型，如层次模型、网状模型、关系模型等，而在实际应用过程中，几乎都是在用关系模型，主流的数据库系统都是关系型的。但随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。这也就使得NoSQL技术进入了人们的视野。</p>
+<p>NoSQL的出现打破了长久以来关系型数据库与ACID理论大一统的局面。NoSQL数据存储不需要固定的表结构，通常也不存在连接操作。在大数据存取上具备关系型数据库无法比拟的性能优势。</p>
+<p>关系型数据库中的表都是存储一些格式化的数据结构，每个元组字段的组成都一样，即使不是每个元组都需要所有的字段，但数据库会为每个元组分配所有的字段，这样的结构可以便于表与表之间进行连接等操作，但从另一个角度来说它也是关系型数据库性能瓶颈的一个因素。而非关系型数据库以键值对存储，它的结构不固定，每一个元组可以有不一样的字段，每个元组可以根据需要增加一些自己的键值对，这样就不会局限于固定的结构，可以减少一些时间和空间的开销。</p>
+<p>与关系型数据库相比，NoSQL数据库具有以下优点：</p>
+<p>1．易扩展</p>
+<p>NoSQL数据库种类繁多，但是一个共同的特点都是去掉关系数据库的关系型特性。数据之间无关系，这样就非常容易扩展。也无形之间，在架构的层面上带来了可扩展的能力。</p>
+<p>2．大数据量，高性能</p>
+<p>NoSQL数据库都具有非常高的读写性能，尤其在大数据量下，同样表现优秀。这得益于它的无关系性，数据库的结构简单。一般MySQL使用QueryCache，每次表的更新Cache就失效，是一种大粒度的Cache，在针对web2.0的交互频繁的应用，Cache性能不高。而NoSQL的Cache是记录级的，是一种细粒度的Cache，所以NoSQL在这个层面上来说就要性能高很多了。</p>
+<p>3．灵活的数据模型</p>
+<p>NoSQL无需事先为要存储的数据建立字段，随时可以存储自定义的数据格式。而在关系数据库里，增删字段是一件非常麻烦的事情。如果是非常大数据量的表，增加字段简直就是一个噩梦。这点在大数据量的web2.0时代尤其明显。</p>
+<p>4．高可用</p>
+<p>NoSQL在不太影响性能的情况，就可以方便的实现高可用的架构。比如Cassandra，HBase模型，通过复制模型也能实现高可用。</p>
+<p>当然，NoSQL也存在很多缺点，例如，并未形成一定标准，各种产品层出不穷，内部混乱，各种项目还需时间来检验，缺乏相关专家技术的支持等。</p>
+<h2><span id="大数据">大数据</span></h2><p>大数据（BigData），指的是所涉及的数据量规模巨大到无法通过目前主流软件工具，在合理时间内达到获取、管理、处理、并整理成为帮助企业经营决策目的的信息。</p>
+<h3><span id="1大数据的特点">1．大数据的特点</span></h3><p>大数据有4大特点：Volume（大量）、Velocity（高速）、Variety（多样）、Value（价值），由于他们的英文首字母都是V，所以也称为“4V特点”。</p>
+<p>Volume（大量）：大量主要体现在非结构化数据的超大规模增长，比结构化数据增长快10到50倍，同时数据的量级已超越传统数据仓库的很多倍。Velocity（高速）：大数据的分析是一种实时分析而非批量式分析，所以效果是立竿见影而非事后见效。</p>
+<p>Variety（多样）：大数据存在异构与多样性的特点，因为他有很多不同形式的数据，如文本、图像、音频、视频等。</p>
+<p>Value（价值）：大数据的价值特性是指大数据价值密度低，因为大数据是有着海量数据的，这里面存在大量不相关的信息，所以单位价值密度低。</p>
+<h3><span id="2传统数据与大数据的比较">2．传统数据与大数据的比较</span></h3><p>传统数据与大数据的差异请参看表2-4。</p>
+<table>
+<thead>
+<tr>
+<th>比较维度</th>
+<th>传统数据</th>
+<th>大数据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据量</td>
+<td>GB或TB</td>
+<td>PB级或以上</td>
+</tr>
+<tr>
+<td>结构化程度</td>
+<td>结构化或半结构化数据</td>
+<td>所有类型数据</td>
+</tr>
+<tr>
+<td>数据分析需求</td>
+<td>现有数据的分析与检测</td>
+<td>深度分析（关联分析、回归分析）</td>
+</tr>
+<tr>
+<td>硬件平台</td>
+<td>高端服务器</td>
+<td>集群平台</td>
+</tr>
+</tbody></table>
+<h3><span id="3大数据处理关键技术">3．大数据处理关键技术</span></h3><p>大数据处理关键技术一般包括：大数据采集、大数据预处理、大数据存储及管理、大数据分析及挖掘、大数据展现和应用（大数据检索、大数据可视化、大数据应用、大数据安全等）。</p>
+<h3><span id="4大数据应用">4．大数据应用</span></h3><p>大数据可以各行各业应用，如金融服务、医疗保健、零售业、制造业、政府等。</p>
+<h1><span id="第4章-数据通信与计算机网络">第4章 数据通信与计算机网络</span></h1><h2><span id="数据通信基础知识">数据通信基础知识</span></h2><p>（1）信息系统综合知识：包括数据通信的基础知识、开放系统互连参考模型、常用的协议标准、网络互连与常用网络设备、计算机网络的分类与应用、网络管理。</p>
+<p>（2）系统架构设计案例分析：包括网络应用系统的设计。计算机网络是计算机技术与数据通信技术的产物，要想深入地了解网络通信的工作原理，就必须对信道特性、数据调制与编码技术等相关知识有深入的了解。</p>
+<h2><span id="信道特性">信道特性</span></h2><p>本节介绍<strong>香农定理</strong>、<strong>奈奎斯特定理</strong>、<strong>数据传输速率与波特率的计算</strong>等基础知识。</p>
+<h3><span id="1-信道的最高码元传输速率">1. 信道的最高码元传输速率</span></h3><p>任何实际的信道都不是理想的，在传输信号时会产生各种失真以及带来多种干扰。码元传输的速率越高，或信号传输的距离越远，在信道的输出端的波形的失真就越严重。</p>
+<p>根据奈氏准则，理想码元的传输速率<code>N=2W(Baud)</code>，其中W是立项低通信道的贷款，单位为赫兹Hz，Baud是波特，是码元传输速率的单元，1波特为每秒传送1个码元。</p>
+<p><strong>注意</strong>：实际的信道所能传输的最高码元速率，要明显地低于奈氏准则给出的上限数值。波特（Baud）和比特（bit）是两个不同的概念。波特是码元传输的速率单位（每秒传输多少个码元）。码元传输速率也称为调制速率、波形速率或符号速率；比特是信息量的单位。比特速率为单位时间内传送数据量的多少，也称为数据传输速率。信息的传输速率bps（比特/秒）与码元的传输速率Baud在数量上有一定的关系。若1个码元只携带1bit的信息量，则bps和Baud在数值上相等。若1个码元携带nbit的信息量，则NBaud的码元传输速率所对应的信息传输速率为（N×n）bps。</p>
+<h3><span id="2信道的极限信息传输速率">2．信道的极限信息传输速率</span></h3><p>香农（Shannon）用信息论的理论推导出了带宽受限且有高斯白噪声干扰的信道的极限、无差错的信息传输速率。信道的极限信息传输速率C可表达为：</p>
+<p>C=Wlog2(1+S/N)bps</p>
+<p>其中W为信道带宽（以Hz为单位），S为信道内所传信号的平均功率，N为信道内部的高斯噪声功率。</p>
+<p>香农公式表明：信道的带宽或信道中的信噪比越大，则信息的极限传输速率就越高。若信道带宽W或信噪比S/N没有上限（当然实际信道不可能是这样的），则信道的极限信息传输速率C也就没有上限。实际信道上能够达到的信息传输速率要比香农的极限传输速率低不少。</p>
+<h3><span id="3码元与调制技术">3．码元与调制技术</span></h3><p>码元是一个数据信号的基本单位，码元有多少个不同种类取决于其使用的调制技术。调制技术与码元、比特位间的关系如表4-1所示。</p>
+<p>码元种类数N与其携带的比特位数n之间的关系为：比特位数n=log2N。</p>
+<h3><span id="4信道速率计算">4．信道速率计算</span></h3><p>香农定理、奈奎斯特定理、数据传输速率与波特率的计算公式如图4-1所示。</p>
+<p>图4-1三种常用公式比较</p>
+<h2><span id="数据调制与编码">数据调制与编码</span></h2><p>数据调制与编码</p>
+<p>人类在长期的社会活动中需要不断地交往和传递信息。这种传递信息的过程就叫做通信。在通过通信媒体发送信息之前，信息必须被编码形成信号。当将数据由一地传送到另一地时，必须将其转换为信号。</p>
+<h3><span id="1模拟通道传送模拟数据">1．模拟通道传送模拟数据</span></h3><p>模拟数据通过模拟通道传送的调制方式主要有<strong>调幅</strong>（AmplitudeModulation，AM）、<strong>调频</strong>（FrequencyModulation，FM）和<strong>调相</strong>（PhaseModulation，PM）几种方式。</p>
+<p>调幅技术最常见的应用是收音机，调幅是载波频率固定，载波的振幅随着原始数据的幅度变化</p>
+<p>而变化；调频和调相都属于调度调制。调频即载波的频率随着基带数字信号而变化，调相即载波的</p>
+<p>初始相位随着基带数字信号而变化。</p>
+<h3><span id="2数字通道传送模拟数据">2．数字通道传送模拟数据</span></h3><p>模拟数据必须转变为数字信号，才能在数字通道上传送，这个过程称为“数字化”。脉码调制（PulseCodeModulation，PCM）是模拟数据数字化的主要方法，PCM要经过采样、量化、编码三个步骤。</p>
+<p>（1）要据奈奎斯特采样定理，取样速率大于模拟信号的最高频率的2倍。例如，人耳能识别的最高频率为22KHz，因此，采样率一般必须达到44KHz。</p>
+<p>（2）量化是将样本的连续值转换成离散值，采用的方法类似于求圆周长时用内切正多边形的方法。而我们平时提到的8位、16位的声音，指的就是28、216位量化。</p>
+<p>（3）编码就是将量化后的样本值变成相应的二进制代码。</p>
+<h3><span id="3模拟通道传送数字数据">3．模拟通道传送数字数据</span></h3><p>计算机拨号上网，电话网络传送的是模拟数据，而计算机只能收发数字数据，这就涉及到模拟信道传送数字信号的变换问题。也就是一个数据调制与解调的问题。数字数据调制为模拟信号，选取某一频率的正弦信号作为载波用以运载所要传送的数字数据。用待传送的数字数据改变载波的幅值、频率、或相位，到达目的地后进行分离。而在接收端则通过解调以还原信号。有关具体的调制技术，请参考表4-1。</p>
+<h3><span id="4数字通道传送数字数据">4．数字通道传送数字数据</span></h3><p>在数据通信中，编码的作用是用信号来表示数字信息。例如，单极性编码、极化编码、双极性编码等。</p>
+<p>（1）非归零编码（Non-ReturnZero，NRZ）。归零指的是编码信号量是否回归到零电平。非归零编码的码元信号的电压位或正或负（当“1”出现时电平翻转，“0”出现时电平不翻转）。与采用线路空闲态代表0比特的单极性编码法不同，在非归零编码系统中，如果线路空闲意味着没有任何信号正在传输中。非归零编码又可以分为非归零电平编码（NoReturnZero-Level，NRZ-L）和非归零反相编码（NoneReturnZero-Inverse，NRZ-I）。</p>
+<p>在NRZ-L编码方式中，信号的电平是根据它所代表的比特位决定的。一个正电压值代表比特0，一个负电压代表比特1（或相反）。在NRZ-L中，当数据流中存在一连串1或0时，也会出现与单极性编码中同样的同步问题。</p>
+<p>在NRZ-I编码方式中，信号电平的一次反转代表比特1。就是说是从正电平到负电平的一次跃迁（而不是电压值本身）来代表一个比特1。0比特由没有电平变化的信号代表。NRZ-I相对NRZ-L的优点在于：因为每次遇到比特1都发生电平跃迁，这能提供一种同步机制。</p>
+<p>（2）归零编码（ReturnZero，RZ）。码元中间的信号回归到0电平（正电平到零电平的转换表示码元0，负电平到零电平的转换表示码元1）。</p>
+<p>（3）双相位编码。现在对同步问题最好的解决方案就是双相位编码。通过不同方向的电平翻转（低到高代表0，高到低代表1），这样不仅可以提高抗干扰性，还可以实现自同步。双相位编码有两种方法，第一种是曼彻斯特编码，主要用在以太局域网中；第二种是差分曼彻斯特编码，主要用在令牌环局域网中。</p>
+<p>曼彻斯特编码用低到高的电平转换表示0，用高到低的电平转换表示1（注意：某些文献中关于此定义有相反的描述，也是正确的）。差分曼彻斯特编码是在曼彻斯特编码的基础上加上了翻转特性，遇0翻转，遇1不变，常用于令牌环网。要注意的一个知识点是：使用曼彻斯特编码和差分曼彻斯特编码时，每传输1bit的信息，就要求线路上有2次电平状态变化（2Baud），因此要实现100Mbps的传输速率，就需要有200MHz的带宽，即编码效率只有50%。</p>
+<p>（4）mBnX编码。正是因为曼彻斯特编码的编码效率不高，所以在带宽资源宝贵的广域网与高速局域网中，显得不能得到有效利用。mBnX编码是将m比特位编码成n位波特（代码位）的编码，</p>
+<p>数据通信中还有另一类编码，称为差错控制编码（校验码）。它的作用是通过对信息序列作某种变换，使原来彼此独立、相关性极小的信息码元产生某种相关性，从而在接收端就利用这种特性，来检查或进而纠正信息码元在信道传输中所造成的差错。</p>
+<h2><span id="网络架构">网络架构</span></h2><p>在网络架构方面，主要考查开放系统互连参考模型、网络地址与网络协议、子网掩码、网络分类、802.3系列协议、虚拟局域网，以及计算机网络系统平台的划分等。</p>
+<h2><span id="网络的分类">网络的分类</span></h2><p>不同传输距离的网络可以分为局域网、城域网和广域网三种。局域网的相关技术是由处理近距离传输设计和发展而来的，而广域网的相关技术是由处理远距离传输设计和发展而来的，城域网则是为一个城市网络设计的相关技术。</p>
+<h3><span id="1局域网">1．局域网</span></h3><p>局域网（LocalAreaNetwork，LAN）是在传输距离较短的前提下所发展的相关技术的集合，用于将小区域内的各种计算机设备和通信设备互联在一起组成资源共享的通信网络。在局域网中常见的传输媒介有双绞线、细/粗同轴电缆、微波、射频信号和红外线等。其主要特点如下：</p>
+<p>（1）距离短：0.1km～25km，可以是一个建筑物内、一个校园内或办公室内。</p>
+<p>（2）速度快：4Mbps～1Gbps，从早期的4Mbps、10Mbps及100Mbps发展到现在的1000Mbps（1Gbps），而且还在不断向前发展。</p>
+<p>（3）高可靠性：由于距离很近，传输相当可靠，有极低的误码率。</p>
+<p>（4）成本较低：由于覆盖的地域较小，因此传输媒介、网络设备的价格都相对较便宜，管理也比较简单。</p>
+<p>根据技术的不同，局域网有以太网（Ethernet）、令牌环网络（TokenRing）、AppleTalk网络和ArcNet网络等几种类型。现在，几乎所有的局域网都是基于以太网实现的。当然，随着应用需求的不断提高，也对局域网技术提出了新的挑战，出现了一批像FDDI（FiberDistributedDataInterface，光纤分布式数据接口）一样的技术。</p>
+<h3><span id="2广域网">2．广域网</span></h3><p>广域网（WideAreaNetwork，WAN）是在传输距离较长的前提下所发展的相关技术的集合，用于将大区域范围内的各种计算机设备和通信设备互联在一起组成一个资源共享的通信网络。</p>
+<p>其主要特点如下：</p>
+<p>（1）长距离：跨越城市，甚至联通全球进行远距离连接。</p>
+<p>（2）低速率：这是与局域网的速度相比而言的，一般情况下，广域网的传输速率是以Kbps为单位的。现在也出现了许多ISDN（IntegratedServicesDigitalNetwork，综合业务数字网）和ADSL（AsymmetricDigitalSubscriberLine，非对称数字用户线路）这样的高速广域网，其传输速率也能达到Mbps，当然费用也大大地提高了。</p>
+<p>（3）高成本：相对于城域网和局域网来说，广域网的架设成本是很昂贵的，当然它所带来的经济效益也是极大的。WAN由通信子网与资源子网两部分组成，通信子网通常由通信节点和通信链路组成。通信节点往往就是一台计算机，它一方面提供通信子网与资源子网的接口，另一方面对其他节点而言又是—个存储转发节点。作为网络接口节点，它能提供信息的接口，并对传输及网络信息进行控制。通信子网中，软件必须遵循网络协议，实现对链路及节点存储器的管理，还必须提供与主处理器、终端集中器进行信息交换的接口。资源子系统是指连在网上的各种计算机、终端和数据库等。这不仅指硬件，也包括软件和数据资源。通信子网主要使用分组交换技术，根据网络通信原理，局域网与广域网的互联一般是通过第三层设备路由器实现的。</p>
+<h3><span id="3城域网">3．城域网</span></h3><p>城域网（MetropolitanAreaNetwork，MAN）的覆盖范围介于局域网和广域网之间，城域网的主要技术是DQDB（DistributedQueueDualBus，分布式队列双总线），即IEEE802.6。DQDB是由双总线构成的，所有的计算机都连接在上面。</p>
+<p>所谓宽带城域网，就是在城市范围内，以IP（InternetProtocol，网际协议）和ATM（AsynchronousTransferMode，异步传输模式）电信技术为基础，以光纤作为传输媒介，集数据、语音和视频服务于一体的高带宽、多功能及多业务接入的多媒体通信网络。</p>
+<h2><span id="网络互连模型">网络互连模型</span></h2><p>网络互连模型</p>
+<p>在网络互连方面，国际上通用的模型是开放系统互连参考模型（OpenSystem Interconnection/ReferenceModel，OSI/RM），该模型最初用来作为开发网络通信协议族的一个工业参考标准，是各个层上使用的协议国际化标准。严格遵守OSI/RM模型，不同的网络技术之间可以轻而易举地实现互操作。整个OSI/RM模型共分7层，从下往上分别是物理层、数据链路层、网络层、传输层、会话层、表示层和应用层。</p>
+<h3><span id="1物理层">1．物理层</span></h3><p>物理层的所有协议规定了不同种类的传输设备、传输媒介如何将数字信号从一端传送到另一端，而不管传送的是什么数据。它是完全面向硬件的，通过一系列协议定义了通信设备的机械、电气、功能和规程特征。</p>
+<p>（1）机械特征：规定线缆与网络接口卡的连接头的形状、几何尺寸、引脚线数、引线排列方式和锁定装置等一系列外形特征。</p>
+<p>（2）电气特征：规定了在传输过程中多少伏特的电压代表1，多少伏特代表0。</p>
+<p>（3）功能特征：规定了连接双方每个连接线的作用，即哪些是用于传输数据的数据线，哪些是用于传输控制信息的控制线，哪些是用于协调通信的定时线，哪些是用于接地的地线。</p>
+<p>（4）过程特征：具体规定了通信双方的通信步骤。</p>
+<h3><span id="2数据链路层">2．数据链路层</span></h3><p>数据链路层在物理层已能将信号发送到通信链路中的基础上，负责建立一条可靠的数据传输通道，完成相邻结点之间有效地传送数据的任务。正在通信的两个站点在某一特定时刻，一个发送数据，一个接收数据。数据链路层通过一系列协议实现以下功能。</p>
+<p>（1）封装成帧：把数据组成一定大小的数据块（帧），然后以帧为单位发送、接收和校验数据。</p>
+<p>（2）流量控制：根据接收站的接收情况，发送数据的一方实时地进行传输速率控制，以免出现发送数据过快，接收方来不及处理而丢失数据的情况。</p>
+<p>（3）差错控制：当接收到数据帧后，接收数据的一方对其进行检验，如果发现错误，则通知发送方重传。</p>
+<p>（4）传输管理：在发送端与接收端通过某种特定形式的对话来建立、维护和终止一批数据的传输过程，以此对数据链路进行管理。</p>
+<p>就发送端而言，数据链路层将来自上层的数据按一定规则转化为比特流送到物理层进行处理；就接收端而言，它通过数据链路层将来自物理层的比特流合并成完整的数据帧供上层使用。最典型的数据链路层协议是IEEE（InstituteofElectricalandElectronicsEngineers，美国电气和电子工程师协会）开发的802系列规范，在该系列规范中将数据链路层分成了两个子层：逻辑链路控制层（LogicLinkControl，LLC）和介质访问控制层（MediaAccessControl，MAC）。LLC层负责建立和维护两台通信设备之间的逻辑通信链路；MAC层控制多个信息通道复用一个物理介质。MAC层提供对网卡的共享访问与网卡的直接通信。网卡在出厂前会被分配给唯一的由12位十六进制数表示的MAC地址（物理地址），MAC地址可提供给LLC层来建立同一个局域网中两台设备之间的逻辑链路。</p>
+<p>IEEE802规范目前主要包括以下内容。</p>
+<p>（1）802.1：802协议概论，其中802.1A规定了局域网体系结构，802.1B规定了寻址、网络互连与网络管理。</p>
+<p>（2）802.2：LLC协议。</p>
+<p>（3）802.3：以太网的CSMA/CD（CarrierSenseMultipleAccess/CollisionDetect，载波监听多路访问/冲突检测）协议，其中802.3i规定了10Base-T访问控制方法与物理层规范，802.3u规定了100Base-T访问控制方法与物理层规范，802.3ab-规定了1000Base-T访问控制方法与物理层规范，802.3z规定了1000Base-SX和1000Base-LX访问控制方法与物理层规范。</p>
+<p>（4）802.4：令牌总线（TokenBus）访问控制方法与物理层规范。</p>
+<p>（5）802.5：令牌环访问控制方法。</p>
+<p>（6）802.6：城域网访问控制方法与物理层规范。</p>
+<p>（7）802.7：宽带局域网访问控制方法与物理层规范。</p>
+<p>（8）802.8：FDDI访问控制方法与物理层规范。</p>
+<p>（9）802.9：局域网上的语音/数据集成规范。</p>
+<p>（10）802.10：局域网安全互操作标准。</p>
+<p>（11）802.11：无线局域网（WirelessLocalAreaNetwork，WLAN）标准协议。</p>
+<p>（12）802.12：100VG-Any局域网访问控制方法与物理层规范</p>
+<p>（13）802.14：协调混合光纤同轴网络的前端和用户站点间数据通信的协议。</p>
+<p>（14）802.15：无线个人网技术标准，其代表技术是蓝牙。</p>
+<p>（15）802.16：无线MAN空中接口规范。</p>
+<h3><span id="3网络层">3．网络层</span></h3><p>网络层用于从发送端向接收端传送分组，负责确保信息到达预定的目标。其存在的主要目的是</p>
+<p>解决以下问题：</p>
+<p>（1）通信双方并不相邻。在计算机网络中，通信双方可能是相互邻接的，但也可能并不是邻接的。当一个数据分组从发送端发送到接收端时，就可能要经过多个其他网络结点，这些结点暂时存储“路过”的数据分组，再根据网络的“交通状况”选择下一个结点将数据分组发出去，直到发送到接收方为止。</p>
+<p>（2）由于OSI/RM模型出现在许多网络协议之后，因此，为了与使用这些已经存在的网络协议的计算机进行互联，就需要解决异构网络的互联问题。</p>
+<h3><span id="4传输层">4．传输层</span></h3><p>传输层实现发送端和接收端的端到端的数据分组传送，负责保证实现数据包无差错、按顺序、无丢失和无冗余地传输。在传输层上，所执行的任务包括检错和纠错。它的出现是为了更加有效地利用网络层所提供的服务。它的作用主要体现在以下两方面：</p>
+<p>（1）将一个较长的数据分成几个小数据包发送。在网络中实际传递的每个数据帧都是有一定大小限制的。假设如果要传送一个字串“123456789”，它太长了，网络服务程序一次只能传送一个数字（当然在实际中不可能这么小，这里仅是为了方便讲解所做的假设），因此网络就需要将其分成9次来传递。就发送端而言，当然是从1传到9的，但是由于每个数据分组传输的路径不会完全相同（因为它是要根据当时的网络“交通状况”而选择路径的），先传送出去的包，不一定会先被收到，因此接收端所收到的数据的排列顺序是与发送的顺序不同的。而传输层的协议就给每一个数据组加入排列组合的记号，以便接收端能根据这些记号将它们重组成原来的顺序。</p>
+<p>（2）解决通信双方不只有一个数据连接的问题。这个问题从字面上可能不容易理解，来看一个例子，比如用一台电脑与另一台电脑连接复制数据的同时，又通过一些交谈程序进行对话。这个时候，复制的数据与对话的内容是同时到达的，传输的协议负责将它们分开，分别传给相应的程序端口，这也就是端到端的通信。</p>
+<h3><span id="5会话层">5．会话层</span></h3><p>会话层主要负责管理远程用户或进程间的通信。该层提供名字查找和安全验证等服务，允许两个程序能够相互识别并建立和维护通信连接。会话层还提供数据同步和检查点功能，这样当网络失效时，会对失效后的数据进行重发。在OSI/RM模型中，会话层的规范具体包括通信控制、检查点设置、重建中断的传输链路、名字查找和安全验证服务。</p>
+<h3><span id="6表示层">6．表示层</span></h3><p>表示层以下的各层只关心从源地到目的地可靠地传输数据，而表示层则关心的是所传送信息的语义与语法。它负责将收到的数据转换为计算机内的表示方法或特定程序的表示方法。也就是说，它负责通信协议的转换、数据的翻译、数据的加密、数据的压缩、字符的转换等工作。在OSI/RM模型中表示层的规范具体包括数据编码方式的约定和本地句法的转换。各种表示数据的格式的协议也属于表示层，例如，数据压缩和编码等。</p>
+<h3><span id="7应用层">7．应用层</span></h3><p>应用层是直接提供服务给使用者的应用软件的层，比如电子邮件和在线交谈程序都属于应用层的范畴。应用层可实现网络中一台计算机上的应用程序与另一台计算机上的应用程序之间的通信，就像在同一台计算机上操作一样。在OSI/RM模型中应用层的规范具体包括各类应用过程的接口和用户接口。</p>
+<h3><span id="8模型的工作模式">8．模型的工作模式</span></h3><p>当接收数据时，数据是自下而上传输的；当发送数据时，数据是自上而下传输的。在网络数据通信的过程中，每一层要完成特定的任务。当传输数据的时候，每一层接收上一层格式化后的数据，对数据进行操作，然后把它传给下一层。当接收数据的时候，每一层接收下一层传过来的数据，对数据进行解包，然后把它传给上一层。这就实现了对等层之间的逻辑通信。OSI/RM模型并未确切描述用于各层的协议和服务，它仅仅告诉我们每一层该做些什么。</p>
+<h2><span id="常用的网络协议">常用的网络协议</span></h2><p>常用的网络协议</p>
+<p>本节主要介绍TCP（TransmissionControlProtocol，传输控制协议）/IP协议族中的一些主要协议。TCP/IP不是一个简单的协议，而是一组小的、专业化协议。TCP/IP最大的优势之一是其可路由性，这也就意味着它可以携带能被路由器解释的网络编址信息。TCP/IP还具有灵活性，可在多个网络操作系统或网络介质的联合系统中运行。然而由于它的灵活性，TCP/IP需要更多的配置。TCP/IP协议族可被大致分为应用层、传输层、网际层和网络接口层四层。</p>
+<p>分层只是一种“大致”的分法，各种文献的分法略有不同。特别是与OSI/RM层次的对应关系上，也是一种大致的对应关系，而不是严格的对应关系。图4-2中的虚线表示某个协议是基于哪个低层协议的，例如，TFTP（TrivialFileTransferProtocol，简单文件传输协议）是基于UDP（UserDatagramProtocol，用户数据报协议）的，而FTP（FileTransport</p>
+<p>Protocol，文件传输协议）是基于TCP协议的，NFS（NetFileSystem，网络文件系统）即可基于UDP协议来实现，也可基于TCP协议来实现。</p>
+<h3><span id="1应用层">1．应用层</span></h3><p>TCP/IP的应用层大致对应于OSI/RM模型的应用层和表示层，应用程序通过本层协议利用网</p>
+<p>络。这些协议主要有FTP、TFTP、HTTP（HypertextTransferProtocol，超文本传输协议）、</p>
+<p><strong>SMTP</strong>（SimpleMailTransferProtocol，简单邮件传输协议）、<strong>DHCP</strong>（DynamicHostConfigurationProtocol，动态主机配置协议）、<strong>NFS</strong>、<strong>Telnet</strong>（远程登录协议）、<strong>DNS</strong>（DomainNameSystem，域名系统）和<strong>SNMP</strong>（SimpleNetworkManagementProtocol，简单网络管理协议）等。</p>
+<p><strong>FTP</strong>是网络上两台计算机传送文件的协议，是通过Internet把文件从客户机复制到服务器上的一</p>
+<p>种途径。</p>
+<p><strong>TFTP</strong>是用来在客户机与服务器之间进行简单文件传输的协议，提供不复杂、开销不大的文件传</p>
+<p>输服务。TFTP协议设计的时候是进行小文件传输的，因此它不具备通常的FTP的许多功能，它只能</p>
+<p>从文件服务器上获得或写入文件，不能列出目录，也不进行认证。</p>
+<p><strong>HTTP</strong>是用于从WWW服务器传输超文本到本地浏览器的传送协议输。它可以使浏览器更加高</p>
+<p>效，使网络传输减少。它不仅保证计算机正确快速地传输超文本文档，还确定传输文档中的哪一部</p>
+<p>分，以及哪部分内容首先显示等。</p>
+<p>SMTP是一种提供可靠且有效的电子邮件传输的协议。SMTP是建模在FTP文件传输服务上的一</p>
+<p>种邮件服务，主要用于传输系统之间的邮件信息并提供与来信有关的通知。</p>
+<p><strong>DHCP</strong>分为两个部分，一个是服务器端，另一个是客户端。所有的IP网络设定数据都由DHCP服</p>
+<p>务器集中管理，并负责处理客户端的DHCP要求；而客户端则会使用从服务器分配下来的IP环境数</p>
+<p>据。DHCP通过租约的概念，有效且动态地分配客户端的TCP/IP设定。DHCP分配的IP地址可以分为</p>
+<p>三种方式，分别是固定分配、动态分配和自动分配。</p>
+<p><strong>NFS</strong>是FreeBSD支持的文件系统中的一种，允许一个系统在网络上与他人共享目录和文件。通</p>
+<p>过使用NFS，用户和程序可以像访问本地文件一样访问远端系统上的文件。</p>
+<p><strong>Telnet</strong>是登录和仿真程序，它的基本功能是允许用户登录进入远程主机系统。以前，Telnet是</p>
+<p>一个将所有用户输入送到远方主机进行处理的简单的终端程序。它的一些较新的版本在本地执行更</p>
+<p>多的处理，于是可以提供更好的响应，并且减少了通过链路发送到远程主机的信息数量。</p>
+<p><strong>DNS</strong>用于命名组织到域层次结构中的计算机和网络服务。在Internet上域名与IP地址之间是一一</p>
+<p>对应的，域名虽然便于人们记忆，但机器之间只能互相认识IP地址，它们之间的转换工作称为域名</p>
+<p>解析，域名解析需要由专门的域名解析服务器来完成，DNS就是进行域名解析的服务器。DNS通过</p>
+<p>对用户友好的名称查找计算机和服务。当用户在浏览器中输入域名时，DNS服务可以将此名称解析</p>
+<p>为与之相关的其他信息，如IP地址。</p>
+<p><strong>SNMP</strong>是为了解决Internet上的路由器管理问题而提出的，指一系列网络管理规范的集合，包括</p>
+<p>协议本身、数据结构的定义和一些相关概念。目前SNMP已成为网络管理领域中事实上的工业标</p>
+<p>准，并被广泛支持和应用，大多数网络管理系统和平台都是基于SNMP的。</p>
+<h3><span id="2传输层">2．传输层</span></h3><p>TCP/IP的传输层大致对应于OSI/RM模型的会话层和传输层，主要包括TCP和UDP，这些协议</p>
+<p>负责提供流量控制、错误校验和排序服务。所有的服务请求都使用这些协议。</p>
+<p><strong>TCP</strong>是整个TCP/IP协议族中最重要的协议之一，它在IP协议提供的不可靠数据服务的基础上，</p>
+<p>采用了重发技术，为应用程序提供了一个可靠的、面向连接的、全双工的数据传输服务。TCP协议一</p>
+<p>般用于传输数据量比较少，且对可靠性要求高的场合。</p>
+<p><strong>UDP</strong>是一种不可靠的、无连接的协议，可以保证应用程序进程间的通信，与同样处在传输层的</p>
+<p>面向连接的TCP相比较，UDP是一种无连接的协议，它的错误检测功能要弱得多。可以这样说，TCP</p>
+<p>有助于提供可靠性，而UDP则有助于提高传输的高速率。UDP协议一般用于传输数据量大，对可靠</p>
+<p>性要求不是很高，但要求速度快的场合。</p>
+<h3><span id="3网际层">3．网际层</span></h3><p>TCP/IP的网际层对应于OSI/RM模型的网络层，包括<strong>IP</strong>、<strong>ICMP（</strong>InternetControlMessageProtocol，网际控制报文协议）、<strong>IGMP</strong>（InternetGroupManagementProtocol，网际组管理协议），以及ARP<strong>（AddressResolutionProtocol，地址解析协议）和</strong>RARP**（ReverseAddressResolutionProtocol，反向地址解析协议）。这些协议处理信息的路由及主机地址解析。</p>
+<p><strong>IP</strong>所提供的服务通常被认为是无连接的和不可靠的，因此把差错检测和流量控制之类的服务授权给了其他的各层协议，这正是TCP/IP能够高效率工作的一个重要保证。网际层的功能主要由IP来提供，除了提供端到端的分组分发功能外，IP还提供了很多扩充功能。例如，为了克服数据链路层对帧大小的限制，网络层提供了数据分块和重组功能，这使得很大的IP数据包能以较小的分组在网上传输。</p>
+<p>网际层的另一个重要服务是在互相独立的局域网上建立互联网络，即网际网。网间的报文来往根据它的目的IP地址通过路由器传到另一网络。</p>
+<p><strong>ARP</strong>用于动态地完成IP地址向物理地址的转换。物理地址通常是指主机的网卡地址（MAC地址），每一网卡都有唯一的地址；RARP用于动态完成物理地址向IP地址的转换。</p>
+<p><strong>ICMP</strong>是一个专门用于发送差错报文的协议，由于IP协议是一种尽力传送的通信协议，即传送的数据可能丢失、重复、延迟或乱序传递，所以IP协议需要一种尽量避免差错并能在发生差错时报告的机制。</p>
+<p><strong>IGMP</strong>允许Internet主机参加多播，也即是IP主机用做向相邻多目路由器报告多目组成员的协议。多目路由器是支持组播的路由器，向本地网络发送IGMP查询。主机通过发送IGMP报告来应答查询。组播路由器负责将组播包转发到网络中所有组播成员。</p>
+<h3><span id="4网络接口层">4．网络接口层</span></h3><p>TCP/IP的网络接口层大致对应于OSI/RM模型的数据链路层和物理层，TCP/IP协议不包含具体的物理层和数据链路层，只定义了网络接口层作为物理层的接口规范。网络接口层处在TCP/IP协议的最底层，主要负责管理为物理网络准备数据所需的全部服务程序和功能。该层处理数据的格式化并将数据传输到网络电缆，为TCP/IP的实现基础，其中可包含IEEE802.3的CSMA/CD、IEEE802.5的TokenRing等。</p>
+<h3><span id="5端口">5．端口</span></h3><p>在TCP/IP网络中，传输层的所有服务都包含端口号，它们可以唯一区分每个数据包包含哪些应用协议。端口系统利用这种信息来区分包中的数据，尤其是端口号使一个接收端计算机系统能够确定它所收到的IP包类型，并把它交给合适的高层软件。</p>
+<p>端口号和设备IP地址的组合通常称作插口（socket）。任何TCP/IP实现所提供的服务都用知名的1～1023之间的端口号。这些知名端口号由Internet号分配机构（InternetAssignedNumbersAuthority，IANA）来管理。例如，SMTP所用的TCP端口号是25，POP3所用的TCP端口号是110，DNS所用的UDP端口号为53，WWW服务使用的TCP端口号为80。FTP在客户与服务器的内部建立两条TCP连接，一条是控制连接，端口号为21；另一条是数据连接，端口号为20。</p>
+<p>256～1023之间的端口号通常由Unix系统占用，以提供一些特定的UNIX服务。也就是说，提供一些只有Unix系统才有的、其他操作系统可能不提供的服务。</p>
+<p>在实际应用中，用户可以改变服务器上各种服务的保留端口号，但要注意，在需要服务的客户端也要改为同一端口号。</p>
+<h2><span id="网络地址与掩码">网络地址与掩码</span></h2><p>连接到Internet上的每台计算机都必须有一个唯一地址，称为IP地址。IP地址是一个4字节（共32位）的数字，被分为4段，每段8位，段与段之间用句点分隔。为了便于表达和识别，IP地址以十进制形式表示（例如212.152.200.12），每段所能表示的十进制数最大不超过255。IP地址由两部分组成，即网络号和主机号。网络号标识的是Internet上的一个子网，而主机号标识的是子网中的某台主机。</p>
+<h3><span id="1ip地址的分类">1．IP地址的分类</span></h3><p>IP地址可分为5类，分别是A类、B类、C类、D类和E类，大量使用的仅为A类、B类、C类。</p>
+<p>（1）A类地址：最前面1位为0，然后用7位来标识网络号，24位标识主机号。即A类地址的第一段取值介于1～126之间。A类地址通常为大型网络而提供，全世界总共只有126个可能的A类网</p>
+<p>络，每个A类网络最多可以连接224-2台主机（两个保留地址）。</p>
+<p>（2）B类地址：最前面2位是10，然后用14位来标识网络号，16位标识主机号。因此，B类地址的第一段取值介于128～191之间，第一段和第二段合在一起表示网络号。B类地址适用于中等规</p>
+<p>模的网络，每个B类网络最多可以连接216-2台主机（两个保留地址）。</p>
+<p>（3）C类地址：最前面3位是110，然后用21位来标识网络号，8位标识主机号。因此，C类地址的第一段取值介于192～223之间，前三段合在一起表示网络号。最后一段标识网络上的主机号。</p>
+<p>C类地址适用于校园网等小型网络，每个C类网络最多可以有28-2台主机（两个保留地址）。</p>
+<p>（4）D类地址：最前面4位为1110，D类地址不分网络地址和主机地址，它是一个专门保留的地址。它并不指向特定的网络，目前D类地址被用在多点广播中。多点广播地址用来一次寻址一组计算机，它标识共享同一协议的一组计算机。</p>
+<p>（5）E类地址：最前面5位为11110，E类地址也不分网络地址和主机地址，为将来使用所保</p>
+<p>留。</p>
+<p>希赛教育专家提示：有几种特殊的情况需要注意，例如，主机号全为1的地址用于广播，称为广播地址。网络号全为0，则后面的主机号表示本网地址。主机号全为0，此时的网络号就是本网的地址。网络号全为1的地址和32位全为0的地址为保留地址。</p>
+<p>2．子网掩码</p>
+<p>子网指一个组织中相连的网络设备的逻辑分组。一般情况下，子网可表示为某地理位置内（某</p>
+<p>大楼或相同局域网中）的所有机器。将网络划分成一个个逻辑段（即子网）的目的是便于更好地管</p>
+<p>理网络，同时提高网络性能，增强网络安全性。另外，将一个组织内的网络划分成各个子网，只需</p>
+<p>要通过单个共享网络地址，即可将这些子网连接到互联网上，从而减缓了互联网IP地址的耗尽趋</p>
+<p>势。</p>
+<p>掩码是一个32位二进制数字，用点分十进制来描述，默认情况下，掩码包含两个域，分别为网</p>
+<p>络域和主机域。这些内容分别对应网络号和本地可管理的网络地址部分，通过使用掩码可将本地可</p>
+<p>管理的网络地址部分划分成多个子网。</p>
+<p>例如，假设某个IP地址为176.68.160.12/22，则表示使用22位作为网络地址，那么主机地址就</p>
+<p>占10位。因此，此子网的主机数可以有210-2个。该IP地址是个B类地址，默认掩码为255.255.0.0</p>
+<p>（B类地址的前16位为网络地址）。但这个地址中前22位作为网络地址，则子网掩码第三个字节的</p>
+<p>前6位为子网域，用1表示；剩余的位数为主机域，用0表示。即1111110000000000，将这个二进</p>
+<p>制信息转换成十进制作为掩码的后半部分，则可得出完整掩码为255.255.252.0。</p>
+<p>3．IPv6</p>
+<p>前面介绍的IP地址协议的版本号是4（简称为IPv4），它的下一个版本就是IPv6。IPv6正处在不</p>
+<p>断发展和完善的过程中，它在不久的将来将取代目前被广泛使用的IPv4。</p>
+<p>与IPV4相比，IPV6具有以下几点优势：</p>
+<p>（1）IPv6具有更大的地址空间。IPv4中规定IP地址长度为32位，而IPv6中IP地址的长度为128</p>
+<p>位。</p>
+<p>（2）IPv6使用更小的路由表。IPv6的地址分配一开始就遵循聚类的原则，这使得路由器能在路</p>
+<p>由表中用一条记录表示一个子网，大大减小了路由器中路由表的长度，提高了路由器转发数据包的</p>
+<p>速度。</p>
+<p>（3）IPv6增加了增强的组播支持及对流的支持，这使得网络上的多媒体应用有了长足发展的机</p>
+<p>会，为服务质量（QualityofService，QoS）控制提供了良好的网络平台。</p>
+<p>（4）IPv6加入了对自动配置的支持。这是对DHCP协议的改进和扩展，使得网络（尤其是局域</p>
+<p>网）的管理更加方便和快捷。</p>
+<p>（5）IPv6具有更高的安全性。在使用IPv6网络时用户可以对网络层的数据进行加密并对IP报文</p>
+<p>进行校验，极大地增强了网络的安全性。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>虚拟局域网</p>
+<p>虚拟局域网（VirtualLocalAreaNetwork，VLAN）是由一些主机、交换机或路由器等组成的</p>
+<p>一个虚拟的局域网。虚拟局域网超越了传统的局域网的物理位置局限，终端系统可以分布于网络中</p>
+<p>不同的地理位置，但都属于同一逻辑广播域。</p>
+<p>1．VLAN的功能</p>
+<p>管理员能够很容易地控制不同VLAN间的互相访问能力，可以将同一部门或属于同一访问功能组</p>
+<p>的用户划分在同一VLAN中，VLAN内的用户之间可以通过交换机或路由器相互连通。网络管理员甚</p>
+<p>至还可以通过VLAN的安全访问列表来控制不同VLAN之间的访问。</p>
+<p>VLAN能够对广播信息进行有效的控制，最大限度地减少对终端工作站、网络服务器和处理关键</p>
+<p>业务数据的骨干部分的性能影响。采用VLAN还便于管理的更改，而整个网络范围内与用户增加、移</p>
+<p>动和物理位置变更相关的对管理工作的要求，也大为减少。这从很大程度上方便了网络系统的安全</p>
+<p>访问控制管理。</p>
+<p>通过VLAN运行机制，可以给网络安全带来很多好处，比如信息只到达应该到达的地点，因此可</p>
+<p>防止大部分基于网络监听的入侵手段；通过VLAN设置的访问控制，也使在虚拟网外的网络节点不能</p>
+<p>直接访问虚拟网内节点。但是，VLAN技术也带来了新的问题：执行虚拟网交换的设备越来越复杂，</p>
+<p>从而成为被攻击的对象；基于网络广播原理的入侵监控技术在高速交换网络内需要特殊的设置；基</p>
+<p>于MAC的VLAN不能防止MAC欺骗攻击，因此采用基于MAC的VLAN划分将面临假冒MAC地址的攻</p>
+<p>击。因此，VLAN的划分最好基于交换机端口，但这要求整个网络桌面使用交换端口或每个交换端口</p>
+<p>所在的网段机器均属于相同的VLAN。</p>
+<p>如果一个VLAN跨越多个交换机，则属于同一VLAN的工作站要通过Trunk（干道）线路互相通</p>
+<p>信。Trunk是一种封装技术，它是一条点到点的链路，主要功能就是仅通过一条链路就可以连接多个</p>
+<p>交换机从而扩展已配置的多个VLAN。还可以采用通过Trunk技术和上级交换机级连的方式来扩展端</p>
+<p>口的数量，达到近似堆叠的功能，节省了网络硬件的成本，从而扩展整个网络。Trunk承载的VLAN</p>
+<p>范围，默认是1～1005，用户可以修改，但必须有一个Trunk协议。使用Trunk时，相邻端口上的协</p>
+<p>议要一致。</p>
+<p>VLAN的划分方法</p>
+<p>目前，实现VLAN的划分有多种方法：</p>
+<p>（1）按交换机端口号划分。将交换设备端口进行分组来划分VLAN，例如，一个交换设备上的</p>
+<p>端口1、2、5、7所连接的客户工作站可以构成VLANA，而端口3、4、6、8则构成VLANB等。在</p>
+<p>最初的实现中，VLAN是不能跨越交换设备的，后来进一步的发展使得VLAN可以跨越多个交换设</p>
+<p>备。目前，按端口号划分VLAN仍然是构造VLAN的一个最常用的方法。这种方法比较简单并且非常</p>
+<p>有效。但仅靠端口分组而定义VLAN将无法使得同一个物理分段（或交换端口）同时参与到多个</p>
+<p>VLAN中，而且更重要的是当一个客户站从一个端口移至另一个端口时，网管人员将不得不对VLAN</p>
+<p>成员进行重新配置。</p>
+<p>（2）按MAC地址划分。由网管人员指定属于同一个VLAN中的各客户端的MAC地址。由于</p>
+<p>MAC地址是固化在网卡中的，故移至网络中另外一个地方时将仍然保持其原先的VLAN成员身份而</p>
+<p>无需网管人员对之进行重新的配置，从这个意义讲，用MAC地址定义的VLAN可以看成是基于用户</p>
+<p>的VLAN。另外，在这种方式中，同一个MAC地址可以处于多个VLAN中。这种方法的缺点是所有的</p>
+<p>用户在最初都必须被配置到（手工方式）至少一个VLAN中，只有在这种手工配置之后方可实现对</p>
+<p>VLAN成员的自动跟踪。</p>
+<p>（3）按第三层协议划分。在决定VLAN成员身份时，主要考虑协议类型（支持多协议的情况</p>
+<p>下）或网络层地址（如TCP/IP网络的子网地址）。这种类型的VLAN划分需要将子网地址映射到</p>
+<p>VLAN，交换设备则根据子网地址而将各机器的MAC地址同一个VLAN联系起来。交换设备将决定不</p>
+<p>同网络端口上连接的机器属于同一个VLAN。在第三层定义VLAN有许多优点。首先，可以根据协议</p>
+<p>类型进行VLAN的划分，这对于那些基于服务或基于应用VLAN策略的网管人员无疑是极具吸引力</p>
+<p>的。其次，用户可以自由地移动他们的机器而无需对网络地址进行重新配置，并且在第三层上定义</p>
+<p>VLAN将不再需要报文标识，从而可以消除因在交换设备之间传递VLAN成员信息而花费的开销。与</p>
+<p>前两种方法相比，第三层VLAN方法的最大缺点就是性能问题。对报文中的网络地址进行检查将比对</p>
+<p>帧中的MAC地址进行检查开销更大。正是由于这个原因，使用第三层协议进行VLAN划分的交换设</p>
+<p>备一般都比使用第二层协议的交换设备更慢。但第三层交换机的出现，大大改善了VLAN成员间的通</p>
+<p>信效率。</p>
+<p>（4）IP组播VLAN。在这种方法中，各站点可以自由地动态决定（通过编程的方法）参加到哪</p>
+<p>一个或哪一些IP组播组中。一个IP组播组实际上是用一个D类地址表示的，当向一个组播组发送一个</p>
+<p>IP报文时，此报文将被传送到此组中的各个站点处。从这个意义上讲，可以将一个IP组播组看成是一</p>
+<p>个VLAN。但此VLAN中的各个成员都只具有临时性的特点。由IP组播定义VLAN的动态特性可以达</p>
+<p>到很高的灵活性，并且借助于路由器，这种VLAN可以很容易地扩展到整个WAN上。</p>
+<p>（5）基于策略的VLAN。基于策略的方法允许网络管理员使用任何VLAN策略的组合来创建满</p>
+<p>足其需求的VLAN。通过VLAN策略把设备指定给VLAN，当一个策略被指定到一个交换机时，该策</p>
+<p>略就在整个网络上应用，而设备被置入VLAN中。从设备发出的帧总是经过重新计算，以使VLAN成</p>
+<p>员身份能随着设备产生的流量类型而改变。基于策略的VLAN可以使用上面提到的任一种划分VLAN</p>
+<p>的方法，并可以把不同方法组合成一种新的策略来划分VLAN。</p>
+<p>（6）按用户定义、非用户授权划分。基于用户定义、非用户授权来划分VLAN是指为了适应特</p>
+<p>别的VLAN网络，根据特殊的网络用户的特殊要求来定义和设计VLAN，而且可以让非VLAN群体用</p>
+<p>户访问VLAN，但是需要提供用户密码，在得到VLAN管理的认证后才可以加入一个VLAN。</p>
+<p>希赛教育专家提示：在上述6种划分方法中，各方法的侧重点不同，所达到的效果也不尽相同。</p>
+<p>目前在网络产品中融合多种划分VLAN的方法，以便根据实际情况寻找最合适的途径。同时，随着管</p>
+<p>理软件的发展，VLAN的划分逐渐趋向于动态化。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>通信设备</p>
+<p>在介绍通信设备之前，我们需要了解多路复用技术。采用多路复用技术能把多个信号组合起来</p>
+<p>在一条物理信道上进行传输，在远距离传输时可大大节省电缆的安装和维护费用。多路复用技术可</p>
+<p>以分为频分多路复用（FrequencyDivisionMultiplexing，FDM）和时分多路复用（Time</p>
+<p>DivisionMultiplexing，TDM）两种。</p>
+<p>FDM按频谱划分信道，多路基带信号被调制在不同的频谱上。因此它们在频谱上不会重叠，即</p>
+<p>在频率上正交，但在时间上是重叠的，可以同时在一个信道内传输。FDM的优点是信道复用率高，</p>
+<p>允许复用路数多，分路也很方便。因此，FDM已成为现代模拟通信中最主要的一种复用方式，在模</p>
+<p>拟式遥测、有线通信、微波接力通信和卫星通信中得到广泛应用。</p>
+<p>TDM将一条物理信道按时间分成若干个时间片轮流地分配给多个信号使用。每一时间片由复用</p>
+<p>的一个信号占用，而不像FDM那样，同一时间同时发送多路信号。这样，利用每个信号在时间上的</p>
+<p>交叉，就可以在一条物理信道上传输多个数字信号。TDM不仅仅局限于传输数字信号，也可以同时</p>
+<p>交叉传输模拟信号。</p>
+<p>希赛教育专家提示：对于模拟信号，有时可以把时分多路复用和频分多路复用技术结合起来使</p>
+<p>用。一个传输系统可以频分成许多条子通道，每条子通道再利用时分多路复用技术来细分。在宽带</p>
+<p>局域网络中可以使用这种混合技术。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>传输介质</p>
+<p>网络传输介质是指在网络中传输信息的载体，常用的传输介质分为有线传输介质和无线传输介</p>
+<p>质两大类。无线传输介质是指在两个通信设备之间不使用任何物理连接，而是通过空间传输的一种</p>
+<p>技术。无线传输介质主要有微波、红外线和激光等。它们的抗干扰性都比较差；有线传输介质是指</p>
+<p>在两个通信设备之间实现的物理连接部分，它能将信号从一方传输到另一方，有线传输介质主要有</p>
+<p>双绞线（Twist-Pair）、同轴电缆和光纤三种。</p>
+<p>1．双绞线</p>
+<p>（1）物理特性：双绞线由按规则螺旋结构排列的两对或四对绝缘线组成。一对线可以作为一条</p>
+<p>通信电路，各个线对螺旋排列的目的是使各线对之间的电磁干扰最小。</p>
+<p>（2）传输特性：双绞线最普遍的应用是语音信号的模拟传输。使用双绞线通过调制解调器</p>
+<p>（Modem）传输模拟数据信号时，数据传输速率目前单向可达56Kbps，双向可达33.6Kbps，24条</p>
+<p>音频通道总的数据传输速率可达230Kbps。使用双绞线发送数字数据信号，一般总的数据传输速率</p>
+<p>可达2Mbps。</p>
+<p>（3）连通性：双绞线可用于点对点连接，也可用于多点连接。</p>
+<p>（4）地理范围：双绞线用于远程中继线时，最大距离可达15km；用于10Mbps局域网时，与</p>
+<p>集线器的距离最大为100m。</p>
+<p>（5）抗干扰性：在低频传输时，其抗干扰能力相当于同轴电缆。在10KHz～100kHz时，其抗</p>
+<p>干扰能力低于同轴电缆。</p>
+<p>（6）价格：双绞线的价格低于其他传输介质，并且安装、维护方便。</p>
+<p>双绞线分为屏蔽双绞线(ShieldedTwistedPair，STP)与非屏蔽双绞线(UnshieldedTwisted</p>
+<p>Pair，UTP)。屏蔽双绞线在双绞线与外层绝缘封套之间有一个金属层蔽层。屏蔽层可减少辐射，防止信息被窃听，也可阻止外部电磁干扰的进入，使屏蔽双绞线比同类的非屏蔽双绞线具有更高的传输速率。非屏蔽双绞线电缆具有以下优点：无屏蔽外套，直径小，节省所占用的空间；重量轻，易弯曲，易安装；将串扰减至最小或加以消除；具有阻燃性；具有独立性和灵活性，适用于结构化综合布线。</p>
+<p>对于双绞线，用户最关心的是表征其性能的几个指标。这些指标包括衰减、近端串扰、阻抗特性、分布电容、直流电阻、衰减串扰比及回波损耗等。目前，常见的双绞线有三种线型，分别是5类线、超5类线和6类线，前者线径细而后者线径粗。</p>
+<p>（1）5类线：电缆增加了绕线密度，外套一种高质量的绝缘材料，传输率为100MHz，用于语音传输和最高传输速率为100Mbps的数据传输，主要用于100BASE-T和10BASE-T网络。这是最常用的以太网电缆。</p>
+<p>（2）超5类线：具有衰减小，串扰少，并且具有更高的衰减与串扰的比值和信噪比、更小的时延误差，性能得到很大提高。主要用于千兆位以太网。</p>
+<p>（3）6类线：电缆的传输频率为1MHz～250MHz，6类布线系统在200MHz时综合衰减串扰比应该有较大的余量，它提供2倍于超5类的带宽。6类布线的传输性能远远高于超5类标准，最适用于传输速率高于1Gbps的应用。6类与超5类的一个重要的不同点在于：改善了在串扰以及回波损耗方面的性能，对于新一代全双工的高速网络应用而言，优良的回波损耗性能是极重要的。6类标准中取消了基本链路模型，布线标准采用星形的拓扑结构，要求的布线距离为：永久链路的长度不能超过90m，信道长度不能超过100m。</p>
+<p>2．同轴电缆</p>
+<p>（1）物理特性：同轴电缆也由两根导体组成，有粗细之分，它由套置单根内导体的空心圆柱体</p>
+<p>构成。内导体是实芯或者是绞合的，外导体是整体的或纺织的。内导体用规则间距的绝缘环或硬的</p>
+<p>电媒体材料来固定，外导体用护套或屏蔽物包着。</p>
+<p>（2）传输特性：50<img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml17296\wps1.png" alt="img">电缆专用于数字传输，一般使用曼彻斯特编码，数据速率可达2Mbps。</p>
+<p>CATV（CommunityAntennaTelevision，有线电视网）电缆可用于模拟和数字信号，对模拟信</p>
+<p>号，高达300MHz～400MHz的频率是可能的；对数字信号，已能达到50Mbps。</p>
+<p>（3）连通性：同轴电缆可用于点对点连接，也可用于多点连接。</p>
+<p>（4）地理范围：典型基带电缆的最大距离限于数千米，而宽带网络则可以延伸到数十千米的范</p>
+<p>围。</p>
+<p>（5）抗干扰性：同轴电缆的结构使得它的抗干扰能力较强，同轴电缆的抗干扰性取决于应用和实现。一般对较高频率来说，它优于双绞线的抗干扰性。</p>
+<p>（6）价格：安装质量好的同轴电缆的成本介于双绞线和光纤之间，维护方便。</p>
+<p>3．光纤</p>
+<p>（1）物理特性：光学纤维是一种直径极细（2～125<img src="file:///C:\Users\m1885\AppData\Local\Temp\ksohtml17296\wps2.png" alt="img">m）、柔软、能传导光波的介质。各种玻璃和塑料都可用来制造光学纤维。光缆具有圆柱形的形状，由三个同心部分组成：纤芯、包层和护套。</p>
+<p>（2）传输特性：光纤利用全内反射来传输经信号编码的光束。它分多模和单模方式两种，多模的带宽为200MHz～3GHz/km，单模的带宽为3GHz～50GHz/km。</p>
+<p>（3）连通性：光纤最普通的使用是在点到点的链路上。</p>
+<p>（4）地理范围：光纤信号衰减极小，它可以在6～8km的距离内不使用中继器实现高速率数据传输。</p>
+<p>（5）抗干扰性：不受电磁干扰和噪声干扰的影响。</p>
+<p>（6）价格：目前光纤系统比双绞线系统和同轴电缆系统贵，但随着技术的进步，它的价格会下降以与其他材料竞争。</p>
+<p>单模光纤中，模内色散是比特率的主要制约因素。由于其比较稳定，如果需要的话，可以通过增加一段一定长度的“色散补偿单模光纤”来补偿色散。零色散补偿光纤就是使用一段有很大负色散系数的光纤来补偿在1550nm处具有较高色散的光纤，使得光纤在1550nm附近的色散很小或为零，从而可以实现光纤在1550nm处具有更高的传输速率。</p>
+<p>多模光纤中，模式色散与模内色散是影响带宽的主要因素。技术工艺能够很好地控制折射率分布曲线，给出优秀的折射率分布曲线，对渐变型多模光纤，可限制模式色散而得到高的模式带宽。</p>
+<p>单模光纤的光纤跳线一般用黄色表示，接头和保护套为蓝色，传输距离较长，窄芯线，需要激光源，耗散小，高效。多模光纤的光纤跳线一般用橙色表示，也有的用灰色表示，接头和保护套用米色或者黑色，传输距离较短，宽芯线，聚光好，耗散大，低效。</p>
+<p>一般来说，多模光纤要比单模光纤便宜。如果对传输距离或传送数据的速率要求不严格，那么，多模光纤在大多情况下都可以表现得很好。单模光纤虽然成本高，但是具有散射小的特点，可以应用在长距离传输或者需要高速数据速率的场合。</p>
+<p>为了便于记忆，我们把有线传输的介质归纳成表4-4。</p>
+<p>表4-4有线传输介质比较</p>
+<p>在有关传输介质方面，还需要掌握各种以太网所使用的介质类型，如表4-5所示。</p>
+<p>表4-5以太网常用传输介质</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>网络设备</p>
+<p>常见的网络设备简介如下：</p>
+<p>（1）网卡。也称为网络适配器或网络接口卡（NetworkInterfaceCard，NIC），工作于数据</p>
+<p>链路层。网卡及其驱动程序已基本实现了网络协议中底部两层的功能。它们具体负责主机向媒体收/</p>
+<p>发信号，实现帧一级协议的有关功能。</p>
+<p>（2）集线器。也称为线集中器（Hub），工作于物理层，它收集多个端口传来的数据帧并广播</p>
+<p>出去。集线器把结点都集中到总线上并相互连接在一起，也可以在Hub之间相互用双绞线进一步互</p>
+<p>联接通。例如，可以先把每个小房间里的计算机连接在相应的一个Hub上，再把这些Hub互相连接</p>
+<p>而构成一个LAN网络。Hub可分为共享式Hub、堆栈式Hub和交换式Hub。共享式Hub和堆栈式</p>
+<p>Hub整体作为一个网段；而交换式Hub的每一个端口都允许作为一个网段，速度非常快。</p>
+<p>（3）重发器。也称为中继器或转发器，工作在物理层。因为信号在传输媒体的线路上传输一段距离后必然会发生衰减或者畸变，通过重发器放大增强信号并进行转发就可以保证信号可靠传输。采用重发器把两条（或更多条）干线连接起来，可以使这两个干线段成为同一个局域网。重发器连接的两个网段，必须是同一种类型的局域网。</p>
+<p>（4）网桥。也称为桥接器（Bridge），工作在数据链路层，把同类网络互相连接起来。在网桥中可以进行两个网段之间的数据链路层的协议转换。网桥最重要的功能是对数据进行过滤。即在网桥中保存着所连接的每个网段上所有站点的地址。当收到一个帧时，可以只让必要的数据信息通过网桥或只向相应的网段转发。</p>
+<p>（5）交换机。也称为交换器。一台具有基本功能的以太网交换机的工作原理相当于一个具有很多个端口的多端口网桥，即是一种在LAN中互联多个网段，并可进行数据链路层和物理层协议转换的网络互联设备。当一个以太网的信息帧到达交换机的一个端口时，交换机根据在该帧内的目的地址，采用快速技术把该帧迅速地转发到另一个相应的端口（相应的主机或网段）。目前在以太网交换机中最常用的高速切换技术有直通式和存储转发式两类。交换机可以分为二层交换机、三层交换机和多层交换机。二层交换机工作在数据链路层，起到多端口网桥的作用，主要用于局域网互联。</p>
+<p>三层交换机工作在网络层，利用IP地址进行交换，相当于带路由功能的二层交换机。多层交换机工</p>
+<p>作在高层（传输层以上），这是带协议转换的交换机。</p>
+<p>（6）路由器。在广域网通信过程中，需要采用一种称为路由的技术，根据地址来寻找到达目的</p>
+<p>地的路径，路由器就是实现这个过程的网络设备。路由器在属于不同网络段的广域网和局域网间根</p>
+<p>据地址建立路由，并将数据送到最终目的地。路由器工作于网络层，它根据IP地址转发数据报，处</p>
+<p>理的是网络层的协议数据单元。路由器通过逻辑地址进行网络间的信息转发，可完成异构网络之间</p>
+<p>的互联互通，但只能连接使用相同网络层协议的子网。</p>
+<p>按应用范围的不同，路由协议可分为两类：在一个AS（AutonomousSystem，自治系统）内</p>
+<p>的路由协议称为内部网关协议（InteriorGatewayProtocol，IGP），AS之间的路由协议称为外部</p>
+<p>网关协议（ExteriorGatewayProtocol，EGP）。所谓自治系统，指一个互联网络，就是把整个</p>
+<p>Internet划分为许多较小的网络单位，这些小的网络有权自主地决定在本系统中应采用何种路由选择</p>
+<p>协议。常用的内部网关协议有RIP（RoutingInformationProtocol，路由信息协议）-1、RIP-2、</p>
+<p>IGRP（InteriorGatewayRoutingProtocol，内部网关路由协议）、IS-IS和OSPF等。其中</p>
+<p>RIP-1、RIP-2和IGRP采用的是距离向量算法，IS-IS和OSPF采用的是链路状态算法。还有一种称为</p>
+<p>EIGRP（EnhancedIGRP）的协议，这是Cisco的私有路由协议，综合了距离矢量和链路状态的优</p>
+<p>点，它的特点包括快速收敛、减少带宽占用、支持多种网络层协议、无缝连接数据链路层协议和拓</p>
+<p>扑结构。</p>
+<p>（7）网关。也称为网间连接器、信关或联网机，是网络层以上的中继系统。用网关连接两个不</p>
+<p>兼容的系统要在高层进行协议转换，因此，网关也称为协议转换器。</p>
+<p>（8）调制解调器。应用在广域网上，作为末端系统和通信系统之间信号转换的设备。它分为同</p>
+<p>步和异步两种，分别连接路由器的同步端口和异步端口，同步用于专线、帧中继和X.25等高速网络</p>
+<p>连接，异步用于PSTN的低速连接。调制解调器工作于物理层，它的主要作用是信号变换，即把模拟</p>
+<p>信号变换成数字信号，或者把数字信号变换成模拟信号。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>网络接入技术</p>
+<p>本节主要介绍几种常见的接入网技术，包括电话线、HFC、FDDx+LAN、xDSL接入技术等。</p>
+<p>1．异步传输模式</p>
+<p>电路交换网络都是按照时分多路复用的原理将信息从一个结点送到另一个结点的。根据工作模</p>
+<p>式的不同，可以分为两种：</p>
+<p>（1）同步传输模式：根据要求的数据速率，将一个逻辑信道分配为1个以上的时槽，在连接生</p>
+<p>存期内，时槽是固定分配的，即采用的是同步时分复用模式。</p>
+<p>（2）异步传输模式：则采用了与前面的不同方法分配时槽，它把用户数据组成为53位的信元，</p>
+<p>信元随机到达，中间可以有间隙，信元准备好就可以进入信道，即采用的是统计时分复用模式。</p>
+<p>在ATM中，信元不仅是传输的基本单位，也是交换的信息单位，它是虚电路式分组交换的一个</p>
+<p>特例。与分组相比，由于信元是固定长度的，因此可以高速地进入处理和交换。ATM的典型数据速</p>
+<p>率为150Mbps，ATM是面向连接的，所以在高速交换时要尽量减少信元的丢失。ATM建立了四层</p>
+<p>架构，表4-6总结了它们的功能以及与OSI层次的对应关系。</p>
+<p>表4-6ATM层次结构</p>
+<p>2．帧中继</p>
+<p>帧中继协议在数据链路层实现，没有专门定义物理层接口（可以使用X.21、V.35、G.703、</p>
+<p>G.704等接口协议），在帧中继之上，可以承载IP数据报、而且其他协议甚至远程网桥协议都可以在</p>
+<p>帧中继上透明传输。</p>
+<p>帧中继使用的最核心协议是公共信道D进行信令传输控制协议（LinkAccessProcedureonthe</p>
+<p>channel，LAPD）。帧中继支持交换虚电路（SwitchingVirtualCircuit，SVC）和固定虚电路（PermanentVirtualCircuit，PVC）两种虚电路技术。控制交换虚电路的信息是在信令信道上传送的。这些消息采用的是LAPF（LinkAccessProcedureontheFchannel）协议；帧中继协议在早期并没有建立交换虚电路的信令，只能够通过网络管理建立永久虚电路。PVC的管理协议控制端到端的连接，是通过带外信令的无编号信息帧传送的。</p>
+<p>使用帧中继进行远程连网的主要优点是：透明传输、面向连接，帧长可变，速率高，能够应对突发数据传输、没有流量控制和重传、开销小。但它并不适于对延迟敏感的应用（音频和视频），无法保证可靠的提交。</p>
+<p>3．综合业务数据网</p>
+<p>ISDN可以分为窄带ISDN（N-ISDN）和宽带ISDN（B-ISDN）两种。其中N-ISDN是将数据、声音、视频信号集成进一根数字电话线路的技术。它的服务由两种信道构成：一是传送数据的运载信道（又称为B信道，每个信道64Kbps），二是用于处理管理信号及调用控制的信令信道（又称为</p>
+<p>D信道，每个信道16Kbps或64Kbps）。然后将这两类信道进行组合，形成两种不同的ISDN服务，</p>
+<p>分别是基速率接口（ISDNBRI）和主速率接口（ISDNPRI）。</p>
+<p>（1）基速率接口：一般由2B+D组成，常用于小型办公室与家庭，用户可以用1B做数据通信，</p>
+<p>另1B保留为语音通信，但无法使用D通道。当然，如果需要，也可以同时使用2B通道（128Kbps）</p>
+<p>做数据通信。</p>
+<p>（2）主速率接口：PRI包括两种，一是美国标准23B+1D（64Kbps的D信道），达到与T1相同</p>
+<p>的1.544Mbps的DS1速度；二是欧洲标准30B+2D（64Kbps信道），达到与E1相同的2.048Mbps</p>
+<p>的速度。另外，电话公司通常可以将若干个B信道组合成不同的H信道。</p>
+<p>N-ISDN定义了物理层、数据链路层和网络层的部分功能。在物理层建立了一个64Kbps的线路</p>
+<p>交换连接，还提供了网络终端适配器的物理接口；在数据链路层则使用了LAPD来管理所有的控制和</p>
+<p>信令功能；其网络层处理所有的线路交换及分组交换服务。</p>
+<p>B-ISDN的关键技术是ATM，采用5类双绞线或光纤，数据速率可达155Mbps，可以传输无压缩</p>
+<p>的高清晰度电视。</p>
+<p>4．同步光网络</p>
+<p>同步光纤网络（SynchronousOpticalNetwork，SONET）和同步数字体系（Synchronous</p>
+<p>DigitalHierarchy，SDH）是一组有关光纤信道上的同步数据传输的标准协议，常用于物理层构架</p>
+<p>和同步机制，两者均为传输网络物理层技术，传输速率可高达10Gbps，除了使用的复用机制上有所</p>
+<p>不同，而其余技术均相似。SDH的网络元素主要有同步光纤线路系统、终端复用器、分插复用器和</p>
+<p>同步数字交叉连接设备。典型的SDH应用是在光纤上的双环应用。SDH每秒传送8KSDH帧，SDH</p>
+<p>是提供字节同步的物理层介质。</p>
+<p>IPoverSDH是以SDH网络作为IP数据网络的物理传输网络，它使用链路适配及成帧协议对IP数</p>
+<p>据包进行封装，然后按字节同步的方式把封装后的IP数据包映射到SDH的同步净荷封装中。目前广</p>
+<p>泛使用PPP（PointtoPointProtocol，点对点协议）对IP数据包进行封装，并采用HDLC（High-</p>
+<p>LevelDataLinkControl，高级数据链路控制）的帧格式。PPP提供多协议封装、差错控制和链路</p>
+<p>初始化控制等功能，而HDLC帧格式负责同步传输链路上的PPP封装的IP数据帧的定界。</p>
+<p>5．Internet接入与接口层协议</p>
+<p>Internet是世界上最大的互联网络，而一个端用户需要连接到Internet，就需要选择一个接入</p>
+<p>点，而提供接入服务的运营商被称为ISP（InternetServiceProvider，Internet服务提供商），在</p>
+<p>我国主要的ISP是各大电信运营机构。选择了接入点之后，就需要根据实际的情况来选择接入方式：终端方式或主机方式。而采用主机方式接入，根据通信线路的不同，可以分为SLIP（SerialLineInternetProtocol，串行线路网际协议）/PPP/PPPoE（PPPoverEthernet，以太网上的PPP）方式和DDN（DigitalDataNetwork，数字数据网）专线方式。</p>
+<p>（1）终端方式：用户使用通信软件的拔号功能，通过Modem拔通对方主机（ISP的已经连接在Internet上的主机），然后输入用户名密码，成为其一个远程终端。它并没有实现真正意义上的Internet连接，因此只能够使用有限的服务（通常包括E-mail、Telnet，但不能够使用WWW服</p>
+<p>务）。</p>
+<p>（2）以SLIP/PPP/PPPoE方式：通过拔入ISP的远程访问服务器来实现连接。可以实现真正意义上的连接，通常是使用电话接入技术，通过电信运营商的PSTN资源。</p>
+<p>（3）以DDN专线方式入网：就是申请一条DDN专线，连接到ISP的Internet主机上，它通常使用是的电信运营商的PDN资源。</p>
+<p>在接入Internet时，需要对用户进行认证、分配IP地址、协商其他通信细节等，常见的接口层协议如下：</p>
+<p>（1）SLIP协议：提供了提供串行通信线路上封装IP数据报的简单方法，但其具有以下不足：事先需要知道对方的IP地址，不支持动态IP地址分配；只支持IP协议；没有校验字段，需上层进行差错控制。</p>
+<p>（2）PPP协议：有效的点对点通信协议，采用HDLC封装，可用于不同传输媒体，解决了SLIP的限制。远程服务器可以为本地客户机提供一个动态IP地址，支持IP、IPX（InternetworkPacketeXchangeprotocol，互联网分组交换协议）等多种网络协议，具有差错检测功能，提供一组网络</p>
+<p>控制协议。</p>
+<p>（3）PPPoE协议：它利用了PPP的优点、结合以太网的优势，可实现多台客户机同时接入</p>
+<p>Internet。它继承的了以太网的快速和PPP拔号的简捷、用户验证、IP分配等方面的优势。PPPoE的</p>
+<p>运行包含发现和PPP会话两个阶段。发现阶段以广播方式寻找可以连接的接入集线器，并获得其</p>
+<p>MAC地址，然后选择需要连接的主机并确定所建立的PPP会话识别标记；在会话阶段，用户主机与</p>
+<p>接入集线器运用PPP会话连接参数进行PPP会话。</p>
+<p>6．FTTx和LAN接入</p>
+<p>光纤通信是指利用光导纤维（光纤）传输光波信号的一种通信方法。相对于以电为媒介的通信方式而言，光纤通信的主要优点包括：传输频带宽，通信容量大；传输损耗小；抗电磁干扰能力强；线径细、重量轻；资源丰富等。随着光纤通信技术的平民化，以及高速以太网的发展，现在许多宽带智能小区就是采用以千兆以太网技术为主干、充分利用光纤通信技术完成接入的。</p>
+<p>实现高速以太网的宽带技术常用的方式是FTTx+LAN，即光纤+局域网。根据光纤深入用户的程度，可以分为5种：FTTC（FiberToTheCurb，光纤到路边）、FTTZ（FiberToTheZone，光纤到小区）、FTTB（FiberToTheBuilding，光纤到大楼）、FTTF（FiberToTheFloor，光纤到楼层）和FTTH（FiberToTheHome，光纤到户）。</p>
+<p>无源光纤网络（PassiveOpticalNetwork，PON）是实现FFTB的关键性技术，在光分支点不需要节点设备，只需安装一个简单的光分支器即可，因此具有节省光缆资源、带宽资源共享、节省机房投资、设备安全性高、建网速度快、综合建网成本低等优点。目前，PON技术主要有APON（ATM-PON，基于ATM的无源光网络）和EPON（Ethernet-PON，基于以太网的无源光网络）两种：</p>
+<p>（1）APON：分别选择ATM和PON作为网络协议和网络平台，其上、下行方向的信息传输都</p>
+<p>采用ATM传输方案，下行速率为622Mbps或155Mbps，上行速率为155Mbps。光节点到前端的距离可长达10～20km，或者更长。采用无源双星型拓扑，使用时分复用和时分多址技术，可以实现信元中继、局域网互联、电路仿真、普通电话业务等。</p>
+<p>（2）EPON：是以太网技术发展的新趋势，其下行速率为1000Mbps或者100Mbps，上行为</p>
+<p>100Mbps。在EPON中，传送的是可变长度的数据包，最长可为65535个字节；而在APON中，传</p>
+<p>送的是53个字节的固定长度信元。它简化了网络结构、提高了网络速度。</p>
+<p>7．电话线路接入</p>
+<p>利用普通电话线接入是成本最低、应用最广的接入技术，表4-7总结了各种常见技术。</p>
+<p>表4-7多种接入技术比较</p>
+<p>8．同轴和光纤接入</p>
+<p>同轴光纤技术（HybridFiber-Coaxial，HFC）是将光缆敷设到小区，然后通过光电转换结点，</p>
+<p>利用CATV的总线式同轴电缆连接到用户，提供综合电信业务的技术。这种方式可以充分利用CATV</p>
+<p>原有的网络，建网快、造价低，逐渐成为最佳的接入方式之一。HFC是由光纤干线网和同轴分配网</p>
+<p>通过光结点站结合而成，一般光纤干网采用星型拓扑，同轴电缆分配网采用树形结构。</p>
+<p>在同轴电缆的技术方案中，用户端需要使用一个称为CableModem（电缆调制解调器）的设</p>
+<p>备，它不单纯是一个调制解调器，还集成了调谐器、加/解密设备、桥接器、网络接口卡、虚拟专网</p>
+<p>代理和以太网集线器的功能于一身，它无须拔号、可提供随时在线的永远连接。其上行速度已达</p>
+<p>10Mbps以上，下行速率更高。其采用的复用技术是FDM，使用的编码格式是64QAM调制。</p>
+<p>9．无线接入</p>
+<p>我们先介绍多址技术的概念。多址技术可以分为频分多址（FrequencyDivisionMultipleAccess，FDMA）、时分多址（TimeDivisionMultipleAccess，TDMA）和码分多址（CodeDivisionMultipleAccess，CDMA）。FDMA是采用调频的多址技术，业务信道在不同的频段分配给不同的用户；TDMA是采用时分的多址技术，业务信道在不同的时间分配给不同的用户；CDMA</p>
+<p>是采用扩频的码分多址技术，所有用户在同一时间、同一频段上，根据不同的编码获得业务信道。</p>
+<p>移动通信技术经历过了三个发展时期，第一代移动通信系统是模拟通信，采用的是FDMA调制</p>
+<p>技术，其频谱利用率低；第二代移动通信系统是现在常用的数字通信系统，采用的是TDMA的数字</p>
+<p>调制方式，对系统的容量限制较大；第三代移动通信（3rdGeneration，3G）技术则采用了CDMA</p>
+<p>数字调制技术，能够满足大容量、高质量、综合业务、软切换的要求。3G的主流技术有</p>
+<p>W-CDMA、CDMA2000和TD-SCDMA三种：</p>
+<p>（1）W-CDMA（宽带CDMA）：这是基于GSM（GlobalSystemforMobile</p>
+<p>Communications，全球移动通讯系统）网发展出来的3G技术规范，该标准提出了在GSM基础上的</p>
+<p>升级演进策略：“GSM（2G）→GPRS→EDGE→W-CDMA（3G）”。</p>
+<p>（2）CDMA2000：这是由窄带CDMA（CDMA-IS95）技术发展而来的宽带CDMA技术，该标</p>
+<p>准提出了在CDMA-IS95的基础上的升级演进策略：“CDMAIS95（2G）→CDMA20001x→</p>
+<p>CDMA20003x（3G）”。CDMA20003x与CDMA20001x的主要区别在于应用了多路载波技术，</p>
+<p>通过采用三载波使带宽提高。</p>
+<p>（3）TD-SCDMA（时分同步CDMA）由我国大唐电信公司提出的3G标准，该标准提出不经过</p>
+<p>2.5代的中间环节，直接向3G过渡，非常适用于GSM系统向3G升级。</p>
+<p>无线网络技术从服务范围上可以分为无线局域网、无线城域网和无线广域网技术。无线城域网</p>
+<p>技术主要是在成熟的微波传输技术的基础上发展起来的，其中LMDS（LocalMultipoint</p>
+<p>DistributionServices，区域多点分配服务）和MMDS（MultichannelMicrowaveDistribution</p>
+<p>System，多通道微波分配系统）比较常见。无线广域网主要是卫星通信技术。表4-8对这三个技术</p>
+<p>的关键知识点做了总结：</p>
+<p>表4-8主要无线广域网技术</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>网络存储技术</p>
+<p>目前，主流的网络存储技术主要有三种，分别是直接附加存储（DirectAttachedStorage，</p>
+<p>DAS）、网络附加存储（NetworkAttachedStorage，NAS）和存储区域网络（StorageArea</p>
+<p>Network，SAN）。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>直接附加存储（DAS）</p>
+<p>DAS是将存储设备通过SCSI（SmallComputerSystemInterface，小型计算机系统接口）电</p>
+<p>缆直接连到服务器，其本身是硬件的堆叠，存储操作依赖于服务器，不带有任何存储操作系统。因</p>
+<p>此，有些文献也把DAS称为SAS（ServerAttachedStorage，服务器附加存储）。</p>
+<p>DAS的适用环境为：</p>
+<p>（1）服务器在地理分布上很分散，通过SAN或NAS在它们之间进行互连非常困难时；</p>
+<p>（2）存储系统必须被直接连接到应用服务器（例如，MicrosoftClusterServer或某些数据库</p>
+<p>使用的“原始分区”）上时；</p>
+<p>（3）包括许多数据库应用和应用服务器在内的应用，它们需要直接连接到存储器上时。</p>
+<p>由于DAS直接将存储设备连接到服务器上，这导致它在传递距离、连接数量、传输速率等方面</p>
+<p>都受到限制。因此，当存储容量增加时，DAS方式很难扩展，这对存储容量的升级是一个巨大的瓶</p>
+<p>颈；另一方面，由于数据的读取都要通过服务器来处理，必然导致服务器的处理压力增加，数据处</p>
+<p>理和传输能力将大大降低；此外，当服务器出现宕机等异常时，也会波及到存储数据，使其无法使</p>
+<p>用。目前DAS基本被NAS所代替。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>网络附加存储（NAS）</p>
+<p>采用NAS技术的存储设备不再通过I/O总线附属于某个特定的服务器，而是通过网络接口与网络直接相连，由用户通过网络访问。NAS存储系统的结构如图4-3所示。</p>
+<p>图4-3NAS存储系统的结构</p>
+<p>NAS存储设备类似于一个专用的文件服务器，它去掉了通用服务器的大多数计算功能，而仅仅</p>
+<p>提供文件系统功能，从而降低了设备的成本。并且为方便存储设备到网络之间以最有效的方式发送</p>
+<p>数据，专门优化了系统硬软件体系结构。NAS以数据为中心，将存储设备与服务器分离，其存储设</p>
+<p>备在功能上完全独立于网络中的主服务器，客户机与存储设备之间的数据访问不再需要文件服务器</p>
+<p>的干预，同时它允许客户机与存储设备之间进行直接的数据访问，所以不仅响应速度快，而且数据</p>
+<p>传输速率也很高。</p>
+<p>NAS技术支持多种TCP/IP网络协议，主要是NFS（NetFileSystem，网络文件系统）和CIFS</p>
+<p>（CommonInternetFileSystem，通用Internet文件系统）来进行文件访问，所以NAS的性能特</p>
+<p>点是进行小文件级的共享存取。在具体使用时，NAS设备通常配置为文件服务器，通过使用基于</p>
+<p>Web的管理界面来实现系统资源的配置、用户配置管理和用户访问登录等。</p>
+<p>NAS存储支持即插即用，可以在网络的任一位置建立存储。基于Web管理，从而使设备的安</p>
+<p>装、使用和管理更加容易。NAS可以很经济地解决存储容量不足的问题，但难以获得满意的性能。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>存储区域网络（SAN）</p>
+<p>SAN是通过专用交换机将磁盘阵列与服务器连接起来的高速专用子网。它没有采用文件共享存</p>
+<p>取方式，而是采用块（block）级别存储。SAN是通过专用高速网将一个或多个网络存储设备和服务</p>
+<p>器连接起来的专用存储系统，其最大特点是将存储设备从传统的以太网中分离了出来，成为独立的存储区域网络SAN的系统结构如图4-4所示。</p>
+<p>图4-4SAN存储系统的结构</p>
+<p>根据数据传输过程采用的协议，其技术划分为FCSAN和IPSAN。另外，还有一种新兴的IB</p>
+<p>SAN技术。</p>
+<p>（1）FCSAN。FC（FiberChannel，光纤通道）和SCSI接口一样，最初也不是为硬盘设计开</p>
+<p>发的接口技术，而是专门为网络系统设计的，随着存储系统对速度的需求，才逐渐应用到硬盘系统</p>
+<p>中。光纤通道的主要特性有：热插拔性、高速带宽、远程连接、连接设备数量大等。它是当今最昂</p>
+<p>贵和复杂的存储架构，需要在硬件、软件和人员培训方面进行大量投资。</p>
+<p>FCSAN由三个基本的组件构成，分别是接口（SCSI、FC)、连接设备（交换机、路由器）和协</p>
+<p>议（IP、SCSI）。这三个组件再加上附加的存储设备和服务器就构成一个SAN系统。它是专用、高</p>
+<p>速、高可靠的网络，允许独立、动态地增加存储设备，使得管理和集中控制更加简化。</p>
+<p>FCSAN有两个较大的缺陷，分别是成本和复杂性，其原因就是因为使用了FC。在光纤通道上部</p>
+<p>署SAN，需要每个服务器上都要有FC适配器、专用的FC交换机和独立的布线基础架构。这些设施使</p>
+<p>成本大幅增加，更不用说精通FC协议的人员培训成本。</p>
+<p>（2）IPSAN。IPSAN是基于IP网络实现数据块级别存储方式的存储网络。由于设备成本低，</p>
+<p>配置技术简单，可共享和使用大容量的存储空间，因而逐渐获得广泛的应用。</p>
+<p>在具体应用上，IP存储主要是指iSCSI（InternetSCSI）。作为一种新兴的存储技术，iSCSI基于</p>
+<p>IP网络实现SAN架构，既具备了IP网络配置和管理简单的优势，又提供了SAN架构所拥有的强大功</p>
+<p>能和扩展性。iSCSI是连接到一个TCP/IP网络的直接寻址的存储库，通过使用TCP/IP协议对SCSI指令</p>
+<p>进行封装，可以使指令能够通过IP网络进行传输，而过程完全不依赖于地点。</p>
+<p>iSCSI优势的主要表现在于，首先，建立在SCSI、TCP/IP这些稳定和熟悉的标准上，因此安装成</p>
+<p>本和维护费用都很低；其次，iSCSI支持一般的以太网交换机而不是特殊的光纤通道交换机，从而减</p>
+<p>少了异构网络和电缆；最后，ISCSI通过IP传输存储命令，因此可以在整个Internet上传输，没有距</p>
+<p>离限制。</p>
+<p>iSCSI的缺点在于，存储和网络是同一个物理接口，同时协议本身的开销较大，协议本身需要频</p>
+<p>繁地将SCSI命令封装到IP包中以及从IP包中将SCSI命令解析出来，这两个因素都造成了带宽的占用</p>
+<p>和主处理器的负担。但是，随着专门处理ISCSI指令的芯片的开发（解决主处理器的负担问题），以</p>
+<p>及10G以太网的普及（解决带宽问题），iSCSI将有着更好的发展。</p>
+<p>（3）IBSAN。IB（InfiniBand，无限带宽）是一种交换结构I/O技术，其设计思路是通过一套</p>
+<p>中心机构（IB交换机）在远程存储器、网络以及服务器等设备之间建立一个单一的连接链路，并由IB</p>
+<p>交换机来指挥流量。这种结构设计得非常紧密，大大提高了系统的性能、可靠性和有效性，能缓解</p>
+<p>各硬件设备之间的数据流量拥塞。而这是许多共享总线式技术没有解决好的问题，因为在共享总线</p>
+<p>环境中，设备之间的连接都必须通过指定的端口建立单独的链路。</p>
+<p>IB主要支持两种环境：模块对模块的计算机系统（支持I/O模块附加插槽）；在数据中心环境中</p>
+<p>的机箱对机箱的互连系统、外部存储系统和外部局域网/广域网访问设备。IB支持的带宽比现在主流</p>
+<p>的I/O载体（例如，SCSI、FC等）还要高，另外，由于使用IPv6的报头，IB还支持与传统</p>
+<p>Internet/Intranet设施的有效连接。用IB技术替代总线结构所带来的最重要的变化就是建立了一个</p>
+<p>灵活、高效的数据中心，省去了服务器复杂的I/O部分。</p>
+<p>IBSAN采用层次结构，将系统的构成与接入设备的功能定义分开，不同的主机可通过HCA</p>
+<p>（HostChannelAdapter，主机通道适配器）、RAID等网络存储设备利用TCA（TargetChannel</p>
+<p>Adapter，目标通道适配器）接入IBSAN。</p>
+<p>IBSAN主要具有如下特性：可伸缩的SwitchedFabric互连结构；由硬件实现的传输层互连高</p>
+<p>效、可靠；支持多个虚信道；硬件实现自动的路径变换；高带宽，总带宽随IBSwitch规模成倍增</p>
+<p>长；支持SCSI远程DMA（DirectMemoryAccess，直接内存存取）协议；具有较高的容错性和抗</p>
+<p>毁性，支持热拔插。</p>
+<p>网络存储技术的目的都是为了扩大存储能力，提高存储性能。这些存储技术都能提供集中化的</p>
+<p>数据存储并有效存取文件；都支持多种操作系统，并允许用户通过多个操作系统同时使用数据；都</p>
+<p>可以从应用服务器上分离存储，并提供数据的高可用性；同时，都能通过集中存储管理来降低长期</p>
+<p>的运营成本。</p>
+<p>因此，从存储的本质上来看，它们的功能都是相同的。事实上，它们之间的区别正在变得模</p>
+<p>糊，所有的技术都在用户的存储需求下接受挑战。在实际应用中，需要根据系统的业务特点和要求</p>
+<p>（例如，环境要求、性能要求、价格要求等）进行选择。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>无线局域网</p>
+<p>作为互联网的延伸手段，WLAN通过无线介质发送和接收数据，而无需线缆介质。WLAN的数</p>
+<p>据传输速率可以达到11Mbps（802.11b标准），传输距离可远至20km以上。与有线网络相比，</p>
+<p>WLAN具有以下特点。</p>
+<p>（1）可移动性，不受布线接点位置的限制；</p>
+<p>（2）数据传输速率高，大于1Mbps；</p>
+<p>（3）抗干扰性强，能实现很低的误码率；</p>
+<p>（4）保密性较强，可使用户进行有效的数据提取，又不至于泄密；</p>
+<p>（5）高可靠性，数据传输几乎没有丢包现象产生；</p>
+<p>（6）兼容性好，采用CSMA/CA（CarrierSenseMultipleAccesswithCollision</p>
+<p>Avoidance，载波监听多路访问/冲突避免）介质访问协议，遵从IEEE802.3以太网协议。与标准以</p>
+<p>太网及目前的几种主流网络操作系统完全兼容，用户已有的网络软件不做任何修改就可在无线网上</p>
+<p>运行；</p>
+<p>（7）快速安装，无线局域网的安装工作非常简单，它无需施工许可证，不需要布线或开挖沟</p>
+<p>槽。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>无线局域网技术实现</p>
+<p>目前常用的计算机无线通信手段有光波和无线电波。其中光波包括红外线和激光，红外线和激光易受天气影响，也不具备穿透能力，故难以实际应用。无线电波包括短波、超短波和微波等，其中采用微波通信具有很大的发展潜力。</p>
+<p>微波扩展频谱通信（SpreadSpectrumCommunication，SSC）简称扩频通信，其基本特征是使用比发送的信息数据速率高许多倍的伪随机码把载有信息数据的基带信号的频谱进行扩展，形成宽带的低功率频谱密度的信号来发射。增加带宽可以在较低的信噪比情况下以相同的信息传输率来可靠地传输信息，甚至在信号被噪声淹没的情况下，只要相应地增加信号带宽，仍然能够保持可靠的通信，也就是可以用扩频方法以宽带传输信息来换取信噪比上的好处。</p>
+<p>扩频通信技术在发射端以扩频编码进行扩频调制，在接收端以相关解调技术收取信息，这一过程使其具有许多优良特性，如抗干扰能力强；隐蔽性强，保密性好；多址通信能力强；抗多径干扰能力强；且有较好的安全机制。</p>
+<p>实现扩频通信的基本工作方式有4种，分别是直接序列扩频（DirectSequenceSpreadSpectrum，DSSS）、跳变频率（FrequencyHopping，FH）、跳变时间（TimeHopping，TH）和线性调频（ChirpModulation，CM）。目前使用最多、最典型的扩频工作方式是DSSS方式。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>无线局域网国际标准</p>
+<p>无线接入技术区别于有线接入的特点之一是标准不统一，不同的标准有不同的应用。目前比较</p>
+<p>流行的有802.11标准、蓝牙标准以及HomeRF（家庭网络）标准等。</p>
+<p>1．802.11标准</p>
+<p>802.11是1997年IEEE最初制定的一个WLAN标准，主要用于解决办公室无线局域网和校园网中用户与用户终端的无线接入，其业务范畴主要限于数据存取，速率最高只能达2Mbps。由于它在速率、传输距离、安全性、电磁兼容能力及服务质量方面均不尽人意，从而产生了其系列标准。</p>
+<p>（1）802.11b：将速率扩充至11Mbps，并可在5.5Mbps、2Mbps及1Mbps之间进行自动速率调整，也提供了MAC层的访问控制和加密机制，以提供与有线网络相同级别的安全保护，还提供了可选择的40位及128位的共享密钥算法，从而成为目前802.11系列的主流产品。而802.11b+还可将速率增强至22Mbps。</p>
+<p>（2）802.11a：工作于5GHz频段，最高速率提升至54Mbps。</p>
+<p>（3）802.11g：依然工作于2.4GHz频段，与802.11b兼容，最高速率亦提升至54Mbps。</p>
+<p>（4）802.11c：为MAC/LLC性能增强。</p>
+<p>（5）801.11d：对应802.11b版本，解决那些不能使用2.4GHz频段国家的使用问题。</p>
+<p>（6）802.11e：则是一个瞄准扩展服务质量的标准，其分布式控制模式可提供稳定合理的服务质量，而集中控制模式可灵活支持多种服务质量策略。</p>
+<p>（7）802.11f：用于改善802.11协议的切换机制，使用户能在不同无线信道或接入设备点间可漫游。</p>
+<p>（8）802.11h：可用于比802.11a更好地控制发信功率（借助PC技术）和选择无线信道（借助动态频率选择技术），而与802.11e一起，可适应欧洲的更严格的标准。</p>
+<p>（9）802.11i、802.1x：主要着重于安全性，802.11i能支持鉴别和加密算法的多种框架协议，支持企业、公众及家庭应用；802.1x的核心为具有可扩展认证协议，可对以太网端口鉴别，扩展至无线应用。</p>
+<p>（10）802.11j：解决802.11a与欧洲HiperLAN/2网络的互连互通。</p>
+<p>（11）802.11/WNG：解决IEEE802.11与欧洲电信标准化协会的BRAN-HiperLAN及日本的ARAB-iSWAN统一建成全球一致的WLAN公共接口。</p>
+<p>（12）802.11n：已将速率增强至108/320Mbps，并已进一步改进其管理开销及效率。</p>
+<p>（13）802.11/RRM：与无线电资源管理有关的标准，以增强802.11的性能。</p>
+<p>（14）802.11/HT：用于进一步增强802.11的传输能力，取得更高的吞吐量。</p>
+<p>（15）802.11Plus：拟制订802.11WLAN与GPRS/UMTS之类多频、多模运行标准，可有松耦</p>
+<p>合及紧耦合两种类型。</p>
+<p>2．HiperLAN</p>
+<p>ETSI（EuropeanTelecommunicationsSdandardsInstitute，欧洲电信标准协会）的宽带无线电接入网络小组着手制定Hiper（HighPerformanceRadio）接入泛欧标准，已推出HiperLAN1和HiperLAN2。HiperLAN1推出时，数据速率较低，没有被人们重视。在2000年，HiperLAN2标</p>
+<p>准制定完成，HiperLAN2标准的最高数据速率能达到54Mbps。HiperLAN2标准详细定义了WLAN的检测功能和转换信令，用以支持许多无线网络，支持动态频率选择、无线信元转换、链路自适应、多束天线和功率控制等。该标准在WLAN性能、安全性、服务质量QoS等方面也给出了一些定义。</p>
+<p>HiperLAN1对应IEEE802.11b，HiperLAN2与IEEE802.11a具有相同的物理层，它们可以采用</p>
+<p>相同的部件，并且HiperLAN2强调与3G整合。</p>
+<p>3．蓝牙</p>
+<p>对于802.11来说，蓝牙（IEEE802.15）的出现不是为了竞争而是相互补充。蓝牙是一种极其先</p>
+<p>进的大容量近距离无线数字通信的技术标准，其目标是实现最高数据传输速度1Mbps（有效传输速</p>
+<p>率为721Kbps）。它的最大传输距离为10cm～10m，通过增加发射功率可达到100m。蓝牙比</p>
+<p>802.11更具移动性，比如，802.11限制在办公室和校园内，而蓝牙却能把一个设备连接到LAN和</p>
+<p>WAN，甚至支持全球漫游。此外，蓝牙成本低、体积小，可用于更多的设备。</p>
+<p>4．家庭网络的HomeRF</p>
+<p>HomeRF主要为家庭网络而设计，是IEEE802.11与数字无绳电话标准的结合，旨在降低语音数</p>
+<p>据成本。HomeRF也采用了扩频技术，工作在2.4GHz频带，能同步支持4条高质量语音信道。但目</p>
+<p>前HomeRF的传输速率只有1～2Mbps，FCC建议增加到10Mbps。</p>
+<p>5．WiMax</p>
+<p>802.16标准定义了无线MAN空中接口规范（正式的名称为IEEEWirelessMAN*标准）。这一无</p>
+<p>线宽带接入标准可以为无线城域网中的“最后一公里”连接提供缺少的一环。对于许多家用及商用</p>
+<p>客户而言，通过DSL或有线基础设施的宽带接入仍然不可行。许多客户都在DSL服务范围之外和/或</p>
+<p>不能得到宽带有线基础设施的支持（商业区通常没有布线）。但是依靠无线宽带，这些问题都可迎</p>
+<p>刃而解。因为其无线特性，所以无线宽带部署速度更快，扩展能力更强，灵活性更高，因此能够为</p>
+<p>那些无法享受到或不满意其有线宽带接入的客户提供服务。802.16的MAC层改善了系统总吞吐量和</p>
+<p>带宽效率，并确保数据时延受到控制。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>无线局域网联接方式</p>
+<p>常用的无线网络设备有网卡、AP（AccessPoint，访问点）、无线网桥和无线路由器等。无线</p>
+<p>网络产品的多种使用方法可以组合出适合各种情况的无线联网设计，可以方便地解决许多以线缆方</p>
+<p>式难以联网的用户需求。例如，数万米远的两个局域网相联，其间或有河流、湖泊相隔，拉线困难</p>
+<p>且线缆安全难保障，或在城市中敷设专线要涉及审批复杂，周期很长的市政施工问题，无线网能以</p>
+<p>比线缆低几倍的费用在几天内实现。无线网也可方便地实现不经过大的施工改建而使旧式建筑具有</p>
+<p>智能大厦的功能。无线网络应用的典型方式有以下几种。</p>
+<p>1．对等网方式</p>
+<p>对等网方式有2种形式，即把2个局域网相联或把1个远程站点联入1个局域网。如果是两个局域</p>
+<p>网相联，则在两个局域网中分别接入无线路由器或无线网桥。如一边是单机，则在其机内插入无线</p>
+<p>网卡即可。视通信距离来联接相应天线，用无线网络软件设置相应的ID号、中断号和地址，即可调</p>
+<p>试天线的方向、视角。当无线网络软件指示接收质量为良好或合用时，即认为无线链路接通，双方</p>
+<p>就可做网络设置和操作了。如果网络中已有路由器，而且天线与网络有相当距离，如数十米至数百</p>
+<p>米，则应使用无线网桥尽量靠近天线以缩短射频电缆长度，降低射频信号衰减，把无线网桥和路由</p>
+<p>器以数字线缆相连。这种方式的一种扩展是在两点间的距离过远或有遮挡时，在中间增加一个无线</p>
+<p>路由器来做中继，网络的设置也作相应变动。</p>
+<p>2．无线HUB方式</p>
+<p>在一个建筑物或不大的区域内有多个定点或移动点要联入一个局域网时，可用此方式。希赛教育专家提示：各站点要与无线HUB使用相同的网络ID以顺利互通，又要有各自的地址号以相互区别。</p>
+<p>3．一点多址方式</p>
+<p>当要把地理上有相当距离的多个局域网相联时，则可在每个局域网中接入无线网桥。这时主站</p>
+<p>或转接站使用全向天线，各从站视距离使用定向或全向天线与之相联。各无线网桥均使用同样的网</p>
+<p>络ID以支持扩频通信，使用各自的地址（网段）以相区别。正确的网络设置，可以使各工作站、服</p>
+<p>务器之间互访。当需要把10km之内的多个定点站点或2km之内的多个活动站点（各站点均是单机）</p>
+<p>联入网内时，可以用无线网桥的HUB工作方式来方便地实现。</p>
+<p>4．不同协议网络间互联</p>
+<p>在联网的两边各用与当地网络环境和对方网络环境相配套的设备和相应的网络设置即可实现。</p>
+<p>上述只是几种典型的联网方式，在实际工作中可以组合使用，变化出所需要的方式。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>网络应用</p>
+<p>在网络应用方面，主要考查邮件服务、电子商务、CDMA、3G、域名、带宽和URL（Uniform</p>
+<p>ResourceLocator，统一资源定位符）地址等基本概念和应用。</p>
+<p>1．万维网</p>
+<p>WWW（万维网）是一个支持交互式访问的分布式超媒体系统。超媒体系统（在超文本的基础</p>
+<p>上，结合语音、图形、图像和动画等信息）直接扩充了传统的超文本系统（非线性的、用“链接”</p>
+<p>整合的信息结构）。Web文档用超文本标记语言（HyperTextMarkupLanguage，HTML）来撰</p>
+<p>写。除了文本外，文档还包括指定文档版面与格式的标签，在页面中可以包含图形、音频和视频等</p>
+<p>各种多媒体信息。</p>
+<p>在WWW中，依赖于标准化的URL地址来定位信息的内容。在进行页面访问时采用的超文本传</p>
+<p>送协议HTTP，其服务端口就是HTTP服务端口（80端口）。首先，浏览器软件与HTTP端口建立一个</p>
+<p>TCP连接，然后发送GET命令，Web服务器根据命令取出文档，发送给浏览器；最后浏览器释放连</p>
+<p>接，显示文档。</p>
+<p>2．电子邮件</p>
+<p>电子邮件（E-mail）是现在数据量、使用量最大的一个因特网应用，它用来完成人际之间的消</p>
+<p>息通信。与它相关的有以下三个协议。</p>
+<p>（1）SMTP：简单邮件传送协议，用于邮件的发送，工作在25号端口上。</p>
+<p>（2）POP3（PostOfficeProtocol3，邮局协议的第3个版本）：用于接收邮件，工作在110</p>
+<p>号端口上。</p>
+<p>（3）IMAP（InteractiveMailAccessProtocol，交互式邮件存取协议）：邮件访问协议，是</p>
+<p>用于替代POP3协议的新协议，工作在143号端口上。</p>
+<p>3．DNS</p>
+<p>网络用户希望用有意义的名字来标识主机，而不是IP地址。为了解决这个需求，应运而生的是</p>
+<p>域名服务系统DNS。它运行在TCP协议之上，负责将域名转换成实际相对应的IP地址，从而在不改</p>
+<p>变底层协议的寻址方法的基础上，为使用者提供一个直接使用符号名来确定主机的平台。</p>
+<p>DNS是一个分层命名系统，名字由若干个标号组成，标号之间用圆点分隔。最右边的是主域</p>
+<p>名，最左边的是主机名，中间的是子域名。</p>
+<p>通常写域名时，最后是不加“.”的，其实这只是一个缩写，最后一个“.”代表的是“根”，如</p>
+<p>果采用全域名写法，还需要加上这个小点。这在配置DNS时就会见到。</p>
+<p>除了以上讲述的名字语法规则和管理机构的设立，域名系统中还包括一个高效、可靠、通用的</p>
+<p>分布式系统用于名字到地址的映射。将域名映射到IP地址的机制由若干个称为名字服务器的独立、</p>
+<p>协作的系统组成。</p>
+<p>DNS实际上是一个服务器软件，运行在指定的计算机上，完成域名到IP地址的转换。它把网络</p>
+<p>中的主机按树形结构分成域和子域，子域名或主机名在上级域名结构中必须是唯一的。每一个子域</p>
+<p>都有域名服务器，它管理着本域的域名转换，各级服务器构成一棵树。这样，当用户使用域名时，</p>
+<p>应用程序先向本地域名服务器请求，本地服务器先查找自己的域名库，如果找到该域名，则返回IP</p>
+<p>地址；如果未找到，则分析域名，然后向相关的上级域名服务器发出申请；这样传递下去，直至有</p>
+<p>一个域名服务器找到该域名，并返回IP地址。如果没有域名服务器能识别该域名，则认为该域名不</p>
+<p>可知。</p>
+<p>充分利用机器的高速缓存，暂存解析后的IP地址，可以提高DNS的查询效率；用户有时会连续</p>
+<p>访问相同的因特网地址，DNS在第一次解析该地址后，将其存放在高速缓存中，当用户再次请求</p>
+<p>时，DNS可直接从缓存中获得IP地址。</p>
+<p>4．IIS</p>
+<p>IIS（IntentetInformationServer，Intentet信息服务器）作为当今流行的Web服务器之一，提供了强大的Internet和Intranet服务功能。WindowsServer系统中自带Internet信息服务，在可靠性、方便性、安全性、扩展性和兼容性等方面进行了增强。</p>
+<p>5．FTP</p>
+<p>FTP的传输模式包括Bin（二进制）和ASCII（文本文件）两种，除了文本文件之外，都应该使用</p>
+<p>二进制模式传输。FTP应用的连接模式是：在客户机和服务器之间需建立两条TCP连接，一条用于传</p>
+<p>送控制信息（21端口），另一条用于传送文件内容（20端口）。匿名FTP的用户名一般为</p>
+<p>anonymous。</p>
+<p>7．其他应用</p>
+<p>（1）Gopher：因特网早期的一种全文检索服务，WWW出现后，被取代。</p>
+<p>（2）WebMail：是指利用浏览器通过Web方式来收发电子邮件的服务或技术。</p>
+<p>（3）Usenet：新闻组是一个电子讨论组，用户可以在这里与遍及全球的用户共享信息及对某</p>
+<p>些问题的看法。</p>
+<p>（4）VOD：视频点播，通过视频压缩、流技术及组播协议实现。</p>
+<p>（5）NetMeeting：网络会议，通过视频压缩、流技术及组播协议实现。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>网络管理</p>
+<p>在网络管理方面，主要考查代理服务器、网络管理工具等。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>代理服务器</p>
+<p>在网络管理方面，主要考查代理服务器是介于浏览器和Web服务器之间的一台服务器，当用户通过代理服务器上网浏览时，浏览器不是直接到Web服务器去取回网页而是向代理服务器发出请求，由代理服务器来取回浏览器所需要的信息并传送给用户的浏览器。</p>
+<p>代理服务器的作用主要体现在以下5个方面：</p>
+<p>（1）提高访问速度。因为客户要求的数据存于代理服务器的硬盘中，因此下次这个客户或其他客户再要求相同目的站点的数据时，就会直接从代理服务器的硬盘中读取，代理服务器起到了缓存的作用。对热门站点而言有很多客户访问时，代理服务器的优势更为明显。</p>
+<p>（2）可以起到防火墙的作用。因为所有使用代理服务器的用户都必须通过代理服务器访问远程站点，因此在代理服务器上就可以设置相应的限制，以过滤或屏蔽掉某些信息。这是局域网网管对局域网用户访问范围限制最常用的办法，也是局域网用户为什么不能浏览某些网站的原因。拨号用户如果使用代理服务器，同样必须服从代理服务器的访问限制。</p>
+<p>（3）通过代理服务器访问一些不能直接访问的网站。互联网上有许多开放的代理服务器，这些代理服务器的访问权限是不受限制的，客户在访问权限受到限制时，如果刚好代理服务器在客户的访问范围之内，那么客户通过代理服务器访问目标网站就成为可能。国内的高校多使用教育网，不能出国，但通过代理服务器，就能实现访问因特网，这就是高校内代理服务器热的原因所在。</p>
+<p>（4）安全性得到提高。无论是上聊天室还是浏览网站，目的网站只能知道用户来自于代理服务器，而用户的真实IP则无法测知，这就使得用户的安全性得以提高。</p>
+<p>（5）共享IP地址。由于中国的IP地址比较紧张，通过代理服务器，可以节约一些IP地址。</p>
+<p>代理技术主要有以下6个方面的优点：</p>
+<p>（1）代理易于配置。因为代理是一个软件，所以它较过滤路由器更易配置，配置界面十分友好。如果代理实现得好，可以对配置协议要求较低，从而避免配置错误。</p>
+<p>（2）代理能生成各项记录。因代理工作在应用层，它检查各项数据，所以可以按一定准则，让代理生成各项日志、记录。这些日志、记录对于流量分析、安全检验是十分重要和宝贵的。当然，也可以用于计费等应用。</p>
+<p>（3）代理能灵活、完全地控制进出流量和内容。</p>
+<p>（4）代理能过滤数据内容。</p>
+<p>（5）代理能为用户提供透明的加密机制。</p>
+<p>（6）代理可以方便地与其他安全手段集成。</p>
+<p>代理技术的缺点主要有以下6个方面：</p>
+<p>（1）代理速度较路由器慢。</p>
+<p>（2）代理对用户不透明。</p>
+<p>（3）对于每项服务代理可能要求不同的服务器。</p>
+<p>（4）代理服务通常要求对客户、过程之一或两者进行限制。</p>
+<p>（5）代理服务不能保证免受所有协议弱点的限制。</p>
+<p>（6）代理不能改进底层协议的安全性。</p>
+<p>代理服务器、网络管理工具等。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>网络管理工具</p>
+<p>现在网络管理平台有很多，而真正具有OSI定义的网管五大功能的系统却不多，典型的系统包括</p>
+<p>HP的OpenView、IBM的NetView和Tivoli、SUN的SunNet、Cabletron的SPECTRUM。Cisco</p>
+<p>Work则是最适用于Cisco网络设备密集的网络的实用性网络管理系统。</p>
+<p>在进行网络维护时，经常需要监视网络数据流并对其进行分析，这也称为网络监视，而常见的</p>
+<p>网络监视器包括Ethereal、NetXRay和Sniffer。</p>
+<p>（1）Ethereal：提供了对TCP、UDP、SMB、Telnet和FTP等常用协议的支持，覆盖了大部分</p>
+<p>应用需求。</p>
+<p>（2）NetXRay：主要用做以太网中的网管软件，能够对IP、NetBEUI和TCP、UDP等协议进行</p>
+<p>详细分析。</p>
+<p>（3）Sniffer：它使网络接口处于混杂模式，以截获网络内容。它是最完善、应用最广泛的一种</p>
+<p>网络监视器。</p>
+<p>另外，在操作系统中有4个常用的网络管理工具。</p>
+<p>（1）ping命令：基于ICMP协议，用于把一个测试数据包发送到规定的地址，如果一切正常则</p>
+<p>返回成功响应，并且可以从时间戳中获得链路的状态信息。它常用于以下几种情形。</p>
+<p>•验证TCP/IP协议是否正常安装：ping127.0.0.1，如果正常返回，说明安装成功。其中</p>
+<p>127.0.0.1是回送地址。</p>
+<p>•验证IP地址配置是否正常：ping本机IP地址。</p>
+<p>•查验远程主机：ping远端主机IP地址。</p>
+<p>（2）tracert：检查到达的目标IP地址的路径并记录结果。tracert命令显示用于将数据包从计算</p>
+<p>机传递到目标位置的一组IP路由器，以及每个跳跃所需的时间。如果数据包不能传递到目标，</p>
+<p>tracert命令将显示成功转发数据包的最后一个路由器。</p>
+<p>（3）netstat：用于显示与IP、TCP、UDP和ICMP协议相关的统计数据，一般用于检验本机各</p>
+<p>端口的网络连接情况。</p>
+<p>（4）IPConfig：显示当前的TCP/IP配置，这些信息一般用来检验人工配置的TCP/IP设置是否</p>
+<p>正确。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>综合布线系统</p>
+<p>综合布线工程包括综合布线设备安装、布放线缆和缆线端接等三个环节。任何一个网络系统的</p>
+<p>实施都至少包括两个部分，即逻辑设计与物理实现。网络系统的调试与安装通常分为以下几步：网</p>
+<p>络系统的详细逻辑设计；全部网络设备加电测试；模拟建网调试及连通性测试；实际网络安装调</p>
+<p>试。</p>
+<p>综合布线系统（PremisesDistributedSystem，PDS）是一种集成化通用传输系统，是在楼宇和园区范围内，利用双绞线或光缆来传输信息，可以连接电话、计算机、会议电视和监视电视等设备的结构化信息传输系统。综合布线系统使用标准的双绞线和光纤，支持高速率的数据传输。这种系统使用物理分层星形拓扑结构，积木式、模块化设计，遵循统一标准，使系统的集中管理成为可能，也使每个信息点的故障、改动或增删不影响其他的信息点，使安装、维护、升级和扩展都非常方便，并节省了费用。</p>
+<p>综合布线系统可分为6个独立的系统（模块），如图4-5所示。</p>
+<p>图4-5综合布线系统</p>
+<p>（1）工作区子系统。工作区子系统由终端设备连接到信息插座之间的设备组成，包括信息插座、插座盒、连接跳线和适配器。</p>
+<p>（2）水平区子系统（水平干线子系统、水平子系统）。水平区子系统应由工作区用的信息插座，以及楼层分配线设备至信息插座的水平电缆、楼层配线设备和跳线等组成。一般情况下，水平电缆应采用4对双绞线电缆。在水平子系统有高速率应用的场合，应采用光缆，即光纤到桌面。水平子系统根据整个综合布线系统的要求，应在二级交接间、交接间或设备间的配线设备上进行连接，以构成电话、数据、电视系统和监视系统，并方便进行管理。</p>
+<p>（3）管理间子系统。管理间子系统设置在楼层分配线设备的房间内。管理间子系统应由交接间的配线设备，以及输入/输出设备等组成，也可应用于设备间子系统中。管理间子系统应采用单点管理双交接。交接场的结构取决于工作区、综合布线系统规模和所选用的硬件。在管理规模大、复杂、有二级交接间时，才设置双点管理双交接。在管理点，应根据应用环境用标记插入条来标出各个端接场。</p>
+<p>（4）垂直干线子系统（垂直子系统、干线子系统）。通常是由主设备间（如计算机房、程控交</p>
+<p>换机房）提供建筑中最重要的铜线或光纤线主干线路，是整个大楼的信息交通枢纽。一般它提供位</p>
+<p>于不同楼层的设备间和布线框间的多条连接路径，也可连接单层楼的大片地区。</p>
+<p>（5）设备间子系统。设备间是在每一幢大楼的适当地点设置进线设备，进行网络管理及管理人</p>
+<p>员值班的场所。设备间子系统应由综合布线系统的建筑物进线设备、电话、数据、计算机和不间断</p>
+<p>电源等各种主机设备及其保安配线设备等组成。</p>
+<p>（6）建筑群子系统（楼宇子系统）。建筑群子系统将一栋建筑的线缆延伸到建筑群内的其他建</p>
+<p>筑的通信设备和设施。它包括铜线、光纤，以及防止其他建筑电缆的浪涌电压进入本建筑的保护设</p>
+<p>备。在设计建筑群子系统时，应考虑地下管道辅设的问题。</p>
+<p>在综合布线系统的技术指标和质量参数方面，要遵循《综合布线系统工程设计规范》</p>
+<p>（GB50311-2007）和《综合布线系统工程验收规范》（GB50312-2007）的要求。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>网络规划与设计</p>
+<p>我们在网络建设前都要做一个需求分析工作，否则，网络建立起来就带有盲目性，轻则造成网络资源浪费或网络瓶颈，重则使网络瘫痪，损失无法估量的数据资源。网络建设前的需求分析，就是要规划网络建设所要做的工作。根据用户提出的要求，进行网络的设计。可以这么说，网络建设的好坏、快慢、可持续发展性等，都将取决于网络实施前的规划工作。</p>
+<p>（1）网络的功能要求。任何网络都不可能是一个可以进行各种各样工作的“万能网”，因此，必须针对每一个具体的网络，依据使用要求、实现成本、未来发展、总预算投资等因素仔细地反复推敲，尤其是分析出网络系统要完成的所有功能。</p>
+<p>（2）网络的性能要求。根据对网络系统的相应时间、事物，处理的实时性进行研究，确定系统需要的存储量及备用的存储量。根据网络的工作站权限、容错程度、网络安全性方面的要求等，确定采取何种措施及方案。</p>
+<p>（3）网络运行环境的要求。根据整个局域网运行时所需要的环境要求，确定使用哪种网络操作系统、应用系统以及相应的应用软件和共享资源。</p>
+<p>（4）网络的可扩充性和可维护性要求。如何增加工作站、怎样与其他网络联网、对软件/硬件的升级换代有何要求与限制等，都要在网络设计时加以考虑，以保证网络的可扩充性和可维护性。通常新建网络时都会给这个局域网提出一些有关使用寿命、维护代价等的要求。</p>
+<p>在网络设计方面，主要采用层次式方法。层次式网络设计在互联网组件的通信中引入了3个关键层的概念，分别是核心层、汇聚层和接入层。</p>
+<p>通常将网络中直接面向用户连接或访问网络的部分称为接入层，将位于接入层和核心层之间的部分称为分布层或汇聚层。接入层的目的是允许终端用户连接到网络，因此接入层交换机具有低成本和高端口密度特性。</p>
+<p>汇聚层交换机是多台接入层交换机的汇聚点，它必须能够处理来自接入层设备的所有通信量，并提供到核心层的上行链路，因此汇聚层交换机与接入层交换机比较，需要更高的性能，更少的接</p>
+<p>口和更高的交换速率。汇聚层是核心层和终端用户接入层的分界面，汇聚层完成了网络访问策略控</p>
+<p>制、数据包处理、过滤、寻址，以及其他数据处理的任务。</p>
+<p>将网络主干部分称为核心层，核心层的主要目的在于通过高速转发通信，提供优化、可靠的骨</p>
+<p>干传输结构，因此核心层交换机应拥有更高的可靠性，性能和吞吐量。核心层为网络提供了骨干组</p>
+<p>件或高速交换组件，在纯粹的分层设计中，核心层只完成数据交换的特殊任务。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>物联网</p>
+<p>物联网就是物物相连的互联网。其定义有两层意思：第一，物联网的核心和基础仍然是互联</p>
+<p>网，是在互联网基础上的延伸和扩展的网络；第二，其用户端延伸和扩展到了任何物品与物品之</p>
+<p>间，进行信息交换和通信。</p>
+<p>物联网通过智能感知、识别技术与普适计算、广泛在网络的融合中应用，被称为继计算机、互</p>
+<p>联网之后世界信息产业发展的第三次浪潮。物联网是互联网的应用拓展，与其说物联网是网络，不</p>
+<p>如说物联网是业务和应用。因此，应用创新是物联网发展的核心，以用户体验为核心的创新2.0是物</p>
+<p>联网发展的灵魂。</p>
+<p>1．物联网分层</p>
+<p>物联网可以分为三个层次：感知层、网络层和应用层。</p>
+<p>感知层：用于识别物体、采集信息，就好比人通过视觉、嗅觉、听觉、触觉来感受事物一样，</p>
+<p>采集各类信息。如：二维码、RFID、摄像头、传感器。</p>
+<p>网络层：传递信息和处理信息。通信网与互联网的融合网络、网络管理中心、信息中心和智能</p>
+<p>处理中心等。</p>
+<p>应用层：解决信息处理和人机交互的问题。</p>
+<p>2．物联网关键技术</p>
+<p>物联网涉及到的技术非常多，其中常见且比较重要的包括：传感器技术、RFID、二维码等。</p>
+<p>（1）传感器技术</p>
+<p>大家都知道，到目前为止绝大部分计算机处理的都是数字信号。自从有计算机以来就需要传感器把模拟信号转换成数字信号计算机才能处理。传感器技术成为物联网关键技术，主要是因为物联网中经常要用到大量的传感器，如：温度传感器、温度传感器、光敏传感器等。</p>
+<p>（2）RFID</p>
+<p>射频识别技术（RadioFrequencyIdentification，RFID），又称电子标签，是一种通信技术，可通过无线电讯号识别特定目标并读写相关数据，而无需识别系统与特定目标之间建立机械或光学接触。该技术是物联网的一项核心技术，很多物联网应用都离不开它。</p>
+<p>（3）二维码</p>
+<p>二维码是一种使用特定几何图形按一定规律在平面（二维方向上）分布的黑白相间的图形记录数据符号信息的技术，如图4-6所示。在代码编制上巧妙地利用构成计算机内部逻辑基础的“0”、</p>
+<p>“1”比特流的概念，使用若干个与二进制相对应的几何形体来表示文字数值信息，通过图象输入设备或光电扫描设备自动识读以实现信息自动处理。</p>
+<p>图4-6二维码示意图</p>
+<p>（4）嵌入式系统技术</p>
+<p>嵌入式系统技术是一种综合了计算机软硬件、传感器技术、集成电路技术、电子应用技术为一</p>
+<p>体的复杂技术。经过几十年的演变，以嵌入式系统为特征的智能终端产品随处可见；小到人们身边</p>
+<p>的MP3，大到航天航空的卫星系统。嵌入式系统正在改变着人们的生活，推动着工业生产以及国防</p>
+<p>工业的发展。如果把物联网用人体做一个简单比喻，传感器相当于人的眼睛、鼻子、皮肤等感官，</p>
+<p>网络就是神经系统用来传递信息，嵌入式系统则是人的大脑，在接收到信息后要进行分类处理。这</p>
+<p>个例子很形象的描述了传感器、嵌入式系统在物联网中的位置与作用。</p>
+<p>3．物联网应用</p>
+<p>物联网技术目前可应用于众多的领域，如：智能交通、环境保护、政府工作、公共安全、平安家居、智能消防、工业监测、环境监测、路灯照明管控、景观照明管控、楼宇照明管控、广场照明管控、老人护理、个人健康、花卉栽培、水系监测、食品溯源、敌情侦查。</p>
+<p>下面介绍几个具体的应用场景：</p>
+<p>（1）门禁系统</p>
+<p>一个完整的门禁系统由读卡器、控制器、电锁、出门开关、门磁、电源、处理中心这八个模块组成，无线物联网门禁将门点的设备简化到了极致：一把电池供电的锁具（锁具通过无线与主控设备通信，当通信受阻时，还可用离线模式刷卡开门）。除了门上面要开孔装锁外，门的四周不需要设备任何辅助设备。整个系统简洁明了，大幅缩短施工工期，也能降低后期维护的资金。</p>
+<p>（2）ZigBee路灯控制系统</p>
+<p>目前ZigBee无线路灯照明节能环保技术已广泛应用到了实际生活中。采用了ZigBee技术的无线路灯控制系统，不仅能根据需要调节路灯的亮度，还可以独立控制单个路灯。例如，在晚上6点钟，将马路上的单号或者双号路灯开启，到晚上8点钟，将全部路灯开启，晚上12点钟调节到半亮度，早上6点全部关闭。经相关部门测试，相对传统的控制方式可实现节能50%。每个路段的路灯都通过内置的ZigBee模块组成一个无线通信子网，而每个子网都通过一个ZigBee-GPRS网关连接到监控中心，而监控室的服务器只需连接到互联网，即可监控市区内的每一盏路灯的状态。</p>
+<p>第4章：数据通信与计算机网络</p>
+<p>例题分析</p>
+<p>数据通信与计算机网络知识是系统架构设计师上午考试的一个重点，为了帮助考生了解在这方</p>
+<p>面的试题题型和难度，本节分析6道典型的试题。</p>
+<p>例题1</p>
+<p>以下关于网络核心层的叙述中，正确的是__(1)__。</p>
+<p>（1）A．为了保障安全性，应该对分组进行尽可能多的处理</p>
+<p>B．在区域间高速地转发数据分组</p>
+<p>C．由多台二、三层交换机组成</p>
+<p>D．提供多条路径来缓解通信瓶颈</p>
+<p>例题1分析</p>
+<p>三层模型主要将网络划分为核心层、汇聚层和接入层，每一层都有着特定的作用：核心层提供不同区域或者下层的高速连接和最优传送路径；汇聚层将网络业务连接到接入层，并且实施与安全、流量负载和路由相关的策略；接入层为局域网接入广域网或者终端用户访问网络提供接入。其中核心层是互连网络的高速骨干，由于其重要性，因此在设计中应该采用冗余组件设计，使其具备高可靠性，能快速适应变化。</p>
+<p>在设计核心层设备的功能时，应尽量避免使用数据包过滤、策略路由等降低数据包转发处理的特性，以优化核心层获得低延迟和良好的可管理性。</p>
+<p>核心层应具有有限的和一致的范围，如果核心层覆盖的范围过大，连接的设备过多，必然引起网络的复杂度加大，导致网络管理性降低；同时，如果核心层覆盖的范围不一致，必然导致大量处理不一致情况的功能都在核心层网络设备中实现，会降低核心网络设备的性能。</p>
+<p>对于那些需要连接因特网和外部网络的网络工程来说，核心层应包括一条或多条连接到外部网络的连接，这样可以实现外部连接的可管理性和高效性。</p>
+<p>例题1答案</p>
+<p>（1）B</p>
+<p>例题2</p>
+<p>网络系统设计过程中，逻辑网络设计阶段的任务是__(2)__。</p>
+<p>（2）A．依据逻辑网络设计的要求，确定设备的物理分布和运行环境</p>
+<p>B．分析现有网络和新网络的资源分布，掌握网络的运行状态</p>
+<p>C．根据需求规范和通信规范，实施资源分配和安全规划</p>
+<p>D．理解网络应该具有的功能和性能，设计出符合用户需求的网络</p>
+<p>例题2分析</p>
+<p>本题主要考查网络设计方面的基础知识。根据网络系统设计的一般规则，在逻辑网络设计阶段</p>
+<p>的任务通常是根据需求规范和通信规范，实施资源分配和安全规划。其他几个选项都不是逻辑网络</p>
+<p>设计阶段的任务。</p>
+<p>本题考查网络设计各阶段的任务，网络设计主要分为逻辑网络设计与物理网络设计。</p>
+<p>在逻辑网络设计阶段，需要描述满足用户需求的网络行为以及性能，详细说明数据是如何在网</p>
+<p>络上阐述的，此阶段不涉及网络元素的具体物理位置。</p>
+<p>网络设计者利用需求分析和现有网络体系分析的结果来设计逻辑网络结构。如果现有的软件、</p>
+<p>硬件不能满足新网络的需求，现有系统就必须升级。如果现有系统能继续运行使用，可以将它们集</p>
+<p>成到新设计中来。如果不集成旧系统，网络设计小组可以找一个新系统，对它进行测试，确定是否符合用户的需求。</p>
+<p>此阶段最后应该得到一份逻辑网络设计文档，输出的内容包括以下几点：</p>
+<p>（1）逻辑网络设计图</p>
+<p>（2）IP地址方案</p>
+<p>（3）安全方案</p>
+<p>（4）具体的软件、硬件、广域网连接设备和基本的服务</p>
+<p>（5）雇佣和培训新网络员工的具体说明</p>
+<p>（6）初步对软件、硬件、服务、网络雇佣员工和培训的费用估计</p>
+<p>物理网络设计阶段的任务是如何实现确定的逻辑网络结构。在这一阶段，网络设计者需要确定具体的软件、硬件、连接设备、服务和布线。</p>
+<p>如何购买和安装设备，由网络物理结构这一阶段的输出作指导，所以网络物理设计文档必须尽可能详细、清晰，输出的内容如下：</p>
+<p>（1）物理网络图和布线方案</p>
+<p>（2）设备和部件的详细列表清单</p>
+<p>（3）软件、硬件和安装费用的估计</p>
+<p>（4）安装日程表，用以详细说明实际和服务中断的时间以及期限</p>
+<p>（5）安装后的测试计划</p>
+<p>（6）用户培训计划</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2020/08/01/%E6%9E%B6%E6%9E%84%E5%B8%88_2/">软件架构 笔记2</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+  <p><span>发布时间:</span>2020年08月01日 - 14:08</p>
+  <p><span>最后更新:</span>2022年03月04日 - 08:03</p>
+  <p><span>原始链接:</span><a href="/2020/08/01/%E6%9E%B6%E6%9E%84%E5%B8%88_2/" title="软件架构 笔记2">https://songzi2693.cn/2020/08/01/%E6%9E%B6%E6%9E%84%E5%B8%88_2/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/2020/08/01/%E6%9E%B6%E6%9E%84%E5%B8%88_2/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/framework/" rel="tag"># framework</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/20/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/" rel="next" title="C语言程序设计笔记">
+                <i class="fa fa-chevron-left"></i> C语言程序设计笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/10/25/%E5%B9%B2%E5%A5%BD%E5%B7%A5%E4%BD%9C%E5%8D%81%E5%85%AB%E6%B3%95/" rel="prev" title="干好工作十八法">
+                干好工作十八法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+ 	<div id="gitalk-container"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">100</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ShortPupil" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:zzh2625@Gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              项目链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://github.com/ShortPupil" title="Github" target="_blank">Github</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5z7o1y5w71y&amp;m=8&amp;c=54ff00&amp;cr1=ff007e&amp;sx=0" async="async"></script>
+        
+
+      </section>
+
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松子</span>
+</div>
+
+<!--添加网站运行时间 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("10/10/2018 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+document.write("<br>")
+</script>
+<!-- 添加网站运行时间 -->
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<div>
+
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span>次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数 <span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '839f93bb1c0392738521',
+          clientSecret: 'fa692a2086510e51849da4866e7f42aaa5069b7d',
+          repo: 'ShortPupil.github.io',
+          owner: 'ShortPupil',
+          admin: ['ShortPupil'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<div id="wpac-rating"></div>
+<script type="text/javascript">
+wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'Rating', id: 17904});
+(function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = 'https://cdn.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();
+</script>
+
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
+
+  
+
+</body>
+</html>
