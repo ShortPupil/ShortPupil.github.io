@@ -517,7 +517,7 @@ gitalk:
 custom_file_path:
   head: source/_data/head.swig #添加自定义内容在 head
   #header: source/_data/header.swig #添加自定义内容在顶栏
-  #sidebar: source/_data/sidebar.swig #添加自定义内容在边栏
+  sidebar: source/_data/sidebar.swig #添加自定义内容在边栏
   #postMeta: source/_data/post-meta.swig #添加自定义文章的 meta 信息
   postBodyEnd: source/_data/post-body-end.swig #添加自定义内容在文章尾部
   footer: source/_data/footer.swig #添加自定义内容在页脚
@@ -525,6 +525,7 @@ custom_file_path:
   #variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
   style: source/_data/styles.styl #添加自定义css
+
 
 # ---------------------------------------------------------------
 # Tags Settings
