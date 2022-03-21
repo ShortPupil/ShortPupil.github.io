@@ -559,10 +559,11 @@ tabs:
 
 # Blog rolls 友情链接
 links_icon: link
-links_title: 项目链接
+links_title: Some Links
 links_layout: block
 links:
   Github: http://github.com/ShortPupil
+  Schedule: https://concrete-beluga-2fd.notion.site/6603cd297e8749a08ef4e76e97c0d736?v=ecbea19e28934c6ab512f267cc30c7c0
 
 
 #! ---------------------------------------------------------------
