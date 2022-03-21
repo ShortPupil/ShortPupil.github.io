@@ -122,6 +122,9 @@ $(document).ready(function () {
   $('.post-toc a').on('click', function (e) {
     e.preventDefault();
     var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+    // targetSelector 解析 UTF8 有问题, 将targetSelector 再解析一次就好了
+    targetSelector = decodeURI(this.getAttribute('href'))
+
     var offset = $(targetSelector).offset().top;
 
     hasVelocity ?

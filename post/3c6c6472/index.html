@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="software," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="毫末室" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="第一讲  生命周期模型与软件过程  典型生命周期模型     软件过程的历史演变和经典工作  三大阶段 成熟度模型 CMMI模型： 敏捷宣言 典型软件实践方法 软件开发典型特征 典型Devops实践和方法 敏捷软件开发；敏捷宣言 看板方法 精益 Lean   PSP 个体软件过程   管理信息系统——诺兰阶段模型： 前三个——计算机时代、后三个——信息时代  初始阶段：计算机刚进入企业，只作为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件过程与管理">
+<meta property="og:url" content="https://songzi2693.cn/post/3c6c6472/index.html">
+<meta property="og:site_name" content="毫末室">
+<meta property="og:description" content="第一讲  生命周期模型与软件过程  典型生命周期模型     软件过程的历史演变和经典工作  三大阶段 成熟度模型 CMMI模型： 敏捷宣言 典型软件实践方法 软件开发典型特征 典型Devops实践和方法 敏捷软件开发；敏捷宣言 看板方法 精益 Lean   PSP 个体软件过程   管理信息系统——诺兰阶段模型： 前三个——计算机时代、后三个——信息时代  初始阶段：计算机刚进入企业，只作为">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-01T10:47:24.000Z">
+<meta property="article:modified_time" content="2022-03-21T15:04:39.199Z">
+<meta property="article:author" content="松子">
+<meta property="article:tag" content="software">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '松子'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://songzi2693.cn/post/3c6c6472/"/>
+
+
+
+
+
+  <title>软件过程与管理 | 毫末室</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<script type="text/javascript">
+    var host = "songzi2693.cn";
+    if ((host == window.location.host) \
+		&&(window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <a target="_blank" rel="noopener" href="https://github.com/ShortPupil" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">毫末室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">合抱之木，生于毫末</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/3c6c6472/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毫末室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">软件过程与管理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-01T18:47:24+08:00">
+                2018-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">软件</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+            <span class="post-meta-divider">|</span>
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  6.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  6 mins.
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!-- toc -->
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%AE%B2">第一讲</a>
+<ul>
+<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B">生命周期模型与软件过程</a>
+<ul>
+<li><a href="#%E5%85%B8%E5%9E%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B">典型生命周期模型</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E7%9A%84%E5%8E%86%E5%8F%B2%E6%BC%94%E5%8F%98%E5%92%8C%E7%BB%8F%E5%85%B8%E5%B7%A5%E4%BD%9C">软件过程的历史演变和经典工作</a>
+<ul>
+<li><a href="#%E4%B8%89%E5%A4%A7%E9%98%B6%E6%AE%B5">三大阶段</a></li>
+<li><a href="#%E6%88%90%E7%86%9F%E5%BA%A6%E6%A8%A1%E5%9E%8B-cmmi%E6%A8%A1%E5%9E%8B">成熟度模型 <strong>CMMI模型</strong>：</a></li>
+<li><a href="#%E6%95%8F%E6%8D%B7%E5%AE%A3%E8%A8%80">敏捷宣言</a></li>
+<li><a href="#%E5%85%B8%E5%9E%8B%E8%BD%AF%E4%BB%B6%E5%AE%9E%E8%B7%B5%E6%96%B9%E6%B3%95">典型软件实践方法</a></li>
+<li><a href="#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%85%B8%E5%9E%8B%E7%89%B9%E5%BE%81">软件开发典型特征</a></li>
+<li><a href="#%E5%85%B8%E5%9E%8Bdevops%E5%AE%9E%E8%B7%B5%E5%92%8C%E6%96%B9%E6%B3%95">典型Devops实践和方法</a></li>
+<li><a href="#%E6%95%8F%E6%8D%B7%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%95%8F%E6%8D%B7%E5%AE%A3%E8%A8%80">敏捷软件开发；敏捷宣言</a></li>
+<li><a href="#%E7%9C%8B%E6%9D%BF%E6%96%B9%E6%B3%95">看板方法</a></li>
+<li><a href="#%E7%B2%BE%E7%9B%8A-lean">精益 Lean</a></li>
+</ul>
+</li>
+<li><a href="#psp-%E4%B8%AA%E4%BD%93%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B">PSP 个体软件过程</a></li>
+</ul>
+<!-- tocstop -->
+<p>管理信息系统——诺兰阶段模型：</p>
+<p>前三个——计算机时代、后三个——信息时代</p>
+<ul>
+<li><strong>初始阶段</strong>：计算机刚进入企业，只作为办公设备使用；企业对计算机基本不了解，少数人使用，并不普及</li>
+<li><strong>传播阶段</strong>：企业对计算机有一定了解应用需求增加；但此时缺少规划和计划，应用水平不高，IT整体效用无法显现</li>
+<li><strong>控制阶段</strong>：IT投资增长快，但收益不理想，于是在客观上要求组织协调，解决数据共享问题；一些职能部门内部实现网络化，如财务系统、人事系统等；但软件系统之间存在壁垒、“信息孤岛”，信息系统呈现单点、分散的特点，系统和资源利用率不高</li>
+<li><strong>集成阶段</strong>：企业的IT建设开始由分散和单点发展成体系。建立集中式的DB及显影的IS；增加大量硬件，预算费用迅速增长</li>
+<li><strong>数据管理阶段</strong>：信息成为企业的重要资源；企业开始选定统一的数据库平台、数据管理体系和信息管理平台，统一数据的管理和使用，各部门、各系统基本实现资源整合、信息共享。IT系统的规划及资源利用更加高效。</li>
+<li><strong>成熟阶段</strong>：企业真正把IT同管理过程结合起来，将组织内部、外部的资源充分整合和利用，从而提升了企业的竞争力和发展潜力。</li>
+</ul>
+<h1 id="第一讲">第一讲</h1>
+<h2 id="生命周期模型与软件过程">生命周期模型与软件过程</h2>
+<h3 id="典型生命周期模型">典型生命周期模型</h3>
+<ul>
+<li><strong>瀑布模型</strong>
+<ul>
+<li>最基本最有效、严格按照<strong>需求 -&gt;分析-&gt;设计-&gt;编码-&gt;测试</strong>的阶段进行；</li>
+<li>保证整个软件产品较高的质量,保证缺陷能够提前的被发现和解决；</li>
+<li>前期需求不明确,而又很难短时间明确清楚的项目则很难很好的利用瀑布模型</li>
+</ul>
+</li>
+<li><strong>螺旋模型</strong>
+<ul>
+<li>遵从瀑布模型的.即需求-&gt;架构-&gt;设计-&gt;开发-&gt;测试的路线，将瀑布模型的多个阶段转化到多个迭代过程中。</li>
+<li>螺旋模型的每一次迭代只包含了瀑布模型的某一个或两个阶段.。如第二次迭代重点是需求,第三次迭代是总体设计和后续设计开发计划等。</li>
+<li>因此这是和RUP提倡 的迭代模型是有区别的,RUP（Rational Unified Process统一软件开发过程）的每一次迭代都会包含需求,设计,开发和测试等各个阶段的活动。RUP迭代的目的在于逐步求精而不是仅仅完成瀑布模型某一阶段的工作.</li>
+</ul>
+</li>
+<li><strong>增量和迭代式模型</strong>
+<ul>
+<li>假设现在要开发 A,B,C,D四个大的业务功能,每个功能都需要开发两周的时间</li>
+<li>对于增量方法而言可以将<strong>四个功能分为两次增量</strong>来完成,<strong>第一个增量完成A,B功能</strong>,第二 次增量完成C,D功能;<strong>先一后二</strong></li>
+<li>对于迭代开发来将则是<strong>分两次迭代来开发</strong>,第一次迭代完成A,B,C,D四个基本业务功能但不含复杂的业务逻辑,而第二个功能再逐渐<strong>细化补充完整</strong>相关的业务逻辑原型法；<strong>逐步完善</strong></li>
+</ul>
+</li>
+<li><strong>原型法</strong>
+<ul>
+<li>启发式的方法，没有经验，没有过多需求分析，需要调研和挖掘功能的时候使用</li>
+</ul>
+</li>
+<li>快速和敏捷方法论</li>
+</ul>
+<p>管理的目的——为了让软件过程在<strong>开发效率、质量</strong>等方面有着更好的<strong>性能绩效</strong></p>
+<h1 id="软件过程的历史演变和经典工作">软件过程的历史演变和经典工作</h1>
+<h3 id="三大阶段">三大阶段</h3>
+<ul>
+<li>软硬件一体化阶段（50年代~10年代）
+<ul>
+<li>软件完全依附于硬件</li>
+<li>软件作坊</li>
+</ul>
+</li>
+<li>软件成为独立的产品（70年代~90年代）</li>
+<li>网络化和服务化（90年代中期至今）
+<ul>
+<li>软件功能更复杂，规模更大</li>
+<li>用户数量急剧增加</li>
+<li>快速演化和需求不确定</li>
+<li>分发方式的变化（SaaS）</li>
+</ul>
+</li>
+</ul>
+<h3 id="成熟度模型-cmmi模型">成熟度模型 <strong>CMMI模型</strong>：</h3>
+<ul>
+<li>Level1: Initial</li>
+<li>Level2: Managed</li>
+<li>Level3: Defined</li>
+<li>Level4: Quantitatively Managed</li>
+<li>Level5: Optimizing</li>
+</ul>
+<p>过程改进模型而非软件过程或者软件过程模型</p>
+<h3 id="敏捷宣言">敏捷宣言</h3>
+<ul>
+<li><strong>个体和互动</strong>胜过流程和工具</li>
+<li><strong>可以工作的软件</strong>胜过详尽的文档</li>
+<li><strong>客户合作</strong>胜过合同谈判</li>
+<li><strong>响应变化</strong>胜过遵循计划</li>
+</ul>
+<h3 id="典型软件实践方法">典型软件实践方法</h3>
+<ul>
+<li>XP方法：偏重于工程实践的描述</li>
+<li>SCRUM:管理框架和管理时间</li>
+<li>Kanban：精益生产；可视化工作流、限定WIP、管理周期时间</li>
+<li>开源软件开发</li>
+</ul>
+<p>DevOps是一种重视“软件开发人员（Dev）”和“IT运维技术人员（Ops）”之间沟通合作的文化、运动或惯例。透过自动化“软件交付”和“架构变更”的流程，来使得构建、测试、发布软件能够更加地快捷、频繁和可靠。”</p>
+<h3 id="软件开发典型特征">软件开发典型特征</h3>
+<ul>
+<li>空前强大的开发和部署环境——XaaS
+<ul>
+<li>IaaS</li>
+<li>PaaS</li>
+<li>SaaS、FaaS</li>
+</ul>
+</li>
+<li>共享文化</li>
+<li>潜在支撑——AI, Bigdata, Cloud…</li>
+</ul>
+<h3 id="典型devops实践和方法">典型Devops实践和方法</h3>
+<ul>
+<li>方法论基础是<strong>敏捷软件开发</strong>、<strong>精益思想</strong>、<strong>看板方法</strong></li>
+<li>以领域驱动设计为指导的微服务架构方法</li>
+<li>大量虚拟化技术的使用</li>
+<li>一切皆服务XaaS</li>
+<li>构件强大的工具链，支持高水平自动化</li>
+</ul>
+<p>用户名1：15801939795  密码：gGvs3ib4kxeLvvE</p>
+<p>用户名2：18801595789  密码：DevOpsFrank</p>
+<h3 id="敏捷软件开发敏捷宣言">敏捷软件开发；敏捷宣言</h3>
+<p>Agile敏捷 Lean精益</p>
+<h3 id="看板方法">看板方法</h3>
+<p>渐进增量式的过程改进方法学</p>
+<h4 id="可视化工作流程项目可视化">可视化工作流程——项目可视化</h4>
+<p>使用物理白板——信息辐射器；电子看板——冰箱</p>
+<p>使用白板</p>
+<ol>
+<li>
+<p>为每个工作项建立一个记事贴</p>
+</li>
+<li>
+<p>用列映射团队工作流——可视化工作流</p>
+<ul>
+<li>每列标识工作流的一部分</li>
+<li>应当包含工作全部阶段，从工作进入到工作离开团队</li>
+<li>PDCA：检视并调整</li>
+</ul>
+</li>
+</ol>
+<p>所有的工作显示在白板上，信息传递给所有人，沟通交流成本被极大地降低</p>
+<p>白板上的工作项</p>
+<ul>
+<li>工作项描述</li>
+<li>电子系统中的唯一标识</li>
+<li>完成期限</li>
+<li>谁在处理这个工作项</li>
+<li>工作类型（bug or 常规工作）</li>
+</ul>
+<p>尽可能保证每个工作项的工作量不要偏差太大（3天）</p>
+<h4 id="限制进行中的工作">限制进行中的工作</h4>
+<p><strong>个人效率</strong>、<strong>团队效率</strong></p>
+<p>减少在制品使快速流过整个工作流，可以使前置时间缩短</p>
+<p>个人效率下降，但团队的效率增加了</p>
+<p>在制品规模高会有工作闲置；在制品规模低会有人要闲置</p>
+<h3 id="精益-lean">精益 Lean</h3>
+<p>起源于制造业 丰田</p>
+<ul>
+<li><strong>消除浪费</strong></li>
+<li>增强学习</li>
+<li>尽量延迟决定：早期很多信息是得不到的</li>
+<li>尽快发布</li>
+<li>下放授权</li>
+<li>内置完整性</li>
+<li>全局优化</li>
+</ul>
+<h4 id="消除浪费">消除浪费</h4>
+<p>任何不能为用户创造价值的做法都是浪费</p>
+<ul>
+<li>创建不必要的功能和产品</li>
+<li>需求管理不当</li>
+<li>返工</li>
+<li>不必要的复杂解决方案</li>
+<li>过度认知负担</li>
+<li>心理压力</li>
+<li>等待、多任务（相互等待）WIP</li>
+<li>无效沟通</li>
+</ul>
+<h1 id="psp-个体软件过程">PSP 个体软件过程</h1>
+<p>TDD（Test-Driven Development, 测试驱动开发）已经成为现代软件开发中非常重要的概念之一。</p>
+<p>CI（Continuous Integration）持续集成，最重要的服务对象是TDD，它是一个集合概念，包括自动构建build项目，自动分析代码，自动测试，自动邮件报告，自动预编译检查，自动发布等等，这些都围绕一个中心词“Auto”，当然它不能帮您自动完成代码 ：）。所有这些操作，直接解放了项目管理者，每日构建集成（Build every day）将会很大程度上提高项目的稳定性，代码的健壮性及随时反馈。</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/post/3c6c6472/">软件过程与管理</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
+  <p><span>发布时间:</span>2018年11月01日 - 18:11</p>
+  <p><span>最后更新:</span>2022年03月21日 - 23:03</p>
+  <p><span>博文链接:</span><a href="/post/3c6c6472/" title="软件过程与管理">https://songzi2693.cn/post/3c6c6472/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/post/3c6c6472/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+    });
+    });
+</script>
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/software/" rel="tag"># software</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/99bc858a/" rel="next" title="markdown语法一览">
+                <i class="fa fa-chevron-left"></i> markdown语法一览
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/9ae13a6d/" rel="prev" title="设计模式(0) 介绍">
+                设计模式(0) 介绍 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+ 	<div id="gitalk-container"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="松子" />
+          <p class="site-author-name" itemprop="name">松子</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ShortPupil" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:zzh2625@Gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://concrete-beluga-2fd.notion.site/6603cd297e8749a08ef4e76e97c0d736?v=ecbea19e28934c6ab512f267cc30c7c0" title="Schedule" target="_blank">Schedule</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://concrete-beluga-2fd.notion.site/7c8a217dc8604ca2a1234e220c0064b0?v=45ee7b82e086404a8194506884dfd376" title="LeetCode" target="_blank">LeetCode</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+        <script>
+        	document.write("<br>")
+        </script>
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5z7o1y5w71y&amp;m=8&amp;c=54ff00&amp;cr1=ff007e&amp;sx=0" async="async"></script>
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E8%AE%B2"><span class="nav-text">第一讲</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B"><span class="nav-text">生命周期模型与软件过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B"><span class="nav-text">典型生命周期模型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E7%9A%84%E5%8E%86%E5%8F%B2%E6%BC%94%E5%8F%98%E5%92%8C%E7%BB%8F%E5%85%B8%E5%B7%A5%E4%BD%9C"><span class="nav-text">软件过程的历史演变和经典工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E5%A4%A7%E9%98%B6%E6%AE%B5"><span class="nav-text">三大阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E7%86%9F%E5%BA%A6%E6%A8%A1%E5%9E%8B-cmmi%E6%A8%A1%E5%9E%8B"><span class="nav-text">成熟度模型 CMMI模型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%8F%E6%8D%B7%E5%AE%A3%E8%A8%80"><span class="nav-text">敏捷宣言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E8%BD%AF%E4%BB%B6%E5%AE%9E%E8%B7%B5%E6%96%B9%E6%B3%95"><span class="nav-text">典型软件实践方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%85%B8%E5%9E%8B%E7%89%B9%E5%BE%81"><span class="nav-text">软件开发典型特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8Bdevops%E5%AE%9E%E8%B7%B5%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-text">典型Devops实践和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%8F%E6%8D%B7%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%95%8F%E6%8D%B7%E5%AE%A3%E8%A8%80"><span class="nav-text">敏捷软件开发；敏捷宣言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%8B%E6%9D%BF%E6%96%B9%E6%B3%95"><span class="nav-text">看板方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E9%A1%B9%E7%9B%AE%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-text">可视化工作流程——项目可视化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%90%E5%88%B6%E8%BF%9B%E8%A1%8C%E4%B8%AD%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="nav-text">限制进行中的工作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%BE%E7%9B%8A-lean"><span class="nav-text">精益 Lean</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B6%88%E9%99%A4%E6%B5%AA%E8%B4%B9"><span class="nav-text">消除浪费</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#psp-%E4%B8%AA%E4%BD%93%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B"><span class="nav-text">PSP 个体软件过程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松子</span>
+</div>
+
+<!--添加网站运行时间 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("10/10/2018 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+document.write("<br>")
+</script>
+<!-- 添加网站运行时间 -->
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<div>
+
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span>次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数 <span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '839f93bb1c0392738521',
+          clientSecret: 'fa692a2086510e51849da4866e7f42aaa5069b7d',
+          repo: 'ShortPupil.github.io',
+          owner: 'ShortPupil',
+          admin: ['ShortPupil'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+<div id="wpac-rating"></div>
+<script type="text/javascript">
+wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'Rating', id: 17904});
+(function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = 'https://cdn.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();
+</script>
+
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
+
+  
+
+</body>
+</html>

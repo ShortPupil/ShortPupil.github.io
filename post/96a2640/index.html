@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="data mining," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="毫末室" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="目录   2. 日志数据挖掘  2.1 特征工程难点 2.2 日志数据挖掘目标 2.3 日志数据挖掘常用算法     2. 日志数据挖掘 2.1 特征工程难点  难以快速理解复杂的业务逻辑和业务背景 基础数据不全面、不完整 某些数据的采集非常有难度，或是暂时没有行之有效的采集和处理方法，如某些自然语言的特征  2.2 日志数据挖掘目标 2.2.1 多维分析 在不同维度上对数据进行汇总和整理，并通过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阅读笔记——基于大数据的数据模式挖掘研究">
+<meta property="og:url" content="https://songzi2693.cn/post/96a2640/index.html">
+<meta property="og:site_name" content="毫末室">
+<meta property="og:description" content="目录   2. 日志数据挖掘  2.1 特征工程难点 2.2 日志数据挖掘目标 2.3 日志数据挖掘常用算法     2. 日志数据挖掘 2.1 特征工程难点  难以快速理解复杂的业务逻辑和业务背景 基础数据不全面、不完整 某些数据的采集非常有难度，或是暂时没有行之有效的采集和处理方法，如某些自然语言的特征  2.2 日志数据挖掘目标 2.2.1 多维分析 在不同维度上对数据进行汇总和整理，并通过">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-25T01:18:00.000Z">
+<meta property="article:modified_time" content="2022-03-21T15:04:39.109Z">
+<meta property="article:author" content="松子">
+<meta property="article:tag" content="data mining">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '松子'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://songzi2693.cn/post/96a2640/"/>
+
+
+
+
+
+  <title>阅读笔记——基于大数据的数据模式挖掘研究 | 毫末室</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<script type="text/javascript">
+    var host = "songzi2693.cn";
+    if ((host == window.location.host) \
+		&&(window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <a target="_blank" rel="noopener" href="https://github.com/ShortPupil" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">毫末室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">合抱之木，生于毫末</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/96a2640/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毫末室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">阅读笔记——基于大数据的数据模式挖掘研究</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-25T09:18:00+08:00">
+                2019-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" itemprop="url" rel="index">
+                    <span itemprop="name">数据挖掘</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+            <span class="post-meta-divider">|</span>
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  5 mins.
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="目录">目录</h1>
+<!-- toc -->
+<ul>
+<li><a href="#2-%E6%97%A5%E5%BF%97%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98">2. 日志数据挖掘</a>
+<ul>
+<li><a href="#21-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E9%9A%BE%E7%82%B9">2.1 特征工程难点</a></li>
+<li><a href="#22-%E6%97%A5%E5%BF%97%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%9B%AE%E6%A0%87">2.2 日志数据挖掘目标</a></li>
+<li><a href="#23-%E6%97%A5%E5%BF%97%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95">2.3 日志数据挖掘常用算法</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2 id="2-日志数据挖掘">2. 日志数据挖掘</h2>
+<h3 id="21-特征工程难点">2.1 特征工程难点</h3>
+<ul>
+<li>难以快速理解复杂的业务逻辑和业务背景</li>
+<li>基础数据不全面、不完整</li>
+<li>某些数据的采集非常有难度，或是暂时没有行之有效的采集和处理方法，如某些自然语言的特征</li>
+</ul>
+<h3 id="22-日志数据挖掘目标">2.2 日志数据挖掘目标</h3>
+<h4 id="221-多维分析">2.2.1 多维分析</h4>
+<p>在不同维度上对数据进行汇总和整理，并通过结合业务问题，或者与其他对象进行对比，以期发现相同的规律或业务内在流程和提升方式。通过对数据进行定期的总结，可以实现<em>对业务在实际数据上的全盘掌握</em>。</p>
+<p>利用<em>传统的统计方法来统计数据库中的数据或进行多维数据查询和计算</em>。</p>
+<p>日志数据挖掘——使用平台对日志进行统计分析和可视化。</p>
+<h4 id="222-关联分析">2.2.2 关联分析</h4>
+<p>通过<em>对数据项集之间的共现关系的计算</em>，以及<em>对于项集间的<strong>支持度</strong>和<strong>置信度</strong>的要求</em>，从而导出项集之间的<strong>关联规则</strong>。</p>
+<p>日志数据挖掘——对warning日志的因果关联分析，进行错误检测。</p>
+<h4 id="223-分类和预测">2.2.3 分类和预测</h4>
+<p>通过对已有数据和结论进行分析来对未知事物进行判断。</p>
+<p>日志数据挖掘——对warning日志的分析来进行故障的预测。</p>
+<h4 id="224-聚类分析">2.2.4 聚类分析</h4>
+<p>根据对象在各维度上的<strong>相似性判别指标</strong>进行聚类，使得在同一个类中的对象可以无监督地进行类别区分。</p>
+<p>日志数据挖掘——通过对web日志数据的聚类分析，对web日志进行聚类以减少页面数据量。</p>
+<h4 id="225-孤立点分析">2.2.5 孤立点分析</h4>
+<p>虽然孤立点在进行规律总结是会被认为是异常点或是噪声，从而被排除。但是在某些应用中国，孤立点本省就是挖掘的目的所在。</p>
+<p>日志数据挖掘——通过对使用日志的异常点分析，从而发现登录数据中的异常登录行为。</p>
+<h4 id="226-时间序列分析">2.2.6 时间序列分析</h4>
+<p>数据的属性值随时间不断变化，而且这类变化还可能与时间周期有一定关系。这些数据一般在相等或不等的时间间隔内取得，通过<strong>时间序列图</strong>的方法还可以对时间序列数据进行可视化，更直观地发现序列规律。</p>
+<h3 id="23-日志数据挖掘常用算法">2.3 日志数据挖掘常用算法</h3>
+<h4 id="231-分类与回归预测算法">2.3.1  分类与回归预测算法</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">算法名称</th>
+<th style="text-align:left">算法描述</th>
+<th style="text-align:left">使用场景</th>
+<th>示例代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">BP(Back Propagation, 反向传播)</td>
+<td style="text-align:left">按<strong>误差逆传播算法</strong>训练的多层反馈网络</td>
+<td style="text-align:left">电信客户分析识别</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">LM(Levenberg-Marquardt)</td>
+<td style="text-align:left">基于<strong>梯度下降法</strong>和<strong>牛顿法</strong>结合的优化算法，特点是迭代次数少，收敛速度快，精准度高</td>
+<td style="text-align:left">证券策略投资、水质样本评价</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">FNN(Fuzzy Neural Network, 模糊神经网络)</td>
+<td style="text-align:left">具有模糊权系数或者输入信号是模糊量的神经网络，是<strong>模糊系统</strong>和<strong>神经网络</strong>相结合的产物，汇聚了神经网络和模糊系统的优点</td>
+<td style="text-align:left">用户服务感知</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">RBF(Radial Basis Function, 径向基函数)</td>
+<td style="text-align:left">具有<strong>单隐层</strong>的<strong>三层前馈网络</strong>。是一种局部逼近网络，能够以任意精度逼近任意连续函数，特别适合解决分类问题。</td>
+<td style="text-align:left">桩基完整性检测、企业客户关系分析</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">ANFIS(Adaptive Neural Fuzzy Inference System, 自适应神经模糊推理网络)</td>
+<td style="text-align:left">功能上与一<strong>阶T-S模糊推理系统</strong>等价的<strong>自适应网络</strong></td>
+<td style="text-align:left">交叉路口信号灯控制</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">WNN(Wavelet Neural Network, 小波神经网络)</td>
+<td style="text-align:left">基于<strong>小波变换</strong>而构成的神经网络模型，即用非线性小波基代替通常的神经元非线性激励函数</td>
+<td style="text-align:left">智能复合材料应变损伤位置的诊断</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">SVM(Support Vector Machine, 支持向量机)</td>
+<td style="text-align:left">支持向量机根据有限的样本信息在模型的复杂性和学习能力之间寻求最佳折中</td>
+<td style="text-align:left">生物质废物混合厌氧消化有事组合互补机制</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">CART(Classification And Regression Tree, 分类与回归树)</td>
+<td style="text-align:left"><strong>非参数分类和回归方法</strong>，通过构建树、修建树、评估树来构建一个二叉树</td>
+<td style="text-align:left">纳税评估模型</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">朴素贝叶斯</td>
+<td style="text-align:left">根据特征属性，计算<strong>某个输入分类项属于某个类别的概率</strong>，选择其中最大的作为其类别</td>
+<td style="text-align:left">检测SNS社区中不真实账户</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">贝叶斯网络</td>
+<td style="text-align:left">基于<strong>概率推理</strong>的图形化网络</td>
+<td style="text-align:left">解决复杂设备不确定性和关联性引起的故障</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="232-聚类算法">2.3.2 聚类算法</h4>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>主要算法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>划分（分裂）方法</td>
+<td>K-means(K-平均值)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>K-MEDOIDS(K-中心值)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CLARAND(基于选择的算法)</td>
+<td></td>
+</tr>
+<tr>
+<td>层次方法</td>
+<td>BIRCH(平衡迭代规约和聚类)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CURE(代表点聚类)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CHAMELEON(动态模型)</td>
+<td></td>
+</tr>
+<tr>
+<td>基于密度的方法</td>
+<td>DBSCAN(基于高密度连续区域)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>DENCLUE(密度分布函数)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>OPTICS(对象排序识别)</td>
+<td></td>
+</tr>
+<tr>
+<td>基于网格的方法</td>
+<td>STING(统计信息网络)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CLIOUE(聚类高维空间)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>WAVE-CLUSTER(小波变换)</td>
+<td></td>
+</tr>
+<tr>
+<td>基于模型的方法</td>
+<td>统计学方法</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>神经网络方法</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="233-关联规则">2.3.3 关联规则</h4>
+<table>
+<thead>
+<tr>
+<th>算法名称</th>
+<th>算法描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apriori</td>
+<td>挖掘布尔关联规则频繁项集的算法。核心是基于两阶端频基思想的递推算法</td>
+<td></td>
+</tr>
+<tr>
+<td>FP-Tree</td>
+<td>不产生候选挖掘频繁项集的方法</td>
+<td></td>
+</tr>
+<tr>
+<td>灰色关联法</td>
+<td>分析和确定各因素之间的影响程度或若干子因素（子序列）对主因素（母序列）的贡献程度而进行的一种分析方法</td>
+<td></td>
+</tr>
+<tr>
+<td>HotSpot</td>
+<td>挖掘得到通过树状结构显示的感兴趣的目标最大化/最小化的一套规则，最大化/最小化的利益目标变量/值</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a target="_blank" rel="noopener" href="http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CMFD&amp;dbname=CMFD201802&amp;filename=1018168975.nh&amp;uid=WEEvREcwSlJHSldRa1FhcTdWa2FjcW9ydkpoNVhhbm45WFhxV0VMYzRMQT0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;v=MjU2NTExVDNxVHJXTTFGckNVUkxPZVplUnJGQ2puVkwzS1ZGMjZGcksrRnRqTHFwRWJQSVI4ZVgxTHV4WVM3RGg=">参考文献</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/data-mining/" rel="tag"># data mining</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/74fc2242/" rel="next" title="欧洲中世纪史——法英德">
+                <i class="fa fa-chevron-left"></i> 欧洲中世纪史——法英德
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/672ab7ec/" rel="prev" title="文心雕龙">
+                文心雕龙 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+ 	<div id="gitalk-container"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="松子" />
+          <p class="site-author-name" itemprop="name">松子</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ShortPupil" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:zzh2625@Gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://concrete-beluga-2fd.notion.site/6603cd297e8749a08ef4e76e97c0d736?v=ecbea19e28934c6ab512f267cc30c7c0" title="Schedule" target="_blank">Schedule</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://concrete-beluga-2fd.notion.site/7c8a217dc8604ca2a1234e220c0064b0?v=45ee7b82e086404a8194506884dfd376" title="LeetCode" target="_blank">LeetCode</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+        <script>
+        	document.write("<br>")
+        </script>
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5z7o1y5w71y&amp;m=8&amp;c=54ff00&amp;cr1=ff007e&amp;sx=0" async="async"></script>
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%97%A5%E5%BF%97%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98"><span class="nav-text">2. 日志数据挖掘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E9%9A%BE%E7%82%B9"><span class="nav-text">2.1 特征工程难点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-%E6%97%A5%E5%BF%97%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%9B%AE%E6%A0%87"><span class="nav-text">2.2 日志数据挖掘目标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#221-%E5%A4%9A%E7%BB%B4%E5%88%86%E6%9E%90"><span class="nav-text">2.2.1 多维分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#222-%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90"><span class="nav-text">2.2.2 关联分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#223-%E5%88%86%E7%B1%BB%E5%92%8C%E9%A2%84%E6%B5%8B"><span class="nav-text">2.2.3 分类和预测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#224-%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90"><span class="nav-text">2.2.4 聚类分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#225-%E5%AD%A4%E7%AB%8B%E7%82%B9%E5%88%86%E6%9E%90"><span class="nav-text">2.2.5 孤立点分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#226-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90"><span class="nav-text">2.2.6 时间序列分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-%E6%97%A5%E5%BF%97%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95"><span class="nav-text">2.3 日志数据挖掘常用算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#231-%E5%88%86%E7%B1%BB%E4%B8%8E%E5%9B%9E%E5%BD%92%E9%A2%84%E6%B5%8B%E7%AE%97%E6%B3%95"><span class="nav-text">2.3.1  分类与回归预测算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#232-%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95"><span class="nav-text">2.3.2 聚类算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#233-%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99"><span class="nav-text">2.3.3 关联规则</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松子</span>
+</div>
+
+<!--添加网站运行时间 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("10/10/2018 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+document.write("<br>")
+</script>
+<!-- 添加网站运行时间 -->
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<div>
+
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span>次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数 <span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '839f93bb1c0392738521',
+          clientSecret: 'fa692a2086510e51849da4866e7f42aaa5069b7d',
+          repo: 'ShortPupil.github.io',
+          owner: 'ShortPupil',
+          admin: ['ShortPupil'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+<div id="wpac-rating"></div>
+<script type="text/javascript">
+wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'Rating', id: 17904});
+(function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = 'https://cdn.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();
+</script>
+
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
+
+  
+
+</body>
+</html>
