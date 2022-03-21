@@ -1,9 +1,10 @@
 ---
 title: Linux分章重点——第五、六、七、八章
-date: 2018-10-18 18:47:24
 tags: linux
 copyright: false
 categories: linux
+abbrlink: 85c5dc00
+date: 2018-10-18 18:47:24
 ---
 
 # 目录

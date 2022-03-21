@@ -1,9 +1,11 @@
 ---
 title: MongoDB学习
-date: 2020-02-18 01:12:24
-tags: [mongodb]
+tags:
+  - mongodb
 categories: 数据库
 copyright: true
+abbrlink: '88175981'
+date: 2020-02-18 01:12:24
 ---
 
 <!-- toc -->

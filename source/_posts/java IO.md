@@ -1,9 +1,11 @@
 ---
 title: IO模型
-date: 2019-03-12 14:10:24
-tags: [io]
+tags:
+  - io
 copyright: true
 categories: io
+abbrlink: aeafbee0
+date: 2019-03-12 14:10:24
 ---
 
 <!-- toc -->

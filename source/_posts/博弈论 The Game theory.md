@@ -1,9 +1,11 @@
 ---
 title: 博弈论
-date: 2021-01-30 14:23:24
-tags: [Game Theory]
+tags:
+  - Game Theory
 copyright: true
 categories: 博弈论
+abbrlink: 12bcd26e
+date: 2021-01-30 14:23:24
 ---
 
 <!-- toc -->

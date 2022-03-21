@@ -1,12 +1,12 @@
 ---
 title: 数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法
-date: 2019-05-06 16:44:06
-tags: [Data Mining]
+tags:
+  - Data Mining
 categories: 商务智能
 copyright: true
 mathjax: true
-
-
+abbrlink: f0ff41c2
+date: 2019-05-06 16:44:06
 ---
 
 # 目录

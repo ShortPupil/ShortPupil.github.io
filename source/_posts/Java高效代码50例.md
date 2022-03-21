@@ -1,9 +1,11 @@
 ---
 title: Java高效代码例子
 copyright: false
-date: 2020-01-05 13:19:06
-tags: [java]
+tags:
+  - java
 categories: java
+abbrlink: e157f0a1
+date: 2020-01-05 13:19:06
 ---
 
 <!-- toc -->

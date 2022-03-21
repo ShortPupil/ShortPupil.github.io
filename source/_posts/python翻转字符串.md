@@ -1,9 +1,12 @@
 ---
 title: python翻转字符串
-date: 2018-11-18 01:12:24
-tags: [python, 字符串]
+tags:
+  - python
+  - 字符串
 categories: python
 copyright: true
+abbrlink: 49164d1a
+date: 2018-11-18 01:12:24
 ---
 
 将s = “abcd” 反转为 “dcba”

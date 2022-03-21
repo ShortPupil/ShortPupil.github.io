@@ -1,9 +1,11 @@
 ---
 title: 算法题整理
-date: 2019-04-23 21:23:24
-tags: [leetcode]
+tags:
+  - leetcode
 copyright: true
 categories: 题目
+abbrlink: dabc0faf
+date: 2019-04-23 21:23:24
 ---
 
 

@@ -1,9 +1,11 @@
 ---
 title: JVM学习
-date: 2020-12-08 23:17:01
-tags: [java]
+tags:
+  - java
 categories: java
 copyright: true
+abbrlink: f0242a65
+date: 2020-12-08 23:17:01
 ---
 
 <!--toc-->

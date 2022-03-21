@@ -1,9 +1,12 @@
 ---
 title: shell一些小坑
-date: 2018-10-24 23:46:19
-tags: [linux, shell]
+tags:
+  - linux
+  - shell
 copyright: true
 categories: linux
+abbrlink: 7d0c07d3
+date: 2018-10-24 23:46:19
 ---
 
 ## 条件判断

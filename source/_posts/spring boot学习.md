@@ -1,9 +1,11 @@
 ---
 title: spring boot学习
-date: 2020-03-10 12:52:24
-tags: [spring]
+tags:
+  - spring
 copyright: true
 categories: spring
+abbrlink: 2f959504
+date: 2020-03-10 12:52:24
 ---
 
 

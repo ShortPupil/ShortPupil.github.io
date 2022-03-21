@@ -1,9 +1,11 @@
 ---
 title: Java容器
-date: 2019-04-08 23:17:01
-tags: [java]
+tags:
+  - java
 categories: java
 copyright: true
+abbrlink: 58b717aa
+date: 2019-04-08 23:17:01
 ---
 
 # 目录

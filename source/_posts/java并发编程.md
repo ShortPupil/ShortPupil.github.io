@@ -1,9 +1,11 @@
 ---
 title: Java并发编程
 copyright: true
-date: 2020-03-01 13:19:06
-tags: [java]
+tags:
+  - java
 categories: java
+abbrlink: '3e225941'
+date: 2020-03-01 13:19:06
 ---
 
 <!-- toc -->

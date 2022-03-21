@@ -1,9 +1,11 @@
 ---
 title: Mysql基准测试工具使用记录
 copyright: true
-date: 2019-06-11 10:30:20
-tags: [mysql]
+tags:
+  - mysql
 categories: 数据库
+abbrlink: 8aabd1de
+date: 2019-06-11 10:30:20
 ---
 
 <!-- toc -->

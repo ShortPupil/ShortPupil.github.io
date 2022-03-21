@@ -1,9 +1,12 @@
 ---
 title: Redis核心技术
-date: 2020-01-30 11:12:00
-tags: [redis, nosql]
+tags:
+  - redis
+  - nosql
 categories: 数据库
 copyright: true
+abbrlink: 14b69b66
+date: 2020-01-30 11:12:00
 ---
 
 <!-- toc -->

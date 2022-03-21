@@ -1,9 +1,10 @@
 ---
 title: vim命令一览
-date: 2019-01-18 18:47:24
 tags: vim
 copyright: false
 categories: linux
+abbrlink: 91cb7c20
+date: 2019-01-18 18:47:24
 ---
 
 # 目录

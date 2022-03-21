@@ -1,9 +1,11 @@
 ---
 title: netty学习
-date: 2021-05-18 12:12:24
-tags: [netty]
+tags:
+  - netty
 categories: netty
 copyright: true
+abbrlink: 494a0207
+date: 2021-05-18 12:12:24
 ---
 
 <!-- toc -->

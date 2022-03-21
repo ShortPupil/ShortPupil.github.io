@@ -1,9 +1,11 @@
 ---
 title: Study Less Study Smart —— 高效学习
 copyright: false
-date: 2022-03-17 22:32:00
-tags: [psychology]
+tags:
+  - psychology
 categories: 心理学
+abbrlink: 9bea2a94
+date: 2022-03-17 22:32:00
 ---
 
 <!-- toc -->

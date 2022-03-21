@@ -1,9 +1,12 @@
 ---
 title: Mysql基准测试工具使用记录
 copyright: true
-date: 2018-12-11 19:30:20
-tags: [mysql,test]
+tags:
+  - mysql
+  - test
 categories: 数据库
+abbrlink: 8aabd1de
+date: 2018-12-11 19:30:20
 ---
 
 # 目录

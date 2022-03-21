@@ -1,9 +1,10 @@
 ---
 title: 简单数据库实现一
-date: 2019-10-18 19:40:24
 tags: database
 copyright: true
 categories: 数据库
+abbrlink: 1a82e99d
+date: 2019-10-18 19:40:24
 ---
 
 # 目录

@@ -1,9 +1,11 @@
 ---
 title: C语言程序设计笔记
-date: 2020-05-20 14:23:24
-tags: [C]
+tags:
+  - C
 copyright: true
 categories: C语言
+abbrlink: 840ee81f
+date: 2020-05-20 14:23:24
 ---
 
 <!-- toc -->

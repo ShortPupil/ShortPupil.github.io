@@ -1,9 +1,10 @@
 ---
 title: 使用explain查看查询语句效率——《高性能sql》附录D
-date: 2018-10-19 20:56:00
 tag: mysql
 copyright: true
 categories: 数据库
+abbrlink: 48b37dd6
+date: 2018-10-19 20:56:00
 ---
 
 # 1.简介

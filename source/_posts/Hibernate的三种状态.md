@@ -1,9 +1,10 @@
 ---
 title: Hibernate的三种状态、事务机制、缓存懒加载
 copyright: true
-date: 2018-10-29 23:33:44
 tags: hibernate
 categories: 数据库
+abbrlink: b4ceab5d
+date: 2018-10-29 23:33:44
 ---
 
 

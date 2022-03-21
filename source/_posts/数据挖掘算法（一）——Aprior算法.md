@@ -1,9 +1,11 @@
 ---
 title: 数据挖掘算法（一）——Aprior算法和FP-Tree算法
-date: 2019-05-05 08:16:06
-tags: [Data Mining]
+tags:
+  - Data Mining
 categories: 商务智能
 copyright: true
+abbrlink: 93db42ae
+date: 2019-05-05 08:16:06
 ---
 
 # 目录

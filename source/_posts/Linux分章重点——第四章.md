@@ -1,9 +1,10 @@
 ---
 title: Linux分章重点——第四章
-date: 2018-10-18 18:47:24
 tags: linux
 copyright: false
 categories: linux
+abbrlink: c62aba6d
+date: 2018-10-18 18:47:24
 ---
 
 # 目录

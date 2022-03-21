@@ -1,9 +1,11 @@
 ---
 title: RNN识别垃圾邮件
 copyright: false
-date: 2020-01-03 20:24:22
-tags: [machine learning]
+tags:
+  - machine learning
 categories: 机器学习
+abbrlink: 65e9fc1f
+date: 2020-01-03 20:24:22
 ---
 
 <!-- toc -->

@@ -1,9 +1,11 @@
 ---
 title: MySQL基础1
-date: 2019-06-11 10:30:20
-tags: [mysql]
+tags:
+  - mysql
 categories: 数据库
 copyright: true
+abbrlink: 7de48ef
+date: 2019-06-11 10:30:20
 ---
 
 <!-- toc -->

@@ -1,9 +1,10 @@
 ---
 title: markdown语法一览
-date: 2018-11-01 08:47:24
 tags: markdown
 copyright: true
 categories: 文本排版
+abbrlink: 99bc858a
+date: 2018-11-01 08:47:24
 ---
 
 

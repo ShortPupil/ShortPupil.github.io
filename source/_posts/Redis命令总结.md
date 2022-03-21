@@ -1,9 +1,12 @@
 ---
 title: Redis命令总结
-date: 2020-01-21 01:12:24
-tags: [redis, nosql]
+tags:
+  - redis
+  - nosql
 categories: 数据库
 copyright: true
+abbrlink: 6c3cc871
+date: 2020-01-21 01:12:24
 ---
 
 <!-- toc -->

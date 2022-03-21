@@ -1,9 +1,11 @@
 ---
 title: spring boot集成jsp
-date: 2019-02-19 21:43:24
-tags: [spring]
+tags:
+  - spring
 categories: 框架
 copyright: true
+abbrlink: 2ec52564
+date: 2019-02-19 21:43:24
 ---
 
 # 目录

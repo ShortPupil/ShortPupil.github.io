@@ -1,15 +1,11 @@
 ﻿# ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
-
-# Put your favicon.ico into `hexo-site/source/` directory.
-favicon:
-  small: /images/favicon-32x32-next.ico
-  medium: /images/favicon-16x16-next.ico
-  # small: /images/favicon_16.png
-
 # Set default keywords (Use a comma to separate)
 keywords: "Hexo, NexT"
+
+# Put your favicon.ico into `hexo-site/source/` directory.
+favicon: favicon.ico
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -27,6 +23,7 @@ copyright: true
 
 language: zh-Hans
 
+author: 松子
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -142,7 +139,7 @@ site_state: true
 
 # Table Of Contents in the Sidebar
 toc:
-  enable: false                                  # 是否开启目录
+  enable: true                                  # 是否开启目录
   # Automatically add list number to toc.
   number: false                                  # 自动增加列表数，比如`1.1 1.2 1.3`
   # If true, all words will placed on next lines if header width longer then sidebar width.
@@ -398,7 +395,7 @@ duoshuo_info:
   ua_enable: true
   admin_enable: false
   user_id: 0
-  #admin_nickname: Author
+  admin_nickname: 松子
 
 
 # Facebook SDK Support.
@@ -466,7 +463,7 @@ footer:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page

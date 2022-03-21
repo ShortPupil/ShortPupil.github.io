@@ -125,7 +125,7 @@
           </div>
         {% endif %}
         <script>
-        	document.write("<br><br>")
+        	document.write("<br>")
         </script>
         <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5z7o1y5w71y&amp;m=8&amp;c=54ff00&amp;cr1=ff007e&amp;sx=0" async="async"></script>
         {% include '../_custom/sidebar.swig' %}
