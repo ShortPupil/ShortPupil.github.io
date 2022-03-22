@@ -129,12 +129,12 @@
 
 
 
-<meta name="description" content="目录   Ch5 文件和目录 Ch6 Linux常用操作命令  grep find   Ch7 Shell编程 Ch8 用户和组群账号管理   Ch5 文件和目录 文件类型，ls -l所看到的信息，每一段都要搞得很清楚（作业第4题） ⽬目录常用命令，选项挑一些重点的看 比如：ls -a&#x2F;-l，但是-F就不不⽤用看 文件目录命令，PPT有一个表要好好看一看 ls -l 以长格式的形式查看当前目录下所">
+<meta name="description" content="目录  Ch5 文件和目录 Ch6 Linux常用操作命令 grep find   Ch7 Shell编程 Ch8 用户和组群账号管理   Ch5 文件和目录文件类型，ls -l所看到的信息，每一段都要搞得很清楚（作业第4题） ⽬目录常用命令，选项挑一些重点的看 比如：ls -a&#x2F;-l，但是-F就不不⽤用看文件目录命令，PPT有一个表要好好看一看 ls -l 以长格式的形式查看当前目录下所有可见文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux分章重点——第五、六、七、八章">
 <meta property="og:url" content="https://songzi2693.cn/post/85c5dc00/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录   Ch5 文件和目录 Ch6 Linux常用操作命令  grep find   Ch7 Shell编程 Ch8 用户和组群账号管理   Ch5 文件和目录 文件类型，ls -l所看到的信息，每一段都要搞得很清楚（作业第4题） ⽬目录常用命令，选项挑一些重点的看 比如：ls -a&#x2F;-l，但是-F就不不⽤用看 文件目录命令，PPT有一个表要好好看一看 ls -l 以长格式的形式查看当前目录下所">
+<meta property="og:description" content="目录  Ch5 文件和目录 Ch6 Linux常用操作命令 grep find   Ch7 Shell编程 Ch8 用户和组群账号管理   Ch5 文件和目录文件类型，ls -l所看到的信息，每一段都要搞得很清楚（作业第4题） ⽬目录常用命令，选项挑一些重点的看 比如：ls -a&#x2F;-l，但是-F就不不⽤用看文件目录命令，PPT有一个表要好好看一看 ls -l 以长格式的形式查看当前目录下所有可见文">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-10-18T10:47:24.000Z">
 <meta property="article:modified_time" content="2022-03-21T15:04:39.049Z">
@@ -191,7 +191,11 @@
 
 
 
-<meta name="generator" content="Hexo 5.4.1"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"></head>
 
 <script type="text/javascript">
     var host = "songzi2693.cn";
@@ -445,7 +449,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  2.4k
+                  2.7k
                 </span>
               
 
@@ -482,46 +486,38 @@
       
 
       
-        <h1 id="目录">目录</h1>
-<!-- toc -->
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><!-- toc -->
 <ul>
-<li><a href="#ch5-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95">Ch5 文件和目录</a></li>
-<li><a href="#ch6-linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4">Ch6 Linux常用操作命令</a>
-<ul>
+<li><a href="#ch5-文件和目录">Ch5 文件和目录</a></li>
+<li><a href="#ch6-linux常用操作命令">Ch6 Linux常用操作命令</a><ul>
 <li><a href="#grep">grep</a></li>
 <li><a href="#find">find</a></li>
 </ul>
 </li>
-<li><a href="#ch7-shell%E7%BC%96%E7%A8%8B">Ch7 Shell编程</a></li>
-<li><a href="#ch8-%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%BE%A4%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86">Ch8 用户和组群账号管理</a></li>
+<li><a href="#ch7-shell编程">Ch7 Shell编程</a></li>
+<li><a href="#ch8-用户和组群账号管理">Ch8 用户和组群账号管理</a></li>
 </ul>
 <!-- tocstop -->
-<h1 id="ch5-文件和目录">Ch5 文件和目录</h1>
-<p>文件类型，ls -l所看到的信息，每一段都要搞得很清楚（作业第4题） ⽬目录常用命令，选项挑一些重点的看</p>
-<p>比如：ls -a/-l，但是-F就不不⽤用看<br>
-文件目录命令，PPT有一个表要好好看一看</p>
+<h1 id="ch5-文件和目录"><a href="#Ch5-文件和目录" class="headerlink" title="Ch5 文件和目录"></a>Ch5 文件和目录</h1><p>文件类型，ls -l所看到的信息，每一段都要搞得很清楚（作业第4题） ⽬目录常用命令，选项挑一些重点的看</p>
+<p>比如：ls -a/-l，但是-F就不不⽤用看<br>文件目录命令，PPT有一个表要好好看一看</p>
 <p>ls -l</p>
-<p>以长格式的形式查看当前目录下所有可见文件的详细属性。(l就是long)<br>
-​</p>
+<p>以长格式的形式查看当前目录下所有可见文件的详细属性。(l就是long)<br>​    </p>
 <ol>
 <li>第1列:1.第1个字符表示文件的类型  2.第2～4个字符表示文件所有者对此文件的访问权限 3.第5～7个字符表示用户组对此文件的访问权限  4.第8～10个字符表示其他用户对此文件的访问权限</li>
-<li>第2列:文件的链接数</li>
+<li>第2列:文件的链接数 </li>
 <li>第3列:文件的所有者</li>
-<li>第4列:文件的用户组名</li>
-<li>第5列:文件所占的字节数</li>
+<li>第4列:文件的用户组名 </li>
+<li>第5列:文件所占的字节数  </li>
 <li>第6～8列:文件上一次的修改时间</li>
 <li>第9列:文件名</li>
 </ol>
 <p>ls -a</p>
 <p>显示包含连隐藏文件在内的所有文件。(a就是all)</p>
 <hr>
-<h1 id="ch6-linux常用操作命令">Ch6 Linux常用操作命令</h1>
-<p>很多命令，但是考的不多，要把命令看一下是干什么的，不用深入了解</p>
-<p>第二小节：<strong>grep</strong>，<strong>ﬁnd</strong></p>
-<h2 id="grep">grep</h2>
-<p>使用grep命令可以查找文件中符合条件的字符串。</p>
-<p>命令语法：<br>
-grep [选项][查找模式][文件名]</p>
+<h1 id="ch6-linux常用操作命令"><a href="#Ch6-Linux常用操作命令" class="headerlink" title="Ch6 Linux常用操作命令"></a>Ch6 Linux常用操作命令</h1><p>很多命令，但是考的不多，要把命令看一下是干什么的，不用深入了解</p>
+<p>第二小节：<strong>grep</strong>，<strong>ﬁnd</strong> </p>
+<h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><p>使用grep命令可以查找文件中符合条件的字符串。</p>
+<p>命令语法：<br>grep [选项][查找模式][文件名]</p>
 <p>【例6.22】显示所有以d开头的文件中包含 “test”的行数据内容。</p>
 <p>[root@PC-LINUX ~]#cat d1</p>
 <p>1</p>
@@ -533,17 +529,15 @@ grep [选项][查找模式][文件名]</p>
 <p>[root@PC-LINUX ~]# grep ‘test’ d*</p>
 <p>d1:test1</p>
 <p>d2:test2</p>
-<h2 id="find">find</h2>
-<p>使用find命令可以将文件系统中符合条件的文件或目录列出来，可以指定文件的名称、类别、时间、大小以及权限等不同信息的组合，只有完全相符的文件才会被列出来。</p>
-<p>命令语法：<br>
-find [路径][选项][-print]</p>
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>使用find命令可以将文件系统中符合条件的文件或目录列出来，可以指定文件的名称、类别、时间、大小以及权限等不同信息的组合，只有完全相符的文件才会被列出来。</p>
+<p>命令语法：<br>find [路径][选项][-print]</p>
 <p>【例6.27】列出当前目录及其子目录下所有最近20天内更新过的文件。</p>
 <p>[root@PC-LINUX ~]# find . -ctime -20</p>
 <p>.</p>
 <p>./install.log</p>
 <p>./.mission-control</p>
 <p>./.mission-control/accounts</p>
-<p>./.mission-control/accounts/accounts.cfg</p>
+<p>./.mission-control/accounts/accounts.cfg </p>
 <p>./anaconda-ks.cfg</p>
 <p>./install.log.syslog</p>
 <p>./.tcshrc</p>
@@ -551,16 +545,11 @@ find [路径][选项][-print]</p>
 <p>./.gconf/apps</p>
 <p>./.gconf/apps/%gconf.xml</p>
 <p>./.gconf/apps/nm-applet</p>
-<p>./.gconf/apps/nm-applet/%gconf.xml<br>
-………………………………………………</p>
+<p>./.gconf/apps/nm-applet/%gconf.xml<br>………………………………………………</p>
 <hr>
-<h1 id="ch7-shell编程">Ch7 Shell编程</h1>
-<p>不会超过20行<br>
-环境变量、特殊变量要掌握，语句的语法要掌握<br>
-写题</p>
+<h1 id="ch7-shell编程"><a href="#Ch7-Shell编程" class="headerlink" title="Ch7 Shell编程"></a>Ch7 Shell编程</h1><p>不会超过20行<br>环境变量、特殊变量要掌握，语句的语法要掌握<br>写题</p>
 <hr>
-<h1 id="ch8-用户和组群账号管理">Ch8 用户和组群账号管理</h1>
-<p>用户管理：添加账号、删除账号、添加组</p>
+<h1 id="ch8-用户和组群账号管理"><a href="#Ch8-用户和组群账号管理" class="headerlink" title="Ch8 用户和组群账号管理"></a>Ch8 用户和组群账号管理</h1><p>用户管理：添加账号、删除账号、添加组 </p>
 <p>涉及⽂件、password的格式</p>
 <p>常⽤⽂件、⽂件的每⼀⾏，要求低，不⽤写每⼀⾏是什么</p>
 <p>字符常⽤的，添加、删除⽤户、修改密码，这些对应⽂件中主要的信息的命令重要</p>
@@ -706,7 +695,7 @@ find [路径][选项][-print]</p>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">105</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

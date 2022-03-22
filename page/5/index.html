@@ -186,7 +186,11 @@
 
 
 
-<meta name="generator" content="Hexo 5.4.1"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"></head>
 
 <script type="text/javascript">
     var host = "songzi2693.cn";
@@ -357,6 +361,399 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/65e9fc1f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毫末室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/65e9fc1f/" itemprop="url">RNN识别垃圾邮件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-03T20:24:22+08:00">
+                2020-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+            <span class="post-meta-divider">|</span>
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  16k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  14 mins.
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+
+1. 获取数据集及处理思路
+2. 训练神经网络
+1. 加载包
+2. 导入数据
+
+
+
+
+1. 获取数据集及处理思路SMS垃圾邮箱数据集
+这个数据有两列，一列为标记，值为ham spam，第二列为邮件
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/65e9fc1f/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/24263c33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毫末室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/24263c33/" itemprop="url">文学与伦理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T21:56:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">文学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+            <span class="post-meta-divider">|</span>
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  13k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  12 mins.
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          文学与伦理——19世纪俄罗斯文学
+
+1. 文学与伦理的关系与意义
+文学与伦理的关系
+文学与伦理的意义
+西方文学
+
+
+2. 19世纪俄罗斯文学和陀思妥耶夫斯基
+黄金时代
+白银时代
+陀氏生平
+陀氏作品的特
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/24263c33/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/672ab7ec/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -444,7 +841,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  744
+                  677
                 </span>
               
 
@@ -486,14 +883,15 @@
           
 
 一、概论
-
 方法和内容
 
 
 
 
-[课程链接](ss.chaoxing.com/search?sw=北京大学 中国当代文学史 ��%%8 ss.chaoxing.com/search?sw)
-一、概
+课程链接
+一、概论重要，但难于理解把握，几乎每一篇都有一点疑难
+方法和内容方法：解读原文、阐述含义，重点地方介绍学者不同的看法
+内容 精读十八篇：《原道》《宗经》《辨
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -639,7 +1037,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  6k
+                  6.7k
                 </span>
               
 
@@ -655,7 +1053,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  5 mins.
+                  6 mins.
                 </span>
               
             </div>
@@ -680,9 +1078,7 @@
           
           目录
 
-
 2. 日志数据挖掘
-
 2.1 特征工程难点
 2.2 日志数据挖掘目标
 2.3 日志数据挖掘常用算法
@@ -690,11 +1086,9 @@
 
 
 
-2. 日志数据挖掘
-2.1 特征工程难点
-
+2. 日志数据挖掘2.1 特征工程难点
 难以快速理解复杂的业务逻辑和业务背景
-
+基础数据
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -840,7 +1234,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  21k
+                  22k
                 </span>
               
 
@@ -856,7 +1250,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  19 mins.
+                  20 mins.
                 </span>
               
             </div>
@@ -882,13 +1276,11 @@
           
 
 中世纪法国
-
 2. 中世纪盛期的法国（987-1314）
-
 2.1 新王朝面临的困境
 2.2 腓力二世（1165-1223）
 2.3 路易九世（1214-1270）
-2.4 腓力四世（1268-1
+2.4 腓力四世（1268-131
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1034,7 +1426,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  8.5k
+                  9k
                 </span>
               
 
@@ -1076,22 +1468,20 @@
           
 
 一、罗马帝国的遗产
-
 1. 使徒时代的基督教
 2. 神学与教义
 3. 拉丁神学 修隐生活
 
 
 二、日耳曼人的影响
-
 1.部落等级制
-
 2. 日耳曼因素对封建主义的影响
 3. 日耳曼人的建国
 
 
 
 
+三、
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1237,7 +1627,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  2.5k
+                  3k
                 </span>
               
 
@@ -1253,7 +1643,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  2 mins.
+                  3 mins.
                 </span>
               
             </div>
@@ -1278,20 +1668,16 @@
           
           目录
 
-
 作业一
-
 1. SimpleDB体系结构
 
 
 
 
 课程链接
-作业一
-1. SimpleDB体系结构
-Consists of
+作业一1. SimpleDB体系结构Consists of
 
-包含字段、元组、元组架构的类。Classes that repr
+包含字段、元组、元组架构的类。Classes that represen
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1437,7 +1823,7 @@ Consists of
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  2.3k
+                  2.6k
                 </span>
               
 
@@ -1478,9 +1864,7 @@ Consists of
           
           不平等条约——近代中国与世界的关系
 国际体系的变迁：宗藩体系——不平等条约体系——国际社会新秩序
-一、传统中国的国际体系：宗藩体系
-1. 宗藩体系的构成
-传统中国的国际关系体系：以中国为圆心，发展出一
+一、传统中国的国际体系：宗藩体系1. 宗藩体系的构成传统中国的国际关系体系：以中国为圆心，发展出一个状
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1626,7 +2010,7 @@ Consists of
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  8.7k
+                  8.4k
                 </span>
               
 
@@ -1668,18 +2052,16 @@ Consists of
           
 
 近现代中国历史研究的基本范式
-
 一、现代化研究范式
 二、革命研究范式
 三、革命与现代化研究范式
-
 1、问题的提出
 2、革命与现代化研究范式的特点
 
 
 四、现代民族国家范式
-
-1、 近现代史与现代文
+1、 近现代史与现代文明
+2
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1825,7 +2207,7 @@ Consists of
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  57k
+                  58k
                 </span>
               
 
@@ -1841,7 +2223,7 @@ Consists of
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  52 mins.
+                  53 mins.
                 </span>
               
             </div>
@@ -1867,422 +2249,20 @@ Consists of
           
 
 1. 数据类型相关
-
 1.1 数据类型分类
 1.2 数据类型基本介绍
-
 1.2.1 字符串类型
 1.2.2 日期/时间类型
 1.2.3 数值类型
 1.2.4 二进制类型
 
 
-1.3 数据类型使用建
+1.3 数据类型使用建议
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/post/7de48ef/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/8aabd1de/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="松子">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="毫末室">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/8aabd1de/" itemprop="url">Mysql基准测试工具使用记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-11T10:30:20+08:00">
-                2019-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-            <span class="post-meta-divider">|</span>
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  4.9k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time</span>
-                
-                <span title="Reading time">
-                  4 mins.
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-
-概述
-一、体系结构与存储引擎
-
-1.MySQL体系结构
-
-1.2 Select执行轨迹
-
-
-2.什么是存储引擎及其分类
-
-InnoDB体系结构
-
-
-3.InnoDB存储引擎体系结构(MySQL5.
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/8aabd1de/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/f0ff41c2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="松子">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="毫末室">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/f0ff41c2/" itemprop="url">数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-06T16:44:06+08:00">
-                2019-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%95%86%E5%8A%A1%E6%99%BA%E8%83%BD/" itemprop="url" rel="index">
-                    <span itemprop="name">商务智能</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-            <span class="post-meta-divider">|</span>
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  1.2k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time</span>
-                
-                <span title="Reading time">
-                  1 mins.
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          目录
-
-
-如何理解
-
-Boosting算法
-AdaBoost算法
-
-
-算法原理
-算法实现
-
-
-如何理解
-Boosting算法
-Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。
-思想：
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/f0ff41c2/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2374,7 +2354,7 @@ Boosting 提升算法是一系列将罗学习器提升为强学习器的算法�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">105</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

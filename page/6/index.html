@@ -186,7 +186,123 @@
 
 
 
-<meta name="generator" content="Hexo 5.4.1"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <script type="text/javascript">
     var host = "songzi2693.cn";
@@ -357,6 +473,400 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/8aabd1de/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毫末室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/8aabd1de/" itemprop="url">Mysql基准测试工具使用记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-11T10:30:20+08:00">
+                2019-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+            <span class="post-meta-divider">|</span>
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  5.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  5 mins.
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+
+概述
+一、体系结构与存储引擎
+1.MySQL体系结构
+1.2 Select执行轨迹
+
+
+2.什么是存储引擎及其分类
+InnoDB体系结构
+
+
+3.InnoDB存储引擎体系结构(MySQL5.6)·
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/8aabd1de/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/f0ff41c2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毫末室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/f0ff41c2/" itemprop="url">数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-06T16:44:06+08:00">
+                2019-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%95%86%E5%8A%A1%E6%99%BA%E8%83%BD/" itemprop="url" rel="index">
+                    <span itemprop="name">商务智能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+            <span class="post-meta-divider">|</span>
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  1 mins.
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          目录
+
+如何理解
+Boosting算法
+AdaBoost算法
+
+
+算法原理
+算法实现
+
+
+如何理解Boosting算法Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。
+思想：对于一个
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/f0ff41c2/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/93db42ae/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -444,7 +954,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  4.3k
+                  5k
                 </span>
               
 
@@ -460,7 +970,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  4 mins.
+                  5 mins.
                 </span>
               
             </div>
@@ -485,27 +995,24 @@
           
           目录
 
-
 如何理解
-
 总项集
 关联规则的定义
 关联规则挖掘的定义和步骤
 
 
 Apriori定律——消除频繁项集生成时间
-
 Apriori算法实现
 
 
 FP-Tree频繁模式树算法
-
 步骤
 
 
 参考
 
 
+如何理
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -651,7 +1158,7 @@ FP-Tree频繁模式树算法
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  8.2k
+                  10k
                 </span>
               
 
@@ -667,7 +1174,7 @@ FP-Tree频繁模式树算法
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  7 mins.
+                  9 mins.
                 </span>
               
             </div>
@@ -692,17 +1199,15 @@ FP-Tree频繁模式树算法
           
           目录
 
-
 阅读顺序
 第一章 引论
-
 1.1 为什么需要数据挖掘
 1.2 什么是数据挖掘
 1.3 可以挖掘什么类型的数据
 1.4 挖掘模式
 1.5 使用的技术
 1.6 面向什么类型的应用
-1.7 数据挖
+1.7 数据挖掘的
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -905,7 +1410,14 @@ SQL
 1
 Two Sum
 Easy
-[YES](https://github.co
+YES
+YES
+
+
+
+
+2
+Add Two N
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1051,7 +1563,7 @@ Easy
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  11k
+                  16k
                 </span>
               
 
@@ -1067,7 +1579,7 @@ Easy
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  10 mins.
+                  15 mins.
                 </span>
               
             </div>
@@ -1091,13 +1603,9 @@ Easy
         
           
           百度云盘 曼昆 经济学原理 第七版 微观经济学分册 pdf
-提取码：9d89
+提取码：9d89 
 以下内容用于理解微观经济学中的各种概念
-第一章、绪论
-一、什么是经济学
-1. 经济学的起源
-（1） 两类资源
-“非经济资源
+第一章、绪论一、什么是经济学1. 经济学的起源（1） 两类资源“非经济资源”和“
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1243,7 +1751,7 @@ Easy
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  4k
+                  4.5k
                 </span>
               
 
@@ -1284,15 +1792,15 @@ Easy
           
           目录
 
-
 《Building the Data Warehouse》第四章 粒度
-
 粗略估算
 粒度划分过程的输入
 选择双重还是单一的粒度
 确定粒度的级别
 反馈循环技巧（不是很懂）
 粒度级别——银行环境
+
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1438,7 +1946,7 @@ Easy
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  1.5k
+                  2k
                 </span>
               
 
@@ -1454,7 +1962,7 @@ Easy
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  1 mins.
+                  2 mins.
                 </span>
               
             </div>
@@ -1479,17 +1987,14 @@ Easy
           
           目录
 
-
 《Building the Data Warehouse》第三章 设计
 操作型数据——开始
-
 困难
 
 
 
 
-《Building the Data Warehouse》第三章 设计
-建造的两个
+《Building the Data Warehouse》第三章 设计建造的两个主要方
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1635,7 +2140,7 @@ Easy
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  6k
+                  6.4k
                 </span>
               
 
@@ -1651,7 +2156,7 @@ Easy
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  5 mins.
+                  6 mins.
                 </span>
               
             </div>
@@ -1676,14 +2181,12 @@ Easy
           
           目录
 
-
 《Building the Data Warehouse》第一章 决策支持系统的发展
 词汇表
 DSS处理演化
-
 创建运行于主文件上的单个应用
 直接存取存储设备的产生
-个人计算机/第四代编程语
+个人计算机/第四代编程语言技
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1829,7 +2332,7 @@ DSS处理演化
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  6.2k
+                  6.5k
                 </span>
               
 
@@ -1870,417 +2373,19 @@ DSS处理演化
           
           目录
 
-
 《Building the Data Warehouse》第二章 数据仓库环境
 词汇表
 数据仓库的特性
-
 结构
 面向主题
 随时间变化
 粒度——第一个主要涉及问题
-分隔问题——第二个主要设计问
+分隔问题——第二个主要设计问题
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/post/b3beebcd/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/58b717aa/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="松子">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="毫末室">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/58b717aa/" itemprop="url">Java容器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-08T23:17:01+08:00">
-                2019-04-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-            <span class="post-meta-divider">|</span>
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  7.3k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time</span>
-                
-                <span title="Reading time">
-                  7 mins.
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          目录
-
-
-java容器分类
-最常使用的List、Set、Map的区别
-
-Collection 和 Map 的区别
-各自的子类关系
-其他特征
-
-
-Map的辨析
-
-HashMap和TreeMap的取舍
-H
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/58b717aa/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/ff4ddc00/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="松子">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="毫末室">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/ff4ddc00/" itemprop="url">内存堆，内存池，常量池</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-06T22:16:01+08:00">
-                2019-04-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-            <span class="post-meta-divider">|</span>
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  7.7k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time</span>
-                
-                <span title="Reading time">
-                  7 mins.
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          目录
-
-
-JAVA的六个不同存储数据位置：
-栈，堆和常量池
-
-栈和堆
-
-
-参考
-
-
-JAVA的六个不同存储数据位置：
-1. 寄存器：最快的存储区，位于处理器内部（不同于其他存储区的地方）。寄存器的数量
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/ff4ddc00/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2372,7 +2477,7 @@ JAVA的六个不同存储数据位置：
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">105</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
