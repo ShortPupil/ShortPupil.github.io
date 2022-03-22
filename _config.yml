@@ -152,6 +152,8 @@ search:
 
 sitemap:
   path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 
 # 设置博客单词统计
 symbols_count_time:
