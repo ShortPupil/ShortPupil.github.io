@@ -35,11 +35,11 @@ author: 松子
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
-index_with_subtitle: false
+index_with_subtitle: true
 
 
 # ---------------------------------------------------------------
@@ -53,10 +53,9 @@ menu:
   about: /about
   archives: /archives
   tags: /tags
-  #schedule: /schedule/
-  #sitemap: /sitemap
   #commonweal: /404
-
+  schedule: https://concrete-beluga-2fd.notion.site/6603cd297e8749a08ef4e76e97c0d736?v=ecbea19e28934c6ab512f267cc30c7c0
+  #sitemap: /sitemap
 
 # Enable/Disable menu icons.
 # Icon Mapping:
@@ -67,14 +66,14 @@ menu_icons:
   enable: true
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
-  about: user
   categories: th
   schedule: calendar
   tags: tags
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
-
+  leetcode: code
+  about: user
 
 # ---------------------------------------------------------------
 # Scheme Settings
@@ -98,6 +97,8 @@ social:
   #LinkLabel: Link
   GitHub: https://github.com/ShortPupil
   E-Mail: mailto:zzh2625@Gmail.com
+  LeetCode NoteBook: https://concrete-beluga-2fd.notion.site/7c8a217dc8604ca2a1234e220c0064b0?v=45ee7b82e086404a8194506884dfd376
+  Weibo: https://weibo.com/3229275825/
 
 # Social Links Icons
 # Icon Mapping:
@@ -121,6 +122,8 @@ social_icons:
   Instagram: instagram
   StackOverflow: stack-overflow
   Weibo: weibo
+  LeetCode NoteBook: code
+  QQ: qq
 
 # Blog rolls
 #links_title: Links
@@ -557,8 +560,6 @@ links_icon: link
 links_title: Links
 links_layout: block
 links:
-  Schedule: https://concrete-beluga-2fd.notion.site/6603cd297e8749a08ef4e76e97c0d736?v=ecbea19e28934c6ab512f267cc30c7c0
-  LeetCode: https://concrete-beluga-2fd.notion.site/7c8a217dc8604ca2a1234e220c0064b0?v=45ee7b82e086404a8194506884dfd376
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
