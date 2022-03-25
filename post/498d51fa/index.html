@@ -129,18 +129,18 @@
 
 
 
-<meta name="description" content="目录   《Building the Data Warehouse》第四章 粒度  粗略估算 粒度划分过程的输入 选择双重还是单一的粒度 确定粒度的级别 反馈循环技巧（不是很懂） 粒度级别——银行环境   《Building the Data Warehouse》第五章 数据仓库与技术  技术需求     《Building the Data Warehouse》第四章 粒度 数据仓库开发者要解决">
+<meta name="description" content="目录 《Building the Data Warehouse》第四章 粒度 数据仓库开发者要解决的重要的设计问题是粒度确定。 粗略估算 起点——粗略估算数据仓库中将来的数据行数和所需DASD（直接存取存储设备）数——关于数量级的估计。 例子 估计数据仓库环境中的行数&#x2F;空间大小   对每一个已知的表： ​	计算一行所占字节数的 ​		最大估计值 ​		最小估计值 对一年内： ​	最大行数可能是多少">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据仓库（四）">
 <meta property="og:url" content="https://songzi2693.cn/post/498d51fa/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录   《Building the Data Warehouse》第四章 粒度  粗略估算 粒度划分过程的输入 选择双重还是单一的粒度 确定粒度的级别 反馈循环技巧（不是很懂） 粒度级别——银行环境   《Building the Data Warehouse》第五章 数据仓库与技术  技术需求     《Building the Data Warehouse》第四章 粒度 数据仓库开发者要解决">
+<meta property="og:description" content="目录 《Building the Data Warehouse》第四章 粒度 数据仓库开发者要解决的重要的设计问题是粒度确定。 粗略估算 起点——粗略估算数据仓库中将来的数据行数和所需DASD（直接存取存储设备）数——关于数量级的估计。 例子 估计数据仓库环境中的行数&#x2F;空间大小   对每一个已知的表： ​	计算一行所占字节数的 ​		最大估计值 ​		最小估计值 对一年内： ​	最大行数可能是多少">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190413212024.png">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190413212918.png">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190422001508.png">
 <meta property="article:published_time" content="2019-04-13T12:55:06.000Z">
-<meta property="article:modified_time" content="2022-03-21T15:04:39.129Z">
+<meta property="article:modified_time" content="2022-03-25T18:50:28.588Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="BI">
 <meta property="article:tag" content="Data Warehouse">
@@ -454,7 +454,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  4k
+                  2.9k
                 </span>
               
 
@@ -470,7 +470,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  4 mins.
+                  3 mins.
                 </span>
               
             </div>
@@ -492,25 +492,6 @@
 
       
         <h1 id="目录">目录</h1>
-<!-- toc -->
-<ul>
-<li><a href="#building-the-data-warehouse%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%B2%92%E5%BA%A6">《Building the Data Warehouse》第四章 粒度</a>
-<ul>
-<li><a href="#%E7%B2%97%E7%95%A5%E4%BC%B0%E7%AE%97">粗略估算</a></li>
-<li><a href="#%E7%B2%92%E5%BA%A6%E5%88%92%E5%88%86%E8%BF%87%E7%A8%8B%E7%9A%84%E8%BE%93%E5%85%A5">粒度划分过程的输入</a></li>
-<li><a href="#%E9%80%89%E6%8B%A9%E5%8F%8C%E9%87%8D%E8%BF%98%E6%98%AF%E5%8D%95%E4%B8%80%E7%9A%84%E7%B2%92%E5%BA%A6">选择双重还是单一的粒度</a></li>
-<li><a href="#%E7%A1%AE%E5%AE%9A%E7%B2%92%E5%BA%A6%E7%9A%84%E7%BA%A7%E5%88%AB">确定粒度的级别</a></li>
-<li><a href="#%E5%8F%8D%E9%A6%88%E5%BE%AA%E7%8E%AF%E6%8A%80%E5%B7%A7%E4%B8%8D%E6%98%AF%E5%BE%88%E6%87%82">反馈循环技巧（不是很懂）</a></li>
-<li><a href="#%E7%B2%92%E5%BA%A6%E7%BA%A7%E5%88%AB%E9%93%B6%E8%A1%8C%E7%8E%AF%E5%A2%83">粒度级别——银行环境</a></li>
-</ul>
-</li>
-<li><a href="#building-the-data-warehouse%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%8A%80%E6%9C%AF">《Building the Data Warehouse》第五章 数据仓库与技术</a>
-<ul>
-<li><a href="#%E6%8A%80%E6%9C%AF%E9%9C%80%E6%B1%82">技术需求</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
 <h2 id="building-the-data-warehouse第四章-粒度">《Building the Data Warehouse》第四章 粒度</h2>
 <p>数据仓库开发者要解决的重要的设计问题是<strong>粒度确定</strong>。</p>
 <h3 id="粗略估算">粗略估算</h3>
@@ -653,7 +634,7 @@
   <p><span>本文标题:</span><a href="/post/498d51fa/">数据仓库（四）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
   <p><span>发布时间:</span>2019年04月13日 - 20:04</p>
-  <p><span>最后更新:</span>2022年03月21日 - 23:03</p>
+  <p><span>最后更新:</span>2022年03月26日 - 02:03</p>
   <p><span>博文链接:</span><a href="/post/498d51fa/" title="数据仓库（四）">https://songzi2693.cn/post/498d51fa/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/post/498d51fa/"  aria-label="复制成功！"></i></span>
   </p>

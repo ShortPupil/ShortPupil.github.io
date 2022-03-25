@@ -129,15 +129,15 @@
 
 
 
-<meta name="description" content="目录   第九章  9.1 硬盘分区：从分区到使用的步骤 9.2 挂载：手动挂载 mnt、etc&#x2F;fstab 9.3 权限设定：字符、数字   第十章  10.1 rpm使用 10.2 tar使用 10.3 进程：ps、kill 10.4 任务计划：cron“分时日月周”+命令；at在命令行上写，或者-f文件+脚本 10.5 服务的管理：systemctl启动、停止   第十一章  网卡配置、命名">
+<meta name="description" content="目录 第九章 9.1 硬盘分区：从分区到使用的步骤  使用fdisk命令在硬盘上创建分区。 fdisk -l &#x2F;dev&#x2F;sdb 使用mkfs命令在分区上创建文件系统。mkfs -t ext4 &#x2F;dev&#x2F;sdb1 使用mount命令挂载文件系统，或修改&#x2F;etc&#x2F;fstab文件使得开机自动挂载文件系统mount -o ro &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;kk 使用umount卸载文件0系统。  9.2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux分章重点——第九、十、十一、十二章">
 <meta property="og:url" content="https://songzi2693.cn/post/1d5f1dc5/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录   第九章  9.1 硬盘分区：从分区到使用的步骤 9.2 挂载：手动挂载 mnt、etc&#x2F;fstab 9.3 权限设定：字符、数字   第十章  10.1 rpm使用 10.2 tar使用 10.3 进程：ps、kill 10.4 任务计划：cron“分时日月周”+命令；at在命令行上写，或者-f文件+脚本 10.5 服务的管理：systemctl启动、停止   第十一章  网卡配置、命名">
+<meta property="og:description" content="目录 第九章 9.1 硬盘分区：从分区到使用的步骤  使用fdisk命令在硬盘上创建分区。 fdisk -l &#x2F;dev&#x2F;sdb 使用mkfs命令在分区上创建文件系统。mkfs -t ext4 &#x2F;dev&#x2F;sdb1 使用mount命令挂载文件系统，或修改&#x2F;etc&#x2F;fstab文件使得开机自动挂载文件系统mount -o ro &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;kk 使用umount卸载文件0系统。  9.2">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-11-14T02:52:24.000Z">
-<meta property="article:modified_time" content="2022-03-21T15:04:39.049Z">
+<meta property="article:modified_time" content="2022-03-25T18:50:28.703Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  9.8k
+                  8.1k
                 </span>
               
 
@@ -465,7 +465,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  9 mins.
+                  7 mins.
                 </span>
               
             </div>
@@ -487,38 +487,6 @@
 
       
         <h1 id="目录">目录</h1>
-<!-- toc -->
-<ul>
-<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0">第九章</a>
-<ul>
-<li><a href="#91-%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%8E%E5%88%86%E5%8C%BA%E5%88%B0%E4%BD%BF%E7%94%A8%E7%9A%84%E6%AD%A5%E9%AA%A4">9.1 硬盘分区：从分区到使用的步骤</a></li>
-<li><a href="#92-%E6%8C%82%E8%BD%BD%E6%89%8B%E5%8A%A8%E6%8C%82%E8%BD%BD-mnt-etcfstab">9.2 挂载：手动挂载 mnt、etc/fstab</a></li>
-<li><a href="#93-%E6%9D%83%E9%99%90%E8%AE%BE%E5%AE%9A%E5%AD%97%E7%AC%A6-%E6%95%B0%E5%AD%97">9.3 权限设定：字符、数字</a></li>
-</ul>
-</li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0">第十章</a>
-<ul>
-<li><a href="#101-rpm%E4%BD%BF%E7%94%A8">10.1 rpm使用</a></li>
-<li><a href="#102-tar%E4%BD%BF%E7%94%A8">10.2 tar使用</a></li>
-<li><a href="#103-%E8%BF%9B%E7%A8%8Bps-kill">10.3 进程：ps、kill</a></li>
-<li><a href="#104-%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92cron%E5%88%86%E6%97%B6%E6%97%A5%E6%9C%88%E5%91%A8%E5%91%BD%E4%BB%A4at%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8A%E5%86%99%E6%88%96%E8%80%85-f%E6%96%87%E4%BB%B6%E8%84%9A%E6%9C%AC">10.4 任务计划：cron“分时日月周”+命令；at在命令行上写，或者-f文件+脚本</a></li>
-<li><a href="#105-%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%AE%A1%E7%90%86systemctl%E5%90%AF%E5%8A%A8-%E5%81%9C%E6%AD%A2">10.5 服务的管理：systemctl启动、停止</a></li>
-</ul>
-</li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0">第十一章</a>
-<ul>
-<li><a href="#%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE-%E5%91%BD%E5%90%8D">网卡配置、命名</a></li>
-<li><a href="#%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86">网络服务管理</a></li>
-</ul>
-</li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0">第十二章</a>
-<ul>
-<li><a href="#ssh-sftp-scopy%E7%9A%84%E6%A0%BC%E5%BC%8F">SSH、SFTP、Scopy的格式</a></li>
-<li><a href="#vnc%E7%A8%8D%E5%BE%AE%E7%9C%8B%E4%B8%80%E4%B8%8B">VNC稍微看一下</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
 <h2 id="第九章">第九章</h2>
 <h3 id="91-硬盘分区从分区到使用的步骤">9.1 硬盘分区：从分区到使用的步骤</h3>
 <ol>

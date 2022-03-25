@@ -129,16 +129,16 @@
 
 
 
-<meta name="description" content="目录   前言 做法  添加依赖 改造程序主入口 新增配置项 web.xml 工程截图     前言 Spring boot本身是不推荐使用jsp的，虽然本身兼容做得蛮好的。主要原因还是springboot 是内嵌web容器的，推荐打成jar包不是war包，而。并且前后端分工日益细化，更符合现代前段思想和注重用户体验的各种框架才是主流。 但是如果像我这种没写过前端的，想使用jsp也可以，只需要自建">
+<meta name="description" content="目录 前言 Spring boot本身是不推荐使用jsp的，虽然本身兼容做得蛮好的。主要原因还是springboot 是内嵌web容器的，推荐打成jar包不是war包，而。并且前后端分工日益细化，更符合现代前段思想和注重用户体验的各种框架才是主流。 但是如果像我这种没写过前端的，想使用jsp也可以，只需要自建web.xml即可。 做法 添加依赖 gradle为例 12345678910&#x2F;&#x2F; htt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spring boot集成jsp">
 <meta property="og:url" content="https://songzi2693.cn/post/2ec52564/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录   前言 做法  添加依赖 改造程序主入口 新增配置项 web.xml 工程截图     前言 Spring boot本身是不推荐使用jsp的，虽然本身兼容做得蛮好的。主要原因还是springboot 是内嵌web容器的，推荐打成jar包不是war包，而。并且前后端分工日益细化，更符合现代前段思想和注重用户体验的各种框架才是主流。 但是如果像我这种没写过前端的，想使用jsp也可以，只需要自建">
+<meta property="og:description" content="目录 前言 Spring boot本身是不推荐使用jsp的，虽然本身兼容做得蛮好的。主要原因还是springboot 是内嵌web容器的，推荐打成jar包不是war包，而。并且前后端分工日益细化，更符合现代前段思想和注重用户体验的各种框架才是主流。 但是如果像我这种没写过前端的，想使用jsp也可以，只需要自建web.xml即可。 做法 添加依赖 gradle为例 12345678910&#x2F;&#x2F; htt">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/ShortPupil.github.io/hexo/source/_posts/pictures/springboot_cut.png">
 <meta property="article:published_time" content="2019-02-19T13:43:24.000Z">
-<meta property="article:modified_time" content="2022-03-21T15:04:39.079Z">
+<meta property="article:modified_time" content="2022-03-25T18:50:28.710Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="spring">
 <meta name="twitter:card" content="summary">
@@ -489,20 +489,6 @@
 
       
         <h1 id="目录">目录</h1>
-<!-- toc -->
-<ul>
-<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
-<li><a href="#%E5%81%9A%E6%B3%95">做法</a>
-<ul>
-<li><a href="#%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96">添加依赖</a></li>
-<li><a href="#%E6%94%B9%E9%80%A0%E7%A8%8B%E5%BA%8F%E4%B8%BB%E5%85%A5%E5%8F%A3">改造程序主入口</a></li>
-<li><a href="#%E6%96%B0%E5%A2%9E%E9%85%8D%E7%BD%AE%E9%A1%B9">新增配置项</a></li>
-<li><a href="#webxml">web.xml</a></li>
-<li><a href="#%E5%B7%A5%E7%A8%8B%E6%88%AA%E5%9B%BE">工程截图</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
 <h2 id="前言">前言</h2>
 <p>Spring boot本身是不推荐使用jsp的，虽然本身兼容做得蛮好的。主要原因还是springboot 是内嵌web容器的，推荐打成jar包不是war包，而。并且前后端分工日益细化，更符合现代前段思想和注重用户体验的各种框架才是主流。</p>
 <p>但是如果像我这种没写过前端的，想使用jsp也可以，只需要自建web.xml即可。</p>
@@ -538,7 +524,7 @@
   <p><span>本文标题:</span><a href="/post/2ec52564/">spring boot集成jsp</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
   <p><span>发布时间:</span>2019年02月19日 - 21:02</p>
-  <p><span>最后更新:</span>2022年03月21日 - 23:03</p>
+  <p><span>最后更新:</span>2022年03月26日 - 02:03</p>
   <p><span>博文链接:</span><a href="/post/2ec52564/" title="spring boot集成jsp">https://songzi2693.cn/post/2ec52564/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/post/2ec52564/"  aria-label="复制成功！"></i></span>
   </p>

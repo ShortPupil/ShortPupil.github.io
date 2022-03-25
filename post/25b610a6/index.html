@@ -129,12 +129,12 @@
 
 
 
-<meta name="description" content="二、词的向量表示  计算机如何处理词语的意思 word2vec的主要思路   三、高级词向量表示   二、词的向量表示 计算机如何处理词语的意思 Distributional similarity based representations 语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握">
+<meta name="description" content="二、词的向量表示 计算机如何处理词语的意思 Distributional similarity based representations 语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握了它的意义。 这是现代统计自然语言处理最成功的思想之一 通过向量定义词语的含义 通过调整一个单词及其上下文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cs224n笔记">
 <meta property="og:url" content="https://songzi2693.cn/post/25b610a6/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="二、词的向量表示  计算机如何处理词语的意思 word2vec的主要思路   三、高级词向量表示   二、词的向量表示 计算机如何处理词语的意思 Distributional similarity based representations 语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握">
+<meta property="og:description" content="二、词的向量表示 计算机如何处理词语的意思 Distributional similarity based representations 语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握了它的意义。 这是现代统计自然语言处理最成功的思想之一 通过向量定义词语的含义 通过调整一个单词及其上下文">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ww3.sinaimg.cn/large/6cbb8645gw1f5to6e5d9lj216c0qkwhk.jpg">
 <meta property="og:image" content="https://ww2.sinaimg.cn/large/6cbb8645gw1exxdsuugv1j20cl033jrj.jpg">
@@ -150,7 +150,7 @@
 <meta property="og:image" content="https://wx1.sinaimg.cn/large/006Fmjmcly1fgdtp2e4e2j30uy0bmn6v.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/large/006Fmjmcly1fgdvx2wor0j30f90ai0t5.jpg">
 <meta property="article:published_time" content="2021-06-30T06:23:24.000Z">
-<meta property="article:modified_time" content="2022-03-21T15:04:39.059Z">
+<meta property="article:modified_time" content="2022-03-25T18:50:28.520Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="nlp">
 <meta name="twitter:card" content="summary">
@@ -463,7 +463,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  5.2k
+                  4.7k
                 </span>
               
 
@@ -479,7 +479,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  5 mins.
+                  4 mins.
                 </span>
               
             </div>
@@ -500,18 +500,7 @@
       
 
       
-        <!-- toc -->
-<ul>
-<li><a href="#%E4%BA%8C-%E8%AF%8D%E7%9A%84%E5%90%91%E9%87%8F%E8%A1%A8%E7%A4%BA">二、词的向量表示</a>
-<ul>
-<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E8%AF%8D%E8%AF%AD%E7%9A%84%E6%84%8F%E6%80%9D">计算机如何处理词语的意思</a></li>
-<li><a href="#word2vec%E7%9A%84%E4%B8%BB%E8%A6%81%E6%80%9D%E8%B7%AF">word2vec的主要思路</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%89-%E9%AB%98%E7%BA%A7%E8%AF%8D%E5%90%91%E9%87%8F%E8%A1%A8%E7%A4%BA">三、高级词向量表示</a></li>
-</ul>
-<!-- tocstop -->
-<h2 id="二-词的向量表示">二、词的向量表示</h2>
+        <h2 id="二-词的向量表示">二、词的向量表示</h2>
 <h3 id="计算机如何处理词语的意思">计算机如何处理词语的意思</h3>
 <h4 id="distributional-similarity-based-representations">Distributional similarity based representations</h4>
 <p>语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握了它的意义。</p>
@@ -607,7 +596,7 @@ $$</p>
   <p><span>本文标题:</span><a href="/post/25b610a6/">cs224n笔记</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
   <p><span>发布时间:</span>2021年06月30日 - 14:06</p>
-  <p><span>最后更新:</span>2022年03月21日 - 23:03</p>
+  <p><span>最后更新:</span>2022年03月26日 - 02:03</p>
   <p><span>博文链接:</span><a href="/post/25b610a6/" title="cs224n笔记">https://songzi2693.cn/post/25b610a6/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/post/25b610a6/"  aria-label="复制成功！"></i></span>
   </p>

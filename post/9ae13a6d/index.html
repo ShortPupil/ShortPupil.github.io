@@ -129,12 +129,12 @@
 
 
 
-<meta name="description" content="目录   1. 前言 2. 描述  2.1 信息描述结构 2.2 词汇表   3. 图示  3.1 类图 3.2 对象图 3.3 交互图     1. 前言 与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。 但是实践环境千变万化，现实需求日益复杂、庞大驱使软件">
+<meta name="description" content="目录 1. 前言 与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。 但是实践环境千变万化，现实需求日益复杂、庞大驱使软件开发更复杂，只掌握少数几个解决方案恐怕是杯水车薪。所以想开辟新的板块，通过实例学习**《设计模式：可复用面向对象软件的基础》**里面的大量“">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式(0) 介绍">
 <meta property="og:url" content="https://songzi2693.cn/post/9ae13a6d/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录   1. 前言 2. 描述  2.1 信息描述结构 2.2 词汇表   3. 图示  3.1 类图 3.2 对象图 3.3 交互图     1. 前言 与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。 但是实践环境千变万化，现实需求日益复杂、庞大驱使软件">
+<meta property="og:description" content="目录 1. 前言 与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。 但是实践环境千变万化，现实需求日益复杂、庞大驱使软件开发更复杂，只掌握少数几个解决方案恐怕是杯水车薪。所以想开辟新的板块，通过实例学习**《设计模式：可复用面向对象软件的基础》**里面的大量“">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/cihuibiao1.PNG">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/cihuibiao2.PNG">
@@ -143,7 +143,7 @@
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/class_pic.png">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/class_introduction.png">
 <meta property="article:published_time" content="2018-11-07T01:29:44.000Z">
-<meta property="article:modified_time" content="2022-03-21T15:04:39.179Z">
+<meta property="article:modified_time" content="2022-03-25T18:50:28.269Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="design pattern">
 <meta name="twitter:card" content="summary">
@@ -456,7 +456,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  4.3k
+                  3.8k
                 </span>
               
 
@@ -472,7 +472,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  4 mins.
+                  3 mins.
                 </span>
               
             </div>
@@ -494,24 +494,6 @@
 
       
         <h1 id="目录">目录</h1>
-<!-- toc -->
-<ul>
-<li><a href="#1-%E5%89%8D%E8%A8%80">1. 前言</a></li>
-<li><a href="#2-%E6%8F%8F%E8%BF%B0">2. 描述</a>
-<ul>
-<li><a href="#21-%E4%BF%A1%E6%81%AF%E6%8F%8F%E8%BF%B0%E7%BB%93%E6%9E%84">2.1 信息描述结构</a></li>
-<li><a href="#22-%E8%AF%8D%E6%B1%87%E8%A1%A8">2.2 词汇表</a></li>
-</ul>
-</li>
-<li><a href="#3-%E5%9B%BE%E7%A4%BA">3. 图示</a>
-<ul>
-<li><a href="#31-%E7%B1%BB%E5%9B%BE">3.1 类图</a></li>
-<li><a href="#32-%E5%AF%B9%E8%B1%A1%E5%9B%BE">3.2 对象图</a></li>
-<li><a href="#33-%E4%BA%A4%E4%BA%92%E5%9B%BE">3.3 交互图</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
 <h2 id="1-前言">1. 前言</h2>
 <p>与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。</p>
 <p>但是实践环境千变万化，现实需求日益复杂、庞大驱使软件开发更复杂，只掌握少数几个解决方案恐怕是杯水车薪。所以想开辟新的板块，通过实例学习**《设计模式：可复用面向对象软件的基础》**里面的大量“招式”，并且通过这些“秘技”深入理解面向对象的“心法”原则。</p>

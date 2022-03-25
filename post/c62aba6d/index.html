@@ -129,12 +129,12 @@
 
 
 
-<meta name="description" content="目录   Ch4 Linux字符界面操作 重点  进入命令行的方式 虚拟控制台的切换 系统关机&#x2F;重启 运行级别 0～6 要很清楚，3字符、5图形、0关机、6重启 man帮助命令 Shell里技巧性的  命令行自动补全 光标上翻下翻 一行上执行多个命令   管道，管道什么意思，管道有什么作用，具体怎么使用 vi （编辑的是ASCII文本）  三种模式，三种模式之间的转换及命令 屏幕光标的移动 字符、">
+<meta name="description" content="目录 Ch4 Linux字符界面操作 重点 进入命令行的方式  字符界面 图形界面下的终端 虚拟控制台  虚拟控制台的切换  在字符界面下，虚拟控制台的切换可以通过按Alt+F1~Alt+F6键实现 在图形界面下，可以使用Ctrl+Alt+F2～Ctrl+Alt+F6键切换不同的字符虚拟控制台，在 使用Ctrl+Alt+F1切换会图形界面  系统关机&#x2F;重启 shutdown halt reboot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux分章重点——第四章">
 <meta property="og:url" content="https://songzi2693.cn/post/c62aba6d/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录   Ch4 Linux字符界面操作 重点  进入命令行的方式 虚拟控制台的切换 系统关机&#x2F;重启 运行级别 0～6 要很清楚，3字符、5图形、0关机、6重启 man帮助命令 Shell里技巧性的  命令行自动补全 光标上翻下翻 一行上执行多个命令   管道，管道什么意思，管道有什么作用，具体怎么使用 vi （编辑的是ASCII文本）  三种模式，三种模式之间的转换及命令 屏幕光标的移动 字符、">
+<meta property="og:description" content="目录 Ch4 Linux字符界面操作 重点 进入命令行的方式  字符界面 图形界面下的终端 虚拟控制台  虚拟控制台的切换  在字符界面下，虚拟控制台的切换可以通过按Alt+F1~Alt+F6键实现 在图形界面下，可以使用Ctrl+Alt+F2～Ctrl+Alt+F6键切换不同的字符虚拟控制台，在 使用Ctrl+Alt+F1切换会图形界面  系统关机&#x2F;重启 shutdown halt reboot">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/ok.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/more1.png">
@@ -145,7 +145,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/tiaozhizhidingdehang.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/yigezifu.png">
 <meta property="article:published_time" content="2018-10-18T10:47:24.000Z">
-<meta property="article:modified_time" content="2022-03-21T15:04:39.049Z">
+<meta property="article:modified_time" content="2022-03-25T18:50:28.620Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  7.7k
+                  5.1k
                 </span>
               
 
@@ -474,7 +474,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  7 mins.
+                  5 mins.
                 </span>
               
             </div>
@@ -496,43 +496,6 @@
 
       
         <h1 id="目录">目录</h1>
-<!-- toc -->
-<ul>
-<li><a href="#ch4-linux%E5%AD%97%E7%AC%A6%E7%95%8C%E9%9D%A2%E6%93%8D%E4%BD%9C-%E9%87%8D%E7%82%B9">Ch4 Linux字符界面操作 重点</a>
-<ul>
-<li><a href="#%E8%BF%9B%E5%85%A5%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E6%96%B9%E5%BC%8F">进入命令行的方式</a></li>
-<li><a href="#%E8%99%9A%E6%8B%9F%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E5%88%87%E6%8D%A2">虚拟控制台的切换</a></li>
-<li><a href="#%E7%B3%BB%E7%BB%9F%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF">系统关机/重启</a></li>
-<li><a href="#%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB-0~6-%E8%A6%81%E5%BE%88%E6%B8%85%E6%A5%9A3%E5%AD%97%E7%AC%A6-5%E5%9B%BE%E5%BD%A2-0%E5%85%B3%E6%9C%BA-6%E9%87%8D%E5%90%AF">运行级别 0～6 要很清楚，3字符、5图形、0关机、6重启</a></li>
-<li><a href="#man%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4">man帮助命令</a></li>
-<li><a href="#shell%E9%87%8C%E6%8A%80%E5%B7%A7%E6%80%A7%E7%9A%84">Shell里技巧性的</a>
-<ul>
-<li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8">命令行自动补全</a></li>
-<li><a href="#%E5%85%89%E6%A0%87%E4%B8%8A%E7%BF%BB%E4%B8%8B%E7%BF%BB">光标上翻下翻</a></li>
-<li><a href="#%E4%B8%80%E8%A1%8C%E4%B8%8A%E6%89%A7%E8%A1%8C%E5%A4%9A%E4%B8%AA%E5%91%BD%E4%BB%A4">一行上执行多个命令</a></li>
-</ul>
-</li>
-<li><a href="#%E7%AE%A1%E9%81%93%E7%AE%A1%E9%81%93%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%E7%AE%A1%E9%81%93%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%E5%85%B7%E4%BD%93%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8">管道，管道什么意思，管道有什么作用，具体怎么使用</a></li>
-<li><a href="#vi-%E7%BC%96%E8%BE%91%E7%9A%84%E6%98%AFascii%E6%96%87%E6%9C%AC">vi （编辑的是ASCII文本）</a>
-<ul>
-<li><a href="#%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2%E5%8F%8A%E5%91%BD%E4%BB%A4">三种模式，三种模式之间的转换及命令</a></li>
-<li><a href="#%E5%B1%8F%E5%B9%95%E5%85%89%E6%A0%87%E7%9A%84%E7%A7%BB%E5%8A%A8">屏幕光标的移动</a></li>
-<li><a href="#%E5%AD%97%E7%AC%A6-%E5%AD%97%E6%88%96%E8%A1%8C%E7%9A%84%E5%88%A0%E9%99%A4">字符、字或行的删除</a></li>
-<li><a href="#%E5%A4%8D%E5%88%B6%E6%9F%90%E5%8C%BA%E5%9F%9F">复制某区域</a></li>
-<li><a href="#%E5%A4%8D%E5%88%B6">复制</a></li>
-<li><a href="#%E6%9B%BF%E6%8D%A2%E6%93%8D%E4%BD%9C">替换操作</a></li>
-<li><a href="#%E6%92%A4%E9%94%80%E4%B8%8A%E4%B8%80%E6%AC%A1%E6%93%8D%E4%BD%9C">撤销上一次操作</a></li>
-<li><a href="#%E8%B7%B3%E8%87%B3%E6%8C%87%E5%AE%9A%E7%9A%84%E8%A1%8C">跳至指定的行</a></li>
-<li><a href="#%E9%80%80%E5%87%BA">退出</a></li>
-<li><a href="#%E8%BF%9B%E5%85%A5%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F">进入插入模式</a></li>
-<li><a href="#%E8%BF%9B%E5%85%A5%E6%9C%AB%E8%A1%8C%E6%A8%A1%E5%BC%8F">进入末行模式</a></li>
-<li><a href="#%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6">保存文件</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
 <h1 id="ch4-linux字符界面操作-重点">Ch4 Linux字符界面操作 重点</h1>
 <h2 id="进入命令行的方式">进入命令行的方式</h2>
 <ul>

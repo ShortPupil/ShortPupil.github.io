@@ -129,15 +129,15 @@
 
 
 
-<meta name="description" content="目录   1. 三种状态  1.1 临时状态(Transient) 1.2 持久状态(Persistent) 1.3 游离状态(Detached)   2 事务机制  2.1 常见的Q&amp;A  2.1.1 getTransaction、beginTransaction 2.1.2 getTransaction、getCurrentTransaction 2.1.3 如果不断的调用getTra">
+<meta name="description" content="目录 了解hibernate的底层实现对于使用还是很重要的 今天有个用hibernate进行查询出了不少错误，问题在于没有理解其持久状态和事务机制 1. 三种状态 1.1 临时状态(Transient) 当new一个实体对象后, 这个对象处于临时状态, 即这个对象只是一个保存临时数据的内存区域, 如果没有变量引用这个对象, 则会被jre垃圾回收机制回收. 这个对象所保存的数据与数据库没有任何关系,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate的三种状态、事务机制、缓存懒加载">
 <meta property="og:url" content="https://songzi2693.cn/post/b4ceab5d/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录   1. 三种状态  1.1 临时状态(Transient) 1.2 持久状态(Persistent) 1.3 游离状态(Detached)   2 事务机制  2.1 常见的Q&amp;A  2.1.1 getTransaction、beginTransaction 2.1.2 getTransaction、getCurrentTransaction 2.1.3 如果不断的调用getTra">
+<meta property="og:description" content="目录 了解hibernate的底层实现对于使用还是很重要的 今天有个用hibernate进行查询出了不少错误，问题在于没有理解其持久状态和事务机制 1. 三种状态 1.1 临时状态(Transient) 当new一个实体对象后, 这个对象处于临时状态, 即这个对象只是一个保存临时数据的内存区域, 如果没有变量引用这个对象, 则会被jre垃圾回收机制回收. 这个对象所保存的数据与数据库没有任何关系,">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-10-29T15:33:44.000Z">
-<meta property="article:modified_time" content="2022-03-21T15:04:39.029Z">
+<meta property="article:modified_time" content="2022-03-25T18:50:28.792Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="hibernate">
 <meta name="twitter:card" content="summary">
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  18k
+                  14k
                 </span>
               
 
@@ -465,7 +465,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  16 mins.
+                  13 mins.
                 </span>
               
             </div>
@@ -487,68 +487,6 @@
 
       
         <h1 id="目录">目录</h1>
-<!-- toc -->
-<ul>
-<li><a href="#1-%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81">1. 三种状态</a>
-<ul>
-<li><a href="#11-%E4%B8%B4%E6%97%B6%E7%8A%B6%E6%80%81transient">1.1 临时状态(Transient)</a></li>
-<li><a href="#12-%E6%8C%81%E4%B9%85%E7%8A%B6%E6%80%81persistent">1.2 持久状态(Persistent)</a></li>
-<li><a href="#13-%E6%B8%B8%E7%A6%BB%E7%8A%B6%E6%80%81detached">1.3 游离状态(Detached)</a></li>
-</ul>
-</li>
-<li><a href="#2-%E4%BA%8B%E5%8A%A1%E6%9C%BA%E5%88%B6">2 事务机制</a>
-<ul>
-<li><a href="#21-%E5%B8%B8%E8%A7%81%E7%9A%84qa">2.1 常见的Q&amp;A</a>
-<ul>
-<li><a href="#211-gettransaction-begintransaction">2.1.1 getTransaction、beginTransaction</a></li>
-<li><a href="#212-gettransaction-getcurrenttransaction">2.1.2 getTransaction、getCurrentTransaction</a></li>
-<li><a href="#213-%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%96%AD%E7%9A%84%E8%B0%83%E7%94%A8gettransaction%E6%98%AF%E5%90%A6%E4%BC%9A%E8%BF%94%E5%9B%9E%E5%90%8C%E4%B8%80%E4%B8%AAtransaction%E5%AF%B9%E8%B1%A1">2.1.3 如果不断的调用getTransaction，是否会返回同一个transaction对象？</a></li>
-<li><a href="#214-%E9%80%9A%E8%BF%87gettransaction%E5%88%9B%E5%BB%BAtransaction%E5%AF%B9%E8%B1%A1begin%E4%B9%8B%E5%90%8E%E5%86%8D%E8%B0%83%E7%94%A8sessionbegintransaction%E6%98%AF%E5%90%A6%E4%BC%9A%E5%BC%80%E5%90%AF%E4%B8%A4%E4%B8%AA%E4%BA%8B%E5%8A%A1">2.1.4 通过getTransaction创建transaction对象begin之后，再调用session.beginTransaction是否会开启两个事务？</a></li>
-<li><a href="#215-%E5%BD%93transactioncommit%E8%B0%83%E7%94%A8%E4%B9%8B%E5%90%8E%E5%86%8D%E6%AC%A1%E8%B0%83%E7%94%A8sessionbegintransaction%E6%98%AF%E5%90%A6%E4%BC%9A%E7%BB%A7%E7%BB%AD%E6%B2%BF%E7%94%A8%E4%B9%8B%E5%89%8D%E7%9A%84transaction">2.1.5 当transaction.commit()调用之后再次调用session.beginTransaction是否会继续沿用之前的transaction？</a></li>
-<li><a href="#216-%E6%98%AF%E5%90%A6%E6%80%BB%E6%98%AF%E9%9C%80%E8%A6%81%E6%89%8B%E5%B7%A5%E8%B0%83%E7%94%A8transactionrollback%E5%AE%9E%E7%8E%B0%E4%BA%8B%E5%8A%A1%E5%9B%9E%E6%BB%9A">2.1.6 是否总是需要手工调用transaction.rollback实现事务回滚？</a></li>
-</ul>
-</li>
-<li><a href="#22-session-transaction-scope%E4%BA%8B%E5%8A%A1%E8%8C%83%E5%9B%B4">2.2 session &amp; transaction scope（事务范围）</a>
-<ul>
-<li><a href="#221-%E6%93%8D%E4%BD%9C%E5%8D%95%E5%85%83">2.2.1 操作单元</a></li>
-<li><a href="#222-%E9%95%BF%E5%AF%B9%E8%AF%9D">2.2.2 长对话</a></li>
-<li><a href="#213-%E5%85%B3%E6%B3%A8%E5%AF%B9%E8%B1%A1%E6%A0%87%E8%AF%86considering-object-identity">2.1.3 关注对象标识（Considering object identity）</a></li>
-<li><a href="#214-%E9%97%AE%E9%A2%98">2.1.4 问题</a></li>
-</ul>
-</li>
-<li><a href="#23-%E4%BA%8B%E5%8A%A1%E5%A3%B0%E6%98%8E">2.3 事务声明</a>
-<ul>
-<li><a href="#231-%E9%9D%9E%E6%89%98%E7%AE%A1%E7%8E%AF%E5%A2%83">2.3.1 非托管环境</a></li>
-<li><a href="#232-%E4%BD%BF%E7%94%A8jta">2.3.2 使用JTA</a></li>
-<li><a href="#233-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">2.3.3 异常处理</a></li>
-<li><a href="#234-%E4%BA%8B%E5%8A%A1%E8%B6%85%E6%97%B6">2.3.4 事务超时</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#3-%E7%BC%93%E5%AD%98%E6%87%92%E5%8A%A0%E8%BD%BD">3. 缓存懒加载</a>
-<ul>
-<li><a href="#31-%E5%B8%B8%E8%A7%81%E4%BD%BF%E7%94%A8qa">3.1 常见使用Q&amp;A</a>
-<ul>
-<li><a href="#311-%E5%AF%B9%E4%BA%8Emanytoone%E6%B3%A8%E8%A7%A3%E9%BB%98%E8%AE%A4fetchtypeeager">3.1.1 对于ManyToOne注解默认FetchType.EAGER</a></li>
-</ul>
-</li>
-<li><a href="#32-%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6">3.2 缓存机制</a>
-<ul>
-<li><a href="#321-%E4%B8%80%E7%BA%A7%E7%BC%93%E5%AD%98">3.2.1 一级缓存</a></li>
-<li><a href="#322-%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98">3.2.2 二级缓存</a></li>
-</ul>
-</li>
-<li><a href="#33-%E6%87%92%E5%8A%A0%E8%BD%BD">3.3 懒加载</a>
-<ul>
-<li><a href="#331-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD%E4%BC%9A%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98">3.3.1 延迟加载会出现的问题</a></li>
-<li><a href="#332-%E5%A4%84%E7%90%86no-session">3.3.2 处理No  Session</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
 <p>了解hibernate的底层实现对于使用还是很重要的</p>
 <p>今天有个用hibernate进行查询出了不少错误，问题在于没有理解其持久状态和事务机制</p>
 <h1 id="1-三种状态">1. 三种状态</h1>
@@ -693,7 +631,7 @@
   <p><span>本文标题:</span><a href="/post/b4ceab5d/">Hibernate的三种状态、事务机制、缓存懒加载</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
   <p><span>发布时间:</span>2018年10月29日 - 23:10</p>
-  <p><span>最后更新:</span>2022年03月21日 - 23:03</p>
+  <p><span>最后更新:</span>2022年03月26日 - 02:03</p>
   <p><span>博文链接:</span><a href="/post/b4ceab5d/" title="Hibernate的三种状态、事务机制、缓存懒加载">https://songzi2693.cn/post/b4ceab5d/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/post/b4ceab5d/"  aria-label="复制成功！"></i></span>
   </p>

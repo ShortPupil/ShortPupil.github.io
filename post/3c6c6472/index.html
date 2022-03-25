@@ -129,15 +129,15 @@
 
 
 
-<meta name="description" content="第一讲  生命周期模型与软件过程  典型生命周期模型     软件过程的历史演变和经典工作  三大阶段 成熟度模型 CMMI模型： 敏捷宣言 典型软件实践方法 软件开发典型特征 典型Devops实践和方法 敏捷软件开发；敏捷宣言 看板方法 精益 Lean   PSP 个体软件过程   管理信息系统——诺兰阶段模型： 前三个——计算机时代、后三个——信息时代  初始阶段：计算机刚进入企业，只作为">
+<meta name="description" content="管理信息系统——诺兰阶段模型： 前三个——计算机时代、后三个——信息时代  初始阶段：计算机刚进入企业，只作为办公设备使用；企业对计算机基本不了解，少数人使用，并不普及 传播阶段：企业对计算机有一定了解应用需求增加；但此时缺少规划和计划，应用水平不高，IT整体效用无法显现 控制阶段：IT投资增长快，但收益不理想，于是在客观上要求组织协调，解决数据共享问题；一些职能部门内部实现网络化，如财务系统、人">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软件过程与管理">
 <meta property="og:url" content="https://songzi2693.cn/post/3c6c6472/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="第一讲  生命周期模型与软件过程  典型生命周期模型     软件过程的历史演变和经典工作  三大阶段 成熟度模型 CMMI模型： 敏捷宣言 典型软件实践方法 软件开发典型特征 典型Devops实践和方法 敏捷软件开发；敏捷宣言 看板方法 精益 Lean   PSP 个体软件过程   管理信息系统——诺兰阶段模型： 前三个——计算机时代、后三个——信息时代  初始阶段：计算机刚进入企业，只作为">
+<meta property="og:description" content="管理信息系统——诺兰阶段模型： 前三个——计算机时代、后三个——信息时代  初始阶段：计算机刚进入企业，只作为办公设备使用；企业对计算机基本不了解，少数人使用，并不普及 传播阶段：企业对计算机有一定了解应用需求增加；但此时缺少规划和计划，应用水平不高，IT整体效用无法显现 控制阶段：IT投资增长快，但收益不理想，于是在客观上要求组织协调，解决数据共享问题；一些职能部门内部实现网络化，如财务系统、人">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-11-01T10:47:24.000Z">
-<meta property="article:modified_time" content="2022-03-21T15:04:39.199Z">
+<meta property="article:modified_time" content="2022-03-25T18:50:28.300Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="software">
 <meta name="twitter:card" content="summary">
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  6.2k
+                  4.7k
                 </span>
               
 
@@ -465,7 +465,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  6 mins.
+                  4 mins.
                 </span>
               
             </div>
@@ -486,34 +486,7 @@
       
 
       
-        <!-- toc -->
-<ul>
-<li><a href="#%E7%AC%AC%E4%B8%80%E8%AE%B2">第一讲</a>
-<ul>
-<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B">生命周期模型与软件过程</a>
-<ul>
-<li><a href="#%E5%85%B8%E5%9E%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B">典型生命周期模型</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E7%9A%84%E5%8E%86%E5%8F%B2%E6%BC%94%E5%8F%98%E5%92%8C%E7%BB%8F%E5%85%B8%E5%B7%A5%E4%BD%9C">软件过程的历史演变和经典工作</a>
-<ul>
-<li><a href="#%E4%B8%89%E5%A4%A7%E9%98%B6%E6%AE%B5">三大阶段</a></li>
-<li><a href="#%E6%88%90%E7%86%9F%E5%BA%A6%E6%A8%A1%E5%9E%8B-cmmi%E6%A8%A1%E5%9E%8B">成熟度模型 <strong>CMMI模型</strong>：</a></li>
-<li><a href="#%E6%95%8F%E6%8D%B7%E5%AE%A3%E8%A8%80">敏捷宣言</a></li>
-<li><a href="#%E5%85%B8%E5%9E%8B%E8%BD%AF%E4%BB%B6%E5%AE%9E%E8%B7%B5%E6%96%B9%E6%B3%95">典型软件实践方法</a></li>
-<li><a href="#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%85%B8%E5%9E%8B%E7%89%B9%E5%BE%81">软件开发典型特征</a></li>
-<li><a href="#%E5%85%B8%E5%9E%8Bdevops%E5%AE%9E%E8%B7%B5%E5%92%8C%E6%96%B9%E6%B3%95">典型Devops实践和方法</a></li>
-<li><a href="#%E6%95%8F%E6%8D%B7%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%95%8F%E6%8D%B7%E5%AE%A3%E8%A8%80">敏捷软件开发；敏捷宣言</a></li>
-<li><a href="#%E7%9C%8B%E6%9D%BF%E6%96%B9%E6%B3%95">看板方法</a></li>
-<li><a href="#%E7%B2%BE%E7%9B%8A-lean">精益 Lean</a></li>
-</ul>
-</li>
-<li><a href="#psp-%E4%B8%AA%E4%BD%93%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B">PSP 个体软件过程</a></li>
-</ul>
-<!-- tocstop -->
-<p>管理信息系统——诺兰阶段模型：</p>
+        <p>管理信息系统——诺兰阶段模型：</p>
 <p>前三个——计算机时代、后三个——信息时代</p>
 <ul>
 <li><strong>初始阶段</strong>：计算机刚进入企业，只作为办公设备使用；企业对计算机基本不了解，少数人使用，并不普及</li>
@@ -701,7 +674,7 @@
   <p><span>本文标题:</span><a href="/post/3c6c6472/">软件过程与管理</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
   <p><span>发布时间:</span>2018年11月01日 - 18:11</p>
-  <p><span>最后更新:</span>2022年03月21日 - 23:03</p>
+  <p><span>最后更新:</span>2022年03月26日 - 02:03</p>
   <p><span>博文链接:</span><a href="/post/3c6c6472/" title="软件过程与管理">https://songzi2693.cn/post/3c6c6472/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/post/3c6c6472/"  aria-label="复制成功！"></i></span>
   </p>

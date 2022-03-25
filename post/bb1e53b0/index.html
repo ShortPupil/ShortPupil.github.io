@@ -129,16 +129,16 @@
 
 
 
-<meta name="description" content="协程  进程、线程、协程的对比 协程上下文切换     协程 进程、线程会遇到的性能问题：  同步锁 涉及到线程阻塞状态和可运行状态之间的切换 设置到线程上下文的切换  协程是一种比线程更加轻量级的，正如一个进程可以拥有多个线程一样，一个线程可以拥有多个协程。  协程是用户态的，完全由程序所控制的。好处是性能大幅度的提升，因为不会像线程切换那样消耗资源。 协程可看成某种特殊的函数，这个函数可以">
+<meta name="description" content="协程 进程、线程会遇到的性能问题：  同步锁 涉及到线程阻塞状态和可运行状态之间的切换 设置到线程上下文的切换  协程是一种比线程更加轻量级的，正如一个进程可以拥有多个线程一样，一个线程可以拥有多个协程。  协程是用户态的，完全由程序所控制的。好处是性能大幅度的提升，因为不会像线程切换那样消耗资源。 协程可看成某种特殊的函数，这个函数可以在某个地方挂起，并且可以重新在挂起处外继续运行。 因此，通常">
 <meta property="og:type" content="article">
 <meta property="og:title" content="协程">
 <meta property="og:url" content="https://songzi2693.cn/post/bb1e53b0/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="协程  进程、线程、协程的对比 协程上下文切换     协程 进程、线程会遇到的性能问题：  同步锁 涉及到线程阻塞状态和可运行状态之间的切换 设置到线程上下文的切换  协程是一种比线程更加轻量级的，正如一个进程可以拥有多个线程一样，一个线程可以拥有多个协程。  协程是用户态的，完全由程序所控制的。好处是性能大幅度的提升，因为不会像线程切换那样消耗资源。 协程可看成某种特殊的函数，这个函数可以">
+<meta property="og:description" content="协程 进程、线程会遇到的性能问题：  同步锁 涉及到线程阻塞状态和可运行状态之间的切换 设置到线程上下文的切换  协程是一种比线程更加轻量级的，正如一个进程可以拥有多个线程一样，一个线程可以拥有多个协程。  协程是用户态的，完全由程序所控制的。好处是性能大幅度的提升，因为不会像线程切换那样消耗资源。 协程可看成某种特殊的函数，这个函数可以在某个地方挂起，并且可以重新在挂起处外继续运行。 因此，通常">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/4933701-4a7846c5d7c1290c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/646/format/webp">
 <meta property="article:published_time" content="2020-03-12T03:47:24.000Z">
-<meta property="article:modified_time" content="2022-03-21T15:04:39.109Z">
+<meta property="article:modified_time" content="2022-03-25T18:50:28.784Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="go">
 <meta name="twitter:card" content="summary">
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  1.6k
+                  1.3k
                 </span>
               
 
@@ -488,17 +488,7 @@
       
 
       
-        <!-- toc -->
-<ul>
-<li><a href="#%E5%8D%8F%E7%A8%8B">协程</a>
-<ul>
-<li><a href="#%E8%BF%9B%E7%A8%8B-%E7%BA%BF%E7%A8%8B-%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%AF%B9%E6%AF%94">进程、线程、协程的对比</a></li>
-<li><a href="#%E5%8D%8F%E7%A8%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2">协程上下文切换</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-<h2 id="协程">协程</h2>
+        <h2 id="协程">协程</h2>
 <p>进程、线程会遇到的性能问题：</p>
 <ul>
 <li>同步锁</li>
@@ -544,7 +534,7 @@
   <p><span>本文标题:</span><a href="/post/bb1e53b0/">协程</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
   <p><span>发布时间:</span>2020年03月12日 - 11:03</p>
-  <p><span>最后更新:</span>2022年03月21日 - 23:03</p>
+  <p><span>最后更新:</span>2022年03月26日 - 02:03</p>
   <p><span>博文链接:</span><a href="/post/bb1e53b0/" title="协程">https://songzi2693.cn/post/bb1e53b0/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/post/bb1e53b0/"  aria-label="复制成功！"></i></span>
   </p>

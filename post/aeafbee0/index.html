@@ -129,16 +129,16 @@
 
 
 
-<meta name="description" content="概述  BIO、NIO、AIO的概述   一、IO流（同步、阻塞）  1、概述 2、分类 3、字符流  概述 字符流的缓冲区   4、字节流  概述   5、Java Scanner类  关于nextInt()、next()、nextLine()的理解 关于hasNext()、hasNextLine()、hasNextxxx()的理解 与delimiter()有关的方法     二、NIO（同">
+<meta name="description" content="概述 在我们学习Java的IO流之前，我们都要了解几个关键词  同步与异步（synchronous&#x2F;asynchronous）：同步是一种可靠的有序运行机制，当我们进行同步操作时，后续的任务是等待当前调用返回，才会进行下一步；而异步则相反，其他任务不需要等待当前调用返回，通常依靠事件、回调等机制来实现任务间次序关系 阻塞与非阻塞：在进行阻塞操作时，当前线程会处于阻塞状态，无法从事其他任务，只有当条">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IO模型">
 <meta property="og:url" content="https://songzi2693.cn/post/aeafbee0/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="概述  BIO、NIO、AIO的概述   一、IO流（同步、阻塞）  1、概述 2、分类 3、字符流  概述 字符流的缓冲区   4、字节流  概述   5、Java Scanner类  关于nextInt()、next()、nextLine()的理解 关于hasNext()、hasNextLine()、hasNextxxx()的理解 与delimiter()有关的方法     二、NIO（同">
+<meta property="og:description" content="概述 在我们学习Java的IO流之前，我们都要了解几个关键词  同步与异步（synchronous&#x2F;asynchronous）：同步是一种可靠的有序运行机制，当我们进行同步操作时，后续的任务是等待当前调用返回，才会进行下一步；而异步则相反，其他任务不需要等待当前调用返回，通常依靠事件、回调等机制来实现任务间次序关系 阻塞与非阻塞：在进行阻塞操作时，当前线程会处于阻塞状态，无法从事其他任务，只有当条">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1302135/201808/1302135-20180816173529402-760533731.png">
 <meta property="article:published_time" content="2019-03-12T06:10:24.000Z">
-<meta property="article:modified_time" content="2022-03-21T15:04:39.069Z">
+<meta property="article:modified_time" content="2022-03-25T18:50:28.834Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="io">
 <meta name="twitter:card" content="summary">
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  19k
+                  17k
                 </span>
               
 
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  17 mins.
+                  15 mins.
                 </span>
               
             </div>
@@ -488,61 +488,7 @@
       
 
       
-        <!-- toc -->
-<ul>
-<li><a href="#%E6%A6%82%E8%BF%B0">概述</a>
-<ul>
-<li><a href="#bio-nio-aio%E7%9A%84%E6%A6%82%E8%BF%B0">BIO、NIO、AIO的概述</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%80-io%E6%B5%81%E5%90%8C%E6%AD%A5-%E9%98%BB%E5%A1%9E">一、IO流（同步、阻塞）</a>
-<ul>
-<li><a href="#1-%E6%A6%82%E8%BF%B0">1、概述</a></li>
-<li><a href="#2-%E5%88%86%E7%B1%BB">2、分类</a></li>
-<li><a href="#3-%E5%AD%97%E7%AC%A6%E6%B5%81">3、字符流</a>
-<ul>
-<li><a href="#%E6%A6%82%E8%BF%B0-1">概述</a></li>
-<li><a href="#%E5%AD%97%E7%AC%A6%E6%B5%81%E7%9A%84%E7%BC%93%E5%86%B2%E5%8C%BA">字符流的缓冲区</a></li>
-</ul>
-</li>
-<li><a href="#4-%E5%AD%97%E8%8A%82%E6%B5%81">4、字节流</a>
-<ul>
-<li><a href="#%E6%A6%82%E8%BF%B0-2">概述</a></li>
-</ul>
-</li>
-<li><a href="#5-java-scanner%E7%B1%BB">5、Java Scanner类</a>
-<ul>
-<li><a href="#%E5%85%B3%E4%BA%8Enextint-next-nextline%E7%9A%84%E7%90%86%E8%A7%A3">关于nextInt()、next()、nextLine()的理解</a></li>
-<li><a href="#%E5%85%B3%E4%BA%8Ehasnext-hasnextline-hasnextxxx%E7%9A%84%E7%90%86%E8%A7%A3">关于hasNext()、hasNextLine()、hasNextxxx()的理解</a></li>
-<li><a href="#%E4%B8%8Edelimiter%E6%9C%89%E5%85%B3%E7%9A%84%E6%96%B9%E6%B3%95">与delimiter()有关的方法</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E4%BA%8C-nio%E5%90%8C%E6%AD%A5-%E9%9D%9E%E9%98%BB%E5%A1%9E">二、NIO（同步、非阻塞）</a>
-<ul>
-<li><a href="#1channel%E9%80%9A%E9%81%93">（1）Channel（通道）</a></li>
-<li><a href="#2buffer">（2）Buffer</a>
-<ul>
-<li><a href="#copyfile%E5%AE%9E%E4%BE%8Bnio">copyFile实例（NIO）</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%89selector%E9%80%89%E6%8B%A9%E5%99%A8%E5%AF%B9%E8%B1%A1">（三）Selector（选择器对象）</a>
-<ul>
-<li><a href="#selector%E4%BC%98%E7%82%B9">selector优点</a></li>
-<li><a href="#1%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAselector">1.如何创建一个Selector</a></li>
-<li><a href="#2%E6%B3%A8%E5%86%8Cchannel%E5%88%B0selector">2.注册Channel到Selector</a></li>
-<li><a href="#3%E5%85%B3%E4%BA%8Eselectionkey">3.关于SelectionKey</a></li>
-<li><a href="#4%E5%85%B3%E4%BA%8Eselectedkeys">4.关于SelectedKeys()</a></li>
-</ul>
-</li>
-<li><a href="#4nio%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8">（4）NIO多路复用</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%89-nio2%E5%BC%82%E6%AD%A5-%E9%9D%9E%E9%98%BB%E5%A1%9E">三、NIO2(异步、非阻塞)</a></li>
-</ul>
-<!-- tocstop -->
-<h1 id="概述">概述</h1>
+        <h1 id="概述">概述</h1>
 <p>在我们学习Java的IO流之前，我们都要了解几个关键词</p>
 <ul>
 <li>同步与异步（synchronous/asynchronous）：<strong>同步</strong>是一种可靠的有序运行机制，当我们进行同步操作时，后续的任务是等待当前调用返回，才会进行下一步；而<strong>异步</strong>则相反，其他任务不需要等待当前调用返回，通常依靠事件、回调等机制来实现任务间次序关系</li>
@@ -746,7 +692,7 @@
   <p><span>本文标题:</span><a href="/post/aeafbee0/">IO模型</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
   <p><span>发布时间:</span>2019年03月12日 - 14:03</p>
-  <p><span>最后更新:</span>2022年03月21日 - 23:03</p>
+  <p><span>最后更新:</span>2022年03月26日 - 02:03</p>
   <p><span>博文链接:</span><a href="/post/aeafbee0/" title="IO模型">https://songzi2693.cn/post/aeafbee0/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/post/aeafbee0/"  aria-label="复制成功！"></i></span>
   </p>
