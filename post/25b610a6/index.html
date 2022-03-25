@@ -129,12 +129,12 @@
 
 
 
-<meta name="description" content="二、词的向量表示 计算机如何处理词语的意思 word2vec的主要思路   三、高级词向量表示   二、词的向量表示计算机如何处理词语的意思Distributional similarity based representations语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握了它的意">
+<meta name="description" content="二、词的向量表示  计算机如何处理词语的意思 word2vec的主要思路   三、高级词向量表示   二、词的向量表示 计算机如何处理词语的意思 Distributional similarity based representations 语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cs224n笔记">
 <meta property="og:url" content="https://songzi2693.cn/post/25b610a6/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="二、词的向量表示 计算机如何处理词语的意思 word2vec的主要思路   三、高级词向量表示   二、词的向量表示计算机如何处理词语的意思Distributional similarity based representations语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握了它的意">
+<meta property="og:description" content="二、词的向量表示  计算机如何处理词语的意思 word2vec的主要思路   三、高级词向量表示   二、词的向量表示 计算机如何处理词语的意思 Distributional similarity based representations 语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ww3.sinaimg.cn/large/6cbb8645gw1f5to6e5d9lj216c0qkwhk.jpg">
 <meta property="og:image" content="https://ww2.sinaimg.cn/large/6cbb8645gw1exxdsuugv1j20cl033jrj.jpg">
@@ -463,7 +463,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  6.2k
+                  5.2k
                 </span>
               
 
@@ -479,7 +479,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  6 mins.
+                  5 mins.
                 </span>
               
             </div>
@@ -502,33 +502,47 @@
       
         <!-- toc -->
 <ul>
-<li><a href="#二-词的向量表示">二、词的向量表示</a><ul>
-<li><a href="#计算机如何处理词语的意思">计算机如何处理词语的意思</a></li>
-<li><a href="#word2vec的主要思路">word2vec的主要思路</a></li>
+<li><a href="#%E4%BA%8C-%E8%AF%8D%E7%9A%84%E5%90%91%E9%87%8F%E8%A1%A8%E7%A4%BA">二、词的向量表示</a>
+<ul>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E8%AF%8D%E8%AF%AD%E7%9A%84%E6%84%8F%E6%80%9D">计算机如何处理词语的意思</a></li>
+<li><a href="#word2vec%E7%9A%84%E4%B8%BB%E8%A6%81%E6%80%9D%E8%B7%AF">word2vec的主要思路</a></li>
 </ul>
 </li>
-<li><a href="#三-高级词向量表示">三、高级词向量表示</a></li>
+<li><a href="#%E4%B8%89-%E9%AB%98%E7%BA%A7%E8%AF%8D%E5%90%91%E9%87%8F%E8%A1%A8%E7%A4%BA">三、高级词向量表示</a></li>
 </ul>
 <!-- tocstop -->
-<h2 id="二-词的向量表示"><a href="#二、词的向量表示" class="headerlink" title="二、词的向量表示"></a>二、词的向量表示</h2><h3 id="计算机如何处理词语的意思"><a href="#计算机如何处理词语的意思" class="headerlink" title="计算机如何处理词语的意思"></a>计算机如何处理词语的意思</h3><h4 id="distributional-similarity-based-representations"><a href="#Distributional-similarity-based-representations" class="headerlink" title="Distributional similarity based representations"></a>Distributional similarity based representations</h4><p>语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握了它的意义。</p>
+<h2 id="二-词的向量表示">二、词的向量表示</h2>
+<h3 id="计算机如何处理词语的意思">计算机如何处理词语的意思</h3>
+<h4 id="distributional-similarity-based-representations">Distributional similarity based representations</h4>
+<p>语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握了它的意义。</p>
 <p>这是现代统计自然语言处理最成功的思想之一</p>
-<h4 id="通过向量定义词语的含义"><a href="#通过向量定义词语的含义" class="headerlink" title="通过向量定义词语的含义"></a>通过向量定义词语的含义</h4><p>通过调整一个单词及其上下文单词的向量，使得根据两个向量可以推测两个词语的相似度；或根据向量可以预测词语的上下文。</p>
+<h4 id="通过向量定义词语的含义">通过向量定义词语的含义</h4>
+<p>通过调整一个单词及其上下文单词的向量，使得根据两个向量可以推测两个词语的相似度；或根据向量可以预测词语的上下文。</p>
 <p><strong>递归</strong>，根据向量来调整向量，与词典中意项的定义相似。</p>
-<h4 id="学习神经网络word-embedding的基本思路"><a href="#学习神经网络word-embedding的基本思路" class="headerlink" title="学习神经网络word embedding的基本思路"></a>学习神经网络word embedding的基本思路</h4><p>定义一个以预测某个单词的上下文的模型：</p>
-<script type="math/tex; mode=display">
-p(context |w_t) = x</script><p>损失函数定义如下：</p>
-<script type="math/tex; mode=display">
-J=1−p(w_{−t}|w_t)</script><p>这里的$w_{−t}$表示$w_t$的上下文（负号通常表示除了某某之外），如果完美预测，损失函数为零。</p>
+<h4 id="学习神经网络word-embedding的基本思路">学习神经网络word embedding的基本思路</h4>
+<p>定义一个以预测某个单词的上下文的模型：</p>
+<p>$$<br>
+p(context |w_t) = x<br>
+$$<br>
+损失函数定义如下：</p>
+<p>$$<br>
+J=1−p(w_{−t}|w_t)<br>
+$$</p>
+<p>这里的$w_{−t}$表示$w_t$的上下文（负号通常表示除了某某之外），如果完美预测，损失函数为零。</p>
 <p>然后在一个大型语料库中的不同位置得到训练实例，调整词向量，最小化损失函数。</p>
-<h4 id="直接学习低维词向量"><a href="#直接学习低维词向量" class="headerlink" title="直接学习低维词向量"></a>直接学习低维词向量</h4><p>论文如下</p>
+<h4 id="直接学习低维词向量">直接学习低维词向量</h4>
+<p>论文如下</p>
 <p>• Learning representations by back-propagating errors (Rumelhart et al., 1986)</p>
 <p>• <strong>A neural probabilistic language model (Bengio et al., 2003)</strong></p>
 <p>• NLP (almost) from Scratch (Collobert &amp; Weston, 2008)</p>
-<p>• A recent, even simpler and faster model: word2vec (Mikolov et al. 2013) </p>
-<h3 id="word2vec的主要思路"><a href="#word2vec的主要思路" class="headerlink" title="word2vec的主要思路"></a>word2vec的主要思路</h3><p>word2vec——神经概率语言模型的输入，是为了通过神经网络学习<strong>某个分类模型（“CBOW”和“Skip-gram”）</strong>而产生的中间结果，而这个具体学习过程会用到<strong>两个降低复杂度的近似方法（Hierarchical Softmax或Negative Sampling）</strong></p>
+<p>• A recent, even simpler and faster model: word2vec (Mikolov et al. 2013)</p>
+<h3 id="word2vec的主要思路">word2vec的主要思路</h3>
+<p>word2vec——神经概率语言模型的输入，是为了通过神经网络学习<strong>某个分类模型（“CBOW”和“Skip-gram”）<strong>而产生的中间结果，而这个具体学习过程会用到</strong>两个降低复杂度的近似方法（Hierarchical Softmax或Negative Sampling）</strong></p>
 <p>两个语言模型</p>
 <p><img src="https://ww3.sinaimg.cn/large/6cbb8645gw1f5to6e5d9lj216c0qkwhk.jpg" alt="屏幕快照 2016-07-14 下午7.27.35.png"></p>
-<h4 id="hierarchical-softmax"><a href="#Hierarchical-softmax" class="headerlink" title="Hierarchical softmax"></a>Hierarchical softmax</h4><h5 id="continuous-bag-of-words-cbow"><a href="#Continuous-Bag-of-Words-CBOW" class="headerlink" title="Continuous Bag of Words (CBOW)"></a>Continuous Bag of Words (CBOW)</h5><p>预测目标单词，根据上下文的词语预测当前词语的出现概率的模型。已知上下文，估算当前词语的语言模型。</p>
+<h4 id="hierarchical-softmax">Hierarchical softmax</h4>
+<h5 id="continuous-bag-of-words-cbow">Continuous Bag of Words (CBOW)</h5>
+<p>预测目标单词，根据上下文的词语预测当前词语的出现概率的模型。已知上下文，估算当前词语的语言模型。</p>
 <p>其学习目标是<strong>最大化对数似然函数</strong></p>
 <p><strong>输入层 INPUT</strong>：上下文的词语的词向量（不训练词向量；而是训练CBOW模型，词向量是CBOW模型的一个参数，训练开始时，词向量是一个输入的随机值，随着训练的进行不断被更新）</p>
 <p><strong>投影层 PROJECTION</strong>：求和，简单的向量加法</p>
@@ -539,32 +553,39 @@ J=1−p(w_{−t}|w_t)</script><p>这里的$w_{−t}$表示$w_t$的上下文（�
 <p>树状结构（用于CBOW的输出层）</p>
 <p><img src="https://ww1.sinaimg.cn/large/6cbb8645gw1f5wmvf9tbrg20bf08mq30.gif" alt="svm_多分类.gif"></p>
 <p><img src="https://ww3.sinaimg.cn/large/6cbb8645gw1f5wmy4jdnwj214w12a42v.jpg" alt="屏幕快照 2016-07-17 上午9.13.40.png"></p>
-<p>复杂的数学计算……</p>
+<p>复杂的数学计算…</p>
 <p><img src="https://ww1.sinaimg.cn/large/6cbb8645gw1f5wqgz0elqj20pm0qaq5a.jpg" alt="屏幕快照 2016-07-17 上午11.15.50.png"></p>
-<h5 id="skip-grams-sg"><a href="#Skip-grams-SG" class="headerlink" title="Skip-grams (SG)"></a>Skip-grams (SG)</h5><p>预测上下文</p>
+<h5 id="skip-grams-sg">Skip-grams (SG)</h5>
+<p>预测上下文</p>
 <p>Skip-gram只是逆转了CBOW的因果关系而已，即已知当前词语，预测上下文。</p>
 <p><img src="https://ww1.sinaimg.cn/large/6cbb8645gw1f5wqzg68u0j214a120wij.jpg" alt="屏幕快照 2016-07-17 上午11.33.31.png"></p>
 <ul>
 <li>输入层不再是多个词向量，而是一个词向量</li>
 <li>投影层其实什么事情都没干，直接将输入层的词向量传递给输出层</li>
 </ul>
-<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>无论是CBOW还是Skip-gram模型，其实都是分类模型。对于机器学习中的分类任务，在训练的时候不但要给正例，还要给负例。对于Hierarchical Softmax，负例是二叉树的其他路径。对于Negative Sampling，负例是随机挑选出来的。</p>
-<h4 id="negative-sampling"><a href="#Negative-sampling" class="headerlink" title="Negative sampling"></a>Negative sampling</h4><h5 id="cbow"><a href="#CBOW" class="headerlink" title="CBOW"></a>CBOW</h5><p><img src="https://ww4.sinaimg.cn/large/6cbb8645gw1f5wv2jzxnfj20oe0ncdhp.jpg" alt="屏幕快照 2016-07-17 下午1.55.05.png"></p>
-<h5 id="skip-gram"><a href="#Skip-gram" class="headerlink" title="Skip-gram"></a>Skip-gram</h5><p><img src="https://ww4.sinaimg.cn/large/6cbb8645gw1f5wwegdnryj20oi0q00v3.jpg" alt="屏幕快照 2016-07-17 下午2.40.41.png"></p>
-<h2 id="三-高级词向量表示"><a href="#三、高级词向量表示" class="headerlink" title="三、高级词向量表示"></a>三、高级词向量表示</h2><h4 id="总结"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><ul>
+<h5 id="总结">总结</h5>
+<p>无论是CBOW还是Skip-gram模型，其实都是分类模型。对于机器学习中的分类任务，在训练的时候不但要给正例，还要给负例。对于Hierarchical Softmax，负例是二叉树的其他路径。对于Negative Sampling，负例是随机挑选出来的。</p>
+<h4 id="negative-sampling">Negative sampling</h4>
+<h5 id="cbow">CBOW</h5>
+<p><img src="https://ww4.sinaimg.cn/large/6cbb8645gw1f5wv2jzxnfj20oe0ncdhp.jpg" alt="屏幕快照 2016-07-17 下午1.55.05.png"></p>
+<h5 id="skip-gram">Skip-gram</h5>
+<p><img src="https://ww4.sinaimg.cn/large/6cbb8645gw1f5wwegdnryj20oi0q00v3.jpg" alt="屏幕快照 2016-07-17 下午2.40.41.png"></p>
+<h2 id="三-高级词向量表示">三、高级词向量表示</h2>
+<h4 id="总结">总结</h4>
+<ul>
 <li>遍历整个语料库的每个词</li>
 <li>预测每个词的上下文</li>
 <li><img src="https://wx1.sinaimg.cn/large/006Fmjmcly1fgdtp2e4e2j30uy0bmn6v.jpg" alt="hankcs.com 2017-06-08 下午3.25.31.png"></li>
 <li>每个窗口中计算梯度做SGD</li>
 </ul>
-<p>每个窗口最多2m+1个单词，所以<script type="math/tex">∇_θJ_t(θ)</script>会非常稀疏</p>
+<p>每个窗口最多2m+1个单词，所以$$∇_θJ_t(θ)$$会非常稀疏</p>
 <p><img src="https://wx2.sinaimg.cn/large/006Fmjmcly1fgdtx6wu43j30ta0qegnj.jpg" alt="hankcs.com 2017-06-08 下午3.33.16.png"></p>
 <p>实际上有正确答案需要去对比的，只有<strong>窗口中的词语</strong>。</p>
 <p>所以每次更新只更新WW矩阵中的少数列，或者为每个词语建立到词向量的哈希映射：<img src="https://wx3.sinaimg.cn/large/006Fmjmcly1fgdu3xf2phj30qo09a755.jpg" alt="hankcs.com 2017-06-08 下午3.39.45.png"></p>
 <p>另一个难点在于，词表V的量级非常大，以至于分母很难计算<img src="https://wx1.sinaimg.cn/large/006Fmjmcly1fgdtp2e4e2j30uy0bmn6v.jpg" alt="hankcs.com 2017-06-08 下午3.25.31.png"></p>
 <p>因此assignment 1用negative sampling实现skip-gram，这是一种采样子集简化运算的方法。</p>
 <p>具体做法是，<strong>对每个正例（中央词语及上下文中的一个词语）采样几个负例（中央词语和其他随机词语），训练binary logistic regression（也就是二分类器）</strong>。</p>
-<p> 目标函数：<script type="math/tex">J_t(\theta) = \log \sigma\left(u_o^Tv_c\right)+\sum_{i=1}^k\mathbb{E}_{j \sim P(w)}\left [\log\sigma \left(-u^T_jv_c\right) \right]</script></p>
+<p>目标函数：$$J_t(\theta) = \log \sigma\left(u_o^Tv_c\right)+\sum_{i=1}^k\mathbb{E}_{j \sim P(w)}\left [\log\sigma \left(-u^T_jv_c\right) \right]$$</p>
 <p>这里t是某个窗口，k是采样个数，P(w)是一个unigram分布，σ是sigmoid函数</p>
 <p><img src="https://wx4.sinaimg.cn/large/006Fmjmcly1fgdvx2wor0j30f90ai0t5.jpg" alt="sigmoid.png"></p>
 
@@ -771,7 +792,7 @@ J=1−p(w_{−t}|w_t)</script><p>这里的$w_{−t}$表示$w_t$的上下文（�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">105</span>
+                <span class="site-state-item-count">106</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

@@ -129,12 +129,12 @@
 
 
 
-<meta name="description" content="目录  1. 意图 2. 别名 3. 动机 4. 适用性 5. 结构 6. 参与者 7. 协作 8. 效果 9. 实现 10. 代码示例   本节关于FACTORY METHOD 工厂方法 —— 对象创建模式 1. 意图定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的实例化延迟到其子类。 2. 别名虚构造器（Virtual Constructor） 3.">
+<meta name="description" content="目录   1. 意图 2. 别名 3. 动机 4. 适用性 5. 结构 6. 参与者 7. 协作 8. 效果 9. 实现 10. 代码示例   本节关于FACTORY METHOD 工厂方法 —— 对象创建模式 1. 意图 定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的实例化延迟到其子类。 2. 别名 虚构造器（Virtual Constructor）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式(4) 创建型模式 FACTORY METHOD 工厂方法">
 <meta property="og:url" content="https://songzi2693.cn/post/5da200/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录  1. 意图 2. 别名 3. 动机 4. 适用性 5. 结构 6. 参与者 7. 协作 8. 效果 9. 实现 10. 代码示例   本节关于FACTORY METHOD 工厂方法 —— 对象创建模式 1. 意图定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的实例化延迟到其子类。 2. 别名虚构造器（Virtual Constructor） 3.">
+<meta property="og:description" content="目录   1. 意图 2. 别名 3. 动机 4. 适用性 5. 结构 6. 参与者 7. 协作 8. 效果 9. 实现 10. 代码示例   本节关于FACTORY METHOD 工厂方法 —— 对象创建模式 1. 意图 定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的实例化延迟到其子类。 2. 别名 虚构造器（Virtual Constructor）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/FactoryMethod_1.png">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/FactoryMethod_2.png">
@@ -452,7 +452,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  2.8k
+                  2.4k
                 </span>
               
 
@@ -468,7 +468,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  3 mins.
+                  2 mins.
                 </span>
               
             </div>
@@ -489,71 +489,87 @@
       
 
       
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><!-- toc -->
+        <h1 id="目录">目录</h1>
+<!-- toc -->
 <ul>
-<li><a href="#1-意图">1. 意图</a></li>
-<li><a href="#2-别名">2. 别名</a></li>
-<li><a href="#3-动机">3. 动机</a></li>
-<li><a href="#4-适用性">4. 适用性</a></li>
-<li><a href="#5-结构">5. 结构</a></li>
-<li><a href="#6-参与者">6. 参与者</a></li>
-<li><a href="#7-协作">7. 协作</a></li>
-<li><a href="#8-效果">8. 效果</a></li>
-<li><a href="#9-实现">9. 实现</a></li>
-<li><a href="#10-代码示例">10. 代码示例</a></li>
+<li><a href="#1-%E6%84%8F%E5%9B%BE">1. 意图</a></li>
+<li><a href="#2-%E5%88%AB%E5%90%8D">2. 别名</a></li>
+<li><a href="#3-%E5%8A%A8%E6%9C%BA">3. 动机</a></li>
+<li><a href="#4-%E9%80%82%E7%94%A8%E6%80%A7">4. 适用性</a></li>
+<li><a href="#5-%E7%BB%93%E6%9E%84">5. 结构</a></li>
+<li><a href="#6-%E5%8F%82%E4%B8%8E%E8%80%85">6. 参与者</a></li>
+<li><a href="#7-%E5%8D%8F%E4%BD%9C">7. 协作</a></li>
+<li><a href="#8-%E6%95%88%E6%9E%9C">8. 效果</a></li>
+<li><a href="#9-%E5%AE%9E%E7%8E%B0">9. 实现</a></li>
+<li><a href="#10-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B">10. 代码示例</a></li>
 </ul>
 <!-- tocstop -->
 <p>本节关于FACTORY METHOD 工厂方法 —— 对象创建模式</p>
-<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的<strong>实例化延迟</strong>到其子类。</p>
-<h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2. 别名"></a>2. 别名</h2><p>虚构造器（Virtual Constructor）</p>
-<h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3. 动机"></a>3. 动机</h2><p>框架使用抽象类定义和维护对象之间的关系。这些对象的创建通常也由框架负责。</p>
+<h2 id="1-意图">1. 意图</h2>
+<p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的<strong>实例化延迟</strong>到其子类。</p>
+<h2 id="2-别名">2. 别名</h2>
+<p>虚构造器（Virtual Constructor）</p>
+<h2 id="3-动机">3. 动机</h2>
+<p>框架使用抽象类定义和维护对象之间的关系。这些对象的创建通常也由框架负责。</p>
 <p>问题：某应用框架向用户显示多个文档。两个主要的抽象是抽象类Application和Document，客户通过其子类来做与具体应用相关的实现。但Application只知道一个新文档何时被创建，而不知道哪一种Document将被创建。这使得：<strong>框架必须实例化类，但它只知道不能被实例化的类。</strong></p>
 <p>解决方法如下：</p>
 <p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/FactoryMethod_1.png" alt></p>
-<p><strong>封装哪一个Document子类将被创建的信息并将这些信息从该框架中分离出来。</strong>Application的子类重定义Application的抽象操作CreateDocument以返回适合的Document子类对象。一旦一个Application子类实例化后，它就可以实例化与应用相关的文档，而无需知道这些文档的类。</p>
-<h2 id="4-适用性"><a href="#4-适用性" class="headerlink" title="4. 适用性"></a>4. 适用性</h2><ul>
+<p>**封装哪一个Document子类将被创建的信息并将这些信息从该框架中分离出来。**Application的子类重定义Application的抽象操作CreateDocument以返回适合的Document子类对象。一旦一个Application子类实例化后，它就可以实例化与应用相关的文档，而无需知道这些文档的类。</p>
+<h2 id="4-适用性">4. 适用性</h2>
+<ul>
 <li>当一个类不知道它所必须创建的对象的类</li>
 <li>当一个类希望由其子类来指定它所创建的对象</li>
 <li>当类将创建对象的职责委托给多个帮助子类中的某一个，并且希望将哪一个帮助子类是代理者这一信息局部化的时候</li>
 </ul>
-<h2 id="5-结构"><a href="#5-结构" class="headerlink" title="5. 结构"></a>5. 结构</h2><p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/FactoryMethod_2.png" alt></p>
-<h2 id="6-参与者"><a href="#6-参与者" class="headerlink" title="6. 参与者"></a>6. 参与者</h2><ul>
-<li>Product(Document)<ul>
+<h2 id="5-结构">5. 结构</h2>
+<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/FactoryMethod_2.png" alt></p>
+<h2 id="6-参与者">6. 参与者</h2>
+<ul>
+<li>Product(Document)
+<ul>
 <li>定义工厂方法所创建的对象的接口</li>
 </ul>
 </li>
-<li>ConcreteProduct(MyDocument)<ul>
+<li>ConcreteProduct(MyDocument)
+<ul>
 <li>实现Product接口</li>
 </ul>
 </li>
-<li>Creator(Application)<ul>
+<li>Creator(Application)
+<ul>
 <li>声明工厂方法，该方法返回一个Product类型的对象。Creator也可以定义一个工厂方法的缺省实现，它返回一个缺省的ConcreteProduct对象</li>
 <li>可以调用工厂方法以创建一个Product对象</li>
 </ul>
 </li>
-<li>ConcreteCreate(MyApplication)<ul>
+<li>ConcreteCreate(MyApplication)
+<ul>
 <li>重定义工厂方法以返回一个ConcreteProduct对象</li>
 </ul>
 </li>
 </ul>
-<h2 id="7-协作"><a href="#7-协作" class="headerlink" title="7. 协作"></a>7. 协作</h2><ul>
+<h2 id="7-协作">7. 协作</h2>
+<ul>
 <li>Creator依赖于其子类来定义工厂方法，所以它返回一个适当的ConcreteProduct实例</li>
 </ul>
-<h2 id="8-效果"><a href="#8-效果" class="headerlink" title="8. 效果"></a>8. 效果</h2><ul>
+<h2 id="8-效果">8. 效果</h2>
+<ul>
 <li>为子类提供挂钩（hook）</li>
 <li>连接平行的类层次</li>
 </ul>
-<h2 id="9-实现"><a href="#9-实现" class="headerlink" title="9.  实现"></a>9.  实现</h2><ul>
-<li><p>Factory Method主要有两种不同的情况</p>
+<h2 id="9-实现">9.  实现</h2>
+<ul>
+<li>
+<p>Factory Method主要有两种不同的情况</p>
 <ul>
 <li>Create</li>
 </ul>
 </li>
+<li>
+<p>参数化工厂方法</p>
+</li>
 </ul>
-<ul>
-<li>参数化工厂方法</li>
-</ul>
-<h2 id="10-代码示例"><a href="#10-代码示例" class="headerlink" title="10. 代码示例"></a>10. 代码示例</h2>
+<h2 id="10-代码示例">10. 代码示例</h2>
+
       
     </div>
     
@@ -693,7 +709,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">105</span>
+                <span class="site-state-item-count">106</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

@@ -129,20 +129,20 @@
 
 
 
-<meta name="description" content="目录  JAVA的六个不同存储数据位置： 栈，堆和常量池 栈和堆   参考   JAVA的六个不同存储数据位置：1. 寄存器：最快的存储区，位于处理器内部（不同于其他存储区的地方）。寄存器的数量极其有限，所以寄存器由编译器根据需求进行分配。 2. 栈：存放基本类型(byte, short, int, long, float, double, boolean, char)的变量数据和对象的引用。堆栈">
+<meta name="description" content="目录   JAVA的六个不同存储数据位置： 栈，堆和常量池  栈和堆   参考   JAVA的六个不同存储数据位置： 1. 寄存器：最快的存储区，位于处理器内部（不同于其他存储区的地方）。寄存器的数量极其有限，所以寄存器由编译器根据需求进行分配。 2. 栈：存放基本类型(byte, short, int, long, float, double, boolean, char)的变量数据和对象的引用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="内存堆，内存池，常量池">
 <meta property="og:url" content="https://songzi2693.cn/post/ff4ddc00/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录  JAVA的六个不同存储数据位置： 栈，堆和常量池 栈和堆   参考   JAVA的六个不同存储数据位置：1. 寄存器：最快的存储区，位于处理器内部（不同于其他存储区的地方）。寄存器的数量极其有限，所以寄存器由编译器根据需求进行分配。 2. 栈：存放基本类型(byte, short, int, long, float, double, boolean, char)的变量数据和对象的引用。堆栈">
+<meta property="og:description" content="目录   JAVA的六个不同存储数据位置： 栈，堆和常量池  栈和堆   参考   JAVA的六个不同存储数据位置： 1. 寄存器：最快的存储区，位于处理器内部（不同于其他存储区的地方）。寄存器的数量极其有限，所以寄存器由编译器根据需求进行分配。 2. 栈：存放基本类型(byte, short, int, long, float, double, boolean, char)的变量数据和对象的引用">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/ShortPupil.github.io/hexo/source/_posts/pictures/堆栈成员变量局部变量.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/ShortPupil.github.io/hexo/source/_posts/pictures/%E5%A0%86%E6%A0%88%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F.png">
 <meta property="article:published_time" content="2019-04-06T14:16:01.000Z">
 <meta property="article:modified_time" content="2022-03-21T15:04:39.099Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/ShortPupil/ShortPupil.github.io/hexo/source/_posts/pictures/堆栈成员变量局部变量.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ShortPupil/ShortPupil.github.io/hexo/source/_posts/pictures/%E5%A0%86%E6%A0%88%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F.png">
 
 
 
@@ -488,62 +488,84 @@
       
 
       
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><!-- toc -->
+        <h1 id="目录">目录</h1>
+<!-- toc -->
 <ul>
-<li><a href="#java的六个不同存储数据位置">JAVA的六个不同存储数据位置：</a></li>
-<li><a href="#栈堆和常量池">栈，堆和常量池</a><ul>
-<li><a href="#栈和堆">栈和堆</a></li>
+<li><a href="#java%E7%9A%84%E5%85%AD%E4%B8%AA%E4%B8%8D%E5%90%8C%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE">JAVA的六个不同存储数据位置：</a></li>
+<li><a href="#%E6%A0%88%E5%A0%86%E5%92%8C%E5%B8%B8%E9%87%8F%E6%B1%A0">栈，堆和常量池</a>
+<ul>
+<li><a href="#%E6%A0%88%E5%92%8C%E5%A0%86">栈和堆</a></li>
 </ul>
 </li>
-<li><a href="#参考">参考</a></li>
+<li><a href="#%E5%8F%82%E8%80%83">参考</a></li>
 </ul>
 <!-- tocstop -->
-<h2 id="java的六个不同存储数据位置"><a href="#JAVA的六个不同存储数据位置：" class="headerlink" title="JAVA的六个不同存储数据位置："></a>JAVA的六个不同存储数据位置：</h2><p><strong>1. 寄存器</strong>：最快的存储区，位于处理器内部（不同于其他存储区的地方）。寄存器的数量极其有限，所以寄存器由编译器根据需求进行分配。</p>
-<p><strong>2. 栈</strong>：存放<strong>基本类型</strong>(byte, short, int, long, float, double, boolean, char)的变量数据和<strong>对象的引用</strong>。<strong>堆栈指针若向下移动，则分配新的内存；若向上移动，则释放那些内存。</strong>这是一种快速有效的分配存储方法，仅次于寄存器。创建程序时候，JAVA编译器必须知道存储在堆栈内所有数据的确切大小和生命周期，因为它必须生成 相应的代码，以便上下移动堆栈指针。这一约束限制了程序的灵活性。</p>
-<p><strong>3. 堆</strong>：一种通用性的内存池（也存在于RAM中），用于存放所有的JAVA对象。堆不同于堆栈的好处是：<strong>编译器不需要知道要从堆里分配多少存储区域，也不必知道存储的数据在堆里存活多长时间。</strong>因此，在堆里分配存储有很大的灵活性。代价是<strong>用堆进行存储分配比用堆栈进行存储存储需要更多的时间</strong>。  </p>
+<h2 id="java的六个不同存储数据位置">JAVA的六个不同存储数据位置：</h2>
+<p><strong>1. 寄存器</strong>：最快的存储区，位于处理器内部（不同于其他存储区的地方）。寄存器的数量极其有限，所以寄存器由编译器根据需求进行分配。</p>
+<p><strong>2. 栈</strong>：存放<strong>基本类型</strong>(byte, short, int, long, float, double, boolean, char)的变量数据和<strong>对象的引用</strong>。**堆栈指针若向下移动，则分配新的内存；若向上移动，则释放那些内存。**这是一种快速有效的分配存储方法，仅次于寄存器。创建程序时候，JAVA编译器必须知道存储在堆栈内所有数据的确切大小和生命周期，因为它必须生成 相应的代码，以便上下移动堆栈指针。这一约束限制了程序的灵活性。</p>
+<p><strong>3. 堆</strong>：一种通用性的内存池（也存在于RAM中），用于存放所有的JAVA对象。堆不同于堆栈的好处是：<strong>编译器不需要知道要从堆里分配多少存储区域，也不必知道存储的数据在堆里存活多长时间。<strong>因此，在堆里分配存储有很大的灵活性。代价是</strong>用堆进行存储分配比用堆栈进行存储存储需要更多的时间</strong>。</p>
 <p><strong>4. 静态域</strong>：存放静态成员，<strong>static</strong>定义 。</p>
 <p><strong>5. 常量池</strong>：存放<strong>字符串常量和基本类型常量</strong>（public static final）。 常量值通常直接存放在程序代码内部，这样做是安全的，因为它们永远不会被改变。</p>
-<p><strong>6. 非RAM存储</strong>：<strong>硬盘等永久存储空间</strong>。如果数据完全存活于程序之外，那么它可以不受程序的任何控制，在程序没有运行时也可以存在。 </p>
-<h2 id="栈堆和常量池"><a href="#栈，堆和常量池" class="headerlink" title="栈，堆和常量池"></a>栈，堆和常量池</h2><h3 id="栈和堆"><a href="#栈和堆" class="headerlink" title="栈和堆"></a>栈和堆</h3><ul>
+<p><strong>6. 非RAM存储</strong>：<strong>硬盘等永久存储空间</strong>。如果数据完全存活于程序之外，那么它可以不受程序的任何控制，在程序没有运行时也可以存在。</p>
+<h2 id="栈堆和常量池">栈，堆和常量池</h2>
+<h3 id="栈和堆">栈和堆</h3>
+<ul>
 <li>栈中的数据大小和生命周期是可以<strong>确定</strong>的，当没有引用指向数据时，这个数据就会消失。</li>
-<li>堆中的对象的由<strong>垃圾回收器</strong>负责回收，因此<strong>大小和生命周期不需要确定</strong>，具有很大的灵活性。 </li>
+<li>堆中的对象的由<strong>垃圾回收器</strong>负责回收，因此<strong>大小和生命周期不需要确定</strong>，具有很大的灵活性。</li>
 </ul>
 <ol>
-<li><p>对于<strong>字符串</strong></p>
+<li>
+<p>对于<strong>字符串</strong></p>
 <ol>
-<li><p>其对象的引用都是存储在栈中的，如果是编译期已经创建好(直接用双引号定义的)的就存储在常量池中，如果是运行期（new出来的）才能确定的就存储在堆中。对于equals相等的字符串，在常量池中永远只有一份，在堆中有多份。</p>
+<li>
+<p>其对象的引用都是存储在栈中的，如果是编译期已经创建好(直接用双引号定义的)的就存储在常量池中，如果是运行期（new出来的）才能确定的就存储在堆中。对于equals相等的字符串，在常量池中永远只有一份，在堆中有多份。</p>
 </li>
-<li><p>```java<br>String string1 = “a”;<br>String string2 = “a”;<br>String string3 = “a”;<br>String ss1 = new String(“a”);<br>String ss2 = new String(“a”);<br>String ss3 = new String(“a”);</p>
+<li>
+<pre><code class="language-java">String string1 = &quot;a&quot;;
+String string2 = &quot;a&quot;;
+String string3 = &quot;a&quot;;
+String ss1 = new String(&quot;a&quot;);
+String ss2 = new String(&quot;a&quot;);
+String ss3 = new String(&quot;a&quot;);
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">      ![](https://raw.githubusercontent.com/ShortPupil/ShortPupil.github.io/hexo/source/_posts/pictures/栈堆字符串.png)</span><br><span class="line"></span><br><span class="line">      对于通过new产生一个字符串（假设为”a”）时，会先去常量池中查找是否已经有了”a”对象，如果没有则在常量池中创建一个此字符串对象，然后堆中再创建一个常量池中此”a”对象的拷贝对象。所以new String(&quot;a&quot;)产生的对象既然可能是1或2。</span><br><span class="line"></span><br><span class="line">2. 对于**基础类型的变量和常量**</span><br><span class="line"></span><br><span class="line">   1. 变量和引用存储在栈中，常量存储在常量池中。</span><br><span class="line">         ```java</span><br><span class="line">            int i1 = 9;</span><br><span class="line">            int i2 = 9;</span><br><span class="line">            public static final int j1 = 9;</span><br><span class="line">            public static final int j2 = 9;</span><br></pre></td></tr></table></figure>
+
+
+![](https://raw.githubusercontent.com/ShortPupil/ShortPupil.github.io/hexo/source/_posts/pictures/堆栈基础类型.png)
+
+</code></pre>
 </li>
-</ol>
-</li>
-</ol>
-<pre><code>  ![](https://raw.githubusercontent.com/ShortPupil/ShortPupil.github.io/hexo/source/_posts/pictures/堆栈基础类型.png)
-</code></pre><ol>
-<li><p><strong>成员变量和局部变量</strong></p>
+<li>
+<p><strong>成员变量和局部变量</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BirthDate</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> day;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> year;    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BirthDate</span><span class="params">(<span class="keyword">int</span> d, <span class="keyword">int</span> m, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        day = d; </span><br><span class="line">        month = m; </span><br><span class="line">        year = y;</span><br><span class="line">    &#125;</span><br><span class="line">    省略get,set方法………</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> date = <span class="number">9</span>;</span><br><span class="line">        Test test = <span class="keyword">new</span> Test();      </span><br><span class="line">        test.change(date); </span><br><span class="line">        BirthDate d1= <span class="keyword">new</span> BirthDate(<span class="number">7</span>,<span class="number">7</span>,<span class="number">1970</span>);       </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">     i = <span class="number">1234</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>分析：对于以上这段代码，date为局部变量，i,d,m,y都是形参为局部变量，day，month，year为成员变量。下面分析一下代码执行时候的变化：</p>
 <ol>
-<li><p>main方法开始执行：</p>
+<li>
+<p>main方法开始执行：</p>
 <p>int date = 9;date局部变量，基础类型，引用和值都存在栈中。</p>
 </li>
-<li><p>Test test = new Test();</p>
+<li>
+<p>Test test = new Test();</p>
 <p>test为对象引用，存在栈中，对象(new Test())存在堆中。</p>
 </li>
-<li><p>test.change(date);</p>
+<li>
+<p>test.change(date);</p>
 <p>i为局部变量，引用和值存在栈中。当方法change执行完成后，i就会从栈中消失。</p>
 </li>
-<li><p>BirthDate d1= new BirthDate(7,7,1970);  </p>
+<li>
+<p>BirthDate d1= new BirthDate(7,7,1970);</p>
 <p>d1为对象引用，存在栈中，对象(new BirthDate())存在堆中，其中d，m，y为局部变量存储在栈中，且它们的类型为基础类型，因此它们的数据也存储在栈中。day,month,year为成员变量，它们存储在堆中(new BirthDate()里面)。当BirthDate构造方法执行完之后，d,m,y将从栈中消失。</p>
 </li>
-<li><p>main方法执行完之后，date变量，test，d1引用将从栈中消失，new Test(),new BirthDate()将等待垃圾回收。</p>
+<li>
+<p>main方法执行完之后，date变量，test，d1引用将从栈中消失，new Test(),new BirthDate()将等待垃圾回收。</p>
 </li>
 </ol>
 </li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/ShortPupil/ShortPupil.github.io/hexo/source/_posts/pictures/堆栈成员变量局部变量.png" alt></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Eason-S/p/5658230.html">堆、栈、常量池的比较</a></p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/ShortPupil/ShortPupil.github.io/hexo/source/_posts/pictures/%E5%A0%86%E6%A0%88%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F.png" alt></p>
+<h2 id="参考">参考</h2>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Eason-S/p/5658230.html">堆、栈、常量池的比较</a></p>
 <p>《深入理解java虚拟机》</p>
 
       
@@ -749,7 +771,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">105</span>
+                <span class="site-state-item-count">106</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

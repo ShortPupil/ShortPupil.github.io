@@ -129,12 +129,12 @@
 
 
 
-<meta name="description" content="一、了解 1.什么是MongoDB? 2.什么是非关系型数据库? 3.什么是MongoDB? 4.MongoDB是如何存储文档的? 4.1MySQL 4.2MongoDB   5.一般开发如何选择?   二、 基本操作学习 三、创建文档 1.主键 2.为什么要使用ObjectId类型数据作为主键? 3.是否支持其它类型数据作为主键?   四、文档操作 增删改查 五、聚合 1.什么是聚合操作?">
+<meta name="description" content="一、了解  1.什么是MongoDB? 2.什么是非关系型数据库? 3.什么是MongoDB? 4.MongoDB是如何存储文档的?  4.1MySQL 4.2MongoDB   5.一般开发如何选择?   二、 基本操作学习 三、创建文档  1.主键 2.为什么要使用ObjectId类型数据作为主键? 3.是否支持其它类型数据作为主键?   四、文档操作 增删改查 五、聚合  1.什么是聚合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB学习">
 <meta property="og:url" content="https://songzi2693.cn/post/88175981/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="一、了解 1.什么是MongoDB? 2.什么是非关系型数据库? 3.什么是MongoDB? 4.MongoDB是如何存储文档的? 4.1MySQL 4.2MongoDB   5.一般开发如何选择?   二、 基本操作学习 三、创建文档 1.主键 2.为什么要使用ObjectId类型数据作为主键? 3.是否支持其它类型数据作为主键?   四、文档操作 增删改查 五、聚合 1.什么是聚合操作?">
+<meta property="og:description" content="一、了解  1.什么是MongoDB? 2.什么是非关系型数据库? 3.什么是MongoDB? 4.MongoDB是如何存储文档的?  4.1MySQL 4.2MongoDB   5.一般开发如何选择?   二、 基本操作学习 三、创建文档  1.主键 2.为什么要使用ObjectId类型数据作为主键? 3.是否支持其它类型数据作为主键?   四、文档操作 增删改查 五、聚合  1.什么是聚合">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-17T17:12:24.000Z">
 <meta property="article:modified_time" content="2022-03-21T15:04:39.049Z">
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  110k
+                  108k
                 </span>
               
 
@@ -465,7 +465,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  1:40
+                  1:38
                 </span>
               
             </div>
@@ -488,29 +488,33 @@
       
         <!-- toc -->
 <ul>
-<li><a href="#一-了解">一、了解</a><ul>
-<li><a href="#1什么是mongodb">1.什么是MongoDB?</a></li>
-<li><a href="#2什么是非关系型数据库">2.什么是非关系型数据库?</a></li>
-<li><a href="#3什么是mongodb">3.什么是MongoDB?</a></li>
-<li><a href="#4mongodb是如何存储文档的">4.MongoDB是如何存储文档的?</a><ul>
+<li><a href="#%E4%B8%80-%E4%BA%86%E8%A7%A3">一、了解</a>
+<ul>
+<li><a href="#1%E4%BB%80%E4%B9%88%E6%98%AFmongodb">1.什么是MongoDB?</a></li>
+<li><a href="#2%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93">2.什么是非关系型数据库?</a></li>
+<li><a href="#3%E4%BB%80%E4%B9%88%E6%98%AFmongodb">3.什么是MongoDB?</a></li>
+<li><a href="#4mongodb%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%96%87%E6%A1%A3%E7%9A%84">4.MongoDB是如何存储文档的?</a>
+<ul>
 <li><a href="#41mysql">4.1MySQL</a></li>
 <li><a href="#42mongodb">4.2MongoDB</a></li>
 </ul>
 </li>
-<li><a href="#5一般开发如何选择">5.一般开发如何选择?</a></li>
+<li><a href="#5%E4%B8%80%E8%88%AC%E5%BC%80%E5%8F%91%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9">5.一般开发如何选择?</a></li>
 </ul>
 </li>
-<li><a href="#二-基本操作学习">二、 基本操作学习</a></li>
-<li><a href="#三-创建文档">三、创建文档</a><ul>
-<li><a href="#1主键">1.主键</a></li>
-<li><a href="#2为什么要使用objectid类型数据作为主键">2.为什么要使用ObjectId类型数据作为主键?</a></li>
-<li><a href="#3是否支持其它类型数据作为主键">3.是否支持其它类型数据作为主键?</a></li>
+<li><a href="#%E4%BA%8C-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0">二、 基本操作学习</a></li>
+<li><a href="#%E4%B8%89-%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3">三、创建文档</a>
+<ul>
+<li><a href="#1%E4%B8%BB%E9%94%AE">1.主键</a></li>
+<li><a href="#2%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8objectid%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E4%BD%9C%E4%B8%BA%E4%B8%BB%E9%94%AE">2.为什么要使用ObjectId类型数据作为主键?</a></li>
+<li><a href="#3%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81%E5%85%B6%E5%AE%83%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E4%BD%9C%E4%B8%BA%E4%B8%BB%E9%94%AE">3.是否支持其它类型数据作为主键?</a></li>
 </ul>
 </li>
-<li><a href="#四-文档操作-增删改查">四、文档操作 增删改查</a></li>
-<li><a href="#五-聚合">五、聚合</a><ul>
-<li><a href="#1什么是聚合操作">1.什么是聚合操作?</a></li>
-<li><a href="#2聚合操作格式">2.聚合操作格式</a></li>
+<li><a href="#%E5%9B%9B-%E6%96%87%E6%A1%A3%E6%93%8D%E4%BD%9C-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5">四、文档操作 增删改查</a></li>
+<li><a href="#%E4%BA%94-%E8%81%9A%E5%90%88">五、聚合</a>
+<ul>
+<li><a href="#1%E4%BB%80%E4%B9%88%E6%98%AF%E8%81%9A%E5%90%88%E6%93%8D%E4%BD%9C">1.什么是聚合操作?</a></li>
+<li><a href="#2%E8%81%9A%E5%90%88%E6%93%8D%E4%BD%9C%E6%A0%BC%E5%BC%8F">2.聚合操作格式</a></li>
 <li><a href="#project">$project</a></li>
 <li><a href="#match">$match</a></li>
 <li><a href="#limit-skip">$limit $skip</a></li>
@@ -520,62 +524,88 @@
 <li><a href="#lookup-1">$lookup</a></li>
 <li><a href="#group">$group</a></li>
 <li><a href="#out">$out</a></li>
-<li><a href="#allowdiskuse-额外配置">allowDiskUse 额外配置</a></li>
+<li><a href="#allowdiskuse-%E9%A2%9D%E5%A4%96%E9%85%8D%E7%BD%AE">allowDiskUse 额外配置</a></li>
 <li><a href="#filed"><code>$ &lt;filed&gt;</code></a></li>
 <li><a href="#convert">$convert</a></li>
-<li><a href="#聚合管道优化">聚合管道优化</a></li>
+<li><a href="#%E8%81%9A%E5%90%88%E7%AE%A1%E9%81%93%E4%BC%98%E5%8C%96">聚合管道优化</a></li>
 </ul>
 </li>
-<li><a href="#六-索引">六、索引</a><ul>
-<li><a href="#1什么是索引">1.什么是索引?</a></li>
-<li><a href="#2如何获取索引">2.如何获取索引</a></li>
-<li><a href="#3如何创建索引">3.如何创建索引</a></li>
-<li><a href="#4创建单键索引">4.创建单键索引</a></li>
-<li><a href="#5查看是否使用索引">5.查看是否使用索引</a></li>
-<li><a href="#复合索引">复合索引</a></li>
-<li><a href="#多键索引">多键索引</a></li>
-<li><a href="#索引对排序的影响">索引对排序的影响</a></li>
-<li><a href="#唯一索引">唯一索引</a></li>
-<li><a href="#索引的稀疏性">索引的稀疏性</a></li>
-<li><a href="#索引生存时间">索引生存时间</a></li>
-<li><a href="#删除索引">删除索引</a></li>
+<li><a href="#%E5%85%AD-%E7%B4%A2%E5%BC%95">六、索引</a>
+<ul>
+<li><a href="#1%E4%BB%80%E4%B9%88%E6%98%AF%E7%B4%A2%E5%BC%95">1.什么是索引?</a></li>
+<li><a href="#2%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%B4%A2%E5%BC%95">2.如何获取索引</a></li>
+<li><a href="#3%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95">3.如何创建索引</a></li>
+<li><a href="#4%E5%88%9B%E5%BB%BA%E5%8D%95%E9%94%AE%E7%B4%A2%E5%BC%95">4.创建单键索引</a></li>
+<li><a href="#5%E6%9F%A5%E7%9C%8B%E6%98%AF%E5%90%A6%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95">5.查看是否使用索引</a></li>
+<li><a href="#%E5%A4%8D%E5%90%88%E7%B4%A2%E5%BC%95">复合索引</a></li>
+<li><a href="#%E5%A4%9A%E9%94%AE%E7%B4%A2%E5%BC%95">多键索引</a></li>
+<li><a href="#%E7%B4%A2%E5%BC%95%E5%AF%B9%E6%8E%92%E5%BA%8F%E7%9A%84%E5%BD%B1%E5%93%8D">索引对排序的影响</a></li>
+<li><a href="#%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95">唯一索引</a></li>
+<li><a href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E7%A8%80%E7%96%8F%E6%80%A7">索引的稀疏性</a></li>
+<li><a href="#%E7%B4%A2%E5%BC%95%E7%94%9F%E5%AD%98%E6%97%B6%E9%97%B4">索引生存时间</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E7%B4%A2%E5%BC%95">删除索引</a></li>
 </ul>
 </li>
-<li><a href="#七-数据模型">七、数据模型</a></li>
-<li><a href="#八-复制集">八、复制集</a></li>
-<li><a href="#九-分片">九、分片</a></li>
+<li><a href="#%E4%B8%83-%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B">七、数据模型</a></li>
+<li><a href="#%E5%85%AB-%E5%A4%8D%E5%88%B6%E9%9B%86">八、复制集</a></li>
+<li><a href="#%E4%B9%9D-%E5%88%86%E7%89%87">九、分片</a></li>
 </ul>
 <!-- tocstop -->
-<h1 id="一-了解"><a href="#一、了解" class="headerlink" title="一、了解"></a>一、了解</h1><h2 id="1什么是mongodb"><a href="#1-什么是MongoDB" class="headerlink" title="1.什么是MongoDB?"></a>1.什么是MongoDB?</h2><p>MongoDB和MySQL一样都是数据库, 都是存储数据的仓库,<br>不同的是MySQL是关系型数据库, 而MongoDB是非关系型数据库</p>
-<h2 id="2什么是非关系型数据库"><a href="#2-什么是非关系型数据库" class="headerlink" title="2.什么是非关系型数据库?"></a>2.什么是非关系型数据库?</h2><ul>
-<li><p>在’关系型数据库’中, 数据都是存储在表中的, 对存储的内容有严格的要求<br>因为在创建表的时候我们就</p>
+<h1 id="一-了解">一、了解</h1>
+<h2 id="1什么是mongodb">1.什么是MongoDB?</h2>
+<p>MongoDB和MySQL一样都是数据库, 都是存储数据的仓库,<br>
+不同的是MySQL是关系型数据库, 而MongoDB是非关系型数据库</p>
+<h2 id="2什么是非关系型数据库">2.什么是非关系型数据库?</h2>
+<ul>
+<li>
+<p>在’关系型数据库’中, 数据都是存储在表中的, 对存储的内容有严格的要求<br>
+因为在创建表的时候我们就</p>
 <p>已经规定了表中有多少个字段,已经规定了每个字段将来要存储什么类型数据,已经规定了每个字段将来是否可以为空,是否必须唯一等等</p>
 </li>
-<li><p>在’非关系型数据库’中, 没有表概念, 所以存储数据更加灵活<br>因为不需要创建表,所以也</p>
+<li>
+<p>在’非关系型数据库’中, 没有表概念, 所以存储数据更加灵活<br>
+因为不需要创建表,所以也</p>
 <p>没有规定有哪些字段,也没有规定每个字段数据类型,也没有规定每个字段将来是否可以为空,是否必须唯一等等</p>
 </li>
-<li><p>‘关系型数据库’由于操作的都是结构化的数据, 所以我们需要使用结构化语言SQL来操作</p>
+<li>
+<p>'关系型数据库’由于操作的都是结构化的数据, 所以我们需要使用结构化语言SQL来操作</p>
 </li>
-<li><p>‘非关系型数据库’由于数据没有严格的结构要求, 所以无需使用SQL来操作</p>
+<li>
+<p>'非关系型数据库’由于数据没有严格的结构要求, 所以无需使用SQL来操作</p>
 </li>
 </ul>
-<h2 id="3什么是mongodb"><a href="#3-什么是MongoDB" class="headerlink" title="3.什么是MongoDB?"></a>3.什么是MongoDB?</h2><p>存储文档(BSON)的非关系型数据库<br>例如在MySQL中:</p>
+<h2 id="3什么是mongodb">3.什么是MongoDB?</h2>
+<p>存储文档(BSON)的非关系型数据库<br>
+例如在MySQL中:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">|--------------------------------------------------------|</span><br><span class="line">|   name(varchar(255) not null)   |    age(int unique)   |</span><br><span class="line">|--------------------------------------------------------|</span><br><span class="line">我们可以把            &#x27;zs&#x27;, 33        保存到表中</span><br><span class="line">但是我们不能将         33, &#x27;zs&#x27;       保存到表中</span><br><span class="line">但我们不能能将         null, 33       保存到表中</span><br><span class="line">但是我们不能将         &#x27;zs&#x27;, 33,  &#x27;男&#x27; 保存到表中</span><br><span class="line">但是我们不能再次将     &#x27;zs&#x27;, 33        保存到表中</span><br></pre></td></tr></table></figure>
 <p>例如在MongoDB中:</p>
-<p>我们可以把         {name: ‘zs’, age: 33};              保存到集合中<br>我们也可以把       {name: 33, age: ‘zs’};              保存到集合中<br>我们也可以把       {name: null, age: 33};              保存到集合中<br>我们也可以把       {name: ‘zs’, age: 33, gender:’男’}; 保存到集合中<br>但是我们可以再次将 {name: ‘zs’, age: 33};              保存到集合中</p>
+<p>我们可以把         {name: ‘zs’, age: 33};              保存到集合中<br>
+我们也可以把       {name: 33, age: ‘zs’};              保存到集合中<br>
+我们也可以把       {name: null, age: 33};              保存到集合中<br>
+我们也可以把       {name: ‘zs’, age: 33, gender:‘男’}; 保存到集合中<br>
+但是我们可以再次将 {name: ‘zs’, age: 33};              保存到集合中</p>
 <ul>
-<li>‘非关系型数据库’可以看做是’关系型数据库’的功能阉割版本,<br>通过减少用不到或很少用的功能，从而提升数据库的性能</li>
+<li>'非关系型数据库’可以看做是’关系型数据库’的功能阉割版本,<br>
+通过减少用不到或很少用的功能，从而提升数据库的性能</li>
 </ul>
-<h2 id="4mongodb是如何存储文档的"><a href="#4-MongoDB是如何存储文档的" class="headerlink" title="4.MongoDB是如何存储文档的?"></a>4.MongoDB是如何存储文档的?</h2><p>MySQL中所有的数据都是存储在表中的, 而MongoDB中所有的数据都是存储在集合中的</p>
-<h3 id="41mysql"><a href="#4-1MySQL" class="headerlink" title="4.1MySQL"></a>4.1MySQL</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">                |--行1</span><br><span class="line">        |--表1--|--行2</span><br><span class="line">数据库--|       |--行3</span><br><span class="line">        |--表2</span><br><span class="line">        |--... ...</span><br></pre></td></tr></table></figure>
-<h3 id="42mongodb"><a href="#4-2MongoDB" class="headerlink" title="4.2MongoDB"></a>4.2MongoDB</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">                  |--文档1</span><br><span class="line">        |--集合1--|--文档2</span><br><span class="line">`数据库--|         |--文档3`</span><br><span class="line">        `|--集合2`</span><br><span class="line">        `|--... ...`</span><br></pre></td></tr></table></figure>
-<h2 id="5一般开发如何选择"><a href="#5-一般开发如何选择" class="headerlink" title="5.一般开发如何选择?"></a>5.一般开发如何选择?</h2><ul>
-<li>关系型数据库和非关系型数据库之间并不是替代关系, 而是互补关系<br>所以在企业开发中大部分情况是结合在一起使用.</li>
-<li>对于数据模型比较简单、数据性能要求较高、数据灵活性较强的数据, 我们存储到非关系型数据库中<br>相反则存储到关系型数据库中</li>
+<h2 id="4mongodb是如何存储文档的">4.MongoDB是如何存储文档的?</h2>
+<p>MySQL中所有的数据都是存储在表中的, 而MongoDB中所有的数据都是存储在集合中的</p>
+<h3 id="41mysql">4.1MySQL</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">                |--行1</span><br><span class="line">        |--表1--|--行2</span><br><span class="line">数据库--|       |--行3</span><br><span class="line">        |--表2</span><br><span class="line">        |--... ...</span><br></pre></td></tr></table></figure>
+<h3 id="42mongodb">4.2MongoDB</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">                  |--文档1</span><br><span class="line">        |--集合1--|--文档2</span><br><span class="line">`数据库--|         |--文档3`</span><br><span class="line">        `|--集合2`</span><br><span class="line">        `|--... ...`</span><br></pre></td></tr></table></figure>
+<h2 id="5一般开发如何选择">5.一般开发如何选择?</h2>
+<ul>
+<li>关系型数据库和非关系型数据库之间并不是替代关系, 而是互补关系<br>
+所以在企业开发中大部分情况是结合在一起使用.</li>
+<li>对于数据模型比较简单、数据性能要求较高、数据灵活性较强的数据, 我们存储到非关系型数据库中<br>
+相反则存储到关系型数据库中</li>
 <li>具体使用: 会在项目中实现</li>
 </ul>
-<h1 id="二-基本操作学习"><a href="#二、-基本操作学习" class="headerlink" title="二、 基本操作学习"></a>二、 基本操作学习</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.导入mongoose</span></span><br><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">mongodb://MongoDB服务器IP地址:MongoDB服务器端口号/需要打开的数据库名称</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="comment">// 2.利用mongoose链接MongoDB服务器</span></span><br><span class="line">mongoose.connect(<span class="string">&#x27;mongodb://127.0.0.1:27017/my_mongodb&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.监听链接成功还是失败</span></span><br><span class="line"><span class="keyword">let</span> db = mongoose.connection;</span><br><span class="line">db.on(<span class="string">&#x27;error&#x27;</span>, <span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err, <span class="string">&#x27;连接失败&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">db.once(<span class="string">&#x27;open&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;连接成功&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">db.once(<span class="string">&#x27;close&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;断开连接&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.定义集合中存储数据规则</span></span><br><span class="line"><span class="keyword">let</span> userSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">String</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">Number</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 2.利用规则创建集合</span></span><br><span class="line"><span class="comment">// 注意点: 只要创建好了模型, 那么以后就可以使用模型来操作这个集合</span></span><br><span class="line"><span class="comment">// 注意点: mongoose会自动将我们指定的集合名称变成复数</span></span><br><span class="line"><span class="keyword">let</span> User = mongoose.model(<span class="string">&#x27;User&#x27;</span>, userSchema);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.利用集合创建文档</span></span><br><span class="line"><span class="comment">// 注意点: 只要创建好了对象, 那么以后就可以使用对象来操作文档</span></span><br><span class="line"><span class="keyword">let</span> u = <span class="keyword">new</span> User(&#123; <span class="attr">name</span>: <span class="string">&#x27;zs&#x27;</span>, <span class="attr">age</span>:<span class="number">18</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4.操作文档</span></span><br><span class="line">u.save(<span class="function">(<span class="params">err, product</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;文档保存成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(product);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>1.连接MongoDB服务器<br>通过mongo连接MongoDB服务器</p>
+<h1 id="二-基本操作学习">二、 基本操作学习</h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.导入mongoose</span></span><br><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">mongodb://MongoDB服务器IP地址:MongoDB服务器端口号/需要打开的数据库名称</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="comment">// 2.利用mongoose链接MongoDB服务器</span></span><br><span class="line">mongoose.connect(<span class="string">&#x27;mongodb://127.0.0.1:27017/my_mongodb&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.监听链接成功还是失败</span></span><br><span class="line"><span class="keyword">let</span> db = mongoose.connection;</span><br><span class="line">db.on(<span class="string">&#x27;error&#x27;</span>, <span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err, <span class="string">&#x27;连接失败&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">db.once(<span class="string">&#x27;open&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;连接成功&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">db.once(<span class="string">&#x27;close&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;断开连接&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.定义集合中存储数据规则</span></span><br><span class="line"><span class="keyword">let</span> userSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">String</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">Number</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 2.利用规则创建集合</span></span><br><span class="line"><span class="comment">// 注意点: 只要创建好了模型, 那么以后就可以使用模型来操作这个集合</span></span><br><span class="line"><span class="comment">// 注意点: mongoose会自动将我们指定的集合名称变成复数</span></span><br><span class="line"><span class="keyword">let</span> User = mongoose.model(<span class="string">&#x27;User&#x27;</span>, userSchema);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.利用集合创建文档</span></span><br><span class="line"><span class="comment">// 注意点: 只要创建好了对象, 那么以后就可以使用对象来操作文档</span></span><br><span class="line"><span class="keyword">let</span> u = <span class="keyword">new</span> User(&#123; <span class="attr">name</span>: <span class="string">&#x27;zs&#x27;</span>, <span class="attr">age</span>:<span class="number">18</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4.操作文档</span></span><br><span class="line">u.save(<span class="function">(<span class="params">err, product</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;文档保存成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(product);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>1.连接MongoDB服务器<br>
+通过mongo连接MongoDB服务器</p>
 <p>2.查看数据库</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show dbs</span><br><span class="line">#和MySQL中的 show databases; 指令一样</span><br></pre></td></tr></table></figure>
 <p>3.创建数据库</p>
@@ -584,7 +614,13 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> collections</span><br><span class="line"># 和MySQL中的 <span class="keyword">show</span> tables; 指令一样</span><br></pre></td></tr></table></figure>
 <p>5.创建集合</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.createCollection(&#x27;集合名称&#x27;);</span><br><span class="line">#和MySQL中的 create table xxx(); 指令一样</span><br></pre></td></tr></table></figure>
-<p>6.插入数据<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.insert(文档对象);</span><br><span class="line">#和MySQL中的 insert into xxx values () 指令一样</span><br></pre></td></tr></table></figure><br>7.查询数据<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.find();</span><br><span class="line">#和MySQL中的 select * from xxx; 指令一样</span><br></pre></td></tr></table></figure><br>8.删除集合<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.drop()</span><br><span class="line">#和MySQL中的 drop table xxx; 指令一样</span><br></pre></td></tr></table></figure><br>9.删除数据库</p>
+<p>6.插入数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.insert(文档对象);</span><br><span class="line">#和MySQL中的 insert into xxx values () 指令一样</span><br></pre></td></tr></table></figure>
+<p>7.查询数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.find();</span><br><span class="line">#和MySQL中的 select * from xxx; 指令一样</span><br></pre></td></tr></table></figure>
+<p>8.删除集合</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.drop()</span><br><span class="line">#和MySQL中的 drop table xxx; 指令一样</span><br></pre></td></tr></table></figure>
+<p>9.删除数据库</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.dropDatabase()</span><br><span class="line">#在哪个数据库中就会删除哪个数据库</span><br><span class="line">#和MySQL中的 drop database xxx; 指令一样</span><br></pre></td></tr></table></figure>
 <p>10.和MySQL的不同</p>
 <ul>
@@ -593,17 +629,24 @@
 <li>只要是一个合法的文档对象都可以往里面存储</li>
 <li>… …</li>
 </ul>
-<h1 id="三-创建文档"><a href="#三、创建文档" class="headerlink" title="三、创建文档"></a>三、创建文档</h1><h2 id="1主键"><a href="#1-主键" class="headerlink" title="1.主键"></a>1.主键</h2><ul>
-<li>MongoDB的主键和MySQL一样, 也是用于保证每一条<strong>数据唯一性</strong>的</li>
-<li><p>和MySQL不同的是, MongoDB中的主键无需明确指定</p>
+<h1 id="三-创建文档">三、创建文档</h1>
+<h2 id="1主键">1.主键</h2>
+<ul>
+<li>
+<p>MongoDB的主键和MySQL一样, 也是用于保证每一条<strong>数据唯一性</strong>的</p>
+</li>
+<li>
+<p>和MySQL不同的是, MongoDB中的主键无需明确指定</p>
 <ul>
 <li>每一个文档被添加到集合之后, MongoDB都会<strong>自动添加主键</strong></li>
 <li>MongoDB中文档主键的名称叫做 _id</li>
 </ul>
 </li>
-<li><p>默认情况下文档主键是一个ObjectId类型的数据</p>
+<li>
+<p>默认情况下文档主键是一个ObjectId类型的数据</p>
 <ul>
-<li>ObjectId类型是一个12个字节字符串(5e8c5ae9-c9d35e-759b-d6847)<ul>
+<li>ObjectId类型是一个12个字节字符串(5e8c5ae9-c9d35e-759b-d6847)
+<ul>
 <li>4字节是存储这条数据的时间戳</li>
 <li>3字节的存储这条数据的那台电脑的标识符</li>
 <li>2字节的存储这条数据的MongoDB进程id</li>
@@ -613,60 +656,130 @@
 </ul>
 </li>
 </ul>
-<h2 id="2为什么要使用objectid类型数据作为主键"><a href="#2-为什么要使用ObjectId类型数据作为主键" class="headerlink" title="2.为什么要使用ObjectId类型数据作为主键?"></a>2.为什么要使用ObjectId类型数据作为主键?</h2><p>因为MongoDB是支持’横向扩展’的数据库</p>
+<h2 id="2为什么要使用objectid类型数据作为主键">2.为什么要使用ObjectId类型数据作为主键?</h2>
+<p>因为MongoDB是支持’横向扩展’的数据库</p>
 <ul>
 <li>横向扩展是指’增加数据库服务器的台数’</li>
 <li>纵向扩展是指’增加数据库库服务器的配置’</li>
 <li>过去一个数据库只能安装在一台电脑上, 但是每台电脑的性能是有峰值的</li>
-<li>一旦达到峰值就会导致服务器卡顿、宕机、重启等问题.<br>所以过去为了防止如上问题的出现,我们只能不断的’纵向扩展’<br>也就是不断的提升服务器的配置, 让服务器能处理更多的请求<br>但是纵向扩展也是有峰值的, 一台电脑的配置不可能无限提升<br>所以为了解决这个问题就有了分布式数据库</li>
-<li><strong>分布式数据库</strong>是指<strong>可以在多台电脑上安装数据库, 然后把多台电脑组合成一个完整的数据库,</strong><br><strong>在分布式数据库中,我们可以通过不断同步的方式, 让多台电脑都保存相同的内容</strong><br>当用户请求数据时, 我们可以把请求派发给不同的数据库服务器处理<br>当某一台服务器宕机后, 我们还可以继续使用其它服务器处理请求<br>从而有效的解决了单台电脑性能峰值和单台电脑宕机后服务器不能使用的问题</li>
+<li>一旦达到峰值就会导致服务器卡顿、宕机、重启等问题.<br>
+所以过去为了防止如上问题的出现,我们只能不断的’纵向扩展’<br>
+也就是不断的提升服务器的配置, 让服务器能处理更多的请求<br>
+但是纵向扩展也是有峰值的, 一台电脑的配置不可能无限提升<br>
+所以为了解决这个问题就有了分布式数据库</li>
+<li><strong>分布式数据库</strong>是指<strong>可以在多台电脑上安装数据库, 然后把多台电脑组合成一个完整的数据库,</strong><br>
+<strong>在分布式数据库中,我们可以通过不断同步的方式, 让多台电脑都保存相同的内容</strong><br>
+当用户请求数据时, 我们可以把请求派发给不同的数据库服务器处理<br>
+当某一台服务器宕机后, 我们还可以继续使用其它服务器处理请求<br>
+从而有效的解决了单台电脑性能峰值和单台电脑宕机后服务器不能使用的问题</li>
 </ul>
 <p>2.2为什么要使用ObjectId类型数据作为主键?</p>
-<p>正是因为MongoDB是一个分布式数据库, 正是因为分布式数据库可以把请求派发给不同的服务器<br>所以第一次插入数据时, 我们可能派发给了A服务器, 插入到了A服务器的数据库中<br>但是第二次插入数据时, 我们又可能派发给了B服务器, 插入到了B服务器的数据库中<br>但是B服务器此时并不知道A服务器当前的主键值是多少, 如果通过MySQL中简单的递增来保证数据的唯一性<br>那么将来在多台服务器同步数据的时候就会出现重复的情况, 所以MongoDB的主键并没有使用简单的递增<br>而是使用了ObjectId类型数据作为主键</p>
-<h2 id="3是否支持其它类型数据作为主键"><a href="#3-是否支持其它类型数据作为主键" class="headerlink" title="3.是否支持其它类型数据作为主键?"></a>3.是否支持其它类型数据作为主键?</h2><p>3.1 在MongoDB中支持除了’数组类型’以外的其它类型数据作为主键<br>3.2 在MongoDB中甚至还支持将一个文档作为另一个文档的主键(复合主键)</p>
+<p>正是因为MongoDB是一个分布式数据库, 正是因为分布式数据库可以把请求派发给不同的服务器<br>
+所以第一次插入数据时, 我们可能派发给了A服务器, 插入到了A服务器的数据库中<br>
+但是第二次插入数据时, 我们又可能派发给了B服务器, 插入到了B服务器的数据库中<br>
+但是B服务器此时并不知道A服务器当前的主键值是多少, 如果通过MySQL中简单的递增来保证数据的唯一性<br>
+那么将来在多台服务器同步数据的时候就会出现重复的情况, 所以MongoDB的主键并没有使用简单的递增<br>
+而是使用了ObjectId类型数据作为主键</p>
+<h2 id="3是否支持其它类型数据作为主键">3.是否支持其它类型数据作为主键?</h2>
+<p>3.1 在MongoDB中支持除了’数组类型’以外的其它类型数据作为主键<br>
+3.2 在MongoDB中甚至还支持将一个文档作为另一个文档的主键(复合主键)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert(&#123;name: <span class="string">&#x27;lnj&#x27;</span>, age: <span class="number">33</span>&#125;);</span><br><span class="line">db.person.insert(&#123;_id: <span class="number">1</span>, name: <span class="string">&#x27;lnj&#x27;</span>, age: <span class="number">33</span>&#125;); #报错，这个_id是由ESRI的软件来管理的，是不能够手动更改的</span><br><span class="line"></span><br><span class="line">db.person.insert(&#123;_id: <span class="string">&#x27;1&#x27;</span>, name: <span class="string">&#x27;lnj&#x27;</span>, age: <span class="number">33</span>&#125;);</span><br><span class="line">db.person.insert(&#123;_id: &#123;name:<span class="string">&#x27;it66&#x27;</span>, gender: <span class="string">&#x27;男&#x27;</span>&#125;, name: <span class="string">&#x27;lnj&#x27;</span>, age: <span class="number">33</span>&#125;);</span><br><span class="line">#db.person.insert(&#123;_id: &#123;name:<span class="string">&#x27;it66&#x27;</span>, gender: <span class="string">&#x27;男&#x27;</span>&#125;, name: <span class="string">&#x27;lnj&#x27;</span>, age: <span class="number">33</span>&#125;); #报错</span><br><span class="line">db.person.insert(&#123;_id: &#123;gender: <span class="string">&#x27;男&#x27;</span>, name:<span class="string">&#x27;it66&#x27;</span>&#125;, name: <span class="string">&#x27;lnj&#x27;</span>, age: <span class="number">33</span>&#125;);</span><br></pre></td></tr></table></figure>
-<h1 id="四-文档操作-增删改查"><a href="#四、文档操作-增删改查" class="headerlink" title="四、文档操作 增删改查"></a>四、文档操作 增删改查</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.导入mongoose</span></span><br><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.利用mongoose链接MongoDB服务器</span></span><br><span class="line">mongoose.connect(<span class="string">&#x27;mongodb://127.0.0.1:27017/my&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.监听链接成功还是失败</span></span><br><span class="line"><span class="keyword">let</span> db = mongoose.connection;</span><br><span class="line">db.on(<span class="string">&#x27;error&#x27;</span>, <span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err, <span class="string">&#x27;连接失败&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">db.once(<span class="string">&#x27;open&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;连接成功&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">db.once(<span class="string">&#x27;close&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;断开连接&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.定义集合中存储数据规则</span></span><br><span class="line"><span class="keyword">let</span> userSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">String</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">Number</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.利用规则创建集合</span></span><br><span class="line"><span class="keyword">let</span> User = mongoose.model(<span class="string">&#x27;User&#x27;</span>, userSchema);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 增加</span></span><br><span class="line">User.create(&#123;<span class="attr">name</span>:<span class="string">&#x27;zs&#x27;</span>, <span class="attr">age</span>:<span class="number">666</span>&#125;, <span class="function">(<span class="params">err, result</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;插入成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.create([</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>, <span class="attr">age</span>:<span class="number">18</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>, <span class="attr">age</span>:<span class="number">22</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;ww&#x27;</span>, <span class="attr">age</span>:<span class="number">21</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;zl&#x27;</span>, <span class="attr">age</span>:<span class="number">23</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;lnj&#x27;</span>, <span class="attr">age</span>:<span class="number">33</span>&#125;,</span><br><span class="line">    ],</span><br><span class="line">    <span class="function">(<span class="params">err, result</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;插入成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">(<span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="keyword">await</span> User.create([</span><br><span class="line">            &#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>, <span class="attr">age</span>:<span class="number">18</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>, <span class="attr">age</span>:<span class="number">22</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>:<span class="string">&#x27;ww&#x27;</span>, <span class="attr">age</span>:<span class="number">21</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>:<span class="string">&#x27;zl&#x27;</span>, <span class="attr">age</span>:<span class="number">23</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>:<span class="string">&#x27;lnj&#x27;</span>, <span class="attr">age</span>:<span class="number">33</span>&#125;,</span><br><span class="line">        ]);</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询</span></span><br><span class="line">User.find(&#123;&#125;,&#123;&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.find(&#123;&#125;,&#123;<span class="attr">_id</span>:<span class="number">0</span>, <span class="attr">name</span>:<span class="number">1</span>, <span class="attr">age</span>:<span class="number">1</span>&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.find(&#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>&#125;,&#123;<span class="attr">_id</span>:<span class="number">0</span>, <span class="attr">name</span>:<span class="number">1</span>, <span class="attr">age</span>:<span class="number">1</span>&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.find(&#123;&#125;,&#123;<span class="attr">_id</span>:<span class="number">0</span>, <span class="attr">name</span>:<span class="number">1</span>, <span class="attr">age</span>:<span class="number">1</span>&#125;,&#123; <span class="attr">skip</span>: <span class="number">5</span>, <span class="attr">limit</span>: <span class="number">5</span>&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">(<span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="keyword">await</span> User.find(&#123;&#125;,&#123;<span class="attr">_id</span>:<span class="number">0</span>, <span class="attr">name</span>:<span class="number">1</span>, <span class="attr">age</span>:<span class="number">1</span>&#125;,&#123; <span class="attr">skip</span>: <span class="number">5</span>, <span class="attr">limit</span>: <span class="number">5</span>&#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改</span></span><br><span class="line">User.update(&#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>&#125;,&#123;<span class="attr">$set</span>:&#123;<span class="attr">age</span>:<span class="number">888</span>&#125;&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;更新成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.update(&#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>&#125;,&#123;<span class="attr">$set</span>:&#123;<span class="attr">age</span>:<span class="number">888</span>&#125;&#125;, &#123;<span class="attr">multi</span>: <span class="literal">true</span>&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;更新成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">(<span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">   <span class="keyword">let</span> result = <span class="keyword">await</span> User.update(&#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>&#125;,&#123;<span class="attr">$set</span>:&#123;<span class="attr">age</span>:<span class="number">123</span>&#125;&#125;, &#123;<span class="attr">multi</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">   <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除</span></span><br><span class="line">User.remove(&#123;<span class="attr">name</span>:<span class="string">&#x27;ww&#x27;</span>&#125;, &#123;&#125;, <span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;删除成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.deleteOne(&#123;<span class="attr">name</span>:<span class="string">&#x27;lnj&#x27;</span>&#125;, <span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;删除成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">(<span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="keyword">await</span> User.deleteOne(&#123;<span class="attr">name</span>:<span class="string">&#x27;lnj&#x27;</span>&#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<h1 id="五-聚合"><a href="#五、聚合" class="headerlink" title="五、聚合"></a>五、聚合</h1><h2 id="1什么是聚合操作"><a href="#1-什么是聚合操作" class="headerlink" title="1.什么是聚合操作?"></a>1.什么是聚合操作?</h2><ul>
+<h1 id="四-文档操作-增删改查">四、文档操作 增删改查</h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.导入mongoose</span></span><br><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.利用mongoose链接MongoDB服务器</span></span><br><span class="line">mongoose.connect(<span class="string">&#x27;mongodb://127.0.0.1:27017/my&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.监听链接成功还是失败</span></span><br><span class="line"><span class="keyword">let</span> db = mongoose.connection;</span><br><span class="line">db.on(<span class="string">&#x27;error&#x27;</span>, <span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err, <span class="string">&#x27;连接失败&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">db.once(<span class="string">&#x27;open&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;连接成功&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">db.once(<span class="string">&#x27;close&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;断开连接&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.定义集合中存储数据规则</span></span><br><span class="line"><span class="keyword">let</span> userSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">String</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">Number</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.利用规则创建集合</span></span><br><span class="line"><span class="keyword">let</span> User = mongoose.model(<span class="string">&#x27;User&#x27;</span>, userSchema);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 增加</span></span><br><span class="line">User.create(&#123;<span class="attr">name</span>:<span class="string">&#x27;zs&#x27;</span>, <span class="attr">age</span>:<span class="number">666</span>&#125;, <span class="function">(<span class="params">err, result</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;插入成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.create([</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>, <span class="attr">age</span>:<span class="number">18</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>, <span class="attr">age</span>:<span class="number">22</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;ww&#x27;</span>, <span class="attr">age</span>:<span class="number">21</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;zl&#x27;</span>, <span class="attr">age</span>:<span class="number">23</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&#x27;lnj&#x27;</span>, <span class="attr">age</span>:<span class="number">33</span>&#125;,</span><br><span class="line">    ],</span><br><span class="line">    <span class="function">(<span class="params">err, result</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;插入成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">(<span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="keyword">await</span> User.create([</span><br><span class="line">            &#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>, <span class="attr">age</span>:<span class="number">18</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>, <span class="attr">age</span>:<span class="number">22</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>:<span class="string">&#x27;ww&#x27;</span>, <span class="attr">age</span>:<span class="number">21</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>:<span class="string">&#x27;zl&#x27;</span>, <span class="attr">age</span>:<span class="number">23</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>:<span class="string">&#x27;lnj&#x27;</span>, <span class="attr">age</span>:<span class="number">33</span>&#125;,</span><br><span class="line">        ]);</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询</span></span><br><span class="line">User.find(&#123;&#125;,&#123;&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.find(&#123;&#125;,&#123;<span class="attr">_id</span>:<span class="number">0</span>, <span class="attr">name</span>:<span class="number">1</span>, <span class="attr">age</span>:<span class="number">1</span>&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.find(&#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>&#125;,&#123;<span class="attr">_id</span>:<span class="number">0</span>, <span class="attr">name</span>:<span class="number">1</span>, <span class="attr">age</span>:<span class="number">1</span>&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.find(&#123;&#125;,&#123;<span class="attr">_id</span>:<span class="number">0</span>, <span class="attr">name</span>:<span class="number">1</span>, <span class="attr">age</span>:<span class="number">1</span>&#125;,&#123; <span class="attr">skip</span>: <span class="number">5</span>, <span class="attr">limit</span>: <span class="number">5</span>&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">(<span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="keyword">await</span> User.find(&#123;&#125;,&#123;<span class="attr">_id</span>:<span class="number">0</span>, <span class="attr">name</span>:<span class="number">1</span>, <span class="attr">age</span>:<span class="number">1</span>&#125;,&#123; <span class="attr">skip</span>: <span class="number">5</span>, <span class="attr">limit</span>: <span class="number">5</span>&#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改</span></span><br><span class="line">User.update(&#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>&#125;,&#123;<span class="attr">$set</span>:&#123;<span class="attr">age</span>:<span class="number">888</span>&#125;&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;更新成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.update(&#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>&#125;,&#123;<span class="attr">$set</span>:&#123;<span class="attr">age</span>:<span class="number">888</span>&#125;&#125;, &#123;<span class="attr">multi</span>: <span class="literal">true</span>&#125;,<span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;更新成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">(<span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">   <span class="keyword">let</span> result = <span class="keyword">await</span> User.update(&#123;<span class="attr">name</span>:<span class="string">&#x27;ls&#x27;</span>&#125;,&#123;<span class="attr">$set</span>:&#123;<span class="attr">age</span>:<span class="number">123</span>&#125;&#125;, &#123;<span class="attr">multi</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">   <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除</span></span><br><span class="line">User.remove(&#123;<span class="attr">name</span>:<span class="string">&#x27;ww&#x27;</span>&#125;, &#123;&#125;, <span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;删除成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">User.deleteOne(&#123;<span class="attr">name</span>:<span class="string">&#x27;lnj&#x27;</span>&#125;, <span class="function">(<span class="params">err, docs</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;删除成功&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(docs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">(<span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="keyword">await</span> User.deleteOne(&#123;<span class="attr">name</span>:<span class="string">&#x27;lnj&#x27;</span>&#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h1 id="五-聚合">五、聚合</h1>
+<h2 id="1什么是聚合操作">1.什么是聚合操作?</h2>
+<ul>
 <li>聚合操作就是通过一个方法完成一系列的操作</li>
-<li>在聚合操作中, 每一个操作我们称之为一个阶段,<br>聚合操作会将上一个阶段处理结果传给下一个阶段继续处理,<br>所有阶段都处理完毕会返回一个新的结果集给我们</li>
+<li>在聚合操作中, 每一个操作我们称之为一个阶段,<br>
+聚合操作会将上一个阶段处理结果传给下一个阶段继续处理,<br>
+所有阶段都处理完毕会返回一个新的结果集给我们</li>
 </ul>
-<h2 id="2聚合操作格式"><a href="#2-聚合操作格式" class="headerlink" title="2.聚合操作格式"></a>2.聚合操作格式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.&lt;collection&gt;.aggregate(&lt;pipeline&gt;, &lt;options&gt;)</span><br><span class="line">&lt;pipeline&gt;: 定义每个阶段操作</span><br><span class="line">&lt;options&gt; : 聚合操作额外配置</span><br></pre></td></tr></table></figure>
-<h2 id="project"><a href="#project" class="headerlink" title="$project"></a>$project</h2><p>1.聚合管道阶段</p>
+<h2 id="2聚合操作格式">2.聚合操作格式</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.&lt;collection&gt;.aggregate(&lt;pipeline&gt;, &lt;options&gt;)</span><br><span class="line">&lt;pipeline&gt;: 定义每个阶段操作</span><br><span class="line">&lt;options&gt; : 聚合操作额外配置</span><br></pre></td></tr></table></figure>
+<h2 id="project">$project</h2>
+<p>1.聚合管道阶段</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$project: 对输入文档进行再次投影</span><br><span class="line">作用    : 按照我们需要的格式生成结果集</span><br><span class="line">格式    : &#123;$project:&#123;&lt;field&gt;:&lt;value&gt;&#125;&#125;</span><br></pre></td></tr></table></figure>
 <p>2.示例</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;Jonathan&#x27;, lastName:&#x27;Lee&#x27;&#125;, age:18, book:&#123;name:&#x27;玩转HTML&#x27;, price: 88&#125;&#125;,</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;Amelie&#x27;, lastName:&#x27;Jiang&#x27;&#125;, age:17, book:&#123;name:&#x27;玩转JavaScript&#x27;, price: 99&#125;&#125;</span><br><span class="line">])</span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project:&#123;</span><br><span class="line">            _id:0,</span><br><span class="line">            clientName: &#x27;$name.firstName&#x27;,</span><br><span class="line">            clientAge: &#x27;$age&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
 <p>5.聚合表达式</p>
-<p>5.1 字段路径表达式<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&lt;filed&gt;: 使用$来指示字段路径</span><br><span class="line">$&lt;filed&gt;.&lt;sub-field&gt;: 使用$和.来指示内嵌文档字段路径</span><br></pre></td></tr></table></figure><br>5.2 字段路径表达式示例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$name</span><br><span class="line">$book.name</span><br></pre></td></tr></table></figure><br>6.注意点</p>
+<p>5.1 字段路径表达式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&lt;filed&gt;: 使用$来指示字段路径</span><br><span class="line">$&lt;filed&gt;.&lt;sub-field&gt;: 使用$和.来指示内嵌文档字段路径</span><br></pre></td></tr></table></figure>
+<p>5.2 字段路径表达式示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$name</span><br><span class="line">$book.name</span><br></pre></td></tr></table></figure>
+<p>6.注意点</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 注意点: $project修改的是结果集而不是原有的集合</span><br><span class="line">db.person.find()</span><br><span class="line">// 注意点: 如果字段表达式使用了不存在的字段, 那么会自动用Null填充</span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $project:&#123;</span><br><span class="line">            _id:0,</span><br><span class="line">            fullName: [&#x27;$name.firstName&#x27;, &#x27;$name.middleName&#x27;,&#x27;$name.lastName&#x27;],</span><br><span class="line">            clientAge: &#x27;$age&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-<h2 id="match"><a href="#match" class="headerlink" title="$match"></a>$match</h2><p>1.聚合管道阶段<br><code>$match</code>: 和<code>find</code>方法中的第一个参数一样, 用于筛选符合条件的文档<br>格式  : <code>&#123;$match:&#123;&lt;query&gt;&#125;&#125;</code></p>
+<h2 id="match">$match</h2>
+<p>1.聚合管道阶段<br>
+<code>$match</code>: 和<code>find</code>方法中的第一个参数一样, 用于筛选符合条件的文档<br>
+格式  : <code>&#123;$match:&#123;&lt;query&gt;&#125;&#125;</code></p>
 <p>2.示例</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $match:&#123;</span><br><span class="line">            &#x27;name.firstName&#x27;:&#x27;Jonathan&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $match:&#123;</span><br><span class="line">            &#x27;name.firstName&#x27;:&#x27;Jonathan&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $project:&#123;</span><br><span class="line">            _id:0,</span><br><span class="line">            clientName: &#x27;$name.firstName&#x27;,</span><br><span class="line">            clientAge: &#x27;$age&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-<p>3.使用技巧:<br>应该在聚合操作的最前面使用<code>$match</code>, 这样可以有效减少处理文档的数量, 大大提升处理的效率</p>
-<h2 id="limit-skip"><a href="#limit-skip" class="headerlink" title="$limit $skip"></a>$limit $skip</h2><p>1.聚合管道阶段<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$limit: 和游标的limit方法一样, 用于指定获取几个文档</span><br><span class="line">格式  : &#123;$limit:&lt;number&gt;&#125;</span><br><span class="line">$skip : 和游标的skip方法一样, 用于指定跳过几个文档</span><br><span class="line">格式  : &#123;$skip:&lt;number&gt;&#125;</span><br></pre></td></tr></table></figure><br>2.示例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $skip:1</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $limit:1</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $project:&#123;</span><br><span class="line">            _id:0,</span><br><span class="line">            clientName: &#x27;$name.firstName&#x27;,</span><br><span class="line">            clientAge: &#x27;$age&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure></p>
-<h2 id="unwind"><a href="#unwind" class="headerlink" title="$unwind"></a>$unwind</h2><p>1.聚合管道阶段<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$unwind: 展开数组字段</span><br><span class="line">格式   : &#123;$unwind:&#123;path:&lt;field&gt;&#125;&#125;</span><br></pre></td></tr></table></figure><br>2.示例:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">db.person.update(&#123;&#x27;name.firstName&#x27;:&#x27;Jonathan&#x27;&#125;, &#123;$set:&#123;tags:[&#x27;html&#x27;, &#x27;js&#x27;]&#125;&#125;)</span><br><span class="line">db.person.update(&#123;&#x27;name.firstName&#x27;:&#x27;Amelie&#x27;&#125;, &#123;$set:&#123;tags:&#x27;vue&#x27;&#125;&#125;)</span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $unwind:&#123;</span><br><span class="line">            path:&#x27;$tags&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li><p>注意点:<br>3.1 $unwind会为数组中的每个元素创建一个新的文档<br>3.2 可以通过includeArrayIndex属性添加展开之后的元素在原数组中的位置</p>
+<p>3.使用技巧:<br>
+应该在聚合操作的最前面使用<code>$match</code>, 这样可以有效减少处理文档的数量, 大大提升处理的效率</p>
+<h2 id="limit-skip">$limit $skip</h2>
+<p>1.聚合管道阶段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$limit: 和游标的limit方法一样, 用于指定获取几个文档</span><br><span class="line">格式  : &#123;$limit:&lt;number&gt;&#125;</span><br><span class="line">$skip : 和游标的skip方法一样, 用于指定跳过几个文档</span><br><span class="line">格式  : &#123;$skip:&lt;number&gt;&#125;</span><br></pre></td></tr></table></figure>
+<p>2.示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $skip:1</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $limit:1</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $project:&#123;</span><br><span class="line">            _id:0,</span><br><span class="line">            clientName: &#x27;$name.firstName&#x27;,</span><br><span class="line">            clientAge: &#x27;$age&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<h2 id="unwind">$unwind</h2>
+<p>1.聚合管道阶段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$unwind: 展开数组字段</span><br><span class="line">格式   : &#123;$unwind:&#123;path:&lt;field&gt;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>2.示例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">db.person.update(&#123;&#x27;name.firstName&#x27;:&#x27;Jonathan&#x27;&#125;, &#123;$set:&#123;tags:[&#x27;html&#x27;, &#x27;js&#x27;]&#125;&#125;)</span><br><span class="line">db.person.update(&#123;&#x27;name.firstName&#x27;:&#x27;Amelie&#x27;&#125;, &#123;$set:&#123;tags:&#x27;vue&#x27;&#125;&#125;)</span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $unwind:&#123;</span><br><span class="line">            path:&#x27;$tags&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>注意点:<br>
+3.1 $unwind会为数组中的每个元素创建一个新的文档<br>
+3.2 可以通过includeArrayIndex属性添加展开之后的元素在原数组中的位置</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $unwind:&#123;</span><br><span class="line">            path:&#x27;$tags&#x27;,</span><br><span class="line">            includeArrayIndex: &#x27;index&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
 <p>3.3 如果需要展开的字段不存在, 或者数组中没有元素, 或者为null, 会被unwind剔除</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;san&#x27;, lastName:&#x27;zhang&#x27;&#125;, age:20&#125;,</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;si&#x27;, lastName:&#x27;li&#x27;&#125;, age:21, tags:[]&#125;,</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;wu&#x27;, lastName:&#x27;wang&#x27;&#125;, age:22, tags:null&#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
 <p>3.4 如果想让unwind不剔除不存在/没有元素/为Null的文档, 那么可以添加preserveNullAndEmptyArrays属性</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $unwind:&#123;</span><br><span class="line">            path:&#x27;$tags&#x27;,</span><br><span class="line">            includeArrayIndex: &#x27;index&#x27;,</span><br><span class="line">            preserveNullAndEmptyArrays: true</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="sort"><a href="#sort" class="headerlink" title="$sort"></a>$sort</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.聚合管道阶段</span><br><span class="line">$sort: 和文档游标sort方法一样, 对文档进行排序</span><br><span class="line">格式   : `&#123;$sort:&#123;&lt;field&gt;&gt;:1|-1&#125;&#125;`</span><br></pre></td></tr></table></figure>
+<h2 id="sort">$sort</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.聚合管道阶段</span><br><span class="line">$sort: 和文档游标sort方法一样, 对文档进行排序</span><br><span class="line">格式   : `&#123;$sort:&#123;&lt;field&gt;&gt;:1|-1&#125;&#125;`</span><br></pre></td></tr></table></figure>
 <p>2.示例</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $sort:&#123;</span><br><span class="line">            age: 1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-<h2 id="lookup"><a href="#lookup" class="headerlink" title="$lookup"></a>$lookup</h2><p>1.聚合管道阶段<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$lookup: 用来做关联查询</span><br><span class="line">格式   :</span><br><span class="line">&#123;$lookup:&#123;</span><br><span class="line">    from: 关联集合名称,</span><br><span class="line">    localField: 当前集合中的字段名称,</span><br><span class="line">    foreignField:关联集合中的字段名称,</span><br><span class="line">    as: 输出字段的名称</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure><br>2.示例:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;Jonathan&#x27;, lastName:&#x27;Lee&#x27;&#125;, age:18, books:[&#x27;html&#x27;, &#x27;js&#x27;]&#125;,</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;Amelie&#x27;, lastName:&#x27;Jiang&#x27;&#125;, age:19, books:[&#x27;vue&#x27;]&#125;,</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;si&#x27;, lastName:&#x27;Li&#x27;&#125;, age:20, books:[]&#125;</span><br><span class="line">])</span><br><span class="line">db.books.insert([</span><br><span class="line">    &#123;name:&#x27;html&#x27;, price:88&#125;,</span><br><span class="line">    &#123;name:&#x27;js&#x27;, price:99&#125;,</span><br><span class="line">    &#123;name:&#x27;vue&#x27;, price:110&#125;,</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup:&#123;</span><br><span class="line">            from: &#x27;books&#x27;,</span><br><span class="line">            localField: &#x27;books&#x27;,</span><br><span class="line">            foreignField: &#x27;name&#x27;,</span><br><span class="line">            as: &#x27;booksData&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure></p>
-<p>3.和unwind阶段结合使用<br>可以有效的过滤掉无效数据<br>可以给每个匹配的结果生成一个新的文档<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $unwind:&#123;</span><br><span class="line">            path:&#x27;$books&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup:&#123;</span><br><span class="line">            from: &#x27;books&#x27;,</span><br><span class="line">            localField: &#x27;books&#x27;,</span><br><span class="line">            foreignField: &#x27;name&#x27;,</span><br><span class="line">            as: &#x27;booksData&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure></p>
-<h2 id="lookup"><a href="#lookup-1" class="headerlink" title="$lookup"></a>$lookup</h2><p>1.聚合管道阶段</p>
+<h2 id="lookup">$lookup</h2>
+<p>1.聚合管道阶段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$lookup: 用来做关联查询</span><br><span class="line">格式   :</span><br><span class="line">&#123;$lookup:&#123;</span><br><span class="line">    from: 关联集合名称,</span><br><span class="line">    localField: 当前集合中的字段名称,</span><br><span class="line">    foreignField:关联集合中的字段名称,</span><br><span class="line">    as: 输出字段的名称</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>2.示例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;Jonathan&#x27;, lastName:&#x27;Lee&#x27;&#125;, age:18, books:[&#x27;html&#x27;, &#x27;js&#x27;]&#125;,</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;Amelie&#x27;, lastName:&#x27;Jiang&#x27;&#125;, age:19, books:[&#x27;vue&#x27;]&#125;,</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;si&#x27;, lastName:&#x27;Li&#x27;&#125;, age:20, books:[]&#125;</span><br><span class="line">])</span><br><span class="line">db.books.insert([</span><br><span class="line">    &#123;name:&#x27;html&#x27;, price:88&#125;,</span><br><span class="line">    &#123;name:&#x27;js&#x27;, price:99&#125;,</span><br><span class="line">    &#123;name:&#x27;vue&#x27;, price:110&#125;,</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup:&#123;</span><br><span class="line">            from: &#x27;books&#x27;,</span><br><span class="line">            localField: &#x27;books&#x27;,</span><br><span class="line">            foreignField: &#x27;name&#x27;,</span><br><span class="line">            as: &#x27;booksData&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<p>3.和unwind阶段结合使用<br>
+可以有效的过滤掉无效数据<br>
+可以给每个匹配的结果生成一个新的文档</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $unwind:&#123;</span><br><span class="line">            path:&#x27;$books&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup:&#123;</span><br><span class="line">            from: &#x27;books&#x27;,</span><br><span class="line">            localField: &#x27;books&#x27;,</span><br><span class="line">            foreignField: &#x27;name&#x27;,</span><br><span class="line">            as: &#x27;booksData&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<h2 id="lookup">$lookup</h2>
+<p>1.聚合管道阶段</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$lookup: 用来做关联查询</span><br><span class="line">格式   :</span><br><span class="line">&#123;$lookup:&#123;</span><br><span class="line">    from: 关联集合名称,</span><br><span class="line">    let: &#123;定义给关联集合的聚合操作使用的当前集合的常量&#125;,</span><br><span class="line">    pipeline: [关联集合的聚合操作]</span><br><span class="line">    as: 输出字段的名称</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
-<p>2.示例:<br>不相关查询<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup:&#123;</span><br><span class="line">            from: &#x27;books&#x27;,</span><br><span class="line">            pipeline: [</span><br><span class="line">                &#123;</span><br><span class="line">                    $match:&#123;</span><br><span class="line">                        price:&#123;$gte:100&#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            as: &#x27;booksData&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure><br>相关查询<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup:&#123;</span><br><span class="line">            from: &#x27;books&#x27;,</span><br><span class="line">            let: &#123; bks: &#x27;$books&#x27;&#125;,</span><br><span class="line">            pipeline: [</span><br><span class="line">                &#123;</span><br><span class="line">                    $match:&#123;</span><br><span class="line">                        $expr:&#123;</span><br><span class="line">                            $and:[</span><br><span class="line">                            &#123;$gte: [&#x27;$price&#x27;, 100]&#125;,</span><br><span class="line">                            &#123;$in: [&#x27;$name&#x27;, &#x27;$$bks&#x27;]&#125;</span><br><span class="line">                            ]</span><br><span class="line">                        &#125;</span><br><span class="line">                        //price:&#123;$gte:100&#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            as: &#x27;booksData&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure><br>3系统变量表达式<br><code>$$&lt;variable&gt;</code>: 使用$$来指示系统变量</p>
-<h2 id="group"><a href="#group" class="headerlink" title="$group"></a>$group</h2><p>1.聚合管道阶段<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$group: 对文档进行分组</span><br><span class="line">格式  :</span><br><span class="line">&#123;$group:&#123;</span><br><span class="line">    _id:&lt;expression&gt;,</span><br><span class="line">    &lt;field1&gt;: &#123;&lt;accumulator1&gt;: &lt;expression1&gt;&#125;</span><br><span class="line">    ... ...</span><br><span class="line">&#125;&#125;</span><br><span class="line">_id: 定义分组规则</span><br><span class="line">&lt;field&gt;: 定义新字段</span><br></pre></td></tr></table></figure><br>2.示例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;zs&#x27;, age:10, city:&#x27;北京&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;ls&#x27;, age:20, city:&#x27;上海&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;ww&#x27;, age:30, city:&#x27;北京&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;zl&#x27;, age:40, city:&#x27;上海&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;lnj&#x27;, age:50, city:&#x27;北京&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;jjj&#x27;, age:60, city:&#x27;广州&#x27;&#125;,</span><br><span class="line">])</span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;$group:&#123;</span><br><span class="line">        _id:&#x27;$city&#x27;,</span><br><span class="line">        totalAge:&#123;$sum:&#x27;$age&#x27;&#125;,</span><br><span class="line">        avgAge:&#123;$avg:&#x27;$age&#x27;&#125;,</span><br><span class="line">        minAge:&#123;$min:&#x27;$age&#x27;&#125;,</span><br><span class="line">        maxAge:&#123;$max:&#x27;$age&#x27;&#125;,</span><br><span class="line">        totalName:&#123;$push:&#x27;$name&#x27;&#125;</span><br><span class="line">    &#125;&#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure></p>
-<h2 id="out"><a href="#out" class="headerlink" title="$out"></a>$out</h2><p>1.聚合管道阶段<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$out: 前面阶段处理完的文档写入一个新的集合</span><br><span class="line">格式: &#123;$out: &lt;new collection name&gt;&#125;</span><br></pre></td></tr></table></figure><br>2.示例:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group:&#123;</span><br><span class="line">            _id: &#x27;$city&#x27;,</span><br><span class="line">            totalAge: &#123;$sum:&#x27;$age&#x27;&#125;,</span><br><span class="line">            avgAge: &#123;$avg: &#x27;$age&#x27;&#125;,</span><br><span class="line">            minAge: &#123;$min: &#x27;$age&#x27;&#125;,</span><br><span class="line">            maxAge: &#123;$max: &#x27;$age&#x27;&#125;,</span><br><span class="line">            totalAges: &#123;$push: &#x27;$age&#x27;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $out:&#x27;newPerson&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br><span class="line">db.newPerson.find()</span><br></pre></td></tr></table></figure><br>3.注意点:<br>如果利用$out写入一个已经存在的集合, 那么集合中的原有数据会被覆盖</p>
-<h2 id="allowdiskuse-额外配置"><a href="#allowDiskUse-额外配置" class="headerlink" title="allowDiskUse 额外配置"></a>allowDiskUse 额外配置</h2><p>1.聚合操作额外配置<br><code>db.&lt;collection&gt;.aggregate(&lt;pipeline&gt;, &lt;options&gt;)</code></p>
-<p>格式:<code>&#123;allowDiskUse: &lt;boolean&gt;&#125;</code></p>
-<p>allowDiskUse默认取值是false, 默认情况下管道阶段占用的内存不能超过100M,如果超出100M就会报错<br>如果需要处理的数据比较多, 聚合操作使用的内存可能超过100M, 那么我们可以将allowDiskUse设置为true<br>如果allowDiskUse设置为true, 那么一旦超出100M就会将操作的数据写入到临时文件中, 然后再继续操作</p>
-<h2 id="ltfiledgt"><a href="#lt-filed-gt" class="headerlink" title="$ &lt;filed&gt;"></a><code>$ &lt;filed&gt;</code></h2><p>1.字段路径表达式</p>
+<p>2.示例:<br>
+不相关查询</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup:&#123;</span><br><span class="line">            from: &#x27;books&#x27;,</span><br><span class="line">            pipeline: [</span><br><span class="line">                &#123;</span><br><span class="line">                    $match:&#123;</span><br><span class="line">                        price:&#123;$gte:100&#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            as: &#x27;booksData&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<p>相关查询</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $lookup:&#123;</span><br><span class="line">            from: &#x27;books&#x27;,</span><br><span class="line">            let: &#123; bks: &#x27;$books&#x27;&#125;,</span><br><span class="line">            pipeline: [</span><br><span class="line">                &#123;</span><br><span class="line">                    $match:&#123;</span><br><span class="line">                        $expr:&#123;</span><br><span class="line">                            $and:[</span><br><span class="line">                            &#123;$gte: [&#x27;$price&#x27;, 100]&#125;,</span><br><span class="line">                            &#123;$in: [&#x27;$name&#x27;, &#x27;$$bks&#x27;]&#125;</span><br><span class="line">                            ]</span><br><span class="line">                        &#125;</span><br><span class="line">                        //price:&#123;$gte:100&#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            as: &#x27;booksData&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<p>3系统变量表达式<br>
+<code>$$&lt;variable&gt;</code>: 使用$$来指示系统变量</p>
+<h2 id="group">$group</h2>
+<p>1.聚合管道阶段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$group: 对文档进行分组</span><br><span class="line">格式  :</span><br><span class="line">&#123;$group:&#123;</span><br><span class="line">    _id:&lt;expression&gt;,</span><br><span class="line">    &lt;field1&gt;: &#123;&lt;accumulator1&gt;: &lt;expression1&gt;&#125;</span><br><span class="line">    ... ...</span><br><span class="line">&#125;&#125;</span><br><span class="line">_id: 定义分组规则</span><br><span class="line">&lt;field&gt;: 定义新字段</span><br></pre></td></tr></table></figure>
+<p>2.示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;zs&#x27;, age:10, city:&#x27;北京&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;ls&#x27;, age:20, city:&#x27;上海&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;ww&#x27;, age:30, city:&#x27;北京&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;zl&#x27;, age:40, city:&#x27;上海&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;lnj&#x27;, age:50, city:&#x27;北京&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;jjj&#x27;, age:60, city:&#x27;广州&#x27;&#125;,</span><br><span class="line">])</span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;$group:&#123;</span><br><span class="line">        _id:&#x27;$city&#x27;,</span><br><span class="line">        totalAge:&#123;$sum:&#x27;$age&#x27;&#125;,</span><br><span class="line">        avgAge:&#123;$avg:&#x27;$age&#x27;&#125;,</span><br><span class="line">        minAge:&#123;$min:&#x27;$age&#x27;&#125;,</span><br><span class="line">        maxAge:&#123;$max:&#x27;$age&#x27;&#125;,</span><br><span class="line">        totalName:&#123;$push:&#x27;$name&#x27;&#125;</span><br><span class="line">    &#125;&#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<h2 id="out">$out</h2>
+<p>1.聚合管道阶段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$out: 前面阶段处理完的文档写入一个新的集合</span><br><span class="line">格式: &#123;$out: &lt;new collection name&gt;&#125;</span><br></pre></td></tr></table></figure>
+<p>2.示例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group:&#123;</span><br><span class="line">            _id: &#x27;$city&#x27;,</span><br><span class="line">            totalAge: &#123;$sum:&#x27;$age&#x27;&#125;,</span><br><span class="line">            avgAge: &#123;$avg: &#x27;$age&#x27;&#125;,</span><br><span class="line">            minAge: &#123;$min: &#x27;$age&#x27;&#125;,</span><br><span class="line">            maxAge: &#123;$max: &#x27;$age&#x27;&#125;,</span><br><span class="line">            totalAges: &#123;$push: &#x27;$age&#x27;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $out:&#x27;newPerson&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br><span class="line">db.newPerson.find()</span><br></pre></td></tr></table></figure>
+<p>3.注意点:<br>
+如果利用$out写入一个已经存在的集合, 那么集合中的原有数据会被覆盖</p>
+<h2 id="allowdiskuse-额外配置">allowDiskUse 额外配置</h2>
+<p>1.聚合操作额外配置<br>
+<code>db.&lt;collection&gt;.aggregate(&lt;pipeline&gt;, &lt;options&gt;)</code></p>
+<p>格式:<code> &#123;allowDiskUse: &lt;boolean&gt;&#125;</code></p>
+<p>allowDiskUse默认取值是false, 默认情况下管道阶段占用的内存不能超过100M,如果超出100M就会报错<br>
+如果需要处理的数据比较多, 聚合操作使用的内存可能超过100M, 那么我们可以将allowDiskUse设置为true<br>
+如果allowDiskUse设置为true, 那么一旦超出100M就会将操作的数据写入到临时文件中, 然后再继续操作</p>
+<h2 id="ltfiledgt"><code>$ &lt;filed&gt;</code></h2>
+<p>1.字段路径表达式</p>
 <p><code>$&lt;filed&gt;</code>: 使用$来指示字段路径</p>
 <p><code>$&lt;filed&gt;.&lt;sub-field&gt;</code>: 使用$和.来指示内嵌文档字段路径</p>
 <p>2.示例</p>
@@ -678,105 +791,352 @@
 <p>5.常量表达式</p>
 <p><code>$literal:&lt;value&gt;</code> : 表示常量<code>&lt;value&gt;</code></p>
 <p>6.示例</p>
-<p><code>$literal:&#39;$name&#39;</code> : 表示常量字符串<code>$name</code></p>
+<p><code>$literal:'$name'</code> : 表示常量字符串<code>$name</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;Jonathan&#x27;, lastName:&#x27;Lee&#x27;&#125;, age:18&#125;,</span><br><span class="line">    &#123;name:&#123;firstName:&#x27;Amelie&#x27;, lastName:&#x27;Jiang&#x27;&#125;, age:19&#125;</span><br><span class="line">])</span><br><span class="line">db.person.find()</span><br><span class="line"></span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;$project:&#123;</span><br><span class="line">        _id:0,</span><br><span class="line">        //myName:&#x27;$name.firstName&#x27;, // 字段路径表达式</span><br><span class="line">        //myAge:&#x27;$age&#x27; // 字段路径表达式</span><br><span class="line">        //myName:&#x27;$$CURRENT.name.firstName&#x27;, //系统变量表达式</span><br><span class="line">        //myAge:&#x27;$$CURRENT.age&#x27; // 系统变量表达式</span><br><span class="line">        myName:&#x27;$name.firstName&#x27;,</span><br><span class="line">        myAge:&#123;$literal:&#x27;$age&#x27;&#125; // 常量表达式</span><br><span class="line">    &#125;&#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-<h2 id="convert"><a href="#convert" class="headerlink" title="$convert"></a>$convert</h2><p>1.数据类型转换操作符</p>
+<h2 id="convert">$convert</h2>
+<p>1.数据类型转换操作符</p>
 <ul>
-<li>MongoDB对于文档的格式并没有强制性的要求, 同一个集合中存储的文档, 字段的个数和数据类型都可以不同<br>对与文档的格式没有强制性的要求是MongoDB的一大优势, 但是同时也增加了数据消费端的使用难度<br>因为我们在使用数据的时候, 有可能同一个字段取出来的数据类型是不同的, 这样非常不利于我们后续操作<br>所以也正是因为如此, MongoDB在4.0中推出了$convert数据类型转换操作符</li>
-<li>通过$convert数据类型转换操作符, 我们可以将不同的数据类型转换成相同的数据类型,<br>以便于后续我们在使用数据的过程中能够统一对数据进行处理</li>
+<li>MongoDB对于文档的格式并没有强制性的要求, 同一个集合中存储的文档, 字段的个数和数据类型都可以不同<br>
+对与文档的格式没有强制性的要求是MongoDB的一大优势, 但是同时也增加了数据消费端的使用难度<br>
+因为我们在使用数据的时候, 有可能同一个字段取出来的数据类型是不同的, 这样非常不利于我们后续操作<br>
+所以也正是因为如此, MongoDB在4.0中推出了$convert数据类型转换操作符</li>
+<li>通过$convert数据类型转换操作符, 我们可以将不同的数据类型转换成相同的数据类型,<br>
+以便于后续我们在使用数据的过程中能够统一对数据进行处理</li>
 </ul>
-<p>2.$convert格式<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;$convert:&#123;</span><br><span class="line">    input: &#x27;需要转换的字段&#x27;,</span><br><span class="line">    to: &#x27;转换之后的数据类型&#x27;,</span><br><span class="line">    onError: &#x27;不支持的转换类型&#x27;,</span><br><span class="line">    onNull: &#x27;没有需要转换的数据&#x27;</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure><br>3.示例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;zs&#x27;, timestamp:ISODate(&#x27;2020-08-09T11:23:34.733Z&#x27;)&#125;,</span><br><span class="line">&#123;name:&#x27;ls&#x27;, timestamp:&#x27;2021-02-14 12:00:06 +0800  &#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;ww&#x27;, timestamp:&#x27;  2023-04-01T12:00:00Z&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;zl&#x27;, timestamp:&#x27;1587009270000&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;it666&#x27;, timestamp:&#x27;Sunday&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;itzb&#x27;&#125;,</span><br><span class="line">])</span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;$project:&#123;</span><br><span class="line">        _id:0,</span><br><span class="line">        timestamp:&#123;</span><br><span class="line">            $convert:&#123;</span><br><span class="line">                input:&#x27;$timestamp&#x27;,</span><br><span class="line">                to:&#x27;date&#x27;,</span><br><span class="line">                onError: &#x27;不支持的转换类型&#x27;,</span><br><span class="line">                onNull: &#x27;没有需要转换的数据&#x27;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;&#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure></p>
-<h2 id="聚合管道优化"><a href="#聚合管道优化" class="headerlink" title="聚合管道优化"></a>聚合管道优化</h2><p><a target="_blank" rel="noopener" href="https://docs.mongoing.com/aggregation/aggregation-pipeline/aggregation-pipeline-optimization">聚合管道优化 - MongoDB-CN-Manual (mongoing.com)</a></p>
-<h1 id="六-索引"><a href="#六、索引" class="headerlink" title="六、索引"></a>六、索引</h1><h2 id="1什么是索引"><a href="#1-什么是索引" class="headerlink" title="1.什么是索引?"></a>1.什么是索引?</h2><ul>
-<li>索引就相当于字典中的目录(拼音/偏旁部首手)<br>有了目录我们就能通过目录快速的找到想要的结果.</li>
-<li>但是如果没有目录(拼音/偏旁部首手), 没有索引<br>那么如果想要查找某条数据就必须从前往后一条一条的查找</li>
+<p>2.$convert格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;$convert:&#123;</span><br><span class="line">    input: &#x27;需要转换的字段&#x27;,</span><br><span class="line">    to: &#x27;转换之后的数据类型&#x27;,</span><br><span class="line">    onError: &#x27;不支持的转换类型&#x27;,</span><br><span class="line">    onNull: &#x27;没有需要转换的数据&#x27;</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>3.示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;zs&#x27;, timestamp:ISODate(&#x27;2020-08-09T11:23:34.733Z&#x27;)&#125;,</span><br><span class="line">&#123;name:&#x27;ls&#x27;, timestamp:&#x27;2021-02-14 12:00:06 +0800  &#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;ww&#x27;, timestamp:&#x27;  2023-04-01T12:00:00Z&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;zl&#x27;, timestamp:&#x27;1587009270000&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;it666&#x27;, timestamp:&#x27;Sunday&#x27;&#125;,</span><br><span class="line">&#123;name:&#x27;itzb&#x27;&#125;,</span><br><span class="line">])</span><br><span class="line">db.person.aggregate([</span><br><span class="line">    &#123;$project:&#123;</span><br><span class="line">        _id:0,</span><br><span class="line">        timestamp:&#123;</span><br><span class="line">            $convert:&#123;</span><br><span class="line">                input:&#x27;$timestamp&#x27;,</span><br><span class="line">                to:&#x27;date&#x27;,</span><br><span class="line">                onError: &#x27;不支持的转换类型&#x27;,</span><br><span class="line">                onNull: &#x27;没有需要转换的数据&#x27;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;&#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<h2 id="聚合管道优化">聚合管道优化</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.mongoing.com/aggregation/aggregation-pipeline/aggregation-pipeline-optimization">聚合管道优化 - MongoDB-CN-Manual (mongoing.com)</a></p>
+<h1 id="六-索引">六、索引</h1>
+<h2 id="1什么是索引">1.什么是索引?</h2>
+<ul>
+<li>索引就相当于字典中的目录(拼音/偏旁部首手)<br>
+有了目录我们就能通过目录快速的找到想要的结果.</li>
+<li>但是如果没有目录(拼音/偏旁部首手), 没有索引<br>
+那么如果想要查找某条数据就必须从前往后一条一条的查找</li>
 <li>所以索引就是用于提升数据的查询速度的</li>
 </ul>
-<h2 id="2如何获取索引"><a href="#2-如何获取索引" class="headerlink" title="2.如何获取索引"></a>2.如何获取索引</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.&lt;collection&gt;.getIndexes()</span><br><span class="line"></span><br><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19&#125;,</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17&#125;,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
-<h2 id="3如何创建索引"><a href="#3-如何创建索引" class="headerlink" title="3.如何创建索引"></a>3.如何创建索引</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.&lt;collection&gt;.createIndex(&#123;&lt;field&gt;:&lt;1 or -1&gt;, ...&#125;, &lt;options&gt;)</span><br><span class="line">&lt;keys&gt;   : 指定创建索引的字段</span><br><span class="line">&lt;options&gt;: 索引的额外配置</span><br></pre></td></tr></table></figure>
-<h2 id="4创建单键索引"><a href="#4-创建单键索引" class="headerlink" title="4.创建单键索引"></a>4.创建单键索引</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.person.createIndex(&#123;name:1&#125;)</span><br><span class="line">db.person.explain().find(&#123;age:17&#125;)</span><br><span class="line">db.person.explain().find(&#123;name:&#x27;cs&#x27;&#125;)</span><br><span class="line">db.person.explain().find(&#123;name:&#x27;cs&#x27;&#125;, &#123;_id: 0, name:1&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="5查看是否使用索引"><a href="#5-查看是否使用索引" class="headerlink" title="5.查看是否使用索引"></a>5.查看是否使用索引</h2><p>和MySQL一样, 我们可以通过explain来查看索引效果<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.&lt;collection&gt;.explain().&lt;method()&gt;</span><br><span class="line">winningPlan-&gt;stage-&gt;COLLSCAN-&gt;遍历整个集合查询</span><br><span class="line">winningPlan-&gt;stage-&gt;IXSCAN-&gt;  通过索引查询</span><br><span class="line">winningPlan-&gt;stage-&gt;FETCH-&gt;   根据索引存储的地址取出对应文档</span><br></pre></td></tr></table></figure><br>6.索引格式<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">as -&gt; &#123;name:&#x27;as&#x27;, age:18, tags:[&#x27;ahtml&#x27;, &#x27;bcss&#x27;]&#125;</span><br><span class="line">bs:-&gt; &#123;name:&#x27;bs&#x27;, age:17, tags:[&#x27;cjs&#x27;, &#x27;dvue&#x27;]&#125;</span><br><span class="line">cs:-&gt; &#123;name:&#x27;cs&#x27;, age:19, tags:[&#x27;enode&#x27;, &#x27;freact&#x27;]&#125;</span><br></pre></td></tr></table></figure><br>7.注意点:</p>
+<h2 id="2如何获取索引">2.如何获取索引</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.&lt;collection&gt;.getIndexes()</span><br><span class="line"></span><br><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19&#125;,</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17&#125;,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+<h2 id="3如何创建索引">3.如何创建索引</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.&lt;collection&gt;.createIndex(&#123;&lt;field&gt;:&lt;1 or -1&gt;, ...&#125;, &lt;options&gt;)</span><br><span class="line">&lt;keys&gt;   : 指定创建索引的字段</span><br><span class="line">&lt;options&gt;: 索引的额外配置</span><br></pre></td></tr></table></figure>
+<h2 id="4创建单键索引">4.创建单键索引</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.person.createIndex(&#123;name:1&#125;)</span><br><span class="line">db.person.explain().find(&#123;age:17&#125;)</span><br><span class="line">db.person.explain().find(&#123;name:&#x27;cs&#x27;&#125;)</span><br><span class="line">db.person.explain().find(&#123;name:&#x27;cs&#x27;&#125;, &#123;_id: 0, name:1&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="5查看是否使用索引">5.查看是否使用索引</h2>
+<p>和MySQL一样, 我们可以通过explain来查看索引效果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.&lt;collection&gt;.explain().&lt;method()&gt;</span><br><span class="line">winningPlan-&gt;stage-&gt;COLLSCAN-&gt;遍历整个集合查询</span><br><span class="line">winningPlan-&gt;stage-&gt;IXSCAN-&gt;  通过索引查询</span><br><span class="line">winningPlan-&gt;stage-&gt;FETCH-&gt;   根据索引存储的地址取出对应文档</span><br></pre></td></tr></table></figure>
+<p>6.索引格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">as -&gt; &#123;name:&#x27;as&#x27;, age:18, tags:[&#x27;ahtml&#x27;, &#x27;bcss&#x27;]&#125;</span><br><span class="line">bs:-&gt; &#123;name:&#x27;bs&#x27;, age:17, tags:[&#x27;cjs&#x27;, &#x27;dvue&#x27;]&#125;</span><br><span class="line">cs:-&gt; &#123;name:&#x27;cs&#x27;, age:19, tags:[&#x27;enode&#x27;, &#x27;freact&#x27;]&#125;</span><br></pre></td></tr></table></figure>
+<p>7.注意点:</p>
 <ul>
 <li>和MySQL一样, MongoDB默认也会为主键自动创建索引</li>
 <li>如果查询条件中只需要查询出索引字段, 那么就不会再取出完整文档, 这样效率更高</li>
 </ul>
-<h2 id="复合索引"><a href="#复合索引" class="headerlink" title="复合索引"></a>复合索引</h2><p>1.和MySQL一样, MongoDB也支持复合索引, 也就是将多个字段的值作为索引</p>
-<p>2.示例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19&#125;,</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:20&#125;,</span><br><span class="line">])</span><br><span class="line">db.person.createIndex(&#123;name:1, age:-1&#125;)</span><br><span class="line">db.person.explain().find(&#123;name:&#x27;bs&#x27;, age:17&#125;)</span><br><span class="line">db.person.explain().find(&#123;name:&#x27;bs&#x27;&#125;)</span><br><span class="line">db.person.explain().find(&#123;age:17&#125;)</span><br></pre></td></tr></table></figure><br>3.索引格式<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(as, 18)-&gt;&#123;name:&#x27;as&#x27;, age:18&#125;</span><br><span class="line">(bs, 20)-&gt;&#123;name:&#x27;bs&#x27;, age:20&#125;</span><br><span class="line">(bs, 17)-&gt;&#123;name:&#x27;bs&#x27;, age:17&#125;</span><br><span class="line">(cs, 19)-&gt;&#123;name:&#x27;cs&#x27;, age:19&#125;</span><br></pre></td></tr></table></figure><br>4.注意点:<br>复合件索引只支持前缀子查询, 也就是A,B,C复合索引. A,B,C会使用索引, A,B会使用索引, A会使用索引<br>但是B不会使用索引, C也不会使用索引, B,C也不会使用索引</p>
-<h2 id="多键索引"><a href="#多键索引" class="headerlink" title="多键索引"></a>多键索引</h2><p>多键索引是专门针对数组字段的, 会为数组字段的每一个元素都创建一个索引</p>
-<p>2.示例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18, tags:[&#x27;ahtml&#x27;, &#x27;bcss&#x27;]&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17, tags:[&#x27;cjs&#x27;, &#x27;enode&#x27;]&#125;,</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19, tags:[ &#x27;dvue&#x27;, &#x27;freact&#x27;]&#125;,</span><br><span class="line">])</span><br><span class="line">db.person.explain().find(&#123;&#x27;tags&#x27;:&#123;$in:[&#x27;ahtml&#x27;]&#125;&#125;)</span><br><span class="line">db.person.createIndex(&#123;tags:1&#125;)</span><br><span class="line">db.person.explain().find(&#123;&#x27;tags&#x27;:&#123;$in:[&#x27;ahtml&#x27;]&#125;&#125;)</span><br></pre></td></tr></table></figure><br>3.格式<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x27;ahtml&#x27;-&gt;&#123;name:&#x27;as&#x27;, age:18, tags:[&#x27;ahtml&#x27;, &#x27;bcss&#x27;]&#125;</span><br><span class="line">&#x27;bcss&#x27;-&gt;&#123;name:&#x27;as&#x27;, age:18, tags:[&#x27;ahtml&#x27;, &#x27;bcss&#x27;]&#125;</span><br><span class="line">&#x27;cjs&#x27;-&gt;&#123;name:&#x27;bs&#x27;, age:17, tags:[&#x27;cjs&#x27;, &#x27;enode&#x27;]&#125;</span><br><span class="line">&#x27;dvue&#x27;-&gt;&#123;name:&#x27;cs&#x27;, age:19, tags:[ &#x27;dvue&#x27;, &#x27;freact&#x27;]&#125;</span><br><span class="line">&#x27;enode&#x27;-&gt;&#123;name:&#x27;bs&#x27;, age:17, tags:[&#x27;cjs&#x27;, &#x27;enode&#x27;]&#125;</span><br><span class="line">&#x27;freact&#x27;-&gt;&#123;name:&#x27;cs&#x27;, age:19, tags:[ &#x27;dvue&#x27;, &#x27;freact&#x27;]&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="索引对排序的影响"><a href="#索引对排序的影响" class="headerlink" title="索引对排序的影响"></a>索引对排序的影响</h2><p>如果排序的字段, 正好是索引的字段, 那么会大大提升排序效率</p>
-<p>2.示例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19&#125;,</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17&#125;</span><br><span class="line">])</span><br><span class="line">db.person.explain().find().sort(&#123;name:1&#125;)</span><br><span class="line">db.person.createIndex(&#123;name:1&#125;)</span><br><span class="line">db.person.explain().find().sort(&#123;name:1&#125;)</span><br><span class="line">db.person.explain().find().sort(&#123;name:1, age:-1&#125;)</span><br><span class="line">db.person.createIndex(&#123;name:1, age:-1&#125;)</span><br><span class="line">db.person.explain().find().sort(&#123;name:1, age:-1&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>3.注意点<br>如果是复合索引, 那么只有排序条件是前缀查询的形式才会使用索引来排序<br>例如:<br>复合件索引只支持前缀子查询, 也就是A,B,C复合索引.<br>A,B,C会使用索引, A,B会使用索引, A会使用索引.<br>但是B不会使用索引, C也不会使用索引, B,C也不会使用索引</p>
-<h2 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h2><p>默认情况下MongoDB和MySQL一样, 都会自动为主键创建索引, 这个索引就是一个唯一索引<br>除了主键可以作为唯一索引以外, 只要某个字段的取值是唯一的, 我们也可以手动给这个字段添加唯一索引<br>格式: <code>db.&lt;collection&gt;.createIndex(&#123;&lt;field&gt;:&lt;1 or -1&gt;, ...&#125;, &#123;unique:true&#125;&#125;)</code></p>
-<p>2.示例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19&#125;,</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17&#125;</span><br><span class="line">])</span><br><span class="line">db.person.getIndexes()</span><br><span class="line">db.person.createIndex(&#123;age:1&#125;, &#123;unique:true&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;zs&#x27;, age:20&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ls&#x27;&#125;)</span><br><span class="line">db.person.find()</span><br><span class="line">db.person.insert(&#123;name:&#x27;ls&#x27;&#125;)</span><br><span class="line">db.person.createIndex(&#123;name:1,age:1&#125;, &#123;unique:true&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ww&#x27;, age:22&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ww&#x27;, age:22&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ww&#x27;, age:23&#125;)</span><br></pre></td></tr></table></figure><br>3.注意点<br>3.1如果为某个字段添加了唯一索引, 那么就不能再给这个字段添加重复的值<br>3.2如果插入的数据中没有包含唯一索引的字段, 那么第一次会自动用null填充, 第二次会报错<br>3.3如果是复合唯一索引, 那么复合字段的组合不能重复</p>
-<h2 id="索引的稀疏性"><a href="#索引的稀疏性" class="headerlink" title="索引的稀疏性"></a>索引的稀疏性</h2><p>默认情况下MongoDB会给每一个文档都创建索引, 哪怕这个文档中没有指定索引的字段或者字段的取值是Null<br>但是这样大大增加了索引的体积, 所以为了进一步优化索引占用的存储空间, 我们可以创建稀疏索引<br>也就是只会为存在索引字段,并且索引字段取值不是null的文档创建索引<br>格式: db.<collection>.createIndex({<field>:<1 or -1>, …}, {sparse:true}})</1></field></collection></p>
+<h2 id="复合索引">复合索引</h2>
+<p>1.和MySQL一样, MongoDB也支持复合索引, 也就是将多个字段的值作为索引</p>
+<p>2.示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19&#125;,</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:20&#125;,</span><br><span class="line">])</span><br><span class="line">db.person.createIndex(&#123;name:1, age:-1&#125;)</span><br><span class="line">db.person.explain().find(&#123;name:&#x27;bs&#x27;, age:17&#125;)</span><br><span class="line">db.person.explain().find(&#123;name:&#x27;bs&#x27;&#125;)</span><br><span class="line">db.person.explain().find(&#123;age:17&#125;)</span><br></pre></td></tr></table></figure>
+<p>3.索引格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(as, 18)-&gt;&#123;name:&#x27;as&#x27;, age:18&#125;</span><br><span class="line">(bs, 20)-&gt;&#123;name:&#x27;bs&#x27;, age:20&#125;</span><br><span class="line">(bs, 17)-&gt;&#123;name:&#x27;bs&#x27;, age:17&#125;</span><br><span class="line">(cs, 19)-&gt;&#123;name:&#x27;cs&#x27;, age:19&#125;</span><br></pre></td></tr></table></figure>
+<p>4.注意点:<br>
+复合件索引只支持前缀子查询, 也就是A,B,C复合索引. A,B,C会使用索引, A,B会使用索引, A会使用索引<br>
+但是B不会使用索引, C也不会使用索引, B,C也不会使用索引</p>
+<h2 id="多键索引">多键索引</h2>
+<p>多键索引是专门针对数组字段的, 会为数组字段的每一个元素都创建一个索引</p>
+<p>2.示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18, tags:[&#x27;ahtml&#x27;, &#x27;bcss&#x27;]&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17, tags:[&#x27;cjs&#x27;, &#x27;enode&#x27;]&#125;,</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19, tags:[ &#x27;dvue&#x27;, &#x27;freact&#x27;]&#125;,</span><br><span class="line">])</span><br><span class="line">db.person.explain().find(&#123;&#x27;tags&#x27;:&#123;$in:[&#x27;ahtml&#x27;]&#125;&#125;)</span><br><span class="line">db.person.createIndex(&#123;tags:1&#125;)</span><br><span class="line">db.person.explain().find(&#123;&#x27;tags&#x27;:&#123;$in:[&#x27;ahtml&#x27;]&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<p>3.格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x27;ahtml&#x27;-&gt;&#123;name:&#x27;as&#x27;, age:18, tags:[&#x27;ahtml&#x27;, &#x27;bcss&#x27;]&#125;</span><br><span class="line">&#x27;bcss&#x27;-&gt;&#123;name:&#x27;as&#x27;, age:18, tags:[&#x27;ahtml&#x27;, &#x27;bcss&#x27;]&#125;</span><br><span class="line">&#x27;cjs&#x27;-&gt;&#123;name:&#x27;bs&#x27;, age:17, tags:[&#x27;cjs&#x27;, &#x27;enode&#x27;]&#125;</span><br><span class="line">&#x27;dvue&#x27;-&gt;&#123;name:&#x27;cs&#x27;, age:19, tags:[ &#x27;dvue&#x27;, &#x27;freact&#x27;]&#125;</span><br><span class="line">&#x27;enode&#x27;-&gt;&#123;name:&#x27;bs&#x27;, age:17, tags:[&#x27;cjs&#x27;, &#x27;enode&#x27;]&#125;</span><br><span class="line">&#x27;freact&#x27;-&gt;&#123;name:&#x27;cs&#x27;, age:19, tags:[ &#x27;dvue&#x27;, &#x27;freact&#x27;]&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="索引对排序的影响">索引对排序的影响</h2>
+<p>如果排序的字段, 正好是索引的字段, 那么会大大提升排序效率</p>
+<p>2.示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19&#125;,</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17&#125;</span><br><span class="line">])</span><br><span class="line">db.person.explain().find().sort(&#123;name:1&#125;)</span><br><span class="line">db.person.createIndex(&#123;name:1&#125;)</span><br><span class="line">db.person.explain().find().sort(&#123;name:1&#125;)</span><br><span class="line">db.person.explain().find().sort(&#123;name:1, age:-1&#125;)</span><br><span class="line">db.person.createIndex(&#123;name:1, age:-1&#125;)</span><br><span class="line">db.person.explain().find().sort(&#123;name:1, age:-1&#125;)</span><br></pre></td></tr></table></figure>
+<p>3.注意点<br>
+如果是复合索引, 那么只有排序条件是前缀查询的形式才会使用索引来排序<br>
+例如:<br>
+复合件索引只支持前缀子查询, 也就是A,B,C复合索引.<br>
+A,B,C会使用索引, A,B会使用索引, A会使用索引.<br>
+但是B不会使用索引, C也不会使用索引, B,C也不会使用索引</p>
+<h2 id="唯一索引">唯一索引</h2>
+<p>默认情况下MongoDB和MySQL一样, 都会自动为主键创建索引, 这个索引就是一个唯一索引<br>
+除了主键可以作为唯一索引以外, 只要某个字段的取值是唯一的, 我们也可以手动给这个字段添加唯一索引<br>
+格式: <code>db.&lt;collection&gt;.createIndex(&#123;&lt;field&gt;:&lt;1 or -1&gt;, ...&#125;, &#123;unique:true&#125;&#125;)</code></p>
+<p>2.示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19&#125;,</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17&#125;</span><br><span class="line">])</span><br><span class="line">db.person.getIndexes()</span><br><span class="line">db.person.createIndex(&#123;age:1&#125;, &#123;unique:true&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;zs&#x27;, age:20&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ls&#x27;&#125;)</span><br><span class="line">db.person.find()</span><br><span class="line">db.person.insert(&#123;name:&#x27;ls&#x27;&#125;)</span><br><span class="line">db.person.createIndex(&#123;name:1,age:1&#125;, &#123;unique:true&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ww&#x27;, age:22&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ww&#x27;, age:22&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ww&#x27;, age:23&#125;)</span><br></pre></td></tr></table></figure>
+<p>3.注意点<br>
+3.1如果为某个字段添加了唯一索引, 那么就不能再给这个字段添加重复的值<br>
+3.2如果插入的数据中没有包含唯一索引的字段, 那么第一次会自动用null填充, 第二次会报错<br>
+3.3如果是复合唯一索引, 那么复合字段的组合不能重复</p>
+<h2 id="索引的稀疏性">索引的稀疏性</h2>
+<p>默认情况下MongoDB会给每一个文档都创建索引, 哪怕这个文档中没有指定索引的字段或者字段的取值是Null<br>
+但是这样大大增加了索引的体积, 所以为了进一步优化索引占用的存储空间, 我们可以创建稀疏索引<br>
+也就是只会为存在索引字段,并且索引字段取值不是null的文档创建索引<br>
+格式: db.<collection>.createIndex({<field>:&lt;1 or -1&gt;, …}, {sparse:true}})</field></collection></p>
 <p>2.示例</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19&#125;,</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17&#125;</span><br><span class="line">])</span><br><span class="line">db.person.find()</span><br><span class="line">db.person.getIndexes()</span><br><span class="line">db.person.createIndex(&#123;age:1&#125;, &#123;unique:true&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;lnj&#x27;&#125;) // lnj null</span><br><span class="line">db.person.insert(&#123;name:&#x27;lnj&#x27;&#125;) // lnj null</span><br><span class="line">// 注意点: 如果索引具备了唯一性又具备了稀疏性, 那么就可以多次添加缺失了索引字段的文档了</span><br><span class="line">// 原因 : 如果索引具备了稀疏性, 那么就不会为缺失了索引字段或者索引字段取值是null的文档创建索引了, 所以就不会冲突了</span><br><span class="line">db.person.createIndex(&#123;age:1&#125;, &#123;unique:true, sparse: true&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;lnj&#x27;&#125;) // lnj null</span><br><span class="line">db.person.insert(&#123;name:&#x27;lnj&#x27;&#125;) // lnj null</span><br></pre></td></tr></table></figure>
-<p>3.注意点<br>3.1如果索引字段既具备唯一性又具备稀疏性, 那么就可以在集合中保存多个缺失唯一索引字段的文档</p>
-<h2 id="索引生存时间"><a href="#索引生存时间" class="headerlink" title="索引生存时间"></a>索引生存时间</h2><p>针对日期字段或者包含日期的数组字段, 我们可以在创建索引的时候, 指定索引的生存时间,<br>一旦索引超过了指定的生存时间, 那么MongoDB会自动删除超过生存时间的文档<br>格式: db.<collection>.createIndex({<field>:<1 or -1>, …}, {expireAfterSeconds:second}})</1></field></collection></p>
-<p>2.示例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.person.createIndex(&#123;addTime:1&#125;, &#123;expireAfterSeconds: 5&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;zs&#x27;, addTime:new Date()&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ls&#x27;, addTime:new Date()&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ww&#x27;, addTime:new Date()&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>3.注意点<br>3.0 MongoDB会定期清理超过时间的文档, 但是无法保证即时性(也就是设置的过期时间是1秒, 但是可能3秒后才会清除)<br>3.1 复合索引字段是不具备生存时间特性的, 也就是不能在复合索引中指定生存时间<br>3.2 当数组字段中包含多个日期, 我们给数组字段设置生存时间时, 系统会按照数组中最小的时间来计算生存时间<br>例如: <code>&#123;name:&#39;it666&#39;, times:[&#39;2022-04-16 09:13:33&#39;,&#39;2022-04-16 07:13:33&#39;,&#39;2022-04-16 08:13:33&#39;]&#125;</code><br>       会按照’2022-04-16 07:13:33’来计算生存时间</p>
-<h2 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h2><p><code>db.&lt;collection&gt;.dropIndex(&lt;IndexName | IndexDefine&gt;)</code></p>
-<p>2.示例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19&#125;,</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17&#125;</span><br><span class="line">])</span><br><span class="line">db.person.find()</span><br><span class="line">db.person.getIndexes()</span><br><span class="line">db.person.createIndex(&#123;name:1&#125;)</span><br><span class="line">db.person.dropIndex(&#x27;name_1&#x27;) // 通过索引的名称来删除</span><br><span class="line">db.person.dropIndex(&#123;name:1&#125;) // 通过索引的定义来删除</span><br><span class="line">// 注意点: 如果是复合索引, 如果需要通过索引的定义来删除, 那么就必须一模一样才能正确的删除</span><br><span class="line">db.person.createIndex(&#123;name:1, age:-1&#125;)</span><br><span class="line">db.person.dropIndex(&#123;name:1&#125;) // 报错</span><br><span class="line">db.person.dropIndex(&#123;age:-1&#125;) // 报错</span><br><span class="line">db.person.dropIndex(&#123;age:-1, name:1&#125;) // 报错</span><br><span class="line">db.person.dropIndex(&#123;name:1, age:-1&#125;) // 不会报错</span><br></pre></td></tr></table></figure><br>3.注意点<br>3.1在MongoDB中没有修改索引的方法, 所以如果想修改索引就必须先删除再重新创建<br>3.2如果删除的索引是多个字段, 如果是通过索引定义来删除, 那么传入的参数必须和定义一模一样才可以</p>
-<h1 id="七-数据模型"><a href="#七、数据模型" class="headerlink" title="七、数据模型"></a>七、数据模型</h1><p>1.文档之间关系<br>MongoDB对于文档的格式并没有强制性的要求, 但不等于我们不能在文档中表达数据的关系<br>在MongoDB中我们可以通过’内嵌式结构’和’规范式结构’来表达文档之间的关系</p>
-<p>2.内嵌式结构<br>在一个文档中又包含了另一个文档, 我们就称之为内嵌式结构<br>例如:<br>{<br>    name:’zs’,<br>    age:’18’,<br>    card:{<br>        num:’420626200002023556’,<br>        date: 88<br>    }<br>}</p>
-<p>3.规范式结构<br>将文档存储在不同的集合中, 然后通过某一个字段来建立文档之间的关系, 我们就称之为规范式<br>{<br>    _id: 1,<br>    num:’420626200002023556’,<br>    date: 88<br>}<br>{<br>    name:’zs’,<br>    age:’18’,<br>    cardId: 1<br>}</p>
-<p>1.文档一对一关系<br>一个人有一张身份证<br>1.1内嵌式结构<br>db.person.insert({<br>    name:’zs’,<br>    age:’18’,<br>    card:{<br>        num:’420626200002023556’,<br>        date: 88<br>    }<br>})<br>db.person.find({name:’zs’})<br>优势: 一次查询就能得到所有数据<br>劣势: 如果数据比较复杂, 不方便管理和更新<br>应用场景: 数据不复杂/查询频率较高数据</p>
-<p>1.2规范式结构<br>db.card.insert({<br>    _id: 123,<br>    num:’420626200002023556’,<br>    date: ‘2022-12-08’,<br>    userId: 456<br>})<br>db.person.insert({<br>    _id: 456,<br>    name:’zs’,<br>    age:’18’,<br>    cardId: 123<br>})<br>db.person.aggregate([<br>    {$lookup:{<br>        from: ‘card’,<br>        localField: ‘cardId’,<br>        foreignField: ‘_id’,<br>        as: ‘card’<br>    }}<br>])<br>优势: 如果数据比较复杂, 也方便管理和更新<br>劣势: 查询数据相对内嵌结果稍微有点复杂<br>应用场景: 数据比较复杂/更新频率较高数据</p>
-<p>1.文档一对多关系<br>一个人有多本书<br>1.1内嵌式结构<br>db.person.insert({<br>    name:’zs’,<br>    age:’18’,<br>    books:[{<br>        name:’玩转HTML’,<br>        price: 88<br>    },<br>    {<br>        name:’玩转CSS’,<br>        price: 88<br>    }]<br>})<br>db.person.find({name:’zs’})<br>优势: 一次查询就能得到所有数据<br>劣势: 冗余数据较多, 不方便管理和更新<br>应用场景: 数据不复杂/查询频率较高数据</p>
-<p>1.2规范式结构<br>db.books.insert([{<br>    _id: 1,<br>    name:’玩转HTML’,<br>    price: 88,<br>    userId:123<br>},<br>{<br>    _id: 2,<br>    name:’玩转CSS’,<br>    price: 88,<br>    userId:123<br>}])<br>db.person.insert({<br>    _id: 123,<br>    name:’ls’,<br>    age:’20’,<br>    booksId:[1, 2]<br>})<br>db.person.aggregate([<br>    {$lookup:{<br>        from: ‘books’,<br>        localField: ‘booksId’,<br>        foreignField: ‘_id’,<br>        as: ‘books’<br>    }}<br>])<br>优势: 冗余数据较少, 更新较为方便<br>劣势: 查询数据相对内嵌结果稍微有点复杂<br>应用场景: 数据比较复杂/更新频率较高数据</p>
-<p>1.文档多对多关系<br>一个学生有多个老师<br>一个老师有多个学生<br>1.1内嵌式结构<br>db.students.insert([{name:’zs’, teachers:[{name:’it666’}, {name:’itzb’}]},<br>{name:’ls’, teachers:[{name:’it666’}, {name:’itzb’}]}])</p>
-<p>db.teachers.insert([{name:’it666’, students:[{name:’zs’}, {name:’ls’}]},<br>{name:’itzb’, students:[{name:’zs’}, {name:’ls’}]}])<br>db.students.find({name:’zs’})<br>db.teachers.find({name:’itzb’})<br>优势: 一次查询就能得到所有数据<br>劣势: 冗余数据较多, 更新和管理较为复杂<br>应用场景: 数据比较简单/查询频率较高数据</p>
-<p>1.2规范式结构<br>db.students.insert([{_id:1, name:’zs’},{_id:2, name:’ls’}])<br>db.teachers.insert([{_id:3, name:’it6666’},{_id:4, name:’itzb’}])<br>db.relation.insert([{stuId:1, teacherId:3},{stuId:1, teacherId:4},{stuId:2, teacherId:3},{stuId:2, teacherId:4}])</p>
-<p>db.students.aggregate([<br>    {$lookup:{<br>        from: ‘relation’,<br>        localField: ‘_id’,<br>        foreignField:’stuId’,<br>        as: ‘relation’<br>    }},<br>    {$lookup:{<br>        from: ‘teachers’,<br>        localField: ‘relation.teacherId’,<br>        foreignField:’_id’,<br>        as: ‘teachers’<br>    }},<br>    {$project:{_id:0, name:1, teachers:1}}<br>])</p>
-<p>优势: 冗余数据较少, 更新较为方便<br>劣势: 查询数据相对内嵌结果稍微有点复杂<br>应用场景: 数据比较复杂/更新频率较高数据</p>
-<p>1.树形结构<br>在MongoDB中我们除了可以使用’内嵌式结构’和’规范式结构’来表示数据的关系以外<br>由于MongoDB数据的灵活性, 我们还可以使用’树形结构’来表示数据之间的关系</p>
-<p>2.什么是树形结构<br>            Database<br>               |<br>     |——————————|<br> Relational           No-Relational<br>     |          |—————-|——————-|<br>   MySQL      Key-Value                Document<br>                |                         |<br>              Redis                    MongoDB</p>
-<p>3.对于经常需要查询子节点的数据<br>{name:’Database’, parent:null}<br>{name:’No-Relational’, parent:’Database’}<br>{name:’Document’, parent:’No-Relational’}<br>{name:’MongoDB’, parent:’Document’}<br>{name:’Key-Value’, parent:’No-Relational’}<br>{name:’Redis’, parent:’Key-Value’}<br>例如:我们要查询非关系型数据库有几种类型, 我们可以使用find({parent:’No-Relational’})</p>
-<p>4.对于经常需要查询父节点的数据<br>{name:’Database’, children:[‘Relational’, ‘No-Relational’]}<br>{name:’No-Relational’, children:[‘Key-Value’, ‘Document’]}<br>{name:’Document’, children:[‘MongoDB’]}<br>{name:’MongoDB’, children:[]}<br>例如:我们要查询MongoDB是什么类型的的数据, 我们可以使用find({children:{$in:[‘MongoDB’]}})</p>
-<p>5.对于经常查询祖先或者后代节点的数据<br>{name:’Database’, ancestors:[]}<br>{name:’No-Relational’, ancestors:[‘Database’]}<br>{name:’Document’, ancestors:[‘Database’, ‘No-Relational’]}<br>{name:’MongoDB’, ancestors:[‘Database’, ‘No-Relational’, ‘Document’]}<br>例如: 我们要查询MongoDB的祖先有哪些, 我们可以使用find({name:’MongoDB’})<br>例如: 我们要查询Database的后代有哪些, 我们可以使用find({ancestors:{$in:[‘Database’]}}})</p>
+<p>3.注意点<br>
+3.1如果索引字段既具备唯一性又具备稀疏性, 那么就可以在集合中保存多个缺失唯一索引字段的文档</p>
+<h2 id="索引生存时间">索引生存时间</h2>
+<p>针对日期字段或者包含日期的数组字段, 我们可以在创建索引的时候, 指定索引的生存时间,<br>
+一旦索引超过了指定的生存时间, 那么MongoDB会自动删除超过生存时间的文档<br>
+格式: db.<collection>.createIndex({<field>:&lt;1 or -1&gt;, …}, {expireAfterSeconds:second}})</field></collection></p>
+<p>2.示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.person.createIndex(&#123;addTime:1&#125;, &#123;expireAfterSeconds: 5&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;zs&#x27;, addTime:new Date()&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ls&#x27;, addTime:new Date()&#125;)</span><br><span class="line">db.person.insert(&#123;name:&#x27;ww&#x27;, addTime:new Date()&#125;)</span><br></pre></td></tr></table></figure>
+<p>3.注意点<br>
+3.0 MongoDB会定期清理超过时间的文档, 但是无法保证即时性(也就是设置的过期时间是1秒, 但是可能3秒后才会清除)<br>
+3.1 复合索引字段是不具备生存时间特性的, 也就是不能在复合索引中指定生存时间<br>
+3.2 当数组字段中包含多个日期, 我们给数组字段设置生存时间时, 系统会按照数组中最小的时间来计算生存时间<br>
+例如: <code>&#123;name:'it666', times:['2022-04-16 09:13:33','2022-04-16 07:13:33','2022-04-16 08:13:33']&#125;</code><br>
+会按照’2022-04-16 07:13:33’来计算生存时间</p>
+<h2 id="删除索引">删除索引</h2>
+<p><code>db.&lt;collection&gt;.dropIndex(&lt;IndexName | IndexDefine&gt;)</code></p>
+<p>2.示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">db.person.insert([</span><br><span class="line">&#123;name:&#x27;cs&#x27;, age:19&#125;,</span><br><span class="line">&#123;name:&#x27;as&#x27;, age:18&#125;,</span><br><span class="line">&#123;name:&#x27;bs&#x27;, age:17&#125;</span><br><span class="line">])</span><br><span class="line">db.person.find()</span><br><span class="line">db.person.getIndexes()</span><br><span class="line">db.person.createIndex(&#123;name:1&#125;)</span><br><span class="line">db.person.dropIndex(&#x27;name_1&#x27;) // 通过索引的名称来删除</span><br><span class="line">db.person.dropIndex(&#123;name:1&#125;) // 通过索引的定义来删除</span><br><span class="line">// 注意点: 如果是复合索引, 如果需要通过索引的定义来删除, 那么就必须一模一样才能正确的删除</span><br><span class="line">db.person.createIndex(&#123;name:1, age:-1&#125;)</span><br><span class="line">db.person.dropIndex(&#123;name:1&#125;) // 报错</span><br><span class="line">db.person.dropIndex(&#123;age:-1&#125;) // 报错</span><br><span class="line">db.person.dropIndex(&#123;age:-1, name:1&#125;) // 报错</span><br><span class="line">db.person.dropIndex(&#123;name:1, age:-1&#125;) // 不会报错</span><br></pre></td></tr></table></figure>
+<p>3.注意点<br>
+3.1在MongoDB中没有修改索引的方法, 所以如果想修改索引就必须先删除再重新创建<br>
+3.2如果删除的索引是多个字段, 如果是通过索引定义来删除, 那么传入的参数必须和定义一模一样才可以</p>
+<h1 id="七-数据模型">七、数据模型</h1>
+<p>1.文档之间关系<br>
+MongoDB对于文档的格式并没有强制性的要求, 但不等于我们不能在文档中表达数据的关系<br>
+在MongoDB中我们可以通过’内嵌式结构’和’规范式结构’来表达文档之间的关系</p>
+<p>2.内嵌式结构<br>
+在一个文档中又包含了另一个文档, 我们就称之为内嵌式结构<br>
+例如:<br>
+{<br>
+name:‘zs’,<br>
+age:‘18’,<br>
+card:{<br>
+num:‘420626200002023556’,<br>
+date: 88<br>
+}<br>
+}</p>
+<p>3.规范式结构<br>
+将文档存储在不同的集合中, 然后通过某一个字段来建立文档之间的关系, 我们就称之为规范式<br>
+{<br>
+_id: 1,<br>
+num:‘420626200002023556’,<br>
+date: 88<br>
+}<br>
+{<br>
+name:‘zs’,<br>
+age:‘18’,<br>
+cardId: 1<br>
+}</p>
+<p>1.文档一对一关系<br>
+一个人有一张身份证<br>
+1.1内嵌式结构<br>
+db.person.insert({<br>
+name:‘zs’,<br>
+age:‘18’,<br>
+card:{<br>
+num:‘420626200002023556’,<br>
+date: 88<br>
+}<br>
+})<br>
+db.person.find({name:‘zs’})<br>
+优势: 一次查询就能得到所有数据<br>
+劣势: 如果数据比较复杂, 不方便管理和更新<br>
+应用场景: 数据不复杂/查询频率较高数据</p>
+<p>1.2规范式结构<br>
+db.card.insert({<br>
+_id: 123,<br>
+num:‘420626200002023556’,<br>
+date: ‘2022-12-08’,<br>
+userId: 456<br>
+})<br>
+db.person.insert({<br>
+_id: 456,<br>
+name:‘zs’,<br>
+age:‘18’,<br>
+cardId: 123<br>
+})<br>
+db.person.aggregate([<br>
+{$lookup:{<br>
+from: ‘card’,<br>
+localField: ‘cardId’,<br>
+foreignField: ‘_id’,<br>
+as: ‘card’<br>
+}}<br>
+])<br>
+优势: 如果数据比较复杂, 也方便管理和更新<br>
+劣势: 查询数据相对内嵌结果稍微有点复杂<br>
+应用场景: 数据比较复杂/更新频率较高数据</p>
+<p>1.文档一对多关系<br>
+一个人有多本书<br>
+1.1内嵌式结构<br>
+db.person.insert({<br>
+name:‘zs’,<br>
+age:‘18’,<br>
+books:[{<br>
+name:‘玩转HTML’,<br>
+price: 88<br>
+},<br>
+{<br>
+name:‘玩转CSS’,<br>
+price: 88<br>
+}]<br>
+})<br>
+db.person.find({name:‘zs’})<br>
+优势: 一次查询就能得到所有数据<br>
+劣势: 冗余数据较多, 不方便管理和更新<br>
+应用场景: 数据不复杂/查询频率较高数据</p>
+<p>1.2规范式结构<br>
+db.books.insert([{<br>
+_id: 1,<br>
+name:‘玩转HTML’,<br>
+price: 88,<br>
+userId:123<br>
+},<br>
+{<br>
+_id: 2,<br>
+name:‘玩转CSS’,<br>
+price: 88,<br>
+userId:123<br>
+}])<br>
+db.person.insert({<br>
+_id: 123,<br>
+name:‘ls’,<br>
+age:‘20’,<br>
+booksId:[1, 2]<br>
+})<br>
+db.person.aggregate([<br>
+{$lookup:{<br>
+from: ‘books’,<br>
+localField: ‘booksId’,<br>
+foreignField: ‘_id’,<br>
+as: ‘books’<br>
+}}<br>
+])<br>
+优势: 冗余数据较少, 更新较为方便<br>
+劣势: 查询数据相对内嵌结果稍微有点复杂<br>
+应用场景: 数据比较复杂/更新频率较高数据</p>
+<p>1.文档多对多关系<br>
+一个学生有多个老师<br>
+一个老师有多个学生<br>
+1.1内嵌式结构<br>
+db.students.insert([{name:‘zs’, teachers:[{name:‘it666’}, {name:‘itzb’}]},<br>
+{name:‘ls’, teachers:[{name:‘it666’}, {name:‘itzb’}]}])</p>
+<p>db.teachers.insert([{name:‘it666’, students:[{name:‘zs’}, {name:‘ls’}]},<br>
+{name:‘itzb’, students:[{name:‘zs’}, {name:‘ls’}]}])<br>
+db.students.find({name:‘zs’})<br>
+db.teachers.find({name:‘itzb’})<br>
+优势: 一次查询就能得到所有数据<br>
+劣势: 冗余数据较多, 更新和管理较为复杂<br>
+应用场景: 数据比较简单/查询频率较高数据</p>
+<p>1.2规范式结构<br>
+db.students.insert([{_id:1, name:‘zs’},{_id:2, name:‘ls’}])<br>
+db.teachers.insert([{_id:3, name:‘it6666’},{_id:4, name:‘itzb’}])<br>
+db.relation.insert([{stuId:1, teacherId:3},{stuId:1, teacherId:4},{stuId:2, teacherId:3},{stuId:2, teacherId:4}])</p>
+<p>db.students.aggregate([<br>
+{$lookup:{<br>
+from: ‘relation’,<br>
+localField: ‘_id’,<br>
+foreignField:‘stuId’,<br>
+as: ‘relation’<br>
+}},<br>
+{$lookup:{<br>
+from: ‘teachers’,<br>
+localField: ‘relation.teacherId’,<br>
+foreignField:‘_id’,<br>
+as: ‘teachers’<br>
+}},<br>
+{$project:{_id:0, name:1, teachers:1}}<br>
+])</p>
+<p>优势: 冗余数据较少, 更新较为方便<br>
+劣势: 查询数据相对内嵌结果稍微有点复杂<br>
+应用场景: 数据比较复杂/更新频率较高数据</p>
+<p>1.树形结构<br>
+在MongoDB中我们除了可以使用’内嵌式结构’和’规范式结构’来表示数据的关系以外<br>
+由于MongoDB数据的灵活性, 我们还可以使用’树形结构’来表示数据之间的关系</p>
+<p>2.什么是树形结构<br>
+Database<br>
+|<br>
+|--------------------|<br>
+Relational           No-Relational<br>
+|          |-----------|-------------|<br>
+MySQL      Key-Value                Document<br>
+|                         |<br>
+Redis                    MongoDB</p>
+<p>3.对于经常需要查询子节点的数据<br>
+{name:‘Database’, parent:null}<br>
+{name:‘No-Relational’, parent:‘Database’}<br>
+{name:‘Document’, parent:‘No-Relational’}<br>
+{name:‘MongoDB’, parent:‘Document’}<br>
+{name:‘Key-Value’, parent:‘No-Relational’}<br>
+{name:‘Redis’, parent:‘Key-Value’}<br>
+例如:我们要查询非关系型数据库有几种类型, 我们可以使用find({parent:‘No-Relational’})</p>
+<p>4.对于经常需要查询父节点的数据<br>
+{name:‘Database’, children:[‘Relational’, ‘No-Relational’]}<br>
+{name:‘No-Relational’, children:[‘Key-Value’, ‘Document’]}<br>
+{name:‘Document’, children:[‘MongoDB’]}<br>
+{name:‘MongoDB’, children:[]}<br>
+例如:我们要查询MongoDB是什么类型的的数据, 我们可以使用find({children:{$in:[‘MongoDB’]}})</p>
+<p>5.对于经常查询祖先或者后代节点的数据<br>
+{name:‘Database’, ancestors:[]}<br>
+{name:‘No-Relational’, ancestors:[‘Database’]}<br>
+{name:‘Document’, ancestors:[‘Database’, ‘No-Relational’]}<br>
+{name:‘MongoDB’, ancestors:[‘Database’, ‘No-Relational’, ‘Document’]}<br>
+例如: 我们要查询MongoDB的祖先有哪些, 我们可以使用find({name:‘MongoDB’})<br>
+例如: 我们要查询Database的后代有哪些, 我们可以使用find({ancestors:{$in:[‘Database’]}}})</p>
 <p>6.结合深度优先或者广度优先算法来实现树形结构</p>
-<h1 id="八-复制集"><a href="#八、复制集" class="headerlink" title="八、复制集"></a>八、复制集</h1><p>1.MongoDB高可用性</p>
+<h1 id="八-复制集">八、复制集</h1>
+<p>1.MongoDB高可用性</p>
 <ul>
-<li>如果所有用户都从同一台MongoDB服务器上读写数据<br>那么如果这台MongoDB服务器宕机了, 用户就不能进行读写了</li>
-<li>如果我们有多台MongoDB服务器, 并且每台服务器中存储的内容都相同<br>那么即使有一台服务器宕机了, 用户依然可以进行读写数据, 因为用户还可以继续使用其它保存了相同内容的服务器</li>
+<li>如果所有用户都从同一台MongoDB服务器上读写数据<br>
+那么如果这台MongoDB服务器宕机了, 用户就不能进行读写了</li>
+<li>如果我们有多台MongoDB服务器, 并且每台服务器中存储的内容都相同<br>
+那么即使有一台服务器宕机了, 用户依然可以进行读写数据, 因为用户还可以继续使用其它保存了相同内容的服务器</li>
 <li>以上这种特点, 我们就称之为’高可用性’</li>
 </ul>
 <p>2.MongoDB数据安全性</p>
 <ul>
-<li>如果所有数据都保存在同一台MongoDB服务器上<br>那么如果这台MongoDB服务器坏了, 那么很有可能会导致数据丢失</li>
-<li>如果我们有多台MongoDB服务器, 并且每台服务器中存储的内容都相同<br>那么即使有一台服务器坏了, 那么依然不会导致数据丢失, 因为我们还有其它保存了相同内容的服务器</li>
+<li>如果所有数据都保存在同一台MongoDB服务器上<br>
+那么如果这台MongoDB服务器坏了, 那么很有可能会导致数据丢失</li>
+<li>如果我们有多台MongoDB服务器, 并且每台服务器中存储的内容都相同<br>
+那么即使有一台服务器坏了, 那么依然不会导致数据丢失, 因为我们还有其它保存了相同内容的服务器</li>
 <li>以上这种特点, 我们就称之为’数据的安全性’</li>
 </ul>
 <p>3.MongoDB数据分流</p>
 <ul>
-<li>如果所有用户都从同一台MongoDB服务器上读写数据<br>那么由于服务器的性能限制和网络传输速度的限制<br>会导致同一时刻用户量较多时, 服务器负荷增大, 数据处理速度变慢的问题<br>会导致由于用户距离服务器较远, 网络传输时间变长, 响应速度变慢的问题</li>
-<li>如果我们有多台MongoDB服务器, 并且每台服务器中存储的内容都相同, 并且安放到了不同的地区<br>那么我们可以采用就近原则返回数据, 提升网络的传输速度<br>那么我们可以采用请求分流, 降低每台服务器负荷, 提升数据处理速度</li>
+<li>如果所有用户都从同一台MongoDB服务器上读写数据<br>
+那么由于服务器的性能限制和网络传输速度的限制<br>
+会导致同一时刻用户量较多时, 服务器负荷增大, 数据处理速度变慢的问题<br>
+会导致由于用户距离服务器较远, 网络传输时间变长, 响应速度变慢的问题</li>
+<li>如果我们有多台MongoDB服务器, 并且每台服务器中存储的内容都相同, 并且安放到了不同的地区<br>
+那么我们可以采用就近原则返回数据, 提升网络的传输速度<br>
+那么我们可以采用请求分流, 降低每台服务器负荷, 提升数据处理速度</li>
 <li>以上这种特点, 我们就称之为’数据分流’</li>
 </ul>
 <p>4.MongoDB复制集</p>
 <ul>
 <li>在MongoDB中我们可以通过复制集来实现如上的功能</li>
-<li>复制集就是使用多台保存了相同内容的MongoDB服务器来组成一个数据库集群<br>这个数据库集群中的每一台MongoDB服务我们称之为一个节点</li>
+<li>复制集就是使用多台保存了相同内容的MongoDB服务器来组成一个数据库集群<br>
+这个数据库集群中的每一台MongoDB服务我们称之为一个节点</li>
 </ul>
 <p>1.MongoDB复制集特点</p>
 <ul>
-<li>复制集中必须有一个主节点<ul>
+<li>复制集中必须有一个主节点
+<ul>
 <li>主节点主要负责写入数据和读取</li>
 </ul>
 </li>
-<li>复制集中除了主节点以外的节点我们称之为’副节点’<ul>
+<li>复制集中除了主节点以外的节点我们称之为’副节点’
+<ul>
 <li>副节点默认情况下只能读取数据, 不能写入数据</li>
 <li>副节点主要负责从主节点不断复制数据</li>
 </ul>
 </li>
-<li>复制集中所有的节点都会不断的相互发送心跳请求<ul>
+<li>复制集中所有的节点都会不断的相互发送心跳请求
+<ul>
 <li>心跳请求的目的是相互检查节点的健康程度(是否发生故障)</li>
 <li>默认情况下每个2秒发送一次心跳请求</li>
 <li>默认情况下如果10秒没有收到某一个节点心跳请求, 系统就会认定为超时</li>
 </ul>
 </li>
-<li>复制集中节点的个数是有限制的<ul>
+<li>复制集中节点的个数是有限制的
+<ul>
 <li>每个复制集中最多只能有50个节点</li>
 <li>由于节点会发送心跳请求(消耗性能), 所以并不是节点越多越好</li>
 </ul>
@@ -784,8 +1144,11 @@
 </ul>
 <p>2.复制集选举</p>
 <ul>
-<li>复制集最大的特点之一就是高可用性,<br>但是在复制集中只有一个主节点, 只有主节点可以读写<br>那么如果主节点宕机了, 也就意味着用户只能读取数据, 不能写入数据了</li>
-<li>复制集中的主节点是通过选举出来的, 也就是一旦当前主节点宕机了<br>MongoDB会通过自动选举的方式, 将其它的副节点设置为主节点</li>
+<li>复制集最大的特点之一就是高可用性,<br>
+但是在复制集中只有一个主节点, 只有主节点可以读写<br>
+那么如果主节点宕机了, 也就意味着用户只能读取数据, 不能写入数据了</li>
+<li>复制集中的主节点是通过选举出来的, 也就是一旦当前主节点宕机了<br>
+MongoDB会通过自动选举的方式, 将其它的副节点设置为主节点</li>
 <li>正式因为复制集的这个特点, 大大的保证了数据库的高可用性</li>
 </ul>
 <p>1.选举规则</p>
@@ -794,19 +1157,26 @@
 <li>一旦发现主节点挂了, 任意一个副节点都可以发起选举</li>
 <li>(发起选举的节点我们称之为候选节点, 每一个节点内部都有一个选举计数器)</li>
 <li>发起选举的节点会给自己先投一票, 然后将自己的票数依次发送给其它节点</li>
-<li>其它节点收到投票请求后,会先利用发送过来的票数同步自己计数器的票数<br>然后再对比自己的数据和候选节点的数据哪个更完整<br>如果自己的更完整, 那么会投出反对票<br>如果候选节点的更完整, 那么会投出赞同票</li>
+<li>其它节点收到投票请求后,会先利用发送过来的票数同步自己计数器的票数<br>
+然后再对比自己的数据和候选节点的数据哪个更完整<br>
+如果自己的更完整, 那么会投出反对票<br>
+如果候选节点的更完整, 那么会投出赞同票</li>
 <li>最后如果超过半数的节点投出赞同票, 那么候选节点就会变成主节点</li>
 <li>最后如果没有超过半数节点投出赞同票, 那么其它节点会重新发起选举, 重复上述过程</li>
 </ul>
 <p>2.选举注意点</p>
 <ul>
 <li>一个复制集中最多只能有7个投票节点</li>
-<li>如果某个节点没有返回投票结果, 那么默认就是不赞同<ul>
+<li>如果某个节点没有返回投票结果, 那么默认就是不赞同
+<ul>
 <li>挂掉的节点不会返回结果</li>
 </ul>
 </li>
-<li>因为选举需要超过半数节点同意,才会将副节点变成主节点<br>所以在企业开发中一个复制集至少需要3个节点<br>否则一旦主节点挂了, 永远无法完成投票</li>
-<li>因为选举需要超过半数节点同意,才会将副节点变成主节点<br>所以在企业开发中节点的个数最好是奇数</li>
+<li>因为选举需要超过半数节点同意,才会将副节点变成主节点<br>
+所以在企业开发中一个复制集至少需要3个节点<br>
+否则一旦主节点挂了, 永远无法完成投票</li>
+<li>因为选举需要超过半数节点同意,才会将副节点变成主节点<br>
+所以在企业开发中节点的个数最好是奇数</li>
 </ul>
 <p>3.触发选举的其它条件</p>
 <ul>
@@ -818,35 +1188,80 @@
 <ul>
 <li>将一个新的节点加入到复制集中时, 就需要进行初始化同步</li>
 <li>初始化同步会先情况自己所有的内容, 保证将来自己和主节点一模一样</li>
-<li>初始化同步会将主节点中现有所有的’数据库’,’集合’,’文档’,’索引’全部拷贝过来</li>
-<li>但是在拷贝的过程中主节点仍然可能会做一些其它操作, 新增一些其它的数据等<br>所以仅仅做一次大型的拷贝是不能保证副节点和主节点一模一样的</li>
+<li>初始化同步会将主节点中现有所有的’数据库’,‘集合’,‘文档’,'索引’全部拷贝过来</li>
+<li>但是在拷贝的过程中主节点仍然可能会做一些其它操作, 新增一些其它的数据等<br>
+所以仅仅做一次大型的拷贝是不能保证副节点和主节点一模一样的</li>
 </ul>
 <p>2.同步写库记录</p>
 <ul>
-<li>每个节点中都有一个local数据库, 这个数据库中有一个oplog的集合<br>这个集合就是专门用来保存数据库的操作记录的(写库记录)</li>
-<li>做完初始化同步之后, 副节点就会定期从主节点中拷贝写库记录<br>将写库记录保存到自己的local数据库中, 然后执行写库记录中的操作<br>从而使得自己的内容和主节点的内容保持高度一致</li>
+<li>每个节点中都有一个local数据库, 这个数据库中有一个oplog的集合<br>
+这个集合就是专门用来保存数据库的操作记录的(写库记录)</li>
+<li>做完初始化同步之后, 副节点就会定期从主节点中拷贝写库记录<br>
+将写库记录保存到自己的local数据库中, 然后执行写库记录中的操作<br>
+从而使得自己的内容和主节点的内容保持高度一致</li>
 </ul>
 <p>3.写库记录注意点</p>
 <ul>
-<li>写库记录是可以被多次应用的, 但是多次应用和一次应用的效果是一样的<br>也就是有效的防止了多次应用造成的主节点和副节点内容不一致问题</li>
+<li>写库记录是可以被多次应用的, 但是多次应用和一次应用的效果是一样的<br>
+也就是有效的防止了多次应用造成的主节点和副节点内容不一致问题</li>
 <li>应用写库记录的时候是通过多线程分批次应用的, 这样大大提高了引用的效率和性能</li>
 </ul>
 <p>1.投票节点</p>
 <ul>
 <li>投票节点就是不保存任何数据, 只参与投票的节点</li>
-<li>无论是初始化同步, 还是同步写库记录, 其实都会消耗服务器性能<br>所以在企业开发中并不是副节点越多越好<br>所以在保证高可用性、数据库安全性的同时, 为了提升服务器的性能<br>我们还可以添加投票节点</li>
+<li>无论是初始化同步, 还是同步写库记录, 其实都会消耗服务器性能<br>
+所以在企业开发中并不是副节点越多越好<br>
+所以在保证高可用性、数据库安全性的同时, 为了提升服务器的性能<br>
+我们还可以添加投票节点</li>
 <li>投票节点不保存任何数据, 所以就不存在同步数据带来的性能消耗问题</li>
 <li>投票节点可以投票, 就保证了不会出现副节点过少无法完成投票问题</li>
 </ul>
-<p>1.MongoDB复制集搭建<br><a target="_blank" rel="noopener" href="https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.6.zip">https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.6.zip</a><br>1.1解压MongoDB安装包<br>1.2在安装目录下新建data/conf/log文件夹<br>1.3在conf文件夹下新建mongo.config<br>1.4在mongo.config中配置如下内容<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Where and how to store data.</span><br><span class="line">storage:</span><br><span class="line">  dbPath: D:\Developer\MongoDB666\mongodb27020\data</span><br><span class="line">  journal:</span><br><span class="line">    enabled: true</span><br><span class="line"># where to write logging data.</span><br><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  logAppend: true</span><br><span class="line">  path:  D:\Developer\MongoDB666\mongodb27020\log\mongo.log</span><br><span class="line"># network interfaces</span><br><span class="line">net:</span><br><span class="line">  port: 27020</span><br><span class="line">  bindIp: 127.0.0.1</span><br></pre></td></tr></table></figure><br>1.5注册配置MongoDB<br>1.5.1注册服务<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongod --config D:\Developer\MongoDB666\mongodb27018\bin\mongo.config --serviceName &quot;MongoDB27018&quot; --serviceDisplayName &quot;MongoDB27018&quot; --replSet &quot;it666&quot; --install</span><br><span class="line">mongod --config D:\Developer\MongoDB666\mongodb27019\bin\mongo.config --serviceName &quot;MongoDB27019&quot; --serviceDisplayName &quot;MongoDB27019&quot; --replSet &quot;it666&quot; --install</span><br><span class="line">mongod --config D:\Developer\MongoDB666\mongodb27020\bin\mongo.config --serviceName &quot;MongoDB27020&quot; --serviceDisplayName &quot;MongoDB27020&quot; --replSet &quot;it666&quot; --install</span><br></pre></td></tr></table></figure><br>1.5.2手动启动服务<br>1.5.3测试连接<br>mongo —host 127.0.0.1 —port 27018<br>mongo —host 127.0.0.1 —port 27019<br>mongo —host 127.0.0.1 —port 27020<br>1.6初始化复制集<br>rs.initiate({<br>_id: ‘it666’,<br>members: [<br>{_id: 0, host: ‘127.0.0.1:27018’},<br>{_id: 1, host: ‘127.0.0.1:27019’},<br>{_id: 2, host: ‘127.0.0.1:27020’}]<br>})<br>1.7在主节点写入读取<br>1.8在副节点读取rs.slaveOk()</p>
-<p>_id            整数 节点的唯一标识。<br>host       字符串    节点的IP地址，包含端口号。<br>arbiterOnly    布尔值    是否为投票节点，默认是false。是设置投票(选举)节点有关的参数<br>priority   整数 选举为主节点的权值，默认是1，范围0-1000。<br>hidden     布尔值    是否隐藏，默认false，是设置隐藏节点有关的参数。<br>votes      整数 投票数，默认为1，取值是0或1，是设置”投票“节点有关的参数。<br>slaveDelay 整数 延时复制，是设置延时节点有关的参数。单位秒(s)</p>
-<h1 id="九-分片"><a href="#九、分片" class="headerlink" title="九、分片"></a>九、分片</h1><p>1.什么是复制集?<br>‘多台’’保存了相同数据’的MongoDB服务器组成</p>
-<p>2.复制集解决的问题<br>高可用性-服务器宕机不会影响我们继续使用<br>数据安全性-服务器损坏数据不会丢失</p>
+<p>1.MongoDB复制集搭建<br>
+<a target="_blank" rel="noopener" href="https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.6.zip">https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.6.zip</a><br>
+1.1解压MongoDB安装包<br>
+1.2在安装目录下新建data/conf/log文件夹<br>
+1.3在conf文件夹下新建mongo.config<br>
+1.4在mongo.config中配置如下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Where and how to store data.</span><br><span class="line">storage:</span><br><span class="line">  dbPath: D:\Developer\MongoDB666\mongodb27020\data</span><br><span class="line">  journal:</span><br><span class="line">    enabled: true</span><br><span class="line"># where to write logging data.</span><br><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  logAppend: true</span><br><span class="line">  path:  D:\Developer\MongoDB666\mongodb27020\log\mongo.log</span><br><span class="line"># network interfaces</span><br><span class="line">net:</span><br><span class="line">  port: 27020</span><br><span class="line">  bindIp: 127.0.0.1</span><br></pre></td></tr></table></figure>
+<p>1.5注册配置MongoDB<br>
+1.5.1注册服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongod --config D:\Developer\MongoDB666\mongodb27018\bin\mongo.config --serviceName &quot;MongoDB27018&quot; --serviceDisplayName &quot;MongoDB27018&quot; --replSet &quot;it666&quot; --install</span><br><span class="line">mongod --config D:\Developer\MongoDB666\mongodb27019\bin\mongo.config --serviceName &quot;MongoDB27019&quot; --serviceDisplayName &quot;MongoDB27019&quot; --replSet &quot;it666&quot; --install</span><br><span class="line">mongod --config D:\Developer\MongoDB666\mongodb27020\bin\mongo.config --serviceName &quot;MongoDB27020&quot; --serviceDisplayName &quot;MongoDB27020&quot; --replSet &quot;it666&quot; --install</span><br></pre></td></tr></table></figure>
+<p>1.5.2手动启动服务<br>
+1.5.3测试连接<br>
+mongo --host 127.0.0.1 --port 27018<br>
+mongo --host 127.0.0.1 --port 27019<br>
+mongo --host 127.0.0.1 --port 27020<br>
+1.6初始化复制集<br>
+rs.initiate({<br>
+_id: ‘it666’,<br>
+members: [<br>
+{_id: 0, host: ‘127.0.0.1:27018’},<br>
+{_id: 1, host: ‘127.0.0.1:27019’},<br>
+{_id: 2, host: ‘127.0.0.1:27020’}]<br>
+})<br>
+1.7在主节点写入读取<br>
+1.8在副节点读取rs.slaveOk()</p>
+<p>_id            整数 节点的唯一标识。<br>
+host       字符串    节点的IP地址，包含端口号。<br>
+arbiterOnly    布尔值    是否为投票节点，默认是false。是设置投票(选举)节点有关的参数<br>
+priority   整数 选举为主节点的权值，默认是1，范围0-1000。<br>
+hidden     布尔值    是否隐藏，默认false，是设置隐藏节点有关的参数。<br>
+votes      整数 投票数，默认为1，取值是0或1，是设置”投票“节点有关的参数。<br>
+slaveDelay 整数 延时复制，是设置延时节点有关的参数。单位秒(s)</p>
+<h1 id="九-分片">九、分片</h1>
+<p>1.什么是复制集?<br>
+‘多台’'保存了相同数据’的MongoDB服务器组成</p>
+<p>2.复制集解决的问题<br>
+高可用性-服务器宕机不会影响我们继续使用<br>
+数据安全性-服务器损坏数据不会丢失</p>
 <p>3.复制集不能解决的问题</p>
 <ul>
 <li>服务器容量的问题</li>
-<li>我们都知道一台服务器的容量是有上限的<br>所以我们只能通过增加服务器的台数来提升容量</li>
-<li>复制集虽然是由多台电脑组成的, 但是由于多台电脑保存的数据都是一样的<br>所以在复制集中虽然电脑增多了, 但是容量并没有增加<br>所以复制集是不能解决服务器容量问题的</li>
+<li>我们都知道一台服务器的容量是有上限的<br>
+所以我们只能通过增加服务器的台数来提升容量</li>
+<li>复制集虽然是由多台电脑组成的, 但是由于多台电脑保存的数据都是一样的<br>
+所以在复制集中虽然电脑增多了, 但是容量并没有增加<br>
+所以复制集是不能解决服务器容量问题的</li>
 </ul>
 <p>5.MongoDB中如何增加服务器容量?</p>
 <ul>
@@ -854,49 +1269,158 @@
 </ul>
 <p>6.什么是分片?</p>
 <ul>
-<li>分片就是将数据库集合中的数据拆分成多份, 分布式的保存到多台电脑上<ul>
+<li>分片就是将数据库集合中的数据拆分成多份, 分布式的保存到多台电脑上
+<ul>
 <li>这样不同的电脑保存不同的数据, 就大大的提升了服务器的容量</li>
 </ul>
 </li>
 </ul>
 <p>7.分片注意点</p>
 <ul>
-<li>并不是数据库所有的集合都需要使用分片, 对于那些不使用分片的集合会统一保存到主分片中<ul>
+<li>并不是数据库所有的集合都需要使用分片, 对于那些不使用分片的集合会统一保存到主分片中
+<ul>
 <li>默认每个数据库都有一个主分片, 保存那些不需要分片的集合数据</li>
 <li>在创建数据库的时候, 系统会自动选择存储内容最少的分片作为主分片</li>
 </ul>
 </li>
 </ul>
 <ul>
-<li>1.分片集群结构<br>1.分片服务器: 用于保存集合中的一部分数据<br>2.配置服务器: 用于保存分片数据的数据段和数据范围<br>3.mongos路由(路由服务器): 用于分发请求到保存对应数据的分片服务器上</li>
+<li>1.分片集群结构<br>
+1.分片服务器: 用于保存集合中的一部分数据<br>
+2.配置服务器: 用于保存分片数据的数据段和数据范围<br>
+3.mongos路由(路由服务器): 用于分发请求到保存对应数据的分片服务器上</li>
 </ul>
-<p>3.分片集群执行流程<br>用户发送请求到’mongos路由’ -&gt; ‘mongos路由’去’配置服务器’查询数据在哪个分片服务器<br>‘mongos路由’根据’配置服务器’返回的结果到对应的’分片服务器’操作数据<br>‘分片服务器’将操作结果返回给’mongos路由’, ‘mongos路由’将最终结果返回给用户</p>
-<p>1.如何将数据存储到不同的分片服务器上的?<br>通过分片片键</p>
-<p>2.什么是分片片键?<br>2.1可以将文档的一个或多个字设置成分片片键<br>2.2设置完分片片键后, MongoDB会自动对字段可能的取值进行划分, 划分出一个个的数据段<br>2.3划分完数据段之后,  MongoDB会自动决定哪些分片服务器保存哪些数据段对应的数据<br>例如: {name:’lnj’, age:33}<br>      age:min    20     40     60     80    age:max<br>         |———-|———|———|———|———|</p>
-<p> 分片服务器1      分片服务器2       分片服务器3<br>|—————-|    |—————-|     |—————-|<br>|   min-20  |    |   80-max  |     |   40-60   |<br>|   20-40   |    |   60-80   |     |           |<br>|—————-|    |—————-|     |—————-|</p>
-<p>3.注意点:<br>1.片键可以是一个字段也可以是多个字段<br>2.只有索引字段才能设置为片键<br>3.分片服务器保存哪些数据段的值是随机的, 并不是连续的<br>4.数据段的划分可以使用片键的取值, 也可以使用片键取值的哈希值</p>
-<p>1.如何选择片键<br>使用分片的目的是为了将数据存储到不同的服务器上<br>所以在选择片键的时候<br>1.1应该选择取值范围更广的字段作为片键<br>因为如果取值范围太小, 那么划分出来的数据段就太少, 那么分配到不同服务器的概率就越小<br>例如: 取值如果只有true或false, 那么就只能划分出两个数据段<br>      那么也就最多只能保存到两台服务器上<br>1.2应该选择取值分配更平衡字段作为片键<br>因为如果取值范围不平衡, 就会导致某一个数据段的数据太多, 某一台分片服务器压力太大<br>例如: 将age作为片键, 但是我们的用户90%都集中中20~30岁,<br>      那么就会导致保存20~30数据段的分片服务器存储数据过多压力过大<br>1.3不应该选择单向增加或者减少的字段作为片键<br>因为如果取值是单向增加或者减少的, 那么就会出现可能出现的最小值数据段或者最大值数据段保存的数据过多,<br>对应的分片服务器压力过大</p>
-<p>2.片键选择技巧<br>2.1如果片键字段取值范围不够广, 那么我们可以使用复合片键<br>2.2如果片键字段的取值不够平衡, 那么我们可以使用复合片键<br>2.3如果片键字段的取值是单向增加或减少的, 那么我们可以使用片键字段的哈希值</p>
-<p>3.片键注意点<br>片键一旦选择就不能更改, 所以在前期选择片键时一定要多动脑</p>
-<p>1.数据段分裂<br>分片的主要目的就是将数据分配到不同的服务器中保存,<br>提升服务器的容量, 让数据更加的均衡, 更有效的降低服务器的压力<br>但是随着时间推移, 某些数据段中保存的数据会越来越多,<br>所以为了保证个分片均衡, 当某个数据段数据过多或体积过大的时候,<br>系统就会自动在下一次操作这个数据段时(新增/更新), 将一个大的数据段分裂成多个小的数据段</p>
-<p>3.分片平衡<br>除了当某个数据段数据过多或体积过大的时候会自动对数据段进行分裂以外<br>当各分片服务器上保存的数据段之间数量相差较大时, 还会自动触发分片服务器数据段迁移<br>在MongoDB中后台会自动运行一个’集群平衡器’来负责监视分片的平衡和调整分片的平衡</p>
-<p>1.分片查询注意事项<br>1.1用户的请求会发送给mongos路由服务器,<br>路由服务器会根据查询条件去配置服务器查询对应的数据段和属于哪个分片服务器<br>1.2如果用户查询的条件是分片片键字段,<br>那么路由服务器会返回保存在那一台分片服务器上, 路由服务器就会去对应的分片服务器获取数据,<br>并将取到的数据返回给用户<br>1.3如果用户查询的条件不是分片片键字段,<br>那么配置服务器无法告知路由服务器数据保存在哪一个分片服务器上<br>路由服务器会把请求发送到所有的分片服务器上, 然后再将查询到的数据汇总后返回给用户</p>
-<p>1.分片集群搭建<br>1.1搭建配置服务器复制集</p>
-<pre><code>- 早期版本的配置服务器只要一台即可
-- 最新版本MongoDB要求配置服务器必须是一个复制集
-</code></pre><p>1.2搭建分片服务器复制集</p>
-<pre><code>- 用于保存数据的多台电脑
-</code></pre><p>1.3搭建路由服务器</p>
-<pre><code>- 用于建立配置服务器和分片服务器之间的关系
-</code></pre><p>1.搭建配置服务器集群<br>1.1编写配置文件<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 数据保存到哪</span><br><span class="line">storage:</span><br><span class="line">  dbPath: D:\Developer\MongoDB666\mongodb-config-27018\data</span><br><span class="line">  journal:</span><br><span class="line">    enabled: true</span><br><span class="line">#  engine:</span><br><span class="line">#  mmapv1:</span><br><span class="line">#  wiredTiger:</span><br><span class="line"># 日志保存到哪</span><br><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  logAppend: true</span><br><span class="line">  path:  D:\Developer\MongoDB666\mongodb-config-27018\log\mongod.log</span><br><span class="line"># 绑定的IP和端口号</span><br><span class="line">net:</span><br><span class="line">  port: 27018</span><br><span class="line">  bindIp: 127.0.0.1</span><br><span class="line"># 复制集名称</span><br><span class="line">replication:</span><br><span class="line">  replSetName: &#x27;it666&#x27;</span><br><span class="line"># 复制集的作用</span><br><span class="line">sharding:</span><br><span class="line">  clusterRole: configsvr</span><br></pre></td></tr></table></figure><br>1.2注册MongoDB服务<br>管理员权限运行终端, 执行如下指令<br>mongod —config D:\Developer\MongoDB666\mongodb-config-27018\bin\mongo.config —serviceName “MongoDB27018” —serviceDisplayName “MongoDB27018”  —install<br>mongod —config D:\Developer\MongoDB666\mongodb-config-27019\bin\mongo.config —serviceName “MongoDB27019” —serviceDisplayName “MongoDB27019”  —install<br>mongod —config D:\Developer\MongoDB666\mongodb-config-27020\bin\mongo.config —serviceName “MongoDB27020” —serviceDisplayName “MongoDB27020”  —install<br>在任务管理器中开启任务<br>1.3测试服务可用性<br>mongo —host 127.0.0.1 —port 27018<br>mongo —host 127.0.0.1 —port 27019<br>mongo —host 127.0.0.1 —port 27020<br>1.4添加复制集<br>rs.initiate({<br>_id: ‘it666’,<br>configsvr: true,<br>members: [<br>{_id: 0, host: ‘127.0.0.1:27018’},<br>{_id: 1, host: ‘127.0.0.1:27019’},<br>{_id: 2, host: ‘127.0.0.1:27020’}]<br>})</p>
-<p>2.搭建分片服务器集群<br>2.1编写配置文件<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 数据保存到哪</span><br><span class="line">storage:</span><br><span class="line">  dbPath: D:\Developer\MongoDB666\mongodb-shard-27021\data</span><br><span class="line">  journal:</span><br><span class="line">    enabled: true</span><br><span class="line">#  engine:</span><br><span class="line">#  mmapv1:</span><br><span class="line">#  wiredTiger:</span><br><span class="line"># 日志保存到哪</span><br><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  logAppend: true</span><br><span class="line">  path:  D:\Developer\MongoDB666\mongodb-shard-27021\log\mongod.log</span><br><span class="line"># 绑定的IP和端口号</span><br><span class="line">net:</span><br><span class="line">  port: 27021</span><br><span class="line">  bindIp: 127.0.0.1</span><br><span class="line"># 复制集名称</span><br><span class="line">replication:</span><br><span class="line">  replSetName: &#x27;itzb&#x27;</span><br><span class="line"># 复制集的作用</span><br><span class="line">sharding:</span><br><span class="line">    clusterRole: shardsvr</span><br></pre></td></tr></table></figure><br>2.2注册MongoDB服务<br>管理员权限运行终端, 执行如下指令<br>mongod —config D:\Developer\MongoDB666\mongodb-shard-27021\bin\mongo.config —serviceName “MongoDB27021” —serviceDisplayName “MongoDB27021”  —install<br>mongod —config D:\Developer\MongoDB666\mongodb-shard-27022\bin\mongo.config —serviceName “MongoDB27022” —serviceDisplayName “MongoDB27022”  —install<br>mongod —config D:\Developer\MongoDB666\mongodb-shard-27023\bin\mongo.config —serviceName “MongoDB27023” —serviceDisplayName “MongoDB27023”  —install<br>在任务管理器中开启任务</p>
-<p>2.3测试服务可用性<br>mongo —host 127.0.0.1 —port 27021<br>mongo —host 127.0.0.1 —port 27022<br>mongo —host 127.0.0.1 —port 27023</p>
-<p>2.4添加复制集<br>rs.initiate({<br>_id: ‘itzb’,<br>members: [<br>{_id: 0, host: ‘127.0.0.1:27021’},<br>{_id: 1, host: ‘127.0.0.1:27022’},<br>{_id: 2, host: ‘127.0.0.1:27023’}]<br>})</p>
-<p>3.搭建路由服务器<br>3.1编写配置文件<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 日志保存到哪</span><br><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  logAppend: true</span><br><span class="line">  path:  D:\Developer\MongoDB666\mongodb-router-27024\log\mongod.log</span><br><span class="line"># 绑定的IP和端口号</span><br><span class="line">net:</span><br><span class="line">  port: 27024</span><br><span class="line">  bindIp: 127.0.0.1</span><br><span class="line"># 配置服务器地址</span><br><span class="line">sharding:</span><br><span class="line">  configDB: it666/127.0.0.1:27018,127.0.0.1:27019,127.0.0.1:27020</span><br></pre></td></tr></table></figure><br>3.2注册MongoDB服务<br>管理员权限运行终端, 执行如下指令<br>mongos  —config D:\Developer\MongoDB666\mongodb-router-27024\bin\mongo.config —serviceName “MongoDB27024” —serviceDisplayName “MongoDB27024”  —install<br>在任务管理器中开启任务</p>
-<p>3.3测试服务可用性<br>mongo —host 127.0.0.1 —port 27024</p>
-<p>3.4添加分片服务器<br>sh.addShard( “itzb/127.0.0.1:27021”)<br>sh.addShard( “itzb/127.0.0.1:27022”)<br>sh.addShard( “itzb/127.0.0.1:27023”)</p>
-<p>3.5给指定数据库开启分片<br>sh.enableSharding(“demo”)</p>
-<p>3.6指定分片片键<br>sh.shardCollection(“demo.user”,{‘age’:1})<br>sh.shardCollection(“demo.user”,{‘name’:hashed})</p>
+<p>3.分片集群执行流程<br>
+用户发送请求到’mongos路由’ -&gt; 'mongos路由’去’配置服务器’查询数据在哪个分片服务器<br>
+'mongos路由’根据’配置服务器’返回的结果到对应的’分片服务器’操作数据<br>
+‘分片服务器’将操作结果返回给’mongos路由’, 'mongos路由’将最终结果返回给用户</p>
+<p>1.如何将数据存储到不同的分片服务器上的?<br>
+通过分片片键</p>
+<p>2.什么是分片片键?<br>
+2.1可以将文档的一个或多个字设置成分片片键<br>
+2.2设置完分片片键后, MongoDB会自动对字段可能的取值进行划分, 划分出一个个的数据段<br>
+2.3划分完数据段之后,  MongoDB会自动决定哪些分片服务器保存哪些数据段对应的数据<br>
+例如: {name:‘lnj’, age:33}<br>
+age:min    20     40     60     80    age:max<br>
+|-------|------|------|------|------|</p>
+<p>分片服务器1      分片服务器2       分片服务器3<br>
+|-----------|    |-----------|     |-----------|<br>
+|   min-20  |    |   80-max  |     |   40-60   |<br>
+|   20-40   |    |   60-80   |     |           |<br>
+|-----------|    |-----------|     |-----------|</p>
+<p>3.注意点:<br>
+1.片键可以是一个字段也可以是多个字段<br>
+2.只有索引字段才能设置为片键<br>
+3.分片服务器保存哪些数据段的值是随机的, 并不是连续的<br>
+4.数据段的划分可以使用片键的取值, 也可以使用片键取值的哈希值</p>
+<p>1.如何选择片键<br>
+使用分片的目的是为了将数据存储到不同的服务器上<br>
+所以在选择片键的时候<br>
+1.1应该选择取值范围更广的字段作为片键<br>
+因为如果取值范围太小, 那么划分出来的数据段就太少, 那么分配到不同服务器的概率就越小<br>
+例如: 取值如果只有true或false, 那么就只能划分出两个数据段<br>
+那么也就最多只能保存到两台服务器上<br>
+1.2应该选择取值分配更平衡字段作为片键<br>
+因为如果取值范围不平衡, 就会导致某一个数据段的数据太多, 某一台分片服务器压力太大<br>
+例如: 将age作为片键, 但是我们的用户90%都集中中20~30岁,<br>
+那么就会导致保存20~30数据段的分片服务器存储数据过多压力过大<br>
+1.3不应该选择单向增加或者减少的字段作为片键<br>
+因为如果取值是单向增加或者减少的, 那么就会出现可能出现的最小值数据段或者最大值数据段保存的数据过多,<br>
+对应的分片服务器压力过大</p>
+<p>2.片键选择技巧<br>
+2.1如果片键字段取值范围不够广, 那么我们可以使用复合片键<br>
+2.2如果片键字段的取值不够平衡, 那么我们可以使用复合片键<br>
+2.3如果片键字段的取值是单向增加或减少的, 那么我们可以使用片键字段的哈希值</p>
+<p>3.片键注意点<br>
+片键一旦选择就不能更改, 所以在前期选择片键时一定要多动脑</p>
+<p>1.数据段分裂<br>
+分片的主要目的就是将数据分配到不同的服务器中保存,<br>
+提升服务器的容量, 让数据更加的均衡, 更有效的降低服务器的压力<br>
+但是随着时间推移, 某些数据段中保存的数据会越来越多,<br>
+所以为了保证个分片均衡, 当某个数据段数据过多或体积过大的时候,<br>
+系统就会自动在下一次操作这个数据段时(新增/更新), 将一个大的数据段分裂成多个小的数据段</p>
+<p>3.分片平衡<br>
+除了当某个数据段数据过多或体积过大的时候会自动对数据段进行分裂以外<br>
+当各分片服务器上保存的数据段之间数量相差较大时, 还会自动触发分片服务器数据段迁移<br>
+在MongoDB中后台会自动运行一个’集群平衡器’来负责监视分片的平衡和调整分片的平衡</p>
+<p>1.分片查询注意事项<br>
+1.1用户的请求会发送给mongos路由服务器,<br>
+路由服务器会根据查询条件去配置服务器查询对应的数据段和属于哪个分片服务器<br>
+1.2如果用户查询的条件是分片片键字段,<br>
+那么路由服务器会返回保存在那一台分片服务器上, 路由服务器就会去对应的分片服务器获取数据,<br>
+并将取到的数据返回给用户<br>
+1.3如果用户查询的条件不是分片片键字段,<br>
+那么配置服务器无法告知路由服务器数据保存在哪一个分片服务器上<br>
+路由服务器会把请求发送到所有的分片服务器上, 然后再将查询到的数据汇总后返回给用户</p>
+<p>1.分片集群搭建<br>
+1.1搭建配置服务器复制集<br>
+- 早期版本的配置服务器只要一台即可<br>
+- 最新版本MongoDB要求配置服务器必须是一个复制集<br>
+1.2搭建分片服务器复制集<br>
+- 用于保存数据的多台电脑<br>
+1.3搭建路由服务器<br>
+- 用于建立配置服务器和分片服务器之间的关系</p>
+<p>1.搭建配置服务器集群<br>
+1.1编写配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 数据保存到哪</span><br><span class="line">storage:</span><br><span class="line">  dbPath: D:\Developer\MongoDB666\mongodb-config-27018\data</span><br><span class="line">  journal:</span><br><span class="line">    enabled: true</span><br><span class="line">#  engine:</span><br><span class="line">#  mmapv1:</span><br><span class="line">#  wiredTiger:</span><br><span class="line"># 日志保存到哪</span><br><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  logAppend: true</span><br><span class="line">  path:  D:\Developer\MongoDB666\mongodb-config-27018\log\mongod.log</span><br><span class="line"># 绑定的IP和端口号</span><br><span class="line">net:</span><br><span class="line">  port: 27018</span><br><span class="line">  bindIp: 127.0.0.1</span><br><span class="line"># 复制集名称</span><br><span class="line">replication:</span><br><span class="line">  replSetName: &#x27;it666&#x27;</span><br><span class="line"># 复制集的作用</span><br><span class="line">sharding:</span><br><span class="line">  clusterRole: configsvr</span><br></pre></td></tr></table></figure>
+<p>1.2注册MongoDB服务<br>
+管理员权限运行终端, 执行如下指令<br>
+mongod --config D:\Developer\MongoDB666\mongodb-config-27018\bin\mongo.config --serviceName “MongoDB27018” --serviceDisplayName “MongoDB27018”  --install<br>
+mongod --config D:\Developer\MongoDB666\mongodb-config-27019\bin\mongo.config --serviceName “MongoDB27019” --serviceDisplayName “MongoDB27019”  --install<br>
+mongod --config D:\Developer\MongoDB666\mongodb-config-27020\bin\mongo.config --serviceName “MongoDB27020” --serviceDisplayName “MongoDB27020”  --install<br>
+在任务管理器中开启任务<br>
+1.3测试服务可用性<br>
+mongo --host 127.0.0.1 --port 27018<br>
+mongo --host 127.0.0.1 --port 27019<br>
+mongo --host 127.0.0.1 --port 27020<br>
+1.4添加复制集<br>
+rs.initiate({<br>
+_id: ‘it666’,<br>
+configsvr: true,<br>
+members: [<br>
+{_id: 0, host: ‘127.0.0.1:27018’},<br>
+{_id: 1, host: ‘127.0.0.1:27019’},<br>
+{_id: 2, host: ‘127.0.0.1:27020’}]<br>
+})</p>
+<p>2.搭建分片服务器集群<br>
+2.1编写配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 数据保存到哪</span><br><span class="line">storage:</span><br><span class="line">  dbPath: D:\Developer\MongoDB666\mongodb-shard-27021\data</span><br><span class="line">  journal:</span><br><span class="line">    enabled: true</span><br><span class="line">#  engine:</span><br><span class="line">#  mmapv1:</span><br><span class="line">#  wiredTiger:</span><br><span class="line"># 日志保存到哪</span><br><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  logAppend: true</span><br><span class="line">  path:  D:\Developer\MongoDB666\mongodb-shard-27021\log\mongod.log</span><br><span class="line"># 绑定的IP和端口号</span><br><span class="line">net:</span><br><span class="line">  port: 27021</span><br><span class="line">  bindIp: 127.0.0.1</span><br><span class="line"># 复制集名称</span><br><span class="line">replication:</span><br><span class="line">  replSetName: &#x27;itzb&#x27;</span><br><span class="line"># 复制集的作用</span><br><span class="line">sharding:</span><br><span class="line">    clusterRole: shardsvr</span><br></pre></td></tr></table></figure>
+<p>2.2注册MongoDB服务<br>
+管理员权限运行终端, 执行如下指令<br>
+mongod --config D:\Developer\MongoDB666\mongodb-shard-27021\bin\mongo.config --serviceName “MongoDB27021” --serviceDisplayName “MongoDB27021”  --install<br>
+mongod --config D:\Developer\MongoDB666\mongodb-shard-27022\bin\mongo.config --serviceName “MongoDB27022” --serviceDisplayName “MongoDB27022”  --install<br>
+mongod --config D:\Developer\MongoDB666\mongodb-shard-27023\bin\mongo.config --serviceName “MongoDB27023” --serviceDisplayName “MongoDB27023”  --install<br>
+在任务管理器中开启任务</p>
+<p>2.3测试服务可用性<br>
+mongo --host 127.0.0.1 --port 27021<br>
+mongo --host 127.0.0.1 --port 27022<br>
+mongo --host 127.0.0.1 --port 27023</p>
+<p>2.4添加复制集<br>
+rs.initiate({<br>
+_id: ‘itzb’,<br>
+members: [<br>
+{_id: 0, host: ‘127.0.0.1:27021’},<br>
+{_id: 1, host: ‘127.0.0.1:27022’},<br>
+{_id: 2, host: ‘127.0.0.1:27023’}]<br>
+})</p>
+<p>3.搭建路由服务器<br>
+3.1编写配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 日志保存到哪</span><br><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  logAppend: true</span><br><span class="line">  path:  D:\Developer\MongoDB666\mongodb-router-27024\log\mongod.log</span><br><span class="line"># 绑定的IP和端口号</span><br><span class="line">net:</span><br><span class="line">  port: 27024</span><br><span class="line">  bindIp: 127.0.0.1</span><br><span class="line"># 配置服务器地址</span><br><span class="line">sharding:</span><br><span class="line">  configDB: it666/127.0.0.1:27018,127.0.0.1:27019,127.0.0.1:27020</span><br></pre></td></tr></table></figure>
+<p>3.2注册MongoDB服务<br>
+管理员权限运行终端, 执行如下指令<br>
+mongos  --config D:\Developer\MongoDB666\mongodb-router-27024\bin\mongo.config --serviceName “MongoDB27024” --serviceDisplayName “MongoDB27024”  --install<br>
+在任务管理器中开启任务</p>
+<p>3.3测试服务可用性<br>
+mongo --host 127.0.0.1 --port 27024</p>
+<p>3.4添加分片服务器<br>
+sh.addShard( “itzb/127.0.0.1:27021”)<br>
+sh.addShard( “itzb/127.0.0.1:27022”)<br>
+sh.addShard( “itzb/127.0.0.1:27023”)</p>
+<p>3.5给指定数据库开启分片<br>
+sh.enableSharding(“demo”)</p>
+<p>3.6指定分片片键<br>
+sh.shardCollection(“demo.user”,{‘age’:1})<br>
+sh.shardCollection(“demo.user”,{‘name’:hashed})</p>
 
       
     </div>
@@ -1101,7 +1625,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">105</span>
+                <span class="site-state-item-count">106</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
