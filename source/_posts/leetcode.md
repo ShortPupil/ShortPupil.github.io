@@ -1,9 +1,9 @@
 ---
 title: 算法题整理
-tags:
-  - leetcode
 copyright: true
-categories: 题目
+tags:
+  - algorithm
+categories: 算法
 abbrlink: dabc0faf
 date: 2019-04-23 21:23:24
 ---
