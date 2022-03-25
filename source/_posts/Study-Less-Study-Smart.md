@@ -8,7 +8,7 @@ abbrlink: 9bea2a94
 date: 2022-03-17 22:32:00
 ---
 
-<!-- toc -->
+
 
 学习内容：[Marty Lobdell - Study Less Study Smart - YouTube](https://www.youtube.com/watch?v=IlU-zDU6aQ0)
 
