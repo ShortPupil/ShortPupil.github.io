@@ -2,6 +2,7 @@
 title: 查询性能优化——《高性能MySQL》第六章
 tags:
   - mysql
+  - booknote
 copyright: true
 categories: 数据库
 abbrlink: ce4af811
