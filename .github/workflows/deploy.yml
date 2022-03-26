@@ -30,7 +30,7 @@ jobs:
       id: deploy
       uses: sma11black/hexo-action@v1.0.3
       with:
-        deploy_key: ${{ secrets.my_key }} # 此处则为secrets中设置的ssh私钥，如命名为DEPLOY_KEY则无需更改
+        deploy_key: ${{ secrets.MY_KEY }} # 此处则为secrets中设置的ssh私钥，如命名为DEPLOY_KEY则无需更改
         user_name: ShortPupil  # (or delete this input setting to use bot account)
         user_email: zzh2625@gmail.com  # (or delete this input setting to use bot account)
         commit_msg: ${{ github.event.head_commit.message }}  # (or delete this input setting to use hexo default settings)
