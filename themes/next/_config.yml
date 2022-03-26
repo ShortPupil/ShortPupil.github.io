@@ -96,9 +96,10 @@ scheme: Mist
 social:
   #LinkLabel: Link
   GitHub: https://github.com/ShortPupil
-  E-Mail: mailto:zzh2625@Gmail.com
   LeetCode NoteBook: https://concrete-beluga-2fd.notion.site/7c8a217dc8604ca2a1234e220c0064b0?v=45ee7b82e086404a8194506884dfd376
+  E-Mail: mailto:zzh2625@Gmail.com
   Weibo: https://weibo.com/3229275825/
+  Douban: https://www.douban.com/people/200367416/
 
 # Social Links Icons
 # Icon Mapping:
@@ -123,6 +124,7 @@ social_icons:
   StackOverflow: stack-overflow
   Weibo: weibo
   LeetCode NoteBook: code
+  Douban: book
   QQ: qq
 
 # Blog rolls
