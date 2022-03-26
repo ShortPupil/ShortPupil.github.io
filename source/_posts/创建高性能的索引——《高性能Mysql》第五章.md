@@ -2,6 +2,7 @@
 title: 高性能索引策略——《高性能MySQL》第五章
 tags:
   - mysql
+  - booknote
 copyright: true
 categories: 数据库
 abbrlink: 56a6a98a
