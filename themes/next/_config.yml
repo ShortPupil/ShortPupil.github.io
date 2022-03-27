@@ -16,7 +16,7 @@ rss: /atom.xml
 since: 2018
 
 # icon between year and author @Footer
-authoricon: snowflake-o
+authoricon: tree
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true

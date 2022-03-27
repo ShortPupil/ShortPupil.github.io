@@ -1,3 +1,4 @@
+
 <div class="copyright" >
   {% set current = date(Date.now(), "YYYY") %}
   &copy; {% if theme.since and theme.since != current %} {{ theme.since }} - {% endif %}
@@ -22,8 +23,8 @@
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+" d ";
+        document.getElementById("times").innerHTML = hnum + " h " + mnum + " m " + snum + " s";
     }
 setInterval("createtime()",250);
 document.write("<br>")
@@ -44,10 +45,13 @@ document.write("<br>")
 <div>
 {% endif %}
 
+<span class="with-love"><i class="fa fa-eye"></i></span>
 <span id="busuanzi_container_site_pv">
-    本站总访问量 <span id="busuanzi_value_site_pv"></span>次
+      <span id="busuanzi_value_site_pv"></span>
 </span>
 <span class="post-meta-divider">|</span>
+<span class="with-love"><i class="fa fa-user"></i></span>
 <span id="busuanzi_container_site_uv">
-  本站访客数 <span id="busuanzi_value_site_uv"></span>人次
+       <span id="busuanzi_value_site_uv"></span>
 </span>
+
