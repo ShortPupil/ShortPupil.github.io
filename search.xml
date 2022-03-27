@@ -2993,7 +2993,7 @@ S 删除光标所在行</li>
 <p>综上所述，我们讨论了单库中表太多的缺陷，再去结合日常的工作实践来说，建议大家在一<strong>个库中创建的表数量不 要超过 200</strong>。更常见的情况是，<strong>一个库中只维护几十到 100 张表</strong></p>
 <h2 id="24-表设计规范">2.4 表设计规范</h2>
 <h3 id="241-范式-反范式的选择">2.4.1 范式、反范式的选择</h3>
-<p>[控制冗余的反范式模式 | 毫末室 (<a href="http://songzi.info">songzi.info</a>)]</p>
+<p><a href="https://songzi.info/post/1a233e39/">控制冗余的反范式模式 | 毫末室 (songzi.info)</a></p>
 <ul>
 <li>
 <p>范式：核心思想是数据只出现一次，不存在信息冗余。</p>
@@ -4288,7 +4288,7 @@ lower_case_table_names = 1时，mysql会先把表名转为小写，再执行操�
 <p>处理器为提高运算速度而做出<strong>违背代码原有顺序的优化</strong>。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 源代码</span></span><br><span class="line">a = <span class="number">10</span>;</span><br><span class="line">b = <span class="number">200</span>;</span><br><span class="line">result = a*b;</span><br><span class="line"><span class="comment">// 优化可能</span></span><br><span class="line">a = <span class="number">10</span>; b = <span class="number">200</span>; result = a*b;</span><br><span class="line">b = <span class="number">200</span>; a = <span class="number">10</span>; result = a*b;</span><br></pre></td></tr></table></figure>
 <h2 id="2-java内存模型-java-memory-mode-jmm">2. JAVA内存模型 (Java Memory Mode, JMM)</h2>
-<p>可参考[JVM学习 | 毫末室 (<a href="http://songzi.info">songzi.info</a>)]</p>
+<p>可参考<a href="https://songzi.info/post/f0242a65/">JVM学习 | 毫末室 (songzi.info)</a></p>
 <p><strong>需要重新学习</strong></p>
 <h2 id="3-并发的优势和风险">3. 并发的优势和风险</h2>
 <p>优势：</p>
