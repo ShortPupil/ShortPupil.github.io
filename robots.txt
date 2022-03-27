@@ -9,5 +9,5 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
-Sitemap: http://songzi2693.cn/sitemap.xml
-Sitemap: http://songzi2693.cn/baidusitemap.xml
+Sitemap: http://songzi.info/sitemap.xml
+Sitemap: http://songzi.info/baidusitemap.xml

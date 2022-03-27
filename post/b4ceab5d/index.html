@@ -132,7 +132,7 @@
 <meta name="description" content="目录 了解hibernate的底层实现对于使用还是很重要的 今天有个用hibernate进行查询出了不少错误，问题在于没有理解其持久状态和事务机制 1. 三种状态 1.1 临时状态(Transient) 当new一个实体对象后, 这个对象处于临时状态, 即这个对象只是一个保存临时数据的内存区域, 如果没有变量引用这个对象, 则会被jre垃圾回收机制回收. 这个对象所保存的数据与数据库没有任何关系,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate的三种状态、事务机制、缓存懒加载">
-<meta property="og:url" content="https://songzi2693.cn/post/b4ceab5d/index.html">
+<meta property="og:url" content="https://songzi.info/post/b4ceab5d/index.html">
 <meta property="og:site_name" content="毫末室">
 <meta property="og:description" content="目录 了解hibernate的底层实现对于使用还是很重要的 今天有个用hibernate进行查询出了不少错误，问题在于没有理解其持久状态和事务机制 1. 三种状态 1.1 临时状态(Transient) 当new一个实体对象后, 这个对象处于临时状态, 即这个对象只是一个保存临时数据的内存区域, 如果没有变量引用这个对象, 则会被jre垃圾回收机制回收. 这个对象所保存的数据与数据库没有任何关系,">
 <meta property="og:locale" content="zh_CN">
@@ -169,7 +169,7 @@
 
 
 
-  <link rel="canonical" href="https://songzi2693.cn/post/b4ceab5d/"/>
+  <link rel="canonical" href="https://songzi.info/post/b4ceab5d/"/>
 
 
 
@@ -198,7 +198,7 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"></head>
 
 <script type="text/javascript">
-    var host = "songzi2693.cn";
+    var host = "songzi.info";
     if ((host == window.location.host) \
 		&&(window.location.protocol != "https:"))
         window.location.protocol = "https";
@@ -374,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/b4ceab5d/">
+    <link itemprop="mainEntityOfPage" href="https://songzi.info/post/b4ceab5d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="松子">
@@ -642,8 +642,8 @@
   <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
   <p><span>发布时间:</span>2018年10月29日 - 23:10</p>
   <p><span>最后更新:</span>2022年03月26日 - 02:03</p>
-  <p><span>博文链接:</span><a href="/post/b4ceab5d/" title="Hibernate的三种状态、事务机制、缓存懒加载">https://songzi2693.cn/post/b4ceab5d/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/post/b4ceab5d/"  aria-label="复制成功！"></i></span>
+  <p><span>博文链接:</span><a href="/post/b4ceab5d/" title="Hibernate的三种状态、事务机制、缓存懒加载">https://songzi.info/post/b4ceab5d/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi.info/post/b4ceab5d/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
 </div>
@@ -752,7 +752,7 @@
                 // data: 一个 DOMString表示要添加到 drag object的数据。
                 var url = window.location.href;
                 var copyright = '\n\n'
-                                + '\n来源：毫末室 (songzi2693.cn)'
+                                + '\n来源：毫末室 (songzi.info)'
                                 + '\n作者：松子'
                                 + '\n链接：' + url
                                 + '\n转载请保留原文链接及作者。';
@@ -826,7 +826,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">108</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -837,7 +837,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -848,7 +848,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

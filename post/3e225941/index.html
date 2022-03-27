@@ -132,13 +132,13 @@
 <meta name="description" content="一、 概念   并发： 多个线程操作相同的资源，保证线程安全，合理使用资源 同时拥有两个或者多个线程，如果程序在单核处理器上运行，多个线程将交替地换入或者换出内存，这些线程是同时“存在”的，每个线程都处于执行过程中的某个状态，如果运行在多核处理器上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行   高并发：  服务能同时处理很多请求，提高程序性能 高并发(High Concur">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java并发编程">
-<meta property="og:url" content="https://songzi2693.cn/post/3e225941/index.html">
+<meta property="og:url" content="https://songzi.info/post/3e225941/index.html">
 <meta property="og:site_name" content="毫末室">
 <meta property="og:description" content="一、 概念   并发： 多个线程操作相同的资源，保证线程安全，合理使用资源 同时拥有两个或者多个线程，如果程序在单核处理器上运行，多个线程将交替地换入或者换出内存，这些线程是同时“存在”的，每个线程都处于执行过程中的某个状态，如果运行在多核处理器上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行   高并发：  服务能同时处理很多请求，提高程序性能 高并发(High Concur">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/ringbuffer.PNG">
 <meta property="article:published_time" content="2020-03-01T05:19:06.000Z">
-<meta property="article:modified_time" content="2022-03-25T18:50:28.459Z">
+<meta property="article:modified_time" content="2022-03-27T11:34:48.436Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -171,7 +171,7 @@
 
 
 
-  <link rel="canonical" href="https://songzi2693.cn/post/3e225941/"/>
+  <link rel="canonical" href="https://songzi.info/post/3e225941/"/>
 
 
 
@@ -200,7 +200,7 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"></head>
 
 <script type="text/javascript">
-    var host = "songzi2693.cn";
+    var host = "songzi.info";
     if ((host == window.location.host) \
 		&&(window.location.protocol != "https:"))
         window.location.protocol = "https";
@@ -376,7 +376,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/3e225941/">
+    <link itemprop="mainEntityOfPage" href="https://songzi.info/post/3e225941/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="松子">
@@ -558,7 +558,7 @@
 <p>处理器为提高运算速度而做出<strong>违背代码原有顺序的优化</strong>。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 源代码</span></span><br><span class="line">a = <span class="number">10</span>;</span><br><span class="line">b = <span class="number">200</span>;</span><br><span class="line">result = a*b;</span><br><span class="line"><span class="comment">// 优化可能</span></span><br><span class="line">a = <span class="number">10</span>; b = <span class="number">200</span>; result = a*b;</span><br><span class="line">b = <span class="number">200</span>; a = <span class="number">10</span>; result = a*b;</span><br></pre></td></tr></table></figure>
 <h2 id="2-java内存模型-java-memory-mode-jmm">2. JAVA内存模型 (Java Memory Mode, JMM)</h2>
-<p>可参考<a href="https://songzi2693.cn/2020/12/08/JVM%E5%AD%A6%E4%B9%A0/">JVM学习 | 毫末室 (songzi2693.cn)</a></p>
+<p>可参考[JVM学习 | 毫末室 (<a href="http://songzi.info">songzi.info</a>)]</p>
 <p><strong>需要重新学习</strong></p>
 <h2 id="3-并发的优势和风险">3. 并发的优势和风险</h2>
 <p>优势：</p>
@@ -618,9 +618,9 @@
   <p><span>本文标题:</span><a href="/post/3e225941/">Java并发编程</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
   <p><span>发布时间:</span>2020年03月01日 - 13:03</p>
-  <p><span>最后更新:</span>2022年03月26日 - 02:03</p>
-  <p><span>博文链接:</span><a href="/post/3e225941/" title="Java并发编程">https://songzi2693.cn/post/3e225941/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi2693.cn/post/3e225941/"  aria-label="复制成功！"></i></span>
+  <p><span>最后更新:</span>2022年03月27日 - 19:03</p>
+  <p><span>博文链接:</span><a href="/post/3e225941/" title="Java并发编程">https://songzi.info/post/3e225941/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi.info/post/3e225941/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
 </div>
@@ -729,7 +729,7 @@
                 // data: 一个 DOMString表示要添加到 drag object的数据。
                 var url = window.location.href;
                 var copyright = '\n\n'
-                                + '\n来源：毫末室 (songzi2693.cn)'
+                                + '\n来源：毫末室 (songzi.info)'
                                 + '\n作者：松子'
                                 + '\n链接：' + url
                                 + '\n转载请保留原文链接及作者。';
@@ -803,7 +803,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">108</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -814,7 +814,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -825,7 +825,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

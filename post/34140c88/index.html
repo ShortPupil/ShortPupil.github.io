@@ -132,7 +132,7 @@
 <meta name="description" content="目录 场景  当我们想要结束一个线程或者关闭jvm的时候，通过此模式可以优雅安全的关闭线程，让线程可以完成它本应完成的当前任务并可以附加一些收尾工作后再进行关闭 此模式下关闭线程会有一定延迟，主要在于被关闭线程需要执行完后，再进行关闭 首先Java jdk中并没有关于安全的直接的停止线程的Api 我知道你想到了Interrupt。Interrupt快速解读传送门 http:&#x2F;&#x2F;blog.csdn.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式(8) 两阶段终止模式 （Two-Phase Termination Patter）">
-<meta property="og:url" content="https://songzi2693.cn/post/34140c88/index.html">
+<meta property="og:url" content="https://songzi.info/post/34140c88/index.html">
 <meta property="og:site_name" content="毫末室">
 <meta property="og:description" content="目录 场景  当我们想要结束一个线程或者关闭jvm的时候，通过此模式可以优雅安全的关闭线程，让线程可以完成它本应完成的当前任务并可以附加一些收尾工作后再进行关闭 此模式下关闭线程会有一定延迟，主要在于被关闭线程需要执行完后，再进行关闭 首先Java jdk中并没有关于安全的直接的停止线程的Api 我知道你想到了Interrupt。Interrupt快速解读传送门 http:&#x2F;&#x2F;blog.csdn.">
 <meta property="og:locale" content="zh_CN">
@@ -169,7 +169,7 @@
 
 
 
-  <link rel="canonical" href="https://songzi2693.cn/post/34140c88/"/>
+  <link rel="canonical" href="https://songzi.info/post/34140c88/"/>
 
 
 
@@ -198,7 +198,7 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"></head>
 
 <script type="text/javascript">
-    var host = "songzi2693.cn";
+    var host = "songzi.info";
     if ((host == window.location.host) \
 		&&(window.location.protocol != "https:"))
         window.location.protocol = "https";
@@ -374,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://songzi2693.cn/post/34140c88/">
+    <link itemprop="mainEntityOfPage" href="https://songzi.info/post/34140c88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="松子">
@@ -644,7 +644,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">108</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -655,7 +655,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -666,7 +666,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
