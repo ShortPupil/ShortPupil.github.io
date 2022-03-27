@@ -77,7 +77,7 @@ b = 200; a = 10; result = a*b;
 
 ## 2. JAVA内存模型 (Java Memory Mode, JMM)
 
-可参考[JVM学习 | 毫末室 (songzi2693.cn)](https://songzi2693.cn/2020/12/08/JVM学习/)
+可参考[JVM学习 | 毫末室 (songzi.info)]
 
 **需要重新学习**
 

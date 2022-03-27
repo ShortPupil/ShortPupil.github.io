@@ -13,7 +13,7 @@
 </head>
 
 <script type="text/javascript">
-    var host = "songzi2693.cn";
+    var host = "songzi.info";
     if ((host == window.location.host) \
 		&&(window.location.protocol != "https:"))
         window.location.protocol = "https";

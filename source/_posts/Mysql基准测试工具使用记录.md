@@ -29,17 +29,17 @@ date: 2018-12-11 19:30:20
 对本站点进行测试
 
 ```powershell
-H:\apache_ab\Apache24\bin>ab -n 100 -c 10 http://songzi2693.cn/s
+H:\apache_ab\Apache24\bin>ab -n 100 -c 10 http://songzi.info/s
 This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
-Benchmarking songzi2693.cn (be patient).....done
+Benchmarking songzi.info (be patient).....done
 
 ## 服务器软件
 Server Software:        GitHub.com
 ## 站点名
-Server Hostname:        songzi2693.cn
+Server Hostname:        songzi.info
 ## 端口
 Server Port:            80
 

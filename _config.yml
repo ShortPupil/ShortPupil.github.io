@@ -15,13 +15,13 @@ avatar: /uploads/avatar.jpg
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-# url: https://songzi2693.cn
+# url: https://songzi.info
 # root: /
 # permalink: /:year/:month/:day/:title/
 # permalink_defaults:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url:  https://songzi2693.cn/       #替换为你自己的链接
+url:  https://songzi.info/       #替换为你自己的链接
 root: /
 permalink: post/:abbrlink/     #这里就是永久链接的参数设置
 permalink_defaults:

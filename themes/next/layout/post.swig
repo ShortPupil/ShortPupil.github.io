@@ -46,7 +46,7 @@
                 // data: 一个 DOMString表示要添加到 drag object的数据。
                 var url = window.location.href;
                 var copyright = '\n\n'
-                                + '\n来源：毫末室 (songzi2693.cn)'
+                                + '\n来源：毫末室 (songzi.info)'
                                 + '\n作者：松子'
                                 + '\n链接：' + url
                                 + '\n转载请保留原文链接及作者。';
