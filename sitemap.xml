@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://songzi2693.cn/post/f236dd28/</loc>
+    
+    <lastmod>2022-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://songzi2693.cn/post/63d5ed22/</loc>
     
     <lastmod>2022-03-27</lastmod>
@@ -1367,6 +1376,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://songzi2693.cn/tags/design/</loc>
+    <lastmod>2022-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -1595,6 +1611,13 @@
   
   <url>
     <loc>https://songzi2693.cn/categories/%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2022-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://songzi2693.cn/categories/%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2022-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

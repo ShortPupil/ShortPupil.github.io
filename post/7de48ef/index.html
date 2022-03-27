@@ -1447,7 +1447,7 @@ lower_case_table_names = 1时，mysql会先把表名转为小写，再执行操�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-count">109</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1458,7 +1458,7 @@ lower_case_table_names = 1时，mysql会先把表名转为小写，再执行操�
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1469,7 +1469,7 @@ lower_case_table_names = 1时，mysql会先把表名转为小写，再执行操�
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1590,12 +1590,13 @@ lower_case_table_names = 1时，mysql会先把表名转为小写，再执行操�
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        
+<div class="copyright" >
   
   &copy;  2018 - 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
-    <i class="fa fa-snowflake-o"></i>
+    <i class="fa fa-tree"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">松子</span>
 </div>
@@ -1614,8 +1615,8 @@ lower_case_table_names = 1时，mysql会先把表名转为小写，再执行操�
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+" d ";
+        document.getElementById("times").innerHTML = hnum + " h " + mnum + " m " + snum + " s";
     }
 setInterval("createtime()",250);
 document.write("<br>")
@@ -1636,13 +1637,16 @@ document.write("<br>")
 <div>
 
 
+<span class="with-love"><i class="fa fa-eye"></i></span>
 <span id="busuanzi_container_site_pv">
-    本站总访问量 <span id="busuanzi_value_site_pv"></span>次
+      <span id="busuanzi_value_site_pv"></span>
 </span>
 <span class="post-meta-divider">|</span>
+<span class="with-love"><i class="fa fa-user"></i></span>
 <span id="busuanzi_container_site_uv">
-  本站访客数 <span id="busuanzi_value_site_uv"></span>人次
+       <span id="busuanzi_value_site_uv"></span>
 </span>
+
 
         
 <div class="busuanzi-count">
