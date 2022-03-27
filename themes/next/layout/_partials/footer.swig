@@ -1,3 +1,7 @@
+<!-- require JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- require pjax -->
+<script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
 
 <div class="copyright" >
   {% set current = date(Date.now(), "YYYY") %}
@@ -23,8 +27,8 @@
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+" d ";
-        document.getElementById("times").innerHTML = hnum + " h " + mnum + " m " + snum + " s";
+        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+"d ";
+        document.getElementById("times").innerHTML = hnum + "h " + mnum + "m " + snum + "s";
     }
 setInterval("createtime()",250);
 document.write("<br>")
