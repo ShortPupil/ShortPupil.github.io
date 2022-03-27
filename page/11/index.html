@@ -371,7 +371,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://songzi.info/post/95bb5ff7/">
+    <link itemprop="mainEntityOfPage" href="https://songzi.info/post/5f43b32a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="松子">
@@ -390,7 +390,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/95bb5ff7/" itemprop="url">索引各类型创建</a></h2>
+                <a class="post-title-link" href="/post/5f43b32a/" itemprop="url">索引优化注意点——为什么我的索引没有用</a></h2>
         
 
         <div class="post-meta">
@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  4.8k
+                  4.5k
                 </span>
               
 
@@ -497,14 +497,16 @@
       
         
           
-          1. 普通索引
-基本索引
-创建方法
-12345678#标准语句： ALTER TABLE table_name ADD INDEX index_name (column_list) CREATE IN
+          一些网上找到的经验之谈。
+建立索引的几大原则
+最左前缀匹配
+最重要的大原则
+具体可见mysql索引使用策略和优化
+mysql会一直向右匹配直到遇到范围查询(&gt;、&lt;、between、like
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/95bb5ff7/#more" rel="contents">
+            <a class="btn" href="/post/5f43b32a/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2061,7 +2063,11 @@ Ch4 Linux字符界面操作 重点
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        
+        <!-- require JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- require pjax -->
+<script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+
 <div class="copyright" >
   
   &copy;  2018 - 
@@ -2086,8 +2092,8 @@ Ch4 Linux字符界面操作 重点
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+" d ";
-        document.getElementById("times").innerHTML = hnum + " h " + mnum + " m " + snum + " s";
+        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+"d ";
+        document.getElementById("times").innerHTML = hnum + "h " + mnum + "m " + snum + "s";
     }
 setInterval("createtime()",250);
 document.write("<br>")

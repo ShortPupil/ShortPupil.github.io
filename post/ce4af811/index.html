@@ -129,12 +129,12 @@
 
 
 
-<meta name="description" content="前言 关于时间数据库优化，最重要的目标是时间，最大的敌人也是时间。 套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。 1. 为什么查询速度会慢查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调用需要在">
+<meta name="description" content="前言 关于时间 数据库优化，最重要的目标是时间，最大的敌人也是时间。 套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。 1. 为什么查询速度会慢 查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调用需">
 <meta property="og:type" content="article">
 <meta property="og:title" content="查询性能优化——《高性能MySQL》第六章">
 <meta property="og:url" content="https://songzi.info/post/ce4af811/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="前言 关于时间数据库优化，最重要的目标是时间，最大的敌人也是时间。 套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。 1. 为什么查询速度会慢查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调用需要在">
+<meta property="og:description" content="前言 关于时间 数据库优化，最重要的目标是时间，最大的敌人也是时间。 套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。 1. 为什么查询速度会慢 查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调用需">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-10-31T02:15:24.000Z">
 <meta property="article:modified_time" content="2022-03-26T15:27:14.409Z">
@@ -460,7 +460,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  2.4k
+                  1.5k
                 </span>
               
 
@@ -476,7 +476,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  2 mins.
+                  1 mins.
                 </span>
               
             </div>
@@ -497,27 +497,41 @@
       
 
       
-        <h1 id="前言-关于时间"><a href="#前言-关于时间" class="headerlink" title="前言 关于时间"></a>前言 关于时间</h1><p>数据库优化，最重要的目标是时间，最大的敌人也是时间。</p>
+        <h1 id="前言-关于时间">前言 关于时间</h1>
+<p>数据库优化，最重要的目标是时间，最大的敌人也是时间。</p>
 <p>套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是<strong>查询优化</strong>、<strong>索引优化</strong>、<strong>库表结构优化</strong>。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。</p>
-<h1 id="1-为什么查询速度会慢"><a href="#1-为什么查询速度会慢" class="headerlink" title="1. 为什么查询速度会慢"></a>1. 为什么查询速度会慢</h1><p>查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是<strong>向底层存储引擎检索数据的调用</strong>操作，这些调用需要在内存操作、CPU操作和内存不足时导致的I/O操作上消耗时间。可能会产生<strong>大量的上下文切换以及系统调用</strong>。</p>
+<h1 id="1-为什么查询速度会慢">1. 为什么查询速度会慢</h1>
+<p>查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是<strong>向底层存储引擎检索数据的调用</strong>操作，这些调用需要在内存操作、CPU操作和内存不足时导致的I/O操作上消耗时间。可能会产生<strong>大量的上下文切换以及系统调用</strong>。</p>
 <p>不必要的额外操作、某些操作被额外地重复了很多次、某次操作执行得太慢等。优化查询的目的就是<strong>减少和消除这些操作花费时间</strong>。</p>
-<h1 id="2-慢查询基础优化数据访问"><a href="#2-慢查询基础：优化数据访问" class="headerlink" title="2. 慢查询基础：优化数据访问"></a>2. 慢查询基础：优化数据访问</h1><p>基础：大部分性能低下的查询都可以通过<strong>减少访问的数据量的方式</strong>进行优化。</p>
+<h1 id="2-慢查询基础优化数据访问">2. 慢查询基础：优化数据访问</h1>
+<p>基础：大部分性能低下的查询都可以通过<strong>减少访问的数据量的方式</strong>进行优化。</p>
 <p>有效的两步：</p>
 <ul>
 <li>确认application是否在检索大量超过需要的数据</li>
 <li>确认MySQL server是否在分析大量超过需要的数据行</li>
 </ul>
-<h2 id="21-是否向数据库请求了不需要的数据"><a href="#2-1-是否向数据库请求了不需要的数据" class="headerlink" title="2.1 是否向数据库请求了不需要的数据"></a>2.1 是否向数据库请求了不需要的数据</h2><h3 id="错误案例尽量避免"><a href="#错误案例，尽量避免" class="headerlink" title="错误案例，尽量避免"></a>错误案例，尽量避免</h3><h4 id="查询不需要的记录"><a href="#查询不需要的记录" class="headerlink" title="查询不需要的记录"></a>查询不需要的记录</h4><p>Mysql会先返回全部结果集再进行计算</p>
-<h4 id="多表关联时返回全部列"><a href="#多表关联时返回全部列" class="headerlink" title="多表关联时返回全部列"></a>多表关联时返回全部列</h4><h4 id="总是取出全部列"><a href="#总是取出全部列" class="headerlink" title="总是取出全部列"></a>总是取出全部列</h4><p>（想起了索引作业返回所有列）取出全部列，会<strong>让优化器无法完成索引覆盖扫描这类优化</strong>！还会<strong>为服务器带来额外的I/O、内存、CPU的消耗</strong>。</p>
+<h2 id="21-是否向数据库请求了不需要的数据">2.1 是否向数据库请求了不需要的数据</h2>
+<h3 id="错误案例尽量避免">错误案例，尽量避免</h3>
+<h4 id="查询不需要的记录">查询不需要的记录</h4>
+<p>Mysql会先返回全部结果集再进行计算</p>
+<h4 id="多表关联时返回全部列">多表关联时返回全部列</h4>
+<h4 id="总是取出全部列">总是取出全部列</h4>
+<p>（想起了索引作业返回所有列）取出全部列，会<strong>让优化器无法完成索引覆盖扫描这类优化</strong>！还会<strong>为服务器带来额外的I/O、内存、CPU的消耗</strong>。</p>
 <p>注：虽然会浪费数据库资源，但有时候可以简化开发，提高代码复用性。但要注意使用缓存机制。</p>
-<h4 id="重复查询相同的数据"><a href="#重复查询相同的数据。" class="headerlink" title="重复查询相同的数据。"></a>重复查询相同的数据。</h4><p>注意利用缓存。（查询缓存之后之后要看看）</p>
-<h2 id="22-mysql是否在扫描额外的记录"><a href="#2-2-MySQL是否在扫描额外的记录" class="headerlink" title="2.2 MySQL是否在扫描额外的记录"></a>2.2 MySQL是否在扫描额外的记录</h2><h3 id="简单的衡量查询开销的三个指标"><a href="#简单的衡量查询开销的三个指标" class="headerlink" title="简单的衡量查询开销的三个指标"></a>简单的衡量查询开销的三个指标</h3><h4 id="响应时间"><a href="#响应时间" class="headerlink" title="响应时间"></a>响应时间</h4><p>包括<strong>服务时间</strong>、<strong>排队时间</strong>之和。</p>
+<h4 id="重复查询相同的数据">重复查询相同的数据。</h4>
+<p>注意利用缓存。（查询缓存之后之后要看看）</p>
+<h2 id="22-mysql是否在扫描额外的记录">2.2 MySQL是否在扫描额外的记录</h2>
+<h3 id="简单的衡量查询开销的三个指标">简单的衡量查询开销的三个指标</h3>
+<h4 id="响应时间">响应时间</h4>
+<p>包括<strong>服务时间</strong>、<strong>排队时间</strong>之和。</p>
 <ul>
 <li>服务时间——数据库处理这个查询真正花了多长时间</li>
 <li>排队时间——服务器因为等待某些资源而没有真正执行查询的时间——可能等I/O操作完成，也可能是等待行锁等。</li>
 </ul>
-<h4 id="扫描的行数和返回的行数"><a href="#扫描的行数和返回的行数" class="headerlink" title="扫描的行数和返回的行数"></a>扫描的行数和返回的行数</h4><p>查看查询扫描的行数是非常有帮助的，在一定程度能够说明该查询找到需要的数据的效率高不高。</p>
-<h3 id="扫描的行数和访问类型"><a href="#扫描的行数和访问类型" class="headerlink" title="扫描的行数和访问类型"></a>扫描的行数和访问类型</h3>
+<h4 id="扫描的行数和返回的行数">扫描的行数和返回的行数</h4>
+<p>查看查询扫描的行数是非常有帮助的，在一定程度能够说明该查询找到需要的数据的效率高不高。</p>
+<h3 id="扫描的行数和访问类型">扫描的行数和访问类型</h3>
+
       
     </div>
     
@@ -866,7 +880,11 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        
+        <!-- require JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- require pjax -->
+<script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+
 <div class="copyright" >
   
   &copy;  2018 - 
@@ -891,8 +909,8 @@
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+" d ";
-        document.getElementById("times").innerHTML = hnum + " h " + mnum + " m " + snum + " s";
+        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+"d ";
+        document.getElementById("times").innerHTML = hnum + "h " + mnum + "m " + snum + "s";
     }
 setInterval("createtime()",250);
 document.write("<br>")

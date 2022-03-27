@@ -137,7 +137,7 @@
 <meta property="og:description" content="前言：本书话题  制定目标的原则 制定目标的种类 如何选择最适合个人情况的目标 最常见的失败原因，以及如何避免  制定具体而艰巨的目标  目标困难化。  把目标在可行的基础上设立得难一点也很重要。你需要用高标准挑战自己，因为挑战能激发斗志一一但与此同时要避免“不可能的任务”。要记得如果标准设置得太低，你虽能达到但不太可能超越一一大多数人达到最初目标后就松懈了。没人会在设定减5磅肉的目标下最终减掉2">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-17T00:01:02.000Z">
-<meta property="article:modified_time" content="2022-03-27T13:09:20.543Z">
+<meta property="article:modified_time" content="2022-03-27T14:23:35.638Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="psychology">
 <meta property="article:tag" content="booknote">
@@ -1048,7 +1048,11 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        
+        <!-- require JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- require pjax -->
+<script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+
 <div class="copyright" >
   
   &copy;  2018 - 
@@ -1073,8 +1077,8 @@
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+" d ";
-        document.getElementById("times").innerHTML = hnum + " h " + mnum + " m " + snum + " s";
+        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+"d ";
+        document.getElementById("times").innerHTML = hnum + "h " + mnum + "m " + snum + "s";
     }
 setInterval("createtime()",250);
 document.write("<br>")
