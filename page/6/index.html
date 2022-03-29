@@ -3,7 +3,7 @@
 
 
 
-<html class="theme-next mist" lang="zh-CN">
+<html class="theme-next muse" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -66,12 +66,6 @@
   
 
   
-    
-      
-    
-
-    
-  
 
   
 
@@ -94,7 +88,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -141,7 +135,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -405,12 +399,32 @@ mjx-container[display="true"] + br {
         </li>
       
         
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            commonweal
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-schedule">
           <a target="_blank" href="https://concrete-beluga-2fd.notion.site/6603cd297e8749a08ef4e76e97c0d736?v=ecbea19e28934c6ab512f267cc30c7c0" rel="section noopener">
             
               <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
             
             schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            sitemap
           </a>
         </li>
       
@@ -613,7 +627,9 @@ mjx-container[display="true"] + br {
 1. SimpleDB体系结构
 Consists of
 
-包含字段、元组、元组架构的类。Classes that represent fields, tuples, and t
+包含字段、元组、元组架构的类。Classes that represent fields, tuples, and tuple schemas;
+将谓词和条件应用于元组的类。Classes that apply predicates and conditions to tuples;
+一种或多种访问方式——将关系存储在磁盘上并提供一种遍历这些关系的元组的方法。One or more access methods (e.g., heap files) that store r
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -802,7 +818,18 @@ Consists of
 国际体系的变迁：宗藩体系——不平等条约体系——国际社会新秩序
 一、传统中国的国际体系：宗藩体系
 1. 宗藩体系的构成
-传统中国的国际关系体系：以中国为圆心，发展出一
+传统中国的国际关系体系：以中国为圆心，发展出一个状似同心圆的体系。
+
+理论基础：天下观
+
+中国本土与周边国家共同构成天下。
+“中国中心主义”：华夏在地域上居天下之中，华夏周边各族“东夷、西戎、南蛮、北狄。”
+天子是天下唯一的最高统治者。统治中国的皇帝称为天子，拥有统治天下的权利，所谓“君天下曰天子”（《礼记·曲礼》）。
+天子只统治天下唯一文明地区中国。
+
+结构：内地（本土）、藩部、属国、天下
+
+藩部，是
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1000,7 +1027,19 @@ Consists of
 
 
 在齐太史简，在晋董狐笔
-《史记齐太公世家》：周灵王
+《史记齐太公世家》：周灵王二十四年，齐庄公六年，春三月乙亥，崔杼弑齐庄公光于其府……齐太史书曰“崔杼弑庄公”，崔杼杀之。其弟复书，崔杼复杀之。少弟复书，崔杼乃舍之。
+
+
+历史是人们对过去事实的认知(技术、方法和立场)。
+
+
+中国抗日战争胜利年纪念日的确定
+
+
+抗日胜利历程
+1945年8月15日，日本宣布投降。
+8月21日，日军代表抵湖南芷江，与中国陆军举行洽降会议。
+9月2日，日本向
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1190,7 +1229,9 @@ Consists of
 四类： 字符串、日期 / 时间、数值以及二进制
 
 字符串类型：以 char、varchar、text 为代表，用于存储字符、字符串数据
-日期 / 时间类型：以
+日期 / 时间类型：以 date、time、datetime、timestamp 为代表，用于存储日期或时间，这种数据类型也是比 较难抉择的
+数值类型：以 tinyint、int、bigint、float、double、decimal 为代表，用于存储整数或小数
+二进制类型：以 tityblob、blob、mediumblob、longblob 为代表，用于存储二进制数据，适用场
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1387,7 +1428,32 @@ MySQL主流分支：MySQL、Percona Server、MariaDB
 MySQL优点：
 
 体积小、速度快
-开源免费，工
+开源免费，工具生态完善
+简单易用，维护成本低
+兼容性好，支持多种操作系统
+提供多种API接口
+支持多种开发语言
+社区及用户活跃
+支持事务、MVCC、易扩展、集群、高可用
+
+
+
+MySQL经常遇到的坑：
+
+flush-Logs导致hang住无法写入数据
+忘记密码
+cache-full
+延迟
+2013
+1064
+死锁
+主键冲突
+掉电
+字符集错误
+删库跑路
+脑裂
+慢查询
+断网
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1577,7 +1643,11 @@ MySQL优点：
 Boosting算法
 Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。
 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。
-大致工
+大致工作机制：
+先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定值。
+AdaBoost算法
+AdaBoost算法工作机制同上。
+对于弱分类器的组合，AdaBoost算法采取加权多数表决的方法——加大分类误差率小的弱分类器的权
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1789,7 +1859,17 @@ T3
 
 
 T4
-{面包
+{面包，牛奶，尿布，可乐}
+
+
+
+关联规则的定义
+两个不相交的非空集合X、Y，如果有X–&gt;Y，就说X–&gt;Y是一条关联规则。例如购买啤酒就一定会购买尿布，可表示为*{啤酒}–&gt;{尿布}*。
+下面两项用于描述关联规则的强度
+支持度 support
+项集{X,Y}在总项集里出现的概率
+$$
+Support(X→Y) = P(X,Y) / P(I) = 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2000,7 +2080,33 @@ T4
 
 
 第六章
-挖掘频繁模式、关联和相关性：
+挖掘频繁模式、关联和相关性：基本概念和方法
+
+
+第八章
+分类：基本概念
+
+
+第十章
+聚类分析：基本概念和方法
+
+
+
+第一章 引论
+1.1 为什么需要数据挖掘
+数据丰富，信息贫乏
+1.2 什么是数据挖掘
+数据挖掘 = 数据中的知识发现（KDD） or  知识发现过程的一个基本步骤
+由以下迭代序列组成
+
+
+数据清理（消除噪音和删除不一致数据）
+
+
+数据集成（多种数据源可以组合在一起）
+
+
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2203,7 +2309,8 @@ SQL
 1
 Two Sum
 Easy
-[YES](https://github.co
+[YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/LeetCode/0001. Two Sum/Solution.java)
+[YES](https://github.com/ShortPupil/Leetcode_questions/blob/master/main/LeetCode/0001. Two Su
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2395,7 +2502,20 @@ Easy
 一、什么是经济学
 1. 经济学的起源
 （1） 两类资源
-“非经济资源
+“非经济资源”和“经济资源”
+（2）三大基本经济问题
+生产什么
+如何生产
+为谁生产
+（3）稀缺性和选择
+资源的有限性和人类需要的无限性导致稀缺，进而导致选择
+（4）机会成本与生产可能性曲线
+2. 什么是经济学
+（1）初步的定义
+经济学是一门研究如何配置和利用稀缺资源的科学
+（2）进一步的定义
+研究目的是使一定稀缺资源能获得最大的产品（劳务）满足人类的需要（福利）
+二、微
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2693,7 +2813,7 @@ document.write("<br>")
 <div class="theme-info">
   Theme -
   <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 <div>

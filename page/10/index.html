@@ -3,7 +3,7 @@
 
 
 
-<html class="theme-next mist" lang="zh-CN">
+<html class="theme-next muse" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -66,12 +66,6 @@
   
 
   
-    
-      
-    
-
-    
-  
 
   
 
@@ -94,7 +88,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -141,7 +135,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -293,12 +287,32 @@
         </li>
       
         
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            commonweal
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-schedule">
           <a target="_blank" href="https://concrete-beluga-2fd.notion.site/6603cd297e8749a08ef4e76e97c0d736?v=ecbea19e28934c6ab512f267cc30c7c0" rel="section noopener">
             
               <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
             
             schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            sitemap
           </a>
         </li>
       
@@ -502,7 +516,9 @@
 2. 别名
 Kit
 3. 动机
-简单工
+简单工厂——当你需要什么，只需要传入相应参数就能获得对象，但无须知道其创建细节。
+如下图，支持多种视图标准的用户界面工具包，例如Motif和Presenation Manager。不同视感(look-and-feel)风格为诸如滚动条、窗口、按钮等用户界面“窗口组件”定义不同的外观和行为。
+问题：要求视感风格标准间可移植；一个应用不应该为一个特定的视感外观直接编码
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -689,7 +705,11 @@ Kit
           
           目录
 1. 前言
-与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的
+与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。
+但是实践环境千变万化，现实需求日益复杂、庞大驱使软件开发更复杂，只掌握少数几个解决方案恐怕是杯水车薪。所以想开辟新的板块，通过实例学习**《设计模式：可复用面向对象软件的基础》**里面的大量“招式”，并且通过这些“秘技”深入理解面向对象的“心法”原则。
+2. 描述
+
+以一种松散的方式把一些模式串接在一起来建造建筑是可能的。这样的建筑仅仅是一些模式的堆
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -878,7 +898,9 @@ Kit
 前三个——计算机时代、后三个——信息时代
 
 初始阶段：计算机刚进入企业，只作为办公设备使用；企业对计算机基本不了解，少数人使用，并不普及
-传播阶段：企业对计算机有一定了
+传播阶段：企业对计算机有一定了解应用需求增加；但此时缺少规划和计划，应用水平不高，IT整体效用无法显现
+控制阶段：IT投资增长快，但收益不理想，于是在客观上要求组织协调，解决数据共享问题；一些职能部门内部实现网络化，如财务系统、人事系统等；但软件系统之间存在壁垒、“信息孤岛”，信息系统呈现单点、分散的特点，系统和资源利用率不高
+集成阶段：企业的IT建设开始由分散和单点发展成体系。建立集中
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1067,7 +1089,22 @@ Kit
 
 数学公式待补充
 标题
-行首加井号表示不同级别的标题 (H1-H6),例如：# H1, ## H2, ### H3，####
+行首加井号表示不同级别的标题 (H1-H6),例如：# H1, ## H2, ### H3，#### H4.
+一级标题
+二级标题
+三级标题
+四级标题
+五级标题
+六级标题
+
+也可以使用在文字下放加 === 表示一级标题,使用 — 表示二级标题.
+一级标题
+二级标题
+文本
+
+普通文本
+
+直接输入的文字就是普通文本。需要注意的是要换行的时候不能直接通过回车来换行，需要使用&lt;br&gt;.也就是html里面的标签. 注意第三行的&lt;br&gt;前加了反斜
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1442,7 +1479,10 @@ java、面向对象编程、其他
           
           前言 关于时间
 数据库优化，最重要的目标是时间，最大的敌人也是时间。
-套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马
+套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是查询优化、索引优化、库表结构优化。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。
+1. 为什么查询速度会慢
+查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调用需要在内存操作、CPU操作和内存不足时导致的I/O操作上消耗时间。可能会产生大量的上下文切换以及系统调用。
+不必要的额外操作、某些操作被额外地重复了很多次、某次操
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1631,7 +1671,9 @@ java、面向对象编程、其他
 了解hibernate的底层实现对于使用还是很重要的
 今天有个用hibernate进行查询出了不少错误，问题在于没有理解其持久状态和事务机制
 1. 三种状态
-1.1 临时状态(Transient
+1.1 临时状态(Transient)
+当new一个实体对象后, 这个对象处于临时状态, 即这个对象只是一个保存临时数据的内存区域, 如果没有变量引用这个对象, 则会被jre垃圾回收机制回收. 这个对象所保存的数据与数据库没有任何关系, 除非通过Session的save或者SaveOrUpdate把临时对象与数据库关联, 并把数据插入或者更新到数据库, 这个对象才转换为持久对象.
+1.2 持久
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1822,7 +1864,12 @@ java、面向对象编程、其他
 1. 独立的列
 非独立的列是索引列是表达式的一部分或是函数的参数，这会导致索引使用不当，或无法使用已有的索引
 错误示例
-1select acto
+1select actor_id from sakila.actor where actor_id + 1 = 5;
+1select ... where to_days(current_date) - to_days(date_col) &lt;= 10;
+注意
+养成简化where条件的习惯，始终将索引列单独放在比较符号的一侧
+2. 前缀索引和索引选择性
+**索引选择性：**不重复
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2011,7 +2058,13 @@ java、面向对象编程、其他
 一、 孙志刚案件
 孙志刚事件 - 维基百科，自由的百科全书 (wikipedia.org)
 孙志刚事件_百度百科 (baidu.com)
-一个公民的最后60个小时——孙志刚案大事记-中国法
+一个公民的最后60个小时——孙志刚案大事记-中国法院网 (chinacourt.org)
+
+原籍湖北黄冈的孙志刚被广州市人民政府执法机关以三无人员的理由收押，拘禁期间被收容所员工殴打身亡的事件。此事件虽经官方声称为收容所员工犯罪的个案，却引发了中国国内对收容遣送制度的大讨论。中华人民共和国政府之后颁发新法规，废除了广泛被认为是有弊端漏洞、并有违宪指责的收容遣送制度。
+——wiki百科
+
+
+孙志刚事件和三博士
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2199,7 +2252,14 @@ java、面向对象编程、其他
           前言
 辣鸡的我写索引优化作业遇到一个很奇怪的问题。
 大概就是，在500w行数据的order表中，找出年龄小于20order列表，看能否使用索引进行查询优化。
-创建索引、查询时间、查询计划一套做下来，发
+创建索引、查询时间、查询计划一套做下来，发现优化器没有用创建的索引。于是开始寻找问题。
+过程
+首先很自然地用下面的语句进行测试
+1select * from orders where age &lt; 20; 
+发现在没加索引的时候，查询时间，explain计划如下
+加了个单列普通索引
+1alter table orders add index ageindex(age);
+再执行语句发现，查询时间
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2497,7 +2557,7 @@ document.write("<br>")
 <div class="theme-info">
   Theme -
   <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 <div>

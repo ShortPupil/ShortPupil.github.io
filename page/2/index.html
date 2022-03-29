@@ -3,7 +3,7 @@
 
 
 
-<html class="theme-next mist" lang="zh-CN">
+<html class="theme-next muse" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -66,12 +66,6 @@
   
 
   
-    
-      
-    
-
-    
-  
 
   
 
@@ -94,7 +88,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -141,7 +135,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -293,12 +287,32 @@
         </li>
       
         
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            commonweal
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-schedule">
           <a target="_blank" href="https://concrete-beluga-2fd.notion.site/6603cd297e8749a08ef4e76e97c0d736?v=ecbea19e28934c6ab512f267cc30c7c0" rel="section noopener">
             
               <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
             
             schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            sitemap
           </a>
         </li>
       
@@ -500,7 +514,15 @@
 何为大数据
 核心理念
 wiki解释：Big data - Wikipedia
-即传统数据处理应用软件时，不足以处理的大的或者复杂的数据集的术
+即传统数据处理应用软件时，不足以处理的大的或者复杂的数据集的术语。换句话说，就是技术上的老办法行不通了，必须使用新办法才能处理的数据就叫大数据。
+
+能够伸缩到一千台服务器以上的分布式数据处理集群的技术
+
+传统的并行数据库技术尝试处理海量数据，但这些并行数据库单个集群只有几十数量级的服务器
+2003年，Google 的 GFS 的论文，单个集群里就可以有上千数量级的节点
+
+
+这个上千个节点的集群，是采用廉价的 PC 架构
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -878,7 +900,11 @@ Thomas Hobbes: 权力、人权、社会秩序
 一、生平
 伊丽莎白女王 与弗兰西斯 培根关系紧密
 培根的影响
-反对亚里士多德逻辑体系的哲学家，
+反对亚里士多德逻辑体系的哲学家，基础是一些重要假说，通过演绎法来发展其哲学体系。
+培根认为实验应该从归纳感官观察开始，而不能假设无法观察的事物存在，于是提出一套与亚里士多德演绎法相反的方法论——归纳法。
+游历欧洲 1635-36
+认识伽利略、笛卡尔
+在伽利略那里学到 分析综合法(the resolutive-compositive method)——从演绎开始，然后开始观察、感官上的观察，
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1066,7 +1092,8 @@ Thomas Hobbes: 权力、人权、社会秩序
           学习内容：竞品分析实操手册 (lagou.com)
 何为竞品分析
 不要漠视对手，多抬头看路
-借鉴同行，因为世上本没有路，走的人多了，自然成了一条路。所以在自己的行业，最好的老师就是竞争对手，把它找出来
+借鉴同行，因为世上本没有路，走的人多了，自然成了一条路。所以在自己的行业，最好的老师就是竞争对手，把它找出来，就对手的成功或合格的竞品而言，必然已经踩过许多坑了，那我们就可以看到别人怎么做的，看到别人的数据构建，包括别人是通过什么渠道在操作的，别人通过这些能做起来，通过分析WHAT HOW WHY，明确竞品竞店做了哪些我没有做的动作？该从哪些方面去分析我和竞品的差距呢？分析出来原因后，我该做哪些动作呢？
+做竞品分析的目的是为了更好地参与市场竞争，为后续更加激烈的竞
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1254,7 +1281,12 @@ Thomas Hobbes: 权力、人权、社会秩序
           二、词的向量表示
 计算机如何处理词语的意思
 Distributional similarity based representations
-语言学家J. R. Firth提出，通过一个单词的上下文可以
+语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握了它的意义。
+这是现代统计自然语言处理最成功的思想之一
+通过向量定义词语的含义
+通过调整一个单词及其上下文单词的向量，使得根据两个向量可以推测两个词语的相似度；或根据向量可以预测词语的上下文。
+递归，根据向量来调整向量，与词典中意项的定义相似。
+学习神经网络word
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1443,7 +1475,24 @@ Distributional similarity based representations
 了解Netty
 
 目前最流行的一款高性能 java 网络编程框架，被广泛使用在中间件、直播、社交、游戏等领域
-将Netty作为底层框架的框架：Dubbo、RocketMQ、Elasticsear
+将Netty作为底层框架的框架：Dubbo、RocketMQ、Elasticsearch、Hbase等
+
+
+netty高性能表现在哪些方便？有何启发？
+有哪些重要组件？及其联系？
+内存池、对象池如何设计的？
+有哪些印象比较深刻的系统调优案例？
+…
+
+
+Netty的设计原理
+
+对理解I/O模型、内存管理、线程模型、数据结构有帮助
+对学习RocketMQ、Nginx、Redis等优秀框架有帮助
+Netty的易用性和可靠性极大降低了心智负担
+
+
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1633,7 +1682,13 @@ Distributional similarity based representations
 在内有想要动弹的个性表现的欲望，而和这正相对，在外却有社会生活的束缚和强制不绝地迫压着。在两种的力之间，苦恼挣扎着的状态，就是人类生活。
 创造生活的欲求之力
 
-个性表现的内底欲求、
+个性表现的内底欲求、生命力的发动，在灵与肉两方面，表现为各种各样的生活现象：有时为本能生活，有时为游戏冲动，或为强烈的信念，或为高远的理想，为学子的知识欲，也为英雄的征服欲望。
+这样的生命力的显现，是超绝了利害的念头，离了善恶邪正的估价，脱却道德的批评和因袭的束缚而带着一意只要飞跃和突进的倾向。
+
+强制压抑之力
+
+在”社会”这个大的有机体中生活，必然要服从那巨大的机制
+人们若成
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1820,7 +1875,12 @@ Distributional similarity based representations
           
           前文：
 《伯恩斯新情绪疗法》1 认知扭曲 | 毫末室 (songzi.info)https://songzi.info/post/f6e86d6c/
-《伯恩斯新情绪疗法》2 建立自尊 | 毫末室 (s
+《伯恩斯新情绪疗法》2 建立自尊 | 毫末室 (songzi.info)https://songzi.info/post/283c93cb
+《伯恩斯新情绪疗法》3 克服拖延 | 毫末室 (songzi.info)http://songzi.info/post/3a21ee98
+处理语言滥用的技巧
+对批评敏感
+许多抑郁事件都是由外在批评引起的。
+如何能够无畏地面对批评的秘密及具体步骤，从而帮助克服并消除对批评
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2007,7 +2067,9 @@ Distributional similarity based representations
           
           前文：
 《伯恩斯新情绪疗法》1 认知扭曲 | 毫末室 (songzi.info)https://songzi.info/post/f6e86d6c/
-《伯恩斯新情绪疗法》2 建立自尊 | 毫末室 (s
+《伯恩斯新情绪疗法》2 建立自尊 | 毫末室 (songzi.info)https://songzi.info/post/283c93cb
+认识拖延——什么都不做主义
+抑郁症最具摧毁性的一个方面就是麻痹了你的意志。在它表现较轻时，不过是影响日常事务，但久而久之你做任何事都感到困难，你强烈地暗示自己什么也不做了。因为你做成的很少，所以你感到越来越糟糕。你不仅切断了常有的刺激与快乐之源泉，而且由于缺乏成果使你更
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2195,7 +2257,9 @@ Distributional similarity based representations
           前文：
 《伯恩斯新情绪疗法》1 认知扭曲 | 毫末室 (songzi.info)https://songzi.info/post/f6e86d6c/
 认识抑郁状态
-概括而言四个词描述——被打败、有缺陷
+概括而言四个词描述——被打败、有缺陷、遭遗弃、被剥夺
+几乎所有此类的消极情绪反应所造成的破坏最终都导致一个结果，那就是缺乏自信。它会把一些细小的错误或缺陷放大成为一个巨大的个人失败的象征。
+某些抑郁患者的完美主义冲动，在他人眼中，是一种打击自己的不现实行为。但在其本人看来，这种自我毁灭式的冲动既真实又合理。即对于身处其中的本人而言，很难看清这种思维的非逻辑性。从而导致，你会坚信自己是非常差的，
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2493,7 +2557,7 @@ document.write("<br>")
 <div class="theme-info">
   Theme -
   <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 <div>
