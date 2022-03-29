@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -166,7 +164,7 @@
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: '0',
       author: '松子'
@@ -538,7 +536,7 @@ $$</p>
 <h3 id="word2vec的主要思路">word2vec的主要思路</h3>
 <p>word2vec——神经概率语言模型的输入，是为了通过神经网络学习<strong>某个分类模型（“CBOW”和“Skip-gram”）<strong>而产生的中间结果，而这个具体学习过程会用到</strong>两个降低复杂度的近似方法（Hierarchical Softmax或Negative Sampling）</strong></p>
 <p>两个语言模型</p>
-<p><img src="https://ww3.sinaimg.cn/large/6cbb8645gw1f5to6e5d9lj216c0qkwhk.jpg" alt="屏幕快照 2016-07-14 下午7.27.35.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://ww3.sinaimg.cn/large/6cbb8645gw1f5to6e5d9lj216c0qkwhk.jpg" alt="屏幕快照 2016-07-14 下午7.27.35.png"></p>
 <h4 id="hierarchical-softmax">Hierarchical softmax</h4>
 <h5 id="continuous-bag-of-words-cbow">Continuous Bag of Words (CBOW)</h5>
 <p>预测目标单词，根据上下文的词语预测当前词语的出现概率的模型。已知上下文，估算当前词语的语言模型。</p>
@@ -547,17 +545,17 @@ $$</p>
 <p><strong>投影层 PROJECTION</strong>：求和，简单的向量加法</p>
 <p><strong>输出层 OUTPUT</strong>：输出最可能的w——这个过程算是<strong>多分类</strong>问题，给定特征，从|C|个分类中挑一个？</p>
 <p>对于神经网络模型多分类，最朴素的做法是<strong>softmax回归</strong></p>
-<p><img src="https://ww2.sinaimg.cn/large/6cbb8645gw1exxdsuugv1j20cl033jrj.jpg" alt="神经网络依存句法分析29.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://ww2.sinaimg.cn/large/6cbb8645gw1exxdsuugv1j20cl033jrj.jpg" alt="神经网络依存句法分析29.png"></p>
 <p>另有方法 <strong>SVM的多分类</strong>的二叉树结构应用到word2vec 即是<strong>Hierarchical Softmax算法</strong></p>
 <p>树状结构（用于CBOW的输出层）</p>
-<p><img src="https://ww1.sinaimg.cn/large/6cbb8645gw1f5wmvf9tbrg20bf08mq30.gif" alt="svm_多分类.gif"></p>
-<p><img src="https://ww3.sinaimg.cn/large/6cbb8645gw1f5wmy4jdnwj214w12a42v.jpg" alt="屏幕快照 2016-07-17 上午9.13.40.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://ww1.sinaimg.cn/large/6cbb8645gw1f5wmvf9tbrg20bf08mq30.gif" alt="svm_多分类.gif"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://ww3.sinaimg.cn/large/6cbb8645gw1f5wmy4jdnwj214w12a42v.jpg" alt="屏幕快照 2016-07-17 上午9.13.40.png"></p>
 <p>复杂的数学计算…</p>
-<p><img src="https://ww1.sinaimg.cn/large/6cbb8645gw1f5wqgz0elqj20pm0qaq5a.jpg" alt="屏幕快照 2016-07-17 上午11.15.50.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://ww1.sinaimg.cn/large/6cbb8645gw1f5wqgz0elqj20pm0qaq5a.jpg" alt="屏幕快照 2016-07-17 上午11.15.50.png"></p>
 <h5 id="skip-grams-sg">Skip-grams (SG)</h5>
 <p>预测上下文</p>
 <p>Skip-gram只是逆转了CBOW的因果关系而已，即已知当前词语，预测上下文。</p>
-<p><img src="https://ww1.sinaimg.cn/large/6cbb8645gw1f5wqzg68u0j214a120wij.jpg" alt="屏幕快照 2016-07-17 上午11.33.31.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://ww1.sinaimg.cn/large/6cbb8645gw1f5wqzg68u0j214a120wij.jpg" alt="屏幕快照 2016-07-17 上午11.33.31.png"></p>
 <ul>
 <li>输入层不再是多个词向量，而是一个词向量</li>
 <li>投影层其实什么事情都没干，直接将输入层的词向量传递给输出层</li>
@@ -566,27 +564,27 @@ $$</p>
 <p>无论是CBOW还是Skip-gram模型，其实都是分类模型。对于机器学习中的分类任务，在训练的时候不但要给正例，还要给负例。对于Hierarchical Softmax，负例是二叉树的其他路径。对于Negative Sampling，负例是随机挑选出来的。</p>
 <h4 id="negative-sampling">Negative sampling</h4>
 <h5 id="cbow">CBOW</h5>
-<p><img src="https://ww4.sinaimg.cn/large/6cbb8645gw1f5wv2jzxnfj20oe0ncdhp.jpg" alt="屏幕快照 2016-07-17 下午1.55.05.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://ww4.sinaimg.cn/large/6cbb8645gw1f5wv2jzxnfj20oe0ncdhp.jpg" alt="屏幕快照 2016-07-17 下午1.55.05.png"></p>
 <h5 id="skip-gram">Skip-gram</h5>
-<p><img src="https://ww4.sinaimg.cn/large/6cbb8645gw1f5wwegdnryj20oi0q00v3.jpg" alt="屏幕快照 2016-07-17 下午2.40.41.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://ww4.sinaimg.cn/large/6cbb8645gw1f5wwegdnryj20oi0q00v3.jpg" alt="屏幕快照 2016-07-17 下午2.40.41.png"></p>
 <h2 id="三-高级词向量表示">三、高级词向量表示</h2>
 <h4 id="总结">总结</h4>
 <ul>
 <li>遍历整个语料库的每个词</li>
 <li>预测每个词的上下文</li>
-<li><img src="https://wx1.sinaimg.cn/large/006Fmjmcly1fgdtp2e4e2j30uy0bmn6v.jpg" alt="hankcs.com 2017-06-08 下午3.25.31.png"></li>
+<li><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://wx1.sinaimg.cn/large/006Fmjmcly1fgdtp2e4e2j30uy0bmn6v.jpg" alt="hankcs.com 2017-06-08 下午3.25.31.png"></li>
 <li>每个窗口中计算梯度做SGD</li>
 </ul>
 <p>每个窗口最多2m+1个单词，所以$$∇_θJ_t(θ)$$会非常稀疏</p>
-<p><img src="https://wx2.sinaimg.cn/large/006Fmjmcly1fgdtx6wu43j30ta0qegnj.jpg" alt="hankcs.com 2017-06-08 下午3.33.16.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://wx2.sinaimg.cn/large/006Fmjmcly1fgdtx6wu43j30ta0qegnj.jpg" alt="hankcs.com 2017-06-08 下午3.33.16.png"></p>
 <p>实际上有正确答案需要去对比的，只有<strong>窗口中的词语</strong>。</p>
-<p>所以每次更新只更新WW矩阵中的少数列，或者为每个词语建立到词向量的哈希映射：<img src="https://wx3.sinaimg.cn/large/006Fmjmcly1fgdu3xf2phj30qo09a755.jpg" alt="hankcs.com 2017-06-08 下午3.39.45.png"></p>
-<p>另一个难点在于，词表V的量级非常大，以至于分母很难计算<img src="https://wx1.sinaimg.cn/large/006Fmjmcly1fgdtp2e4e2j30uy0bmn6v.jpg" alt="hankcs.com 2017-06-08 下午3.25.31.png"></p>
+<p>所以每次更新只更新WW矩阵中的少数列，或者为每个词语建立到词向量的哈希映射：<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://wx3.sinaimg.cn/large/006Fmjmcly1fgdu3xf2phj30qo09a755.jpg" alt="hankcs.com 2017-06-08 下午3.39.45.png"></p>
+<p>另一个难点在于，词表V的量级非常大，以至于分母很难计算<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://wx1.sinaimg.cn/large/006Fmjmcly1fgdtp2e4e2j30uy0bmn6v.jpg" alt="hankcs.com 2017-06-08 下午3.25.31.png"></p>
 <p>因此assignment 1用negative sampling实现skip-gram，这是一种采样子集简化运算的方法。</p>
 <p>具体做法是，<strong>对每个正例（中央词语及上下文中的一个词语）采样几个负例（中央词语和其他随机词语），训练binary logistic regression（也就是二分类器）</strong>。</p>
 <p>目标函数：$$J_t(\theta) = \log \sigma\left(u_o^Tv_c\right)+\sum_{i=1}^k\mathbb{E}_{j \sim P(w)}\left [\log\sigma \left(-u^T_jv_c\right) \right]$$</p>
 <p>这里t是某个窗口，k是采样个数，P(w)是一个unigram分布，σ是sigmoid函数</p>
-<p><img src="https://wx4.sinaimg.cn/large/006Fmjmcly1fgdvx2wor0j30f90ai0t5.jpg" alt="sigmoid.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://wx4.sinaimg.cn/large/006Fmjmcly1fgdvx2wor0j30f90ai0t5.jpg" alt="sigmoid.png"></p>
 
       
     </div>
@@ -791,7 +789,7 @@ $$</p>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-count">109</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -802,7 +800,7 @@ $$</p>
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -813,7 +811,7 @@ $$</p>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -934,16 +932,16 @@ $$</p>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- require JQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<!-- require pjax -->
-<script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
-<!-- 新增播放器 -->
+        <!-- 新增播放器 -->
 <!-- 引用依赖 -->
 <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+<!-- require JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- require pjax -->
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
 <!-- 我使用的APlayer本体 -->
 <div class="aplayer"
   data-id="986184445"
@@ -951,9 +949,9 @@ $$</p>
   data-type="playlist"
   data-fixed="true"
   data-mini="true"
-  data-autoplay="true"
+  data-autoplay="false"
   data-order="random"
-  data-volume="0.45"
+  data-volume="0.35"
   data-theme="#FFEFD5"
   data-preload="auto" >
 </div>
@@ -966,6 +964,17 @@ $$</p>
     <i class="fa fa-tree"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">松子</span>
+
+   
+      <span class="post-meta-divider">|</span>
+      <span class="post-meta-item-icon">
+        <i class="fa fa-area-chart"></i>
+      </span>
+      
+        <span class="post-meta-item-text">Posts total count&#58;</span>
+      
+      <span title="post.totalcount">640k</span>
+    
 </div>
 
 <!--添加网站运行时间 -->
@@ -1523,5 +1532,83 @@ wpac_init.push({widget: 'Rating', id: 17904});
 
   
 
-</body>
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('copy to clipboard').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('copied')
+          else $(this).text('failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('copy to clipboard')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

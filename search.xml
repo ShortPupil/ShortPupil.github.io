@@ -5919,7 +5919,7 @@ to not going there;<br>
   <entry>
     <title>《学会提问》笔记</title>
     <url>/post/ead403b1/</url>
-    <content><![CDATA[<h1 id="本书内容-批判性思维简化为-ct">本书内容  （批判性思维简化为 <code>CT</code>）</h1>
+    <content><![CDATA[<h1 id="本书内容-批判性思维简化为-ct">本书内容  （批判性思维简化为 <span style="color:#00868B;">CT</span>）</h1>
 <ul>
 <li>提出关键问题</li>
 <li>做出理性判断</li>
@@ -6048,20 +6048,30 @@ to not going there;<br>
 <p>基于其论证，我是否应当接受其结论？</p>
 <h3 id="222-寻找结论的方法">2.2.2 寻找结论的方法</h3>
 <ol>
-<li>问问论题是什么。</li>
-<li>寻找指示词(indicator word)
+<li>
+<p>问问论题是什么。</p>
+</li>
+<li>
+<p>寻找指示词(indicator word)</p>
 <blockquote>
 <p>因此、表明、由此而知、因此可以断定、我要说的重点是、显示出、证明、告诉我们、问题的实质是</p>
 </blockquote>
 </li>
-<li>在可能的位置（开头或结尾）查看</li>
-<li>记住不可能作为结论的内容
+<li>
+<p>在可能的位置（开头或结尾）查看</p>
+</li>
+<li>
+<p>记住不可能作为结论的内容</p>
 <blockquote>
 <p>例句、数据、定义、背景资料、证据</p>
 </blockquote>
 </li>
-<li>检察交流的语境与作者的背景</li>
-<li>问一问“so what?&quot;</li>
+<li>
+<p>检察交流的语境与作者的背景</p>
+</li>
+<li>
+<p>问一问“so what?&quot;</p>
+</li>
 </ol>
 <h3 id="223-明确结论的写作经验">2.2.3 明确结论的写作经验</h3>
 <p><code>CT</code>的一个最大障碍即是无法建立起沟通的桥梁</p>
@@ -17799,9 +17809,38 @@ key_len 的计算规则如下:</p>
 <p><a href="https://www.coursera.org/learn/graphic-elements-design/home/welcome">Graphic Elements of Design: Color Theory and Image Formats - 首页 | Coursera</a></p>
 <h1 id="学习目标">学习目标</h1>
 <ul>
-<li>了解基本色彩理论</li>
+<li>了解基本色彩理论 <code>ROY G BIV</code> <code>CMYK</code> <code>Pantone(PMS)</code> <code>RGB</code></li>
 <li>应用</li>
 </ul>
+<h1 id="1-理解色彩理论">1. 理解色彩理论</h1>
+<h2 id="11-几种色彩理论">1.1 几种色彩理论</h2>
+<h3 id="roy-g-biv">ROY G BIV</h3>
+<p><a href="https://www.youtube.com/watch?v=5OxLfEq4Iv4">ROY G BIV | The Colors of the Rainbow | Jack Hartmann - YouTube</a></p>
+<p><img src="https://th.bing.com/th/id/R.c1b6c1956238d05d1221798b46747ca2?rik=ZcWzISb%2fdZojRQ&amp;riu=http%3a%2f%2fimg3.wikia.nocookie.net%2f__cb20111026212102%2frainbows%2fimages%2f0%2f06%2f3.gif&amp;ehk=v1fKzYtCcF9FaGuCEBAdVrr2lARDIWyC23GIx%2bwi14k%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="查看源图像"></p>
+<ul>
+<li>彩虹色</li>
+<li>包括red   orange   yellow   green   blue  indigo   violet</li>
+</ul>
+<h3 id="cmyk">CMYK</h3>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/CMYK_color_swatches.png" alt="img"></p>
+<ul>
+<li><strong>C</strong>：<strong>C</strong>yan ＝ 青色或“湛蓝”</li>
+<li><strong>M</strong>：<strong>M</strong>agenta ＝ 洋红色</li>
+<li><strong>Y</strong>：<strong>Y</strong>ellow ＝ 黄色</li>
+<li><strong>K</strong>：<strong>K</strong>ey plate 因实务上多使用黑色，所以也可以简单视为blac<strong>K</strong></li>
+</ul>
+<h3 id="rgb">RGB</h3>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/RGB_color_solid_cube.png/1280px-RGB_color_solid_cube.png" alt="img"></p>
+<ul>
+<li>将<a href="https://zh.wikipedia.org/wiki/%E7%BA%A2">红</a>（<strong>R</strong>ed）、<a href="https://zh.wikipedia.org/wiki/%E7%BB%BF%E8%89%B2">绿</a>（<strong>G</strong>reen）、<a href="https://zh.wikipedia.org/wiki/%E8%93%9D">蓝</a>（<strong>B</strong>lue）三原色的色光以不同的比例相加，以合成产生各种色彩光</li>
+</ul>
+<h3 id="pantonepantone-matching-system">Pantone(Pantone Matching System)</h3>
+<p><a href="https://www.pantone.com/color-systems/pantone-color-systems-explained">Pantone Color Systems - Introduction | Pantone</a></p>
+<h2 id="12-比较rgb和cmyk">1.2 比较RGB和CMYK</h2>
+<h1 id="参考资料">参考资料</h1>
+<p><a href="https://en.wikipedia.org/wiki/ROYGBIV">ROYGBIV - Wikipedia</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%8D%B0%E5%88%B7%E5%9B%9B%E5%88%86%E8%89%B2%E6%A8%A1%E5%BC%8F">印刷四分色模式 - 维基百科，自由的百科全书 (wikipedia.org)</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E4%B8%89%E5%8E%9F%E8%89%B2%E5%85%89%E6%A8%A1%E5%BC%8F">三原色光模式 - 维基百科，自由的百科全书 (wikipedia.org)</a></p>
 ]]></content>
       <categories>
         <category>设计</category>
@@ -21399,6 +21438,103 @@ ulimit-u导致创建链接失败<br>
       </categories>
       <tags>
         <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Next美化优化记录</title>
+    <url>/post/5b7ae5f0/</url>
+    <content><![CDATA[<h1 id="写在开头">写在开头</h1>
+<p>这么久都没做过Hexo的优化记录，有些功能忘了，有些功能以前做过。这篇文章就用来记录自己容易忘记的美化和一些好的优化博文。</p>
+<h1 id="小功能">小功能</h1>
+<h2 id="设置字体颜色">设置字体颜色</h2>
+<p><strong>链接</strong>：<a href="https://oldgerman.github.io/6c57f882/">hexo 博客如何写出彩色字体，能实时预览的那种？ | OldGerman’s Blog</a></p>
+<p><span style="color:white;background:black;font-family:仿宋;">黑白配</span></p>
+<h3 id="span-style-设置字体属性">span - - - style | 设置字体属性</h3>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;span style=<span class="string">&#x27;color:文字颜色;background:背景颜色;font-size:文字大小;font-family:字体;&#x27;</span>&gt;文字&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<p>style后传入的参数以分号隔开，参数数量可裁剪</p>
+<p>其中color：支持三种格式 颜色名，十六进制颜色值，RGB取色器</p>
+<p>示例：</p>
+<ol>
+<li>三种color格式显示同样的红色字体：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;span style=<span class="string">&quot;color:red;&quot;</span>&gt;红不红？&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<p><span style="color:red;">红不红？</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;span style=<span class="string">&quot;color:rgb(255, 0, 0);&quot;</span>&gt;红不红？&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<p><span style="color:rgb(255, 0, 0);">红不红？</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;span style=<span class="string">&quot;color:#FF0000;&quot;</span>&gt;红不红？&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<p><span style="color:#FF0000;">红不红？</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;span style=<span class="string">&#x27;color:white;background:black;font-size:50px;font-family:仿宋;&#x27;</span>&gt;黑白配&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<p>黑底白字仿宋50px：黑白配</p>
+<h3 id="b-amp-strong-加粗字体">b &amp; strong | 加粗字体</h3>
+<p>用法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;b&gt;我被B标签加粗&lt;/b&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">strong</span>&gt;</span>我被Strong标签加粗<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<ol>
+<li>加粗字体：<strong>加粗</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;b&gt;加粗&lt;/b&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>
+<p>紫色加粗：<strong>骚紫色加粗</strong></p>
+<p><b><span style="color:rgb(255, 0, 255);">骚紫色加粗</span></b></p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;b&gt;<span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:rgb(255, 0, 255);&quot;</span>&gt;</span>骚紫色加粗<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>&lt;/b&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="sup-amp-sub-上标-amp-下标">sup &amp; sub | 上标 &amp; 下标</h3>
+<p>用法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">上标：&lt;sup&gt;内容&lt;/sup&gt;</span><br><span class="line">下标：&lt;sub&gt;内容&lt;/sub&gt;</span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">mm&lt;sup&gt;<span class="number">2</span>&lt;/sup&gt;</span><br></pre></td></tr></table></figure>
+<p>平方毫米: mm<sup>2</sup></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">y = log&lt;sub&gt;<span class="number">2</span> &lt;/sub&gt;x</span><br></pre></td></tr></table></figure>
+<p>对数:y = log<sub>2 </sub>x</p>
+<h3 id="div-align-各种对齐">div - - align | 各种对齐</h3>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;div align=<span class="string">&quot;center&quot;</span>&gt;奇怪的知识增加了！&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<div align="center">奇怪的知识增加了！</div>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;div align=<span class="string">&quot;center&quot;</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&#x27;color:white;background:black;font-size:20px;&#x27;</span>&gt;</span>&amp;#12288“事情总会朝着意想不到的方向发展”&amp;#12288<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<div align="center"><span style="color:white;background:black;font-size:20px;">&#12288“事情总会朝着意想不到的方向发展”&#12288</span></div>
+<h2 id="note使用">Note使用</h2>
+<p><strong>参考链接</strong>：<a href="https://jinnsjj.github.io/uncategorized/hexo-next-note/">在hexo-NexT中插入note提示块 | JOHZEN (jinnsjj.github.io)</a></p>
+<p>next主题有个小功能还没用过，在主题配置文件中有：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">note:</span><br><span class="line">  # Note tag style values:</span><br><span class="line">  #  - simple    bs-callout old alert style. Default.</span><br><span class="line">  #  - modern    bs-callout new (v2-v3) alert style.</span><br><span class="line">  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span><br><span class="line">  #  - disabled  disable all CSS styles import of note tag.</span><br><span class="line">  style: flat</span><br><span class="line">  icons: true</span><br><span class="line">  border_radius: 3</span><br><span class="line">  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span><br><span class="line">  # Offset also applied to label tag variables. This option can work with disabled note tag.</span><br><span class="line">  light_bg_offset: 0</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<div class="note default"><p>default 提示块标签</p></div>
+<div class="note primary"><p>primary 提示块标签</p></div>
+<div class="note success"><p>success 提示块标签</p></div>
+<div class="note info"><p>info 提示块标签</p></div>
+<div class="note warning"><p>warning 提示块标签</p></div>
+<div class="note danger"><p>danger 提示块标签</p></div>
+<p>代码如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% note default %&#125;</span><br><span class="line">default 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;</span><br><span class="line">primary 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;</span><br><span class="line">success 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;</span><br><span class="line">info 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;</span><br><span class="line">warning 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;</span><br><span class="line">danger 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="选项卡使用">选项卡使用</h2>
+<p>效果如下：</p>
+<div class="tabs" id="tab"><ul class="nav-tabs"><li class="tab active"><a href="#tab-1">tab 1</a></li><li class="tab"><a href="#tab-2">tab 2</a></li><li class="tab"><a href="#tab-3">A</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-1"><p><strong>选项卡 1</strong></p>
+</div><div class="tab-pane" id="tab-2"><p><strong>选项卡 2</strong></p>
+</div><div class="tab-pane" id="tab-3"><p><strong>选项卡 3</strong> 名字为A</p>
+</div></div></div>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs tab,1 %&#125; 名字为tab，默认在第1个选项卡，如果是-1则隐藏</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**选项卡 1**</span> </span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**选项卡 2**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab A --&gt;</span><br><span class="line"><span class="strong">**选项卡 3**</span> 名字为A</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="美化">美化</h1>
+<h2 id="随机背景图">随机背景图</h2>
+<p>思路就是将喜欢的图片打包上传到图床，通过<code>url.csv</code>文件中给出的图床链接来实现一个随机图片 API，<code>backgound:url</code>调用相应的API。</p>
+<p>找资源的网站：</p>
+<p><a target="_blank" href="https://www.nbfox.com/" style="position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; box-sizing: border-box; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 390px; min-height: 84px; border-radius: 8px; max-width: 100%; overflow: hidden; margin: 16px auto; padding: 12px 12px 9px 12px; background-color: #F6F6F6;"><span class="LinkCard-contents"><span style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; line-height: 1.25; color: #121212;">麦田艺术 - 收尽世界名画，无水印高清油画免费下载 (nbfox.com)</span><span style="display: -webkit-box; font-size: 13px; height: 18px; line-height: 18px; color: #999; word-break: break-all; text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 1; -webkit-box-orient: vertical;"><span style="display: inline-flex; align-items: center;"><svg class="Zi Zi--InsertLink" fill="currentColor" viewbox="0 0 24 24" width="14" height="14"><path d="M13.414 4.222a4.5 4.5 0 1 1 6.364 6.364l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005a2.5 2.5 0 1 0-3.536-3.536l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005zm-6.187 6.187a.5.5 0 0 1 .638-.058l.07.058.706.707a.5.5 0 0 1 .058.638l-.058.07-3.005 3.004a2.5 2.5 0 0 0 3.405 3.658l.13-.122 3.006-3.005a.5.5 0 0 1 .638-.058l.069.058.707.707a.5.5 0 0 1 .058.638l-.058.069-3.005 3.005a4.5 4.5 0 0 1-6.524-6.196l.16-.168 3.005-3.005zm8.132-3.182a.25.25 0 0 1 .353 0l1.061 1.06a.25.25 0 0 1 0 .354l-8.132 8.132a.25.25 0 0 1-.353 0l-1.061-1.06a.25.25 0 0 1 0-.354l8.132-8.132z"/></svg></span><span>https://www.nbfox.com/</span></span></span></a></p>
+<p><a target="_blank" href="https://gallerix.asia/" style="position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; box-sizing: border-box; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 390px; min-height: 84px; border-radius: 8px; max-width: 100%; overflow: hidden; margin: 16px auto; padding: 12px 12px 9px 12px; background-color: #F6F6F6;"><span class="LinkCard-contents"><span style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; line-height: 1.25; color: #121212;">绘画和绘画 – 加勒里克斯在线博物馆 (gallerix.asia)</span><span style="display: -webkit-box; font-size: 13px; height: 18px; line-height: 18px; color: #999; word-break: break-all; text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 1; -webkit-box-orient: vertical;"><span style="display: inline-flex; align-items: center;"><svg class="Zi Zi--InsertLink" fill="currentColor" viewbox="0 0 24 24" width="14" height="14"><path d="M13.414 4.222a4.5 4.5 0 1 1 6.364 6.364l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005a2.5 2.5 0 1 0-3.536-3.536l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005zm-6.187 6.187a.5.5 0 0 1 .638-.058l.07.058.706.707a.5.5 0 0 1 .058.638l-.058.07-3.005 3.004a2.5 2.5 0 0 0 3.405 3.658l.13-.122 3.006-3.005a.5.5 0 0 1 .638-.058l.069.058.707.707a.5.5 0 0 1 .058.638l-.058.069-3.005 3.005a4.5 4.5 0 0 1-6.524-6.196l.16-.168 3.005-3.005zm8.132-3.182a.25.25 0 0 1 .353 0l1.061 1.06a.25.25 0 0 1 0 .354l-8.132 8.132a.25.25 0 0 1-.353 0l-1.061-1.06a.25.25 0 0 1 0-.354l8.132-8.132z"/></svg></span><span>https://gallerix.asia/</span></span></span></a></p>
+<p><a target="_blank" href="https://new.shuge.org/" style="position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; box-sizing: border-box; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 390px; min-height: 84px; border-radius: 8px; max-width: 100%; overflow: hidden; margin: 16px auto; padding: 12px 12px 9px 12px; background-color: #F6F6F6;"><span class="LinkCard-contents"><span style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; line-height: 1.25; color: #121212;">书格 (shuge.org)</span><span style="display: -webkit-box; font-size: 13px; height: 18px; line-height: 18px; color: #999; word-break: break-all; text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 1; -webkit-box-orient: vertical;"><span style="display: inline-flex; align-items: center;"><svg class="Zi Zi--InsertLink" fill="currentColor" viewbox="0 0 24 24" width="14" height="14"><path d="M13.414 4.222a4.5 4.5 0 1 1 6.364 6.364l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005a2.5 2.5 0 1 0-3.536-3.536l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005zm-6.187 6.187a.5.5 0 0 1 .638-.058l.07.058.706.707a.5.5 0 0 1 .058.638l-.058.07-3.005 3.004a2.5 2.5 0 0 0 3.405 3.658l.13-.122 3.006-3.005a.5.5 0 0 1 .638-.058l.069.058.707.707a.5.5 0 0 1 .058.638l-.058.069-3.005 3.005a4.5 4.5 0 0 1-6.524-6.196l.16-.168 3.005-3.005zm8.132-3.182a.25.25 0 0 1 .353 0l1.061 1.06a.25.25 0 0 1 0 .354l-8.132 8.132a.25.25 0 0 1-.353 0l-1.061-1.06a.25.25 0 0 1 0-.354l8.132-8.132z"/></svg></span><span>https://new.shuge.org/</span></span></span></a></p>
+<p>图床：<a href="https://github.com/ShortPupil/VPicture">新建一个github repo就行</a></p>
+<p>下面链接里都有工具详细的使用方法</p>
+<p>本地图片上传工具：</p>
+<p><a target="_blank" href="https://github.com/Molunerfinn/picgo/" style="position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; box-sizing: border-box; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 390px; min-height: 84px; border-radius: 8px; max-width: 100%; overflow: hidden; margin: 16px auto; padding: 12px 12px 9px 12px; background-color: #F6F6F6;"><span class="LinkCard-contents"><span style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; line-height: 1.25; color: #121212;">Molunerfinn/PicGo: A simple &amp; beautiful tool for pictures uploading built by vue-cli-electron-builder (github.com)</span><span style="display: -webkit-box; font-size: 13px; height: 18px; line-height: 18px; color: #999; word-break: break-all; text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 1; -webkit-box-orient: vertical;"><span style="display: inline-flex; align-items: center;"><svg class="Zi Zi--InsertLink" fill="currentColor" viewbox="0 0 24 24" width="14" height="14"><path d="M13.414 4.222a4.5 4.5 0 1 1 6.364 6.364l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005a2.5 2.5 0 1 0-3.536-3.536l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005zm-6.187 6.187a.5.5 0 0 1 .638-.058l.07.058.706.707a.5.5 0 0 1 .058.638l-.058.07-3.005 3.004a2.5 2.5 0 0 0 3.405 3.658l.13-.122 3.006-3.005a.5.5 0 0 1 .638-.058l.069.058.707.707a.5.5 0 0 1 .058.638l-.058.069-3.005 3.005a4.5 4.5 0 0 1-6.524-6.196l.16-.168 3.005-3.005zm8.132-3.182a.25.25 0 0 1 .353 0l1.061 1.06a.25.25 0 0 1 0 .354l-8.132 8.132a.25.25 0 0 1-.353 0l-1.061-1.06a.25.25 0 0 1 0-.354l8.132-8.132z"/></svg></span><span>https://github.com/Molunerfinn/picgo/</span></span></span></a></p>
+<p>随机生成背景图方法：</p>
+<p><a target="_blank" href="https://github.com/YieldRay/Random-Picture" style="position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; box-sizing: border-box; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 390px; min-height: 84px; border-radius: 8px; max-width: 100%; overflow: hidden; margin: 16px auto; padding: 12px 12px 9px 12px; background-color: #F6F6F6;"><span class="LinkCard-contents"><span style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; line-height: 1.25; color: #121212;">YieldRay/Random-Picture: 随机图片api (github.com)</span><span style="display: -webkit-box; font-size: 13px; height: 18px; line-height: 18px; color: #999; word-break: break-all; text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 1; -webkit-box-orient: vertical;"><span style="display: inline-flex; align-items: center;"><svg class="Zi Zi--InsertLink" fill="currentColor" viewbox="0 0 24 24" width="14" height="14"><path d="M13.414 4.222a4.5 4.5 0 1 1 6.364 6.364l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005a2.5 2.5 0 1 0-3.536-3.536l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005zm-6.187 6.187a.5.5 0 0 1 .638-.058l.07.058.706.707a.5.5 0 0 1 .058.638l-.058.07-3.005 3.004a2.5 2.5 0 0 0 3.405 3.658l.13-.122 3.006-3.005a.5.5 0 0 1 .638-.058l.069.058.707.707a.5.5 0 0 1 .058.638l-.058.069-3.005 3.005a4.5 4.5 0 0 1-6.524-6.196l.16-.168 3.005-3.005zm8.132-3.182a.25.25 0 0 1 .353 0l1.061 1.06a.25.25 0 0 1 0 .354l-8.132 8.132a.25.25 0 0 1-.353 0l-1.061-1.06a.25.25 0 0 1 0-.354l8.132-8.132z"/></svg></span><span>https://github.com/YieldRay/Random-Picture</span></span></span></a></p>
+<p>我的background路径设置文件是 <code>...\themes\next\source\css\_custom\custom.styl</code></p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">   <span class="comment">// 替换成自己的随机图片链接</span></span><br><span class="line">   <span class="attribute">background</span>:url(https://fine-clam-<span class="number">71</span>.deno.dev);</span><br><span class="line">   <span class="attribute">background-repeat</span>:no-repeat;</span><br><span class="line">   <span class="attribute">background-attachment</span>:fixed;</span><br><span class="line">   <span class="attribute">background-position</span>:center;</span><br><span class="line">   <span class="attribute">background-size</span>:cover;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
 </search>

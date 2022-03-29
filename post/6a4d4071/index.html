@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -157,7 +155,7 @@
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: '0',
       author: '松子'
@@ -507,7 +505,7 @@
 <h2 id="2-动机">2. 动机</h2>
 <p>对于系统中的某些对象，它们存储在同一个集合中，且具有<strong>不同的类型</strong>，而且对于该集合中的对象，可以接受一类称为<strong>访问者的对象</strong>来访问，而且<strong>不同的访问者其访问方式有所不同</strong>，访问者模式为解决这类问题而诞生。</p>
 <p>在实际使用时，对同一集合对象的操作<strong>并不是唯一</strong>的，对相同的元素对象可能存在<strong>多种不同的操作方式</strong>。而且这些操作方式<strong>并不稳定</strong>，可能还需要<strong>增加新的操作</strong>，以满足新的业务需求。</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_2.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_2.png" alt></p>
 <h2 id="3-适用性">3. 适用性</h2>
 <ul>
 <li>一个对象结构包含很多类对象，并相对这些对象实施一些依赖于具体类的操作</li>
@@ -515,7 +513,7 @@
 <li>用户对对象类比较熟悉，定义对象结构的类很少改变，但需要经常在结构上定义新操作</li>
 </ul>
 <h2 id="4-结构">4. 结构</h2>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_1.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_1.png" alt></p>
 <h2 id="5-参与者">5. 参与者</h2>
 <ul>
 <li>Visitor</li>
@@ -525,7 +523,7 @@
 <li>ObjectStructure</li>
 </ul>
 <h2 id="6-协作">6. 协作</h2>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_3.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_3.png" alt></p>
 <h2 id="7-效果优缺点">7. 效果（优缺点）</h2>
 <p>优点</p>
 <ul>
@@ -556,7 +554,7 @@
 <p>代码分析的需求变化频繁</p>
 </li>
 </ul>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91.png" alt></p>
 <h2 id="拓展">拓展</h2>
 <p>存在反面向对象，打破数据+操作</p>
 <p>与面向对象思想相反，不同对象之间存在逻辑关系的操作从类中间剥离，并集合在一起</p>
@@ -700,7 +698,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-count">109</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -711,7 +709,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -722,7 +720,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -843,16 +841,16 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- require JQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<!-- require pjax -->
-<script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
-<!-- 新增播放器 -->
+        <!-- 新增播放器 -->
 <!-- 引用依赖 -->
 <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+<!-- require JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- require pjax -->
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
 <!-- 我使用的APlayer本体 -->
 <div class="aplayer"
   data-id="986184445"
@@ -860,9 +858,9 @@
   data-type="playlist"
   data-fixed="true"
   data-mini="true"
-  data-autoplay="true"
+  data-autoplay="false"
   data-order="random"
-  data-volume="0.45"
+  data-volume="0.35"
   data-theme="#FFEFD5"
   data-preload="auto" >
 </div>
@@ -875,6 +873,17 @@
     <i class="fa fa-tree"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">松子</span>
+
+   
+      <span class="post-meta-divider">|</span>
+      <span class="post-meta-item-icon">
+        <i class="fa fa-area-chart"></i>
+      </span>
+      
+        <span class="post-meta-item-text">Posts total count&#58;</span>
+      
+      <span title="post.totalcount">640k</span>
+    
 </div>
 
 <!--添加网站运行时间 -->
@@ -1432,5 +1441,83 @@ wpac_init.push({widget: 'Rating', id: 17904});
 
   
 
-</body>
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('copy to clipboard').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('copied')
+          else $(this).text('failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('copy to clipboard')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

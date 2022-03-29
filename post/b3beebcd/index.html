@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -164,7 +162,7 @@
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: '0',
       author: '松子'
@@ -540,7 +538,7 @@
 <h2 id="数据仓库的特性">数据仓库的特性</h2>
 <p>数据仓库是一个<strong>面向主题的</strong>、<strong>集成的</strong>、<strong>非易失的</strong>且<strong>随时间变化</strong>的<strong>数据集合</strong>，用来支持管理人员的决策。</p>
 <h3 id="结构">结构</h3>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190409152310.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190409152310.png" alt></p>
 <p>不同的<strong>细节级</strong>——早期细节级（备用的、批量的存储）、当前细节级、轻度综合数据集（数据集市）、高度综合数据集。</p>
 <h3 id="面向主题">面向主题</h3>
 <p>数据仓库是面向在数据模型中已定义好的公司的主要主题领域的。典型的主题领域例如：</p>
@@ -553,15 +551,15 @@
 <li>帐目。</li>
 </ul>
 <p>在数据仓库中，主要主题领域是以一组相关的表来具体实现的。</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410182844.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410182844.png" alt></p>
 <p>有的数据存储在直接存取DASD上，有的数据存储在磁带上。数据存储在不同介质上意味着在数据仓库中可能有多个DBMS对数据进行管理，或者某些数据根本没有被某个DBMS管理。<strong>不能仅仅因为数据存储在磁带上，就认为它不是数据仓库的一部分。</strong></p>
 <h3 id="随时间变化">随时间变化</h3>
 <p>建立数据仓库是<strong>进化性</strong>的——数据仓库只能一次一步地进行设计和载入数据。由于建立数据仓库的成本，数据仓库的建立要采用<strong>有序地反复和一次一步地方式</strong>。</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410183413.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410183413.png" alt></p>
 <h3 id="粒度第一个主要涉及问题">粒度——第一个主要涉及问题</h3>
 <p>粒度是指<strong>数据仓库的数据单位中保存数据的细化或综合程度的级别</strong>。细化程度越高，粒度级就越小；反之则反。</p>
 <p>粒度是<strong>主要的设计问题</strong>——<strong>数据仓库的数据量大小和查询的详细程度的权衡</strong>——它深深地影响存放在数据仓库中的数据量的大小，同时影响数据仓库所能回答的查询类型。</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410184523.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410184523.png" alt></p>
 <h4 id="粒度的例子">粒度的例子</h4>
 <p>暂时还不太理解</p>
 <h4 id="粒度的双重级别">粒度的双重级别</h4>
@@ -571,7 +569,7 @@
 <p>数据分隔是<strong>把数据分散到各自的物理单元中去，它们能独立地处理</strong>。分隔问题的焦点是<strong>如何</strong>去进行分隔。</p>
 <h3 id="样本数据库">样本数据库</h3>
 <p>数据仓库的一种特殊形式，只是真实档案数据或轻度综合数据的子集。</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410190235.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410190235.png" alt></p>
 <p>在人口统计分析等情况下，样本数据库是非常有用的，其最大好处是存取效率非常高。一个分析员可能花24小时来浏阅与分析一个大数据库，而浏览与分析一个样本数据库则可能只需10分钟。在进行启发式分析中，周转时间对可以进行的分析而言是至关重要的。</p>
 <p>但是其存在一些<strong>苛刻的限制</strong>，假如设计者知道这些限制，否则就不应该创建这种数据库作为数据仓库的一部分。</p>
 <h3 id="数据分割不同于数据分隔">数据分割——不同于数据分隔</h3>
@@ -581,18 +579,18 @@
 <p><strong>重要性</strong>：因为小的物理单元能为操作者和设计者在管理数据时提供比对大的物理单元<strong>更大的灵活性</strong>。</p>
 <p>数据库放在大的物理单元，不容易实现的——重构、自由索引、顺序扫描、重组、恢复、监控。</p>
 <p>数据仓库的<strong>本质</strong>之一就是<strong>灵活地访问数据</strong>。如果是大块的数据，就达不到这一要求。</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192258.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192258.png" alt></p>
 <p>常见的数据分隔的标准有：时间、商业线、地理位置、组织单位等等</p>
 <p>主要问题之一：在<strong>系统层</strong>上还是在<strong>应用层</strong>上对数据进行分割</p>
 <h3 id="数据仓库中的数据组织">数据仓库中的数据组织</h3>
 <h4 id="简单堆积结构最简单最常见">简单堆积结构——最简单最常见</h4>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192752.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192752.png" alt></p>
 <h4 id="轮转综合数据存储简单~的一种变种">轮转综合数据存储——简单~的一种变种</h4>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192855.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192855.png" alt></p>
 <h4 id="上面的对比">上面的对比</h4>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192959.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410192959.png" alt></p>
 <h4 id="简单直接文件">简单直接文件</h4>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410193115.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190410193115.png" alt></p>
 <h4 id="连续文件">连续文件</h4>
 <p>创建的两种方法</p>
 <ul>
@@ -811,7 +809,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-count">109</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -822,7 +820,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -833,7 +831,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -954,16 +952,16 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- require JQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<!-- require pjax -->
-<script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
-<!-- 新增播放器 -->
+        <!-- 新增播放器 -->
 <!-- 引用依赖 -->
 <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+<!-- require JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- require pjax -->
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
 <!-- 我使用的APlayer本体 -->
 <div class="aplayer"
   data-id="986184445"
@@ -971,9 +969,9 @@
   data-type="playlist"
   data-fixed="true"
   data-mini="true"
-  data-autoplay="true"
+  data-autoplay="false"
   data-order="random"
-  data-volume="0.45"
+  data-volume="0.35"
   data-theme="#FFEFD5"
   data-preload="auto" >
 </div>
@@ -986,6 +984,17 @@
     <i class="fa fa-tree"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">松子</span>
+
+   
+      <span class="post-meta-divider">|</span>
+      <span class="post-meta-item-icon">
+        <i class="fa fa-area-chart"></i>
+      </span>
+      
+        <span class="post-meta-item-text">Posts total count&#58;</span>
+      
+      <span title="post.totalcount">640k</span>
+    
 </div>
 
 <!--添加网站运行时间 -->
@@ -1543,5 +1552,83 @@ wpac_init.push({widget: 'Rating', id: 17904});
 
   
 
-</body>
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('copy to clipboard').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('copied')
+          else $(this).text('failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('copy to clipboard')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

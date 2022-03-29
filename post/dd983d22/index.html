@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -156,7 +154,7 @@
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: '0',
       author: '松子'
@@ -615,10 +613,10 @@ mjx-container[display="true"] + br {
         <h2 id="1-处理分类问题常用算法">1. 处理分类问题常用算法</h2>
 <h3 id="11-交叉熵公式">1.1 交叉熵公式</h3>
 <p>交叉熵——设q(x) p(x)是X中取值的两个概率分布，则p对q的相对熵为</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/1.PNG" alt="1"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/1.PNG" alt="1"></p>
 <p>在一定程度上，相对熵可以度量两个随机变量的“距离”，且D(p||q) 与 D（q||p）不等。</p>
 <p>两个随机变量X Y的互信息定义——X Y的联合分布和各自独立分布乘积的相对熵，用I(X,Y)表示：</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/2.PNG" alt="2"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/2.PNG" alt="2"></p>
 <h3 id="12-lr公式逻辑回归">1.2 LR公式——逻辑回归</h3>
 <h2 id="9-降维算法">9. 降维算法</h2>
 <p>在机器学习中经常会碰到一些高维的数据集，而在高维数据情形下会出现数据样本稀疏，距离计算等困难，这类问题是所有机器学习方法共同面临的严重问题，称之为“ 维度灾难 ”。另外在高维特征中容易出现特征之间的线性相关，这也就意味着有的特征是冗余存在的。基于这些问题，降维思想就出现了。</p>
@@ -633,7 +631,7 @@ mjx-container[display="true"] + br {
 <h4 id="示例svd用于图像压缩">示例：SVD用于图像压缩</h4>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> numpy.linalg <span class="keyword">as</span> la</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> skimage <span class="keyword">import</span> io</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getImgAsMat</span>(<span class="params">index</span>):</span></span><br><span class="line">    ds = datasets.fetch_olivetti_faces()</span><br><span class="line">    <span class="keyword">return</span> np.mat(ds.images[index])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getImgAsMatFromFile</span>(<span class="params">filename</span>):</span></span><br><span class="line">    img = io.imread(filename, as_grey=<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">return</span> np.mat(img) </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plotImg</span>(<span class="params">imgMat</span>):</span></span><br><span class="line">    plt.imshow(imgMat, cmap=plt.cm.gray)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recoverBySVD</span>(<span class="params">imgMat, k</span>):</span></span><br><span class="line">    <span class="comment"># singular value decomposition</span></span><br><span class="line">    U, s, V = la.svd(imgMat)</span><br><span class="line">    <span class="comment"># choose top k important singular values (or eigens)</span></span><br><span class="line">    Uk = U[:, <span class="number">0</span>:k]</span><br><span class="line">    <span class="comment">#SK:二维数组</span></span><br><span class="line">    Sk = np.diag(s[<span class="number">0</span>:k])</span><br><span class="line">    Vk = V[<span class="number">0</span>:k, :]</span><br><span class="line">    <span class="comment"># recover the image</span></span><br><span class="line">    imgMat_new = Uk * Sk * Vk</span><br><span class="line">    <span class="keyword">return</span> imgMat_new</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># -------------------- main --------------------- #</span></span><br><span class="line">A = getImgAsMatFromFile(<span class="string">'D:/Movie/svd.jpg'</span>)</span><br><span class="line">plotImg(A)</span><br><span class="line">A_new = recoverBySVD(A, <span class="number">20</span>)</span><br><span class="line">plotImg(A_new)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="关于svd的结论">关于SVD的结论</h4>
-<p><img src="http://img.mukewang.com/5cf8010700019ce107260343.png" alt="图片描述"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="http://img.mukewang.com/5cf8010700019ce107260343.png" alt="图片描述"></p>
 <h3 id="92-pca主成分分析">9.2 PCA主成分分析</h3>
 <h4 id="思路">思路：</h4>
 <p>数据从原来坐标转换到新坐标，由数据本身决定。</p>
@@ -841,7 +839,7 @@ mjx-container[display="true"] + br {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-count">109</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -852,7 +850,7 @@ mjx-container[display="true"] + br {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -863,7 +861,7 @@ mjx-container[display="true"] + br {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -984,16 +982,16 @@ mjx-container[display="true"] + br {
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- require JQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<!-- require pjax -->
-<script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
-<!-- 新增播放器 -->
+        <!-- 新增播放器 -->
 <!-- 引用依赖 -->
 <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+<!-- require JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- require pjax -->
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
 <!-- 我使用的APlayer本体 -->
 <div class="aplayer"
   data-id="986184445"
@@ -1001,9 +999,9 @@ mjx-container[display="true"] + br {
   data-type="playlist"
   data-fixed="true"
   data-mini="true"
-  data-autoplay="true"
+  data-autoplay="false"
   data-order="random"
-  data-volume="0.45"
+  data-volume="0.35"
   data-theme="#FFEFD5"
   data-preload="auto" >
 </div>
@@ -1016,6 +1014,17 @@ mjx-container[display="true"] + br {
     <i class="fa fa-tree"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">松子</span>
+
+   
+      <span class="post-meta-divider">|</span>
+      <span class="post-meta-item-icon">
+        <i class="fa fa-area-chart"></i>
+      </span>
+      
+        <span class="post-meta-item-text">Posts total count&#58;</span>
+      
+      <span title="post.totalcount">640k</span>
+    
 </div>
 
 <!--添加网站运行时间 -->
@@ -1573,5 +1582,83 @@ wpac_init.push({widget: 'Rating', id: 17904});
 
   
 
-</body>
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('copy to clipboard').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('copied')
+          else $(this).text('failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('copy to clipboard')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

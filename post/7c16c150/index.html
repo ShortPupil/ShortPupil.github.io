@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -167,7 +165,7 @@
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: '0',
       author: '松子'
@@ -577,9 +575,9 @@
 </ul>
 <h4 id="实例">实例</h4>
 <p>登录功能原结构</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/SRP_1.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/SRP_1.png" alt></p>
 <p>按原则重构后</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/SRP_2.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/SRP_2.png" alt></p>
 <h3 id="22-开闭原则-open-closed-principleocp">2.2 开闭原则 Open-Closed Principle(OCP)</h3>
 <h4 id="定义">定义</h4>
 <p>一个软件实体应当<strong>对扩展开放，对修改关闭(open for extension, closed for modification)</strong>。</p>
@@ -591,9 +589,9 @@
 <h4 id="实例">实例</h4>
 <p>图形界面的按钮编程</p>
 <p>原结构</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/OCP_1.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/OCP_1.png" alt></p>
 <p>重构后</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/OCP_2.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/OCP_2.png" alt></p>
 <h3 id="23-里氏替换原则-liskov-substitution-principlelsp">2.3 里氏替换原则 Liskov Substitution Principle(LSP)</h3>
 <h4 id="定义">定义</h4>
 <p><strong>所有引用基类（父类）的地方必须能透明地使用其子类的对象</strong></p>
@@ -604,9 +602,9 @@
 </ul>
 <h4 id="实例">实例</h4>
 <p>原</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/LSP_1.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/LSP_1.png" alt></p>
 <p>重构后</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/LSP_2.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/LSP_2.png" alt></p>
 <h3 id="24-依赖倒转原则-dependency-inversion-principledip">2.4 依赖倒转原则 Dependency Inversion Principle(DIP)</h3>
 <h4 id="定义">定义</h4>
 <p>高层模块不应该依赖底层板块，它们都应该依赖抽象。<strong>抽象不应该依赖于细节，细节应该依赖于抽象(Abstractions should not depend upon details, details should depend upon abstractions)</strong>。</p>
@@ -634,9 +632,9 @@
 <h4 id="实例">实例</h4>
 <p>将来自不同数据源的数据转换为多种格式的数据转换模块</p>
 <p>原</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/DIP_1.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/DIP_1.png" alt></p>
 <p>重构后</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/DIP_2.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/DIP_2.png" alt></p>
 <h3 id="25-接口隔离原则-interface-segregation-principleisp">2.5 接口隔离原则 Interface Segregation Principle(ISP)</h3>
 <h4 id="定义">定义</h4>
 <p>客户端不应该依赖那些它不需要的接口</p>
@@ -654,9 +652,9 @@
 </ul>
 <h4 id="实例">实例</h4>
 <p>拥有多个客户类的系统，在系统中定义一个胖接口服务所有客户类</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/ISP_1.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/ISP_1.png" alt></p>
 <p>重构后</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/ISP_2.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/ISP_2.png" alt></p>
 <h3 id="26-合成复用原则-composite-reuse-principlecrp">2.6 合成复用原则 Composite Reuse Principle(CRP)</h3>
 <h4 id="定义">定义</h4>
 <p><strong>尽量使用对象组合</strong>，而不是继承来达到复用的目的。</p>
@@ -673,9 +671,9 @@
 </ul>
 <h4 id="实例">实例</h4>
 <p>教学管理系统部分数据库访问类设计</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/CRP_1.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/CRP_1.png" alt></p>
 <p>重构后</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/CRP_2.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/CRP_2.png" alt></p>
 <h3 id="27-迪米特法则-law-of-demeterlod">2.7 迪米特法则 Law of Demeter(LoD)</h3>
 <h4 id="定义">定义</h4>
 <p>(1) <strong>不要和“陌生人”说话</strong>。Don’t talk to strangers.</p>
@@ -706,9 +704,9 @@
 </ul>
 <h4 id="实例">实例</h4>
 <p>某系统界面类和数据访问类之间的调用关系</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/LoD_1.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/LoD_1.png" alt></p>
 <p>重构后</p>
-<p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/LoD_2.png" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/LoD_2.png" alt></p>
 
       
     </div>
@@ -913,7 +911,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-count">109</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -924,7 +922,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -935,7 +933,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1056,16 +1054,16 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- require JQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<!-- require pjax -->
-<script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
-<!-- 新增播放器 -->
+        <!-- 新增播放器 -->
 <!-- 引用依赖 -->
 <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+<!-- require JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- require pjax -->
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
 <!-- 我使用的APlayer本体 -->
 <div class="aplayer"
   data-id="986184445"
@@ -1073,9 +1071,9 @@
   data-type="playlist"
   data-fixed="true"
   data-mini="true"
-  data-autoplay="true"
+  data-autoplay="false"
   data-order="random"
-  data-volume="0.45"
+  data-volume="0.35"
   data-theme="#FFEFD5"
   data-preload="auto" >
 </div>
@@ -1088,6 +1086,17 @@
     <i class="fa fa-tree"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">松子</span>
+
+   
+      <span class="post-meta-divider">|</span>
+      <span class="post-meta-item-icon">
+        <i class="fa fa-area-chart"></i>
+      </span>
+      
+        <span class="post-meta-item-text">Posts total count&#58;</span>
+      
+      <span title="post.totalcount">640k</span>
+    
 </div>
 
 <!--添加网站运行时间 -->
@@ -1645,5 +1654,83 @@ wpac_init.push({widget: 'Rating', id: 17904});
 
   
 
-</body>
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('copy to clipboard').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('copied')
+          else $(this).text('failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('copy to clipboard')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

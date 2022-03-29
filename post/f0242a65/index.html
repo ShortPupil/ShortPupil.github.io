@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -168,7 +166,7 @@
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: '0',
       author: '松子'
@@ -552,7 +550,7 @@ Hotspot VM  -&gt;  Java虚拟机规范</p>
 </ul>
 </li>
 </ul>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/JVM1.drawio.png?raw=true" alt="JVM1.drawio.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/JVM1.drawio.png?raw=true" alt="JVM1.drawio.png"></p>
 <ul>
 <li>为什么Java研发系统需要JVM
 <ul>
@@ -580,7 +578,7 @@ JVM其实是一个规范，定义了class文件的结构、加载机制、数据
 <li>答：JAVA最引以为豪的就是其自动内存管理机制，相比于C++手动内存管理、难以理解的指针</li>
 </ul>
 <p>JVM内存布局：<strong>静态成员变量；动态成员变量；区域变量；短小紧凑的对象声明；庞大复杂的内存声明</strong></p>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/JVM%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80.drawio.png?raw=true" alt="JVM内存布局.drawio.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/JVM%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80.drawio.png?raw=true" alt="JVM内存布局.drawio.png"></p>
 <ul>
 <li>JVM堆中的数据共享，</li>
 <li>执行引擎：可以执行字节码的模块</li>
@@ -598,7 +596,7 @@ JVM其实是一个规范，定义了class文件的结构、加载机制、数据
 <li>动态连接</li>
 <li>返回地址</li>
 </ol>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/%E8%99%9A%E6%8B%9F%E6%A0%88%E5%B8%A71.drawio.png?raw=true" alt></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/%E8%99%9A%E6%8B%9F%E6%A0%88%E5%B8%A71.drawio.png?raw=true" alt></p>
 <h4 id="23-程序计数器">2.3 程序计数器</h4>
 <ul>
 <li>问：若我们的程序在线程之间切换，如何指导这个线程执行到什么地方了</li>
@@ -607,9 +605,9 @@ JVM其实是一个规范，定义了class文件的结构、加载机制、数据
 <p>程序计数器是一块较小的内存空间</p>
 <p>其作用可以看做是当前线程所指新的字节码的行号指示器，即存的是<strong>当前线程执行的进度</strong></p>
 <p>包括：指令、跳转、分支、循环、异常处理、线程恢复</p>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A81.drawio.png?raw=true" alt="程序计数器1.drawio.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A81.drawio.png?raw=true" alt="程序计数器1.drawio.png"></p>
 <h4 id="24-堆">2.4 堆</h4>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/%E5%A0%861.drawio.png?raw=true" alt="堆1.drawio.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/%E5%A0%861.drawio.png?raw=true" alt="堆1.drawio.png"></p>
 <p>java包括 基本数据类型、普通对象</p>
 <ul>
 <li>对7种基本数据类型，有两种情况</li>
@@ -718,7 +716,7 @@ Java类的默认加载器，有时也叫作System ClassLoader<br>
 我们写的代码，会<strong>首先尝试使用</strong>这个类加载器进行加载</li>
 <li>Custom ClassLoader<br>
 自定义加载器，支持一些个性化的扩展功能</li>
-<li><img src="https://github.com/ShortPupil/VPicture/blob/main/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%9C%BA%E5%88%B6.drawio.png?raw=true" alt="双亲委派机制.drawio.png"></li>
+<li><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%9C%BA%E5%88%B6.drawio.png?raw=true" alt="双亲委派机制.drawio.png"></li>
 </ul>
 <p><strong>双亲委派机制</strong></p>
 <ul>
@@ -786,7 +784,7 @@ javac中可以指定一些额外的内容输出到字节码，常用的有：<br
 </ul>
 <h4 id="43-一个例子">4.3 一个例子</h4>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> a = <span class="number">23456</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">test</span><span class="params">(<span class="keyword">long</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> text = <span class="keyword">this</span>.a + num;</span><br><span class="line">        <span class="keyword">return</span> text;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> B b = <span class="keyword">new</span> B();  <span class="comment">// 此处触发B类的加载</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span> </span>&#123;</span><br><span class="line">        A a = <span class="keyword">new</span> A();</span><br><span class="line">        <span class="keyword">long</span> num = <span class="number">65432</span>;</span><br><span class="line">        <span class="keyword">long</span> ret = a.b.test(num);</span><br><span class="line">        System.out.println(ret);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/%E6%9F%A5%E7%9C%8B%E5%AD%97%E8%8A%82%E7%A0%81.drawio.png?raw=true" alt="查看字节码.drawio.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/%E6%9F%A5%E7%9C%8B%E5%AD%97%E8%8A%82%E7%A0%81.drawio.png?raw=true" alt="查看字节码.drawio.png"></p>
 <h2 id="二-垃圾回收理论为主">二、垃圾回收：理论为主</h2>
 <h3 id="1-oom相关问题">1. OOM相关问题</h3>
 <h4 id="11-gc-roots">1.1 GC Roots</h4>
@@ -822,7 +820,7 @@ javac中可以指定一些额外的内容输出到字节码，常用的有：<br
 <blockquote>
 <p>问：<strong>弱引用有什么用处</strong></p>
 </blockquote>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/GC%20Roots.drawio.png?raw=true" alt="GC Roots.drawio.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/GC%20Roots.drawio.png?raw=true" alt="GC Roots.drawio.png"></p>
 <p>其关系可以分为 <strong>强引用、软引用、弱引用、虚引用</strong>…</p>
 <ul>
 <li>
@@ -854,7 +852,7 @@ javac中可以指定一些额外的内容输出到字节码，常用的有：<br
 </li>
 </ul>
 <h4 id="13-oom场景">1.3 OOM场景</h4>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/JVM%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80.drawio.png?raw=true" alt="JVM内存布局.drawio.png"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/JVM%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80.drawio.png?raw=true" alt="JVM内存布局.drawio.png"></p>
 <table>
 <thead>
 <tr>
@@ -955,7 +953,7 @@ javac中可以指定一些额外的内容输出到字节码，常用的有：<br
 </tbody>
 </table>
 <h4 id="21-复制-标记-清除-标记整理">2.1 复制、标记-清除、标记整理</h4>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/%E6%A0%87%E8%AE%B0.PNG?raw=true" alt="标记.PNG"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/%E6%A0%87%E8%AE%B0.PNG?raw=true" alt="标记.PNG"></p>
 <ul>
 <li>
 <p>灰色结点被清除</p>
@@ -968,7 +966,7 @@ javac中可以指定一些额外的内容输出到字节码，常用的有：<br
 比如：HashMap的扩容也是使用同样的思路，Redis的rehash也是类似的</p>
 </li>
 <li>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.PNG?raw=true" alt="复制算法.PNG"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.PNG?raw=true" alt="复制算法.PNG"></p>
 </li>
 <li>
 <pre><code class="language-java">/**整理算法例子*/
@@ -1093,7 +1091,7 @@ clear(mems,last,mems.length);
 <strong>Full GC</strong>：全堆垃圾回收，比如Metaspace区引起年轻代和老年代的回收</p>
 </li>
 <li>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/HotSpot%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8.PNG?raw=true" alt="HotSpot垃圾回收器.PNG"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/HotSpot%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8.PNG?raw=true" alt="HotSpot垃圾回收器.PNG"></p>
 </li>
 </ul>
 <h4 id="23-垃圾回收器">2.3 垃圾回收器</h4>
@@ -1142,7 +1140,7 @@ Parallel Old收集器是Parallel Scavenge的老年代版本，追求CPU吞吐量
 随着JVM的长时间运行，<strong>碎片化会越来越严重，只有通过Full GC才能完成整理</strong></li>
 </ul>
 <p>垃圾回收器的相关命令</p>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%9F%E5%91%BD%E4%BB%A4.PNG?raw=true" alt="垃圾回收期命令.PNG"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%9F%E5%91%BD%E4%BB%A4.PNG?raw=true" alt="垃圾回收期命令.PNG"></p>
 <p>线上使用最多的垃圾回收器：就有<strong>CMS</strong>和<strong>G1</strong>，以及Java8默认的<strong>Parallel Scavenge</strong></p>
 <ul>
 <li>CMS的设置参数：-XX:+UseConcMarkSweepGC</li>
@@ -1153,7 +1151,7 @@ Parallel Old收集器是Parallel Scavenge的老年代版本，追求CPU吞吐量
 <p>为了保证程序不会乱套，最好的办法就是暂停用户的一切线程<br>
 也就是在这段时间，你是不能new对象的，只能等待<br>
 表现在JVM上就是<strong>短暂的卡顿，什么都干不了</strong>，这个头疼的现象，就叫作Stop the world,简称STW</p>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/STW.PNG?raw=true" alt="STW.PNG"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/STW.PNG?raw=true" alt="STW.PNG"></p>
 <p>例子：某个高并发服务的峰值流量是10万/秒，后面有10台负载均衡的机器，每台机器平均下来需要1万/秒。假设某台机器发生了STW持续了1秒，本来10ms就能返回10万个请求，此时需要等待1秒。在用户那里的表现就是会卡顿，而且GC频繁卡顿则会十分明显。</p>
 <p>1.<strong>年轻代是GC的重灾区，大部分对象活不到老年代</strong><br>
 2.面试经常问，都是些非常朴素的原理<br>
@@ -1249,7 +1247,7 @@ Parallel Old收集器是Parallel Scavenge的老年代版本，追求CPU吞吐量
 <p>为了达成上面制定的KPI,它和前面介绍的垃圾回收器，<strong>在对堆的划分上有一些不同</strong>（问题）<br>
 一小份区域的大小是固定的，名字叫作<strong>小堆区(Region)</strong>。小堆区可以是Eden区，也可以是Survivor区，还可以是Old区，所以G1的<strong>年轻代</strong>和<strong>老年代</strong>的概念都是<strong>逻辑</strong>上的。<br>
 每一块Region,大小都是一致的，它的数值是在1M到32M字节之间的一个2的幂值数</p>
-<p><img src="https://github.com/ShortPupil/VPicture/blob/main/G1%E5%88%86%E5%8C%BA.PNG?raw=true" alt="G1分区.PNG"></p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://github.com/ShortPupil/VPicture/blob/main/G1%E5%88%86%E5%8C%BA.PNG?raw=true" alt="G1分区.PNG"></p>
 </li>
 </ul>
 <h4 id="42-g1的垃圾回收过程">4.2 G1的垃圾回收过程</h4>
@@ -1532,7 +1530,7 @@ G1的回收过程主要分为<strong>3类</strong>：</p>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-count">109</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1543,7 +1541,7 @@ G1的回收过程主要分为<strong>3类</strong>：</p>
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1554,7 +1552,7 @@ G1的回收过程主要分为<strong>3类</strong>：</p>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1675,16 +1673,16 @@ G1的回收过程主要分为<strong>3类</strong>：</p>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- require JQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<!-- require pjax -->
-<script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
-<!-- 新增播放器 -->
+        <!-- 新增播放器 -->
 <!-- 引用依赖 -->
 <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+<!-- require JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- require pjax -->
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
 <!-- 我使用的APlayer本体 -->
 <div class="aplayer"
   data-id="986184445"
@@ -1692,9 +1690,9 @@ G1的回收过程主要分为<strong>3类</strong>：</p>
   data-type="playlist"
   data-fixed="true"
   data-mini="true"
-  data-autoplay="true"
+  data-autoplay="false"
   data-order="random"
-  data-volume="0.45"
+  data-volume="0.35"
   data-theme="#FFEFD5"
   data-preload="auto" >
 </div>
@@ -1707,6 +1705,17 @@ G1的回收过程主要分为<strong>3类</strong>：</p>
     <i class="fa fa-tree"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">松子</span>
+
+   
+      <span class="post-meta-divider">|</span>
+      <span class="post-meta-item-icon">
+        <i class="fa fa-area-chart"></i>
+      </span>
+      
+        <span class="post-meta-item-text">Posts total count&#58;</span>
+      
+      <span title="post.totalcount">640k</span>
+    
 </div>
 
 <!--添加网站运行时间 -->
@@ -2264,5 +2273,83 @@ wpac_init.push({widget: 'Rating', id: 17904});
 
   
 
-</body>
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('copy to clipboard').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('copied')
+          else $(this).text('failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('copy to clipboard')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>
