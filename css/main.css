@@ -185,7 +185,7 @@ th {
 }
 body {
   position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Lato', "Noto Serif SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 16px;
   line-height: 2;
   color: #555;
@@ -216,7 +216,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: 'Roboto Slab', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Roboto Slab', 'Lato', "Noto Serif SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 h2,
 h3,
@@ -476,13 +476,13 @@ pre,
   margin: 20px 0;
   padding: 0;
   font-size: 13px;
-  color: #fff;
-  background: #002451;
+  color: #ccc;
+  background: #2d2d2d;
   line-height: 1.6;
 }
 pre,
 code {
-  font-family: 'Roboto Mono', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+  font-family: 'Roboto Mono', consolas, Menlo, "Noto Serif SC", "PingFang SC", "Microsoft YaHei", monospace;
 }
 code {
   padding: 2px 4px;
@@ -494,7 +494,7 @@ code {
 }
 pre code {
   padding: 0;
-  color: #fff;
+  color: #ccc;
   background: none;
   text-shadow: none;
 }
@@ -517,7 +517,7 @@ pre code {
 }
 .highlight figcaption {
   font-size: 1em;
-  color: #fff;
+  color: #ccc;
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -531,23 +531,23 @@ pre code {
 }
 .highlight figcaption a {
   float: right;
-  color: #fff;
+  color: #ccc;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #fff;
+  border-bottom-color: #ccc;
 }
 .highlight .gutter pre {
   padding-left: 10px;
   padding-right: 10px;
-  color: #7285b7;
+  color: #999;
   text-align: right;
-  background-color: #000e20;
+  background-color: #1b1b1b;
 }
 .highlight .code pre {
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #002451;
+  background-color: #2d2d2d;
 }
 .highlight .line {
   height: 20px;
@@ -571,10 +571,10 @@ pre .addition {
   background: #800000;
 }
 pre .meta {
-  color: #ebbbff;
+  color: #c9c;
 }
 pre .comment {
-  color: #7285b7;
+  color: #999;
 }
 pre .variable,
 pre .attribute,
@@ -588,7 +588,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #ff9da4;
+  color: #f2777a;
 }
 pre .number,
 pre .preprocessor,
@@ -597,7 +597,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #ffc58f;
+  color: #f99157;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -610,11 +610,11 @@ pre .xml .cdata,
 pre .special,
 pre .number,
 pre .formula {
-  color: #d1f1a9;
+  color: #9c9;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #9ff;
+  color: #6cc;
 }
 pre .function,
 pre .python .decorator,
@@ -624,11 +624,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #bbdaff;
+  color: #69c;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #ebbbff;
+  color: #c9c;
 }
 .full-image.full-image.full-image {
   border: none;
@@ -731,8 +731,9 @@ pre .javascript .function {
   position: relative;
   padding: 15px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
-  background-color: #f5f5f5;
+  border: initial;
+  border-left: 3px solid #eee;
+  background-color: #f9f9f9;
   border-radius: 3px;
 }
 .post-body .note h2,
@@ -762,82 +763,70 @@ pre .javascript .function {
   margin-bottom: 0;
 }
 .post-body .note.default {
-  background-color: #f3f3f3;
-  border-color: #e1e1e1;
-  color: #666;
+  background-color: #f7f7f7;
+  border-left-color: #777;
 }
-.post-body .note.default a {
-  color: #666;
-  border-bottom: 1px solid #666;
-}
-.post-body .note.default a:hover {
-  color: #454545;
-  border-bottom: 1px solid #454545;
+.post-body .note.default h2,
+.post-body .note.default h3,
+.post-body .note.default h4,
+.post-body .note.default h5,
+.post-body .note.default h6 {
+  color: #777;
 }
 .post-body .note.primary {
-  background-color: #f3daff;
-  border-color: #e1c2ff;
-  color: #6f42c1;
+  background-color: #f5f0fa;
+  border-left-color: #6f42c1;
 }
-.post-body .note.primary a {
+.post-body .note.primary h2,
+.post-body .note.primary h3,
+.post-body .note.primary h4,
+.post-body .note.primary h5,
+.post-body .note.primary h6 {
   color: #6f42c1;
-  border-bottom: 1px solid #6f42c1;
-}
-.post-body .note.primary a:hover {
-  color: #453298;
-  border-bottom: 1px solid #453298;
 }
 .post-body .note.info {
-  background-color: #d9edf7;
-  border-color: #b3e5ef;
-  color: #31708f;
+  background-color: #eef7fa;
+  border-left-color: #428bca;
 }
-.post-body .note.info a {
-  color: #31708f;
-  border-bottom: 1px solid #31708f;
-}
-.post-body .note.info a:hover {
-  color: #215761;
-  border-bottom: 1px solid #215761;
+.post-body .note.info h2,
+.post-body .note.info h3,
+.post-body .note.info h4,
+.post-body .note.info h5,
+.post-body .note.info h6 {
+  color: #428bca;
 }
 .post-body .note.success {
-  background-color: #dff0d8;
-  border-color: #d0e6be;
-  color: #3c763d;
+  background-color: #eff8f0;
+  border-left-color: #5cb85c;
 }
-.post-body .note.success a {
-  color: #3c763d;
-  border-bottom: 1px solid #3c763d;
-}
-.post-body .note.success a:hover {
-  color: #32562c;
-  border-bottom: 1px solid #32562c;
+.post-body .note.success h2,
+.post-body .note.success h3,
+.post-body .note.success h4,
+.post-body .note.success h5,
+.post-body .note.success h6 {
+  color: #5cb85c;
 }
 .post-body .note.warning {
-  background-color: #fcf4e3;
-  border-color: #fae4cd;
-  color: #8a6d3b;
+  background-color: #fdf8ea;
+  border-left-color: #f0ad4e;
 }
-.post-body .note.warning a {
-  color: #8a6d3b;
-  border-bottom: 1px solid #8a6d3b;
-}
-.post-body .note.warning a:hover {
-  color: #714f30;
-  border-bottom: 1px solid #714f30;
+.post-body .note.warning h2,
+.post-body .note.warning h3,
+.post-body .note.warning h4,
+.post-body .note.warning h5,
+.post-body .note.warning h6 {
+  color: #f0ad4e;
 }
 .post-body .note.danger {
-  background-color: #f2dfdf;
-  border-color: #ebcdd2;
-  color: #a94442;
+  background-color: #fcf1f2;
+  border-left-color: #d9534f;
 }
-.post-body .note.danger a {
-  color: #a94442;
-  border-bottom: 1px solid #a94442;
-}
-.post-body .note.danger a:hover {
-  color: #84333f;
-  border-bottom: 1px solid #84333f;
+.post-body .note.danger h2,
+.post-body .note.danger h3,
+.post-body .note.danger h4,
+.post-body .note.danger h5,
+.post-body .note.danger h6 {
+  color: #d9534f;
 }
 .post-body .label {
   display: inline;
@@ -1128,7 +1117,7 @@ pre .javascript .function {
   line-height: 36px;
   font-size: 24px;
   font-weight: normal;
-  font-family: 'Lobster Two', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Lobster Two', 'Lato', "Noto Serif SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1199,6 +1188,7 @@ pre .javascript .function {
 .menu .menu-item a {
   display: block;
   font-size: 13px;
+  color: #000;
   line-height: inherit;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
@@ -1216,7 +1206,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .post-body {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Lato', "Noto Serif SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 @media (max-width: 767px) {
   .post-body {
@@ -1489,7 +1479,7 @@ pre .javascript .function {
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
   color: #999;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Lato', "Noto Serif SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
   text-align: center;
 }
@@ -1908,7 +1898,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #13b6cc;
+  background: #018cff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2975,12 +2965,13 @@ hr {
 .footer {
   margin-top: 80px;
   padding: 10px 0;
+  text-align: center;
   background: #f5f5f5;
   color: #666;
 }
 .footer-inner {
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .footer-inner {
@@ -2999,14 +2990,14 @@ body {
   background: url("https://fine-clam-71.deno.dev");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
+  background-position: 30% 30%;
   background-size: cover;
 }
 .main-inner {
   margin-top: 60px;
-  padding: 60px 60px 60px 60px;
+  padding: 5px 5px 5px 5px;
   background: #fff;
-  opacity: 0.93;
+  opacity: 0.88;
   min-height: 500px;
 }
 .post-toc .nav .nav-child {
