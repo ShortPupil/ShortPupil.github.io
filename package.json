@@ -41,7 +41,7 @@
     "hexo-theme-next": "^8.9.0",
     "hexo-toc": "^1.1.0",
     "hexo-word-counter": "^0.0.3",
-    "highlight.js": "^11.4.0",
+    "highlight.js": "^11.5.0",
     "markdown-it-named-headings": "^1.1.0",
     "pjax": "^0.2.8"
   }
