@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>C语言程序设计笔记</title>
-    <url>./post/840ee81f/</url>
+    <url>/post/840ee81f/</url>
     <content><![CDATA[<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> number[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">    <span class="keyword">while</span>(x != <span class="number">-1</span>)&#123;</span><br><span class="line">        number[cnt] = x;</span><br><span class="line">        sum += x;</span><br><span class="line">        cnt++;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(cnt &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%f\n&quot;</span>, sum/cnt);</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>( i=<span class="number">0</span> ; i&lt;cnt ;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>越界… </p>
 <h3 id="集成初始化时的定位"><a href="#集成初始化时的定位" class="headerlink" title="集成初始化时的定位"></a>集成初始化时的定位</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">13</span>] = &#123;[<span class="number">1</span>]=<span class="number">2</span>,<span class="number">3</span>,[<span class="number">5</span>]=<span class="number">6</span>&#125;;</span><br></pre></td></tr></table></figure>
@@ -16,7 +16,7 @@
   </entry>
   <entry>
     <title>Hexo Next美化优化记录</title>
-    <url>./post/5b7ae5f0/</url>
+    <url>/post/5b7ae5f0/</url>
     <content><![CDATA[<h1 id="写在开头"><a href="#写在开头" class="headerlink" title="写在开头"></a>写在开头</h1><p>这么久都没做过Hexo的优化记录，有些功能忘了，有些功能以前做过。这篇文章就用来记录自己容易忘记的美化和一些好的优化博文。</p>
 <h1 id="小功能"><a href="#小功能" class="headerlink" title="小功能"></a>小功能</h1><h2 id="设置字体颜色"><a href="#设置字体颜色" class="headerlink" title="设置字体颜色"></a>设置字体颜色</h2><p><strong>链接</strong>：<a href="https://oldgerman.github.io/6c57f882/">hexo 博客如何写出彩色字体，能实时预览的那种？ | OldGerman’s Blog</a></p>
 <p><span style="color:white;background:black;font-family:仿宋;">黑白配</span></p>
@@ -103,7 +103,7 @@
   </entry>
   <entry>
     <title>Hibernate的三种状态、事务机制、缓存懒加载</title>
-    <url>./post/b4ceab5d/</url>
+    <url>/post/b4ceab5d/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>了解hibernate的底层实现对于使用还是很重要的</p>
 <p>今天有个用hibernate进行查询出了不少错误，问题在于没有理解其持久状态和事务机制</p>
 <h1 id="1-三种状态"><a href="#1-三种状态" class="headerlink" title="1. 三种状态"></a>1. 三种状态</h1><h2 id="11-临时状态transient"><a href="#1-1-临时状态-Transient" class="headerlink" title="1.1 临时状态(Transient)"></a>1.1 临时状态(Transient)</h2><p>当new一个实体对象后, 这个对象处于临时状态, 即这个对象只是一个<strong>保存临时数据的内存区域</strong>, 如果没有变量引用这个对象, 则会被jre垃圾回收机制回收. 这个对象所保存的数据与数据库没有任何关系, 除非通过<strong>Session的save或者SaveOrUpdate</strong>把临时对象与数据库关联, 并把数据插入或者更新到数据库, 这个对象才转换为持久对象.</p>
@@ -199,7 +199,7 @@
   </entry>
   <entry>
     <title>JVM学习</title>
-    <url>./post/f0242a65/</url>
+    <url>/post/f0242a65/</url>
     <content><![CDATA[<h1 id="jvm"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><h2 id="一-基础原理jvm内存区域划分-类加载机制-自实现自定义类加载器"><a href="#一、基础原理：JVM内存区域划分、类加载机制、自实现自定义类加载器" class="headerlink" title="一、基础原理：JVM内存区域划分、类加载机制、自实现自定义类加载器"></a>一、基础原理：JVM内存区域划分、类加载机制、自实现自定义类加载器</h2><h3 id="1-何为jvm"><a href="#1-何为JVM" class="headerlink" title="1. 何为JVM"></a>1. 何为JVM</h3><p>三个问题</p>
 <ul>
 <li><p>JVM和操作系统的关系：</p>
@@ -742,7 +742,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>Java容器</title>
-    <url>./post/58b717aa/</url>
+    <url>/post/58b717aa/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="java容器分类"><a href="#java容器分类" class="headerlink" title="java容器分类"></a>java容器分类</h2><p><strong>Collection</strong></p>
 <ul>
 <li>List</li>
@@ -816,7 +816,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>Java并发编程实战 第16章 Java内存模型</title>
-    <url>./post/8e8c1241/</url>
+    <url>/post/8e8c1241/</url>
     <content><![CDATA[<h2 id="1-为什么需要内存模型"><a href="#1-为什么需要内存模型" class="headerlink" title="1. 为什么需要内存模型"></a>1. 为什么需要内存模型</h2><p>Java语言规范要求JVM在线程中维护一种类似<strong>串行</strong>的语义：只要程序的最终结果与在严格串行环境中执行的结果相同，则上述操作都是允许的。</p>
 <p>多线程环境中，维护程序的串行性会导致很大的<strong>性能开销</strong>。只有当多个线程要共享数据时，才必须协调它们之间的操作，并且JVM依赖程序通过同步操作来找到这些协调操作将在何处发生。</p>
 <h3 id="11-平台的内存模型"><a href="#1-1-平台的内存模型" class="headerlink" title="1.1 平台的内存模型"></a>1.1 平台的内存模型</h3><p>不同处理器拥有自己的缓存，并且定期和主内存进行协调。</p>
@@ -849,7 +849,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>Java高效代码例子</title>
-    <url>./post/e157f0a1/</url>
+    <url>/post/e157f0a1/</url>
     <content><![CDATA[<p>转自<a href="https://mp.weixin.qq.com/s/izVH7nVkQVpYbyJKN35uLA">阿里云云栖号_常意</a> </p>
 <p>参考《重构》第3章，代码的坏味道</p>
 <h2 id="1-常量amp变量"><a href="#1-常量-amp-变量" class="headerlink" title="1. 常量&amp;变量"></a>1. 常量&amp;变量</h2><h3 id="11-直接赋值常量值禁止声明新变量"><a href="#1-1-直接赋值常量值，禁止声明新变量" class="headerlink" title="1.1 直接赋值常量值，禁止声明新变量"></a>1.1 直接赋值常量值，禁止声明新变量</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//反例</span></span><br><span class="line">Long i = <span class="keyword">new</span> Long(<span class="number">1L</span>);</span><br><span class="line">String s = <span class="keyword">new</span> String(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line"><span class="comment">//正例</span></span><br><span class="line">Long i = <span class="number">1L</span>;</span><br><span class="line">String s = <span class="string">&quot;abc&quot;</span></span><br></pre></td></tr></table></figure>
@@ -944,7 +944,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>Linux分章重点——第一、二、三章</title>
-    <url>./post/d525d77d/</url>
+    <url>/post/d525d77d/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h1 id="ch1-认识linux系统"><a href="#Ch1-认识Linux系统" class="headerlink" title="Ch1 认识Linux系统"></a>Ch1 认识Linux系统</h1><h2 id="内核的版本怎么命名的什么是发行版有哪些常见的发行版"><a href="#内核的版本，怎么命名的，什么是发行版，有哪些常见的发行版" class="headerlink" title="内核的版本，怎么命名的，什么是发行版，有哪些常见的发行版"></a>内核的版本，怎么命名的，什么是发行版，有哪些常见的发行版</h2><p>Linux的版本号分为两部分,即<strong>内核版本</strong>与<strong>发行版本</strong>。</p>
 <h2 id="内核版本号"><a href="#内核版本号" class="headerlink" title="内核版本号"></a>内核版本号</h2><p>由3个数字组成:<code>r.x.y</code>。 </p>
 <p><code>r</code>:目前发布的内核主版本。 </p>
@@ -993,7 +993,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>Linux分章重点——第九、十、十一、十二章</title>
-    <url>./post/1d5f1dc5/</url>
+    <url>/post/1d5f1dc5/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h2><h3 id="91-硬盘分区从分区到使用的步骤"><a href="#9-1-硬盘分区：从分区到使用的步骤" class="headerlink" title="9.1 硬盘分区：从分区到使用的步骤"></a>9.1 硬盘分区：从分区到使用的步骤</h3><ol>
 <li>使用fdisk命令在硬盘上创建分区。 <code>fdisk -l /dev/sdb</code></li>
 <li>使用mkfs命令在分区上创建文件系统。<code>mkfs -t ext4 /dev/sdb1</code></li>
@@ -1068,7 +1068,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>Linux分章重点——第五、六、七、八章</title>
-    <url>./post/85c5dc00/</url>
+    <url>/post/85c5dc00/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h1 id="ch5-文件和目录"><a href="#Ch5-文件和目录" class="headerlink" title="Ch5 文件和目录"></a>Ch5 文件和目录</h1><p>文件类型，ls -l所看到的信息，每一段都要搞得很清楚（作业第4题） ⽬目录常用命令，选项挑一些重点的看</p>
 <p>比如：ls -a/-l，但是-F就不不⽤用看<br>文件目录命令，PPT有一个表要好好看一看</p>
 <p>ls -l</p>
@@ -1136,7 +1136,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>Linux分章重点——第四章</title>
-    <url>./post/c62aba6d/</url>
+    <url>/post/c62aba6d/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h1 id="ch4-linux字符界面操作-重点"><a href="#Ch4-Linux字符界面操作-重点" class="headerlink" title="Ch4 Linux字符界面操作 重点"></a>Ch4 Linux字符界面操作 重点</h1><h2 id="进入命令行的方式"><a href="#进入命令行的方式" class="headerlink" title="进入命令行的方式"></a>进入命令行的方式</h2><ul>
 <li>字符界面</li>
 <li>图形界面下的终端</li>
@@ -1227,7 +1227,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>MongoDB学习</title>
-    <url>./post/88175981/</url>
+    <url>/post/88175981/</url>
     <content><![CDATA[<h1 id="一-了解"><a href="#一、了解" class="headerlink" title="一、了解"></a>一、了解</h1><h2 id="1什么是mongodb"><a href="#1-什么是MongoDB" class="headerlink" title="1.什么是MongoDB?"></a>1.什么是MongoDB?</h2><p>MongoDB和MySQL一样都是数据库, 都是存储数据的仓库,<br>不同的是MySQL是关系型数据库, 而MongoDB是非关系型数据库</p>
 <h2 id="2什么是非关系型数据库"><a href="#2-什么是非关系型数据库" class="headerlink" title="2.什么是非关系型数据库?"></a>2.什么是非关系型数据库?</h2><ul>
 <li><p>在’关系型数据库’中, 数据都是存储在表中的, 对存储的内容有严格的要求<br>因为在创建表的时候我们就</p>
@@ -1589,7 +1589,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>Mysql基准测试工具使用记录</title>
-    <url>./post/8aabd1de/</url>
+    <url>/post/8aabd1de/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="apache-ab压力测试工具"><a href="#Apache-ab压力测试工具" class="headerlink" title="Apache ab压力测试工具"></a>Apache ab压力测试工具</h2><h3 id="windows下安装"><a href="#windows下安装" class="headerlink" title="windows下安装"></a>windows下安装</h3><ol>
 <li><a href="https://www.apachehaus.com/cgi-bin/download.plx">下载地址</a></li>
 <li>压缩包中提供了readme_first.html文件，有相关安装、使用说明</li>
@@ -1607,7 +1607,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>MySQL基础1</title>
-    <url>./post/7de48ef/</url>
+    <url>/post/7de48ef/</url>
     <content><![CDATA[<h1 id="1-数据类型相关"><a href="#1-数据类型相关" class="headerlink" title="1. 数据类型相关"></a>1. 数据类型相关</h1><h2 id="11-数据类型分类"><a href="#1-1-数据类型分类" class="headerlink" title="1.1 数据类型分类"></a>1.1 数据类型分类</h2><p>四类： 字符串、日期 / 时间、数值以及二进制</p>
 <ul>
 <li>字符串类型：以 <strong>char、varchar、text</strong> 为代表，用于存储字符、字符串数据 </li>
@@ -2226,7 +2226,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>netty学习</title>
-    <url>./post/494a0207/</url>
+    <url>/post/494a0207/</url>
     <content><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="了解netty"><a href="#了解Netty" class="headerlink" title="了解Netty"></a>了解Netty</h2><ul>
 <li>目前最流行的一款<strong>高性能 java 网络编程框架</strong>，被广泛使用在中间件、直播、社交、游戏等领域</li>
 <li>将Netty作为底层框架的框架：Dubbo、RocketMQ、Elasticsearch、Hbase等</li>
@@ -2310,7 +2310,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>RNN识别垃圾邮件</title>
-    <url>./post/65e9fc1f/</url>
+    <url>/post/65e9fc1f/</url>
     <content><![CDATA[<h2 id="1-获取数据集及处理思路"><a href="#1-获取数据集及处理思路" class="headerlink" title="1. 获取数据集及处理思路"></a>1. 获取数据集及处理思路</h2><p><a href="https://www.kaggle.com/uciml/sms-spam-collection-dataset">SMS垃圾邮箱数据集</a></p>
 <p>这个数据有两列，一列为标记，值为<code>ham</code> <code>spam</code>，第二列为邮件文本数据。</p>
 <ul>
@@ -2356,7 +2356,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>Redis命令总结</title>
-    <url>./post/6c3cc871/</url>
+    <url>/post/6c3cc871/</url>
     <content><![CDATA[<h1 id="redis数据类型"><a href="#Redis数据类型" class="headerlink" title="Redis数据类型"></a>Redis数据类型</h1><p>官方命令大全网址：<a href="http://www.redis.cn/commands.html">http://www.redis.cn/commands.html</a></p>
 <p>Redis中存储数据是通过key-value格式存储数据的，其中value可以定义五种数据类型：</p>
 <ul>
@@ -2647,7 +2647,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>Redis核心技术</title>
-    <url>./post/14b69b66/</url>
+    <url>/post/14b69b66/</url>
     <content><![CDATA[<p><img src="https://static001.geekbang.org/resource/image/79/e7/79da7093ed998a99d9abe91e610b74e7.jpg?wh=2001*1126" alt="img" style="zoom:50%;"></p>
 ]]></content>
       <categories>
@@ -2660,7 +2660,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>Study Less Study Smart —— 高效学习</title>
-    <url>./post/9bea2a94/</url>
+    <url>/post/9bea2a94/</url>
     <content><![CDATA[<p>学习内容：<a href="https://www.youtube.com/watch?v=IlU-zDU6aQ0">Marty Lobdell - Study Less Study Smart - YouTube</a></p>
 <ul>
 <li>适当休息</li>
@@ -2696,7 +2696,7 @@ clear(mems,last,mems.length);
   </entry>
   <entry>
     <title>cs224n笔记</title>
-    <url>./post/25b610a6/</url>
+    <url>/post/25b610a6/</url>
     <content><![CDATA[<h2 id="二-词的向量表示"><a href="#二、词的向量表示" class="headerlink" title="二、词的向量表示"></a>二、词的向量表示</h2><h3 id="计算机如何处理词语的意思"><a href="#计算机如何处理词语的意思" class="headerlink" title="计算机如何处理词语的意思"></a>计算机如何处理词语的意思</h3><h4 id="distributional-similarity-based-representations"><a href="#Distributional-similarity-based-representations" class="headerlink" title="Distributional similarity based representations"></a>Distributional similarity based representations</h4><p>语言学家J. R. Firth提出，通过一个单词的上下文可以得到它的意思。J. R. Firth甚至建议，如果你能把单词放到正确的上下文中去，才说明你掌握了它的意义。</p>
 <p>这是现代统计自然语言处理最成功的思想之一</p>
 <h4 id="通过向量定义词语的含义"><a href="#通过向量定义词语的含义" class="headerlink" title="通过向量定义词语的含义"></a>通过向量定义词语的含义</h4><p>通过调整一个单词及其上下文单词的向量，使得根据两个向量可以推测两个词语的相似度；或根据向量可以预测词语的上下文。</p>
@@ -2764,7 +2764,7 @@ J=1−p(w_{−t}|w_t)</script><p>这里的$w_{−t}$表示$w_t$的上下文（�
   </entry>
   <entry>
     <title>Java并发编程</title>
-    <url>./post/3e225941/</url>
+    <url>/post/3e225941/</url>
     <content><![CDATA[<h1 id="一-概念"><a href="#一、-概念" class="headerlink" title="一、 概念"></a>一、 概念</h1><ul>
 <li><p>并发： 多个线程操作相同的资源，保证线程安全，合理使用资源</p>
 <p>同时拥有两个或者多个线程，如果程序在<em>单核处理器</em>上运行，多个线程将交替地换入或者换出内存，<strong>这些线程是同时“存在”的</strong>，<strong>每个线程都处于执行过程中的某个状态</strong>，如果运行在<em>多核处理器</em>上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行</p>
@@ -2856,7 +2856,7 @@ J=1−p(w_{−t}|w_t)</script><p>这里的$w_{−t}$表示$w_t$的上下文（�
   </entry>
   <entry>
     <title>java集合源码——ArrayList</title>
-    <url>./post/771d1ebd/</url>
+    <url>/post/771d1ebd/</url>
     <content><![CDATA[<p>ArrayList 动态数组，可动态扩展，是<strong>数组</strong>实现的list。</p>
 <h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><h3 id="继承实现"><a href="#继承实现" class="headerlink" title="继承实现"></a>继承实现</h3><hr>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
@@ -2955,7 +2955,7 @@ J=1−p(w_{−t}|w_t)</script><p>这里的$w_{−t}$表示$w_t$的上下文（�
   </entry>
   <entry>
     <title>IO模型</title>
-    <url>./post/aeafbee0/</url>
+    <url>/post/aeafbee0/</url>
     <content><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>在我们学习Java的IO流之前，我们都要了解几个关键词</p>
 <ul>
 <li>同步与异步（synchronous/asynchronous）：<strong>同步</strong>是一种可靠的有序运行机制，当我们进行同步操作时，后续的任务是等待当前调用返回，才会进行下一步；而<strong>异步</strong>则相反，其他任务不需要等待当前调用返回，通常依靠事件、回调等机制来实现任务间次序关系</li>
@@ -3118,7 +3118,7 @@ J=1−p(w_{−t}|w_t)</script><p>这里的$w_{−t}$表示$w_t$的上下文（�
   </entry>
   <entry>
     <title>java集合源码——LinkedHashMap</title>
-    <url>./post/3f21cf60/</url>
+    <url>/post/3f21cf60/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>java</category>
@@ -3130,7 +3130,7 @@ J=1−p(w_{−t}|w_t)</script><p>这里的$w_{−t}$表示$w_t$的上下文（�
   </entry>
   <entry>
     <title>mysqldump导入导出方法</title>
-    <url>./post/d36196a7/</url>
+    <url>/post/d36196a7/</url>
     <content><![CDATA[<p><a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html">官方文档</a></p>
 ]]></content>
       <categories>
@@ -3142,7 +3142,7 @@ J=1−p(w_{−t}|w_t)</script><p>这里的$w_{−t}$表示$w_t$的上下文（�
   </entry>
   <entry>
     <title>算法题整理</title>
-    <url>./post/dabc0faf/</url>
+    <url>/post/dabc0faf/</url>
     <content><![CDATA[<h1 id="leetcode-没维护链接"><a href="#Leetcode-没维护链接" class="headerlink" title="Leetcode 没维护链接"></a>Leetcode 没维护链接</h1><div class="table-container">
 <table>
 <thead>
@@ -3507,7 +3507,7 @@ J=1−p(w_{−t}|w_t)</script><p>这里的$w_{−t}$表示$w_t$的上下文（�
   </entry>
   <entry>
     <title>markdown语法一览</title>
-    <url>./post/99bc858a/</url>
+    <url>/post/99bc858a/</url>
     <content><![CDATA[<p>用typora多了，markdown源码模式看的少，需要整理一下，以便查看</p>
 <hr>
 <h1 id="数学公式待补充"><a href="#数学公式待补充" class="headerlink" title="数学公式待补充"></a>数学公式待补充</h1><h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>行首加井号表示不同级别的标题 (H1-H6),例如：# H1, ## H2, ### H3，#### H4.</p>
@@ -3760,7 +3760,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>shell一些小坑</title>
-    <url>./post/7d0c07d3/</url>
+    <url>/post/7d0c07d3/</url>
     <content><![CDATA[<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><ul>
 <li>按着书上的输入都出了问题 if [] then  这些中间都要加空格</li>
 </ul>
@@ -3789,7 +3789,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>python翻转字符串</title>
-    <url>./post/49164d1a/</url>
+    <url>/post/49164d1a/</url>
     <content><![CDATA[<p>将s = “abcd” 反转为 “dcba”</p>
 <h4 id="第一种-字符串切片"><a href="#第一种-字符串切片" class="headerlink" title="第一种 字符串切片"></a>第一种 字符串切片</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result = s[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
 <h4 id="第二种-列表的reverse方法"><a href="#第二种-列表的reverse方法" class="headerlink" title="第二种 列表的reverse方法"></a>第二种 列表的reverse方法</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">l = <span class="built_in">list</span>(s)</span><br><span class="line">result = <span class="string">&quot;&quot;</span>.join(l.reverse())</span><br></pre></td></tr></table></figure>
@@ -3807,7 +3807,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>spring boot学习</title>
-    <url>./post/2f959504/</url>
+    <url>/post/2f959504/</url>
     <content><![CDATA[<hr>
 <p>根据spring boot的历史，有以下几个问题</p>
 <ul>
@@ -3917,7 +3917,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>spring boot集成jsp</title>
-    <url>./post/2ec52564/</url>
+    <url>/post/2ec52564/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Spring boot本身是不推荐使用jsp的，虽然本身兼容做得蛮好的。主要原因还是springboot 是内嵌web容器的，推荐打成jar包不是war包，而。并且前后端分工日益细化，更符合现代前段思想和注重用户体验的各种框架才是主流。</p>
 <p>但是如果像我这种没写过前端的，想使用jsp也可以，只需要自建web.xml即可。</p>
 <h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><h3 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h3><p>gradle为例</p>
@@ -3937,7 +3937,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>vim命令一览</title>
-    <url>./post/91cb7c20/</url>
+    <url>/post/91cb7c20/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h3 id="文件命令"><a href="#文件命令" class="headerlink" title="文件命令"></a>文件命令</h3><ul>
 <li>打开单个文件<code>vim file</code> </li>
 <li>同时打开多个文件<code>vim file1 file2 file3 ...</code> </li>
@@ -4137,7 +4137,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>《伯恩斯新情绪疗法》1 认知扭曲</title>
-    <url>./post/f6e86d6c/</url>
+    <url>/post/f6e86d6c/</url>
     <content><![CDATA[<h1 id="来源伯恩斯新情绪疗法"><a href="#来源《伯恩斯新情绪疗法》" class="headerlink" title="来源《伯恩斯新情绪疗法》"></a>来源《伯恩斯新情绪疗法》</h1><p>链接：<a href="https://pan.baidu.com/s/1V4CrTz9TfEUvePTPL2586w">https://pan.baidu.com/s/1V4CrTz9TfEUvePTPL2586w</a><br>提取码：76a3 </p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>处于抑郁状态的病患会感到情绪低落，或烦躁不安，对平常喜欢的事提不起兴趣、注意力不集中、记忆力减退、思维迟缓，有时还自责内疚，严重时甚至有自杀想法和行为。抑郁状态严重影响生活质量，但我国抑郁症的就医率不足10%。</p>
 <p>对于抑郁的一些认识误区：</p>
@@ -4205,7 +4205,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>《伯恩斯新情绪疗法》2 建立自尊</title>
-    <url>./post/283c93cb/</url>
+    <url>/post/283c93cb/</url>
     <content><![CDATA[<p>前文：</p>
 <p><a target="_blank" href="https://songzi.info/post/f6e86d6c/" style="position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; box-sizing: border-box; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 390px; min-height: 84px; border-radius: 8px; max-width: 100%; overflow: hidden; margin: 16px auto; padding: 12px 12px 9px 12px; background-color: #F6F6F6;"><span class="LinkCard-contents"><span style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; line-height: 1.25; color: #121212;">《伯恩斯新情绪疗法》1 认知扭曲 | 毫末室 (songzi.info)</span><span style="display: -webkit-box; font-size: 13px; height: 18px; line-height: 18px; color: #999; word-break: break-all; text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 1; -webkit-box-orient: vertical;"><span style="display: inline-flex; align-items: center;"><svg class="Zi Zi--InsertLink" fill="currentColor" viewbox="0 0 24 24" width="14" height="14"><path d="M13.414 4.222a4.5 4.5 0 1 1 6.364 6.364l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005a2.5 2.5 0 1 0-3.536-3.536l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005zm-6.187 6.187a.5.5 0 0 1 .638-.058l.07.058.706.707a.5.5 0 0 1 .058.638l-.058.07-3.005 3.004a2.5 2.5 0 0 0 3.405 3.658l.13-.122 3.006-3.005a.5.5 0 0 1 .638-.058l.069.058.707.707a.5.5 0 0 1 .058.638l-.058.069-3.005 3.005a4.5 4.5 0 0 1-6.524-6.196l.16-.168 3.005-3.005zm8.132-3.182a.25.25 0 0 1 .353 0l1.061 1.06a.25.25 0 0 1 0 .354l-8.132 8.132a.25.25 0 0 1-.353 0l-1.061-1.06a.25.25 0 0 1 0-.354l8.132-8.132z"/></svg></span><span>https://songzi.info/post/f6e86d6c/</span>&lt;/span&gt;&lt;/span&gt;</span></span></a></p>
 <h1 id="认识抑郁状态"><a href="#认识抑郁状态" class="headerlink" title="认识抑郁状态"></a>认识抑郁状态</h1><p>概括而言四个词描述——被打败、有缺陷、遭遗弃、被剥夺</p>
@@ -4300,7 +4300,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>《伯恩斯新情绪疗法》4 语言柔道</title>
-    <url>./post/177f0c34/</url>
+    <url>/post/177f0c34/</url>
     <content><![CDATA[<p>前文：</p>
 <p><a target="_blank" href="https://songzi.info/post/f6e86d6c/" style="position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; box-sizing: border-box; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 390px; min-height: 84px; border-radius: 8px; max-width: 100%; overflow: hidden; margin: 16px auto; padding: 12px 12px 9px 12px; background-color: #F6F6F6;"><span class="LinkCard-contents"><span style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; line-height: 1.25; color: #121212;">《伯恩斯新情绪疗法》1 认知扭曲 | 毫末室 (songzi.info)</span><span style="display: -webkit-box; font-size: 13px; height: 18px; line-height: 18px; color: #999; word-break: break-all; text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 1; -webkit-box-orient: vertical;"><span style="display: inline-flex; align-items: center;"><svg class="Zi Zi--InsertLink" fill="currentColor" viewbox="0 0 24 24" width="14" height="14"><path d="M13.414 4.222a4.5 4.5 0 1 1 6.364 6.364l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005a2.5 2.5 0 1 0-3.536-3.536l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005zm-6.187 6.187a.5.5 0 0 1 .638-.058l.07.058.706.707a.5.5 0 0 1 .058.638l-.058.07-3.005 3.004a2.5 2.5 0 0 0 3.405 3.658l.13-.122 3.006-3.005a.5.5 0 0 1 .638-.058l.069.058.707.707a.5.5 0 0 1 .058.638l-.058.069-3.005 3.005a4.5 4.5 0 0 1-6.524-6.196l.16-.168 3.005-3.005zm8.132-3.182a.25.25 0 0 1 .353 0l1.061 1.06a.25.25 0 0 1 0 .354l-8.132 8.132a.25.25 0 0 1-.353 0l-1.061-1.06a.25.25 0 0 1 0-.354l8.132-8.132z"/></svg></span><span>https://songzi.info/post/f6e86d6c/</span>&lt;/span&gt;&lt;/span&gt;</span></span></a></p>
 <p><a target="_blank" href="https://songzi.info/post/283c93cb" style="position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; box-sizing: border-box; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 390px; min-height: 84px; border-radius: 8px; max-width: 100%; overflow: hidden; margin: 16px auto; padding: 12px 12px 9px 12px; background-color: #F6F6F6;"><span class="LinkCard-contents"><span style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; line-height: 1.25; color: #121212;">《伯恩斯新情绪疗法》2 建立自尊 | 毫末室 (songzi.info)</span><span style="display: -webkit-box; font-size: 13px; height: 18px; line-height: 18px; color: #999; word-break: break-all; text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 1; -webkit-box-orient: vertical;"><span style="display: inline-flex; align-items: center;"><svg class="Zi Zi--InsertLink" fill="currentColor" viewbox="0 0 24 24" width="14" height="14"><path d="M13.414 4.222a4.5 4.5 0 1 1 6.364 6.364l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005a2.5 2.5 0 1 0-3.536-3.536l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005zm-6.187 6.187a.5.5 0 0 1 .638-.058l.07.058.706.707a.5.5 0 0 1 .058.638l-.058.07-3.005 3.004a2.5 2.5 0 0 0 3.405 3.658l.13-.122 3.006-3.005a.5.5 0 0 1 .638-.058l.069.058.707.707a.5.5 0 0 1 .058.638l-.058.069-3.005 3.005a4.5 4.5 0 0 1-6.524-6.196l.16-.168 3.005-3.005zm8.132-3.182a.25.25 0 0 1 .353 0l1.061 1.06a.25.25 0 0 1 0 .354l-8.132 8.132a.25.25 0 0 1-.353 0l-1.061-1.06a.25.25 0 0 1 0-.354l8.132-8.132z"/></svg></span><span>https://songzi.info/post/283c93cb</span>&lt;/span&gt;&lt;/span&gt;</span></span></a></p>
@@ -4367,7 +4367,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>《学会提问》笔记</title>
-    <url>./post/ead403b1/</url>
+    <url>/post/ead403b1/</url>
     <content><![CDATA[<h1 id="本书内容-批判性思维简化为-ct"><a href="#本书内容-（批判性思维简化为-CT）" class="headerlink" title="本书内容  （批判性思维简化为 CT）"></a>本书内容  （批判性思维简化为 <span style="color:#00868B;">CT</span>）</h1><ul>
 <li>提出关键问题</li>
 <li>做出理性判断</li>
@@ -4554,7 +4554,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>《伯恩斯新情绪疗法》3 克服拖延</title>
-    <url>./post/3a21ee98/</url>
+    <url>/post/3a21ee98/</url>
     <content><![CDATA[<p>前文：</p>
 <p><a target="_blank" href="https://songzi.info/post/f6e86d6c/" style="position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; box-sizing: border-box; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 390px; min-height: 84px; border-radius: 8px; max-width: 100%; overflow: hidden; margin: 16px auto; padding: 12px 12px 9px 12px; background-color: #F6F6F6;"><span class="LinkCard-contents"><span style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; line-height: 1.25; color: #121212;">《伯恩斯新情绪疗法》1 认知扭曲 | 毫末室 (songzi.info)</span><span style="display: -webkit-box; font-size: 13px; height: 18px; line-height: 18px; color: #999; word-break: break-all; text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 1; -webkit-box-orient: vertical;"><span style="display: inline-flex; align-items: center;"><svg class="Zi Zi--InsertLink" fill="currentColor" viewbox="0 0 24 24" width="14" height="14"><path d="M13.414 4.222a4.5 4.5 0 1 1 6.364 6.364l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005a2.5 2.5 0 1 0-3.536-3.536l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005zm-6.187 6.187a.5.5 0 0 1 .638-.058l.07.058.706.707a.5.5 0 0 1 .058.638l-.058.07-3.005 3.004a2.5 2.5 0 0 0 3.405 3.658l.13-.122 3.006-3.005a.5.5 0 0 1 .638-.058l.069.058.707.707a.5.5 0 0 1 .058.638l-.058.069-3.005 3.005a4.5 4.5 0 0 1-6.524-6.196l.16-.168 3.005-3.005zm8.132-3.182a.25.25 0 0 1 .353 0l1.061 1.06a.25.25 0 0 1 0 .354l-8.132 8.132a.25.25 0 0 1-.353 0l-1.061-1.06a.25.25 0 0 1 0-.354l8.132-8.132z"/></svg></span><span>https://songzi.info/post/f6e86d6c/</span>&lt;/span&gt;&lt;/span&gt;</span></span></a></p>
 <p><a target="_blank" href="https://songzi.info/post/283c93cb" style="position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; box-sizing: border-box; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 390px; min-height: 84px; border-radius: 8px; max-width: 100%; overflow: hidden; margin: 16px auto; padding: 12px 12px 9px 12px; background-color: #F6F6F6;"><span class="LinkCard-contents"><span style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; line-height: 1.25; color: #121212;">《伯恩斯新情绪疗法》2 建立自尊 | 毫末室 (songzi.info)</span><span style="display: -webkit-box; font-size: 13px; height: 18px; line-height: 18px; color: #999; word-break: break-all; text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 1; -webkit-box-orient: vertical;"><span style="display: inline-flex; align-items: center;"><svg class="Zi Zi--InsertLink" fill="currentColor" viewbox="0 0 24 24" width="14" height="14"><path d="M13.414 4.222a4.5 4.5 0 1 1 6.364 6.364l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005a2.5 2.5 0 1 0-3.536-3.536l-3.005 3.005a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707l3.005-3.005zm-6.187 6.187a.5.5 0 0 1 .638-.058l.07.058.706.707a.5.5 0 0 1 .058.638l-.058.07-3.005 3.004a2.5 2.5 0 0 0 3.405 3.658l.13-.122 3.006-3.005a.5.5 0 0 1 .638-.058l.069.058.707.707a.5.5 0 0 1 .058.638l-.058.069-3.005 3.005a4.5 4.5 0 0 1-6.524-6.196l.16-.168 3.005-3.005zm8.132-3.182a.25.25 0 0 1 .353 0l1.061 1.06a.25.25 0 0 1 0 .354l-8.132 8.132a.25.25 0 0 1-.353 0l-1.061-1.06a.25.25 0 0 1 0-.354l8.132-8.132z"/></svg></span><span>https://songzi.info/post/283c93cb</span>&lt;/span&gt;&lt;/span&gt;</span></span></a></p>
@@ -4640,7 +4640,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>《成功、动机与目标》实践性总结</title>
-    <url>./post/1148d9d6/</url>
+    <url>/post/1148d9d6/</url>
     <content><![CDATA[<h1 id="前言本书话题"><a href="#前言：本书话题" class="headerlink" title="前言：本书话题"></a>前言：本书话题</h1><ul>
 <li>制定目标的原则</li>
 <li>制定目标的种类</li>
@@ -4881,7 +4881,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>《西方正典》卡夫卡</title>
-    <url>./post/64ac8222/</url>
+    <url>/post/64ac8222/</url>
     <content><![CDATA[<h1 id="正典耐性与无可摧毁性"><a href="#正典耐性与“无可摧毁性”" class="headerlink" title="正典耐性与“无可摧毁性”"></a>正典耐性与“无可摧毁性”</h1><p><strong>《审判》和《城堡》无法和《追忆》《尤利西斯》《守灵》相提并论，然而他的小故事、格言却超出了普鲁斯特、乔伊斯的水平。</strong></p>
 <p>也许到22世纪，卡夫卡成为但丁，弗洛伊德成为蒙田。基督教救不了卡夫卡，犹太复国主义他也没上车，他没有任何正面因素可继承。</p>
 <h2 id="卡夫卡是属于我们这个时代的独特精神体"><a href="#卡夫卡是属于我们这个时代的独特精神体" class="headerlink" title="卡夫卡是属于我们这个时代的独特精神体"></a>卡夫卡是属于我们这个时代的独特精神体</h2><p><strong>“卡夫卡风格”(Kafkaesques)</strong> 或许已经成了弗洛伊德所谓的“诡奇者”(the uncanny)，一种与我们如此亲近有如此疏隔的东西。</p>
@@ -4946,7 +4946,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>《法理学 法律哲学与法律方法》读书笔记</title>
-    <url>./post/aeb5411/</url>
+    <url>/post/aeb5411/</url>
     <content><![CDATA[<h1 id="第一部分-法哲学的历史沿革"><a href="#第一部分-法哲学的历史沿革" class="headerlink" title="第一部分 法哲学的历史沿革"></a>第一部分 法哲学的历史沿革</h1><h2 id="第一章-希腊和罗马的法学理论"><a href="#第一章-希腊和罗马的法学理论" class="headerlink" title="第一章 希腊和罗马的法学理论"></a>第一章 希腊和罗马的法学理论</h2><h3 id="第一节-早期希腊的理论"><a href="#第一节-早期希腊的理论" class="headerlink" title="第一节 早期希腊的理论"></a>第一节 早期希腊的理论</h3><ul>
 <li><p>神意论，法律被认为是由神颁布的，而人则是通过神意的启示才得知法律</p>
 </li>
@@ -5284,7 +5284,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>《苦闷的象征》1 创作与鉴赏</title>
-    <url>./post/b231ea19/</url>
+    <url>/post/b231ea19/</url>
     <content><![CDATA[<h1 id="创作论"><a href="#创作论" class="headerlink" title="创作论"></a>创作论</h1><h2 id="一-两种力"><a href="#一、两种力" class="headerlink" title="一、两种力"></a>一、两种力</h2><p><strong>在内有想要动弹的个性表现的欲望</strong>，而和这正相对，<strong>在外却有社会生活的束缚和强制不绝地迫压着</strong>。在两种的力之间，苦恼挣扎着的状态，就是人类生活。</p>
 <h3 id="创造生活的欲求之力"><a href="#创造生活的欲求之力" class="headerlink" title="创造生活的欲求之力"></a>创造生活的欲求之力</h3><ul>
 <li>个性表现的内底欲求、<strong>生命力</strong>的发动，在灵与肉两方面，表现为各种各样的生活现象：有时为本能生活，有时为游戏冲动，或为强烈的信念，或为高远的理想，为学子的知识欲，也为英雄的征服欲望。</li>
@@ -5387,7 +5387,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>《中国文学史》读书笔记</title>
-    <url>./post/a55cf8e2/</url>
+    <url>/post/a55cf8e2/</url>
     <content><![CDATA[<h1 id="总绪论"><a href="#总绪论" class="headerlink" title="总绪论"></a>总绪论</h1><h2 id="第一节-文学本位-史学思维-文化学视角"><a href="#第一节-文学本位-史学思维-文化学视角" class="headerlink" title="第一节 文学本位 史学思维 文化学视角"></a>第一节 文学本位 史学思维 文化学视角</h2><p>文学史是文学的历史，文学史著作要在广阔的文化背景上描述文学本身演进的历程</p>
 <p>把文学当作文学来研究，文学史著作应立足于文学本位，重视<strong>文学之所以成为文学</strong>并具有<strong>艺术感染力</strong>的特点及其审美价值。</p>
 <p>史书不能代替文学作品。文学具有审美的机制，能感染读者。以诗证史并非文学史研究。</p>
@@ -5550,7 +5550,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>中国古典小说戏曲鉴赏</title>
-    <url>./post/67791464/</url>
+    <url>/post/67791464/</url>
     <content><![CDATA[<h2 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h2><h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><blockquote>
 <p><em>书读百遍，其义自见。</em></p>
 </blockquote>
@@ -5598,7 +5598,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>中国近代史 1840至1912</title>
-    <url>./post/d225f759/</url>
+    <url>/post/d225f759/</url>
     <content><![CDATA[<p>不平等条约——近代中国与世界的关系</p>
 <p>国际体系的变迁：宗藩体系——不平等条约体系——国际社会新秩序</p>
 <h2 id="一-传统中国的国际体系宗藩体系"><a href="#一、传统中国的国际体系：宗藩体系" class="headerlink" title="一、传统中国的国际体系：宗藩体系"></a>一、传统中国的国际体系：宗藩体系</h2><h3 id="1-宗藩体系的构成"><a href="#1-宗藩体系的构成" class="headerlink" title="1. 宗藩体系的构成"></a>1. 宗藩体系的构成</h3><p>传统中国的国际关系体系：以中国为圆心，发展出一个状似同心圆的体系。</p>
@@ -5644,7 +5644,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>中国古代史</title>
-    <url>./post/85c55cfb/</url>
+    <url>/post/85c55cfb/</url>
     <content><![CDATA[<h1 id="价值判断-理论分析-事实-要注意区分"><a href="#价值判断、理论分析、事实-要注意区分" class="headerlink" title="价值判断、理论分析、事实 要注意区分"></a>价值判断、理论分析、事实 要注意区分</h1><h1 id="先秦与秦"><a href="#先秦与秦" class="headerlink" title="先秦与秦"></a>先秦与秦</h1><h2 id="第四讲-周代政治社会体制"><a href="#第四讲-周代政治社会体制" class="headerlink" title="第四讲 周代政治社会体制"></a>第四讲 周代政治社会体制</h2><h3 id="一-王朝官员体系"><a href="#一、王朝官员体系" class="headerlink" title="一、王朝官员体系"></a>一、王朝官员体系</h3><h4 id="1-王权"><a href="#1-王权" class="headerlink" title="1. 王权"></a>1. 王权</h4><ul>
 <li><p>“帝” 造字</p>
 </li>
@@ -6926,7 +6926,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>中国近代史 研究范式</title>
-    <url>./post/11dbd13c/</url>
+    <url>/post/11dbd13c/</url>
     <content><![CDATA[<p>中国近代史课程内容</p>
 <h1 id="近现代中国历史研究的基本范式"><a href="#近现代中国历史研究的基本范式" class="headerlink" title="近现代中国历史研究的基本范式"></a>近现代中国历史研究的基本范式</h1><ol>
 <li>历史，是过去发生的事实。</li>
@@ -7116,7 +7116,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>内存堆，内存池，常量池</title>
-    <url>./post/ff4ddc00/</url>
+    <url>/post/ff4ddc00/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="java的六个不同存储数据位置"><a href="#JAVA的六个不同存储数据位置：" class="headerlink" title="JAVA的六个不同存储数据位置："></a>JAVA的六个不同存储数据位置：</h2><p><strong>1. 寄存器</strong>：最快的存储区，位于处理器内部（不同于其他存储区的地方）。寄存器的数量极其有限，所以寄存器由编译器根据需求进行分配。</p>
 <p><strong>2. 栈</strong>：存放<strong>基本类型</strong>(byte, short, int, long, float, double, boolean, char)的变量数据和<strong>对象的引用</strong>。<strong>堆栈指针若向下移动，则分配新的内存；若向上移动，则释放那些内存。</strong>这是一种快速有效的分配存储方法，仅次于寄存器。创建程序时候，JAVA编译器必须知道存储在堆栈内所有数据的确切大小和生命周期，因为它必须生成 相应的代码，以便上下移动堆栈指针。这一约束限制了程序的灵活性。</p>
 <p><strong>3. 堆</strong>：一种通用性的内存池（也存在于RAM中），用于存放所有的JAVA对象。堆不同于堆栈的好处是：<strong>编译器不需要知道要从堆里分配多少存储区域，也不必知道存储的数据在堆里存活多长时间。</strong>因此，在堆里分配存储有很大的灵活性。代价是<strong>用堆进行存储分配比用堆栈进行存储存储需要更多的时间</strong>。  </p>
@@ -7174,7 +7174,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>《乡土中国》 读书笔记</title>
-    <url>./post/bbc6ebd1/</url>
+    <url>/post/bbc6ebd1/</url>
     <content><![CDATA[<p><a href="https://www.zhihu.com/question/22122194/answer/679068135"> 如何评价费孝通的《乡土中国》？ - 知乎 (zhihu.com)</a></p>
 <p>作者：约格莫夫<br>链接：<a href="https://www.zhihu.com/question/22122194/answer/72724413">https://www.zhihu.com/question/22122194/answer/72724413</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 <h2 id="一-核心概念释义"><a href="#一-核心概念释义" class="headerlink" title="一. 核心概念释义"></a>一. 核心概念释义</h2><p>　　1.    <a href="https://www.zhihu.com/search?q=礼俗社会&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A72724413}">礼俗社会</a>：没有具体目标，只是因为在一起生长而发生的社会。p9 </p>
@@ -7282,7 +7282,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>几种二十世纪西方思潮</title>
-    <url>./post/5cbef579/</url>
+    <url>/post/5cbef579/</url>
     <content><![CDATA[<h1 id="现代性问题"><a href="#现代性问题" class="headerlink" title="现代性问题"></a>现代性问题</h1><h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><p>《学术与政治》马克思韦伯</p>
 ]]></content>
       <categories>
@@ -7294,7 +7294,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>十大排序算法</title>
-    <url>./post/9e8f7e4b/</url>
+    <url>/post/9e8f7e4b/</url>
     <content><![CDATA[<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png" alt="img"></p>
 <h1 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h1><ol>
 <li>从数列中挑出一个元素，称为 “基准”（pivot）;</li>
@@ -7315,7 +7315,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>高性能索引策略——《高性能MySQL》第五章</title>
-    <url>./post/56a6a98a/</url>
+    <url>/post/56a6a98a/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这是阅读《高性能mysql》第五章的记录。</p>
 <h1 id="1-独立的列"><a href="#1-独立的列" class="headerlink" title="1. 独立的列"></a>1. 独立的列</h1><p>非独立的列是<strong>索引列是表达式的一部分或是函数的参数</strong>，这会导致索引使用不当，或无法使用已有的索引</p>
 <p>错误示例</p>
@@ -7361,7 +7361,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>协程</title>
-    <url>./post/bb1e53b0/</url>
+    <url>/post/bb1e53b0/</url>
     <content><![CDATA[<h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><p>进程、线程会遇到的性能问题：</p>
 <ul>
 <li>同步锁</li>
@@ -7396,7 +7396,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>博弈论</title>
-    <url>./post/12bcd26e/</url>
+    <url>/post/12bcd26e/</url>
     <content><![CDATA[<h1 id="学习课程"><a href="#学习课程" class="headerlink" title="学习课程"></a>学习课程</h1><p><a href="https://www.coursera.org/learn/game-theory-1">博弈论 | Coursera</a></p>
 <h1 id="intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><p>博弈论研究的是 两位自利者的策略性互动 </p>
 <p>这些学科共同点，在于它们都关心自利者在策略性互动当中如何做 ，同时考虑这些互动如何为研究者所建构</p>
@@ -7469,7 +7469,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>大数据论文课程学习</title>
-    <url>./post/ff0a1714/</url>
+    <url>/post/ff0a1714/</url>
     <content><![CDATA[<h1 id="学习课程"><a href="#学习课程" class="headerlink" title="学习课程"></a>学习课程</h1><p><a href="https://time.geekbang.org/column/intro/100091101">大数据经典论文解读 (geekbang.org)</a></p>
 <h1 id="何为大数据"><a href="#何为大数据" class="headerlink" title="何为大数据"></a>何为大数据</h1><h2 id="核心理念"><a href="#核心理念" class="headerlink" title="核心理念"></a>核心理念</h2><p>wiki解释：<a href="https://en.wikipedia.org/wiki/Big_data">Big data - Wikipedia</a></p>
 <p>即传统数据处理应用软件时，不足以处理的大的或者复杂的数据集的术语。换句话说，就是<strong>技术上的老办法行不通了，必须使用新办法才能处理的数据</strong>就叫大数据。</p>
@@ -7574,7 +7574,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>阅读笔记——基于大数据的数据模式挖掘研究</title>
-    <url>./post/96a2640/</url>
+    <url>/post/96a2640/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="2-日志数据挖掘"><a href="#2-日志数据挖掘" class="headerlink" title="2. 日志数据挖掘"></a>2. 日志数据挖掘</h2><h3 id="21-特征工程难点"><a href="#2-1-特征工程难点" class="headerlink" title="2.1 特征工程难点"></a>2.1 特征工程难点</h3><ul>
 <li>难以快速理解复杂的业务逻辑和业务背景</li>
 <li>基础数据不全面、不完整</li>
@@ -7790,7 +7790,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>控制冗余的反范式模式</title>
-    <url>./post/1a233e39/</url>
+    <url>/post/1a233e39/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="pattern-1-合并一对一关系"><a href="#Pattern-1-合并一对一关系" class="headerlink" title="Pattern 1 合并一对一关系"></a>Pattern 1 合并一对一关系</h2><p>该模式较为常见，风险低</p>
 <p><strong>问题</strong>：引入空值</p>
 <p>可能产生空值的字段要拒绝可能的比较操作</p>
@@ -7813,7 +7813,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>对广告系统的理解</title>
-    <url>./post/63d5ed22/</url>
+    <url>/post/63d5ed22/</url>
     <content><![CDATA[<h1 id="何为广告系统-加坑"><a href="#何为广告系统-加坑" class="headerlink" title="何为广告系统 加坑"></a>何为广告系统 加坑</h1>]]></content>
       <categories>
         <category>软件</category>
@@ -7824,7 +7824,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>常识性法律案件</title>
-    <url>./post/a65cf062/</url>
+    <url>/post/a65cf062/</url>
     <content><![CDATA[<h1 id="常识性案例"><a href="#常识性案例" class="headerlink" title="常识性案例"></a>常识性案例</h1><h2 id="一-孙志刚案件"><a href="#一、-孙志刚案件" class="headerlink" title="一、 孙志刚案件"></a>一、 孙志刚案件</h2><p><a href="https://zh.wikipedia.org/wiki/孙志刚事件">孙志刚事件 - 维基百科，自由的百科全书 (wikipedia.org)</a></p>
 <p><a href="https://baike.baidu.com/item/孙志刚事件/4430559">孙志刚事件_百度百科 (baidu.com)</a></p>
 <p><a href="https://www.chinacourt.org/article/detail/2003/11/id/93752.shtml">一个公民的最后60个小时——孙志刚案大事记-中国法院网 (chinacourt.org)</a></p>
@@ -7885,7 +7885,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>广告——商业变现模式</title>
-    <url>./post/30560696/</url>
+    <url>/post/30560696/</url>
     <content><![CDATA[<p>学习课程：<a href="https://time.geekbang.org/column/intro/100107801">大厂广告产品心法 (geekbang.org)</a></p>
 <h1 id="关于商业变现模式"><a href="#关于商业变现模式" class="headerlink" title="关于商业变现模式"></a>关于商业变现模式</h1><p>模式包括但不限于：广告、用户直接付费、佣金分成、金融运作、增值服务等</p>
 <h2 id="关于广告模式的问题"><a href="#关于广告模式的问题" class="headerlink" title="关于广告模式的问题"></a>关于广告模式的问题</h2><ol>
@@ -7961,7 +7961,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>干好工作十八法</title>
-    <url>./post/ef52ded7/</url>
+    <url>/post/ef52ded7/</url>
     <content><![CDATA[<h1 id="干好工作18法-李小三"><a href="#干好工作18法-李小三" class="headerlink" title="干好工作18法 李小三"></a>干好工作18法 李小三</h1><p>好文记录</p>
 <p>方法是为达到某种目标而采取的途径、步骤、手段等，是人类认识和改造客观世界的明灯和路标。毛泽东同志曾强调，“我们不但要提出任务，而且要解决完成任务的方法问题。我们的任务是过河，但是没有桥或没有船就不能过。不解决桥或船的问题，过河就是一句空话。不解决方法问题，任务也只是瞎说一顿。”可见方法十分重要，方法得当事半功倍，方法失当事倍功半。方向正确以后，方法便为王。工作中只有掌握科学的工作方法，才能确保高效，圆满完成各项任务，提升工作的境界和水平。</p>
 <h2 id="一-不要差不多盯住最完美"><a href="#一、不要差不多，盯住最完美" class="headerlink" title="一、不要差不多，盯住最完美"></a>一、不要差不多，盯住最完美</h2><p>“差不多”是我们平时常说的一句口头语。很多人学习上一知半解、浅尝辄止；工作中只求过得去，不求过得硬，满足于应付了事；生活中粗心大意、随意邋遢等等，其实都是“差不多”心理使然。“差不多”心态看似没有什么大碍，但是若干个小的“差不多”，集中起来就会导致“差很多”，1%的疏漏往往会造成100%的错误，正所谓差之毫厘、谬以千里，上错一点、下错一片，长期下去对工作对事业不利、对自身成长不利、对单位形象也不利。其实质是一个态度问题，与能力基本无关，但与一个人的品行、性格、习惯有关。鲁迅先生曾专门批评过“马马虎虎”现象，胡适先生还写过一篇寓言故事叫《差不多先生》，这位“差不多先生”十字常常写成千字，千字常常写成十字，最终因为找错医生而一命呜呼。故事虽然滑稽可笑，但其处事方式，至今仍是不少人的写照。世界上的事最需要“认真”，也最怕“认真”，所以一定要强化精品意识、细节意识，时刻拥有“没有最好，只有更好”的理念，养成严肃、严格、严谨地对待工作的习惯，绝不忽视任何一个细节，绝不放过任何一个疑点，要做就把一件事做到极致，把“严细实”要求贯穿办文、办会、办事的全过程，切实做到“文经我手无差错、事交我办请放心”，自觉杜绝“差不多”，追求最完美。</p>
@@ -8009,7 +8009,7 @@ Content Cell  | Content Cell
   </entry>
   <entry>
     <title>微观经济学概论</title>
-    <url>./post/ab89d379/</url>
+    <url>/post/ab89d379/</url>
     <content><![CDATA[<p><a href="https://pan.baidu.com/s/1Xk9nTPHCamuFvlfSMBQyOQ">百度云盘 曼昆 经济学原理 第七版 微观经济学分册 pdf</a></p>
 <p>提取码：9d89 </p>
 <p>以下内容用于理解<strong>微观经济学</strong>中的各种概念</p>
@@ -8358,7 +8358,7 @@ TU = f(Q)</script></li>
   </entry>
   <entry>
     <title>《庄子》读书笔记</title>
-    <url>./post/9cafe24c/</url>
+    <url>/post/9cafe24c/</url>
     <content><![CDATA[<h2 id="一-导论"><a href="#一-导论" class="headerlink" title="一 导论"></a>一 导论</h2><p><strong>1、精读</strong></p>
 <ul>
 <li>完备：典籍、<strong>注书</strong></li>
@@ -8418,7 +8418,7 @@ TU = f(Q)</script></li>
   </entry>
   <entry>
     <title>成长型思维</title>
-    <url>./post/c6adcf57/</url>
+    <url>/post/c6adcf57/</url>
     <content><![CDATA[<blockquote>
 <p>… the path to a growth mindset is a [LIFELONG] journey, not a proclamation. - Carol Dweck</p>
 </blockquote>
@@ -8443,7 +8443,7 @@ TU = f(Q)</script></li>
   </entry>
   <entry>
     <title>数据仓库（一）</title>
-    <url>./post/83a80715/</url>
+    <url>/post/83a80715/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="building-the-data-warehouse第一章-决策支持系统的发展"><a href="#《Building-the-Data-Warehouse》第一章-决策支持系统的发展" class="headerlink" title="《Building the Data Warehouse》第一章 决策支持系统的发展"></a>《Building the Data Warehouse》第一章 决策支持系统的发展</h2><h2 id="词汇表"><a href="#词汇表" class="headerlink" title="词汇表"></a>词汇表</h2><div class="table-container">
 <table>
 <thead>
@@ -8586,7 +8586,7 @@ TU = f(Q)</script></li>
   </entry>
   <entry>
     <title>数据仓库（二）</title>
-    <url>./post/b3beebcd/</url>
+    <url>/post/b3beebcd/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="building-the-data-warehouse第二章-数据仓库环境"><a href="#《Building-the-Data-Warehouse》第二章-数据仓库环境" class="headerlink" title="《Building the Data Warehouse》第二章 数据仓库环境"></a>《Building the Data Warehouse》第二章 数据仓库环境</h2><h2 id="词汇表"><a href="#词汇表" class="headerlink" title="词汇表"></a>词汇表</h2><div class="table-container">
 <table>
 <thead>
@@ -8671,7 +8671,7 @@ TU = f(Q)</script></li>
   </entry>
   <entry>
     <title>数据仓库（三）</title>
-    <url>./post/fea0489f/</url>
+    <url>/post/fea0489f/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="building-the-data-warehouse第三章-设计"><a href="#《Building-the-Data-Warehouse》第三章-设计" class="headerlink" title="《Building the Data Warehouse》第三章 设计"></a>《Building the Data Warehouse》第三章 设计</h2><p>建造的两个主要方面——与操作型系统接口的设计和<strong>数据仓库本身的设计</strong>。但“设计”本身不是精确地描述，启发式的设计流程一般为，<strong>首先，载入一部分数据，供DSS分析员使用和查看。然后，根据最终用户的反馈，在数据仓库中修改、增添一些数据。</strong></p>
 <h2 id="操作型数据开始"><a href="#操作型数据——开始" class="headerlink" title="操作型数据——开始"></a>操作型数据——开始</h2><p>建造数据仓库仅仅是数据的抽取过程错误——原因：操作型环境中的数据是<strong>非集成</strong>的。如下图</p>
 <p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/截图20190411095919.png" alt></p>
@@ -8697,7 +8697,7 @@ TU = f(Q)</script></li>
   </entry>
   <entry>
     <title>数据仓库（四）</title>
-    <url>./post/498d51fa/</url>
+    <url>/post/498d51fa/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="building-the-data-warehouse第四章-粒度"><a href="#《Building-the-Data-Warehouse》第四章-粒度" class="headerlink" title="《Building the Data Warehouse》第四章 粒度"></a>《Building the Data Warehouse》第四章 粒度</h2><p>数据仓库开发者要解决的重要的设计问题是<strong>粒度确定</strong>。</p>
 <h3 id="粗略估算"><a href="#粗略估算" class="headerlink" title="粗略估算"></a>粗略估算</h3><p><strong>起点</strong>——粗略估算数据仓库中将来的数据行数和所需DASD（直接存取存储设备）数——关于<strong>数量级</strong>的估计。</p>
 <p><strong>例子</strong></p>
@@ -8818,7 +8818,7 @@ TU = f(Q)</script></li>
   </entry>
   <entry>
     <title>数据挖掘——概念和技术</title>
-    <url>./post/f4ae35d9/</url>
+    <url>/post/f4ae35d9/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="阅读顺序"><a href="#阅读顺序" class="headerlink" title="阅读顺序"></a>阅读顺序</h2><p>《数据挖掘：概念与技术（第三版）》</p>
 <p><strong>数据挖掘入门导论</strong>章节</p>
 <div class="table-container">
@@ -9024,7 +9024,7 @@ age(X, "20..29") ~ income(X, "40K..49K")=>buys(X,"laptop")[support = 0.02, confi
   </entry>
   <entry>
     <title>简单数据库实现一</title>
-    <url>./post/1a82e99d/</url>
+    <url>/post/1a82e99d/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><a href="https://sites.google.com/site/cs186fall2013">课程链接</a></p>
 <h2 id="作业一"><a href="#作业一" class="headerlink" title="作业一"></a>作业一</h2><h3 id="1-simpledb体系结构"><a href="#1-SimpleDB体系结构" class="headerlink" title="1. SimpleDB体系结构"></a>1. SimpleDB体系结构</h3><p>Consists of</p>
 <ul>
@@ -9060,7 +9060,7 @@ age(X, "20..29") ~ income(X, "40K..49K")=>buys(X,"laptop")[support = 0.02, confi
   </entry>
   <entry>
     <title>数据挖掘算法（一）——Aprior算法和FP-Tree算法</title>
-    <url>./post/93db42ae/</url>
+    <url>/post/93db42ae/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="如何理解"><a href="#如何理解" class="headerlink" title="如何理解"></a>如何理解</h2><p><a href="http://book.douban.com/subject/3283973/">啤酒与尿布</a></p>
 <h3 id="总项集"><a href="#总项集" class="headerlink" title="总项集"></a>总项集</h3><p>数据记录的所有项的集合</p>
 <div class="table-container">
@@ -9168,7 +9168,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法</title>
-    <url>./post/f0ff41c2/</url>
+    <url>/post/f0ff41c2/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="如何理解"><a href="#如何理解" class="headerlink" title="如何理解"></a>如何理解</h2><h3 id="boosting算法"><a href="#Boosting算法" class="headerlink" title="Boosting算法"></a>Boosting算法</h3><p><strong>Boosting 提升算法</strong>是<strong>一系列</strong>将罗学习器提升为强学习器的算法。</p>
 <p>思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。</p>
 <p>大致工作机制：</p>
@@ -9192,7 +9192,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>文学与伦理</title>
-    <url>./post/24263c33/</url>
+    <url>/post/24263c33/</url>
     <content><![CDATA[<h1 id="文学与伦理19世纪俄罗斯文学"><a href="#文学与伦理——19世纪俄罗斯文学" class="headerlink" title="文学与伦理——19世纪俄罗斯文学"></a>文学与伦理——19世纪俄罗斯文学</h1><p>先前阅读了《罪与罚》《卡拉马佐夫兄弟》，《战争与和平》重新浏览了一遍，想借助这个网课加深理解这些作品里的伦理学观点。</p>
 <h2 id="1-文学与伦理的关系与意义"><a href="#1-文学与伦理的关系与意义" class="headerlink" title="1. 文学与伦理的关系与意义"></a>1. 文学与伦理的关系与意义</h2><p>参考书目：</p>
 <p>《罪与罚》</p>
@@ -9425,7 +9425,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>文艺学系列课程（一）文学文本解读</title>
-    <url>./post/8c0b397b/</url>
+    <url>/post/8c0b397b/</url>
     <content><![CDATA[<h1 id="文学文本解读"><a href="#文学文本解读" class="headerlink" title="文学文本解读"></a>文学文本解读</h1><h2 id="概说"><a href="#概说" class="headerlink" title="概说"></a>概说</h2><p>文学批评的目的是探求真理</p>
 <p>文学欣赏：读者，再创造；</p>
 <blockquote>
@@ -9736,7 +9736,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>文艺学系列课程（二）文学理论</title>
-    <url>./post/8d49d2bf/</url>
+    <url>/post/8d49d2bf/</url>
     <content><![CDATA[<h1 id="寻找文学理想的灯火"><a href="#寻找文学理想的灯火" class="headerlink" title="寻找文学理想的灯火"></a>寻找文学理想的灯火</h1><p>文学是不会终结的。只要人在，人的感情在，人的感情需要用语言传达及发泄，那么文学就在，文学就活着，文学就不会终结，文学也不会灭亡。</p>
 <p>我们的文学缺乏文学理想，缺少体现时代精神的有艺术力量的作品。</p>
 <p>文学的良心问题——肖洛霍夫《一个人的遭遇》</p>
@@ -9797,7 +9797,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>文心雕龙</title>
-    <url>./post/672ab7ec/</url>
+    <url>/post/672ab7ec/</url>
     <content><![CDATA[<p><a href="ss.chaoxing.com/search?sw=%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%20%E4%B8%AD%E5%9B%BD%E5%BD%93%E4%BB%A3%E6%96%87%E5%AD%A6%E5%8F%B2%20%E5%85%%8 ss.chaoxing.com/search?sw">课程链接</a></p>
 <h2 id="一-概论"><a href="#一、概论" class="headerlink" title="一、概论"></a>一、概论</h2><p>重要，但难于理解把握，几乎每一篇都有一点疑难</p>
 <h3 id="方法和内容"><a href="#方法和内容" class="headerlink" title="方法和内容"></a>方法和内容</h3><p>方法：解读原文、阐述含义，重点地方介绍学者不同的看法</p>
@@ -9814,7 +9814,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>机器学习算法</title>
-    <url>./post/dd983d22/</url>
+    <url>/post/dd983d22/</url>
     <content><![CDATA[<h2 id="1-处理分类问题常用算法"><a href="#1-处理分类问题常用算法" class="headerlink" title="1. 处理分类问题常用算法"></a>1. 处理分类问题常用算法</h2><h3 id="11-交叉熵公式"><a href="#1-1-交叉熵公式" class="headerlink" title="1.1 交叉熵公式"></a>1.1 交叉熵公式</h3><p>交叉熵——设q(x) p(x)是X中取值的两个概率分布，则p对q的相对熵为</p>
 <p><img src="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/1.PNG" alt="1"></p>
 <p>在一定程度上，相对熵可以度量两个随机变量的“距离”，且D(p||q) 与 D（q||p）不等。</p>
@@ -9839,7 +9839,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>行业景气度分析</title>
-    <url>./post/fd618b32/</url>
+    <url>/post/fd618b32/</url>
     <content><![CDATA[<h1 id="如何判断行业空间和景气度"><a href="#如何判断行业空间和景气度" class="headerlink" title="如何判断行业空间和景气度"></a>如何判断行业空间和景气度</h1><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://xueqiu.com/2524803655/196686913">论空间，开箱专精特新小巨人 来源： 华泰证券张馨元、王以 一、 前言： 新兴产业链比较框架探讨—SPPEC模型 美林 时钟的弱化、央行政策思路的演变… - 雪球 (xueqiu.com)</a>)</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
 <li>不可预测的系统风险、宏观调控</li>
@@ -9914,7 +9914,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>查询优化器</title>
-    <url>./post/82f873fc/</url>
+    <url>/post/82f873fc/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>基本形式</p>
 <p>与其他模块的关系</p>
 <p>MySQL</p>
@@ -9933,7 +9933,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>软件架构 笔记</title>
-    <url>./post/afe9b55e/</url>
+    <url>/post/afe9b55e/</url>
     <content><![CDATA[<h1 id="企业信息化-笔记"><a href="#企业信息化-笔记" class="headerlink" title="企业信息化 笔记"></a>企业信息化 笔记</h1><ol>
 <li>信息系统的概念（*）</li>
 <li>信息系统的类型（*）</li>
@@ -10568,7 +10568,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>查询性能优化——《高性能MySQL》第六章</title>
-    <url>./post/ce4af811/</url>
+    <url>/post/ce4af811/</url>
     <content><![CDATA[<h1 id="前言-关于时间"><a href="#前言-关于时间" class="headerlink" title="前言 关于时间"></a>前言 关于时间</h1><p>数据库优化，最重要的目标是时间，最大的敌人也是时间。</p>
 <p>套用经济学的概念，数据库优化就像一辆三驾马车，而它的三匹马分别是<strong>查询优化</strong>、<strong>索引优化</strong>、<strong>库表结构优化</strong>。要获取最佳的数据库性能需要三匹马齐头并进、一个不落。</p>
 <h1 id="1-为什么查询速度会慢"><a href="#1-为什么查询速度会慢" class="headerlink" title="1. 为什么查询速度会慢"></a>1. 为什么查询速度会慢</h1><p>查询会在不同的地方花费时间，包括网络、CPU计算、生成统计及信息和执行计划、锁等待（互斥等待）等操作，尤其是<strong>向底层存储引擎检索数据的调用</strong>操作，这些调用需要在内存操作、CPU操作和内存不足时导致的I/O操作上消耗时间。可能会产生<strong>大量的上下文切换以及系统调用</strong>。</p>
@@ -10600,7 +10600,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>欧洲中世纪史 法英德</title>
-    <url>./post/74fc2242/</url>
+    <url>/post/74fc2242/</url>
     <content><![CDATA[<h1 id="中世纪法国"><a href="#中世纪法国" class="headerlink" title="中世纪法国"></a>中世纪法国</h1><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Frankish_Empire_481_to_814-en.svg/1920px-Frankish_Empire_481_to_814-en.svg.png" alt="墨洛温王朝到卡洛林王朝的法兰克王国"></p>
 <h2 id="2-中世纪盛期的法国987-1314"><a href="#2-中世纪盛期的法国（987-1314）" class="headerlink" title="2. 中世纪盛期的法国（987-1314）"></a>2. 中世纪盛期的法国（987-1314）</h2><h3 id="21-新王朝面临的困境"><a href="#2-1-新王朝面临的困境" class="headerlink" title="2.1 新王朝面临的困境"></a>2.1 新王朝面临的困境</h3><p>加洛林王朝在西法兰克王朝存在了100多年后王统终绝，被卡佩王朝取代，新王朝面临的困境： <strong>领地狭小、诸侯林立、王室宗主权等</strong></p>
 <p>但是，卡佩王朝经过几代人的励精图治，首先在自己的管辖区内取得了建树：<br><strong>采邑义务的再确认；领地内的铸币权和集市权；主教和修道院长的任命；</strong></p>
@@ -10887,7 +10887,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>欧洲中世纪史 西欧封建主义的渊源</title>
-    <url>./post/c6cc2ad1/</url>
+    <url>/post/c6cc2ad1/</url>
     <content><![CDATA[<h1 id="一-罗马帝国的遗产"><a href="#一、罗马帝国的遗产" class="headerlink" title="一、罗马帝国的遗产"></a>一、罗马帝国的遗产</h1><h2 id="1-使徒时代的基督教"><a href="#1-使徒时代的基督教" class="headerlink" title="1. 使徒时代的基督教"></a>1. 使徒时代的基督教</h2><ul>
 <li><p><strong>施洗约翰</strong>：</p>
 <p>公元28或29年，先知约翰宣称上帝的天国将临了，上帝公正的意志将获得无上的地位；没有罪人的立足之地，罪人将受到审判；要求人们忏悔他们的罪，取得上帝的宽恕。用约旦河的水洗去罪过。</p>
@@ -11022,7 +11022,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>法理学笔记</title>
-    <url>./post/1f25e26b/</url>
+    <url>/post/1f25e26b/</url>
     <content><![CDATA[<p>警惕动物的理想</p>
 <p>区分主人和奴仆：享受闲暇</p>
 <p>逻辑思维能力、想象力、关联能力、问题比知识更重要</p>
@@ -11071,7 +11071,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>软件架构 笔记2</title>
-    <url>./post/96a92b4b/</url>
+    <url>/post/96a92b4b/</url>
     <content><![CDATA[<h1 id="第1章-操作系统"><a href="#第1章-操作系统" class="headerlink" title="第1章 操作系统"></a>第1章 操作系统</h1><h2 id="操作系统的类型与结构"><a href="#操作系统的类型与结构" class="headerlink" title="操作系统的类型与结构"></a>操作系统的类型与结构</h2><p>根据考试大纲要求，在操作系统方面，要求考生掌握以下知识点：</p>
 <p>（1）操作系统的类型和结构；</p>
 <p>（2）操作系统基本原理；</p>
@@ -12938,7 +12938,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>特征工程</title>
-    <url>./post/8ae97bf8/</url>
+    <url>/post/8ae97bf8/</url>
     <content><![CDATA[<h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><p><strong>从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果</strong>。</p>
 <ul>
 <li>filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性<ul>
@@ -12970,7 +12970,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>使用explain查看查询语句效率——《高性能sql》附录D</title>
-    <url>./post/48b37dd6/</url>
+    <url>/post/48b37dd6/</url>
     <content><![CDATA[<h1 id="1简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h1><p><code>EXPLAIN</code> 命令可以对 <code>SELECT</code> 语句进行分析, 并输出 <code>SELECT</code> 执行的详细信息, 以供开发人员针对性优化。</p>
 <p>EXPLAIN 命令用法十分简单, 在 SELECT 语句前加上 Explain 就可以了, 例如:​                      </p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">EXPLAIN SELECT * from _info WHERE  id &lt; 300;</span><br></pre></td></tr></table></figure>
@@ -13055,7 +13055,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>社会学导论</title>
-    <url>./post/b8a740eb/</url>
+    <url>/post/b8a740eb/</url>
     <content><![CDATA[<p>学习课程</p>
 <p><a href="https://www.bilibili.com/video/BV1dx411E7KY?p=14">耶鲁大学公开课集</a></p>
 <h2 id="thomas-hobbes-权力-人权-社会秩序"><a href="#Thomas-Hobbes-权力、人权、社会秩序" class="headerlink" title="Thomas Hobbes: 权力、人权、社会秩序"></a>Thomas Hobbes: 权力、人权、社会秩序</h2><p>奠定了现代社会科学的基础</p>
@@ -13448,7 +13448,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>竞品分析</title>
-    <url>./post/8a63fe9/</url>
+    <url>/post/8a63fe9/</url>
     <content><![CDATA[<p>学习内容：<a href="https://kaiwu.lagou.com/course/courseInfo.htm?courseId=1012&amp;sid=20-h5Url-0&amp;lgec_type=website&amp;lgec_sign=86228E00A960E2EB44DCA4027393428B&amp;buyFrom=2&amp;pageId=1pz4#/sale">竞品分析实操手册 (lagou.com)</a></p>
 <h1 id="何为竞品分析"><a href="#何为竞品分析" class="headerlink" title="何为竞品分析"></a>何为竞品分析</h1><h2 id="不要漠视对手多抬头看路"><a href="#不要漠视对手，多抬头看路" class="headerlink" title="不要漠视对手，多抬头看路"></a>不要漠视对手，多抬头看路</h2><p>借鉴同行，因为世上本没有路，走的人多了，自然成了一条路。所以在自己的行业，最好的老师就是<strong>竞争对手</strong>，把它找出来，就对手的成功或合格的竞品而言，必然已经踩过许多坑了，那我们就可以看到别人怎么做的，看到别人的数据构建，包括别人是通过什么渠道在操作的，别人通过这些能做起来，通过分析<strong>WHAT HOW WHY</strong>，明确竞品竞店做了哪些我没有做的动作？该从哪些方面去分析我和竞品的差距呢？分析出来原因后，我该做哪些动作呢？</p>
 <p>做竞品分析的目的是为了更好地参与市场竞争，为后续更加激烈的竞争做准备工作。</p>
@@ -13721,7 +13721,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>索引优化作业</title>
-    <url>./post/f3c7f886/</url>
+    <url>/post/f3c7f886/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>辣鸡的我写索引优化作业遇到一个很奇怪的问题。</p>
 <p>大概就是，在500w行数据的order表中，找出年龄小于20order列表，看能否使用索引进行查询优化。</p>
 <p>创建索引、查询时间、查询计划一套做下来，发现优化器没有用创建的索引。于是开始寻找问题。</p>
@@ -13758,7 +13758,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>索引优化注意点——为什么我的索引没有用</title>
-    <url>./post/5f43b32a/</url>
+    <url>/post/5f43b32a/</url>
     <content><![CDATA[<p>一些网上找到的经验之谈。</p>
 <h1 id="建立索引的几大原则"><a href="#建立索引的几大原则" class="headerlink" title="建立索引的几大原则"></a>建立索引的几大原则</h1><h2 id="最左前缀匹配"><a href="#最左前缀匹配" class="headerlink" title="最左前缀匹配"></a>最左前缀匹配</h2><p>最重要的大原则</p>
 <p>具体可见<a href="https://www.kancloud.cn/kancloud/theory-of-mysql-index/41857">mysql索引使用策略和优化</a></p>
@@ -13827,7 +13827,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>索引各类型创建</title>
-    <url>./post/95bb5ff7/</url>
+    <url>/post/95bb5ff7/</url>
     <content><![CDATA[<h1 id="1-普通索引"><a href="#1-普通索引" class="headerlink" title="1. 普通索引"></a>1. 普通索引</h1><p>基本索引</p>
 <p>创建方法</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#标准语句： </span><br><span class="line">ALTER TABLE table_name ADD INDEX index_name (column_list) </span><br><span class="line"></span><br><span class="line">CREATE INDEX index_name ON table_name (column_list); </span><br><span class="line"></span><br><span class="line">#还有建表的时候创建亦</span><br><span class="line">CREATE TABLE table_name ( ID INT NOT NULL, column_listVARCHAR(16) NOT NULL, </span><br><span class="line">                         INDEX [index_name](column_list(length)) );</span><br></pre></td></tr></table></figure>
@@ -13868,7 +13868,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>美国现代主义文学</title>
-    <url>./post/24c055c0/</url>
+    <url>/post/24c055c0/</url>
     <content><![CDATA[<p>讨论三个作家：<strong>海明威</strong>、<strong>福克纳</strong>、<strong>菲茨杰拉德</strong></p>
 <h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><h3 id="三个层次的讲解"><a href="#三个层次的讲解" class="headerlink" title="三个层次的讲解"></a>三个层次的讲解</h3><ol>
 <li>社会历史批评</li>
@@ -13925,7 +13925,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>瑜伽师地论讲义1</title>
-    <url>./post/4fba53d6/</url>
+    <url>/post/4fba53d6/</url>
     <content><![CDATA[<h2 id="第1~10讲"><a href="#第1-10讲" class="headerlink" title="第1~10讲"></a>第1~10讲</h2><h3 id="第1讲"><a href="#第1讲" class="headerlink" title="第1讲"></a>第1讲</h3><p><strong>《瑜伽师地论》</strong></p>
 <p>　　我们从《传记》上看，从玄奘大师的《传记》上看，他到印度去取经，其中主要的就是要请这一部论，要学习这一部论的。</p>
 <p>　　到了印度以后，见到戒贤论师的时候，就是在那烂陀寺，曾经说了一个故事。就是戒贤论师他有风病，这个风病一发作了的时候，痛苦的不得了，可能已经很久了，这位大德也就想要自杀，就想要死掉了。动了这样的念头以后，做了一个梦，梦见文殊菩萨、观世音菩萨、弥勒菩萨来了，那么文殊菩萨说：你以前做国王，你虐待老百姓，所以你现在受这种报。你想要死还是不行的，这个罪业没有结束，你死了，你还是要苦的，所以你不能够死。你要发大心弘扬佛法，你的罪渐渐就灭了，这个问题才能解决。现在从支那国（就是我们中国）来一个出家人，你为他讲《瑜伽师地论》，你要等他来，为他讲《瑜伽师地论》。那么这样子这个梦就醒了、醒了。</p>
@@ -15074,7 +15074,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>色彩理论</title>
-    <url>./post/f236dd28/</url>
+    <url>/post/f236dd28/</url>
     <content><![CDATA[<h1 id="学习课程"><a href="#学习课程" class="headerlink" title="学习课程"></a>学习课程</h1><p><a href="https://www.coursera.org/learn/graphic-elements-design/home/welcome">Graphic Elements of Design: Color Theory and Image Formats - 首页 | Coursera</a></p>
 <h1 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h1><ul>
 <li>了解基本色彩理论 <code>ROY G BIV</code> <code>CMYK</code> <code>Pantone(PMS)</code> <code>RGB</code></li>
@@ -15111,7 +15111,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>设计模式(1)——面向对象设计原则</title>
-    <url>./post/7c16c150/</url>
+    <url>/post/7c16c150/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><h3 id="软件的可维护性和可复用性"><a href="#软件的可维护性和可复用性" class="headerlink" title="软件的可维护性和可复用性"></a>软件的可维护性和可复用性</h3><ul>
 <li>恰当的复用可以改善系统的可维护性</li>
 <li>复用的目标在于<strong>实现支持可维护性的复用</strong></li>
@@ -15282,7 +15282,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>设计模式(0) 介绍</title>
-    <url>./post/9ae13a6d/</url>
+    <url>/post/9ae13a6d/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。</p>
 <p>但是实践环境千变万化，现实需求日益复杂、庞大驱使软件开发更复杂，只掌握少数几个解决方案恐怕是杯水车薪。所以想开辟新的板块，通过实例学习<strong>《设计模式：可复用面向对象软件的基础》</strong>里面的大量“招式”，并且通过这些“秘技”深入理解面向对象的“心法”原则。</p>
 <h2 id="2-描述"><a href="#2-描述" class="headerlink" title="2. 描述"></a>2. 描述</h2><blockquote>
@@ -15352,7 +15352,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>设计模式（2） 创建型模式 ABSTRACT FACTORY 抽象工厂模式</title>
-    <url>./post/1711a5b3/</url>
+    <url>/post/1711a5b3/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>本节关于ABSTRACT FACTORY 抽象工厂模式 —— 对象创建模式</p>
 <h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>提供一个创建一系列相关或互相依赖对象的接口，而无需指定其具体的类。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2. 别名"></a>2. 别名</h2><p>Kit</p>
@@ -15434,7 +15434,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>设计模式(3) 创建型模式 BUILDER 生成器</title>
-    <url>./post/4b55dd87/</url>
+    <url>/post/4b55dd87/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>本节关于BUILDER 生成器模式 —— 对象创建模式</p>
 <h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>将一个复杂对象的<strong>构建</strong>与它的<strong>表示分离</strong>，使得<strong>同样的构建过程可以创建不同的表示</strong>。</p>
 <h2 id="2-动机"><a href="#2-动机" class="headerlink" title="2. 动机"></a>2. 动机</h2><p>如下图，一个Rich Text Format文档交换格式的阅读器能将RTF转换为多种正文格式。该阅读器可以将RTF文档转换为<strong>ASCII文本或转换为一个能以交互方式编辑的正文窗口组件</strong>。</p>
@@ -15503,7 +15503,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>设计模式(4) 创建型模式 FACTORY METHOD 工厂方法</title>
-    <url>./post/5da200/</url>
+    <url>/post/5da200/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>本节关于FACTORY METHOD 工厂方法 —— 对象创建模式</p>
 <h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的<strong>实例化延迟</strong>到其子类。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2. 别名"></a>2. 别名</h2><p>虚构造器（Virtual Constructor）</p>
@@ -15564,7 +15564,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>设计模式(6) 对象行为型模式 STATE 状态</title>
-    <url>./post/4a9e02a0/</url>
+    <url>/post/4a9e02a0/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>本节关于STATE 状态模式 —— 对象行为型模式</p>
 <h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>允许一个对象<strong>在其内部状态改变时改变它的行为</strong>，以至于对象看起来似乎修改了它的类。</p>
 <p>依赖倒转原则：针对接口编程</p>
@@ -15586,7 +15586,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>设计模式(5) 对象行为型模式 Strategy 策略设计模式</title>
-    <url>./post/c840ad9/</url>
+    <url>/post/c840ad9/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>定义一系列算法并封装，使它们可相互替换。算法可独立于使用它的客户而变化。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2. 别名"></a>2. 别名</h2><p>Policy</p>
 <h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3. 动机"></a>3. 动机</h2><p>考虑许多算法对一个正文流进行分析，不可将算法直接code进使用他们的类。</p>
@@ -15650,7 +15650,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>设计模式(8) 两阶段终止模式 （Two-Phase Termination Patter）</title>
-    <url>./post/34140c88/</url>
+    <url>/post/34140c88/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h1 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h1><ul>
 <li>当我们想要结束一个线程或者关闭jvm的时候，通过此模式可以优雅安全的关闭线程，让线程可以完成它本应完成的当前任务并可以附加一些收尾工作后再进行关闭</li>
 <li>此模式下关闭线程会有一定延迟，主要在于被关闭线程需要执行完后，再进行关闭</li>
@@ -15667,7 +15667,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>设计模式(7) 对象行为型模式 VISTOR 访问者</title>
-    <url>./post/6a4d4071/</url>
+    <url>/post/6a4d4071/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>作用于某对象结构中各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。</p>
 <h2 id="2-动机"><a href="#2-动机" class="headerlink" title="2. 动机"></a>2. 动机</h2><p>对于系统中的某些对象，它们存储在同一个集合中，且具有<strong>不同的类型</strong>，而且对于该集合中的对象，可以接受一类称为<strong>访问者的对象</strong>来访问，而且<strong>不同的访问者其访问方式有所不同</strong>，访问者模式为解决这类问题而诞生。</p>
 <p>在实际使用时，对同一集合对象的操作<strong>并不是唯一</strong>的，对相同的元素对象可能存在<strong>多种不同的操作方式</strong>。而且这些操作方式<strong>并不稳定</strong>，可能还需要<strong>增加新的操作</strong>，以满足新的业务需求。</p>
@@ -15723,7 +15723,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>软件构造之语句</title>
-    <url>./post/2aa66caa/</url>
+    <url>/post/2aa66caa/</url>
     <content><![CDATA[<h1 id="补指针构造技巧"><a href="#补：指针构造技巧" class="headerlink" title="补：指针构造技巧"></a>补：指针构造技巧</h1><h2 id="按照正确的顺序删除链表中的指针"><a href="#按照正确的顺序删除链表中的指针" class="headerlink" title="按照正确的顺序删除链表中的指针"></a>按照正确的顺序删除链表中的指针</h2><p>可以先新后旧</p>
 <h2 id="不要吝啬指针变量的使用-要专建专用"><a href="#不要吝啬指针变量的使用、要专建专用" class="headerlink" title="不要吝啬指针变量的使用、要专建专用"></a>不要吝啬指针变量的使用、要专建专用</h2><h2 id="避免之争的强制类型转换"><a href="#避免之争的强制类型转换" class="headerlink" title="避免之争的强制类型转换"></a>避免之争的强制类型转换</h2><p>错误示范<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">int a = l;</span><br><span class="line">int *p = &amp;a;</span><br><span class="line">float *p1 = (float*)p;</span><br></pre></td></tr></table></figure></p>
 <h2 id="删除和释放指针"><a href="#删除和释放指针" class="headerlink" title="删除和释放指针"></a>删除和释放指针</h2><p>指针、动态内存…　　悬空指针、二次释放</p>
@@ -15776,7 +15776,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>语言学概论</title>
-    <url>./post/1a03062b/</url>
+    <url>/post/1a03062b/</url>
     <content><![CDATA[<p>钉子</p>
 <h2 id="01-语言能力与语言系统"><a href="#01-语言能力与语言系统" class="headerlink" title="01 语言能力与语言系统"></a>01 语言能力与语言系统</h2><h3 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h3><p>重点分析人的先天语言能力及其和语言系统的关系</p>
 <ul>
@@ -16022,7 +16022,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>软工一</title>
-    <url>./post/6a633f42/</url>
+    <url>/post/6a633f42/</url>
     <content><![CDATA[<p>主要介绍</p>
 <p>java、面向对象编程、其他</p>
 <p>可参考<a href="http://songzi.info/2018/12/28/Java(1">Java(1)—JavaSE</a>—JavaSE/&gt;)</p>
@@ -16036,7 +16036,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>软件过程与管理</title>
-    <url>./post/3c6c6472/</url>
+    <url>/post/3c6c6472/</url>
     <content><![CDATA[<p>管理信息系统——诺兰阶段模型：</p>
 <p>前三个——计算机时代、后三个——信息时代</p>
 <ul>
@@ -16191,7 +16191,7 @@ Lift(X→Y) = P(Y|X) / P(Y) = （同时购买{X，Y}的订单*总订单）/（�
   </entry>
   <entry>
     <title>逻辑学导论</title>
-    <url>./post/39b513f9/</url>
+    <url>/post/39b513f9/</url>
     <content><![CDATA[<h1 id="学习课程"><a href="#学习课程" class="headerlink" title="学习课程"></a>学习课程</h1><p><a href="https://www.coursera.org/learn/logic-introduction/home/info">Introduction to Logic - Stanford University - 课程信息 | Coursera</a></p>
 <h1 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h1><ul>
 <li>熟悉逻辑学的基本术语、重要概念</li>
@@ -16754,7 +16754,7 @@ Tautology \\    φ ∨ ¬φ</script><h2 id="43-推理规则-rules-of-inference">
   </entry>
   <entry>
     <title>逻辑错误</title>
-    <url>./post/b9b1da5a/</url>
+    <url>/post/b9b1da5a/</url>
     <content><![CDATA[<h1 id="01-稻草人-straw-man"><a href="#01-稻草人-Straw-man" class="headerlink" title="01 稻草人 Straw man"></a><strong>01 稻草人 Straw man</strong></h1><p>夸张、歪曲，甚至凭空创造别人的观点，来让你的观点显得更加合理。用“稻草人”来比喻这种情况，是因为稻草人本身是薄弱的，所谓打击稻草人，就是专门捡出别人论述里的一些薄弱细节，加以歪曲和攻击。</p>
 <p><strong>例如：</strong></p>
 <ol>
@@ -16935,7 +16935,7 @@ Tautology \\    φ ∨ ¬φ</script><h2 id="43-推理规则-rules-of-inference">
   </entry>
   <entry>
     <title>Mysql基准测试工具使用记录</title>
-    <url>./post/8aabd1de/</url>
+    <url>/post/8aabd1de/</url>
     <content><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ol>
 <li><p>主流数据库分类：关系型数据库、NoSQL、NewSQL</p>
 </li>
