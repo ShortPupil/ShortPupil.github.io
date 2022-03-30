@@ -41,3 +41,29 @@ NexT is built for easily use with elegant appearance. First things first, always
 [jquery-url]: http://jquery.com/
 [velocity-image]: https://img.shields.io/badge/Velocity-1.2-2BAF2B.svg?style=flat-square
 [velocity-url]: http://julian.com/research/velocity/
+
+```html
+<!-- 新增播放器 -->
+<!-- 引用依赖 -->
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+<!-- require JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- require pjax -->
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+<!-- 我使用的APlayer本体 -->
+<div class="aplayer"
+  data-id="986184445"
+  data-server="netease"
+  data-type="playlist"
+  data-fixed="true"
+  data-mini="true"
+  data-autoplay="false"
+  data-order="random"
+  data-volume="0.35"
+  data-theme="#FFEFD5"
+  data-preload="auto" >
+</div>
+```
