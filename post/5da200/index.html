@@ -100,7 +100,7 @@
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+<link href="./css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="design pattern," />
@@ -109,24 +109,24 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="毫末室" type="application/atom+xml" />
+  <link rel="alternate" href="./atom.xml" title="毫末室" type="application/atom+xml" />
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="目录 本节关于FACTORY METHOD 工厂方法 —— 对象创建模式 1. 意图 定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的实例化延迟到其子类。 2. 别名 虚构造器（Virtual Constructor） 3. 动机 框架使用抽象类定义和维护对象之间的关系。这些对象的创建通常也由框架负责。 问题：某应用框架向用户显示多个文档。两个主要的抽象">
+<meta name="description" content="目录本节关于FACTORY METHOD 工厂方法 —— 对象创建模式 1. 意图定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的实例化延迟到其子类。 2. 别名虚构造器（Virtual Constructor） 3. 动机框架使用抽象类定义和维护对象之间的关系。这些对象的创建通常也由框架负责。 问题：某应用框架向用户显示多个文档。两个主要的抽象是抽象类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式(4) 创建型模式 FACTORY METHOD 工厂方法">
 <meta property="og:url" content="https://songzi.info/post/5da200/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录 本节关于FACTORY METHOD 工厂方法 —— 对象创建模式 1. 意图 定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的实例化延迟到其子类。 2. 别名 虚构造器（Virtual Constructor） 3. 动机 框架使用抽象类定义和维护对象之间的关系。这些对象的创建通常也由框架负责。 问题：某应用框架向用户显示多个文档。两个主要的抽象">
+<meta property="og:description" content="目录本节关于FACTORY METHOD 工厂方法 —— 对象创建模式 1. 意图定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的实例化延迟到其子类。 2. 别名虚构造器（Virtual Constructor） 3. 动机框架使用抽象类定义和维护对象之间的关系。这些对象的创建通常也由框架负责。 问题：某应用框架向用户显示多个文档。两个主要的抽象是抽象类">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/FactoryMethod_1.png">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/FactoryMethod_2.png">
@@ -234,7 +234,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="./"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">毫末室</span>
         <span class="logo-line-after"><i></i></span>
@@ -262,7 +262,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="./" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -272,7 +272,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="./categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -282,7 +282,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="./about" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -292,7 +292,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="./archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -302,7 +302,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="./tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -312,7 +312,7 @@
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/404" rel="section">
+          <a href="./404" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -332,7 +332,7 @@
       
         
         <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap" rel="section">
+          <a href="./sitemap" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
             
@@ -407,12 +407,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://songzi.info/post/5da200/">
+    <link itemprop="mainEntityOfPage" href="https://songzi.info./post/5da200/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="松子">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="./images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -459,7 +459,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index">
+                  <a href="./categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index">
                     <span itemprop="name">软件设计</span>
                   </a>
                 </span>
@@ -492,7 +492,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  1.8k
+                  2.4k
                 </span>
               
 
@@ -529,73 +529,57 @@
       
 
       
-        <h1 id="目录">目录</h1>
-<p>本节关于FACTORY METHOD 工厂方法 —— 对象创建模式</p>
-<h2 id="1-意图">1. 意图</h2>
-<p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的<strong>实例化延迟</strong>到其子类。</p>
-<h2 id="2-别名">2. 别名</h2>
-<p>虚构造器（Virtual Constructor）</p>
-<h2 id="3-动机">3. 动机</h2>
-<p>框架使用抽象类定义和维护对象之间的关系。这些对象的创建通常也由框架负责。</p>
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>本节关于FACTORY METHOD 工厂方法 —— 对象创建模式</p>
+<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的<strong>实例化延迟</strong>到其子类。</p>
+<h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2. 别名"></a>2. 别名</h2><p>虚构造器（Virtual Constructor）</p>
+<h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3. 动机"></a>3. 动机</h2><p>框架使用抽象类定义和维护对象之间的关系。这些对象的创建通常也由框架负责。</p>
 <p>问题：某应用框架向用户显示多个文档。两个主要的抽象是抽象类Application和Document，客户通过其子类来做与具体应用相关的实现。但Application只知道一个新文档何时被创建，而不知道哪一种Document将被创建。这使得：<strong>框架必须实例化类，但它只知道不能被实例化的类。</strong></p>
 <p>解决方法如下：</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/FactoryMethod_1.png" alt></p>
-<p>**封装哪一个Document子类将被创建的信息并将这些信息从该框架中分离出来。**Application的子类重定义Application的抽象操作CreateDocument以返回适合的Document子类对象。一旦一个Application子类实例化后，它就可以实例化与应用相关的文档，而无需知道这些文档的类。</p>
-<h2 id="4-适用性">4. 适用性</h2>
-<ul>
+<p><strong>封装哪一个Document子类将被创建的信息并将这些信息从该框架中分离出来。</strong>Application的子类重定义Application的抽象操作CreateDocument以返回适合的Document子类对象。一旦一个Application子类实例化后，它就可以实例化与应用相关的文档，而无需知道这些文档的类。</p>
+<h2 id="4-适用性"><a href="#4-适用性" class="headerlink" title="4. 适用性"></a>4. 适用性</h2><ul>
 <li>当一个类不知道它所必须创建的对象的类</li>
 <li>当一个类希望由其子类来指定它所创建的对象</li>
 <li>当类将创建对象的职责委托给多个帮助子类中的某一个，并且希望将哪一个帮助子类是代理者这一信息局部化的时候</li>
 </ul>
-<h2 id="5-结构">5. 结构</h2>
-<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/FactoryMethod_2.png" alt></p>
-<h2 id="6-参与者">6. 参与者</h2>
-<ul>
-<li>Product(Document)
-<ul>
+<h2 id="5-结构"><a href="#5-结构" class="headerlink" title="5. 结构"></a>5. 结构</h2><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/FactoryMethod_2.png" alt></p>
+<h2 id="6-参与者"><a href="#6-参与者" class="headerlink" title="6. 参与者"></a>6. 参与者</h2><ul>
+<li>Product(Document)<ul>
 <li>定义工厂方法所创建的对象的接口</li>
 </ul>
 </li>
-<li>ConcreteProduct(MyDocument)
-<ul>
+<li>ConcreteProduct(MyDocument)<ul>
 <li>实现Product接口</li>
 </ul>
 </li>
-<li>Creator(Application)
-<ul>
+<li>Creator(Application)<ul>
 <li>声明工厂方法，该方法返回一个Product类型的对象。Creator也可以定义一个工厂方法的缺省实现，它返回一个缺省的ConcreteProduct对象</li>
 <li>可以调用工厂方法以创建一个Product对象</li>
 </ul>
 </li>
-<li>ConcreteCreate(MyApplication)
-<ul>
+<li>ConcreteCreate(MyApplication)<ul>
 <li>重定义工厂方法以返回一个ConcreteProduct对象</li>
 </ul>
 </li>
 </ul>
-<h2 id="7-协作">7. 协作</h2>
-<ul>
+<h2 id="7-协作"><a href="#7-协作" class="headerlink" title="7. 协作"></a>7. 协作</h2><ul>
 <li>Creator依赖于其子类来定义工厂方法，所以它返回一个适当的ConcreteProduct实例</li>
 </ul>
-<h2 id="8-效果">8. 效果</h2>
-<ul>
+<h2 id="8-效果"><a href="#8-效果" class="headerlink" title="8. 效果"></a>8. 效果</h2><ul>
 <li>为子类提供挂钩（hook）</li>
 <li>连接平行的类层次</li>
 </ul>
-<h2 id="9-实现">9.  实现</h2>
-<ul>
-<li>
-<p>Factory Method主要有两种不同的情况</p>
+<h2 id="9-实现"><a href="#9-实现" class="headerlink" title="9.  实现"></a>9.  实现</h2><ul>
+<li><p>Factory Method主要有两种不同的情况</p>
 <ul>
 <li>Create</li>
 </ul>
 </li>
-<li>
-<p>参数化工厂方法</p>
-</li>
 </ul>
-<h2 id="10-代码示例">10. 代码示例</h2>
-
+<ul>
+<li>参数化工厂方法</li>
+</ul>
+<h2 id="10-代码示例"><a href="#10-代码示例" class="headerlink" title="10. 代码示例"></a>10. 代码示例</h2>
       
     </div>
     
@@ -619,7 +603,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/design-pattern/" rel="tag"># design pattern</a>
+            <a href="./tags/design-pattern/" rel="tag"># design pattern</a>
           
         </div>
       
@@ -642,7 +626,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/4b55dd87/" rel="next" title="设计模式(3) 创建型模式 BUILDER 生成器">
+              <a href="./post/4b55dd87/" rel="next" title="设计模式(3) 创建型模式 BUILDER 生成器">
                 <i class="fa fa-chevron-left"></i> 设计模式(3) 创建型模式 BUILDER 生成器
               </a>
             
@@ -652,7 +636,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/7c16c150/" rel="prev" title="设计模式(1)——面向对象设计原则">
+              <a href="./post/7c16c150/" rel="prev" title="设计模式(1)——面向对象设计原则">
                 设计模式(1)——面向对象设计原则 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -723,7 +707,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
+               src="./images/avatar.jpg"
                alt="松子" />
           <p class="site-author-name" itemprop="name">松子</p>
            
@@ -734,7 +718,7 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/archives">
+              <a href="./archives">
                 <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">posts</span>
               </a>
@@ -745,7 +729,7 @@
             
             
             <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
+              <a href="./categories/index.html">
                 <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">categories</span>
               </a>
@@ -756,7 +740,7 @@
             
             
             <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
+              <a href="./tags/index.html">
                 <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">tags</span>
               </a>
@@ -767,7 +751,7 @@
 
         
           <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
+            <a href="./atom.xml" rel="alternate">
               <i class="fa fa-rss"></i>
               RSS
             </a>
@@ -895,7 +879,7 @@
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">638k</span>
+      <span title="post.totalcount">636k</span>
     
 </div>
 
@@ -1025,25 +1009,25 @@ document.write("<br>")
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+  <script type="text/javascript" src="./js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+  <script type="text/javascript" src="./js/src/motion.js?v=5.1.2"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="./js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="./js/src/post-details.js?v=5.1.2"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+  
+
+
+  <script type="text/javascript" src="./js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -1102,7 +1086,7 @@ document.write("<br>")
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/" + search_path;
+    var path = "./" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
@@ -1451,8 +1435,8 @@ wpac_init.push({widget: 'Rating', id: 17904});
   
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="./js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="./js/src/scroll-cookie.js?v=5.1.2"></script>
 
 
   

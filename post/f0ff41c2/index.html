@@ -100,7 +100,7 @@
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+<link href="./css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Data Mining," />
@@ -109,24 +109,24 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="毫末室" type="application/atom+xml" />
+  <link rel="alternate" href="./atom.xml" title="毫末室" type="application/atom+xml" />
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="目录 如何理解 Boosting算法 Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定">
+<meta name="description" content="目录如何理解Boosting算法Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定值。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法">
 <meta property="og:url" content="https://songzi.info/post/f0ff41c2/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录 如何理解 Boosting算法 Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定">
+<meta property="og:description" content="目录如何理解Boosting算法Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定值。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/1335428125_1739.png">
 <meta property="article:published_time" content="2019-05-06T08:44:06.000Z">
@@ -345,7 +345,7 @@ mjx-container[display="true"] + br {
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="./"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">毫末室</span>
         <span class="logo-line-after"><i></i></span>
@@ -373,7 +373,7 @@ mjx-container[display="true"] + br {
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="./" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -383,7 +383,7 @@ mjx-container[display="true"] + br {
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="./categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -393,7 +393,7 @@ mjx-container[display="true"] + br {
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="./about" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -403,7 +403,7 @@ mjx-container[display="true"] + br {
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="./archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -413,7 +413,7 @@ mjx-container[display="true"] + br {
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="./tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -423,7 +423,7 @@ mjx-container[display="true"] + br {
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/404" rel="section">
+          <a href="./404" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -443,7 +443,7 @@ mjx-container[display="true"] + br {
       
         
         <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap" rel="section">
+          <a href="./sitemap" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
             
@@ -518,12 +518,12 @@ mjx-container[display="true"] + br {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://songzi.info/post/f0ff41c2/">
+    <link itemprop="mainEntityOfPage" href="https://songzi.info./post/f0ff41c2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="松子">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="./images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -570,7 +570,7 @@ mjx-container[display="true"] + br {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%95%86%E5%8A%A1%E6%99%BA%E8%83%BD/" itemprop="url" rel="index">
+                  <a href="./categories/%E5%95%86%E5%8A%A1%E6%99%BA%E8%83%BD/" itemprop="url" rel="index">
                     <span itemprop="name">商务智能</span>
                   </a>
                 </span>
@@ -603,7 +603,7 @@ mjx-container[display="true"] + br {
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  852
+                  1.2k
                 </span>
               
 
@@ -640,26 +640,20 @@ mjx-container[display="true"] + br {
       
 
       
-        <h1 id="目录">目录</h1>
-<h2 id="如何理解">如何理解</h2>
-<h3 id="boosting算法">Boosting算法</h3>
-<p><strong>Boosting 提升算法</strong>是<strong>一系列</strong>将罗学习器提升为强学习器的算法。</p>
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="如何理解"><a href="#如何理解" class="headerlink" title="如何理解"></a>如何理解</h2><h3 id="boosting算法"><a href="#Boosting算法" class="headerlink" title="Boosting算法"></a>Boosting算法</h3><p><strong>Boosting 提升算法</strong>是<strong>一系列</strong>将罗学习器提升为强学习器的算法。</p>
 <p>思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。</p>
 <p>大致工作机制：</p>
 <p>先从初始训练集训练出一个<strong>基学习器</strong>，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定值。</p>
-<h3 id="adaboost算法">AdaBoost算法</h3>
-<p>AdaBoost算法工作机制同上。</p>
+<h3 id="adaboost算法"><a href="#AdaBoost算法" class="headerlink" title="AdaBoost算法"></a>AdaBoost算法</h3><p>AdaBoost算法工作机制同上。</p>
 <p>对于弱分类器的组合，AdaBoost算法采取<strong>加权多数表决</strong>的方法——加大分类误差率小的弱分类器的权值，使其在表决中起到较大的作用；减小分类误差率大的弱分类器的权值，使其在表决中起较小的作用。</p>
 <p>应用集中于<strong>提高分类准确率</strong>。</p>
-<h2 id="算法原理">算法原理</h2>
-<ol>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><ol>
 <li>对D训练集数据训练处一个分类器Ci</li>
 <li>通过分类器Ci对数据进行分类，计算此时误差率</li>
 <li>把上步骤中的分错的数据的权重提高，分对的权重降低，以此凸显了分错的数据。为什么这么做呢，后面会做出解释。</li>
 </ol>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/1335428125_1739.png" alt="adaboost算法伪码"></p>
-<h2 id="算法实现">算法实现</h2>
-
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2>
       
     </div>
     
@@ -675,11 +669,11 @@ mjx-container[display="true"] + br {
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/post/f0ff41c2/">数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法</a></p>
+  <p><span>本文标题:</span><a href="./post/f0ff41c2/">数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
   <p><span>发布时间:</span>2019年05月06日 - 16:05</p>
   <p><span>最后更新:</span>2022年03月26日 - 02:03</p>
-  <p><span>博文链接:</span><a href="/post/f0ff41c2/" title="数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法">https://songzi.info/post/f0ff41c2/</a>
+  <p><span>博文链接:</span><a href="./post/f0ff41c2/" title="数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法">https://songzi.info/post/f0ff41c2/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://songzi.info/post/f0ff41c2/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
@@ -712,7 +706,7 @@ mjx-container[display="true"] + br {
       
         <div class="post-tags">
           
-            <a href="/tags/Data-Mining/" rel="tag"># Data Mining</a>
+            <a href="./tags/Data-Mining/" rel="tag"># Data Mining</a>
           
         </div>
       
@@ -735,7 +729,7 @@ mjx-container[display="true"] + br {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/93db42ae/" rel="next" title="数据挖掘算法（一）——Aprior算法和FP-Tree算法">
+              <a href="./post/93db42ae/" rel="next" title="数据挖掘算法（一）——Aprior算法和FP-Tree算法">
                 <i class="fa fa-chevron-left"></i> 数据挖掘算法（一）——Aprior算法和FP-Tree算法
               </a>
             
@@ -745,7 +739,7 @@ mjx-container[display="true"] + br {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/8aabd1de/" rel="prev" title="Mysql基准测试工具使用记录">
+              <a href="./post/8aabd1de/" rel="prev" title="Mysql基准测试工具使用记录">
                 Mysql基准测试工具使用记录 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -851,7 +845,7 @@ mjx-container[display="true"] + br {
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
+               src="./images/avatar.jpg"
                alt="松子" />
           <p class="site-author-name" itemprop="name">松子</p>
            
@@ -862,7 +856,7 @@ mjx-container[display="true"] + br {
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/archives">
+              <a href="./archives">
                 <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">posts</span>
               </a>
@@ -873,7 +867,7 @@ mjx-container[display="true"] + br {
             
             
             <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
+              <a href="./categories/index.html">
                 <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">categories</span>
               </a>
@@ -884,7 +878,7 @@ mjx-container[display="true"] + br {
             
             
             <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
+              <a href="./tags/index.html">
                 <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">tags</span>
               </a>
@@ -895,7 +889,7 @@ mjx-container[display="true"] + br {
 
         
           <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
+            <a href="./atom.xml" rel="alternate">
               <i class="fa fa-rss"></i>
               RSS
             </a>
@@ -1023,7 +1017,7 @@ mjx-container[display="true"] + br {
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">638k</span>
+      <span title="post.totalcount">636k</span>
     
 </div>
 
@@ -1153,25 +1147,25 @@ document.write("<br>")
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+  <script type="text/javascript" src="./js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+  <script type="text/javascript" src="./js/src/motion.js?v=5.1.2"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="./js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="./js/src/post-details.js?v=5.1.2"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+  
+
+
+  <script type="text/javascript" src="./js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -1230,7 +1224,7 @@ document.write("<br>")
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/" + search_path;
+    var path = "./" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
@@ -1579,8 +1573,8 @@ wpac_init.push({widget: 'Rating', id: 17904});
   
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="./js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="./js/src/scroll-cookie.js?v=5.1.2"></script>
 
 
   
