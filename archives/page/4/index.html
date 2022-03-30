@@ -379,7 +379,7 @@
         
          
           
-        Good! 109 posts in total. Keep on posting.
+        Good! 110 posts in total. Keep on posting.
       </span>
 
       
@@ -393,6 +393,43 @@
           <div class="collection-title">
             <h2 class="archive-year motion-element" id="archive-year-2020">2020</h2>
           </div>
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/post/5cbef579/" itemprop="url">
+              
+                <span itemprop="name">几种二十世纪西方思潮</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2020-03-30T14:31:55+08:00"
+              content="2020-03-30" >
+          03-30
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
         
         
 
@@ -722,43 +759,6 @@
 
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/post/1f25e26b/" itemprop="url">
-              
-                <span itemprop="name">法理学笔记</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-01-25T13:57:44+08:00"
-              content="2020-01-25" >
-          01-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
   </div>
   
@@ -814,7 +814,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -825,7 +825,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -836,7 +836,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -941,31 +941,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- 新增播放器 -->
-<!-- 引用依赖 -->
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
-<!-- require JQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<!-- require pjax -->
-<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
-<!-- 我使用的APlayer本体 -->
-<div class="aplayer"
-  data-id="986184445"
-  data-server="netease"
-  data-type="playlist"
-  data-fixed="true"
-  data-mini="true"
-  data-autoplay="false"
-  data-order="random"
-  data-volume="0.35"
-  data-theme="#FFEFD5"
-  data-preload="auto" >
-</div>
-
-<div class="copyright" >
+        <div class="copyright" >
   
   &copy;  2018 - 
   <span itemprop="copyrightYear">2022</span>
@@ -995,12 +971,15 @@
         var grt= new Date("10/10/2018 00:00:00");//此处修改你的建站时间或者网站上线时间
         now.setTime(now.getTime()+250);
         days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        years = dnum / 365; ynum = Math.floor(years);
         hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
         if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+"d ";
+        days = dnum % 365;
+        dnum = Math.floor(days);
+        document.getElementById("timeDate").innerHTML = "Time will tell: "+ ynum + "y " + dnum + "d ";
         document.getElementById("times").innerHTML = hnum + "h " + mnum + "m " + snum + "s";
     }
 setInterval("createtime()",250);

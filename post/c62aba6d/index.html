@@ -697,14 +697,18 @@ S 删除光标所在行</li>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/post/85c5dc00/" rel="next" title="Linux分章重点——第五、六、七、八章">
+                <i class="fa fa-chevron-left"></i> Linux分章重点——第五、六、七、八章
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/85c5dc00/" rel="prev" title="Linux分章重点——第五、六、七、八章">
-                Linux分章重点——第五、六、七、八章 <i class="fa fa-chevron-right"></i>
+              <a href="/post/d525d77d/" rel="prev" title="Linux分章重点——第一、二、三章">
+                Linux分章重点——第一、二、三章 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -786,7 +790,7 @@ S 删除光标所在行</li>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -797,7 +801,7 @@ S 删除光标所在行</li>
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -808,7 +812,7 @@ S 删除光标所在行</li>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -929,31 +933,7 @@ S 删除光标所在行</li>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- 新增播放器 -->
-<!-- 引用依赖 -->
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
-<!-- require JQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<!-- require pjax -->
-<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
-<!-- 我使用的APlayer本体 -->
-<div class="aplayer"
-  data-id="986184445"
-  data-server="netease"
-  data-type="playlist"
-  data-fixed="true"
-  data-mini="true"
-  data-autoplay="false"
-  data-order="random"
-  data-volume="0.35"
-  data-theme="#FFEFD5"
-  data-preload="auto" >
-</div>
-
-<div class="copyright" >
+        <div class="copyright" >
   
   &copy;  2018 - 
   <span itemprop="copyrightYear">2022</span>
@@ -983,12 +963,15 @@ S 删除光标所在行</li>
         var grt= new Date("10/10/2018 00:00:00");//此处修改你的建站时间或者网站上线时间
         now.setTime(now.getTime()+250);
         days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        years = dnum / 365; ynum = Math.floor(years);
         hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
         if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "Time will tell: "+dnum+"d ";
+        days = dnum % 365;
+        dnum = Math.floor(days);
+        document.getElementById("timeDate").innerHTML = "Time will tell: "+ ynum + "y " + dnum + "d ";
         document.getElementById("times").innerHTML = hnum + "h " + mnum + "m " + snum + "s";
     }
 setInterval("createtime()",250);
@@ -1608,6 +1591,4 @@ wpac_init.push({widget: 'Rating', id: 17904});
                 processImages: null,
             };
         </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
-</html>
-data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>
