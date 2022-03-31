@@ -121,23 +121,23 @@
 
 
 
-<meta name="description" content="目录《Building the Data Warehouse》第四章 粒度数据仓库开发者要解决的重要的设计问题是粒度确定。 粗略估算起点——粗略估算数据仓库中将来的数据行数和所需DASD（直接存取存储设备）数——关于数量级的估计。 例子 估计数据仓库环境中的行数&#x2F;空间大小  对每一个已知的表： ​    计算一行所占字节数的 ​        最大估计值 ​        最小估计值 对一年内：">
+<meta name="description" content="目录 《Building the Data Warehouse》第四章 粒度 数据仓库开发者要解决的重要的设计问题是粒度确定。 粗略估算 起点——粗略估算数据仓库中将来的数据行数和所需DASD（直接存取存储设备）数——关于数量级的估计。 例子 估计数据仓库环境中的行数&#x2F;空间大小   对每一个已知的表： ​	计算一行所占字节数的 ​		最大估计值 ​		最小估计值 对一年内： ​	最大行数可能是多少">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据仓库（四）">
 <meta property="og:url" content="https://songzi.info/post/498d51fa/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录《Building the Data Warehouse》第四章 粒度数据仓库开发者要解决的重要的设计问题是粒度确定。 粗略估算起点——粗略估算数据仓库中将来的数据行数和所需DASD（直接存取存储设备）数——关于数量级的估计。 例子 估计数据仓库环境中的行数&#x2F;空间大小  对每一个已知的表： ​    计算一行所占字节数的 ​        最大估计值 ​        最小估计值 对一年内：">
+<meta property="og:description" content="目录 《Building the Data Warehouse》第四章 粒度 数据仓库开发者要解决的重要的设计问题是粒度确定。 粗略估算 起点——粗略估算数据仓库中将来的数据行数和所需DASD（直接存取存储设备）数——关于数量级的估计。 例子 估计数据仓库环境中的行数&#x2F;空间大小   对每一个已知的表： ​	计算一行所占字节数的 ​		最大估计值 ​		最小估计值 对一年内： ​	最大行数可能是多少">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/截图20190413212024.png">
-<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/截图20190413212918.png">
-<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/截图20190422001508.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190413212024.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190413212918.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190422001508.png">
 <meta property="article:published_time" content="2019-04-13T12:55:06.000Z">
 <meta property="article:modified_time" content="2022-03-25T18:50:28.588Z">
 <meta property="article:author" content="松子">
 <meta property="article:tag" content="BI">
 <meta property="article:tag" content="Data Warehouse">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/截图20190413212024.png">
+<meta name="twitter:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190413212024.png">
 
 
 
@@ -494,7 +494,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  4k
+                  2.9k
                 </span>
               
 
@@ -510,7 +510,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  4 mins.
+                  3 mins.
                 </span>
               
             </div>
@@ -531,44 +531,58 @@
       
 
       
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="building-the-data-warehouse第四章-粒度"><a href="#《Building-the-Data-Warehouse》第四章-粒度" class="headerlink" title="《Building the Data Warehouse》第四章 粒度"></a>《Building the Data Warehouse》第四章 粒度</h2><p>数据仓库开发者要解决的重要的设计问题是<strong>粒度确定</strong>。</p>
-<h3 id="粗略估算"><a href="#粗略估算" class="headerlink" title="粗略估算"></a>粗略估算</h3><p><strong>起点</strong>——粗略估算数据仓库中将来的数据行数和所需DASD（直接存取存储设备）数——关于<strong>数量级</strong>的估计。</p>
+        <h1 id="目录">目录</h1>
+<h2 id="building-the-data-warehouse第四章-粒度">《Building the Data Warehouse》第四章 粒度</h2>
+<p>数据仓库开发者要解决的重要的设计问题是<strong>粒度确定</strong>。</p>
+<h3 id="粗略估算">粗略估算</h3>
+<p><strong>起点</strong>——粗略估算数据仓库中将来的数据行数和所需DASD（直接存取存储设备）数——关于<strong>数量级</strong>的估计。</p>
 <p><strong>例子</strong></p>
 <p>估计数据仓库环境中的行数/空间大小</p>
 <ol>
-<li><p>对每一个已知的表：</p>
-<p>​    计算一行所占字节数的</p>
-<p>​        最大估计值</p>
-<p>​        最小估计值</p>
+<li>
+<p>对每一个已知的表：</p>
+<p>​	计算一行所占字节数的</p>
+<p>​		最大估计值</p>
+<p>​		最小估计值</p>
 <p>对一年内：</p>
-<p>​    最大行数可能是多少？</p>
-<p>​    最小行数可能是多少？</p>
+<p>​	最大行数可能是多少？</p>
+<p>​	最小行数可能是多少？</p>
 <p>对五年内：</p>
-<p>​    最大行数可能是多少？</p>
-<p>​    最小行数可能是多少？</p>
+<p>​	最大行数可能是多少？</p>
+<p>​	最小行数可能是多少？</p>
 <p>对表的每个键码：</p>
-<p>​    该键码的大小（按字节）是多少；</p>
-<p>​    一年总的最大空间=最大行大小 * 一年内最大行数</p>
-<p>​    一年总的最小空间=最小行大小 * 一年内最小行数</p>
-<p>​    累加索引空间</p>
+<p>​	该键码的大小（按字节）是多少；</p>
+<p>​	一年总的最大空间=最大行大小 * 一年内最大行数</p>
+<p>​	一年总的最小空间=最小行大小 * 一年内最小行数</p>
+<p>​	累加索引空间</p>
 </li>
-<li><p>对所有已知的表重复第1步</p>
+<li>
+<p>对所有已知的表重复第1步</p>
 </li>
 </ol>
-<h3 id="粒度划分过程的输入"><a href="#粒度划分过程的输入" class="headerlink" title="粒度划分过程的输入"></a>粒度划分过程的输入</h3><p><strong>估计的行数</strong>和<strong>DASD数</strong>作为粒度划分过程的输入</p>
-<h4 id="空间估算-行估算"><a href="#空间估算、行估算" class="headerlink" title="空间估算、行估算"></a>空间估算、行估算</h4><ul>
+<h3 id="粒度划分过程的输入">粒度划分过程的输入</h3>
+<p><strong>估计的行数</strong>和<strong>DASD数</strong>作为粒度划分过程的输入</p>
+<h4 id="空间估算-行估算">空间估算、行估算</h4>
+<ul>
 <li>需要多少DASD？排序的引导时间估计是多少？</li>
 <li>需要双重粒度吗？</li>
 </ul>
-<h3 id="选择双重还是单一的粒度"><a href="#选择双重还是单一的粒度" class="headerlink" title="选择双重还是单一的粒度"></a>选择双重还是单一的粒度</h3><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/截图20190413212024.png" alt></p>
-<h3 id="确定粒度的级别"><a href="#确定粒度的级别" class="headerlink" title="确定粒度的级别"></a>确定粒度的级别</h3><p>对于轻度汇总的数据要确定合适的粒度级别，唯一可行的方法是将数据拿到最终用户面前。</p>
-<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/截图20190413212918.png" alt></p>
-<h3 id="反馈循环技巧不是很懂"><a href="#反馈循环技巧（不是很懂）" class="headerlink" title="反馈循环技巧（不是很懂）"></a>反馈循环技巧（不是很懂）</h3><h3 id="粒度级别银行环境"><a href="#粒度级别——银行环境" class="headerlink" title="粒度级别——银行环境"></a>粒度级别——银行环境</h3><ul>
+<h3 id="选择双重还是单一的粒度">选择双重还是单一的粒度</h3>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190413212024.png" alt></p>
+<h3 id="确定粒度的级别">确定粒度的级别</h3>
+<p>对于轻度汇总的数据要确定合适的粒度级别，唯一可行的方法是将数据拿到最终用户面前。</p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190413212918.png" alt></p>
+<h3 id="反馈循环技巧不是很懂">反馈循环技巧（不是很懂）</h3>
+<h3 id="粒度级别银行环境">粒度级别——银行环境</h3>
+<ul>
 <li></li>
 </ul>
-<h2 id="building-the-data-warehouse第五章-数据仓库与技术"><a href="#《Building-the-Data-Warehouse》第五章-数据仓库与技术" class="headerlink" title="《Building the Data Warehouse》第五章 数据仓库与技术"></a>《Building the Data Warehouse》第五章 数据仓库与技术</h2><p>数据仓库在<strong>技术上的需求</strong></p>
-<h3 id="技术需求"><a href="#技术需求" class="headerlink" title="技术需求"></a>技术需求</h3><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/截图20190422001508.png" alt></p>
-<h4 id="1-管理大量数据最重要"><a href="#1-管理大量数据——最重要" class="headerlink" title="1. 管理大量数据——最重要"></a>1. 管理大量数据——最重要</h4><p>具体方法：</p>
+<h2 id="building-the-data-warehouse第五章-数据仓库与技术">《Building the Data Warehouse》第五章 数据仓库与技术</h2>
+<p>数据仓库在<strong>技术上的需求</strong></p>
+<h3 id="技术需求">技术需求</h3>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%88%AA%E5%9B%BE20190422001508.png" alt></p>
+<h4 id="1-管理大量数据最重要">1. 管理大量数据——最重要</h4>
+<p>具体方法：</p>
 <ul>
 <li>寻址</li>
 <li>索引</li>
@@ -580,9 +594,9 @@
 <li><strong>能够</strong>管理大量数据的能力</li>
 <li>能够<strong>管理好</strong>的能力</li>
 </ul>
-<h4 id="2-管理多介质"><a href="#2-管理多介质" class="headerlink" title="2. 管理多介质"></a>2. 管理多介质</h4><p>在处理大量数据时满足<strong>高效率</strong>和<strong>合理的费用</strong></p>
+<h4 id="2-管理多介质">2. 管理多介质</h4>
+<p>在处理大量数据时满足<strong>高效率</strong>和<strong>合理的费用</strong></p>
 <p>层次划分</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -624,9 +638,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>处理数据仓库技术应该能管理多种存储介质上的数据。</p>
-<h4 id="3-索引数据监视"><a href="#3-索引-数据监视" class="headerlink" title="3. 索引/数据监视"></a>3. 索引/数据监视</h4><p>数据仓库——<strong>灵活性</strong>、<strong>对数据会进行不可预测的访问</strong>——要能对数据进行<strong>快速和方便的访问</strong></p>
+<h4 id="3-索引数据监视">3. 索引/数据监视</h4>
+<p>数据仓库——<strong>灵活性</strong>、<strong>对数据会进行不可预测的访问</strong>——要能对数据进行<strong>快速和方便的访问</strong></p>
 <p>索引——<strong>有用的</strong>、建立和应用的<strong>费用不能太高</strong></p>
 <p>数据监视——<strong>费用不能太高</strong>、<strong>过程不能太复杂</strong>、<strong>在需要时随时运行</strong></p>
 <p>监视数据仓库中数据的<strong>理由</strong></p>
@@ -638,7 +652,8 @@
 <li>决定数据的统计成份。</li>
 <li>决定剩余的可用空间。</li>
 </ul>
-<h4 id="4-多种技术的接口"><a href="#4-多种技术的接口" class="headerlink" title="4. 多种技术的接口"></a>4. 多种技术的接口</h4><p><strong>能够用各种不同的技术获得和传送数据</strong></p>
+<h4 id="4-多种技术的接口">4. 多种技术的接口</h4>
+<p><strong>能够用各种不同的技术获得和传送数据</strong></p>
 <p>接口不仅要<strong>高效</strong>，还要<strong>便于使用</strong>，并<strong>能够在批模式下运行</strong></p>
 
       
@@ -1006,7 +1021,7 @@
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">636k</span>
+      <span title="post.totalcount">638k</span>
     
 </div>
 

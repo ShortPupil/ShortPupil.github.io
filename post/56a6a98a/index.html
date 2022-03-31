@@ -121,12 +121,12 @@
 
 
 
-<meta name="description" content="目录前言这是阅读《高性能mysql》第五章的记录。 1. 独立的列非独立的列是索引列是表达式的一部分或是函数的参数，这会导致索引使用不当，或无法使用已有的索引 错误示例 1select actor_id from sakila.actor where actor_id + 1 &#x3D; 5; 1select ... where to_days(current_date) - to_days(date_c">
+<meta name="description" content="目录 前言 这是阅读《高性能mysql》第五章的记录。 1. 独立的列 非独立的列是索引列是表达式的一部分或是函数的参数，这会导致索引使用不当，或无法使用已有的索引 错误示例 1select actor_id from sakila.actor where actor_id + 1 &#x3D; 5; 1select ... where to_days(current_date) - to_days(dat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="高性能索引策略——《高性能MySQL》第五章">
 <meta property="og:url" content="https://songzi.info/post/56a6a98a/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录前言这是阅读《高性能mysql》第五章的记录。 1. 独立的列非独立的列是索引列是表达式的一部分或是函数的参数，这会导致索引使用不当，或无法使用已有的索引 错误示例 1select actor_id from sakila.actor where actor_id + 1 &#x3D; 5; 1select ... where to_days(current_date) - to_days(date_c">
+<meta property="og:description" content="目录 前言 这是阅读《高性能mysql》第五章的记录。 1. 独立的列 非独立的列是索引列是表达式的一部分或是函数的参数，这会导致索引使用不当，或无法使用已有的索引 错误示例 1select actor_id from sakila.actor where actor_id + 1 &#x3D; 5; 1select ... where to_days(current_date) - to_days(dat">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-10-26T16:15:24.000Z">
 <meta property="article:modified_time" content="2022-03-26T14:43:42.843Z">
@@ -490,7 +490,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  3.9k
+                  3.1k
                 </span>
               
 
@@ -506,7 +506,7 @@
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  4 mins.
+                  3 mins.
                 </span>
               
             </div>
@@ -527,41 +527,54 @@
       
 
       
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这是阅读《高性能mysql》第五章的记录。</p>
-<h1 id="1-独立的列"><a href="#1-独立的列" class="headerlink" title="1. 独立的列"></a>1. 独立的列</h1><p>非独立的列是<strong>索引列是表达式的一部分或是函数的参数</strong>，这会导致索引使用不当，或无法使用已有的索引</p>
+        <h1 id="目录">目录</h1>
+<h1 id="前言">前言</h1>
+<p>这是阅读《高性能mysql》第五章的记录。</p>
+<h1 id="1-独立的列">1. 独立的列</h1>
+<p>非独立的列是<strong>索引列是表达式的一部分或是函数的参数</strong>，这会导致索引使用不当，或无法使用已有的索引</p>
 <p>错误示例</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select actor_id from sakila.actor where actor_id + 1 = 5;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select ... where to_days(current_date) - to_days(date_col) &lt;= 10;</span><br></pre></td></tr></table></figure>
 <p><strong>注意</strong></p>
 <p>养成简化where条件的习惯，始终将索引列单独放在比较符号的一侧</p>
-<h1 id="2-前缀索引和索引选择性"><a href="#2-前缀索引和索引选择性" class="headerlink" title="2. 前缀索引和索引选择性"></a>2. 前缀索引和索引选择性</h1><p><strong>索引选择性：</strong>不重复的索引值（也称为基数，cardinality）和数据表的记录总值（#T）的比值，范围从（1/#T）到1之间。索引选择性越高，查询效率越高。唯一索引的选择性是1,是最好的索引选择性，性能最好。</p>
+<h1 id="2-前缀索引和索引选择性">2. 前缀索引和索引选择性</h1>
+<p>**索引选择性：**不重复的索引值（也称为基数，cardinality）和数据表的记录总值（#T）的比值，范围从（1/#T）到1之间。索引选择性越高，查询效率越高。唯一索引的选择性是1,是最好的索引选择性，性能最好。</p>
 <p><strong>前缀索引</strong>：一般情况下，某个列的前缀选择性足够高，足以满足查询性能。对于<strong>BLOB\TEXT\VARCHAR</strong>类型的列，必须用前缀索引——mysql不允许索引在这些列的完整长度</p>
 <p><strong>诀窍</strong>：足够长——保证较高的选择性，不能太长——节约空间。<strong>前缀的“基数”应该接近于完整列的“基数”</strong></p>
 <p><strong>例子</strong>：</p>
-<h1 id="3-多列索引"><a href="#3-多列索引" class="headerlink" title="3. 多列索引"></a>3. 多列索引</h1><p>在多列上建立独立的单列索引大部分情况下不能提高Mysql查询性能。</p>
-<h1 id="4-选择合适的索引列顺序"><a href="#4-选择合适的索引列顺序" class="headerlink" title="4. 选择合适的索引列顺序"></a>4. 选择合适的索引列顺序</h1><p>正确的顺序依赖于使用该索引的查询，并且同时需要考虑如何更好地满足排序和分组的需要。</p>
+<h1 id="3-多列索引">3. 多列索引</h1>
+<p>在多列上建立独立的单列索引大部分情况下不能提高Mysql查询性能。</p>
+<h1 id="4-选择合适的索引列顺序">4. 选择合适的索引列顺序</h1>
+<p>正确的顺序依赖于使用该索引的查询，并且同时需要考虑如何更好地满足排序和分组的需要。</p>
 <p>选择性更高的列放在索引最前列，某些场景有用。但通常不如避免随机IO和排序重要。</p>
 <p>将选择性最高的列放在前面通常是很好，这时候索引的作用只是用于<strong>优化WHERE条件的查找</strong>。然而，<strong>性能不只是依赖于所有索引列的选择性（整体基数），也和查询条件的具体值有关，也就是和值的分布有关</strong>。可能也需要根据那些<strong>运行频率最高的查询</strong>来调整索引列的顺序，让这种情况下索引的选择性更高</p>
-<h1 id="5-聚簇索引"><a href="#5-聚簇索引" class="headerlink" title="5. 聚簇索引"></a>5. 聚簇索引</h1><p>并非一种单独的索引类型，而是一种数据存储方式。InnoDB的聚簇索引在同一个结构中保存了B-Tree索引和数据行。</p>
-<h1 id="6-覆盖索引"><a href="#6-覆盖索引" class="headerlink" title="6. 覆盖索引"></a>6. 覆盖索引</h1><p>查询只需要扫描索引而无须回表，带来的好处</p>
+<h1 id="5-聚簇索引">5. 聚簇索引</h1>
+<p>并非一种单独的索引类型，而是一种数据存储方式。InnoDB的聚簇索引在同一个结构中保存了B-Tree索引和数据行。</p>
+<h1 id="6-覆盖索引">6. 覆盖索引</h1>
+<p>查询只需要扫描索引而无须回表，带来的好处</p>
 <ul>
-<li>索引条目通常远小于数据行大小，所以如果只需要读取索引，那么Mysql就会<strong>极大地减少数据访问量。</strong>这对缓存的负载非常重要，因为这种情况下<strong>响应时间大部分花在数据拷贝</strong>上。这对<strong>I/O密集型的应用</strong>也有帮助。</li>
+<li>索引条目通常远小于数据行大小，所以如果只需要读取索引，那么Mysql就会<strong>极大地减少数据访问量。<strong>这对缓存的负载非常重要，因为这种情况下</strong>响应时间大部分花在数据拷贝</strong>上。这对<strong>I/O密集型的应用</strong>也有帮助。</li>
 <li>索引是按照列值顺序存储的，所以<strong>对于I/O密集型的范围查询会比随机从磁盘读取每一行数据的I/O要少得多</strong>。</li>
 <li>一些存储引擎如<strong>MyISAM</strong>在内存中只缓存索引，数据则依赖于操作系统来缓存，因此访问数据需要一次系统调用，可能导致严重的性能问题。</li>
 <li>对于InnoDB的<strong>聚簇索引</strong>，覆盖索引对InnoDB表特别有用。InnoDB的<strong>二级索引在叶节点中保存了行的主键值，所以如果二级主键能够覆盖查询，则可以避免对主键索引的二次查询</strong>。</li>
 </ul>
-<h1 id="7-使用索引扫描来做排序"><a href="#7-使用索引扫描来做排序" class="headerlink" title="7. 使用索引扫描来做排序"></a>7. 使用索引扫描来做排序</h1><p>两种方式生成有序结果：排序操作、按索引顺序扫描（explain的type结果为index，而不是extra列的”Using index”）</p>
-<p><strong>扫描索引本身很快，但如果索引不能覆盖所有查询所需的全部列，就不得不每扫描一条索引记录就都回表查询一次对应的行。</strong>基本上都是<strong>随机I/O</strong>，因此按索引顺序读取数据的速度他哦农场要比顺序地全表扫描慢，尤其是在I/O密集型的工作负载时。</p>
+<h1 id="7-使用索引扫描来做排序">7. 使用索引扫描来做排序</h1>
+<p>两种方式生成有序结果：排序操作、按索引顺序扫描（explain的type结果为index，而不是extra列的&quot;Using index&quot;）</p>
+<p><strong>扫描索引本身很快，但如果索引不能覆盖所有查询所需的全部列，就不得不每扫描一条索引记录就都回表查询一次对应的行。<strong>基本上都是</strong>随机I/O</strong>，因此按索引顺序读取数据的速度他哦农场要比顺序地全表扫描慢，尤其是在I/O密集型的工作负载时。</p>
 <p>所以最后的结果，是<strong>同一索引既满足排序，又用于查找行</strong>。</p>
-<p>使用索引排序的一个重要用法是当<strong>查询同时有ORDER BY 和 LIMIT 子句</strong>时 </p>
-<h1 id="8-压缩前缀压缩索引"><a href="#8-压缩（前缀压缩）索引" class="headerlink" title="8. 压缩（前缀压缩）索引"></a>8. 压缩（前缀压缩）索引</h1><p>MyISAM</p>
-<h1 id="9-冗余和重复索引"><a href="#9-冗余和重复索引" class="headerlink" title="9. 冗余和重复索引"></a>9. 冗余和重复索引</h1><p><strong>重复索引</strong>——在相同的列上按照相同的顺序创建的相同类型的索引。</p>
+<p>使用索引排序的一个重要用法是当<strong>查询同时有ORDER BY 和 LIMIT 子句</strong>时</p>
+<h1 id="8-压缩前缀压缩索引">8. 压缩（前缀压缩）索引</h1>
+<p>MyISAM</p>
+<h1 id="9-冗余和重复索引">9. 冗余和重复索引</h1>
+<p><strong>重复索引</strong>——在相同的列上按照相同的顺序创建的相同类型的索引。</p>
 <p><strong>冗余索引</strong>——如果创建了索引(A,B)，再创建索引(A)就是冗余索引，因为这只是前一个索引的前缀索引，加入是再创建(B,A)就不是。通常发生在<strong>为表添加新索引的时候。</strong></p>
 <p>MySQL允许在相同列创建多个索引。但需要单独维护重复的索引，并且<strong>优化器在优化查询时需要逐个考虑</strong>，这会影响性能。</p>
 <p>大多数情况都不需要冗余索引，应该尽量扩展已有的索引而不是创建新索引。（除非扩展会让索引变得太大了）</p>
-<h1 id="10-未使用的索引"><a href="#10-未使用的索引" class="headerlink" title="10. 未使用的索引"></a>10. 未使用的索引</h1><p>建议考虑删除</p>
+<h1 id="10-未使用的索引">10. 未使用的索引</h1>
+<p>建议考虑删除</p>
 <p>定位未使用索引的工具<em>Percona Server</em>，<em>MariaDB</em>查看每个索引的使用频率。</p>
-<h1 id="11-索引和锁"><a href="#11-索引和锁" class="headerlink" title="11. 索引和锁"></a>11. 索引和锁</h1>
+<h1 id="11-索引和锁">11. 索引和锁</h1>
+
       
     </div>
     
@@ -927,7 +940,7 @@
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">636k</span>
+      <span title="post.totalcount">638k</span>
     
 </div>
 
