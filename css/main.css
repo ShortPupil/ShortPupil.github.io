@@ -1911,7 +1911,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffffe5;
+  background: #6fffc7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2763,6 +2763,7 @@ embed {
   -moz-box-shadow: 0 0 5px #cacbcc;
   background: #fff;
   border-radius: 50px;
+  opacity: 1;
 }
 body {
   background: url("https://fine-clam-71.deno.dev");
@@ -2776,7 +2777,7 @@ body {
   padding: 10px 7px 10px 7px;
   min-height: 500px;
   background: #fff;
-  opacity: 0.88;
+  opacity: 0.91;
   border-radius: 25px;
 }
 .post-toc .nav .nav-child {
