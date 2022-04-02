@@ -233,7 +233,6 @@ NexT.utils = NexT.$u = {
    * @returns {string|void|XML|*}
    */
   escapeSelector: function (selector) {
-    console.log(selector);
     return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, '\\$&');
   },
 
