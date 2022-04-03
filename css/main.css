@@ -1911,7 +1911,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff5;
+  background: #21a3f2;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2722,7 +2722,9 @@ embed {
 }
 .menu:hover {
   background: #fff;
-  border-radius: 25px;
+  border-radius: 15px;
+  transition: 1.5s;
+  opacity: 0.91;
 }
 @media (max-width: 767px) {
   .menu {
@@ -2759,11 +2761,10 @@ embed {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 25px;
-  -webkit-box-shadow: 0 0 5px #cacbcb;
-  -moz-box-shadow: 0 0 5px #cacbcc;
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.19);
   background: #fff;
   border-radius: 50px;
-  opacity: 1;
 }
 body {
   background: url("https://fine-clam-71.deno.dev");

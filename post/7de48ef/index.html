@@ -3197,45 +3197,6 @@ font-display: swap;
 </script>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <!-- 新增播放器 -->
-  <!-- 引用依赖 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
-  <!-- 我使用的APlayer本体 -->
-  <div class="aplayer"
-    data-id="986184445"
-    data-server="netease"
-    data-type="playlist"
-    data-fixed="true"
-    data-mini="true"
-    data-autoplay="false"
-    data-order="random"
-    data-volume="0.35"
-    data-theme="#FFEFD5"
-    data-preload="auto" >
-  </div>
-  <script>
-    function removelrc() {
-        //检测是否存在歌词按钮
-        if (!document.querySelector(".aplayer-icon-lrc"))
-            return;
-        else
-        {
-            //触发以后立刻移除监听
-            document.removeEventListener("DOMNodeInserted",removelrc);
-            //稍作延时保证触发函数时存在按钮
-            setTimeout(function() {
-                //以触发按钮的方式隐藏歌词，防止在点击显示歌词按钮时需要点击两次才能出现的问题
-                document.querySelector(".aplayer-icon-lrc").click();
-            }, 1);
-            return;
-        }
-    }
-    document.addEventListener('DOMNodeInserted', removelrc)
-  </script>
-  <!-- APlayer结束 -->
-
   
   
     
@@ -4645,7 +4606,7 @@ lower_case_table_names = 1时，mysql会先把表名转为小写，再执行操�
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">433k</span>
+      <span title="post.totalcount">436k</span>
     
 </div>
 
