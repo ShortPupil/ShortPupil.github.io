@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="目录 本节关于ABSTRACT FACTORY 抽象工厂模式 —— 对象创建模式 1. 意图 提供一个创建一系列相关或互相依赖对象的接口，而无需指定其具体的类。 2. 别名 Kit 3. 动机 简单工厂——当你需要什么，只需要传入相应参数就能获得对象，但无须知道其创建细节。 如下图，支持多种视图标准的用户界面工具包，例如Motif和Presenation Manager。不同视感(look-and">
+<meta name="description" content="目录本节关于ABSTRACT FACTORY 抽象工厂模式 —— 对象创建模式 1. 意图提供一个创建一系列相关或互相依赖对象的接口，而无需指定其具体的类。 2. 别名Kit 3. 动机简单工厂——当你需要什么，只需要传入相应参数就能获得对象，但无须知道其创建细节。 如下图，支持多种视图标准的用户界面工具包，例如Motif和Presenation Manager。不同视感(look-and-fee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式（2） 创建型模式 ABSTRACT FACTORY 抽象工厂模式">
 <meta property="og:url" content="https://songzi.info/post/1711a5b3/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录 本节关于ABSTRACT FACTORY 抽象工厂模式 —— 对象创建模式 1. 意图 提供一个创建一系列相关或互相依赖对象的接口，而无需指定其具体的类。 2. 别名 Kit 3. 动机 简单工厂——当你需要什么，只需要传入相应参数就能获得对象，但无须知道其创建细节。 如下图，支持多种视图标准的用户界面工具包，例如Motif和Presenation Manager。不同视感(look-and">
+<meta property="og:description" content="目录本节关于ABSTRACT FACTORY 抽象工厂模式 —— 对象创建模式 1. 意图提供一个创建一系列相关或互相依赖对象的接口，而无需指定其具体的类。 2. 别名Kit 3. 动机简单工厂——当你需要什么，只需要传入相应参数就能获得对象，但无须知道其创建细节。 如下图，支持多种视图标准的用户界面工具包，例如Motif和Presenation Manager。不同视感(look-and-fee">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/abstract_factory_1.png">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/abstract_factory_2.png">
@@ -3461,7 +3461,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  11k
+                  12k
                 </span>
               
 
@@ -3477,7 +3477,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  10 mins.
+                  11 mins.
                 </span>
               
             </div>
@@ -3498,105 +3498,78 @@ font-display: swap;
       
 
       
-        <h1 id="目录">目录</h1>
-<p>本节关于ABSTRACT FACTORY 抽象工厂模式 —— 对象创建模式</p>
-<h2 id="1-意图">1. 意图</h2>
-<p>提供一个创建一系列相关或互相依赖对象的接口，而无需指定其具体的类。</p>
-<h2 id="2-别名">2. 别名</h2>
-<p>Kit</p>
-<h2 id="3-动机">3. 动机</h2>
-<p>简单工厂——当你需要什么，只需要传入相应参数就能获得对象，但无须知道其创建细节。</p>
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>本节关于ABSTRACT FACTORY 抽象工厂模式 —— 对象创建模式</p>
+<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>提供一个创建一系列相关或互相依赖对象的接口，而无需指定其具体的类。</p>
+<h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2. 别名"></a>2. 别名</h2><p>Kit</p>
+<h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3. 动机"></a>3. 动机</h2><p>简单工厂——当你需要什么，只需要传入相应参数就能获得对象，但无须知道其创建细节。</p>
 <p>如下图，支持多种视图标准的用户界面工具包，例如Motif和Presenation Manager。不同视感(look-and-feel)风格为诸如滚动条、窗口、按钮等用户界面“窗口组件”定义不同的外观和行为。</p>
 <p>问题：要求视感风格标准间可移植；一个应用不应该为一个特定的视感外观直接编码其窗口组件；整个应用中实例化特定视感风格的窗口组件类使得以后很难改变视感风格。</p>
 <p>如下图解决该问题</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/abstract_factory_1.png" alt></p>
 <p>定义一个抽象的WidgetFactory类，这个类声明了一个用来创建每一类基本窗口组件的接口。每一类窗口组件都有一个抽象类，而具体子类实现窗口组件的特定视感风格。</p>
 <p><strong>体现原则</strong>：单一职责SRP、开闭原则OCP</p>
-<h2 id="4-适用性">4. 适用性</h2>
-<ul>
+<h2 id="4-适用性"><a href="#4-适用性" class="headerlink" title="4. 适用性"></a>4. 适用性</h2><ul>
 <li>一个系统要独立于它的产品的创建、组合、表示</li>
 <li>一个系统要由多个产品系列中的一个来配置</li>
 <li>要强调一系列相关产品对象的设计以便联合使用</li>
 <li>提供一个产品类库，但只想显示它们的接口而不是实现</li>
 </ul>
-<h2 id="5-结构">5. 结构</h2>
-<p>上图拓展</p>
+<h2 id="5-结构"><a href="#5-结构" class="headerlink" title="5. 结构"></a>5. 结构</h2><p>上图拓展</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/abstract_factory_2.png" alt></p>
-<h2 id="6-参与者">6. 参与者</h2>
+<h2 id="6-参与者"><a href="#6-参与者" class="headerlink" title="6. 参与者"></a>6. 参与者</h2><ul>
+<li><p>AbstractFactory (WidgetFactory) </p>
 <ul>
-<li>
-<p>AbstractFactory (WidgetFactory)</p>
-<ul>
-<li>
-<p>声明一个创建抽象产品对象的操作接口</p>
+<li><p>声明一个创建抽象产品对象的操作接口</p>
 </li>
-<li>
-<p>ConcreteFactory(MotifWidgetFactory, PMWidgetFactory)</p>
+<li><p>ConcreteFactory(MotifWidgetFactory, PMWidgetFactory)</p>
 <ul>
 <li>实现创建具体产品对象的操作</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p>AbstractProduct(Window, ScrollBar)</p>
-<ul>
+<li>AbstractProduct(Window, ScrollBar)<ul>
 <li>为一类产品对象声明一个接口</li>
 </ul>
 </li>
-<li>
-<p>ConcreteProduct(MotifWindow, MotifScrollBar)</p>
-<ul>
+<li>ConcreteProduct(MotifWindow, MotifScrollBar)<ul>
 <li>定义一个将被相应的具体工厂创建的产品对象</li>
 <li>实现AbstractProduct接口</li>
 </ul>
 </li>
-<li>
-<p>Client</p>
-<ul>
+<li>Client<ul>
 <li>仅使用由AbstractFactory和AbstractProduct类声明的接口</li>
 </ul>
 </li>
 </ul>
-<h2 id="7-协作">7. 协作</h2>
-<ul>
+<h2 id="7-协作"><a href="#7-协作" class="headerlink" title="7. 协作"></a>7. 协作</h2><ul>
 <li>在运行时刻创建一个ConcreteFactory类的实例。这一具体工厂创建具有特定实现的产品对象。<strong>为创建不同的产品对象，客户应使用不同的具体工厂。</strong></li>
 <li>AbstractFactory将产品对象的<strong>创建延迟</strong>到其ConcreteFactory子类</li>
 </ul>
-<h2 id="8-效果">8. 效果</h2>
-<ul>
-<li>
-<p>优点</p>
+<h2 id="8-效果"><a href="#8-效果" class="headerlink" title="8. 效果"></a>8. 效果</h2><ul>
+<li><p>优点</p>
 <ol>
-<li>
-<p>分离了具体的类</p>
+<li><p>分离了具体的类</p>
 </li>
-<li>
-<p>易于交换产品系列</p>
+<li><p>易于交换产品系列</p>
 </li>
-<li>
-<p>有利于产品的一致性</p>
+<li><p>有利于产品的一致性</p>
 </li>
 </ol>
 </li>
-<li>
-<p>缺点</p>
+<li><p>缺点</p>
 <ol>
 <li>难以支持新种类的产品。AbstractFactory接口确定了可以被创建的产品集合，新 种类产品需要扩展该工厂接口，这会导致AbstractFactory类及其所有子类的改变。下一节会说解决方法。</li>
 </ol>
 </li>
 </ul>
-<h2 id="9-实现">9. 实现</h2>
-<ul>
+<h2 id="9-实现"><a href="#9-实现" class="headerlink" title="9. 实现"></a>9. 实现</h2><ul>
 <li>将工厂作为单件</li>
 <li>创建产品</li>
 <li>定义可扩展的工厂</li>
 </ul>
-<h2 id="10-示例">10. 示例</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FactoryExample</span> &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ComponentA</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(ICardFactory cardfactory)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">			<span class="type">IPaymentcard</span> <span class="variable">mastercard</span> <span class="operator">=</span> cardfactory.createCard(<span class="string">&quot;debit&quot;</span>);</span><br><span class="line">			<span class="type">boolean</span> <span class="variable">checkValidity</span> <span class="operator">=</span> mastercard.CheckValidity();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">ICardFactory</span> &#123;</span><br><span class="line">		IPaymentcard <span class="title function_">createCard</span><span class="params">(String cardType)</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GeneralFactory</span> <span class="keyword">implements</span> <span class="title class_">ICardFactory</span>&#123;</span><br><span class="line">		<span class="keyword">public</span> IPaymentcard <span class="title function_">createCard</span><span class="params">(String cardtype)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">			<span class="keyword">switch</span>(cardtype)&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">&quot;debit&quot;</span>:</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">DebitCard</span>();</span><br><span class="line">			<span class="keyword">case</span> <span class="string">&quot;credit&quot;</span>:</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">CreditCard</span>();</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>(<span class="string">&quot;Card type not found&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">IPaymentcard</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">boolean</span> <span class="title function_">CheckValidity</span><span class="params">()</span>;</span><br><span class="line">		IPaymentcard <span class="title function_">requestNewCard</span><span class="params">()</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DebitCard</span> <span class="keyword">implements</span> <span class="title class_">IPaymentcard</span></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">CheckValidity</span><span class="params">()</span> &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="keyword">public</span> IPaymentcard <span class="title function_">requestNewCard</span><span class="params">()</span> &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CreditCard</span> <span class="keyword">implements</span> <span class="title class_">IPaymentcard</span></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">CheckValidity</span><span class="params">()</span> &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="keyword">public</span> IPaymentcard <span class="title function_">requestNewCard</span><span class="params">()</span> &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="11-应用">11. 应用</h2>
-<h2 id="12-相关模式">12. 相关模式</h2>
-
+<h2 id="10-示例"><a href="#10-示例" class="headerlink" title="10. 示例"></a>10. 示例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FactoryExample</span> &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ComponentA</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(ICardFactory cardfactory)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">			<span class="type">IPaymentcard</span> <span class="variable">mastercard</span> <span class="operator">=</span> cardfactory.createCard(<span class="string">&quot;debit&quot;</span>);</span><br><span class="line">			<span class="type">boolean</span> <span class="variable">checkValidity</span> <span class="operator">=</span> mastercard.CheckValidity();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">ICardFactory</span> &#123;</span><br><span class="line">		IPaymentcard <span class="title function_">createCard</span><span class="params">(String cardType)</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GeneralFactory</span> <span class="keyword">implements</span> <span class="title class_">ICardFactory</span>&#123;</span><br><span class="line">		<span class="keyword">public</span> IPaymentcard <span class="title function_">createCard</span><span class="params">(String cardtype)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">			<span class="keyword">switch</span>(cardtype)&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">&quot;debit&quot;</span>:</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">DebitCard</span>();</span><br><span class="line">			<span class="keyword">case</span> <span class="string">&quot;credit&quot;</span>:</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">CreditCard</span>();</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>(<span class="string">&quot;Card type not found&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">IPaymentcard</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">boolean</span> <span class="title function_">CheckValidity</span><span class="params">()</span>;</span><br><span class="line">		IPaymentcard <span class="title function_">requestNewCard</span><span class="params">()</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DebitCard</span> <span class="keyword">implements</span> <span class="title class_">IPaymentcard</span></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">CheckValidity</span><span class="params">()</span> &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="keyword">public</span> IPaymentcard <span class="title function_">requestNewCard</span><span class="params">()</span> &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CreditCard</span> <span class="keyword">implements</span> <span class="title class_">IPaymentcard</span></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">CheckValidity</span><span class="params">()</span> &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="keyword">public</span> IPaymentcard <span class="title function_">requestNewCard</span><span class="params">()</span> &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="11-应用"><a href="#11-应用" class="headerlink" title="11. 应用"></a>11. 应用</h2><h2 id="12-相关模式"><a href="#12-相关模式" class="headerlink" title="12. 相关模式"></a>12. 相关模式</h2>
       
     </div>
     
@@ -3897,7 +3870,7 @@ font-display: swap;
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">471k</span>
+      <span title="post.totalcount">468k</span>
     
 </div>
 

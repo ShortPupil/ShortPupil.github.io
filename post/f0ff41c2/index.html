@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="目录 如何理解 Boosting算法 Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定">
+<meta name="description" content="目录如何理解Boosting算法Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定值。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据挖掘算法（二）——Boosting算法和AdaBoost装袋提升算法">
 <meta property="og:url" content="https://songzi.info/post/f0ff41c2/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录 如何理解 Boosting算法 Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定">
+<meta property="og:description" content="目录如何理解Boosting算法Boosting 提升算法是一系列将罗学习器提升为强学习器的算法。 思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。 大致工作机制： 先从初始训练集训练出一个基学习器，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定值。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/1335428125_1739.png">
 <meta property="article:published_time" content="2019-05-06T08:44:06.000Z">
@@ -3572,7 +3572,7 @@ mjx-container[display="true"] + br {
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  852
+                  1.2k
                 </span>
               
 
@@ -3609,26 +3609,20 @@ mjx-container[display="true"] + br {
       
 
       
-        <h1 id="目录">目录</h1>
-<h2 id="如何理解">如何理解</h2>
-<h3 id="boosting算法">Boosting算法</h3>
-<p><strong>Boosting 提升算法</strong>是<strong>一系列</strong>将罗学习器提升为强学习器的算法。</p>
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="如何理解"><a href="#如何理解" class="headerlink" title="如何理解"></a>如何理解</h2><h3 id="boosting算法"><a href="#Boosting算法" class="headerlink" title="Boosting算法"></a>Boosting算法</h3><p><strong>Boosting 提升算法</strong>是<strong>一系列</strong>将罗学习器提升为强学习器的算法。</p>
 <p>思想：对于一个复杂的任务，将多个专家的判断总和得出的结果要比任何一个专家单独的判断好。</p>
 <p>大致工作机制：</p>
 <p>先从初始训练集训练出一个<strong>基学习器</strong>，再根据基学习器表现对训练样本分布进行调整，在后续赋予基学习器中做错的样本更大的权值，然后基于调整后的样本分布来训练下一个基学习器，一直反复进行，直到达到指定值。</p>
-<h3 id="adaboost算法">AdaBoost算法</h3>
-<p>AdaBoost算法工作机制同上。</p>
+<h3 id="adaboost算法"><a href="#AdaBoost算法" class="headerlink" title="AdaBoost算法"></a>AdaBoost算法</h3><p>AdaBoost算法工作机制同上。</p>
 <p>对于弱分类器的组合，AdaBoost算法采取<strong>加权多数表决</strong>的方法——加大分类误差率小的弱分类器的权值，使其在表决中起到较大的作用；减小分类误差率大的弱分类器的权值，使其在表决中起较小的作用。</p>
 <p>应用集中于<strong>提高分类准确率</strong>。</p>
-<h2 id="算法原理">算法原理</h2>
-<ol>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><ol>
 <li>对D训练集数据训练处一个分类器Ci</li>
 <li>通过分类器Ci对数据进行分类，计算此时误差率</li>
 <li>把上步骤中的分错的数据的权重提高，分对的权重降低，以此凸显了分错的数据。为什么这么做呢，后面会做出解释。</li>
 </ol>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/1335428125_1739.png" alt="adaboost算法伪码"></p>
-<h2 id="算法实现">算法实现</h2>
-
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2>
       
     </div>
     
@@ -3993,7 +3987,7 @@ mjx-container[display="true"] + br {
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">471k</span>
+      <span title="post.totalcount">468k</span>
     
 </div>
 

@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="1. 数据类型相关 1.1 数据类型分类 四类： 字符串、日期 &#x2F; 时间、数值以及二进制  字符串类型：以 char、varchar、text 为代表，用于存储字符、字符串数据 日期 &#x2F; 时间类型：以 date、time、datetime、timestamp 为代表，用于存储日期或时间，这种数据类型也是比 较难抉择的 数值类型：以 tinyint、int、bigint、float、double、d">
+<meta name="description" content="1. 数据类型相关1.1 数据类型分类四类： 字符串、日期 &#x2F; 时间、数值以及二进制  字符串类型：以 char、varchar、text 为代表，用于存储字符、字符串数据  日期 &#x2F; 时间类型：以 date、time、datetime、timestamp 为代表，用于存储日期或时间，这种数据类型也是比 较难抉择的  数值类型：以 tinyint、int、bigint、float、double、d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL基础1">
 <meta property="og:url" content="https://songzi.info/post/7de48ef/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="1. 数据类型相关 1.1 数据类型分类 四类： 字符串、日期 &#x2F; 时间、数值以及二进制  字符串类型：以 char、varchar、text 为代表，用于存储字符、字符串数据 日期 &#x2F; 时间类型：以 date、time、datetime、timestamp 为代表，用于存储日期或时间，这种数据类型也是比 较难抉择的 数值类型：以 tinyint、int、bigint、float、double、d">
+<meta property="og:description" content="1. 数据类型相关1.1 数据类型分类四类： 字符串、日期 &#x2F; 时间、数值以及二进制  字符串类型：以 char、varchar、text 为代表，用于存储字符、字符串数据  日期 &#x2F; 时间类型：以 date、time、datetime、timestamp 为代表，用于存储日期或时间，这种数据类型也是比 较难抉择的  数值类型：以 tinyint、int、bigint、float、double、d">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191111003904404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25yc2MyNzI0MjAxOTk=,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://cdn.learnku.com/uploads/images/202002/04/32495/Wcv8DTijTL.png!large">
@@ -3470,7 +3470,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  49k
+                  54k
                 </span>
               
 
@@ -3486,7 +3486,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  44 mins.
+                  49 mins.
                 </span>
               
             </div>
@@ -3507,18 +3507,14 @@ font-display: swap;
       
 
       
-        <h1 id="1-数据类型相关">1. 数据类型相关</h1>
-<h2 id="11-数据类型分类">1.1 数据类型分类</h2>
-<p>四类： 字符串、日期 / 时间、数值以及二进制</p>
+        <h1 id="1-数据类型相关"><a href="#1-数据类型相关" class="headerlink" title="1. 数据类型相关"></a>1. 数据类型相关</h1><h2 id="11-数据类型分类"><a href="#1-1-数据类型分类" class="headerlink" title="1.1 数据类型分类"></a>1.1 数据类型分类</h2><p>四类： 字符串、日期 / 时间、数值以及二进制</p>
 <ul>
-<li>字符串类型：以 <strong>char、varchar、text</strong> 为代表，用于存储字符、字符串数据</li>
-<li>日期 / 时间类型：以 <strong>date、time、datetime、timestamp</strong> 为代表，用于存储日期或时间，这种数据类型也是比 较难抉择的</li>
-<li>数值类型：以 <strong>tinyint、int、bigint、float、double、decimal</strong> 为代表，用于存储整数或小数</li>
-<li>二进制类型：以 <strong>tityblob、blob、mediumblob、longblob</strong> 为代表，用于存储二进制数据，适用场景最为受限</li>
+<li>字符串类型：以 <strong>char、varchar、text</strong> 为代表，用于存储字符、字符串数据 </li>
+<li>日期 / 时间类型：以 <strong>date、time、datetime、timestamp</strong> 为代表，用于存储日期或时间，这种数据类型也是比 较难抉择的 </li>
+<li>数值类型：以 <strong>tinyint、int、bigint、float、double、decimal</strong> 为代表，用于存储整数或小数 </li>
+<li>二进制类型：以 <strong>tityblob、blob、mediumblob、longblob</strong> 为代表，用于存储二进制数据，适用场景最为受限 </li>
 </ul>
-<h2 id="12-数据类型基本介绍">1.2 数据类型基本介绍</h2>
-<h3 id="121-字符串类型">1.2.1 字符串类型</h3>
-<p><code>char</code></p>
+<h2 id="12-数据类型基本介绍"><a href="#1-2-数据类型基本介绍" class="headerlink" title="1.2 数据类型基本介绍"></a>1.2 数据类型基本介绍</h2><h3 id="121-字符串类型"><a href="#1-2-1-字符串类型" class="headerlink" title="1.2.1 字符串类型"></a>1.2.1 字符串类型</h3><p><code>char</code></p>
 <ul>
 <li>固定长度的字符串，长度范围1~255之间，且必须是在创建表时制定</li>
 <li>特别：如果未达到指定长度，会使用空格填充到指定长度——如果我们想要存储不同记录的字符串长度差别较大，会造成较大的空间浪费</li>
@@ -3526,31 +3522,28 @@ font-display: swap;
 </ul>
 <p><code>varchar</code></p>
 <ul>
-<li>它定义了一个可变长度的字符串，创建时指定它所允许的 最大长度。
-<ul>
+<li>它定义了一个可变长度的字符串，创建时指定它所允许的 最大长度。<ul>
 <li>例如，如果创建时声明了 varchar (x)，则只能存储不超过 x 个字符的数据，且 x 的最大值是 65535。</li>
 </ul>
 </li>
 <li>对于长度不固定的数据列，使用 varchar 就是最合适的：姓名、邮箱地址</li>
-<li>区别char、varchar
-<ul>
-<li>定义了 char (x)，如果存入的字符个数小于 x，则以<strong>空格</strong>填充，<strong>查询时再将空格去掉</strong>（类似于 trim 操作）。所以，<strong>char 类型存储的字符串末尾不能有空格</strong>，而 varchar 则没有这一限制</li>
-<li>char (x) 长度是固定的，不论存入什么，都会占用 x 个字节。但是 varchar 占用的字节数是<strong>存入的字符数 + 1（x &lt;= 255）或 + 2（x &gt; 255）</strong></li>
-<li><strong>char 由于长度固定，不需要考虑边界问题，检索速度要快于 varchar</strong></li>
+<li>区别char、varchar<ul>
+<li>定义了 char (x)，如果存入的字符个数小于 x，则以<strong>空格</strong>填充，<strong>查询时再将空格去掉</strong>（类似于 trim 操作）。所以，<strong>char 类型存储的字符串末尾不能有空格</strong>，而 varchar 则没有这一限制 </li>
+<li>char (x) 长度是固定的，不论存入什么，都会占用 x 个字节。但是 varchar 占用的字节数是<strong>存入的字符数 + 1（x &lt;= 255）或 + 2（x &gt; 255）</strong> </li>
+<li><strong>char 由于长度固定，不需要考虑边界问题，检索速度要快于 varchar</strong> </li>
 </ul>
 </li>
 </ul>
 <p><code>tinytext</code>、<code>text</code>、<code>mediumtext</code>、<code>longtext</code>：变长字符串，区别是存储空间的不同</p>
 <ul>
-<li>tinytext：最大长度是（2^8 - 1）个字符</li>
-<li>text：最大长度是（2^16 - 1）个字符</li>
-<li>mediumtext：最大长度是（2^24 - 1）个字符</li>
+<li>tinytext：最大长度是（2^8 - 1）个字符 </li>
+<li>text：最大长度是（2^16 - 1）个字符 </li>
+<li>mediumtext：最大长度是（2^24 - 1）个字符 </li>
 <li>longtext：最大长度是（2^32 - 1）个字符</li>
 <li>当我们存储的数据量比较大，应考虑使用文本。建议数<strong>据量超过500个字符</strong>时，应考虑使用文本。</li>
-<li>文本类型<strong>不能有默认值</strong>，且在<strong>创建索引时需要指定前多少个字符</strong>。</li>
+<li>文本类型<strong>不能有默认值</strong>，且在<strong>创建索引时需要指定前多少个字符</strong>。 </li>
 </ul>
-<h3 id="122-日期时间类型">1.2.2 日期/时间类型</h3>
-<p><code>date</code></p>
+<h3 id="122-日期时间类型"><a href="#1-2-2-日期-时间类型" class="headerlink" title="1.2.2 日期/时间类型"></a>1.2.2 日期/时间类型</h3><p><code>date</code></p>
 <ul>
 <li>存储范围是 ‘1000-01-01’ 到 ‘9999-12-31’</li>
 <li>场景有限，只能存储 “年月日”。常用出生年月</li>
@@ -3559,7 +3552,7 @@ font-display: swap;
 <ul>
 <li>用于存储时间，不仅可以表示一天中的时间，也可以用于表示两个时间的时间间隔</li>
 <li>MySQL 将 time 的小时范围扩大了，而且支持负值</li>
-<li>time 允许以 “D HH:MM:SS” 的格式存储。其中，D 的取值是 0 ~ 34。如果要 存储时间间隔，time 则是以（时间间隔 * 小时）作为小时进行存储。它的计算公式是：D * 24 + HH。例如，插入了 “2 19:20:00”，相当于插入 67:20:00</li>
+<li>time 允许以 “D HH:MM:SS” 的格式存储。其中，D 的取值是 0 ~ 34。如果要 存储时间间隔，time 则是以（时间间隔 <em> 小时）作为小时进行存储。它的计算公式是：D </em> 24 + HH。例如，插入了 “2 19:20:00”，相当于插入 67:20:00</li>
 </ul>
 <p><code>datetime</code></p>
 <ul>
@@ -3571,13 +3564,12 @@ font-display: swap;
 <li>它的取值范围是：‘1970-01-01 00:00:01.000000’ UTC 到 ‘2038-01-19 03:14:07.999999’ UTC。它与 datetime 的主要区别在于时间范围要小一些</li>
 <li>timestamp 是与时区相关的，能够反映 “当前时间”。当插入时间时，会先转换为本地时区后再存储；查询时 间时，会转换为本地时区后再显示。所以，<strong>不同时区的人看到的同一时间是不一样的</strong>。</li>
 </ul>
-<p>通常 <strong>datetime</strong> 是最佳选择。理由如下：</p>
+<p>通常 <strong>datetime</strong> 是最佳选择。理由如下： </p>
 <ul>
-<li>时间范围跨度足够大，能够满足所有的时间需求</li>
+<li>时间范围跨度足够大，能够满足所有的时间需求 </li>
 <li>即使是只用于存储日期或时间，也可以存储日期时间，只需要在代码中处理即可。避免将来需求变更时对数据 表的 Schema 有所变动</li>
 </ul>
-<h3 id="123-数值类型">1.2.3 数值类型</h3>
-<h4 id="1231-整数类型">1.2.3.1 整数类型</h4>
+<h3 id="123-数值类型"><a href="#1-2-3-数值类型" class="headerlink" title="1.2.3 数值类型"></a>1.2.3 数值类型</h3><h4 id="1231-整数类型"><a href="#1-2-3-1-整数类型" class="headerlink" title="1.2.3.1 整数类型"></a>1.2.3.1 整数类型</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3626,79 +3618,62 @@ font-display: swap;
 </tr>
 </tbody>
 </table>
-<h4 id="1232-浮点类型">1.2.3.2 浮点类型</h4>
-<ul>
-<li>float (M, D)：其中 M 定义显示长度，D 定义小数位数。但是它们是可选的，且默认值是 float (10, 2)，<strong>2 是小数的位数，10 是数字的总长（包括小数）</strong>。它的小数精度可以到 24 个浮点。</li>
+</div>
+<h4 id="1232-浮点类型"><a href="#1-2-3-2-浮点类型" class="headerlink" title="1.2.3.2 浮点类型"></a>1.2.3.2 浮点类型</h4><ul>
+<li>float (M, D)：其中 M 定义显示长度，D 定义小数位数。但是它们是可选的，且默认值是 float (10, 2)，<strong>2 是小数的位数，10 是数字的总长（包括小数）</strong>。它的小数精度可以到 24 个浮点。 </li>
 <li>double (M, D)：M 和 D 的含义与 float 是相同的，默认值是 double (16, 4)。它的小数精度可以达到 53 位。</li>
 </ul>
-<h4 id="1233-定点类型">1.2.3.3 定点类型</h4>
-<ul>
-<li><code>decimal</code> 被称为定点数据类型，由于它保存的是精确值，所以它通常用于精度要求非常高的计算中。</li>
+<h4 id="1233-定点类型"><a href="#1-2-3-3-定点类型" class="headerlink" title="1.2.3.3 定点类型"></a>1.2.3.3 定点类型</h4><ul>
+<li><code>decimal</code> 被称为定点数据类型，由于它保存的是精确值，所以它通常用于精度要求非常高的计算中。 </li>
 <li>另外，也可以利用 decimal 去保存比 bigint 还要大的整数值。</li>
 <li>MySQL 自身实现了对 decimal 的高精度计算</li>
-<li>假如我们定义了 decimal (18, 9)：
-<ul>
-<li>不包含小数点的数字总数（整数位数 + 小数位数）位数是 18，不指定的情况下默认是 10</li>
+<li>假如我们定义了 decimal (18, 9)：<ul>
+<li>不包含小数点的数字总数（整数位数 + 小数位数）位数是 18，不指定的情况下默认是 10 </li>
 <li>9 则代表小数的位数，如果不指定，默认是 0</li>
 </ul>
 </li>
 </ul>
-<h3 id="124-二进制类型">1.2.4 二进制类型</h3>
-<p>二进制数据类型<strong>理论上可以存储任何数据</strong>，可以是文本数据，也可以存储图像或者其他多媒体数据。二进制数据类型相对于其他的数据类型来说，使用频率是比较低的。</p>
+<h3 id="124-二进制类型"><a href="#1-2-4-二进制类型" class="headerlink" title="1.2.4 二进制类型"></a>1.2.4 二进制类型</h3><p>二进制数据类型<strong>理论上可以存储任何数据</strong>，可以是文本数据，也可以存储图像或者其他多媒体数据。二进制数据类型相对于其他的数据类型来说，使用频率是比较低的。</p>
 <ul>
 <li><code>tityblob</code>:最大支持255字节</li>
 <li><code>blob</code>:最大支持64KB</li>
 <li><code>mediumblob</code>:最大支持16MB</li>
 <li><code>longblob</code>:最大支持4GB</li>
 </ul>
-<h2 id="13-数据类型使用建议">1.3 数据类型使用建议</h2>
-<ol>
-<li>
-<p>使用<strong>NOT NULL</strong></p>
-<p>这个建议适用于所有的数据类型，MySQL 在索引值为 NULL 的列时，需要额外的存储空间，所以，相对于NOT NULL 来说，<strong>NULL 会占用更多的空间</strong>。另外，在进行<strong>比较</strong>和<strong>计算</strong>时，MySQL <strong>要对 NULL 值做特别的处理</strong>，使用效 率较低。</p>
+<h2 id="13-数据类型使用建议"><a href="#1-3-数据类型使用建议" class="headerlink" title="1.3 数据类型使用建议"></a>1.3 数据类型使用建议</h2><ol>
+<li><p>使用<strong>NOT NULL</strong></p>
+<p>这个建议适用于所有的数据类型，MySQL 在索引值为 NULL 的列时，需要额外的存储空间，所以，相对于NOT NULL 来说，<strong>NULL 会占用更多的空间</strong>。另外，在进行<strong>比较</strong>和<strong>计算</strong>时，MySQL <strong>要对 NULL 值做特别的处理</strong>，使用效 率较低。 </p>
 </li>
-<li>
-<p>带有 <strong>COMMENT</strong></p>
+<li><p>带有 <strong>COMMENT</strong></p>
 <p>COMMENT 用于定义列的注释信息，就好像我们在写代码一样，把重要的或者不易理解的地方，加上一些注释， 方便以后查阅。</p>
 </li>
-<li>
-<p>使用存储需要的最小数据类型：<strong>在满足需求的同时选择最小的</strong>。</p>
+<li><p>使用存储需要的最小数据类型：<strong>在满足需求的同时选择最小的</strong>。</p>
 <p>例如，要存储事件状态，可以选择tinyint；要存储班级人数，可以选择smallint等等。关于最小数据类型，它有两大优势：</p>
 <ul>
 <li>越小的数据类型占用的磁盘、内存、CPU缓存都会更小，存取速度也会更快</li>
 <li>小的数据类型建立索引时所需要的空间也相对较小，这样一页中所能存储的索引节点数量也就越多，遍历时IO次数就会越少，索引的性能也就越好</li>
 </ul>
 </li>
-<li>
-<p><strong>选择简单的数据类型</strong><br>
-例子：在一列中存储10、100、201这样的数据，我们可以选择使用int或varchar来存储。但是整型要比字符型的操作复杂度小太多，那么，选择整型（例如int)就是最简单的数据类型。</p>
+<li><p><strong>选择简单的数据类型</strong><br>例子：在一列中存储10、100、201这样的数据，我们可以选择使用int或varchar来存储。但是整型要比字符型的操作复杂度小太多，那么，选择整型（例如int)就是最简单的数据类型。</p>
 </li>
-<li>
-<p><strong>尽量避免使用text和blob</strong></p>
+<li><p><strong>尽量避免使用text和blob</strong></p>
 <p>MySQL内存临时表并不支持text、blob这样的大数据类型，如果查询时包含有这样的数据，则<strong>排序操作必须使用磁盘临时表，性能会下降很多</strong>。而且对于这种数据，<strong>MySQL还要做二次查询（因为MySQL实际保存的是指针，而不是真实数据）</strong>，会使SQL性能变得很差。</p>
 <p>但是，也并不是说我们一定就不能用text和blob。<strong>如果确实有需求需要使用这样的数据类型</strong>，那么<strong>在查询时一定不要直接SELECT*,而是取出需要的列</strong>。这样MySQL就不会去主动查询这些数据列，也是提高性能的一种惯用手段。最后，还需要注意，<strong>因为MySQL对索引长度的限制，text类型只能用到前缀索引，并且由于存储的是指针，txt列上不能有默认值</strong>。</p>
 </li>
 </ol>
-<h2 id="14-qampa">1.4 Q&amp;A</h2>
-<ol>
-<li>
-<p>将时间转换为时间戳，并使用int或者bigint类型去存储，这么做可行度？</p>
+<h2 id="14-qampa"><a href="#1-4-Q-amp-A" class="headerlink" title="1.4 Q&amp;A"></a>1.4 Q&amp;A</h2><ol>
+<li><p>将时间转换为时间戳，并使用int或者bigint类型去存储，这么做可行度？</p>
 <p><strong>date类型的时间要精确到分秒才能转成13位的long类型,且必须通过数据库语句,在数据库中进行插入bigint类型的操作,java中bigint类型只能支持11位.</strong></p>
 </li>
-<li>
-<p>大多数时候，我们会选择将主键设置为bigint数据类型，你知道这是为什么吗？</p>
+<li><p>大多数时候，我们会选择将主键设置为bigint数据类型，你知道这是为什么吗？</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/nrsc272420199/article/details/102877399">https://blog.csdn.net/nrsc272420199/article/details/102877399</a></p>
 <ul>
-<li>
-<p>（1）mysql索引B+树的高度应为：2-4<br>
-（2）一个bigint类型的数据为8B，一个integer类型的数据为4B，在B+树上每个指针的大小为6B，如下图：<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://img-blog.csdnimg.cn/20191111003904404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25yc2MyNzI0MjAxOTk=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<li><p>（1）mysql索引B+树的高度应为：2-4<br>（2）一个bigint类型的数据为8B，一个integer类型的数据为4B，在B+树上每个指针的大小为6B，如下图：<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://img-blog.csdnimg.cn/20191111003904404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25yc2MyNzI0MjAxOTk=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>这样的话，对于B+树来说一个非叶子节点能存储的索引的个数为：</p>
-<p>主键为integer类型 ： 16384/(4+6) ≈ 1638个<br>
-主键为bigint类型：16384/(8+6)≈ 1170个</p>
+<p>主键为integer类型 ： 16384/(4+6) ≈ 1638个<br>主键为bigint类型：16384/(8+6)≈ 1170个</p>
 <p>假如每条数据大小为1K（1024B）的话，一个叶子节点就可以存大概16条数据</p>
 <p>那假如B+树的高度为4层的话，那mysql存储的所有数据的条数应为：</p>
-<p>主键为integer类型：1638 * 1638 * 1638 * 16 = 70317217152 大于int的上限42亿<br>
-主键为bigint类型：1170 * 1170 * 1170 * 16 = 25625808000 肯定远小于long的上限，也大于42亿</p>
+<p>主键为integer类型：1638 <em> 1638 </em> 1638 <em> 16 = 70317217152 大于int的上限42亿<br>主键为bigint类型：1170 </em> 1170 <em> 1170 </em> 16 = 25625808000 肯定远小于long的上限，也大于42亿</p>
 <p>也就是说<strong>虽然42亿的预留量可能已经非常充足了，但万一不够了呢</strong>？</p>
 <p><strong>既然mysql即使是256亿的数据量也仅需4次IO就可以查到，而这个时候int类型的预留量肯定不够了，bigint却十分充足，为什么不用bigint呢</strong>？</p>
 <p>我想得可能正是基于这个原因，阿里才会强制要求mysql表的主键应为bigint unsigned类型。</p>
@@ -3706,54 +3681,43 @@ font-display: swap;
 </ul>
 </li>
 </ol>
-<h1 id="2-schema设计规范">2. Schema设计规范</h1>
-<p>Schema 设计指的是对数据表的的设计，在实际业务中，也可以把它的概念扩展为对库和表的设计。</p>
-<h2 id="21-schema设计的目标">2.1  Schema设计的目标</h2>
-<p>可用 + 好用</p>
+<h1 id="2-schema设计规范"><a href="#2-Schema设计规范" class="headerlink" title="2. Schema设计规范"></a>2. Schema设计规范</h1><p>Schema 设计指的是对数据表的的设计，在实际业务中，也可以把它的概念扩展为对库和表的设计。</p>
+<h2 id="21-schema设计的目标"><a href="#2-1-Schema设计的目标" class="headerlink" title="2.1  Schema设计的目标"></a>2.1  Schema设计的目标</h2><p>可用 + 好用</p>
 <ul>
-<li>
-<p>可用</p>
+<li><p>可用</p>
 <ul>
-<li>
-<p>设计的数据库和数据表能够支撑当前的业务需求，且在技术实现上没有太大的弊端</p>
+<li><p>设计的数据库和数据表能够支撑当前的业务需求，且在技术实现上没有太大的弊端</p>
 </li>
-<li>
-<p>这个设计目标的核心其实是对需求的理解。确实，理清了需求，你会得出结论：</p>
+<li><p>这个设计目标的核心其实是对需求的理解。确实，理清了需求，你会得出结论： </p>
 <p>应该存储哪些数据、这些数据是什么类型、在代码中怎样使用这些数据等等。余下的建库建表也自然就水到渠成了</p>
 </li>
 </ul>
 </li>
-<li>
-<p>好用</p>
+<li><p>好用</p>
 <ul>
 <li>需求也许不会变化，但是随着<strong>业务量的增长触发数据和并发的增长</strong>，数据库是否还能保持相对较高的性能是个 值得思考的问题，同时也是衡量设计目标是否好用的重要指标。</li>
 <li>无论什么时候，我们对 MySQL（数据库）的使用都肯定是<strong>围绕数据的增删改查</strong>。而这些基本的操作，当数据 量加速膨胀的过程中，也会引起<strong>性能瓶颈</strong>。所以，好用的设计目标讲究能够 “预见未来”，能够对未来做出预判。例如：将<strong>通用信息单独使用一张表存储、建立适当的索引</strong>等等</li>
 </ul>
 </li>
 </ul>
-<h2 id="22-schema通用的设计原则">2.2 Schema通用的设计原则</h2>
-<ol>
-<li><strong>使用小写的名称，且只有英文字母</strong>：不论是库、表还是数据列，应该是只包含英文字母的名称，不要出现特殊 字符或者是数字。这也比较好理解，英文字母不论是阅读还是编码都非常的便捷。另外，由于 MySQL 是大小 写不敏感的，选择一律小写的名称能够统一书写规则，避免不必要的书写错误。</li>
-<li><strong>取一个有意义的名称，单词之间使用下划线连接</strong>：除了基本的名称书写规范之外，取一个有意义的名称是非常 有必要的。例如：我们需要创建学生表，表的名称叫做 student 就会比 other 更易理解。当然，可能有些时候 我们无法用一个单词表达清楚想要的含义，此时，可以使用多个单词，且单词之间使用下划线连接，例如： insert_time。最后，名称不要过长，最长不要超过 32 个字符。</li>
+<h2 id="22-schema通用的设计原则"><a href="#2-2-Schema通用的设计原则" class="headerlink" title="2.2 Schema通用的设计原则"></a>2.2 Schema通用的设计原则</h2><ol>
+<li><strong>使用小写的名称，且只有英文字母</strong>：不论是库、表还是数据列，应该是只包含英文字母的名称，不要出现特殊 字符或者是数字。这也比较好理解，英文字母不论是阅读还是编码都非常的便捷。另外，由于 MySQL 是大小 写不敏感的，选择一律小写的名称能够统一书写规则，避免不必要的书写错误。 </li>
+<li><strong>取一个有意义的名称，单词之间使用下划线连接</strong>：除了基本的名称书写规范之外，取一个有意义的名称是非常 有必要的。例如：我们需要创建学生表，表的名称叫做 student 就会比 other 更易理解。当然，可能有些时候 我们无法用一个单词表达清楚想要的含义，此时，可以使用多个单词，且单词之间使用下划线连接，例如： insert_time。最后，名称不要过长，最长不要超过 32 个字符。 </li>
 <li><strong>记住 “够用且尽量小” 的原则</strong>：很明显，这条原则对应的是数据表列的数据类型选择问题。占用空间少的数据类 型最直接的优势就是减少了用户数据存储空间和索引存储空间，这对于数据传输与检索的性能提高有着巨大意 义。</li>
-<li><strong>不要使用物理外键</strong>：<strong>物理外键</strong>是说<strong>让数据库去管理表与表之间的关联关系</strong>，而它相对的<strong>逻辑外键</strong>，则是我们自己<strong>用代码去管理这种关系</strong>。这是因为物理外键存在两个重大缺陷：消耗数据库资源，降低数据库实例可扩展 性；母表一旦受损，子表很难恢复，造成数据丢失。</li>
-<li><strong>表一定要有主键</strong>：MySQL 并不要求表一定要有主键，但是<strong>主键的作用是能够唯一区分表中的每一行</strong>。没有主键，更新或删除表中的特定行将会很困难，因为没有安全的方法保证只涉及相关的行。并且，主键能够为方便 扩展、高可用的数据库系统做铺垫。</li>
-<li><strong>保持一致的字符集</strong>：库、表、数据列的字符集都应该是一致的，<strong>统一为 utf8 或 utf8mb4</strong>。字符集编码不仅影响 数据存储，还会影响客户端与数据库之间的交互，最常见的问题就是字符集导致的乱码。所以，相同的字符集更利于管理，也更方便去排查问题。</li>
+<li><strong>不要使用物理外键</strong>：<strong>物理外键</strong>是说<strong>让数据库去管理表与表之间的关联关系</strong>，而它相对的<strong>逻辑外键</strong>，则是我们自己<strong>用代码去管理这种关系</strong>。这是因为物理外键存在两个重大缺陷：消耗数据库资源，降低数据库实例可扩展 性；母表一旦受损，子表很难恢复，造成数据丢失。 </li>
+<li><strong>表一定要有主键</strong>：MySQL 并不要求表一定要有主键，但是<strong>主键的作用是能够唯一区分表中的每一行</strong>。没有主键，更新或删除表中的特定行将会很困难，因为没有安全的方法保证只涉及相关的行。并且，主键能够为方便 扩展、高可用的数据库系统做铺垫。 </li>
+<li><strong>保持一致的字符集</strong>：库、表、数据列的字符集都应该是一致的，<strong>统一为 utf8 或 utf8mb4</strong>。字符集编码不仅影响 数据存储，还会影响客户端与数据库之间的交互，最常见的问题就是字符集导致的乱码。所以，相同的字符集更利于管理，也更方便去排查问题。 </li>
 </ol>
-<h2 id="23-库设计规范">2.3 库设计规范</h2>
-<p>MySQL 自身并没有对库的容量做出限制，也就是说，你几乎不用考虑表的数量上限问题。但是，当表的数量越</p>
-<p>多，越容易产生以下问题（以下所讨论的都是单个库）：</p>
+<h2 id="23-库设计规范"><a href="#2-3-库设计规范" class="headerlink" title="2.3 库设计规范"></a>2.3 库设计规范</h2><p>MySQL 自身并没有对库的容量做出限制，也就是说，你几乎不用考虑表的数量上限问题。但是，当表的数量越 </p>
+<p>多，越容易产生以下问题（以下所讨论的都是单个库）： </p>
 <ul>
-<li>表越多，需要<strong>维护的元数据（表结构、统计信息等）就会越多</strong>。即使是这些元数据只占据很少的空间，但是也 会让管理这些元数据变得很复杂，且通常也是不合理的需求分析造成的；</li>
-<li><strong>表越多，可能存储的数据量也会越大，这无疑会给数据库造成压力。且大量的数据聚集在同一个库中也是非常 危险的，一旦出现库损坏，丢失的数据量也会更多</strong>。</li>
+<li>表越多，需要<strong>维护的元数据（表结构、统计信息等）就会越多</strong>。即使是这些元数据只占据很少的空间，但是也 会让管理这些元数据变得很复杂，且通常也是不合理的需求分析造成的； </li>
+<li><strong>表越多，可能存储的数据量也会越大，这无疑会给数据库造成压力。且大量的数据聚集在同一个库中也是非常 危险的，一旦出现库损坏，丢失的数据量也会更多</strong>。 </li>
 </ul>
 <p>综上所述，我们讨论了单库中表太多的缺陷，再去结合日常的工作实践来说，建议大家在一<strong>个库中创建的表数量不 要超过 200</strong>。更常见的情况是，<strong>一个库中只维护几十到 100 张表</strong></p>
-<h2 id="24-表设计规范">2.4 表设计规范</h2>
-<h3 id="241-范式-反范式的选择">2.4.1 范式、反范式的选择</h3>
-<p><a href="https://songzi.info/post/1a233e39/">控制冗余的反范式模式 | 毫末室 (songzi.info)</a></p>
+<h2 id="24-表设计规范"><a href="#2-4-表设计规范" class="headerlink" title="2.4 表设计规范"></a>2.4 表设计规范</h2><h3 id="241-范式-反范式的选择"><a href="#2-4-1-范式、反范式的选择" class="headerlink" title="2.4.1 范式、反范式的选择"></a>2.4.1 范式、反范式的选择</h3><p><a href="https://songzi.info/post/1a233e39/">控制冗余的反范式模式 | 毫末室 (songzi.info)</a></p>
 <ul>
-<li>
-<p>范式：核心思想是数据只出现一次，不存在信息冗余。</p>
+<li><p>范式：核心思想是数据只出现一次，不存在信息冗余。</p>
 <p>范式化设计的优点：使用更少的存储空间 ；由于没有冗余存储，增删改查的速度相对较快</p>
 <ol>
 <li>列不可再分</li>
@@ -3761,53 +3725,45 @@ font-display: swap;
 <li>属性不依赖于其它非主属性   属性直接依赖于主键</li>
 </ol>
 </li>
-<li>
-<p>反范式：破坏了范式的规范，它允许出现冗余的数据。所以，问题在于：冗余字段是否是可取的。</p>
-<p>如果我们想要的数据出现在两张或者多张表中，对于范式不存在冗余的设计，就<strong>不得不采用关联查询</strong>。而这恰恰是反范式设计最大的优势，<strong>适当的冗余设计，可以减少或避免表关联，提高查询效率</strong>。</p>
+<li><p>反范式：破坏了范式的规范，它允许出现冗余的数据。所以，问题在于：冗余字段是否是可取的。</p>
+<p>如果我们想要的数据出现在两张或者多张表中，对于范式不存在冗余的设计，就<strong>不得不采用关联查询</strong>。而这恰恰是反范式设计最大的优势，<strong>适当的冗余设计，可以减少或避免表关联，提高查询效率</strong>。 </p>
 </li>
 </ul>
-<h3 id="242-宽表-窄表的选择">2.4.2 宽表、窄表的选择</h3>
-<p>MySQL 对于每张表有 4096 个列 的硬限制，而真正在使用上的限制又会取决于你所使用的存储引擎。例如：对于 InnoDB 来说，一张表最多可以有 1017 列。在不考虑 “宽和窄” 的问题上来说，MySQL 和存储引擎支持的列数目肯定是足够的了。</p>
+<h3 id="242-宽表-窄表的选择"><a href="#2-4-2-宽表、窄表的选择" class="headerlink" title="2.4.2 宽表、窄表的选择"></a>2.4.2 宽表、窄表的选择</h3><p>MySQL 对于每张表有 4096 个列 的硬限制，而真正在使用上的限制又会取决于你所使用的存储引擎。例如：对于 InnoDB 来说，一张表最多可以有 1017 列。在不考虑 “宽和窄” 的问题上来说，MySQL 和存储引擎支持的列数目肯定是足够的了。 </p>
 <p>以 40 列为界，超过 40 列的表，我们可以称之为宽表， 相对的，少于 40 列的表，我们称之为窄表。但同时，需要知道，这里的数字是人为定义的，MySQL 规范中并没 有这种定义。我这里的划分是基于工作经验和总结</p>
 <p>对应的优缺点</p>
 <ul>
-<li>窄表较多，数据列会更加分散，<strong>编写关联查询的难度就会很大</strong></li>
-<li>数据项会有不同的安全级别，宽表中涉及的列过多，<strong>数据权限的管理</strong>会带来很大的挑战</li>
-<li>窄表数据量通常较少，但是<strong>等量的数据项会创建更多的表，管理难度大</strong></li>
-<li>宽表数据量通常较大，<strong>单表占据的存储空间过大，会降低排序、分组等查询的性能</strong></li>
+<li>窄表较多，数据列会更加分散，<strong>编写关联查询的难度就会很大</strong> </li>
+<li>数据项会有不同的安全级别，宽表中涉及的列过多，<strong>数据权限的管理</strong>会带来很大的挑战 </li>
+<li>窄表数据量通常较少，但是<strong>等量的数据项会创建更多的表，管理难度大</strong> </li>
+<li>宽表数据量通常较大，<strong>单表占据的存储空间过大，会降低排序、分组等查询的性能</strong> </li>
 </ul>
-<h3 id="243-合理的索引是提升性能的关键">2.4.3 合理的索引是提升性能的关键</h3>
-<p>典型的以空间换时间的优化策略：索引的存在，也会使插入、删除、更新的性能降低，因为这些操作都会伴随着索引的修改。所以，这一条设计规范所要追求的是空间与时间的平衡，达到既不占用过多的存储空间，也有较高的查询性能。</p>
-<p>索引创建和使用的特性：</p>
+<h3 id="243-合理的索引是提升性能的关键"><a href="#2-4-3-合理的索引是提升性能的关键" class="headerlink" title="2.4.3 合理的索引是提升性能的关键"></a>2.4.3 合理的索引是提升性能的关键</h3><p>典型的以空间换时间的优化策略：索引的存在，也会使插入、删除、更新的性能降低，因为这些操作都会伴随着索引的修改。所以，这一条设计规范所要追求的是空间与时间的平衡，达到既不占用过多的存储空间，也有较高的查询性能。 </p>
+<p>索引创建和使用的特性： </p>
 <ul>
 <li>一定要为作为搜索条件的字段创建索引，不是搜索条件的字段建索引反而会降低使用性能</li>
 <li>选择区分度高的字段作为索引字段，重复性高的字段不要加索引</li>
 <li>联合索引存在 “最左前缀” 的特性，不要建多余的索引</li>
 </ul>
-<h2 id="25-qampa">2.5 Q&amp;A</h2>
-<ul>
-<li>
-<p>如果你的表没有定义主键，你知道 MySQL 会怎么做吗 ？</p>
+<h2 id="25-qampa"><a href="#2-5-Q-amp-A" class="headerlink" title="2.5 Q&amp;A"></a>2.5 Q&amp;A</h2><ul>
+<li><p>如果你的表没有定义主键，你知道 MySQL 会怎么做吗 ？ </p>
 <p>InnoDB会自动帮你创建一个不可见的、长度为6字节的<code>row_id</code>，而且InnoDB维护了一个全局的<code>dictsys.row_id</code>，所以未定义主键的表都会共享该<code>row_id</code>，每次插入一条数据都把全局<code>row_id</code>当成主键id，然后全局<code>row_id</code>加1。</p>
 <p>该全局row_id在代码实现上使用的事bigint unsigned类型，但实际上只给<code>row_id</code>保留了6字节，所以这种设计就会存在一个问题：如果全局<code>row_id</code>一直涨，直到2的48次幂-1时，这个时候再加1，<code>row_id</code>的低48位都会变为0，如果再插入新一行数据时，拿到的<code>row_id</code>就为0，这样的话就存在主键冲突的可能，所以为了避免这种隐患，每个表都需要一个主键。</p>
 </li>
-<li>
-<p>我编写的 SQL 语句需要做多表的 join 操作，应该给哪些列建索引呢 ？</p>
+<li><p>我编写的 SQL 语句需要做多表的 join 操作，应该给哪些列建索引呢 ？</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/process-h/p/14577257.html">多表关联查询中，关联字段都应该创建索引吗？ - 寻找的路上 - 博客园 (cnblogs.com)</a></p>
-<p>不管是内联还是外连接关联查询，为各个表建立索引应该<strong>要根据当时的条件</strong>来建立：</p>
+<p> 不管是内联还是外连接关联查询，为各个表建立索引应该<strong>要根据当时的条件</strong>来建立：</p>
 <ul>
-<li><strong>主表（驱动表）<strong>根据</strong>where中涉及到的列</strong>建索引（比如例子中的tb1需要给col1建立索引)</li>
+<li><strong>主表（驱动表）</strong>根据<strong>where中涉及到的列</strong>建索引（比如例子中的tb1需要给col1建立索引)</li>
 <li><strong>从表根据被关联的列</strong>建立索引，如果where中涉及到从表的列，可以考虑结合关联列建立组合索引（注意最左匹配原则）。</li>
 </ul>
 </li>
 </ul>
-<h1 id="3-聚合与分组聚合">3. 聚合与分组聚合</h1>
-<h2 id="31-聚合函数">3.1 聚合函数</h2>
-<p>数据库书分为单行函数、多行函数。</p>
+<h1 id="3-聚合与分组聚合"><a href="#3-聚合与分组聚合" class="headerlink" title="3. 聚合与分组聚合"></a>3. 聚合与分组聚合</h1><h2 id="31-聚合函数"><a href="#3-1-聚合函数" class="headerlink" title="3.1 聚合函数"></a>3.1 聚合函数</h2><p>数据库书分为单行函数、多行函数。</p>
 <p>单行函数即函数会针对每一行返回一个结果，而多行函数 则是作用于多行（也可以作用于单行）并返回一个结果。</p>
-<p>聚合函数则属于多行函数，表中的多行记录会参与计算， 并返回一个数值，且它通常用于分组的相关统计。</p>
-<h2 id="32-常用的聚合函数">3.2 常用的聚合函数</h2>
-<p><code>AVG</code> <code>COUNT</code> <code>MIN</code> <code>MAX</code> <code>SUM</code></p>
+<p>聚合函数则属于多行函数，表中的多行记录会参与计算， 并返回一个数值，且它通常用于分组的相关统计。 </p>
+<h2 id="32-常用的聚合函数"><a href="#3-2-常用的聚合函数" class="headerlink" title="3.2 常用的聚合函数"></a>3.2 常用的聚合函数</h2><p><code>AVG</code> <code>COUNT</code> <code>MIN</code> <code>MAX</code> <code>SUM</code></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3840,196 +3796,148 @@ font-display: swap;
 <tr>
 <td>SUM ([DISTINCT] expr)</td>
 <td>返回 expr 的和</td>
-<td></td>
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
-<li>每个聚合函数接受一个参数，参数可以是数据表列，也可以是函数表达式</li>
-<li>默认情况下，聚合函数会忽略列值为 NULL 的行，不参与计算</li>
-<li>聚合函数<strong>不允许嵌套</strong>，例如：COUNT(SUM(expr)) 是不合法的</li>
-<li>一次查询中<strong>可以出现多个聚合函数</strong>，例如：SELECT MAX(expr), MIN(expr) FROM …</li>
-<li>关于 COUNT 函数，总结如下：
-<ul>
-<li>COUNT(n) 和 COUNT(*) 用于<strong>统计表中的总行数</strong>，<strong>不关心列值是否为 NULL</strong></li>
-<li>COUNT(expr) 用于<strong>统计列值非 NULL 的行记录数</strong></li>
+<li>每个聚合函数接受一个参数，参数可以是数据表列，也可以是函数表达式 </li>
+<li>默认情况下，聚合函数会忽略列值为 NULL 的行，不参与计算 </li>
+<li>聚合函数<strong>不允许嵌套</strong>，例如：COUNT(SUM(expr)) 是不合法的 </li>
+<li>一次查询中<strong>可以出现多个聚合函数</strong>，例如：SELECT MAX(expr), MIN(expr) FROM … </li>
+<li>关于 COUNT 函数，总结如下： <ul>
+<li>COUNT(n) 和 COUNT(<em>) 用于<strong>统计表中的总行数</strong>，<em>*不关心列值是否为 NULL</em></em> </li>
+<li>COUNT(expr) 用于<strong>统计列值非 NULL 的行记录数</strong> </li>
 <li>COUNT(DISTINCT expr) 用于<strong>统计列值不同且非 NULL 的行记录数</strong></li>
 </ul>
 </li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">SELECT id, type, name, salary FROM worker; </span><br><span class="line">+----+------+--------+--------+ </span><br><span class="line">| id | type | name | salary | </span><br><span class="line">+----+------+--------+--------+ </span><br><span class="line">| 1 | A | tom | 1800 | </span><br><span class="line">| 2 | B | jack | 2100 | </span><br><span class="line">| 3 | C | pony | NULL | </span><br><span class="line">| 4 | B | tony | 3600 | </span><br><span class="line">| 5 | B | marry | 1900 | </span><br><span class="line">| 6 | C | tack | 1200 | </span><br><span class="line">| 7 | A | tick | NULL | </span><br><span class="line">| 8 | B | clock | 2000 | </span><br><span class="line">| 9 | C | noah | 1500 | </span><br><span class="line">| 10 | C | jarvis | 1800 | </span><br><span class="line">+----+------+--------+--------+</span><br><span class="line"></span><br><span class="line">SELECT AVG(salary) FROMworker;</span><br><span class="line">SELECT AVG(salary) FROMworker WHERE id &lt; 3;</span><br><span class="line">SELECT COUNT(0), COUNT(1), COUNT(9.9), COUNT(*) FROMworker;</span><br><span class="line">SELECT COUNT(salary), COUNT(DISTINCT salary) FROMworker;</span><br><span class="line">SELECT MIN(salary), MAX(salary) FROMworker;</span><br><span class="line">SELECT SUM(salary) FROMworker WHERE id &lt; 5;</span><br><span class="line">SELECT SUM(1) FROMworker; #统计行数，但效率很差</span><br></pre></td></tr></table></figure>
-<h2 id="33-分组聚合">3.3 分组聚合</h2>
-<p>分组的意思就是数据根据某一列或者某几列分类，MySQL 中可以使用 GROUP BY 子句实现这一功能。<strong>GROUP BY 结合聚合函数</strong>就可以实现将表数据分类再汇总的效果，这在报表型的数据统计任务中是非常常见的需求。</p>
+<h2 id="33-分组聚合"><a href="#3-3-分组聚合" class="headerlink" title="3.3 分组聚合"></a>3.3 分组聚合</h2><p>分组的意思就是数据根据某一列或者某几列分类，MySQL 中可以使用 GROUP BY 子句实现这一功能。<strong>GROUP BY 结合聚合函数</strong>就可以实现将表数据分类再汇总的效果，这在报表型的数据统计任务中是非常常见的需求。 </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># GROUP BY 子句语法</span><br><span class="line">SELECT &lt;列名1&gt;, &lt;列名2&gt;...... FROM &lt;表名&gt; WHERE ...... GROUP BY &lt;列名1&gt;, &lt;列名2&gt;......;</span><br></pre></td></tr></table></figure>
-<h3 id="331-按照type分组对数据进行统计">3.3.1 按照type分组对数据进行统计</h3>
-<p>需要注意的是，出现在 SELECT 子句中的单独列（非聚合列，示例中的即为 type，<strong>必须出现在 GROUP BY 子 句中作为分组列</strong>。但是反过来，<strong>分组列是可以不出现在 SELECT 子句中的。</strong></p>
+<h3 id="331-按照type分组对数据进行统计"><a href="#3-3-1-按照type分组对数据进行统计" class="headerlink" title="3.3.1 按照type分组对数据进行统计"></a>3.3.1 按照type分组对数据进行统计</h3><p>需要注意的是，出现在 SELECT 子句中的单独列（非聚合列，示例中的即为 type，<strong>必须出现在 GROUP BY 子 句中作为分组列</strong>。但是反过来，<strong>分组列是可以不出现在 SELECT 子句中的。</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SELECT type, AVG(salary), COUNT(1), MIN(salary), MAX(salary), SUM(salary) FROM worker GROUP BY type; </span><br><span class="line"># 使用 GROUP BY 对 type 字段值进行分组，结果有三类：A、B、C。分组之后，AVG、COUNT 等聚合函数再按照自身的特性对每一组数据进行聚合统计，最后，打印结果。 </span><br><span class="line">+------+-------------+----------+-------------+-------------+-------------+ </span><br><span class="line">| type | AVG(salary) | COUNT(1) | MIN(salary) | MAX(salary) | SUM(salary) | </span><br><span class="line">+------+-------------+----------+-------------+-------------+-------------+ </span><br><span class="line">| A | 1800.0000 | 2 | 1800 | 1800 | 1800 | </span><br><span class="line">| B | 2400.0000 | 4 | 1900 | 3600 | 9600 | </span><br><span class="line">| C | 1500.0000 | 4 | 1200 | 1800 | 4500 | </span><br><span class="line">+------+-------------+----------+-------------+-------------+-------------+</span><br></pre></td></tr></table></figure>
-<h3 id="332-对分组聚合结果进行排序">3.3.2 对分组聚合结果进行排序</h3>
-<p>指定排序的列可以是分组列，也可以不是分组列。</p>
+<h3 id="332-对分组聚合结果进行排序"><a href="#3-3-2-对分组聚合结果进行排序" class="headerlink" title="3.3.2 对分组聚合结果进行排序"></a>3.3.2 对分组聚合结果进行排序</h3><p>指定排序的列可以是分组列，也可以不是分组列。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 按照SUM(salary)实现排序</span><br><span class="line">SELECT type, SUM(salary) as sum_s FROM worker GROUP BY type ORDER BY sum_s desc; </span><br><span class="line">+------+-------+ </span><br><span class="line">| type | sum_s | </span><br><span class="line">+------+-------+ </span><br><span class="line">| B | 9600 | </span><br><span class="line">| C | 4500 | </span><br><span class="line">| A | 1800 | </span><br><span class="line">+------+-------+ </span><br></pre></td></tr></table></figure>
 <p>当<strong>排序列与分组列相同</strong>时，则可以合并 GROUP BY 和 ORDER BY 子句，即<strong>只需要在 GROUP BY 子句的后面添加 DESC 或 ASC</strong>。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT type, AVG(salary), COUNT(1), MIN(salary), MAX(salary), SUM(salary) FROM worker GROUP BY type DESC; </span><br><span class="line">+------+-------------+----------+-------------+-------------+-------------+ </span><br><span class="line">| type | AVG(salary) | COUNT(1) | MIN(salary) | MAX(salary) | SUM(salary) | </span><br><span class="line">+------+-------------+----------+-------------+-------------+-------------+ </span><br><span class="line">| C | 1500.0000 | 4 | 1200 | 1800 | 4500 | </span><br><span class="line">| B | 2400.0000 | 4 | 1900 | 3600 | 9600 | </span><br><span class="line">| A | 1800.0000 | 2 | 1800 | 1800 | 1800 | </span><br><span class="line">+------+-------------+----------+-------------+-------------+-------------+</span><br></pre></td></tr></table></figure>
-<h3 id="333-对分组结果进行过滤">3.3.3 对分组结果进行过滤</h3>
-<p>过滤的是分组后的聚合结果，而不是数据表中的原始记录。</p>
+<h3 id="333-对分组结果进行过滤"><a href="#3-3-3-对分组结果进行过滤" class="headerlink" title="3.3.3 对分组结果进行过滤"></a>3.3.3 对分组结果进行过滤</h3><p>过滤的是分组后的聚合结果，而不是数据表中的原始记录。</p>
 <p>在 MySQL 中，使用 AVG、COUNT 等聚合函数对表记录进行统计操作后，可以使用 HAVING 子句对结果进行过滤，且 <strong>HAVING 子句需要写在 GROUP BY 子句之后</strong>。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT type, AVG(salary), COUNT(1), SUM(salary) FROM worker GROUP BY type HAVING SUM(salary) &gt; 4000; </span><br><span class="line">+------+-------------+----------+-------------+ </span><br><span class="line">| type | AVG(salary) | COUNT(1) | SUM(salary) | </span><br><span class="line">+------+-------------+----------+-------------+ </span><br><span class="line">| B | 2400.0000 | 4 | 9600 | </span><br><span class="line">| C | 1500.0000 | 4 | 4500 | </span><br><span class="line">+------+-------------+----------+-------------+ </span><br></pre></td></tr></table></figure>
 <p>HAVING 的使用方法与 WHERE 是相似的，只是它们执行的时机不同。总结下来，它们有以下两个区别：</p>
 <ol>
-<li>WHERE 子句在分组前对记录进行过滤</li>
-<li>HAVING 子句在分组后对记录进行过滤</li>
+<li>WHERE 子句在分组前对记录进行过滤 </li>
+<li>HAVING 子句在分组后对记录进行过滤 </li>
 </ol>
-<p>分组聚合的精髓在于数据分组，可以把每一个分组都认为是单独的数据表记录，最终的聚合结果则是将每一个单独数据表聚合之后 merge 而成的。另外，需要知道，聚合函数可以在 SELECT 、HAVING 和 ORDER BY 子句中使用，但是不能在 WHERE 子句中使用。</p>
-<h2 id="34-qampa">3.4 Q&amp;A</h2>
-<ul>
-<li>
-<p>为什么说 SUM(1) 的执行效率要比 COUNT(n) 或 COUNT(*) 低很多呢 ？</p>
+<p>分组聚合的精髓在于数据分组，可以把每一个分组都认为是单独的数据表记录，最终的聚合结果则是将每一个单独数据表聚合之后 merge 而成的。另外，需要知道，聚合函数可以在 SELECT 、HAVING 和 ORDER BY 子句中使用，但是不能在 WHERE 子句中使用。 </p>
+<h2 id="34-qampa"><a href="#3-4-Q-amp-A" class="headerlink" title="3.4 Q&amp;A"></a>3.4 Q&amp;A</h2><ul>
+<li><p>为什么说 SUM(1) 的执行效率要比 COUNT(n) 或 COUNT(*) 低很多呢 ？ </p>
 <p>sum的效率不足体现在cpu上，I/O完全一样。</p>
-<p>在排序统计的时候<br>
-sum的算法为1+1+1+1+1+1=6，sum是未知的，需要额外的CPU每一步都需要计算<br>
-count是1+2+3=6，就是说count的计算公式是定的，发现一行，加1，那么就是1，下一次是从2开始加<br>
-显然sum的效率不如count。：SUM 操作会遍历整个表，遇到一条记录，就会执行一次加 N 的操作，最终返回累加和，即行记录数的 N 倍。</p>
+<p>在排序统计的时候<br>sum的算法为1+1+1+1+1+1=6，sum是未知的，需要额外的CPU每一步都需要计算<br>count是1+2+3=6，就是说count的计算公式是定的，发现一行，加1，那么就是1，下一次是从2开始加<br>显然sum的效率不如count。：SUM 操作会遍历整个表，遇到一条记录，就会执行一次加 N 的操作，最终返回累加和，即行记录数的 N 倍。 </p>
 </li>
-<li>
-<p>COUNT(n) COUNT(*)</p>
+<li><p>COUNT(n) COUNT(*)</p>
 <p>官方标准统计行数就是用count (*)，不建议写其他</p>
 <p>目前基于磁盘的数据库或者搜索引擎（比如Lucene）的性能瓶颈主要都是在IO阶段，相比于CPU和RAM，IO操作实在太慢了，所以这类系统的优化方向也都都是类似的——尽一切可能减少IO的次数（所以很多用ES的程序在性能优化到极限的时候选择直接上SSD）。这里统计行数的操作，查询优化器的优化方向就是选择能够让IO次数最少的索引，也就是基于占用空间最小的字段所建的索引（每次IO读取的数据量是固定的，索引占用的空间越小所需的IO次数也就越少）。而Innodb的主键索引是聚簇索引（包含了KEY，除了KEY之外的其他字段值，事务ID和MVCC回滚指针）所以主键索引一定会比二级索引（包含KEY和对应的主键ID）大，也就是说在有二级索引的情况下，一般COUNT()都不会通过主键索引来统计行数，在有多个二级索引的情况下选择占用空间最小的。</p>
 <p>如果说有张Innodb的表只有主键索引，而且记录还比较大（比如30K），则统计行的操作会非常慢，因为IO次数会很多（这里就不做实验截图了，有兴趣可以自己试一下）。一个优化方案就是预先建一个小字段并建二级索引专门用来统计行数，极端情况下这种优化速度提高上千倍也是正常的。</p>
 <p>结论就是对于COUNT(1)和COUNT(<em>)执行优化器的优化是完全一样的，并没有COUNT(1)会比COUNT(</em>)快这个说法。</p>
 </li>
-<li>
-<p>SELECT、FROM、WHERE、HAVING、GROUP BY、ORDER BY 这些子句的正确书写顺序应该是怎样的</p>
+<li><p>SELECT、FROM、WHERE、HAVING、GROUP BY、ORDER BY 这些子句的正确书写顺序应该是怎样的 </p>
 <ol>
-<li>FROM</li>
-<li>WHERE （先过滤单表／视图／结果集，再JOIN）</li>
+<li>FROM  </li>
+<li>WHERE （先过滤单表／视图／结果集，再JOIN） </li>
 <li>GROUP BY</li>
 <li>HAVING （WHERE过滤的是行，HAVING过滤的是组，所以在GROUP之后）</li>
 <li>ORDER BY</li>
 </ol>
 </li>
 </ul>
-<h1 id="4-条件判断函数与系统同函数">4. 条件判断函数与系统同函数</h1>
-<p>MySQL 中的系统信息包含：<strong>数据库的版本号、当前登录用户、当前连接数、系统字符集等等</strong>。这些信息在特定的环境中非常有用，例如：<strong>查看连接数定位 MySQL 是否过载、查看字符集定位乱码原因</strong>等等。</p>
-<h2 id="41-常用条件判断函数">4.1 常用条件判断函数</h2>
-<p>包括 <code>IF</code> <code>CASE</code> ;</p>
+<h1 id="4-条件判断函数与系统同函数"><a href="#4-条件判断函数与系统同函数" class="headerlink" title="4. 条件判断函数与系统同函数"></a>4. 条件判断函数与系统同函数</h1><p>MySQL 中的系统信息包含：<strong>数据库的版本号、当前登录用户、当前连接数、系统字符集等等</strong>。这些信息在特定的环境中非常有用，例如：<strong>查看连接数定位 MySQL 是否过载、查看字符集定位乱码原因</strong>等等。</p>
+<h2 id="41-常用条件判断函数"><a href="#4-1-常用条件判断函数" class="headerlink" title="4.1 常用条件判断函数"></a>4.1 常用条件判断函数</h2><p>包括 <code>IF</code> <code>CASE</code> ;</p>
 <p>单一条件对比 <code>IF</code>分为<code>IFNULL</code> <code>NULLIF</code></p>
 <p>多条件对比 <code>CASE</code></p>
-<h3 id="411-if条件判断函数">4.1.1 IF条件判断函数</h3>
-<p><code>IF (expr, v1, v2)</code> 函数。expr 是表达式的意思，它的含义是：如果 expr 为真（expr&lt;&gt;0 and expr&lt;&gt;NULL），则 IF 函数的返回值是 v1，否则，返回 v2。IF 函数的返回值是数字还是字符串，则视其所在语境而定。</p>
+<h3 id="411-if条件判断函数"><a href="#4-1-1-IF条件判断函数" class="headerlink" title="4.1.1 IF条件判断函数"></a>4.1.1 IF条件判断函数</h3><p><code>IF (expr, v1, v2)</code> 函数。expr 是表达式的意思，它的含义是：如果 expr 为真（expr&lt;&gt;0 and expr&lt;&gt;NULL），则 IF 函数的返回值是 v1，否则，返回 v2。IF 函数的返回值是数字还是字符串，则视其所在语境而定。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT name, IF(type=&#x27;A&#x27;, &#x27;研发&#x27;, &#x27;非研发&#x27;) AS type FROM worker WHERE id IN (1, 2); </span><br><span class="line">+------+-----------+ </span><br><span class="line">| name | type | </span><br><span class="line">+------+-----------+ </span><br><span class="line">| tom | 研发 | </span><br><span class="line">| jack | 非研发 | </span><br><span class="line">+------+-----------+ </span><br></pre></td></tr></table></figure>
-<p>如果把 NULL 显示为 0 是不是更好一些呢 ？此时，IFNULL(v1, v2) 函数可以解决这个问题。</p>
+<p>如果把 NULL 显示为 0 是不是更好一些呢 ？此时，IFNULL(v1, v2) 函数可以解决这个问题。 </p>
 <p><code>IFNULL (v1, v2)</code> 表达的语义是：如果 v1 不为 NULL，则返回 v1，否则，返回 v2。同样，IFNULL 函数的返回值是 数字还是字符串，则视其所在语境而定。我们可以<strong>利用 IFNULL 将 salary 是 NULL 的列值变成 0</strong>。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT name, IFNULL(salary, 0) AS salary FROM worker WHERE id IN (1, 2, 3); </span><br><span class="line">+------+--------+ </span><br><span class="line">| name | salary | </span><br><span class="line">+------+--------+ </span><br><span class="line">| tom | 1800 | </span><br><span class="line">| jack | 2100 | </span><br><span class="line">| pony | 0 | </span><br><span class="line">+------+--------+</span><br></pre></td></tr></table></figure>
 <p><code>NULLIF (v1, v2)</code>与IFNULL名称类似。表达的语义是：如果 v1 等于 v2，那么返回值是 NULL，否则返回值为 v1。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT id, name, NULLIF(salary, NULL) AS salary FROM worker WHERE id IN (1, 2, 3); </span><br><span class="line">+----+------+--------+ </span><br><span class="line">| id | name | salary | </span><br><span class="line">+----+------+--------+ </span><br><span class="line">| 1 | tom | 1800 | </span><br><span class="line">| 2 | jack | 2100 | </span><br><span class="line">| 3 | pony | NULL | </span><br><span class="line">+----+------+--------+ </span><br></pre></td></tr></table></figure>
-<h3 id="412-case条件判断函数">4.1.2 CASE条件判断函数</h3>
-<p>IF 条件判断函数所表达的语义是非 A 即 B，也就是单个条件的判断；CASE 函数则能够实现多条件的匹配。</p>
+<h3 id="412-case条件判断函数"><a href="#4-1-2-CASE条件判断函数" class="headerlink" title="4.1.2 CASE条件判断函数"></a>4.1.2 CASE条件判断函数</h3><p>IF 条件判断函数所表达的语义是非 A 即 B，也就是单个条件的判断；CASE 函数则能够实现多条件的匹配。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CASE expr </span><br><span class="line"> WHEN v1 THEN r1 </span><br><span class="line"> ...... </span><br><span class="line"> WHEN vx THEN rx </span><br><span class="line"> ELSE rn </span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-<p>“CASE WHEN THEN”：适用于一个条件判断有多种可能值的情况下分别去执行不同的操作，或返回不同的结果值。</p>
-<p>CASE 函数有两种写法：<strong>简单 CASE 函数写法</strong>、<strong>CASE 搜索函数写法</strong>，它们的区别在于：</p>
+<p>“CASE WHEN THEN”：适用于一个条件判断有多种可能值的情况下分别去执行不同的操作，或返回不同的结果值。 </p>
+<p>CASE 函数有两种写法：<strong>简单 CASE 函数写法</strong>、<strong>CASE 搜索函数写法</strong>，它们的区别在于： </p>
 <ul>
-<li>简单 CASE 函数写法只适合相等条件判断，不能用于大于、小于、不等于的判断</li>
-<li>CASE 搜索函数写法适合复杂条件判断，可用于大于、小于、不等于的判断</li>
+<li>简单 CASE 函数写法只适合相等条件判断，不能用于大于、小于、不等于的判断 </li>
+<li>CASE 搜索函数写法适合复杂条件判断，可用于大于、小于、不等于的判断 </li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"># 简单case函数写法</span><br><span class="line">mysql&gt; SELECT </span><br><span class="line">-&gt; name, </span><br><span class="line">-&gt; (CASE type </span><br><span class="line">-&gt;  WHEN &#x27;A&#x27; THEN &#x27;研发&#x27; </span><br><span class="line">-&gt;  WHEN &#x27;B&#x27; THEN &#x27;测试&#x27; </span><br><span class="line">-&gt;  WHEN &#x27;C&#x27; THEN &#x27;运维&#x27; </span><br><span class="line">-&gt;  ELSE &#x27;其他&#x27; </span><br><span class="line">-&gt; END) AS type </span><br><span class="line">-&gt; FROM </span><br><span class="line">-&gt; worker </span><br><span class="line">-&gt; WHERE </span><br><span class="line">-&gt; id IN ( </span><br><span class="line">-&gt;  1, 2, 3 </span><br><span class="line">-&gt; ); </span><br><span class="line"></span><br><span class="line"># CASE搜索函数写法</span><br><span class="line">mysql&gt; SELECT </span><br><span class="line">-&gt; name, </span><br><span class="line">-&gt; (CASE </span><br><span class="line">-&gt;  WHEN type=&#x27;A&#x27; THEN &#x27;研发&#x27; </span><br><span class="line">-&gt;  WHEN type=&#x27;B&#x27; THEN &#x27;测试&#x27; </span><br><span class="line">-&gt;  WHEN type=&#x27;C&#x27; THEN &#x27;运维&#x27; </span><br><span class="line">-&gt;  ELSE &#x27;其他&#x27; </span><br><span class="line">-&gt; END) AS type </span><br><span class="line">-&gt; FROM </span><br><span class="line">-&gt; worker </span><br><span class="line">-&gt; WHERE </span><br><span class="line">-&gt; id IN ( </span><br><span class="line">-&gt;  1, 2, 3 </span><br><span class="line">-&gt; ); </span><br><span class="line">+------+--------+ </span><br><span class="line">| name | type | </span><br><span class="line">+------+--------+ </span><br><span class="line">| tom | 研发 | </span><br><span class="line">| jack | 测试 | </span><br><span class="line">| pony | 运维 | </span><br><span class="line">+------+--------+</span><br></pre></td></tr></table></figure>
-<p>涉及<strong>数值范围判断</strong>等等类似的例子，则只能使用 CASE 搜索函数的写法。</p>
+<p>涉及<strong>数值范围判断</strong>等等类似的例子，则只能使用 CASE 搜索函数的写法。 </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">-&gt;(CASE </span><br><span class="line">-&gt; WHEN salary &gt;= 2000 THEN &#x27;高收入&#x27; </span><br><span class="line">-&gt; WHEN salary &lt;= 1500 THEN &#x27;低收入&#x27; </span><br><span class="line">-&gt; ELSE &#x27;中等收入&#x27; </span><br><span class="line">-&gt;END) AS salary </span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h3 id="413-条件判断函数总结">4.1.3 条件判断函数总结</h3>
-<ul>
-<li>
-<p>CASE 是 SQL 标准定义的，而 IF 是数据库系统的扩展</p>
+<h3 id="413-条件判断函数总结"><a href="#4-1-3-条件判断函数总结" class="headerlink" title="4.1.3 条件判断函数总结"></a>4.1.3 条件判断函数总结</h3><ul>
+<li><p>CASE 是 SQL 标准定义的，而 IF 是数据库系统的扩展 </p>
 </li>
-<li>
-<p>在高级语言中，CASE 可以使用 IF 来代替，但是 SQL 中却不行</p>
+<li><p>在高级语言中，CASE 可以使用 IF 来代替，但是 SQL 中却不行 </p>
 </li>
-<li>
-<p>在 SQL 的存储过程和触发器中，用 IF 替代 CASE 的代价是非常高的，难以应用</p>
+<li><p>在 SQL 的存储过程和触发器中，用 IF 替代 CASE 的代价是非常高的，难以应用</p>
 </li>
 </ul>
 <p><strong>CASE 语句可以让 SQL 变得简单高效，提高执行效率，且通常不会引起性能问题，所以，通常应该作为首选。</strong></p>
-<h2 id="42-常用的系统函数">4.2 常用的系统函数</h2>
-<h3 id="421-mysql自身的基本信息">4.2.1 MySQL自身的基本信息</h3>
-<h3 id="422-当前用户信息">4.2.2 当前用户信息</h3>
-<h3 id="423-库和表相关信息">4.2.3 库和表相关信息</h3>
-<h2 id="43-qampa">4.3 Q&amp;A</h2>
-<ul>
-<li>
-<p>MySQL 的默认字符排列方式是大小写不敏感的，如果想要大小写敏感，怎么做 ？</p>
+<h2 id="42-常用的系统函数"><a href="#4-2-常用的系统函数" class="headerlink" title="4.2 常用的系统函数"></a>4.2 常用的系统函数</h2><h3 id="421-mysql自身的基本信息"><a href="#4-2-1-MySQL自身的基本信息" class="headerlink" title="4.2.1 MySQL自身的基本信息"></a>4.2.1 MySQL自身的基本信息</h3><h3 id="422-当前用户信息"><a href="#4-2-2-当前用户信息" class="headerlink" title="4.2.2 当前用户信息"></a>4.2.2 当前用户信息</h3><h3 id="423-库和表相关信息"><a href="#4-2-3-库和表相关信息" class="headerlink" title="4.2.3 库和表相关信息"></a>4.2.3 库和表相关信息</h3><h2 id="43-qampa"><a href="#4-3-Q-amp-A" class="headerlink" title="4.3 Q&amp;A"></a>4.3 Q&amp;A</h2><ul>
+<li><p>MySQL 的默认字符排列方式是大小写不敏感的，如果想要大小写敏感，怎么做 ？</p>
 </li>
-<li>
-<p>mysql大小写敏感配置与两个参数相关 —— <strong>lower_case_file_system 和 lower_case_table_names</strong></p>
-<p>lower_case_file_system：表示当前系统文件是否大小写敏感（ON为不敏感，OFF为敏感），只读参数，无法修改。<br>
-lower_case_table_names：表示表名是否大小写敏感，可以修改。<br>
-lower_case_table_names = 0时，mysql会根据表名直接操作，大小写敏感。<br>
-lower_case_table_names = 1时，mysql会先把表名转为小写，再执行操作。</p>
+<li><p>mysql大小写敏感配置与两个参数相关 —— <strong>lower_case_file_system 和 lower_case_table_names</strong></p>
+<p>lower_case_file_system：表示当前系统文件是否大小写敏感（ON为不敏感，OFF为敏感），只读参数，无法修改。<br>lower_case_table_names：表示表名是否大小写敏感，可以修改。<br>lower_case_table_names = 0时，mysql会根据表名直接操作，大小写敏感。<br>lower_case_table_names = 1时，mysql会先把表名转为小写，再执行操作。</p>
 </li>
 </ul>
-<h1 id="5-用户与权限">5. 用户与权限</h1>
-<h1 id="6-数据备份与恢复">6. 数据备份与恢复</h1>
-<h1 id="7-事务隔离级别">7. 事务隔离级别</h1>
-<p>参考 ：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/743691">彻底搞懂 MySQL 事务的隔离级别-阿里云开发者社区 (aliyun.com)</a></p>
-<h2 id="71-事务是什么">7.1 事务是什么</h2>
-<p>事务是作为单个逻辑工作单元执行的一系列操作，它所表达的语义是：要么全部执行，要么全部不执行。</p>
+<h1 id="5-用户与权限"><a href="#5-用户与权限" class="headerlink" title="5. 用户与权限"></a>5. 用户与权限</h1><h1 id="6-数据备份与恢复"><a href="#6-数据备份与恢复" class="headerlink" title="6. 数据备份与恢复"></a>6. 数据备份与恢复</h1><h1 id="7-事务隔离级别"><a href="#7-事务隔离级别" class="headerlink" title="7. 事务隔离级别"></a>7. 事务隔离级别</h1><p>参考 ：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/743691">彻底搞懂 MySQL 事务的隔离级别-阿里云开发者社区 (aliyun.com)</a></p>
+<h2 id="71-事务是什么"><a href="#7-1-事务是什么" class="headerlink" title="7.1 事务是什么"></a>7.1 事务是什么</h2><p>事务是作为单个逻辑工作单元执行的一系列操作，它所表达的语义是：要么全部执行，要么全部不执行。</p>
 <p>银行取款例子：取款事务=操作1+操作2</p>
 <ul>
-<li>操作1：将 A 的余额减少 100 元</li>
+<li>操作1：将 A 的余额减少 100 元 </li>
 <li>操作2：A 获得 100 元取款</li>
 </ul>
 <p>这两个操作就是一次事务，因为这两个操作<strong>只能全部成功或全部失败</strong>，任何一个部分成功或失败，将会是非常严重的系统漏洞。事务的目标是<strong>保证数据库的完整性</strong>，<strong>避免各种原因引起的数据库内容不一致</strong>的问题。所以，事务可以保证数据安全，事务控制实际上就是在控制数据的安全访问</p>
-<h2 id="72-事务的四个属性-acid">7.2 事务的四个属性 ACID</h2>
-<p>原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）和持久性 （Durability）</p>
+<h2 id="72-事务的四个属性-acid"><a href="#7-2-事务的四个属性-ACID" class="headerlink" title="7.2 事务的四个属性 ACID"></a>7.2 事务的四个属性 ACID</h2><p>原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）和持久性 （Durability）</p>
 <ul>
-<li>原子性：原子本身是化学中的一个名词，它指的是构成化学元素的最小粒子，即不能再更细的分割了。事务操作必须是原子的，对于<strong>一个事务中的所有操作</strong>，<strong>要么全部执行（COMMIT），要么全部不执行（ROLLBACK）</strong></li>
+<li>原子性：原子本身是化学中的一个名词，它指的是构成化学元素的最小粒子，即不能再更细的分割了。事务操作必须是原子的，对于<strong>一个事务中的所有操作</strong>，<strong>要么全部执行（COMMIT），要么全部不执行（ROLLBACK）</strong> </li>
 <li>一致性：一致性指的是数据的完整性，即执行事务的前后，<strong>数据整体应该是一致的</strong>。事务必须能够让数据库从一个一致性状态变换到另一个一致性状态。对于取款的案例来说，A 的数据总值就是一致的</li>
 <li>隔离性：它指的是<strong>一个事务的执行不能被其他事务所干扰</strong>，这里又涉及到并发的概念。<strong>一个事务内部的操作对其他并发的事务是隔离的</strong>，简单的说，每个事务都认为是自己独占数据库</li>
-<li>持久性：这个属性简单易懂，它是说一个事务一旦提交（COMMIT），它<strong>对数据库中数据的改变就是永久性的</strong>。任何操作甚至是系统故障都不应该对其产生影响</li>
+<li>持久性：这个属性简单易懂，它是说一个事务一旦提交（COMMIT），它<strong>对数据库中数据的改变就是永久性的</strong>。任何操作甚至是系统故障都不应该对其产生影响 </li>
 </ul>
 <p>事务有着严格的判定标准，想要同时实现它们又要求有很高的性能，可谓是难上加难。所以，在各大数据库厂商的实现中，真正能够满足这四个特性的事务寥寥无几。例如：</p>
 <p>InnoDB 存储引擎默认的事务隔离级别是可重复读，它不能满足隔离性要求；</p>
 <p>而 MySQL 的 NDB Cluster 事务则不满足持久性和隔离性。</p>
 <p>所以，与其说 ACID是事务必须满足的条件，不如说它们是<strong>衡量事务的严谨性标准</strong>。</p>
-<h2 id="73-并发事务会引发的问题">7.3 并发事务会引发的问题</h2>
-<p>并发事务的概念是多个事务并发运行，那么，如果在并发运行的过程中对相同的数据进行了修改，就可能会引起一些问题：</p>
+<h2 id="73-并发事务会引发的问题"><a href="#7-3-并发事务会引发的问题" class="headerlink" title="7.3 并发事务会引发的问题"></a>7.3 并发事务会引发的问题</h2><p>并发事务的概念是多个事务并发运行，那么，如果在并发运行的过程中对相同的数据进行了修改，就可能会引起一些问题：</p>
 <ul>
-<li><strong>脏读</strong>：事务 A 读取了事务 B 当前更新的数据，但是事务 B 出现了回滚或未提交修改，事务 A 读到的数据就被称为 “脏数据”。通常情况下，<strong>使用 “脏数据” 会造成系统数据不一致</strong>，出现错误</li>
-<li>
-<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/04/32495/Wcv8DTijTL.png!large" alt="从根上理解MySQL事务的隔离级别" style="zoom:50%;">
-</li>
-<li><strong>不可重复读</strong>：事务 A 在执行过程中多次读取同一数据，但是事务 B 在事务 A 的读取过程中对数据做了多次修改并提交，则会导致<strong>事务 A 多次读取的数据不一致</strong>，进而无法做出准确性判断</li>
-<li>
-<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/05/32495/YdNemia6wc.png!large" alt="从根上理解 MySQL 事务的隔离级别" style="zoom:50%;">
-</li>
+<li><strong>脏读</strong>：事务 A 读取了事务 B 当前更新的数据，但是事务 B 出现了回滚或未提交修改，事务 A 读到的数据就被称为 “脏数据”。通常情况下，<strong>使用 “脏数据” 会造成系统数据不一致</strong>，出现错误 </li>
+<li><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/04/32495/Wcv8DTijTL.png!large" alt="从根上理解MySQL事务的隔离级别" style="zoom:50%;"></li>
+<li><strong>不可重复读</strong>：事务 A 在执行过程中多次读取同一数据，但是事务 B 在事务 A 的读取过程中对数据做了多次修改并提交，则会导致<strong>事务 A 多次读取的数据不一致</strong>，进而无法做出准确性判断 </li>
+<li><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/05/32495/YdNemia6wc.png!large" alt="从根上理解 MySQL 事务的隔离级别" style="zoom:50%;"></li>
 <li><strong>幻读</strong>：事务 A 在执行过程中读取了一些数据，但是事务 B 随即插入了一些数据，那么，事务 A 重新读取时，发现<strong>多了一些原本不存在的数据</strong>，就像是幻觉一样，称之为幻读</li>
-<li>
-<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/04/32495/0sCtxw1Jno.png" alt="从根上理解 MySQL 事务的隔离级别" style="zoom:50%;">
-</li>
+<li><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/04/32495/0sCtxw1Jno.png" alt="从根上理解 MySQL 事务的隔离级别" style="zoom:50%;"></li>
 <li>不可重复读指的是<strong>对原来存在的数据做修改</strong>；而幻读指的是<strong>新增或者删除数据</strong>。</li>
 </ul>
-<h2 id="74-四种隔离级别">7.4 四种隔离级别</h2>
-<p>由低到高依次为：</p>
+<h2 id="74-四种隔离级别"><a href="#7-4-四种隔离级别" class="headerlink" title="7.4 四种隔离级别"></a>7.4 四种隔离级别</h2><p>由低到高依次为：</p>
 <p>READ-UNCOMMITTED（未提交读）、READ-COMMITTED（提交读）、REPEATABLE-READ（可重复读）、SERIALIZABLE（串行化）。</p>
-<p>它们可以逐个解决脏读、不可重复读、幻读这几类问题。</p>
+<p>它们可以逐个解决脏读、不可重复读、幻读这几类问题。 </p>
 <ul>
-<li>
-<p><strong>READ-UNCOMMITTED</strong>：它是最低的隔离级别，正如它的名称一样，它<strong>允许一个事务读取其他事务未提交的 数据</strong>。这个隔离级别很少在工业环境中应用，因为它的性能并不会比其他高级别的性能好很多</p>
-<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/05/32495/iL6jfZxiHJ.png!large" alt="彻底搞懂 MySQL 事务的隔离级别" style="zoom:50%;">
+<li><p><strong>READ-UNCOMMITTED</strong>：它是最低的隔离级别，正如它的名称一样，它<strong>允许一个事务读取其他事务未提交的 数据</strong>。这个隔离级别很少在工业环境中应用，因为它的性能并不会比其他高级别的性能好很多 </p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/05/32495/iL6jfZxiHJ.png!large" alt="彻底搞懂 MySQL 事务的隔离级别" style="zoom:50%;"></p>
 </li>
-<li>
-<p><strong>READ-COMMITTED</strong>：它可以<strong>保证一个事务修改的数据提交之后才能被其他的事务读取</strong>。这个隔离级别是大多 数数据库系统的默认隔离级别，但并不是 MySQL 默认的</p>
+<li><p><strong>READ-COMMITTED</strong>：它可以<strong>保证一个事务修改的数据提交之后才能被其他的事务读取</strong>。这个隔离级别是大多 数数据库系统的默认隔离级别，但并不是 MySQL 默认的 </p>
 </li>
-<li>
-<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/05/32495/BsMcuysaIB.png!large" alt="彻底搞懂 MySQL 事务的隔离级别" style="zoom:50%;">
+<li><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/05/32495/BsMcuysaIB.png!large" alt="彻底搞懂 MySQL 事务的隔离级别" style="zoom:50%;"></p>
 </li>
-<li>
-<p><strong>REPEATABLE-READ</strong>：它的核心在于 “可重复”，即<strong>在一个事务内，对同一字段的多次读取结果都是相同的</strong>， 也是 <strong>MySQL 的默认事务隔离级别</strong></p>
+<li><p><strong>REPEATABLE-READ</strong>：它的核心在于 “可重复”，即<strong>在一个事务内，对同一字段的多次读取结果都是相同的</strong>， 也是 <strong>MySQL 的默认事务隔离级别</strong> </p>
 </li>
-<li>
-<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/05/32495/yjRtVOpMBZ.png!large" alt="彻底搞懂 MySQL 事务的隔离级别" style="zoom:50%;">
+<li><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/05/32495/yjRtVOpMBZ.png!large" alt="彻底搞懂 MySQL 事务的隔离级别" style="zoom:50%;"></p>
 </li>
-<li>
-<p><strong>SERIALIZABLE</strong>：它是最高的隔离级别，花费的代价也是最高的，<strong>事务的处理是顺序执行的</strong>。在这个级别上， <strong>可能会导致大量的锁超时现象和锁竞争</strong>。同样，在工业级环境中，很少被使用。通过强制事务排序，并按顺序执行，使各个事务之间不可能会产生冲突，从而才能够解决脏读、不可重复读、幻读所有的问题。</p>
+<li><p><strong>SERIALIZABLE</strong>：它是最高的隔离级别，花费的代价也是最高的，<strong>事务的处理是顺序执行的</strong>。在这个级别上， <strong>可能会导致大量的锁超时现象和锁竞争</strong>。同样，在工业级环境中，很少被使用。通过强制事务排序，并按顺序执行，使各个事务之间不可能会产生冲突，从而才能够解决脏读、不可重复读、幻读所有的问题。</p>
 </li>
 </ul>
 <p>隔离级别越低，事务请求的锁也就越少，所以，可能出现的问题也就越多。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -4066,180 +3974,145 @@ lower_case_table_names = 1时，mysql会先把表名转为小写，再执行操�
 </tr>
 </tbody>
 </table>
-<p>具体选择哪一种隔离级别应该是多个维度的考虑，例如：事务请求锁的多少（性能问题）、能够解决什么问题、业务特点等等。<strong>一般情况下，使用 InnoDB 存储引擎，选择 READ-COMMITTED</strong>。</p>
-<h2 id="75-不同事务隔离级别对事务的影响">7.5 不同事务隔离级别对事务的影响</h2>
-<h2 id="76-mysql默认隔离级别可重复读实现原理">7.6 MySQL默认隔离级别（可重复读）实现原理</h2>
-<p>每条记录在更新的时候都会同时记录一条回滚操作（回滚操作日志undo log）。同一条记录在系统中可以存在多个版本，这就是数据库的多版本并发控制（MVCC）。即通过回滚（rollback操作），可以回到前一个状态的值。</p>
+</div>
+<p>具体选择哪一种隔离级别应该是多个维度的考虑，例如：事务请求锁的多少（性能问题）、能够解决什么问题、业务特点等等。<strong>一般情况下，使用 InnoDB 存储引擎，选择 READ-COMMITTED</strong>。 </p>
+<h2 id="75-不同事务隔离级别对事务的影响"><a href="#7-5-不同事务隔离级别对事务的影响" class="headerlink" title="7.5 不同事务隔离级别对事务的影响"></a>7.5 不同事务隔离级别对事务的影响</h2><h2 id="76-mysql默认隔离级别可重复读实现原理"><a href="#7-6-MySQL默认隔离级别（可重复读）实现原理" class="headerlink" title="7.6 MySQL默认隔离级别（可重复读）实现原理"></a>7.6 MySQL默认隔离级别（可重复读）实现原理</h2><p>每条记录在更新的时候都会同时记录一条回滚操作（回滚操作日志undo log）。同一条记录在系统中可以存在多个版本，这就是数据库的多版本并发控制（MVCC）。即通过回滚（rollback操作），可以回到前一个状态的值。</p>
 <p>假设一个值从 1 被按顺序改成了 2、3、4，在回滚日志里面就会有类似下面的记录。</p>
-<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/05/32495/mfZfSEBBSn.png!large" alt="彻底搞懂 MySQL 事务的隔离级别" style="zoom:50%;">
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://cdn.learnku.com/uploads/images/202002/05/32495/mfZfSEBBSn.png!large" alt="彻底搞懂 MySQL 事务的隔离级别" style="zoom:50%;"></p>
 <p>当前值是 4，但是在查询这条记录的时候，不同时刻启动的事务会有不同的 read-view。如图中看到的，在视图 A、B、C 里面，这一个记录的值分别是 1、2、4，同一条记录在系统中可以存在多个版本，就是<strong>数据库的多版本并发控制（MVCC）</strong>。对于 read-view A，要得到 1，就必须将当前值依次执行图中所有的回滚操作得到。即使现在有另外一个事务正在将 4 改成 5，这个事务跟 read-view A、B、C 对应的事务是不会冲突的。</p>
 <p>回滚操作日志（undo log）什么时候删除？MySQL会判断当没有事务需要用到这些回滚日志的时候，回滚日志会被删除。</p>
 <p>什么时候不需要了？当系统里么有比这个回滚日志更早的read-view的时候。</p>
-<h2 id="77-qampa">7.7 Q&amp;A</h2>
-<ul>
-<li>
-<p>修改系统级的隔离级别（SET global tx_isolation），验证对所有的会话都是生效的 ？</p>
-<p>set tx_isolation=‘read-committed’</p>
+<h2 id="77-qampa"><a href="#7-7-Q-amp-A" class="headerlink" title="7.7 Q&amp;A"></a>7.7 Q&amp;A</h2><ul>
+<li><p>修改系统级的隔离级别（SET global tx_isolation），验证对所有的会话都是生效的 ？</p>
+<p> set tx_isolation=’read-committed’</p>
 </li>
-<li>
-<p>挑选一个事务隔离级别，例如：READ-COMMITTED，演示并验证它可能会导致的问题 ？</p>
+<li><p>挑选一个事务隔离级别，例如：READ-COMMITTED，演示并验证它可能会导致的问题 ？ </p>
 </li>
-<li>
-<p>当会话处于 REPEATABLE-READ 隔离级别时，读取到的数据就一定是一样的吗 ？</p>
+<li><p>当会话处于 REPEATABLE-READ 隔离级别时，读取到的数据就一定是一样的吗 ？ </p>
 </li>
 </ul>
-<h1 id="8-通过锁解决并发数据问题">8. 通过锁解决并发数据问题</h1>
-<p>数据库的锁机制是并发控制的重要内容，是对程序控制数据一致性的重要补充</p>
-<h2 id="81-行级锁-表级锁">8.1 行级锁、表级锁</h2>
-<p>从应用的角度来看，分为悲观锁与乐观锁的概念</p>
+<h1 id="8-通过锁解决并发数据问题"><a href="#8-通过锁解决并发数据问题" class="headerlink" title="8. 通过锁解决并发数据问题"></a>8. 通过锁解决并发数据问题</h1><p>数据库的锁机制是并发控制的重要内容，是对程序控制数据一致性的重要补充</p>
+<h2 id="81-行级锁-表级锁"><a href="#8-1-行级锁、表级锁" class="headerlink" title="8.1 行级锁、表级锁"></a>8.1 行级锁、表级锁</h2><p>从应用的角度来看，分为悲观锁与乐观锁的概念</p>
 <p>从数据库（InnoDB 存储引擎）的角度看，数据库锁可以分为行级锁和表级锁（通常称为行锁和表锁）。</p>
-<h3 id="811-什么是行级锁">8.1.1 什么是行级锁</h3>
-<p>InnoDB 存储引擎支持行级锁和表级锁，<strong>默认情况下，使用行级锁</strong>。行级锁是 MySQL 中锁定粒度最细的一种锁，它<strong>锁住的是行记录</strong>。行级锁可以大大减少数据库操作的冲突，但是<strong>加锁的开销也是非常大</strong>的。它具有如下特点：</p>
+<h3 id="811-什么是行级锁"><a href="#8-1-1-什么是行级锁" class="headerlink" title="8.1.1 什么是行级锁"></a>8.1.1 什么是行级锁</h3><p>InnoDB 存储引擎支持行级锁和表级锁，<strong>默认情况下，使用行级锁</strong>。行级锁是 MySQL 中锁定粒度最细的一种锁，它<strong>锁住的是行记录</strong>。行级锁可以大大减少数据库操作的冲突，但是<strong>加锁的开销也是非常大</strong>的。它具有如下特点：</p>
 <ul>
-<li>由于开销比较大，<strong>加锁会很慢</strong></li>
-<li>锁定粒度小，所以锁冲突的概率低，<strong>并发度高</strong></li>
+<li>由于开销比较大，<strong>加锁会很慢</strong> </li>
+<li>锁定粒度小，所以锁冲突的概率低，<strong>并发度高</strong> </li>
 <li>可能会出现<strong>死锁</strong></li>
 </ul>
-<h3 id="812-什么是表级锁">8.1.2 什么是表级锁</h3>
-<ul>
-<li>由于开销比较小，加锁会很快</li>
-<li>锁定粒度大，所以锁冲突的概率高，并发度低</li>
+<h3 id="812-什么是表级锁"><a href="#8-1-2-什么是表级锁" class="headerlink" title="8.1.2 什么是表级锁"></a>8.1.2 什么是表级锁</h3><ul>
+<li>由于开销比较小，加锁会很快 </li>
+<li>锁定粒度大，所以锁冲突的概率高，并发度低 </li>
 <li>不会出现死锁</li>
 </ul>
-<h3 id="813-mysql内部如何选择行级锁-表级锁什么场景下会锁住行-什么场景下又会锁住表">8.1.3 MySQL内部如何选择行级锁、表级锁？什么场景下会锁住行、什么场景下又会锁住表</h3>
-<p>InnoDB 行级锁是通过<strong>给索引上的索引项加锁</strong>来实现的，所以，只有通过索引条件检索的数据，InnoDB 才会使用行级锁。否则，使用表级锁。</p>
+<h3 id="813-mysql内部如何选择行级锁-表级锁什么场景下会锁住行-什么场景下又会锁住表"><a href="#8-1-3-MySQL内部如何选择行级锁、表级锁？什么场景下会锁住行、什么场景下又会锁住表" class="headerlink" title="8.1.3 MySQL内部如何选择行级锁、表级锁？什么场景下会锁住行、什么场景下又会锁住表"></a>8.1.3 MySQL内部如何选择行级锁、表级锁？什么场景下会锁住行、什么场景下又会锁住表</h3><p>InnoDB 行级锁是通过<strong>给索引上的索引项加锁</strong>来实现的，所以，只有通过索引条件检索的数据，InnoDB 才会使用行级锁。否则，使用表级锁。</p>
 <p>即 <strong>使用索引==行级锁</strong></p>
 <ul>
-<li>不通过索引条件查询时，InnoDB 一定会使用表锁，而不是行锁（因为没有索引只能全表扫描）</li>
-<li>查询时，不论是使用主键索引、唯一索引或者普通的索引，InnoDB 都会使用行锁来对数据加锁 。特殊情况下不成立
-<ul>
+<li>不通过索引条件查询时，InnoDB 一定会使用表锁，而不是行锁（因为没有索引只能全表扫描） </li>
+<li>查询时，不论是使用主键索引、唯一索引或者普通的索引，InnoDB 都会使用行锁来对数据加锁 。特殊情况下不成立<ul>
 <li>对于数据量很少的表，MySQL 会认为全表扫描更快，此时，即使使用索引字段查询，InnoDB 也会使用表锁，而不是行锁。</li>
 <li>因此如果想确定当前使用 的是哪一种锁，检查下 SQL 的执行计划（EXPLAIN），确认是否在查询时使用了索引。</li>
 </ul>
 </li>
 </ul>
-<h2 id="82-悲观锁-乐观锁">8.2 悲观锁、乐观锁</h2>
-<p>参考：<a target="_blank" rel="noopener" href="http://www.chinacion.cn/article/8215.html">Laravel中MySQL的乐观锁与悲观锁 技术指南 (chinacion.cn)</a></p>
+<h2 id="82-悲观锁-乐观锁"><a href="#8-2-悲观锁、乐观锁" class="headerlink" title="8.2 悲观锁、乐观锁"></a>8.2 悲观锁、乐观锁</h2><p>参考：<a target="_blank" rel="noopener" href="http://www.chinacion.cn/article/8215.html">Laravel中MySQL的乐观锁与悲观锁 技术指南 (chinacion.cn)</a></p>
 <p>从应用的角度来说，乐观并发控制与悲观并发控制是并发场景下保证数据一致性的主要方法</p>
-<h3 id="821-什么是悲观锁">8.2.1 什么是悲观锁</h3>
-<blockquote>
+<h3 id="821-什么是悲观锁"><a href="#8-2-1-什么是悲观锁" class="headerlink" title="8.2.1 什么是悲观锁"></a>8.2.1 什么是悲观锁</h3><blockquote>
 <p>当我们要对数据库中的一条数据进行修改的时候，为了避免同时被其他人修改，最好的办法就是<strong>直接对该数据进行加锁以防止并发</strong>。这种借助数据库锁机制在修改数据之前锁定，再修改的方式被称为悲观并发控制 （PCC）</p>
 </blockquote>
 <p>它会以悲观的态度去对待并发的数据控制，认为<strong>共享数据被并发修改的可能性较高，在修改之前先去加锁</strong>。在实现效率上，<strong>处理加锁的过程会让数据库产生额外的开销，降低并发度</strong>，同时，还可能会有<strong>死锁</strong>的可能</p>
 <p>悲观锁的实现，依赖于数据库提供的锁机制，即行级锁、表级锁</p>
 <ol>
-<li>对数据操作之前，尝试获取锁</li>
-<li>获取锁成功，对数据进行修改、提交事务，最后释放锁</li>
+<li>对数据操作之前，尝试获取锁 </li>
+<li>获取锁成功，对数据进行修改、提交事务，最后释放锁 </li>
 <li>获取锁失败，则锁正在被占用，等待或抛出异常</li>
 </ol>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="http://www.chinacion.cn/uploads/article/images/2020-05-15/7f8e130b8a48f7308fec21a21cc0f35d.png" alt="悲观锁示意图"></p>
-<h3 id="822-什么是乐观锁">8.2.2 什么是乐观锁</h3>
-<blockquote>
-<p>乐观锁是相对悲观锁而言的，乐观锁假设数据一般情况下不会造成冲突，所以在<strong>数据进行提交更新的时候，才会正式对数据的冲突与否进行检测</strong>。</p>
+<h3 id="822-什么是乐观锁"><a href="#8-2-2-什么是乐观锁" class="headerlink" title="8.2.2 什么是乐观锁"></a>8.2.2 什么是乐观锁</h3><blockquote>
+<p>乐观锁是相对悲观锁而言的，乐观锁假设数据一般情况下不会造成冲突，所以在<strong>数据进行提交更新的时候，才会正式对数据的冲突与否进行检测</strong>。 </p>
 </blockquote>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="http://www.chinacion.cn/uploads/article/images/2020-05-15/85ea61c4e055f0ff491a5c098c6703c7.png" alt="乐观锁示意图"></p>
-<h2 id="83-悲观锁-乐观锁-实现原理和使用方法">8.3 悲观锁、乐观锁 实现原理和使用方法</h2>
-<h3 id="831-使用悲观锁">8.3.1 使用悲观锁</h3>
-<p>在 MySQL 中使用悲观锁，必须关闭 MySQL 的自动提交（MySQL 默认使用自动提交模式，即执行 INSERT、UPDATE、DELETE 时，结果自动生效）</p>
+<h2 id="83-悲观锁-乐观锁-实现原理和使用方法"><a href="#8-3-悲观锁、乐观锁-实现原理和使用方法" class="headerlink" title="8.3 悲观锁、乐观锁 实现原理和使用方法"></a>8.3 悲观锁、乐观锁 实现原理和使用方法</h2><h3 id="831-使用悲观锁"><a href="#8-3-1-使用悲观锁" class="headerlink" title="8.3.1 使用悲观锁"></a>8.3.1 使用悲观锁</h3><p>在 MySQL 中使用悲观锁，必须关闭 MySQL 的自动提交（MySQL 默认使用自动提交模式，即执行 INSERT、UPDATE、DELETE 时，结果自动生效）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># my关闭自动提交 </span><br><span class="line">mysql&gt; SET autocommit = off;</span><br></pre></td></tr></table></figure>
 <p>MySQL 提供的悲观锁实现方式是：<code>SELECT … FOR UPDATE</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-- “会话 A” 通过悲观锁语法锁住 id 为 1 的记录 </span><br><span class="line">mysql&gt; SELECT * FROMworker WHERE id = 1 FOR UPDATE; </span><br><span class="line">+----+------+------+--------+ </span><br><span class="line">| id | type | name | salary | </span><br><span class="line">+----+------+------+--------+ </span><br><span class="line">| 1 | A | tom | 1800 | </span><br><span class="line">+----+------+------+--------+ </span><br><span class="line"></span><br><span class="line">-- “会话 B” 也通过悲观锁语法锁住 id 为 1 的记录 </span><br><span class="line">-- 由于锁被 “会话 A” 占据，长时间获取不到锁，报了锁超时错误 </span><br><span class="line">mysql&gt; SELECT * FROMworker WHERE id = 1 FOR UPDATE; </span><br><span class="line">ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction </span><br></pre></td></tr></table></figure>
 <p>“会话 A” 更新被锁定记录的 salary 字段，并提交事务（在这个过程中，同时让 “会话 B” 尝试去获取锁），如下所示</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-- “会话 A” 更新记录 </span><br><span class="line">mysql&gt; UPDATE worker SET salary = 2000 WHERE id = 1; </span><br><span class="line">Query OK, 1 row affected (0.01 sec) </span><br><span class="line">Rows matched: 1 Changed: 1 Warnings: 0 </span><br><span class="line"></span><br><span class="line">-- “会话 A” 提交事务 </span><br><span class="line">mysql&gt; commit; </span><br><span class="line">Query OK, 0 rows affected (0.02 sec) </span><br><span class="line"></span><br><span class="line">-- “会话 B” 在 “会话 A” 提交事务之后，获取锁成功（观察 SQL 语句执行耗时） </span><br><span class="line">mysql&gt; SELECT * FROMworker WHERE id = 1 FOR UPDATE; </span><br><span class="line">+----+------+------+--------+ </span><br><span class="line">| id | type | name | salary | </span><br><span class="line">+----+------+------+--------+ </span><br><span class="line">| 1 | A | tom | 2000 | </span><br><span class="line">+----+------+------+--------+ </span><br><span class="line">1 row in set (25.13 sec)</span><br></pre></td></tr></table></figure>
-<h3 id="832-使用乐观锁">8.3.2 使用乐观锁</h3>
-<p>乐观锁其实是对 **CAS（compare-and-swap）**的实现：<strong>在做修改时，检查当前的环境是否与预定义的一致，如果一致则可以提交；否则，重试或抛异常</strong></p>
+<h3 id="832-使用乐观锁"><a href="#8-3-2-使用乐观锁" class="headerlink" title="8.3.2 使用乐观锁"></a>8.3.2 使用乐观锁</h3><p>乐观锁其实是对 <strong>CAS（compare-and-swap）</strong>的实现：<strong>在做修改时，检查当前的环境是否与预定义的一致，如果一致则可以提交；否则，重试或抛异常</strong></p>
 <p>如何判断当前环境一致：</p>
 <ul>
-<li>简单方法：对修改的值进行前后判断
-<ul>
-<li>这里存在一个隐藏很深的问题：ABA。考虑这样一种情况：“线程 A” 在更新 salary 之前，“线程 B” 先将 salary 更新为2500，再将 salary 更新为 2000。此时，“线程 A” 则会认为 salary 没有发 生变化，而实际的情况是，“线程 B” 对此更新了两次。</li>
+<li>简单方法：对修改的值进行前后判断<ul>
+<li>这里存在一个隐藏很深的问题：ABA。考虑这样一种情况：“线程 A” 在更新 salary 之前，“线程 B” 先将 salary 更新为2500，再将 salary 更新为 2000。此时，“线程 A” 则会认为 salary 没有发 生变化，而实际的情况是，“线程 B” 对此更新了两次。 </li>
 </ul>
 </li>
 <li>进阶办法：加入一个不会重复修改的值数据来作为版本号，即 version参 数,用时间戳类型，<strong>version 只能增加，不能减少</strong>。乐观锁在每次执行数据修改时，都需要去<strong>比对 version，如果一致，则更新数据</strong> 的同时，<strong>也要更新 version</strong>。</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">-- 给 worker 表添加 version 列 </span><br><span class="line">mysql&gt; ALTER TABLE `worker` ADD COLUMN `version` BIGINT(20) NOT NULL DEFAULT &#x27;0&#x27; COMMENT &#x27;乐观锁版本号&#x27;; </span><br><span class="line"></span><br><span class="line">-- 读取数据，记录 version 的值 </span><br><span class="line">mysql&gt; SELECT * FROMworker WHERE id = 1; </span><br><span class="line">+----+------+------+--------+---------+ </span><br><span class="line">| id | type | name | salary | version | </span><br><span class="line">+----+------+------+--------+---------+ </span><br><span class="line">| 1 | A | tom | 1800 | 0 | </span><br><span class="line">+----+------+------+--------+---------+ </span><br><span class="line"></span><br><span class="line">-- 比对 version 是否符合预期，更新数据和 version </span><br><span class="line">mysql&gt; UPDATE worker SET salary = 2000, version = version + 1 WHERE id = 1 AND version = 0; </span><br><span class="line"></span><br><span class="line">-- 再次读取数据，校验是否符合预期 </span><br><span class="line">mysql&gt; SELECT * FROMworker WHERE id = 1; </span><br><span class="line">+----+------+------+--------+---------+ </span><br><span class="line">| id | type | name | salary | version | </span><br><span class="line">+----+------+------+--------+---------+ </span><br><span class="line">| 1 | A | tom | 2000 | 1 | </span><br><span class="line">+----+------+------+--------+---------+ </span><br></pre></td></tr></table></figure>
-<p>乐观锁的思想比较简单，而且<strong>不会使用到真正的锁</strong>，实现效率很高。但是，乐观锁也并不是没有缺点的：当<strong>遇到高并发时，只可能会有一个线程修改成功，会造成大量的线程失败或重试</strong>。最后，补充一点，乐观锁同样可以使用时间戳来实现，一样的道理。</p>
-<h2 id="84-悲观锁-乐观锁-适用场景">8.4 悲观锁、乐观锁 适用场景</h2>
-<p>悲观锁是依赖于数据库（存储引擎）的，它的优缺点总结如下：</p>
+<p>乐观锁的思想比较简单，而且<strong>不会使用到真正的锁</strong>，实现效率很高。但是，乐观锁也并不是没有缺点的：当<strong>遇到高并发时，只可能会有一个线程修改成功，会造成大量的线程失败或重试</strong>。最后，补充一点，乐观锁同样可以使用时间戳来实现，一样的道理。 </p>
+<h2 id="84-悲观锁-乐观锁-适用场景"><a href="#8-4-悲观锁、乐观锁-适用场景" class="headerlink" title="8.4 悲观锁、乐观锁 适用场景"></a>8.4 悲观锁、乐观锁 适用场景</h2><p>悲观锁是依赖于数据库（存储引擎）的，它的优缺点总结如下： </p>
 <ul>
-<li>优点：<strong>利用锁机制</strong>保证了数据的顺序执行，不需要自己控制，加锁、释放完全由数据库代劳</li>
-<li>缺点：一旦一个事务获取了锁，其他的事务必须等待，势必会<strong>影响系统的吞吐量</strong></li>
+<li>优点：<strong>利用锁机制</strong>保证了数据的顺序执行，不需要自己控制，加锁、释放完全由数据库代劳 </li>
+<li>缺点：一旦一个事务获取了锁，其他的事务必须等待，势必会<strong>影响系统的吞吐量</strong> </li>
 <li>适用场景：<strong>写入操作比较频繁的场景</strong>，如果有大量的读取操作，每次读取都需要加锁，会增加锁开销，降低系统的吞吐量</li>
 </ul>
-<p>乐观锁不是真正的加锁，对其他事务友好，它的优缺点总结如下：</p>
+<p>乐观锁不是真正的加锁，对其他事务友好，它的优缺点总结如下： </p>
 <ul>
-<li>优点：由于不需要加锁，其他的事务可以同时操作数据，相比于悲观锁，<strong>系统吞吐量会提高</strong></li>
+<li>优点：由于不需要加锁，其他的事务可以同时操作数据，相比于悲观锁，<strong>系统吞吐量会提高</strong> </li>
 <li>缺点：需要自行控制，如果<strong>并发度较高，失败重试的情况会成为系统瓶颈</strong></li>
-<li>适用场景： 读取操作比较频繁的场景，如果有大量的写入操作，冲突的可能性会剧增，降低系统的吞吐量</li>
+<li>适用场景： 读取操作比较频繁的场景，如果有大量的写入操作，冲突的可能性会剧增，降低系统的吞吐量 </li>
 </ul>
-<h2 id="85-qampa">8.5 Q&amp;A</h2>
-<ul>
-<li>你能给出一个行级锁升级为表级锁的案例吗（使用 worker 表或者你定义的表都可以）？</li>
-<li>你能用 timestamp（时间戳）的方式实现乐观锁吗 ？</li>
-<li>除了我这里的讲解，你是怎样看待 MySQL 中的锁机制呢（可以从锁粒度、锁应用的角度去思考）</li>
+<h2 id="85-qampa"><a href="#8-5-Q-amp-A" class="headerlink" title="8.5 Q&amp;A"></a>8.5 Q&amp;A</h2><ul>
+<li>你能给出一个行级锁升级为表级锁的案例吗（使用 worker 表或者你定义的表都可以）？ </li>
+<li>你能用 timestamp（时间戳）的方式实现乐观锁吗 ？ </li>
+<li>除了我这里的讲解，你是怎样看待 MySQL 中的锁机制呢（可以从锁粒度、锁应用的角度去思考） </li>
 </ul>
-<h1 id="9-索引定义及其优化">9. 索引定义及其优化</h1>
-<h2 id="91-何为索引">9.1 何为索引</h2>
-<blockquote>
-<p>索引是存储引擎用于快速找到记录的一种数据结构</p>
+<h1 id="9-索引定义及其优化"><a href="#9-索引定义及其优化" class="headerlink" title="9. 索引定义及其优化"></a>9. 索引定义及其优化</h1><h2 id="91-何为索引"><a href="#9-1-何为索引" class="headerlink" title="9.1 何为索引"></a>9.1 何为索引</h2><blockquote>
+<p>索引是存储引擎用于快速找到记录的一种数据结构 </p>
 </blockquote>
 <p>索引是一种数据结构，而数据结构是用来表示数据的特定规则。</p>
-<p>如果我想要查询 salary = 2000 的员工有哪些，最简单的就是遍历所有的数据做比较，这样的时间复杂度是 O(n) 量 级。但是如果 MySQL 维护了一个 salary 的有序数组（MySQL 中使用的索引并不是有序数组)：[1200, 1500, 1800, 1800, 1900, 2000, 2100, 3600]，就可 以将查询过程优化为二分查找，此时的时间复杂度将降为 O(logn)。而这个有序数组也就对应到索引的概念了</p>
+<p>如果我想要查询 salary = 2000 的员工有哪些，最简单的就是遍历所有的数据做比较，这样的时间复杂度是 O(n) 量 级。但是如果 MySQL 维护了一个 salary 的有序数组（MySQL 中使用的索引并不是有序数组)：[1200, 1500, 1800, 1800, 1900, 2000, 2100, 3600]，就可 以将查询过程优化为二分查找，此时的时间复杂度将降为 O(logn)。而这个有序数组也就对应到索引的概念了 </p>
 <p>优点：</p>
 <ul>
-<li>减少扫描的数据量，<strong>加速查询</strong></li>
-<li><strong>减少或完全</strong>消除数据库的<strong>排序操作</strong>（ORDER BY），因为索引是有序的</li>
-<li>将服务器的<strong>随机 IO 变为顺序 IO</strong>，例如，想要查询 salary 处于 1500 ~ 2100 的员工，就可以按照索引顺序查询</li>
+<li>减少扫描的数据量，<strong>加速查询</strong> </li>
+<li><strong>减少或完全</strong>消除数据库的<strong>排序操作</strong>（ORDER BY），因为索引是有序的 </li>
+<li>将服务器的<strong>随机 IO 变为顺序 IO</strong>，例如，想要查询 salary 处于 1500 ~ 2100 的员工，就可以按照索引顺序查询 </li>
 </ul>
 <p>缺点：</p>
 <ul>
-<li>索引会占<strong>据额外的存储空间（毕竟它是数据结构），包括磁盘和内存</strong></li>
+<li>索引会占<strong>据额外的存储空间（毕竟它是数据结构），包括磁盘和内存</strong> </li>
 <li>由于<strong>对数据需要排序</strong>，自然会<strong>影响到数据更新（插入、更新、删除）的速度</strong></li>
 </ul>
-<h2 id="92-实现原理和分类">9.2 实现原理和分类</h2>
-<h3 id="921-实现原理">9.2.1 实现原理</h3>
-<p>对于 MySQL 来说，服务器层并不会实现索引，而是交给了存储引擎。所以，<strong>不同的存储引擎自然也就会有各自不同的实现</strong>。对于 InnoDB 而言，它的内部实现使用的是 <strong>B+ 树</strong></p>
-<h4 id="m-阶-b-树">M 阶 B 树</h4>
-<p>B+ 树是对 B 树的改进得到的，而 B 树则是一棵多路平衡查找树（是平衡二叉树的变体，稍有不同的是 B 树属于多叉树，即查找路径不止两个）。所以，想要搞清楚 B+ 树，就一定要搞清楚 B 树。着重理解 M 的概念，M 阶代表一个节点最多有多少个查找路径</p>
+<h2 id="92-实现原理和分类"><a href="#9-2-实现原理和分类" class="headerlink" title="9.2 实现原理和分类"></a>9.2 实现原理和分类</h2><h3 id="921-实现原理"><a href="#9-2-1-实现原理" class="headerlink" title="9.2.1 实现原理"></a>9.2.1 实现原理</h3><p>对于 MySQL 来说，服务器层并不会实现索引，而是交给了存储引擎。所以，<strong>不同的存储引擎自然也就会有各自不同的实现</strong>。对于 InnoDB 而言，它的内部实现使用的是 <strong>B+ 树</strong></p>
+<h4 id="m-阶-b-树"><a href="#M-阶-B-树" class="headerlink" title="M 阶 B 树"></a>M 阶 B 树</h4><p>B+ 树是对 B 树的改进得到的，而 B 树则是一棵多路平衡查找树（是平衡二叉树的变体，稍有不同的是 B 树属于多叉树，即查找路径不止两个）。所以，想要搞清楚 B+ 树，就一定要搞清楚 B 树。着重理解 M 的概念，M 阶代表一个节点最多有多少个查找路径</p>
 <ul>
-<li>根节点至少有两个子节点</li>
-<li>每个节点包含 k - 1 个元素和 k 个子节点，其中 m/2 &lt;= k &lt;= m（元素是存储的数据）</li>
-<li>每个叶子节点都包含 k - 1 个元素，且位于同一层，其中 m/2 &lt;= k &lt;= m</li>
-<li>每个节点中的元素从小到大排列，类似于一个有序数组</li>
+<li>根节点至少有两个子节点 </li>
+<li>每个节点包含 k - 1 个元素和 k 个子节点，其中 m/2 &lt;= k &lt;= m（元素是存储的数据） </li>
+<li>每个叶子节点都包含 k - 1 个元素，且位于同一层，其中 m/2 &lt;= k &lt;= m </li>
+<li>每个节点中的元素从小到大排列，类似于一个有序数组 </li>
 </ul>
-<h4 id="m阶b-树">M阶B+ 树</h4>
-<p>添加了两项约束（完全包含 B 树的约束）：</p>
+<h4 id="m阶b-树"><a href="#M阶B-树" class="headerlink" title="M阶B+ 树"></a>M阶B+ 树</h4><p>添加了两项约束（完全包含 B 树的约束）：</p>
 <ul>
-<li>除叶子节点之外的其他节点都不保存数据，所以，数据在同一层</li>
-<li>叶子节点之间按照排列顺序链接在一起，形成了一个有序链表</li>
+<li>除叶子节点之外的其他节点都不保存数据，所以，数据在同一层 </li>
+<li>叶子节点之间按照排列顺序链接在一起，形成了一个有序链表 </li>
 </ul>
-<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://upload-images.jianshu.io/upload_images/13586259-43e326b50b8aa57d.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/1000/format/webp" alt="img" style="zoom:50%;">
-<h4 id="为什么-innodb-会选用-b-树作为索引数据结构呢">为什么 InnoDB 会选用 B+ 树作为索引数据结构呢</h4>
-<ul>
-<li>中间节点不保存真实数据，就可以去存储更多的索引数据，以<strong>降低整体树的层级，减少磁盘 IO 的次数，提高 查询性能</strong></li>
-<li>所有的数据都保存在叶子节点，查询的次数也就是相同的，<strong>查询稳定性很高</strong></li>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://upload-images.jianshu.io/upload_images/13586259-43e326b50b8aa57d.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/1000/format/webp" alt="img" style="zoom:50%;"></p>
+<h4 id="为什么-innodb-会选用-b-树作为索引数据结构呢"><a href="#为什么-InnoDB-会选用-B-树作为索引数据结构呢" class="headerlink" title="为什么 InnoDB 会选用 B+ 树作为索引数据结构呢"></a>为什么 InnoDB 会选用 B+ 树作为索引数据结构呢</h4><ul>
+<li>中间节点不保存真实数据，就可以去存储更多的索引数据，以<strong>降低整体树的层级，减少磁盘 IO 的次数，提高 查询性能</strong> </li>
+<li>所有的数据都保存在叶子节点，查询的次数也就是相同的，<strong>查询稳定性很高</strong> </li>
 <li>叶子节点之间顺序链接在一起，<strong>范围查询的效率极高</strong></li>
 </ul>
-<h3 id="922-索引分类">9.2.2 索引分类</h3>
-<ul>
-<li><strong>普通索引</strong>：针对于单个列创建的索引，之所以说它普通是因为它对列值没有什么限制，允许被索引的列包含重复的值</li>
-<li><strong>唯一索引</strong>：正如它的关键字一样，它要求列值是唯一的，这个索引保证了数据记录的唯一性</li>
-<li><strong>主键索引</strong>：它是一种特殊的唯一索引，在一张表中只能定义一个（但不是必须）主键索引</li>
-<li><strong>联合索引</strong>：也被称为复合索引，它是将多个列值绑定在一起作为索引</li>
+<h3 id="922-索引分类"><a href="#9-2-2-索引分类" class="headerlink" title="9.2.2 索引分类"></a>9.2.2 索引分类</h3><ul>
+<li><strong>普通索引</strong>：针对于单个列创建的索引，之所以说它普通是因为它对列值没有什么限制，允许被索引的列包含重复的值 </li>
+<li><strong>唯一索引</strong>：正如它的关键字一样，它要求列值是唯一的，这个索引保证了数据记录的唯一性 </li>
+<li><strong>主键索引</strong>：它是一种特殊的唯一索引，在一张表中只能定义一个（但不是必须）主键索引 </li>
+<li><strong>联合索引</strong>：也被称为复合索引，它是将多个列值绑定在一起作为索引 </li>
 </ul>
 <p>索引的分类是存在交叉的。唯一索引和主键索引也可以针对多个列做索引，即它们可以是联合索引。</p>
-<h2 id="93-创建高性能索引">9.3 创建高性能索引</h2>
-<p>参考：[高性能索引策略——《高性能MySQL》第五章 | ]</p>
-<h3 id="931-聚簇索引">9.3.1 聚簇索引</h3>
-<h3 id="932-联合索引">9.3.2 联合索引</h3>
-<h3 id="933-前缀索引">9.3.3 前缀索引</h3>
-<h3 id="934-覆盖索引">9.3.4 覆盖索引</h3>
-<h2 id="94-查看索引元数据">9.4 查看索引元数据</h2>
-<h2 id="95-qampa">9.5 Q&amp;A</h2>
-<ul>
-<li>根据我对 B 树的描述，再加上你的理解，你知道图中的 B 树是几阶的吗 ？</li>
-<li>你能举一个联合索引建立 B+ 树的例子吗 ？</li>
-<li>根据你的理解，你能说说哪些列（不仅仅是数据类型需要是字符型，还要关注列值）适合前缀索引吗 ？</li>
+<h2 id="93-创建高性能索引"><a href="#9-3-创建高性能索引" class="headerlink" title="9.3 创建高性能索引"></a>9.3 创建高性能索引</h2><p>参考：[高性能索引策略——《高性能MySQL》第五章 | ]</p>
+<h3 id="931-聚簇索引"><a href="#9-3-1-聚簇索引" class="headerlink" title="9.3.1 聚簇索引"></a>9.3.1 聚簇索引</h3><h3 id="932-联合索引"><a href="#9-3-2-联合索引" class="headerlink" title="9.3.2 联合索引"></a>9.3.2 联合索引</h3><h3 id="933-前缀索引"><a href="#9-3-3-前缀索引" class="headerlink" title="9.3.3 前缀索引"></a>9.3.3 前缀索引</h3><h3 id="934-覆盖索引"><a href="#9-3-4-覆盖索引" class="headerlink" title="9.3.4 覆盖索引"></a>9.3.4 覆盖索引</h3><h2 id="94-查看索引元数据"><a href="#9-4-查看索引元数据" class="headerlink" title="9.4 查看索引元数据"></a>9.4 查看索引元数据</h2><h2 id="95-qampa"><a href="#9-5-Q-amp-A" class="headerlink" title="9.5 Q&amp;A"></a>9.5 Q&amp;A</h2><ul>
+<li>根据我对 B 树的描述，再加上你的理解，你知道图中的 B 树是几阶的吗 ？ </li>
+<li>你能举一个联合索引建立 B+ 树的例子吗 ？ </li>
+<li>根据你的理解，你能说说哪些列（不仅仅是数据类型需要是字符型，还要关注列值）适合前缀索引吗 ？ </li>
 <li>你平时是怎样建立、使用索引的，为什么要这样做呢 ？</li>
 </ul>
 
@@ -4607,7 +4480,7 @@ lower_case_table_names = 1时，mysql会先把表名转为小写，再执行操�
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">471k</span>
+      <span title="post.totalcount">468k</span>
     
 </div>
 
