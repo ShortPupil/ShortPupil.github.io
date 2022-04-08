@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="目录本节关于BUILDER 生成器模式 —— 对象创建模式 1. 意图将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。 2. 动机如下图，一个Rich Text Format文档交换格式的阅读器能将RTF转换为多种正文格式。该阅读器可以将RTF文档转换为ASCII文本或转换为一个能以交互方式编辑的正文窗口组件。 问题：转换的数目无穷；需要容易实现新转换的增加，同时不改变R">
+<meta name="description" content="目录 本节关于BUILDER 生成器模式 —— 对象创建模式 1. 意图 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。 2. 动机 如下图，一个Rich Text Format文档交换格式的阅读器能将RTF转换为多种正文格式。该阅读器可以将RTF文档转换为ASCII文本或转换为一个能以交互方式编辑的正文窗口组件。 问题：转换的数目无穷；需要容易实现新转换的增加，同时不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式(3) 创建型模式 BUILDER 生成器">
 <meta property="og:url" content="https://songzi.info/post/4b55dd87/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录本节关于BUILDER 生成器模式 —— 对象创建模式 1. 意图将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。 2. 动机如下图，一个Rich Text Format文档交换格式的阅读器能将RTF转换为多种正文格式。该阅读器可以将RTF文档转换为ASCII文本或转换为一个能以交互方式编辑的正文窗口组件。 问题：转换的数目无穷；需要容易实现新转换的增加，同时不改变R">
+<meta property="og:description" content="目录 本节关于BUILDER 生成器模式 —— 对象创建模式 1. 意图 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。 2. 动机 如下图，一个Rich Text Format文档交换格式的阅读器能将RTF转换为多种正文格式。该阅读器可以将RTF文档转换为ASCII文本或转换为一个能以交互方式编辑的正文窗口组件。 问题：转换的数目无穷；需要容易实现新转换的增加，同时不">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/builder_1.png">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/builder.png">
@@ -3499,42 +3499,53 @@ font-display: swap;
       
 
       
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>本节关于BUILDER 生成器模式 —— 对象创建模式</p>
-<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>将一个复杂对象的<strong>构建</strong>与它的<strong>表示分离</strong>，使得<strong>同样的构建过程可以创建不同的表示</strong>。</p>
-<h2 id="2-动机"><a href="#2-动机" class="headerlink" title="2. 动机"></a>2. 动机</h2><p>如下图，一个Rich Text Format文档交换格式的阅读器能将RTF转换为多种正文格式。该阅读器可以将RTF文档转换为<strong>ASCII文本或转换为一个能以交互方式编辑的正文窗口组件</strong>。</p>
+        <h1 id="目录">目录</h1>
+<p>本节关于BUILDER 生成器模式 —— 对象创建模式</p>
+<h2 id="1-意图">1. 意图</h2>
+<p>将一个复杂对象的<strong>构建</strong>与它的<strong>表示分离</strong>，使得<strong>同样的构建过程可以创建不同的表示</strong>。</p>
+<h2 id="2-动机">2. 动机</h2>
+<p>如下图，一个Rich Text Format文档交换格式的阅读器能将RTF转换为多种正文格式。该阅读器可以将RTF文档转换为<strong>ASCII文本或转换为一个能以交互方式编辑的正文窗口组件</strong>。</p>
 <p>问题：<strong>转换的数目无穷</strong>；需要容易实现新转换的增加，同时不改变RTF阅读器</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/builder_1.png" alt></p>
 <p>解决方法：TextConverter对象——将RTF转换为另一种正文表示——配置RTFReader类。其负责进行<strong>数据转换以及用特定格式表示该标记</strong>。TextConvert的子类对不同转换和不同格式进行特殊处理。</p>
 <p>每种转换器类将创建和装配一个复杂对象的机制隐含在<strong>抽象接口</strong>后面。转换器独立于阅读器，阅读器负责对一个RTF文档进行语法分析。</p>
 <p>每一个转换器类在该模式中被称为<strong>生成器（builder）</strong>，而阅读器则称为<strong>导向器（director）</strong>。</p>
-<h2 id="3-适用性"><a href="#3-适用性" class="headerlink" title="3. 适用性"></a>3. 适用性</h2><ul>
+<h2 id="3-适用性">3. 适用性</h2>
+<ul>
 <li>当创建复杂对象的算法应<strong>独立</strong>于该对象的组成部分以及其装配方式时</li>
 <li>当构造过程必须允许被构造的对象有<strong>不同的表示</strong>时</li>
 </ul>
-<h2 id="4-结构"><a href="#4-结构" class="headerlink" title="4. 结构"></a>4. 结构</h2><p>上图的扩展咯</p>
+<h2 id="4-结构">4. 结构</h2>
+<p>上图的扩展咯</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/builder.png" alt></p>
-<h2 id="5-参与者"><a href="#5-参与者" class="headerlink" title="5. 参与者"></a>5. 参与者</h2><ul>
-<li>Builder (TextConverter)<ul>
+<h2 id="5-参与者">5. 参与者</h2>
+<ul>
+<li>Builder (TextConverter)
+<ul>
 <li>为创建一个Product对象的各个部件指定抽象接口</li>
 </ul>
 </li>
-<li>ConcreteBuilder (ASCIIConverter, TeXConverter, TextWidgetConverter)<ul>
+<li>ConcreteBuilder (ASCIIConverter, TeXConverter, TextWidgetConverter)
+<ul>
 <li>实现Builder的接口以构造和装配该产品的各个部件</li>
 <li>定义并明确它所创建的表示</li>
 <li>提供一个检索产品的接口(例如GetASCIIText和GetTextWidget)</li>
 </ul>
 </li>
-<li>Director (RTFReader)<ul>
+<li>Director (RTFReader)
+<ul>
 <li>构造一个使用Builder接口的对象</li>
 </ul>
 </li>
-<li>Product (ASCIIText, TeXText, TextWidget)<ul>
+<li>Product (ASCIIText, TeXText, TextWidget)
+<ul>
 <li>表示被构造的复杂对象。ConcreteBuilder创建该产品的内部表示并定义其装配过程。</li>
 <li>包含定义组成部件的类，包括将这些部件装配成最终产品的接口。</li>
 </ul>
 </li>
 </ul>
-<h2 id="6-协作"><a href="#6-协作" class="headerlink" title="6. 协作"></a>6. 协作</h2><p>Builder和Director交互图</p>
+<h2 id="6-协作">6. 协作</h2>
+<p>Builder和Director交互图</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/jiaohutu_1.png" alt></p>
 <ul>
 <li>客户创建Director对象，并用它所想要的Builder对象进行配置</li>
@@ -3542,20 +3553,25 @@ font-display: swap;
 <li>生成器处理导向器的请求，并将部件添加到该产品中</li>
 <li>客户从生成器中检索产品</li>
 </ul>
-<h2 id="7-效果"><a href="#7-效果" class="headerlink" title="7. 效果"></a>7. 效果</h2><ul>
+<h2 id="7-效果">7. 效果</h2>
+<ul>
 <li>它使你可以改变一个产品的内部实现</li>
 <li>它可以将构造代码和表示代码分开</li>
 <li>它使你可对构造过程进行更精细的控制</li>
 </ul>
-<h2 id="8-实现"><a href="#8-实现" class="headerlink" title="8. 实现"></a>8. 实现</h2><p>通常有一个抽象的Builder类为导向者可能要求创建的每一个构件定义一个操作。这些操作缺省情况下什么都不做。一个ConcreBuilder类对它有兴趣创建的构件重定义这些操作。</p>
+<h2 id="8-实现">8. 实现</h2>
+<p>通常有一个抽象的Builder类为导向者可能要求创建的每一个构件定义一个操作。这些操作缺省情况下什么都不做。一个ConcreBuilder类对它有兴趣创建的构件重定义这些操作。</p>
 <ul>
 <li>装配和构造接口</li>
 <li>为什么产品没有抽象类</li>
 <li>在Builder中缺省的方法为空</li>
 </ul>
-<h2 id="9-代码示例"><a href="#9-代码示例" class="headerlink" title="9. 代码示例"></a>9. 代码示例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MazeBuilder</span> &#123;   <span class="comment">//这个是Builder</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuildMaze</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuildRoom</span><span class="params">(<span class="type">int</span> room)</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> BuildDoor</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="keyword">virtual</span> Maze * <span class="title">GetMaze</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="built_in">MazeBuilder</span>();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">Maze * <span class="title">MazeGame::CreateMaze</span><span class="params">(MazeBuilder &amp; builder)</span> </span>&#123;   <span class="comment">//这个就是Director</span></span><br><span class="line">    builder.<span class="built_in">BuildMaze</span>();</span><br><span class="line"></span><br><span class="line">    builder.<span class="built_in">BuildRoom</span>(<span class="number">1</span>);</span><br><span class="line">    builder.<span class="built_in">BuildRoom</span>(<span class="number">2</span>);</span><br><span class="line">    builder.<span class="built_in">BuildRoom</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> builder.GetMaze;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StanderdMazeBuilder</span> : <span class="keyword">public</span> MazeBuilder &#123;    <span class="comment">//这个是ConcreteBuilder</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">StandardMazeBuilder</span>();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuildMaze</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuildRoom</span><span class="params">(<span class="type">int</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuildDoor</span><span class="params">(<span class="type">int</span>, <span class="type">int</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Maze * <span class="title">GetMaze</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function">Direction <span class="title">CommonWall</span><span class="params">(Room *, Room*)</span></span>;</span><br><span class="line">    Maze * _currentMaze;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">StandardMazeBuiler::StandardMazeBuilder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        _currentMaze = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">StandardMazeBuiler::BuildMaze</span><span class="params">()</span> </span>&#123;    <span class="comment">//这是ConcreteBuilder的BuilPartA</span></span><br><span class="line">        _currentMaze = <span class="keyword">new</span> Maze;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">Maze * <span class="title">StandardMazeBuiler::GetMaze</span><span class="params">()</span> </span>&#123;    <span class="comment">//这是ConcreteBuilder的GetResult</span></span><br><span class="line">        Return _currentMaze;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">StandardMazeBuiler::BuildRoom</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;    <span class="comment">//这是ConcreteBuilder的BuilPartB</span></span><br><span class="line">    Room * room = <span class="keyword">new</span> <span class="built_in">Room</span>(n);</span><br><span class="line">    room-&gt;<span class="built_in">SetSide</span>(North, <span class="keyword">new</span> Wall);</span><br><span class="line">    room-&gt;<span class="built_in">SetSide</span>(South, <span class="keyword">new</span> Wall);</span><br><span class="line">    room-&gt;<span class="built_in">SetSide</span>(West, <span class="keyword">new</span> Wall);</span><br><span class="line">    room-&gt;<span class="built_in">SetSide</span>(East, <span class="keyword">new</span> Wall);</span><br><span class="line"></span><br><span class="line">    _currentMaze-&gt;<span class="built_in">AddRoom</span>(room)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//作为Client:</span></span><br><span class="line">Maze *maze;</span><br><span class="line">MazeGame game; <span class="comment">//aDirector</span></span><br><span class="line">StandardMazeBuilder builder; <span class="comment">//aConcreteBuilder</span></span><br><span class="line"></span><br><span class="line">Game.<span class="built_in">CreateMaze</span>(builder); <span class="comment">//Constructor</span></span><br><span class="line">maze = builder.<span class="built_in">GetMaze</span>();  <span class="comment">//getResult</span></span><br></pre></td></tr></table></figure>
-<h2 id="10-已知应用"><a href="#10-已知应用" class="headerlink" title="10. 已知应用"></a>10. 已知应用</h2><p>RTF转换器应用来自来自ET++</p>
-<h2 id="11-相关模式"><a href="#11-相关模式" class="headerlink" title="11. 相关模式"></a>11. 相关模式</h2><p>Abstract Factory与Builder相似，因为它也可以创建复杂对象。</p>
+<h2 id="9-代码示例">9. 代码示例</h2>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MazeBuilder</span> &#123;   <span class="comment">//这个是Builder</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuildMaze</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuildRoom</span><span class="params">(<span class="type">int</span> room)</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> BuildDoor</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="keyword">virtual</span> Maze * <span class="title">GetMaze</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="built_in">MazeBuilder</span>();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">Maze * <span class="title">MazeGame::CreateMaze</span><span class="params">(MazeBuilder &amp; builder)</span> </span>&#123;   <span class="comment">//这个就是Director</span></span><br><span class="line">    builder.<span class="built_in">BuildMaze</span>();</span><br><span class="line"></span><br><span class="line">    builder.<span class="built_in">BuildRoom</span>(<span class="number">1</span>);</span><br><span class="line">    builder.<span class="built_in">BuildRoom</span>(<span class="number">2</span>);</span><br><span class="line">    builder.<span class="built_in">BuildRoom</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> builder.GetMaze;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StanderdMazeBuilder</span> : <span class="keyword">public</span> MazeBuilder &#123;    <span class="comment">//这个是ConcreteBuilder</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">StandardMazeBuilder</span>();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuildMaze</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuildRoom</span><span class="params">(<span class="type">int</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuildDoor</span><span class="params">(<span class="type">int</span>, <span class="type">int</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Maze * <span class="title">GetMaze</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function">Direction <span class="title">CommonWall</span><span class="params">(Room *, Room*)</span></span>;</span><br><span class="line">    Maze * _currentMaze;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">StandardMazeBuiler::StandardMazeBuilder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        _currentMaze = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">StandardMazeBuiler::BuildMaze</span><span class="params">()</span> </span>&#123;    <span class="comment">//这是ConcreteBuilder的BuilPartA</span></span><br><span class="line">        _currentMaze = <span class="keyword">new</span> Maze;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">Maze * <span class="title">StandardMazeBuiler::GetMaze</span><span class="params">()</span> </span>&#123;    <span class="comment">//这是ConcreteBuilder的GetResult</span></span><br><span class="line">        Return _currentMaze;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">StandardMazeBuiler::BuildRoom</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;    <span class="comment">//这是ConcreteBuilder的BuilPartB</span></span><br><span class="line">    Room * room = <span class="keyword">new</span> <span class="built_in">Room</span>(n);</span><br><span class="line">    room-&gt;<span class="built_in">SetSide</span>(North, <span class="keyword">new</span> Wall);</span><br><span class="line">    room-&gt;<span class="built_in">SetSide</span>(South, <span class="keyword">new</span> Wall);</span><br><span class="line">    room-&gt;<span class="built_in">SetSide</span>(West, <span class="keyword">new</span> Wall);</span><br><span class="line">    room-&gt;<span class="built_in">SetSide</span>(East, <span class="keyword">new</span> Wall);</span><br><span class="line"></span><br><span class="line">    _currentMaze-&gt;<span class="built_in">AddRoom</span>(room)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//作为Client:</span></span><br><span class="line">Maze *maze;</span><br><span class="line">MazeGame game; <span class="comment">//aDirector</span></span><br><span class="line">StandardMazeBuilder builder; <span class="comment">//aConcreteBuilder</span></span><br><span class="line"></span><br><span class="line">Game.<span class="built_in">CreateMaze</span>(builder); <span class="comment">//Constructor</span></span><br><span class="line">maze = builder.<span class="built_in">GetMaze</span>();  <span class="comment">//getResult</span></span><br></pre></td></tr></table></figure>
+<h2 id="10-已知应用">10. 已知应用</h2>
+<p>RTF转换器应用来自来自ET++</p>
+<h2 id="11-相关模式">11. 相关模式</h2>
+<p>Abstract Factory与Builder相似，因为它也可以创建复杂对象。</p>
 <p>主要区别是<strong>Builder着重于一步步构造一个复杂对象</strong>。<strong>Abstract Factory着重于多个系列产品对象构造</strong>。</p>
 
       
@@ -3858,7 +3874,7 @@ font-display: swap;
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">468k</span>
+      <span title="post.totalcount">471k</span>
     
 </div>
 
@@ -4413,6 +4429,28 @@ wpac_init.push({widget: 'Rating', id: 17904});
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src=""></script>
+  
+
 
   
   <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>

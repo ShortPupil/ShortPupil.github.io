@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="目录1. 意图定义一系列算法并封装，使它们可相互替换。算法可独立于使用它的客户而变化。 2. 别名Policy 3. 动机考虑许多算法对一个正文流进行分析，不可将算法直接code进使用他们的类。 如下图，定义一些类来封装不同的换行算法。  Composition类维护和更新正文换行，但换行策略是由抽象的Composition的子类各自独立完成。Composition维护对Compositor对象的">
+<meta name="description" content="目录 1. 意图 定义一系列算法并封装，使它们可相互替换。算法可独立于使用它的客户而变化。 2. 别名 Policy 3. 动机 考虑许多算法对一个正文流进行分析，不可将算法直接code进使用他们的类。 如下图，定义一些类来封装不同的换行算法。  Composition类维护和更新正文换行，但换行策略是由抽象的Composition的子类各自独立完成。Composition维护对Composito">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式(5) 对象行为型模式 Strategy 策略设计模式">
 <meta property="og:url" content="https://songzi.info/post/c840ad9/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录1. 意图定义一系列算法并封装，使它们可相互替换。算法可独立于使用它的客户而变化。 2. 别名Policy 3. 动机考虑许多算法对一个正文流进行分析，不可将算法直接code进使用他们的类。 如下图，定义一些类来封装不同的换行算法。  Composition类维护和更新正文换行，但换行策略是由抽象的Composition的子类各自独立完成。Composition维护对Compositor对象的">
+<meta property="og:description" content="目录 1. 意图 定义一系列算法并封装，使它们可相互替换。算法可独立于使用它的客户而变化。 2. 别名 Policy 3. 动机 考虑许多算法对一个正文流进行分析，不可将算法直接code进使用他们的类。 如下图，定义一些类来封装不同的换行算法。  Composition类维护和更新正文换行，但换行策略是由抽象的Composition的子类各自独立完成。Composition维护对Composito">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/strategy_1.png">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/strategy_2.png">
@@ -3461,7 +3461,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  7.9k
+                  7.3k
                 </span>
               
 
@@ -3498,40 +3498,52 @@ font-display: swap;
       
 
       
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>定义一系列算法并封装，使它们可相互替换。算法可独立于使用它的客户而变化。</p>
-<h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2. 别名"></a>2. 别名</h2><p>Policy</p>
-<h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3. 动机"></a>3. 动机</h2><p>考虑许多算法对一个正文流进行分析，不可将算法直接code进使用他们的类。</p>
+        <h1 id="目录">目录</h1>
+<h2 id="1-意图">1. 意图</h2>
+<p>定义一系列算法并封装，使它们可相互替换。算法可独立于使用它的客户而变化。</p>
+<h2 id="2-别名">2. 别名</h2>
+<p>Policy</p>
+<h2 id="3-动机">3. 动机</h2>
+<p>考虑许多算法对一个正文流进行分析，不可将算法直接code进使用他们的类。</p>
 <p>如下图，定义一些类来封装不同的换行算法。</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/strategy_1.png" alt></p>
 <p>Composition类维护和更新正文换行，但换行策略是由抽象的Composition的子类各自独立完成。Composition维护对Compositor对象的一个引用。一旦Composition重新格式化其正文，将这个职责转发给它的Compositor对象。<strong>Composition的客户指定使用哪一种Compositor的方法就是将想要的Compositor装入Composition</strong>。</p>
-<h2 id="4-适用性"><a href="#4-适用性" class="headerlink" title="4. 适用性"></a>4. 适用性</h2><ul>
+<h2 id="4-适用性">4. 适用性</h2>
+<ul>
 <li>许多相关的类仅仅是<strong>行为</strong>有差异。此模式提供一种用多个可选行为中的一个行为配置一个类的方法。</li>
 <li>需要使用一个算法的不同变体。同上</li>
 <li>算法使用client不不应该知道的数据。可以<strong>隐藏复杂的、与算法相关的数据结构</strong>。</li>
 <li>一个类中的多种行为操作以多个条件语句形式出现，可以将<strong>各个条件分支移入各自的Strategy类</strong>以代替条件语句</li>
 </ul>
-<h2 id="5-结构"><a href="#5-结构" class="headerlink" title="5. 结构"></a>5. 结构</h2><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/strategy_2.png" alt></p>
-<h2 id="6-参与者"><a href="#6-参与者" class="headerlink" title="6. 参与者"></a>6. 参与者</h2><ul>
-<li>Strategy 策略<ul>
+<h2 id="5-结构">5. 结构</h2>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/strategy_2.png" alt></p>
+<h2 id="6-参与者">6. 参与者</h2>
+<ul>
+<li>Strategy 策略
+<ul>
 <li>定义所有支持算法的公共接口。Context使用这个接口来调用某ConcreteStrategy定义的算法。</li>
 </ul>
 </li>
-<li>ConcreteStrategy 具体策略<ul>
+<li>ConcreteStrategy 具体策略
+<ul>
 <li>以Strategy接口实现某具体算法</li>
 </ul>
 </li>
-<li>Context 上下文<ul>
+<li>Context 上下文
+<ul>
 <li>用一个ConcreteStrategy对象来配置</li>
 <li>维护一个对Strategy对象的引用</li>
 <li>可定义一个接口来让Strategy访问其数据</li>
 </ul>
 </li>
 </ul>
-<h2 id="7-协作"><a href="#7-协作" class="headerlink" title="7. 协作"></a>7. 协作</h2><ul>
+<h2 id="7-协作">7. 协作</h2>
+<ul>
 <li>Strategy和Context相互作用以实现选定的算法。</li>
 <li>Context将它的客户的请求转发给它的Strategy。</li>
 </ul>
-<h2 id="8-效果"><a href="#8-效果" class="headerlink" title="8. 效果"></a>8. 效果</h2><p>优点</p>
+<h2 id="8-效果">8. 效果</h2>
+<p>优点</p>
 <ol>
 <li>相关算法系列</li>
 <li>一个替代继承的方法</li>
@@ -3544,13 +3556,16 @@ font-display: swap;
 <li>Strategy和Context之间的通信开销。</li>
 <li>增加对象的数量。</li>
 </ol>
-<h2 id="9-实现"><a href="#9-实现" class="headerlink" title="9. 实现"></a>9. 实现</h2><ul>
+<h2 id="9-实现">9. 实现</h2>
+<ul>
 <li>定义Strategy和Context接口</li>
 <li>使用Strategy作为模板参数</li>
 <li>使Strategy对象可选</li>
 </ul>
-<h2 id="10-代码示例"><a href="#10-代码示例" class="headerlink" title="10. 代码示例"></a>10. 代码示例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将值传给Compositor，它使用这些值决定换行的最佳位置</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Composition</span> &#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="built_in">composition</span>(Compositor*);</span><br><span class="line">    	<span class="function"><span class="type">void</span> <span class="title">Repair</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    	Compositor* _compositor;</span><br><span class="line">    	component* _ components;</span><br><span class="line">    	<span class="type">int</span> _componentCount;</span><br><span class="line">    	<span class="type">int</span> _lineWidth;</span><br><span class="line">    	<span class="type">int</span>* _lineCount;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//抽象类，具体子类定义特定的换行策略</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Compositor</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">int</span> <span class="title">Compose</span><span class="params">(Coord natural[], Coord stretch[], Coord shrink[], <span class="type">int</span> componentCount, <span class="type">int</span> lineWidth, <span class="type">int</span> breaks[])</span> </span>= <span class="number">0</span>;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="built_in">Compositor</span>();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//具体子类一</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SimpleCompositor</span> : <span class="keyword">public</span> Compositor &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">SimpleCompositor</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">int</span> <span class="title">Compose</span><span class="params">(Coord natural[], Coord stretch[], Coord shrink[], <span class="type">int</span> componentCount, <span class="type">int</span> lineWidth, <span class="type">int</span> breaks[])</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//具体子类二</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TeXCompositor</span> : <span class="keyword">public</span> Compositor &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">TeXCompositor</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">int</span> <span class="title">Compose</span><span class="params">(Coord natural[], Coord stretch[], Coord shrink[], <span class="type">int</span> componentCount, <span class="type">int</span> lineWidth, <span class="type">int</span> breaks[])</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化Composition需要把想要使用的Compositor传递给它</span></span><br><span class="line">Composition* quick = <span class="keyword">new</span> <span class="built_in">Composition</span>(<span class="keyword">new</span> SimpleCompositor);</span><br><span class="line">Composition* slick = <span class="keyword">new</span> <span class="built_in">Composition</span>(<span class="keyword">new</span> TeXCompositor);</span><br></pre></td></tr></table></figure>
-<h2 id="11-已知应用"><a href="#11-已知应用" class="headerlink" title="11. 已知应用"></a>11. 已知应用</h2><p>ET++和InterViews</p>
+<h2 id="10-代码示例">10. 代码示例</h2>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将值传给Compositor，它使用这些值决定换行的最佳位置</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Composition</span> &#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="built_in">composition</span>(Compositor*);</span><br><span class="line">    	<span class="function"><span class="type">void</span> <span class="title">Repair</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    	Compositor* _compositor;</span><br><span class="line">    	component* _ components;</span><br><span class="line">    	<span class="type">int</span> _componentCount;</span><br><span class="line">    	<span class="type">int</span> _lineWidth;</span><br><span class="line">    	<span class="type">int</span>* _lineCount;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//抽象类，具体子类定义特定的换行策略</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Compositor</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">int</span> <span class="title">Compose</span><span class="params">(Coord natural[], Coord stretch[], Coord shrink[], <span class="type">int</span> componentCount, <span class="type">int</span> lineWidth, <span class="type">int</span> breaks[])</span> </span>= <span class="number">0</span>;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="built_in">Compositor</span>();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//具体子类一</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SimpleCompositor</span> : <span class="keyword">public</span> Compositor &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">SimpleCompositor</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">int</span> <span class="title">Compose</span><span class="params">(Coord natural[], Coord stretch[], Coord shrink[], <span class="type">int</span> componentCount, <span class="type">int</span> lineWidth, <span class="type">int</span> breaks[])</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//具体子类二</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TeXCompositor</span> : <span class="keyword">public</span> Compositor &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">TeXCompositor</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">int</span> <span class="title">Compose</span><span class="params">(Coord natural[], Coord stretch[], Coord shrink[], <span class="type">int</span> componentCount, <span class="type">int</span> lineWidth, <span class="type">int</span> breaks[])</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化Composition需要把想要使用的Compositor传递给它</span></span><br><span class="line">Composition* quick = <span class="keyword">new</span> <span class="built_in">Composition</span>(<span class="keyword">new</span> SimpleCompositor);</span><br><span class="line">Composition* slick = <span class="keyword">new</span> <span class="built_in">Composition</span>(<span class="keyword">new</span> TeXCompositor);</span><br></pre></td></tr></table></figure>
+<h2 id="11-已知应用">11. 已知应用</h2>
+<p>ET++和InterViews</p>
 
       
     </div>
@@ -3852,7 +3867,7 @@ font-display: swap;
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">468k</span>
+      <span title="post.totalcount">471k</span>
     
 </div>
 
@@ -4407,6 +4422,28 @@ wpac_init.push({widget: 'Rating', id: 17904});
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src=""></script>
+  
+
 
   
   <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>

@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="1. 获取数据集及处理思路SMS垃圾邮箱数据集 这个数据有两列，一列为标记，值为ham spam，第二列为邮件文本数据。  判断邮件是否为垃圾邮件——分类问题 输出y可以设为0或1，1代表spam垃圾邮箱，0代表ham非垃圾邮箱 处理的输入数据x是文本数据、序列数据，可以建立一个多对一的RNN模型  2. 训练神经网络1. 加载包1234567891011import osimport reimp">
+<meta name="description" content="1. 获取数据集及处理思路 SMS垃圾邮箱数据集 这个数据有两列，一列为标记，值为ham spam，第二列为邮件文本数据。  判断邮件是否为垃圾邮件——分类问题 输出y可以设为0或1，1代表spam垃圾邮箱，0代表ham非垃圾邮箱 处理的输入数据x是文本数据、序列数据，可以建立一个多对一的RNN模型  2. 训练神经网络 1. 加载包 1234567891011import osimport re">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RNN识别垃圾邮件">
 <meta property="og:url" content="https://songzi.info/post/65e9fc1f/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="1. 获取数据集及处理思路SMS垃圾邮箱数据集 这个数据有两列，一列为标记，值为ham spam，第二列为邮件文本数据。  判断邮件是否为垃圾邮件——分类问题 输出y可以设为0或1，1代表spam垃圾邮箱，0代表ham非垃圾邮箱 处理的输入数据x是文本数据、序列数据，可以建立一个多对一的RNN模型  2. 训练神经网络1. 加载包1234567891011import osimport reimp">
+<meta property="og:description" content="1. 获取数据集及处理思路 SMS垃圾邮箱数据集 这个数据有两列，一列为标记，值为ham spam，第二列为邮件文本数据。  判断邮件是否为垃圾邮件——分类问题 输出y可以设为0或1，1代表spam垃圾邮箱，0代表ham非垃圾邮箱 处理的输入数据x是文本数据、序列数据，可以建立一个多对一的RNN模型  2. 训练神经网络 1. 加载包 1234567891011import osimport re">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-03T12:24:22.000Z">
 <meta property="article:modified_time" content="2022-03-25T18:50:28.613Z">
@@ -3458,7 +3458,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  16k
+                  15k
                 </span>
               
 
@@ -3495,20 +3495,27 @@ font-display: swap;
       
 
       
-        <h2 id="1-获取数据集及处理思路"><a href="#1-获取数据集及处理思路" class="headerlink" title="1. 获取数据集及处理思路"></a>1. 获取数据集及处理思路</h2><p><a target="_blank" rel="noopener" href="https://www.kaggle.com/uciml/sms-spam-collection-dataset">SMS垃圾邮箱数据集</a></p>
+        <h2 id="1-获取数据集及处理思路">1. 获取数据集及处理思路</h2>
+<p><a target="_blank" rel="noopener" href="https://www.kaggle.com/uciml/sms-spam-collection-dataset">SMS垃圾邮箱数据集</a></p>
 <p>这个数据有两列，一列为标记，值为<code>ham</code> <code>spam</code>，第二列为邮件文本数据。</p>
 <ul>
 <li>判断邮件是否为垃圾邮件——分类问题</li>
 <li>输出y可以设为0或1，1代表spam垃圾邮箱，0代表ham非垃圾邮箱</li>
 <li>处理的输入数据x是文本数据、序列数据，可以建立一个多对一的RNN模型</li>
 </ul>
-<h2 id="2-训练神经网络"><a href="#2-训练神经网络" class="headerlink" title="2. 训练神经网络"></a>2. 训练神经网络</h2><h3 id="1-加载包"><a href="#1-加载包" class="headerlink" title="1. 加载包"></a>1. 加载包</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> zipfile <span class="keyword">import</span> ZipFile</span><br><span class="line"><span class="keyword">from</span> tensorflow.python.framework <span class="keyword">import</span> ops</span><br><span class="line"></span><br><span class="line">ops.reset_default_graph() </span><br></pre></td></tr></table></figure>
-<p>其中<code>ops.reset_default_graph()</code>是对default graph重新初始化，清空所有张量</p>
-<h4 id="11-为graph建立会话"><a href="#1-1-为graph建立会话" class="headerlink" title="1.1 为graph建立会话"></a>1.1 为graph建立会话</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sess = tf.Session()</span><br></pre></td></tr></table></figure>
-<h4 id="12-设定rnn模型的参数"><a href="#1-2-设定RNN模型的参数" class="headerlink" title="1.2 设定RNN模型的参数"></a>1.2 设定RNN模型的参数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">epochs = <span class="number">30</span> <span class="comment"># 执行30代</span></span><br><span class="line">batch_size = <span class="number">250</span> </span><br><span class="line">max_sequence_length = <span class="number">25</span> <span class="comment"># 考虑的每个文本的最大长度为25个单词，这样会将较长的文本剪切为25个，不足的用零填充</span></span><br><span class="line">rnn_size = <span class="number">10</span></span><br><span class="line">embedding_size = <span class="number">50</span></span><br><span class="line">min_word_frequency = <span class="number">10</span></span><br><span class="line">learning_rate = <span class="number">0.0005</span></span><br><span class="line">dropout_keep_prob = tf.placeholder(tf.float32)</span><br><span class="line"><span class="comment"># RNN 有 10 个单元， 每个单词都将被嵌入到一个长度为 50 的可训练向量中， 只考虑我们的 vocabulary 中出现 10 次以上的单词， 学习率设置为 0.0005 dropout 先由一个占位符定义，我们可以在训练时将其设置为 0.5， 或在评估时设置为 1.0</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-导入数据"><a href="#2-导入数据" class="headerlink" title="2. 导入数据"></a>2. 导入数据</h3><p>下载数据存为text_data.txt</p>
+<h2 id="2-训练神经网络">2. 训练神经网络</h2>
+<h3 id="1-加载包">1. 加载包</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> zipfile <span class="keyword">import</span> ZipFile</span><br><span class="line"><span class="keyword">from</span> tensorflow.python.framework <span class="keyword">import</span> ops</span><br><span class="line"></span><br><span class="line">ops.reset_default_graph() </span><br></pre></td></tr></table></figure>
+<p>其中<code>ops.reset_default_graph() </code>是对default graph重新初始化，清空所有张量</p>
+<h4 id="11-为graph建立会话">1.1 为graph建立会话</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sess = tf.Session()</span><br></pre></td></tr></table></figure>
+<h4 id="12-设定rnn模型的参数">1.2 设定RNN模型的参数</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">epochs = <span class="number">30</span> <span class="comment"># 执行30代</span></span><br><span class="line">batch_size = <span class="number">250</span> </span><br><span class="line">max_sequence_length = <span class="number">25</span> <span class="comment"># 考虑的每个文本的最大长度为25个单词，这样会将较长的文本剪切为25个，不足的用零填充</span></span><br><span class="line">rnn_size = <span class="number">10</span></span><br><span class="line">embedding_size = <span class="number">50</span></span><br><span class="line">min_word_frequency = <span class="number">10</span></span><br><span class="line">learning_rate = <span class="number">0.0005</span></span><br><span class="line">dropout_keep_prob = tf.placeholder(tf.float32)</span><br><span class="line"><span class="comment"># RNN 有 10 个单元， 每个单词都将被嵌入到一个长度为 50 的可训练向量中， 只考虑我们的 vocabulary 中出现 10 次以上的单词， 学习率设置为 0.0005 dropout 先由一个占位符定义，我们可以在训练时将其设置为 0.5， 或在评估时设置为 1.0</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-导入数据">2. 导入数据</h3>
+<p>下载数据存为text_data.txt</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设定路径</span></span><br><span class="line">data_dir = <span class="string">&#x27;temp&#x27;</span></span><br><span class="line">data_file = <span class="string">&#x27;text_data.txt&#x27;</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(data_dir):</span><br><span class="line">    os.makedirs(data_dir)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 直接下载数据集</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(os.path.join(data_dir, data_file)):</span><br><span class="line">    zip_url = <span class="string">&#x27;http://archive.ics.uci.edu/ml/machine-learning-databases/00228/smsspamcollection.zip&#x27;</span></span><br><span class="line">    r = requests.get(zip_url)</span><br><span class="line">    z = ZipFile(io.BytesIO(r.content))</span><br><span class="line">    file = z.read(<span class="string">&#x27;SMSSpamCollection&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 格式化数据</span></span><br><span class="line">    text_data = file.decode()</span><br><span class="line">    text_data = text_data.encode(<span class="string">&#x27;ascii&#x27;</span>, errors=<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line">    text_data = text_data.decode().split(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将数据存储到 text 文件</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(data_dir, data_file), <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file_conn:</span><br><span class="line">        <span class="keyword">for</span> text <span class="keyword">in</span> text_data:</span><br><span class="line">            file_conn.write(<span class="string">&quot;&#123;&#125;\n&quot;</span>.<span class="built_in">format</span>(text))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="comment"># 从 text 文件打开数据</span></span><br><span class="line">    text_data = []</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(data_dir, data_file), <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file_conn:</span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> file_conn:</span><br><span class="line">            text_data.append(row)</span><br><span class="line">    text_data = text_data[:-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<h4 id="21-数据预处理"><a href="#2-1-数据预处理" class="headerlink" title="2.1 数据预处理"></a>2.1 数据预处理</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将数据中的标签和邮件文本分开</span></span><br><span class="line"><span class="comment"># 得到 text_data_target 和 text_data_train</span></span><br><span class="line">text_data = [x.split(<span class="string">&#x27;\t&#x27;</span>) <span class="keyword">for</span> x <span class="keyword">in</span> text_data <span class="keyword">if</span> <span class="built_in">len</span>(x) &gt;= <span class="number">1</span>]</span><br><span class="line">[text_data_target, text_data_train] = [<span class="built_in">list</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">zip</span>(*text_data)]</span><br></pre></td></tr></table></figure>
+<h4 id="21-数据预处理">2.1 数据预处理</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将数据中的标签和邮件文本分开</span></span><br><span class="line"><span class="comment"># 得到 text_data_target 和 text_data_train</span></span><br><span class="line">text_data = [x.split(<span class="string">&#x27;\t&#x27;</span>) <span class="keyword">for</span> x <span class="keyword">in</span> text_data <span class="keyword">if</span> <span class="built_in">len</span>(x) &gt;= <span class="number">1</span>]</span><br><span class="line">[text_data_target, text_data_train] = [<span class="built_in">list</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">zip</span>(*text_data)]</span><br></pre></td></tr></table></figure>
 <ul>
 <li>为了减少vocabulary，先清理文本，移除特殊字符，删除多余空格，将文本换成小写</li>
 </ul>
@@ -3519,18 +3526,22 @@ font-display: swap;
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用 TensorFlow 中一个内置的 VocabularyProcessor 函数来处理文本</span></span><br><span class="line"><span class="comment"># max_document_length: 是文本的最大长度。如果文本的长度大于这个值，就会被剪切，小于这个值的地方用 0 填充。 </span></span><br><span class="line"><span class="comment"># min_frequency: 是词频的最小值。当单词的出现次数小于这个词频，就不会被收录到词表中。</span></span><br><span class="line">vocab_processor = tf.contrib.learn.preprocessing.VocabularyProcessor(max_sequence_length, min_frequency=min_word_frequency)</span><br><span class="line">text_processed = np.array(<span class="built_in">list</span>(vocab_processor.fit_transform(text_data_train)))</span><br></pre></td></tr></table></figure>
 <p>该方法的例子</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 给出以下数据</span></span><br><span class="line">max_document_length = <span class="number">4</span></span><br><span class="line">x_text =[</span><br><span class="line">    <span class="string">&#x27;i love you&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;me too&#x27;</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回结果是</span></span><br><span class="line">[[<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">0</span>]</span><br><span class="line"> [<span class="number">4</span> <span class="number">5</span> <span class="number">0</span> <span class="number">0</span>]]</span><br></pre></td></tr></table></figure>
-<h4 id="22-分为训练集和测试集"><a href="#2-2-分为训练集和测试集" class="headerlink" title="2.2 分为训练集和测试集"></a>2.2 分为训练集和测试集</h4><p>预处理后，将数据进行shuffle，再分为训练集和测试集</p>
+<h4 id="22-分为训练集和测试集">2.2 分为训练集和测试集</h4>
+<p>预处理后，将数据进行shuffle，再分为训练集和测试集</p>
 <ul>
-<li><p>shuffle打乱数据行序，使数据随机化。这样参数就不容易陷入局部最优，模型更容易达到收敛，<code>np.random.permutation()</code>来对行索引进行一次全排列</p>
+<li>
+<p>shuffle打乱数据行序，使数据随机化。这样参数就不容易陷入局部最优，模型更容易达到收敛，<code>np.random.permutation()</code>来对行索引进行一次全排列</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">text_processed = np.array(text_processed)</span><br><span class="line">text_data_target = np.array([<span class="number">1</span> <span class="keyword">if</span> x == <span class="string">&#x27;ham&#x27;</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">for</span> x <span class="keyword">in</span> text_data_target])</span><br><span class="line">shuffled_ix = np.random.permutation(np.arange(<span class="built_in">len</span>(text_data_target)))</span><br><span class="line">x_shuffled = text_processed[shuffled_ix]</span><br><span class="line">y_shuffled = text_data_target[shuffled_ix]</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>shuffle 数据后，将数据集分为 80% 训练集和 20% 测试集 如果想做交叉验证 cross-validation ，可以将 测试集 进一步分为测试集和验证集来调参。</p>
+<li>
+<p>shuffle 数据后，将数据集分为 80% 训练集和 20% 测试集 如果想做交叉验证 cross-validation ，可以将 测试集 进一步分为测试集和验证集来调参。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ix_cutoff = <span class="built_in">int</span>(<span class="built_in">len</span>(y_shuffled)*<span class="number">0.80</span>)</span><br><span class="line">x_train, x_test = x_shuffled[:ix_cutoff], x_shuffled[ix_cutoff:]</span><br><span class="line">y_train, y_test = y_shuffled[:ix_cutoff], y_shuffled[ix_cutoff:]</span><br><span class="line">vocab_size = <span class="built_in">len</span>(vocab_processor.vocabulary_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Vocabulary Size: &#123;:d&#125;&quot;</span>.<span class="built_in">format</span>(vocab_size))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;80-20 Train Test split: &#123;:d&#125; -- &#123;:d&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">len</span>(y_train), <span class="built_in">len</span>(y_test)))</span><br></pre></td></tr></table></figure>
 <p>将会输出</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Vocabulary size: <span class="number">933</span></span><br><span class="line"><span class="number">80</span>-<span class="number">20</span> Train Test split: <span class="number">4459</span> -- <span class="number">1115</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="23-将输入数据做词嵌入embedding"><a href="#2-3-将输入数据做词嵌入Embedding" class="headerlink" title="2.3 将输入数据做词嵌入Embedding"></a>2.3 将输入数据做词嵌入Embedding</h4>
+<h4 id="23-将输入数据做词嵌入embedding">2.3 将输入数据做词嵌入Embedding</h4>
+
       
     </div>
     
@@ -3831,7 +3842,7 @@ font-display: swap;
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">468k</span>
+      <span title="post.totalcount">471k</span>
     
 </div>
 
@@ -4386,6 +4397,28 @@ wpac_init.push({widget: 'Rating', id: 17904});
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src=""></script>
+  
+
 
   
   <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>

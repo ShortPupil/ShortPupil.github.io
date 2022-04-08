@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="数组123456789101112131415161718192021#include &lt;stdio.h&gt;int main()&amp;#123;    int x;    double sum &#x3D; 0;    int cnt &#x3D; 0;    int number[100];    scanf(&quot;%d&quot;, &amp;x);    while(x !&#x3D; -1)&amp;#123;">
+<meta name="description" content="数组 123456789101112131415161718192021#include &lt;stdio.h&gt;int main()&amp;#123;    int x;    double sum &#x3D; 0;    int cnt &#x3D; 0;    int number[100];    scanf(&quot;%d&quot;, &amp;x);    while(x !&#x3D; -1)&amp;#123;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言程序设计笔记">
 <meta property="og:url" content="https://songzi.info/post/840ee81f/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="数组123456789101112131415161718192021#include &lt;stdio.h&gt;int main()&amp;#123;    int x;    double sum &#x3D; 0;    int cnt &#x3D; 0;    int number[100];    scanf(&quot;%d&quot;, &amp;x);    while(x !&#x3D; -1)&amp;#123;">
+<meta property="og:description" content="数组 123456789101112131415161718192021#include &lt;stdio.h&gt;int main()&amp;#123;    int x;    double sum &#x3D; 0;    int cnt &#x3D; 0;    int number[100];    scanf(&quot;%d&quot;, &amp;x);    while(x !&#x3D; -1)&amp;#123;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-20T06:23:24.000Z">
 <meta property="article:modified_time" content="2022-03-25T18:50:28.502Z">
@@ -3458,7 +3458,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  3.2k
+                  3.1k
                 </span>
               
 
@@ -3495,9 +3495,11 @@ font-display: swap;
       
 
       
-        <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">double</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> number[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">    <span class="keyword">while</span>(x != <span class="number">-1</span>)&#123;</span><br><span class="line">        number[cnt] = x;</span><br><span class="line">        sum += x;</span><br><span class="line">        cnt++;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(cnt &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%f\n&quot;</span>, sum/cnt);</span><br><span class="line">        <span class="type">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>( i=<span class="number">0</span> ; i&lt;cnt ;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>越界… </p>
-<h3 id="集成初始化时的定位"><a href="#集成初始化时的定位" class="headerlink" title="集成初始化时的定位"></a>集成初始化时的定位</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[<span class="number">13</span>] = &#123;[<span class="number">1</span>]=<span class="number">2</span>,<span class="number">3</span>,[<span class="number">5</span>]=<span class="number">6</span>&#125;;</span><br></pre></td></tr></table></figure>
+        <h2 id="数组">数组</h2>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">double</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> number[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">    <span class="keyword">while</span>(x != <span class="number">-1</span>)&#123;</span><br><span class="line">        number[cnt] = x;</span><br><span class="line">        sum += x;</span><br><span class="line">        cnt++;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(cnt &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%f\n&quot;</span>, sum/cnt);</span><br><span class="line">        <span class="type">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>( i=<span class="number">0</span> ; i&lt;cnt ;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>越界…</p>
+<h3 id="集成初始化时的定位">集成初始化时的定位</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[<span class="number">13</span>] = &#123;[<span class="number">1</span>]=<span class="number">2</span>,<span class="number">3</span>,[<span class="number">5</span>]=<span class="number">6</span>&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -3863,7 +3865,7 @@ font-display: swap;
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">468k</span>
+      <span title="post.totalcount">471k</span>
     
 </div>
 
@@ -4418,6 +4420,28 @@ wpac_init.push({widget: 'Rating', id: 17904});
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src=""></script>
+  
+
 
   
   <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
