@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://songzi.info/post/5cbef579/</loc>
+    
+    <lastmod>2022-04-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://songzi.info/about/index.html</loc>
     
     <lastmod>2022-04-08</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>https://songzi.info/post/1148d9d6/</loc>
-    
-    <lastmod>2022-04-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://songzi.info/post/5cbef579/</loc>
     
     <lastmod>2022-04-08</lastmod>
     
@@ -902,7 +902,7 @@
   </url>
   
   <url>
-    <loc>https://songzi.info/post/1f25e26b/</loc>
+    <loc>https://songzi.info/post/8ae97bf8/</loc>
     
     <lastmod>2022-03-21</lastmod>
     
@@ -911,7 +911,7 @@
   </url>
   
   <url>
-    <loc>https://songzi.info/post/8ae97bf8/</loc>
+    <loc>https://songzi.info/post/1f25e26b/</loc>
     
     <lastmod>2022-03-21</lastmod>
     
@@ -1099,14 +1099,14 @@
   </url>
   
   <url>
-    <loc>https://songzi.info/tags/mongodb/</loc>
+    <loc>https://songzi.info/tags/mysql/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songzi.info/tags/mysql/</loc>
+    <loc>https://songzi.info/tags/mongodb/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1225,13 +1225,6 @@
   </url>
   
   <url>
-    <loc>https://songzi.info/tags/literature/</loc>
-    <lastmod>2022-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://songzi.info/tags/law/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -1239,21 +1232,14 @@
   </url>
   
   <url>
+    <loc>https://songzi.info/tags/literature/</loc>
+    <lastmod>2022-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://songzi.info/tags/history/</loc>
-    <lastmod>2022-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://songzi.info/tags/go/</loc>
-    <lastmod>2022-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://songzi.info/tags/Game-Theory/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1268,6 +1254,20 @@
   
   <url>
     <loc>https://songzi.info/tags/sociology/</loc>
+    <lastmod>2022-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://songzi.info/tags/Game-Theory/</loc>
+    <lastmod>2022-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://songzi.info/tags/go/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1330,14 +1330,14 @@
   </url>
   
   <url>
-    <loc>https://songzi.info/tags/database/</loc>
+    <loc>https://songzi.info/tags/Data-Mining/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songzi.info/tags/Data-Mining/</loc>
+    <loc>https://songzi.info/tags/database/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1507,14 +1507,14 @@
   </url>
   
   <url>
-    <loc>https://songzi.info/categories/%E6%96%87%E5%AD%A6/</loc>
+    <loc>https://songzi.info/categories/%E6%B3%95%E5%BE%8B/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songzi.info/categories/%E6%B3%95%E5%BE%8B/</loc>
+    <loc>https://songzi.info/categories/%E6%96%87%E5%AD%A6/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1528,7 +1528,7 @@
   </url>
   
   <url>
-    <loc>https://songzi.info/categories/go/</loc>
+    <loc>https://songzi.info/categories/%E7%A4%BE%E4%BC%9A%E5%AD%A6/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1542,7 +1542,7 @@
   </url>
   
   <url>
-    <loc>https://songzi.info/categories/%E7%A4%BE%E4%BC%9A%E5%AD%A6/</loc>
+    <loc>https://songzi.info/categories/go/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
