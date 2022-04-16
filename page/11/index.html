@@ -3457,7 +3457,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  3.1k
+                  3.9k
                 </span>
               
 
@@ -3473,7 +3473,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  3 mins.
+                  4 mins.
                 </span>
               
             </div>
@@ -3496,18 +3496,14 @@ font-display: swap;
       
         
           
-          目录
-前言
-这是阅读《高性能mysql》第五章的记录。
-1. 独立的列
-非独立的列是索引列是表达式的一部分或是函数的参数，这会导致索引使用不当，或无法使用已有的索引
+          目录前言这是阅读《高性能mysql》第五章的记录。
+1. 独立的列非独立的列是索引列是表达式的一部分或是函数的参数，这会导致索引使用不当，或无法使用已有的索引
 错误示例
 1select actor_id from sakila.actor where actor_id + 1 = 5;
 1select ... where to_days(current_date) - to_days(date_col) &lt;= 10;
 注意
 养成简化where条件的习惯，始终将索引列单独放在比较符号的一侧
-2. 前缀索引和索引选择性
-**索引选择性：**不重复
+2. 前缀索引和索引选择性索引选择性：不重复的索引值（也称为
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -3654,7 +3650,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  6.8k
+                  7.4k
                 </span>
               
 
@@ -3670,7 +3666,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  6 mins.
+                  7 mins.
                 </span>
               
             </div>
@@ -3693,17 +3689,13 @@ font-display: swap;
       
         
           
-          常识性案例
-一、 孙志刚案件
-孙志刚事件 - 维基百科，自由的百科全书 (wikipedia.org)
+          常识性案例一、 孙志刚案件孙志刚事件 - 维基百科，自由的百科全书 (wikipedia.org)
 孙志刚事件_百度百科 (baidu.com)
 一个公民的最后60个小时——孙志刚案大事记-中国法院网 (chinacourt.org)
 
 原籍湖北黄冈的孙志刚被广州市人民政府执法机关以三无人员的理由收押，拘禁期间被收容所员工殴打身亡的事件。此事件虽经官方声称为收容所员工犯罪的个案，却引发了中国国内对收容遣送制度的大讨论。中华人民共和国政府之后颁发新法规，废除了广泛被认为是有弊端漏洞、并有违宪指责的收容遣送制度。
 ——wiki百科
-
-
-孙志刚事件和三博士
+孙志刚事件和三博士上书全国
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -3850,7 +3842,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  1.8k
+                  2k
                 </span>
               
 
@@ -3889,17 +3881,15 @@ font-display: swap;
       
         
           
-          前言
-辣鸡的我写索引优化作业遇到一个很奇怪的问题。
+          前言辣鸡的我写索引优化作业遇到一个很奇怪的问题。
 大概就是，在500w行数据的order表中，找出年龄小于20order列表，看能否使用索引进行查询优化。
 创建索引、查询时间、查询计划一套做下来，发现优化器没有用创建的索引。于是开始寻找问题。
-过程
-首先很自然地用下面的语句进行测试
+过程首先很自然地用下面的语句进行测试
 1select * from orders where age &lt; 20; 
 发现在没加索引的时候，查询时间，explain计划如下
 加了个单列普通索引
 1alter table orders add index ageindex(age);
-再执行语句发现，查询时间
+再执行语句发现，查询时间和e
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -4046,7 +4036,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  4.5k
+                  4.8k
                 </span>
               
 
@@ -4086,14 +4076,11 @@ font-display: swap;
         
           
           一些网上找到的经验之谈。
-建立索引的几大原则
-最左前缀匹配
-最重要的大原则
+建立索引的几大原则最左前缀匹配最重要的大原则
 具体可见mysql索引使用策略和优化
 mysql会一直向右匹配直到遇到范围查询(&gt;、&lt;、between、like)就停止匹配，比如a = 1 and b = 2 and c &gt; 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。
 tips
-
-尽量选择区分度高的列作为索引，区分度的公式是count(distinct col)/count(*)，表示字段不重复的
+尽量选择区分度高的列作为索引，区分度的公式是count(distinct col)/count(*)，表示字段不重复的比例，
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -4240,7 +4227,7 @@ tips
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  4.8k
+                  5.2k
                 </span>
               
 
@@ -4256,7 +4243,7 @@ tips
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  4 mins.
+                  5 mins.
                 </span>
               
             </div>
@@ -4279,10 +4266,9 @@ tips
       
         
           
-          1. 普通索引
-基本索引
+          1. 普通索引基本索引
 创建方法
-12345678#标准语句： ALTER TABLE table_name ADD INDEX index_name (column_list) CREATE INDEX index_name ON table_name (column_list); #还有建表的时候创建亦CREATE TABLE table_name ( ID INT NOT NULL, column_listVARCHAR(16) NOT NULL,                          INDEX [index_name](colum
+12345678#标准语句： ALTER TABLE table_name ADD INDEX index_name (column_list) CREATE INDEX index_name ON table_name (column_list); #还有建表的时候创建亦CREATE TABLE table_name ( ID INT NOT NULL, column_listVARCHAR(16) NOT NULL,                          INDEX [index_name](column
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -4429,7 +4415,7 @@ tips
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  1.4k
+                  1.5k
                 </span>
               
 
@@ -4469,21 +4455,17 @@ tips
         
           
           条件判断
-
 按着书上的输入都出了问题 if [] then  这些中间都要加空格
 
 123if [ 判断式 ]; thenelse fi 
 
-
 ||和&amp;&amp;要用两个独立的[],如下
 
-
-如果a&gt;b且a&lt;c
+如果a&gt;b且a&lt;c 
 123if [[ $a &gt; $b ]] &amp;&amp; [[ $a &lt; $c ]] if [ $a -gt $b -a $a -lt $c ]     
 
-
 如果a&gt;b或a&lt;c
-123if [[ $a &gt; $b ]] || [[ $a &lt; $c ]] if [ $a -gt $b -o
+123if [[ $a &gt; $b ]] || [[ $a &lt; $c ]] if [ $a -gt $b -o $a
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -4630,7 +4612,7 @@ tips
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  2.2k
+                  2.4k
                 </span>
               
 
@@ -4670,23 +4652,21 @@ tips
         
           
           讨论三个作家：海明威、福克纳、菲茨杰拉德
-一
-三个层次的讲解
-
+一三个层次的讲解
 社会历史批评
 文本批评——叙事技巧分析
 文本批评——感官描写分析
 
-The Great Gatsby 了不起的盖茨比
-To Have and Have Not
-To Whom the Bell Rolls
+The Great Gatsby 了不起的盖茨比    
+To Have and Have Not    
+To Whom the Bell Rolls    
 The Men and The Sea
 A  Farewell to Arms
 The Sound and the Fury
 narrative experiment 叙事手法上的创新
 联想链接叙事
 通感
-一战、海明威、反讽 irony 的语气在表现战争中很重要——使用不带感情色彩的词语：
+一战、海明威、反讽 irony 的语气在表现战争中很重要——使用
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -5020,7 +5000,7 @@ narrative experiment 叙事手法上的创新
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  8.6k
+                  9.4k
                 </span>
               
 
@@ -5036,7 +5016,7 @@ narrative experiment 叙事手法上的创新
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  8 mins.
+                  9 mins.
                 </span>
               
             </div>
@@ -5059,12 +5039,10 @@ narrative experiment 叙事手法上的创新
       
         
           
-          1.简介
-EXPLAIN 命令可以对 SELECT 语句进行分析, 并输出 SELECT 执行的详细信息, 以供开发人员针对性优化。
-EXPLAIN 命令用法十分简单, 在 SELECT 语句前加上 Explain 就可以了, 例如:​
+          1.简介EXPLAIN 命令可以对 SELECT 语句进行分析, 并输出 SELECT 执行的详细信息, 以供开发人员针对性优化。
+EXPLAIN 命令用法十分简单, 在 SELECT 语句前加上 Explain 就可以了, 例如:​                      
 1EXPLAIN SELECT * from _info WHERE  id &lt; 300;
-2.EXPLAIN输出格式
-123456789101112131415mysql&gt; explain select * from user_info where id = 2\G*********************
+2.EXPLAIN输出格式123456789101112131415mysql&gt; explain select * from user_info where id = 2\G*
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -5211,7 +5189,7 @@ EXPLAIN 命令用法十分简单, 在 SELECT 语句前加上 Explain 就可以�
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  2.4k
+                  3.3k
                 </span>
               
 
@@ -5227,7 +5205,7 @@ EXPLAIN 命令用法十分简单, 在 SELECT 语句前加上 Explain 就可以�
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  2 mins.
+                  3 mins.
                 </span>
               
             </div>
@@ -5250,19 +5228,13 @@ EXPLAIN 命令用法十分简单, 在 SELECT 语句前加上 Explain 就可以�
       
         
           
-          目录
-Ch1 认识Linux系统
-内核的版本，怎么命名的，什么是发行版，有哪些常见的发行版
-Linux的版本号分为两部分,即内核版本与发行版本。
-内核版本号
-由3个数字组成:r.x.y。
-r:目前发布的内核主版本。
-x:偶数表示稳定版本;奇数表示开发版本。
-y:错误修补的次数。
-发行版本
-一些组织和厂家,将Linux系统的内核、应用软件和文档包装起来,并提供一些系统安装界面、系统配置设定管理工具,就构成了 Linux发行版本 。
-相对于Linux操作系统内核版本，各发布厂商发行版本的版本号各不相同，与Linux系统内核的版本号是相对独立的。
-主流发行版：
+          目录Ch1 认识Linux系统内核的版本，怎么命名的，什么是发行版，有哪些常见的发行版Linux的版本号分为两部分,即内核版本与发行版本。
+内核版本号由3个数字组成:r.x.y。 
+r:目前发布的内核主版本。 
+x:偶数表示稳定版本;奇数表示开发版本。 
+y:错误修补的次数。 
+发行版本一些组织和厂家,将Linux系统的内核、应用软件和文档包装起来,并提供一些系统安装界面、系统配置设定管理工具,就构成了 Linux发行版本 。相对于Linux操作系统内核版本，各发布厂商发行版本的版本号各不相同，与Linux系统内核的版本号是相对独立的。
+主流发行版：Ma
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -5382,7 +5354,7 @@ y:错误修补的次数。
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -5503,7 +5475,7 @@ y:错误修补的次数。
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">476k</span>
+      <span title="post.totalcount">475k</span>
     
 </div>
 

@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="概述 了解Netty  目前最流行的一款高性能 java 网络编程框架，被广泛使用在中间件、直播、社交、游戏等领域 将Netty作为底层框架的框架：Dubbo、RocketMQ、Elasticsearch、Hbase等   netty高性能表现在哪些方便？有何启发？ 有哪些重要组件？及其联系？ 内存池、对象池如何设计的？ 有哪些印象比较深刻的系统调优案例？ …   Netty的设计原理  对理解I">
+<meta name="description" content="概述了解Netty 目前最流行的一款高性能 java 网络编程框架，被广泛使用在中间件、直播、社交、游戏等领域 将Netty作为底层框架的框架：Dubbo、RocketMQ、Elasticsearch、Hbase等  netty高性能表现在哪些方便？有何启发？ 有哪些重要组件？及其联系？ 内存池、对象池如何设计的？ 有哪些印象比较深刻的系统调优案例？ ……   Netty的设计原理 对理解I&#x2F;O模">
 <meta property="og:type" content="article">
 <meta property="og:title" content="netty学习">
 <meta property="og:url" content="https://songzi.info/post/494a0207/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="概述 了解Netty  目前最流行的一款高性能 java 网络编程框架，被广泛使用在中间件、直播、社交、游戏等领域 将Netty作为底层框架的框架：Dubbo、RocketMQ、Elasticsearch、Hbase等   netty高性能表现在哪些方便？有何启发？ 有哪些重要组件？及其联系？ 内存池、对象池如何设计的？ 有哪些印象比较深刻的系统调优案例？ …   Netty的设计原理  对理解I">
+<meta property="og:description" content="概述了解Netty 目前最流行的一款高性能 java 网络编程框架，被广泛使用在中间件、直播、社交、游戏等领域 将Netty作为底层框架的框架：Dubbo、RocketMQ、Elasticsearch、Hbase等  netty高性能表现在哪些方便？有何启发？ 有哪些重要组件？及其联系？ 内存池、对象池如何设计的？ 有哪些印象比较深刻的系统调优案例？ ……   Netty的设计原理 对理解I&#x2F;O模">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/netty_learning/1.PNG">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/netty_learning/2.PNG">
@@ -3465,7 +3465,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  1.9k
+                  2.1k
                 </span>
               
 
@@ -3502,22 +3502,18 @@ font-display: swap;
       
 
       
-        <h1 id="概述">概述</h1>
-<h2 id="了解netty">了解Netty</h2>
-<ul>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="了解netty"><a href="#了解Netty" class="headerlink" title="了解Netty"></a>了解Netty</h2><ul>
 <li>目前最流行的一款<strong>高性能 java 网络编程框架</strong>，被广泛使用在中间件、直播、社交、游戏等领域</li>
 <li>将Netty作为底层框架的框架：Dubbo、RocketMQ、Elasticsearch、Hbase等</li>
-<li>
-<ol>
+<li><ol>
 <li>netty高性能表现在哪些方便？有何启发？</li>
 <li>有哪些重要组件？及其联系？</li>
 <li>内存池、对象池如何设计的？</li>
 <li>有哪些印象比较深刻的系统调优案例？</li>
-<li>…</li>
+<li>……</li>
 </ol>
 </li>
-<li>Netty的设计原理
-<ul>
+<li>Netty的设计原理<ul>
 <li>对理解I/O模型、内存管理、线程模型、数据结构有帮助</li>
 <li>对学习RocketMQ、Nginx、Redis等优秀框架有帮助</li>
 <li>Netty的易用性和可靠性极大降低了心智负担</li>
@@ -3527,65 +3523,52 @@ font-display: swap;
 <li>对于<strong>拆包/黏包、数据编解码、TCP断线重连</strong>等问题，Netty提供了现成的解决方案，其可靠性和健壮性很强</li>
 </ul>
 <p>学习源码之前，首先要让自己成为一个<strong>熟练工</strong>，掌握基本理论</p>
-<h2 id="一些问题">一些问题</h2>
-<ul>
-<li>
-<p>为什么使用Netty</p>
+<h2 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h2><ul>
+<li><p>为什么使用Netty</p>
 <ul>
 <li>I/O模型、线程模型、事件处理机制</li>
 <li>易用性API接口</li>
 <li>对数据协议、序列化的支持</li>
 </ul>
 </li>
-<li>
-<p>高性能、低延迟</p>
+<li><p>高性能、低延迟</p>
 </li>
 </ul>
 <p>I/O模型基础知识：</p>
 <ul>
-<li>
-<p>I/O请求</p>
+<li><p>I/O请求</p>
 <ul>
 <li>I/O调用阶段：用户进程向内核发起系统调用</li>
 <li>I/O执行阶段：内核等待I/O请求处理完成返回</li>
 </ul>
 </li>
-<li>
-<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/netty_learning/1.PNG" alt></p>
+<li><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/netty_learning/1.PNG" alt></p>
 </li>
-<li>
-<p>Linux的五种IO模式</p>
+<li><p>Linux的五种IO模式</p>
 <ol>
-<li>
-<p>同步阻塞I/O (BIO)</p>
+<li><p>同步阻塞I/O (BIO)</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/netty_learning/2.PNG" alt></p>
 </li>
-<li>
-<p>同步非阻塞I/O (NIO)</p>
+<li><p>同步非阻塞I/O (NIO)</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/netty_learning/3.PNG" alt></p>
 </li>
-<li>
-<p>I/O多路复用</p>
+<li><p>I/O多路复用</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/netty_learning/4.PNG" alt></p>
 </li>
-<li>
-<p>信号驱动I/O</p>
+<li><p>信号驱动I/O</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/netty_learning/5.PNG" alt>3</p>
 </li>
-<li>
-<p>异步I/O</p>
+<li><p>异步I/O</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/netty_learning/6.PNG" alt></p>
 </li>
 </ol>
 </li>
-<li>
-<p>Netty如何实现自己的I/O模型</p>
+<li><p>Netty如何实现自己的I/O模型</p>
 <ul>
 <li>基于非阻塞IO实现</li>
 <li>底层依赖于JDK NIO框架的多路复用器Selector</li>
 <li>一个多路复用器Slector可以同时轮询多个Channel</li>
-<li>事件分发器 Event Dispather
-<ul>
+<li>事件分发器 Event Dispather<ul>
 <li>负责将读写事件分发给对应的读写事件处理器 Event Handler</li>
 </ul>
 </li>
@@ -3820,7 +3803,7 @@ font-display: swap;
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -3957,7 +3940,7 @@ font-display: swap;
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">476k</span>
+      <span title="post.totalcount">475k</span>
     
 </div>
 

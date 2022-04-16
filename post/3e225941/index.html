@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="一、 概念   并发： 多个线程操作相同的资源，保证线程安全，合理使用资源 同时拥有两个或者多个线程，如果程序在单核处理器上运行，多个线程将交替地换入或者换出内存，这些线程是同时“存在”的，每个线程都处于执行过程中的某个状态，如果运行在多核处理器上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行   高并发：  服务能同时处理很多请求，提高程序性能 高并发(High Concur">
+<meta name="description" content="一、 概念 并发： 多个线程操作相同的资源，保证线程安全，合理使用资源 同时拥有两个或者多个线程，如果程序在单核处理器上运行，多个线程将交替地换入或者换出内存，这些线程是同时“存在”的，每个线程都处于执行过程中的某个状态，如果运行在多核处理器上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行  高并发：  服务能同时处理很多请求，提高程序性能 高并发(High Concurren">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java并发编程">
 <meta property="og:url" content="https://songzi.info/post/3e225941/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="一、 概念   并发： 多个线程操作相同的资源，保证线程安全，合理使用资源 同时拥有两个或者多个线程，如果程序在单核处理器上运行，多个线程将交替地换入或者换出内存，这些线程是同时“存在”的，每个线程都处于执行过程中的某个状态，如果运行在多核处理器上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行   高并发：  服务能同时处理很多请求，提高程序性能 高并发(High Concur">
+<meta property="og:description" content="一、 概念 并发： 多个线程操作相同的资源，保证线程安全，合理使用资源 同时拥有两个或者多个线程，如果程序在单核处理器上运行，多个线程将交替地换入或者换出内存，这些线程是同时“存在”的，每个线程都处于执行过程中的某个状态，如果运行在多核处理器上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行  高并发：  服务能同时处理很多请求，提高程序性能 高并发(High Concurren">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/ringbuffer.PNG">
 <meta property="article:published_time" content="2020-03-01T05:19:06.000Z">
@@ -3460,7 +3460,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  4.2k
+                  4.9k
                 </span>
               
 
@@ -3497,18 +3497,14 @@ font-display: swap;
       
 
       
-        <h1 id="一-概念">一、 概念</h1>
-<ul>
-<li>
-<p>并发： 多个线程操作相同的资源，保证线程安全，合理使用资源</p>
+        <h1 id="一-概念"><a href="#一、-概念" class="headerlink" title="一、 概念"></a>一、 概念</h1><ul>
+<li><p>并发： 多个线程操作相同的资源，保证线程安全，合理使用资源</p>
 <p>同时拥有两个或者多个线程，如果程序在<em>单核处理器</em>上运行，多个线程将交替地换入或者换出内存，<strong>这些线程是同时“存在”的</strong>，<strong>每个线程都处于执行过程中的某个状态</strong>，如果运行在<em>多核处理器</em>上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行</p>
 </li>
-<li>
-<p>高并发：  服务能同时处理很多请求，提高程序性能</p>
+<li><p>高并发：  服务能同时处理很多请求，提高程序性能</p>
 <p>高并发(High Concurrency)是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理很多请求。</p>
 </li>
-<li>
-<p>高并发处理的思路和方法</p>
+<li><p>高并发处理的思路和方法</p>
 <ul>
 <li>扩容：水平扩容、垂直扩容</li>
 <li>缓存：redis、memcache、guava、cache等</li>
@@ -3520,32 +3516,21 @@ font-display: swap;
 <li>高可用的一些手段：任务调度分布式elastic-job、主备curator的实现、监控报警机制等</li>
 </ul>
 </li>
-<li>
-<p>◆总体架构：Spring Boot、.Maven、JDK8、MySQL<br>
-◆基础组件：Mybatis、Guava、Lombok、Redis、.Kafka<br>
-◆高级组件（类）：Joda-Time、Atomic包、J.U.C、AQS、ThreadLocal、RateLimiter、Hystrix、threadPool、shardbatis、curator、elastic-job.…</p>
+<li><p>◆总体架构：Spring Boot、.Maven、JDK8、MySQL<br>◆基础组件：Mybatis、Guava、Lombok、Redis、.Kafka<br>◆高级组件（类）：Joda-Time、Atomic包、J.U.C、AQS、ThreadLocal、RateLimiter、Hystrix、threadPool、shardbatis、curator、elastic-job.…</p>
 </li>
 </ul>
-<h1 id="二-并发编程的基础">二、并发编程的基础</h1>
-<h2 id="1-cpu多级缓存">1. CPU多级缓存</h2>
-<h3 id="11-cpu-cache">1.1 CPU cache</h3>
-<ul>
-<li>
-<p>问：为什么需要CPU cache:</p>
+<h1 id="二-并发编程的基础"><a href="#二、并发编程的基础" class="headerlink" title="二、并发编程的基础"></a>二、并发编程的基础</h1><h2 id="1-cpu多级缓存"><a href="#1-CPU多级缓存" class="headerlink" title="1. CPU多级缓存"></a>1. CPU多级缓存</h2><h3 id="11-cpu-cache"><a href="#1-1-CPU-cache" class="headerlink" title="1.1 CPU cache"></a>1.1 CPU cache</h3><ul>
+<li><p>问：为什么需要CPU cache:</p>
 <p>CPU的频率太快了，快到主存跟不上，这样在处理器时钟周期内，CPU常常需要等待主存，浪费资源。所以cache的出现，是为了缓解CPU和内存之间速度的不匹配问题(结构：<strong>cpu-&gt;cache-&gt;memory</strong>).</p>
 </li>
-<li>
-<p>问：CPU cache有什么意义：</p>
-<p>1)时间局部性：如果某个数据被访问，那么在不久的将来它很可能被再次访问<br>
-2)空间局部性：如果某个数据被访问，那么与它相邻的数据很快也可能被访问；</p>
+<li><p>问：CPU cache有什么意义：</p>
+<p>1)时间局部性：如果某个数据被访问，那么在不久的将来它很可能被再次访问<br>2)空间局部性：如果某个数据被访问，那么与它相邻的数据很快也可能被访问；</p>
 </li>
 </ul>
-<h3 id="12-缓存一致性mesi">1.2 缓存一致性(MESI)</h3>
-<p>可见 <a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/46661">缓存一致性协议-阿里云开发者社区 (aliyun.com)</a></p>
+<h3 id="12-缓存一致性mesi"><a href="#1-2-缓存一致性-MESI" class="headerlink" title="1.2 缓存一致性(MESI)"></a>1.2 缓存一致性(MESI)</h3><p>可见 <a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/46661">缓存一致性协议-阿里云开发者社区 (aliyun.com)</a></p>
 <ul>
 <li>用于保证多个CPU cache之间缓存共享数据的一致</li>
-<li>四种 数据状态（MESI)、四种 转换状态操作
-<ul>
+<li>四种 数据状态（MESI)、四种 转换状态操作<ul>
 <li>M: Modify，修改缓存，当前CPU的缓存已经被修改了，即与内存中数据已经不一致了</li>
 <li>E: Exclusive，独占缓存，当前CPU的缓存和内存中数据保持一致，而且其他处理器并没有可使用的缓存数据</li>
 <li>S: Share，共享缓存，和内存保持一致的一份拷贝，多组缓存可以同时拥有针对同一内存地址的共享缓存段</li>
@@ -3553,14 +3538,11 @@ font-display: swap;
 </ul>
 </li>
 </ul>
-<h3 id="13-乱序执行优化">1.3 乱序执行优化</h3>
-<p>处理器为提高运算速度而做出<strong>违背代码原有顺序的优化</strong>。</p>
+<h3 id="13-乱序执行优化"><a href="#1-3-乱序执行优化" class="headerlink" title="1.3 乱序执行优化"></a>1.3 乱序执行优化</h3><p>处理器为提高运算速度而做出<strong>违背代码原有顺序的优化</strong>。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 源代码</span></span><br><span class="line">a = <span class="number">10</span>;</span><br><span class="line">b = <span class="number">200</span>;</span><br><span class="line">result = a*b;</span><br><span class="line"><span class="comment">// 优化可能</span></span><br><span class="line">a = <span class="number">10</span>; b = <span class="number">200</span>; result = a*b;</span><br><span class="line">b = <span class="number">200</span>; a = <span class="number">10</span>; result = a*b;</span><br></pre></td></tr></table></figure>
-<h2 id="2-java内存模型-java-memory-mode-jmm">2. JAVA内存模型 (Java Memory Mode, JMM)</h2>
-<p>可参考<a href="https://songzi.info/post/f0242a65/">JVM学习 | 毫末室 (songzi.info)</a></p>
+<h2 id="2-java内存模型-java-memory-mode-jmm"><a href="#2-JAVA内存模型-Java-Memory-Mode-JMM" class="headerlink" title="2. JAVA内存模型 (Java Memory Mode, JMM)"></a>2. JAVA内存模型 (Java Memory Mode, JMM)</h2><p>可参考<a href="https://songzi.info/post/f0242a65/">JVM学习 | 毫末室 (songzi.info)</a></p>
 <p><strong>需要重新学习</strong></p>
-<h2 id="3-并发的优势和风险">3. 并发的优势和风险</h2>
-<p>优势：</p>
+<h2 id="3-并发的优势和风险"><a href="#3-并发的优势和风险" class="headerlink" title="3. 并发的优势和风险"></a>3. 并发的优势和风险</h2><p>优势：</p>
 <ol>
 <li>速度：同时处理多个请求，响应更快：复杂的操作可以分成多个进程同时进行</li>
 <li>设计：程序设计在某些情况下复简单，也可以有更多的选择</li>
@@ -3572,8 +3554,7 @@ font-display: swap;
 <li>活跃性：某个操作无法继续进行下去时，就会发生活跃性问题。比如<strong>死锁、饥饿</strong>等问题</li>
 <li>性能：线程过多时会使得：<strong>CPU频繁切换，调度时间增多；同步机制：消耗过多内存</strong></li>
 </ol>
-<h2 id="disruptor核心原理与源码">Disruptor核心原理与源码</h2>
-<p>LMAX架构：很低的延迟产生大量交易；建立在JVM上，核心是业务逻辑处理器</p>
+<h2 id="disruptor核心原理与源码"><a href="#Disruptor核心原理与源码" class="headerlink" title="Disruptor核心原理与源码"></a>Disruptor核心原理与源码</h2><p>LMAX架构：很低的延迟产生大量交易；建立在JVM上，核心是业务逻辑处理器</p>
 <ul>
 <li>一个线程里每秒处理六百万订单</li>
 <li>业务逻辑处理器完全是运行在内存中，使用<strong>事件源驱动</strong>方式</li>
@@ -3586,8 +3567,7 @@ font-display: swap;
 <li>实例化Disruptor实例，配置一系列参数，编写Disruptor核心组件</li>
 <li>编写生产者组件，向Disruptor容器中投递数据（最复杂）</li>
 </ul>
-<h3 id="ringbuffer">RingBuffer</h3>
-<p>生产者生产产品放到容器里面，消费者监听然后获取event数据</p>
+<h3 id="ringbuffer"><a href="#RingBuffer" class="headerlink" title="RingBuffer"></a>RingBuffer</h3><p>生产者生产产品放到容器里面，消费者监听然后获取event数据</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/ringbuffer.PNG" alt="ringbuffer"></p>
 <ul>
 <li>环形结构（首尾相连）</li>
@@ -3826,7 +3806,7 @@ font-display: swap;
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -3963,7 +3943,7 @@ font-display: swap;
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">476k</span>
+      <span title="post.totalcount">475k</span>
     
 </div>
 

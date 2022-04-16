@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="目录 1. 前言 与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。 但是实践环境千变万化，现实需求日益复杂、庞大驱使软件开发更复杂，只掌握少数几个解决方案恐怕是杯水车薪。所以想开辟新的板块，通过实例学习**《设计模式：可复用面向对象软件的基础》**里面的大量“">
+<meta name="description" content="目录1. 前言与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。 但是实践环境千变万化，现实需求日益复杂、庞大驱使软件开发更复杂，只掌握少数几个解决方案恐怕是杯水车薪。所以想开辟新的板块，通过实例学习《设计模式：可复用面向对象软件的基础》里面的大量“招式”，并且">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式(0) 介绍">
 <meta property="og:url" content="https://songzi.info/post/9ae13a6d/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录 1. 前言 与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。 但是实践环境千变万化，现实需求日益复杂、庞大驱使软件开发更复杂，只掌握少数几个解决方案恐怕是杯水车薪。所以想开辟新的板块，通过实例学习**《设计模式：可复用面向对象软件的基础》**里面的大量“">
+<meta property="og:description" content="目录1. 前言与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。 但是实践环境千变万化，现实需求日益复杂、庞大驱使软件开发更复杂，只掌握少数几个解决方案恐怕是杯水车薪。所以想开辟新的板块，通过实例学习《设计模式：可复用面向对象软件的基础》里面的大量“招式”，并且">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/cihuibiao1.PNG">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/cihuibiao2.PNG">
@@ -3465,7 +3465,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  3.8k
+                  4.6k
                 </span>
               
 
@@ -3481,7 +3481,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  3 mins.
+                  4 mins.
                 </span>
               
             </div>
@@ -3502,97 +3502,65 @@ font-display: swap;
       
 
       
-        <h1 id="目录">目录</h1>
-<h2 id="1-前言">1. 前言</h2>
-<p>与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。</p>
-<p>但是实践环境千变万化，现实需求日益复杂、庞大驱使软件开发更复杂，只掌握少数几个解决方案恐怕是杯水车薪。所以想开辟新的板块，通过实例学习**《设计模式：可复用面向对象软件的基础》**里面的大量“招式”，并且通过这些“秘技”深入理解面向对象的“心法”原则。</p>
-<h2 id="2-描述">2. 描述</h2>
-<blockquote>
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>与所有工程学一致，好的解决方案总是会被软件工程师在实践中反复使用，并且往往用过一个好方案、尝到了甜头，以后就喜欢重复使用这个模式，因此设计方案和经验对于软件工程师来说都是招牌技能般的存在。</p>
+<p>但是实践环境千变万化，现实需求日益复杂、庞大驱使软件开发更复杂，只掌握少数几个解决方案恐怕是杯水车薪。所以想开辟新的板块，通过实例学习<strong>《设计模式：可复用面向对象软件的基础》</strong>里面的大量“招式”，并且通过这些“秘技”深入理解面向对象的“心法”原则。</p>
+<h2 id="2-描述"><a href="#2-描述" class="headerlink" title="2. 描述"></a>2. 描述</h2><blockquote>
 <p>以一种松散的方式把一些模式串接在一起来建造建筑是可能的。这样的建筑仅仅是一些模式的堆砌，而不紧凑。这不够深刻。然而另有一种组合模式的方式，许多模式重叠在同一个物理空间里：这样的建筑非常紧凑，在一小块空间里集成了许多内涵；由于这种紧凑，它变得深刻。</p>
 <p>——A Pattern Language</p>
 </blockquote>
 <p>我记得老师说过一句话，大概意思是，程序编写不再是手工艺式的、建立在个别人“手艺”的了，而是能以工程的方式批量生产。所以，纳入工程范畴的概念，应当都得到<strong>科学的、明确的</strong>描述，应当有可进行批量复制的基础范式。</p>
 <p>我曾有过的经验是，有时一个问题解决了，但是不知道是在哪里、如何将它解决的，在程序设计中这种“神秘”的想法不应当成为习惯。而最好的方式就是事后用准确的语言来描述<strong>解决方案的痛点和具体解决过程</strong>。</p>
 <p>设计模式也经历了从手工艺式的经验到标准范式的信息描述结构，以下为<strong>设计模式的信息描述结构</strong></p>
-<h3 id="21-信息描述结构">2.1 信息描述结构</h3>
-<ul>
-<li>
-<p><strong>模式名和分类</strong></p>
+<h3 id="21-信息描述结构"><a href="#2-1-信息描述结构" class="headerlink" title="2.1 信息描述结构"></a>2.1 信息描述结构</h3><ul>
+<li><p><strong>模式名和分类</strong></p>
 </li>
-<li>
-<p><strong>意图</strong>  设计模式是做什么的？它的基本原理和意图是什么？它解决的特定设计问题？</p>
+<li><p><strong>意图</strong>  设计模式是做什么的？它的基本原理和意图是什么？它解决的特定设计问题？</p>
 </li>
-<li>
-<p><strong>别名</strong></p>
+<li><p><strong>别名</strong></p>
 </li>
-<li>
-<p><strong>动机</strong>  说明一个设计问题以及如何用模式中的类、对象来解决该问题的特定情景</p>
+<li><p><strong>动机</strong>  说明一个设计问题以及如何用模式中的类、对象来解决该问题的特定情景</p>
 </li>
-<li>
-<p><strong>适用性</strong>  什么情况下用？用来改进哪些不良设计？如何识别这些情况？</p>
+<li><p><strong>适用性</strong>  什么情况下用？用来改进哪些不良设计？如何识别这些情况？</p>
 </li>
-<li>
-<p><strong>结构</strong></p>
+<li><p><strong>结构</strong></p>
 </li>
-<li>
-<p><strong>参与者</strong></p>
+<li><p><strong>参与者</strong></p>
 </li>
-<li>
-<p><strong>协作</strong></p>
+<li><p><strong>协作</strong></p>
 </li>
-<li>
-<p><strong>效果</strong></p>
+<li><p><strong>效果</strong></p>
 </li>
-<li>
-<p><strong>实现</strong>  实现需要知道的一些提示、技术要点、应避免的缺陷，是否存在某些特定于实现语言的问题</p>
+<li><p><strong>实现</strong>  实现需要知道的一些提示、技术要点、应避免的缺陷，是否存在某些特定于实现语言的问题</p>
 </li>
-<li>
-<p><strong>代码示例</strong></p>
+<li><p><strong>代码示例</strong></p>
 </li>
-<li>
-<p><strong>已知应用</strong></p>
+<li><p><strong>已知应用</strong></p>
 </li>
-<li>
-<p><strong>相关模式</strong></p>
+<li><p><strong>相关模式</strong></p>
 </li>
 </ul>
-<h3 id="22-词汇表">2.2 词汇表</h3>
-<p>真的多 TAT</p>
+<h3 id="22-词汇表"><a href="#2-2-词汇表" class="headerlink" title="2.2 词汇表"></a>2.2 词汇表</h3><p>真的多 TAT</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/cihuibiao1.PNG" alt></p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/cihuibiao2.PNG" alt></p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/cihuibiao3.PNG" alt></p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/cihuibiao4.PNG" alt></p>
-<h2 id="3-图示">3. 图示</h2>
-<p>这应当是设计模式中最常见的内容了 比如各种考试 :）</p>
+<h2 id="3-图示"><a href="#3-图示" class="headerlink" title="3. 图示"></a>3. 图示</h2><p>这应当是设计模式中最常见的内容了 比如各种考试 :）</p>
 <p>放几个个学习的链接吧</p>
-<h3 id="31-类图">3.1 类图</h3>
-<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/class_pic.png" alt></p>
+<h3 id="31-类图"><a href="#3-1-类图" class="headerlink" title="3.1 类图"></a>3.1 类图</h3><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/class_pic.png" alt></p>
 <p>以下为类图的组成</p>
-<h4 id="311-类">3.1.1 类</h4>
-<p>对一组具有相同属性、操作、关系、语义的事物的抽象。</p>
+<h4 id="311-类"><a href="#3-1-1-类" class="headerlink" title="3.1.1 类"></a>3.1.1 类</h4><p>对一组具有相同属性、操作、关系、语义的事物的抽象。</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/class_introduction.png" alt></p>
-<h4 id="312-继承">3.1.2 继承</h4>
-<p>唐老鸭属于鸭的一种，或者说是鸭的细化划分，而鸭属于鸟类，鸟类属于动物，这里无论表达成“是”还是属于，就是这样一个直观的关系。用实线一端带空心三角箭头表示。箭头指向父类。</p>
-<h4 id="313-依赖">3.1.3 依赖</h4>
-<p>凡是动物，生存都需要水和空气，这种必须的需求，我们称之为依赖关系。用虚线一端带箭头表示，箭头指向依赖物。</p>
-<h4 id="314-组合-聚合">3.1.4 组合、聚合</h4>
-<p>大雁和雁群的经典例子</p>
-<p>很多大雁聚合在一起变成雁群，也可以说雁群里有雁，所以是<strong>整体和个体之间的关系</strong>,即<strong>has-a</strong>的关系，此时<strong>整体与部分之间是可分离的，他们可以具有各自的生命周期</strong>。即雁群可以不存在了，但是孤雁仍然存在。</p>
+<h4 id="312-继承"><a href="#3-1-2-继承" class="headerlink" title="3.1.2 继承"></a>3.1.2 继承</h4><p>唐老鸭属于鸭的一种，或者说是鸭的细化划分，而鸭属于鸟类，鸟类属于动物，这里无论表达成“是”还是属于，就是这样一个直观的关系。用实线一端带空心三角箭头表示。箭头指向父类。</p>
+<h4 id="313-依赖"><a href="#3-1-3-依赖" class="headerlink" title="3.1.3 依赖"></a>3.1.3 依赖</h4><p>凡是动物，生存都需要水和空气，这种必须的需求，我们称之为依赖关系。用虚线一端带箭头表示，箭头指向依赖物。</p>
+<h4 id="314-组合-聚合"><a href="#3-1-4-组合、聚合" class="headerlink" title="3.1.4 组合、聚合"></a>3.1.4 组合、聚合</h4><p>大雁和雁群的经典例子</p>
+<p> 很多大雁聚合在一起变成雁群，也可以说雁群里有雁，所以是<strong>整体和个体之间的关系</strong>,即<strong>has-a</strong>的关系，此时<strong>整体与部分之间是可分离的，他们可以具有各自的生命周期</strong>。即雁群可以不存在了，但是孤雁仍然存在。</p>
 <p>一只鸟由两个翅膀组合而成，即一只鸟有两个翅膀。虽然组合和聚合我们都说“有”什么，但是这个“有”是不同的，他体现的是一种<strong>contains-a</strong>的关系，这种关系比聚合更强，也称为强聚合；他同样体现整体与部分间的关系，但此时整体与部分是不可分的，<strong>整体的生命周期结束也就意味着部分的生命周期结束</strong>，比如这只鸟死了，自然这两个翅膀也就不存在了。</p>
-<h4 id="315-关联">3.1.5 关联</h4>
-<p>企鹅和气候有关联，关联是最常见的关系，表示类与类之间的联接, 它使一个类知道另一个类的属性和方法。关联有两个端点, 在每个端点可以有一个基数, 表示这个关联的类可以有几个实例.<br>
-常见的基数及含义: 0…1:0 或1 个实例.<br>
-​                                  0…<em>: 对实例的数目没有限制.<br>
-​                                  1: 只能有一个实例.<br>
-​                                  1…</em>: 至少有一个实例.</p>
-<h4 id="316-接口">3.1.6 接口</h4>
-<p>最后就是接口了，接口有两栏组成，第一栏的顶端加上**《interface》**后下方写接口名称，第二栏是接口方法。接口有自己的表示方法“实现”，虚线一端带空心三角形。实际开发中，为了更好的实现&quot;开-闭原则&quot;，一般都是定义接口，依赖于接口，依赖于抽象。</p>
+<h4 id="315-关联"><a href="#3-1-5-关联" class="headerlink" title="3.1.5 关联"></a>3.1.5 关联</h4><p>企鹅和气候有关联，关联是最常见的关系，表示类与类之间的联接, 它使一个类知道另一个类的属性和方法。关联有两个端点, 在每个端点可以有一个基数, 表示这个关联的类可以有几个实例.<br> 常见的基数及含义: 0..1:0 或1 个实例.<br>​                                  0..<em>: 对实例的数目没有限制.<br>​                                  1: 只能有一个实例.<br>​                                  1..</em>: 至少有一个实例. </p>
+<h4 id="316-接口"><a href="#3-1-6-接口" class="headerlink" title="3.1.6 接口"></a>3.1.6 接口</h4><p>最后就是接口了，接口有两栏组成，第一栏的顶端加上<strong>《interface》</strong>后下方写接口名称，第二栏是接口方法。接口有自己的表示方法“实现”，虚线一端带空心三角形。实际开发中，为了更好的实现”开-闭原则”，一般都是定义接口，依赖于接口，依赖于抽象。</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wangdingqiaoit/article/details/12119293">uml中的类图</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jisijie/p/5062109.html">UML</a></p>
-<h3 id="32-对象图">3.2 对象图</h3>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mj_ww/article/details/53020346">类图和对象图</a></p>
-<h3 id="33-交互图">3.3 交互图</h3>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/king110108/article/details/78217816">uml中的交互图</a></p>
+<h3 id="32-对象图"><a href="#3-2-对象图" class="headerlink" title="3.2 对象图"></a>3.2 对象图</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mj_ww/article/details/53020346">类图和对象图</a></p>
+<h3 id="33-交互图"><a href="#3-3-交互图" class="headerlink" title="3.3 交互图"></a>3.3 交互图</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/king110108/article/details/78217816">uml中的交互图</a></p>
 
       
     </div>
@@ -3757,7 +3725,7 @@ font-display: swap;
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -3894,7 +3862,7 @@ font-display: swap;
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">476k</span>
+      <span title="post.totalcount">475k</span>
     
 </div>
 
