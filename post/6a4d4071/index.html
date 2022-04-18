@@ -3109,17 +3109,17 @@ font-display: swap;
 
 
 
-<meta name="description" content="目录1. 意图作用于某对象结构中各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。 2. 动机对于系统中的某些对象，它们存储在同一个集合中，且具有不同的类型，而且对于该集合中的对象，可以接受一类称为访问者的对象来访问，而且不同的访问者其访问方式有所不同，访问者模式为解决这类问题而诞生。 在实际使用时，对同一集合对象的操作并不是唯一的，对相同的元素对象可能存在多种不同的操">
+<meta name="description" content="目录 1. 意图 作用于某对象结构中各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。 2. 动机 对于系统中的某些对象，它们存储在同一个集合中，且具有不同的类型，而且对于该集合中的对象，可以接受一类称为访问者的对象来访问，而且不同的访问者其访问方式有所不同，访问者模式为解决这类问题而诞生。 在实际使用时，对同一集合对象的操作并不是唯一的，对相同的元素对象可能存在多种不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式(7) 对象行为型模式 VISTOR 访问者">
 <meta property="og:url" content="https://songzi.info/post/6a4d4071/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录1. 意图作用于某对象结构中各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。 2. 动机对于系统中的某些对象，它们存储在同一个集合中，且具有不同的类型，而且对于该集合中的对象，可以接受一类称为访问者的对象来访问，而且不同的访问者其访问方式有所不同，访问者模式为解决这类问题而诞生。 在实际使用时，对同一集合对象的操作并不是唯一的，对相同的元素对象可能存在多种不同的操">
+<meta property="og:description" content="目录 1. 意图 作用于某对象结构中各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。 2. 动机 对于系统中的某些对象，它们存储在同一个集合中，且具有不同的类型，而且对于该集合中的对象，可以接受一类称为访问者的对象来访问，而且不同的访问者其访问方式有所不同，访问者模式为解决这类问题而诞生。 在实际使用时，对同一集合对象的操作并不是唯一的，对相同的元素对象可能存在多种不">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_2.png">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_1.png">
 <meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_3.png">
-<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/抽象语法树.png">
+<meta property="og:image" content="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91.png">
 <meta property="article:published_time" content="2018-11-21T01:04:24.000Z">
 <meta property="article:modified_time" content="2022-03-25T18:50:28.541Z">
 <meta property="article:author" content="松子">
@@ -3381,7 +3381,7 @@ font-display: swap;
     <link itemprop="mainEntityOfPage" href="https://songzi.info/post/6a4d4071/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="松子">
+      <meta itemprop="name" content="钟镇鸿">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.webp">
     </span>
@@ -3500,25 +3500,33 @@ font-display: swap;
       
 
       
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1. 意图"></a>1. 意图</h2><p>作用于某对象结构中各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。</p>
-<h2 id="2-动机"><a href="#2-动机" class="headerlink" title="2. 动机"></a>2. 动机</h2><p>对于系统中的某些对象，它们存储在同一个集合中，且具有<strong>不同的类型</strong>，而且对于该集合中的对象，可以接受一类称为<strong>访问者的对象</strong>来访问，而且<strong>不同的访问者其访问方式有所不同</strong>，访问者模式为解决这类问题而诞生。</p>
+        <h1 id="目录">目录</h1>
+<h2 id="1-意图">1. 意图</h2>
+<p>作用于某对象结构中各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。</p>
+<h2 id="2-动机">2. 动机</h2>
+<p>对于系统中的某些对象，它们存储在同一个集合中，且具有<strong>不同的类型</strong>，而且对于该集合中的对象，可以接受一类称为<strong>访问者的对象</strong>来访问，而且<strong>不同的访问者其访问方式有所不同</strong>，访问者模式为解决这类问题而诞生。</p>
 <p>在实际使用时，对同一集合对象的操作<strong>并不是唯一</strong>的，对相同的元素对象可能存在<strong>多种不同的操作方式</strong>。而且这些操作方式<strong>并不稳定</strong>，可能还需要<strong>增加新的操作</strong>，以满足新的业务需求。</p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_2.png" alt></p>
-<h2 id="3-适用性"><a href="#3-适用性" class="headerlink" title="3. 适用性"></a>3. 适用性</h2><ul>
+<h2 id="3-适用性">3. 适用性</h2>
+<ul>
 <li>一个对象结构包含很多类对象，并相对这些对象实施一些依赖于具体类的操作</li>
 <li>需要对一个对象结构中的对象进行很多不同的并且不相关的操作，并且避免污染这些对象类</li>
 <li>用户对对象类比较熟悉，定义对象结构的类很少改变，但需要经常在结构上定义新操作</li>
 </ul>
-<h2 id="4-结构"><a href="#4-结构" class="headerlink" title="4. 结构"></a>4. 结构</h2><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_1.png" alt></p>
-<h2 id="5-参与者"><a href="#5-参与者" class="headerlink" title="5. 参与者"></a>5. 参与者</h2><ul>
+<h2 id="4-结构">4. 结构</h2>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_1.png" alt></p>
+<h2 id="5-参与者">5. 参与者</h2>
+<ul>
 <li>Visitor</li>
 <li>ConcreteVisitor</li>
 <li>Element</li>
 <li>ConcreteElement</li>
 <li>ObjectStructure</li>
 </ul>
-<h2 id="6-协作"><a href="#6-协作" class="headerlink" title="6. 协作"></a>6. 协作</h2><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_3.png" alt></p>
-<h2 id="7-效果优缺点"><a href="#7-效果（优缺点）" class="headerlink" title="7. 效果（优缺点）"></a>7. 效果（优缺点）</h2><p>优点</p>
+<h2 id="6-协作">6. 协作</h2>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/visitor_3.png" alt></p>
+<h2 id="7-效果优缺点">7. 效果（优缺点）</h2>
+<p>优点</p>
 <ul>
 <li>增加新的操作——增加新的访问者无须修改原有系统，系统具有较好的可扩展性。</li>
 <li>集中存在逻辑相关的操作而剥离无关操作</li>
@@ -3531,19 +3539,25 @@ font-display: swap;
 <li>破坏封装——强迫提供访问元素内部状态的公共操作</li>
 <li>增加新的ConcreteElement类很困难——每新增一个ConcreteElement类都要在Visitor中添加一个新的抽象操作</li>
 </ul>
-<h2 id="8-实现"><a href="#8-实现" class="headerlink" title="8. 实现"></a>8. 实现</h2><h2 id="9-代码示例"><a href="#9-代码示例" class="headerlink" title="9. 代码示例"></a>9. 代码示例</h2><p>课上给的例子</p>
+<h2 id="8-实现">8. 实现</h2>
+<h2 id="9-代码示例">9. 代码示例</h2>
+<p>课上给的例子</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//雇员类 基类</span></span><br><span class="line">abstract <span class="keyword">class</span> <span class="title class_">Employee</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> string name;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">double</span> income;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">int</span> vacationDays;</span><br><span class="line">	<span class="keyword">public</span> string Name&#123;</span><br><span class="line">		get &#123; <span class="keyword">return</span> name; &#125;</span><br><span class="line">		set &#123; name = value; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> Income&#123;</span><br><span class="line">		get &#123; <span class="keyword">return</span> income; &#125;</span><br><span class="line">		set &#123; income = value; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> VacationDays&#123;</span><br><span class="line">		get &#123; <span class="keyword">return</span> vacationDays; &#125;</span><br><span class="line">		set &#123; vacationDays = value; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="function">abstract <span class="keyword">public</span> <span class="type">void</span> <span class="title">Accept</span><span class="params">(Visitor visitor)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//教师类 子类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Teacher</span> : Employee&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Teacher</span><span class="params">(string name, <span class="type">double</span> income,<span class="type">int</span> vacationDays)</span></span>&#123;</span><br><span class="line">		Name = name;</span><br><span class="line">		Income = income;</span><br><span class="line">		VacationDays = vacationDays;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="type">void</span> <span class="title">Accept</span><span class="params">(Visitor visitor)</span></span>&#123;</span><br><span class="line">		visitor.<span class="built_in">Visit</span>(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//工程师类 子类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Engineer</span> : Employee&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Engineer</span><span class="params">(string name, <span class="type">double</span> income,<span class="type">int</span> vacationDays)</span></span>&#123;</span><br><span class="line">		Name = name;</span><br><span class="line">		Income = income;</span><br><span class="line">		VacationDays = vacationDays;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="type">void</span> <span class="title">Accept</span><span class="params">(Visitor visitor)</span></span>&#123;</span><br><span class="line">		visitor.<span class="built_in">Visit</span>(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//访问者类</span></span><br><span class="line">abstract <span class="keyword">class</span> <span class="title class_">Visitor</span>&#123;</span><br><span class="line">	<span class="function">abstract <span class="keyword">public</span> <span class="type">void</span> <span class="title">Visit</span><span class="params">(Employee element)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//管理收入的访问者类，管理收入是被集中的具体操作</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">IncomeVisitor</span> : Visitor</span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="type">void</span> <span class="title">Visit</span><span class="params">(Employee element)</span></span>&#123;</span><br><span class="line">		element.Income *= <span class="number">1.10</span>;</span><br><span class="line">		Console.<span class="built_in">WriteLine</span>(element.Name + <span class="string">&quot;的新工资是: &quot;</span> + element.Income);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//管理假期的访问者类，管理假期是被集中的具体操作</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">VacationVisitor</span> : Visitor&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="type">void</span> <span class="title">Visit</span><span class="params">(Employee element)</span></span>&#123;</span><br><span class="line">		element.VacationDays += <span class="number">3</span>;</span><br><span class="line">		Console.<span class="built_in">WriteLine</span>(element.Name + <span class="string">&quot;的新假期是&quot;</span> + element.VacationDays);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//雇员</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Employees</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> ArrayList employees = <span class="keyword">new</span> <span class="built_in">ArrayList</span>();</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="type">void</span> <span class="title">Attach</span><span class="params">(Employee employee)</span></span>&#123;</span><br><span class="line">		employees.<span class="built_in">Add</span>(employee);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="type">void</span> <span class="title">Detach</span><span class="params">(Employee employee)</span></span>&#123;</span><br><span class="line">		employees.<span class="built_in">Remove</span>(employee);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="type">void</span> <span class="title">Accept</span><span class="params">(Visitor visitor)</span></span>&#123;</span><br><span class="line">		foreach (Employee e in employees)</span><br><span class="line">		e.<span class="built_in">Accept</span>(visitor);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">Main</span><span class="params">(string[] args)</span></span>&#123;</span><br><span class="line">	Teacher zhangsan = <span class="keyword">new</span> <span class="built_in">Teacher</span>(<span class="string">&quot;张三&quot;</span>, <span class="number">2500.0</span>, <span class="number">14</span>);</span><br><span class="line">	Engineer lisi = <span class="keyword">new</span> <span class="built_in">Engineer</span>(<span class="string">&quot;李四&quot;</span>, <span class="number">3500.0</span>, <span class="number">16</span>);</span><br><span class="line">	Employees e = <span class="keyword">new</span> <span class="built_in">Employees</span>();</span><br><span class="line">	e.<span class="built_in">Attach</span>(zhangsan);</span><br><span class="line">	e.<span class="built_in">Attach</span>(lisi);</span><br><span class="line">	IncomeVisitor v1 = <span class="keyword">new</span> <span class="built_in">IncomeVisitor</span>();</span><br><span class="line">	VacationVisitor v2 = <span class="keyword">new</span> <span class="built_in">VacationVisitor</span>();</span><br><span class="line">	e.<span class="built_in">Accept</span>(v1);</span><br><span class="line">	e.<span class="built_in">Accept</span>(v2);</span><br><span class="line">	Console.<span class="built_in">Read</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="10-已知应用"><a href="#10-已知应用" class="headerlink" title="10. 已知应用"></a>10. 已知应用</h2><p>实际工业界的例子</p>
+<h2 id="10-已知应用">10. 已知应用</h2>
+<p>实际工业界的例子</p>
 <p>静态程序分析，比如检查代码抄袭——用一段程序分析源代码</p>
 <p>特点</p>
 <ul>
-<li><p>主要特点是Element的结构树非常复杂，各种代码语法成分、各种语句分类、词法、控制流、数据流，如下图所示</p>
+<li>
+<p>主要特点是Element的结构树非常复杂，各种代码语法成分、各种语句分类、词法、控制流、数据流，如下图所示</p>
 </li>
-<li><p>代码分析的需求变化频繁</p>
+<li>
+<p>代码分析的需求变化频繁</p>
 </li>
 </ul>
-<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/抽象语法树.png" alt></p>
-<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p>存在反面向对象，打破数据+操作 </p>
+<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://songzi-blog-pic.oss-cn-hangzhou.aliyuncs.com/%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91.png" alt></p>
+<h2 id="拓展">拓展</h2>
+<p>存在反面向对象，打破数据+操作</p>
 <p>与面向对象思想相反，不同对象之间存在逻辑关系的操作从类中间剥离，并集合在一起</p>
 
       
@@ -3675,9 +3689,9 @@ font-display: swap;
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.webp"
-               alt="松子"
+               alt="钟镇鸿"
                width="100%" height="100%"/>
-          <p class="site-author-name" itemprop="name">松子</p>
+          <p class="site-author-name" itemprop="name">钟镇鸿</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
            
@@ -3846,7 +3860,7 @@ font-display: swap;
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">475k</span>
+      <span title="post.totalcount">478k</span>
     
 </div>
 

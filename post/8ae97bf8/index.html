@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="特征选择从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果。  filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性 优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。 缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。   wrapper（封装器）和Embeded(集成方法)">
+<meta name="description" content="特征选择 从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果。  filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性  优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。 缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。   wrapper（封装器）和Embeded(集成方">
 <meta property="og:type" content="article">
 <meta property="og:title" content="特征工程">
 <meta property="og:url" content="https://songzi.info/post/8ae97bf8/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="特征选择从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果。  filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性 优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。 缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。   wrapper（封装器）和Embeded(集成方法)">
+<meta property="og:description" content="特征选择 从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果。  filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性  优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。 缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。   wrapper（封装器）和Embeded(集成方">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-03T12:56:00.000Z">
 <meta property="article:modified_time" content="2022-03-21T15:04:39.159Z">
@@ -3376,7 +3376,7 @@ font-display: swap;
     <link itemprop="mainEntityOfPage" href="https://songzi.info/post/8ae97bf8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="松子">
+      <meta itemprop="name" content="钟镇鸿">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.webp">
     </span>
@@ -3458,7 +3458,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  908
+                  757
                 </span>
               
 
@@ -3495,27 +3495,32 @@ font-display: swap;
       
 
       
-        <h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><p><strong>从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果</strong>。</p>
+        <h3 id="特征选择">特征选择</h3>
+<p><strong>从特征集合中挑选一组最具统计意义的特征子集，从而达到降维的效果</strong>。</p>
 <ul>
-<li>filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性<ul>
+<li>filter（刷选器）方法，主要侧重于单个特征跟目标变量的相关性
+<ul>
 <li>优点是计算时间上较高效,对于过拟合问题也具有较高的鲁棒性。</li>
 <li>缺点就是倾向于选择冗余的特征,因为他们不考虑特征之间的相关性,有可能某一个特征的分类能力很差，但是它和某些其它特征组合起来会得到不错的效果。</li>
 </ul>
 </li>
-<li>wrapper（封装器）和Embeded(集成方法)<ul>
+<li>wrapper（封装器）和Embeded(集成方法)
+<ul>
 <li>优点是考虑了特征与特征之间的关联性</li>
 <li>缺点是当观测数据较少时容易过拟合，而当特征数量较多时,计算时间又会增长。</li>
 </ul>
 </li>
 <li>Embeded集成方法</li>
 </ul>
-<h3 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h3><p><strong>自动地构建新的特征，将原始特征转换为一组具有明显物理意义（Gabor、几何特征[角点、不变量]、纹理[LBP HOG]）或者统计意义或核的特征</strong>。</p>
+<h3 id="特征提取">特征提取</h3>
+<p><strong>自动地构建新的特征，将原始特征转换为一组具有明显物理意义（Gabor、几何特征[角点、不变量]、纹理[LBP HOG]）或者统计意义或核的特征</strong>。</p>
 <ul>
 <li>PCA (Principal component analysis，主成分分析)</li>
 <li>ICA (Independent component analysis，独立成分分析)</li>
 <li>LDA （Linear Discriminant Analysis，线性判别分析）</li>
 </ul>
-<h3 id="特征构建"><a href="#特征构建" class="headerlink" title="特征构建"></a>特征构建</h3><p><strong>从原始数据中人工的构建新的特征</strong></p>
+<h3 id="特征构建">特征构建</h3>
+<p><strong>从原始数据中人工的构建新的特征</strong></p>
 
       
     </div>
@@ -3533,7 +3538,7 @@ font-display: swap;
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <p><span>本文标题:</span><a href="/post/8ae97bf8/">特征工程</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 松子 的个人博客">松子</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 钟镇鸿 的个人博客">钟镇鸿</a></p>
   <p><span>发布时间:</span>2020年01月03日 - 20:01</p>
   <p><span>最后更新:</span>2022年03月21日 - 23:03</p>
   <p><span>博文链接:</span><a href="/post/8ae97bf8/" title="特征工程">https://songzi.info/post/8ae97bf8/</a>
@@ -3710,9 +3715,9 @@ font-display: swap;
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.webp"
-               alt="松子"
+               alt="钟镇鸿"
                width="100%" height="100%"/>
-          <p class="site-author-name" itemprop="name">松子</p>
+          <p class="site-author-name" itemprop="name">钟镇鸿</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
            
@@ -3881,7 +3886,7 @@ font-display: swap;
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">475k</span>
+      <span title="post.totalcount">478k</span>
     
 </div>
 
