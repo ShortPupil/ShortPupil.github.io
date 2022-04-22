@@ -1913,7 +1913,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff8eff;
+  background: #377c61;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2780,7 +2780,7 @@ body {
   padding: 10px 7px 10px 7px;
   min-height: 500px;
   background: #fff;
-  opacity: 0.91;
+  opacity: 0.95;
   border-radius: 25px;
 }
 .post-toc .nav .nav-child {
