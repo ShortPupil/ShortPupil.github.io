@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="目录 Ch4 Linux字符界面操作 重点 进入命令行的方式  字符界面 图形界面下的终端 虚拟控制台  虚拟控制台的切换  在字符界面下，虚拟控制台的切换可以通过按Alt+F1~Alt+F6键实现 在图形界面下，可以使用Ctrl+Alt+F2～Ctrl+Alt+F6键切换不同的字符虚拟控制台，在 使用Ctrl+Alt+F1切换会图形界面  系统关机&#x2F;重启 shutdown halt reboot">
+<meta name="description" content="目录Ch4 Linux字符界面操作 重点进入命令行的方式 字符界面 图形界面下的终端 虚拟控制台  虚拟控制台的切换 在字符界面下，虚拟控制台的切换可以通过按Alt+F1~Alt+F6键实现 在图形界面下，可以使用Ctrl+Alt+F2～Ctrl+Alt+F6键切换不同的字符虚拟控制台，在 使用Ctrl+Alt+F1切换会图形界面  系统关机&#x2F;重启shutdown halt reboot init">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux分章重点——第四章">
 <meta property="og:url" content="https://songzi.info/post/c62aba6d/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录 Ch4 Linux字符界面操作 重点 进入命令行的方式  字符界面 图形界面下的终端 虚拟控制台  虚拟控制台的切换  在字符界面下，虚拟控制台的切换可以通过按Alt+F1~Alt+F6键实现 在图形界面下，可以使用Ctrl+Alt+F2～Ctrl+Alt+F6键切换不同的字符虚拟控制台，在 使用Ctrl+Alt+F1切换会图形界面  系统关机&#x2F;重启 shutdown halt reboot">
+<meta property="og:description" content="目录Ch4 Linux字符界面操作 重点进入命令行的方式 字符界面 图形界面下的终端 虚拟控制台  虚拟控制台的切换 在字符界面下，虚拟控制台的切换可以通过按Alt+F1~Alt+F6键实现 在图形界面下，可以使用Ctrl+Alt+F2～Ctrl+Alt+F6键切换不同的字符虚拟控制台，在 使用Ctrl+Alt+F1切换会图形界面  系统关机&#x2F;重启shutdown halt reboot init">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/ok.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/more1.png">
@@ -3467,7 +3467,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  5.1k
+                  6.7k
                 </span>
               
 
@@ -3483,7 +3483,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  5 mins.
+                  6 mins.
                 </span>
               
             </div>
@@ -3504,43 +3504,26 @@ font-display: swap;
       
 
       
-        <h1 id="目录">目录</h1>
-<h1 id="ch4-linux字符界面操作-重点">Ch4 Linux字符界面操作 重点</h1>
-<h2 id="进入命令行的方式">进入命令行的方式</h2>
-<ul>
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h1 id="ch4-linux字符界面操作-重点"><a href="#Ch4-Linux字符界面操作-重点" class="headerlink" title="Ch4 Linux字符界面操作 重点"></a>Ch4 Linux字符界面操作 重点</h1><h2 id="进入命令行的方式"><a href="#进入命令行的方式" class="headerlink" title="进入命令行的方式"></a>进入命令行的方式</h2><ul>
 <li>字符界面</li>
 <li>图形界面下的终端</li>
 <li>虚拟控制台</li>
 </ul>
-<h2 id="虚拟控制台的切换">虚拟控制台的切换</h2>
-<ul>
+<h2 id="虚拟控制台的切换"><a href="#虚拟控制台的切换" class="headerlink" title="虚拟控制台的切换"></a>虚拟控制台的切换</h2><ul>
 <li>在<strong>字符界面</strong>下，虚拟控制台的切换可以通过按<code>Alt+F1</code>~<code>Alt+F6</code>键实现</li>
 <li>在<strong>图形界面</strong>下，可以使用<code>Ctrl+Alt+F2</code>～<code>Ctrl+Alt+F6</code>键切换不同的字符虚拟控制台，在 使用<code>Ctrl+Alt+F1</code>切换会图形界面</li>
 </ul>
-<h2 id="系统关机重启">系统关机/重启</h2>
-<p><code>shutdown halt reboot init</code><br>
-​	<br>
-<code>shutdown</code>：安全地关闭系统</p>
-<p>shutdown [选项] [时间] [警告信息]<br>
-​				<br>
-​				<code>shutdown -h now</code> 立即关闭系统<br>
-​				<br>
-<code>shutdown -h 45</code>定时45分钟后关闭系统</p>
-<pre><code>			`shutdown -r now`重新启动系统,并发出警告信息
-</code></pre>
-<p><code>halt</code>：引发主机关闭系统=调用 “shutdown —h”命令执行关闭系统<br>
-​<br>
-​			 [root@PC-LINUX ~]# halt</p>
-<p><code>reboot</code>：引发主机重启,参数与“halt”相似。<br>
-​<br>
-​			 [root@PC-LINUX ~]# reboot</p>
+<h2 id="系统关机重启"><a href="#系统关机-重启" class="headerlink" title="系统关机/重启"></a>系统关机/重启</h2><p><code>shutdown halt reboot init</code><br>​<br><code>shutdown</code>：安全地关闭系统</p>
+<p>shutdown [选项] [时间] [警告信息]<br>​<br>​                <code>shutdown -h now</code> 立即关闭系统<br>​<br>                <code>shutdown -h 45</code>定时45分钟后关闭系统</p>
+<pre><code>            `shutdown -r now`重新启动系统,并发出警告信息
+</code></pre><p><code>halt</code>：引发主机关闭系统=调用 “shutdown —h”命令执行关闭系统<br>​<br>​             [root@PC-LINUX ~]# halt</p>
+<p><code>reboot</code>：引发主机重启,参数与“halt”相似。<br>​<br>​             [root@PC-LINUX ~]# reboot </p>
 <p><code>init</code>：“init”命令是所有进程的祖先,它的进程号始终为“1”,所以发送“TERM”信号给 “init”会终止所有的用户进程和守护进程等。</p>
-<p>“init” 定义了7个运行级别,其中<code>init 0</code>为关闭系统,<code>init 6</code>为重启，通过init可以完成不同运行级别之间的切换</p>
+<p>“init” 定义了7个运行级别,其中<code>init 0</code>为关闭系统,<code>init 6</code>为重启，通过init可以完成不同运行级别之间的切换 </p>
 <p>shutdown和init都是既可以关机又可以重启：</p>
 <p><code>shutdown –h now</code>和<code>init 0</code>用于关机 + halt</p>
 <p><code>shutdown –r now</code>和<code>init 6</code>用户重启  + reboot</p>
-<h2 id="运行级别-0~6-要很清楚3字符-5图形-0关机-6重启">运行级别 0～6 要很清楚，3字符、5图形、0关机、6重启</h2>
-<p>Linux运行级别有如下7种：</p>
+<h2 id="运行级别-0~6-要很清楚3字符-5图形-0关机-6重启"><a href="#运行级别-0～6-要很清楚，3字符、5图形、0关机、6重启" class="headerlink" title="运行级别 0～6 要很清楚，3字符、5图形、0关机、6重启"></a>运行级别 0～6 要很清楚，3字符、5图形、0关机、6重启</h2><p>Linux运行级别有如下7种：</p>
 <pre><code>0:*停止运行*,所有进程中止,关闭系统。 
 1:*单用户模式*,用于维护系统,只有少数进程运行。
 2:*多用户模式*,除了NFS服务没有启动外,其他和运行级别3一样。
@@ -3548,21 +3531,12 @@ font-display: swap;
 4:*没有使用*(可由用户定义)。 
 5:*完整的多用户模式*(带有基于X Window的图形界面)。
 6:*重新引导计算机*。
-</code></pre>
-<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/ok.png" alt></p>
-<h2 id="man帮助命令">man帮助命令</h2>
-<p>man是一种显示Unix/Linux在线手册的命令。可以用来<strong>查看命令、函数或文件</strong>的帮助手册,另外它还可以显示一些gzip压缩格式的文件。<br>
-man命令格式化并显示在线的手册页。</p>
-<p><code>help</code>使用help命令可以查找Shell命令的用法<br>
-查看mkdir命令帮助：<br>
-​	[root@PC-LINUX ~]# mkdir --help<br>
-（注意help前有两条-）</p>
+</code></pre><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/ok.png" alt></p>
+<h2 id="man帮助命令"><a href="#man帮助命令" class="headerlink" title="man帮助命令"></a>man帮助命令</h2><p>man是一种显示Unix/Linux在线手册的命令。可以用来<strong>查看命令、函数或文件</strong>的帮助手册,另外它还可以显示一些gzip压缩格式的文件。<br>man命令格式化并显示在线的手册页。 </p>
+<p><code>help</code>使用help命令可以查找Shell命令的用法<br>查看mkdir命令帮助：<br>​    [root@PC-LINUX ~]# mkdir —help<br>（注意help前有两条-）</p>
 <p><code>whereis</code>命令可以查找命令所在的位置</p>
-<h2 id="shell里技巧性的">Shell里技巧性的</h2>
-<h3 id="命令行自动补全">命令行自动补全</h3>
-<p>输入第一个之后按下Tab键,自动补齐</p>
-<h3 id="光标上翻下翻">光标上翻下翻</h3>
-<pre><code>[Ctrl+k]:删除从光标到行尾的部分。 
+<h2 id="shell里技巧性的"><a href="#Shell里技巧性的" class="headerlink" title="Shell里技巧性的"></a>Shell里技巧性的</h2><h3 id="命令行自动补全"><a href="#命令行自动补全" class="headerlink" title="命令行自动补全"></a>命令行自动补全</h3><p>输入第一个之后按下Tab键,自动补齐</p>
+<h3 id="光标上翻下翻"><a href="#光标上翻下翻" class="headerlink" title="光标上翻下翻"></a>光标上翻下翻</h3><pre><code>[Ctrl+k]:删除从光标到行尾的部分。 
 [Ctrl+u]:删除从光标到行首的部分。
 [Alt+d]:删除从光标到当前单词结尾的部分。 
 [Ctrl+w]:删除从光标到当前单词开头的部分。 
@@ -3572,70 +3546,43 @@ man命令格式化并显示在线的手册页。</p>
 [Alt+e]:将光标移到当前单词尾部。
 [Ctrl+y]:插入最近删除的单词。
 [!$]:重复前一个命令最后的参数。
-</code></pre>
-<h3 id="一行上执行多个命令">一行上执行多个命令</h3>
-<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/more1.png" alt></p>
+</code></pre><h3 id="一行上执行多个命令"><a href="#一行上执行多个命令" class="headerlink" title="一行上执行多个命令"></a>一行上执行多个命令</h3><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/more1.png" alt></p>
 <p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/more2.png" alt></p>
-<h2 id="管道管道什么意思管道有什么作用具体怎么使用">管道，管道什么意思，管道有什么作用，具体怎么使用</h2>
-<p>管道可以通过组合许多小程序共同完成复杂的任务，可以将某个命令的输出信息当作某个命令的输入，由管道符号“|”来标识。</p>
+<h2 id="管道管道什么意思管道有什么作用具体怎么使用"><a href="#管道，管道什么意思，管道有什么作用，具体怎么使用" class="headerlink" title="管道，管道什么意思，管道有什么作用，具体怎么使用"></a>管道，管道什么意思，管道有什么作用，具体怎么使用</h2><p>管道可以通过组合许多小程序共同完成复杂的任务，可以将某个命令的输出信息当作某个命令的输入，由管道符号“|”来标识。</p>
 <p><strong>命令语法</strong>：[命令1] | [命令2] | [命令3]</p>
 <p>|more之后就可以分页显示上一个命令的输出</p>
-<h2 id="vi-编辑的是ascii文本">vi （编辑的是ASCII文本）</h2>
-<h3 id="三种模式三种模式之间的转换及命令">三种模式，三种模式之间的转换及命令</h3>
-<p>vi编辑器有3种基本工作模式,分别是<strong>命令行模式</strong>、<strong>插入模式</strong>和<strong>末行模式</strong>。</p>
+<h2 id="vi-编辑的是ascii文本"><a href="#vi-（编辑的是ASCII文本）" class="headerlink" title="vi （编辑的是ASCII文本）"></a>vi （编辑的是ASCII文本）</h2><h3 id="三种模式三种模式之间的转换及命令"><a href="#三种模式，三种模式之间的转换及命令" class="headerlink" title="三种模式，三种模式之间的转换及命令"></a>三种模式，三种模式之间的转换及命令</h3><p>vi编辑器有3种基本工作模式,分别是<strong>命令行模式</strong>、<strong>插入模式</strong>和<strong>末行模式</strong>。</p>
 <p>当在Shell提示符下输入“vi文件名”之后就进入了命令行模式,在命令行模式下是不能输入任何数据的。</p>
 <p>在命令行模式下输入文本插入命令就可以进入插入模式,这时候就可以开始输入文字了。</p>
 <p>从插入模式切换为命令行模式只需按“Esc”键。</p>
 <p>在命令行模式下,按转义命令冒号键“:”可以进入末行模式。</p>
-<p>命令行模式：控制屏幕光标的移动，字符、字或行的删除，移动、复制某区域及进入插入模式，或者到末行模式<br>
-注：下面操作都是只能在命令行模式下控制，在输入模式下会变成输入</p>
-<h3 id="屏幕光标的移动">屏幕光标的移动</h3>
-<p><code>h j k l</code>分别对应：左 下 上 右</p>
+<p>命令行模式：控制屏幕光标的移动，字符、字或行的删除，移动、复制某区域及进入插入模式，或者到末行模式<br>注：下面操作都是只能在命令行模式下控制，在输入模式下会变成输入</p>
+<h3 id="屏幕光标的移动"><a href="#屏幕光标的移动" class="headerlink" title="屏幕光标的移动"></a>屏幕光标的移动</h3><p><code>h j k l</code>分别对应：左 下 上 右</p>
 <p><code>Ctrl + b f u d</code> 分别对应：</p>
-<p>屏幕向前移动一页、向后移动一页、向前移动半页、向后移动半页<br>
-<img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/yidongbanye.png" alt><br>
-​<br>
-注：0和^的效果是一样的，都是所在行的行首；$是在行尾<br>
-​</p>
-<h3 id="字符-字或行的删除">字符、字或行的删除</h3>
-<p><code>X</code> 删除光标所在位置前面一个字符  x 删除光标所在位置的一个字符</p>
+<p>屏幕向前移动一页、向后移动一页、向前移动半页、向后移动半页<br><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/yidongbanye.png" alt><br>​<br> 注：0和^的效果是一样的，都是所在行的行首；$是在行尾<br>​    </p>
+<h3 id="字符-字或行的删除"><a href="#字符、字或行的删除" class="headerlink" title="字符、字或行的删除"></a>字符、字或行的删除</h3><p><code>X</code> 删除光标所在位置前面一个字符  x 删除光标所在位置的一个字符</p>
 <p><code>nX</code> 例20X，删除光标所在位置前面20个字符</p>
 <p><code>nx</code> 例6x，删除光标所在位置开始的6个字符</p>
-<h3 id="复制某区域">复制某区域</h3>
-<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/fuzhimoquyu.png" alt></p>
-<h3 id="复制">复制</h3>
-<p>y，以字为单位</p>
-<h3 id="替换操作">替换操作</h3>
-<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/tihuancaozuo.png" alt></p>
-<h3 id="撤销上一次操作">撤销上一次操作</h3>
-<p><code>u</code>，多次u，多次撤销</p>
-<h3 id="跳至指定的行">跳至指定的行</h3>
-<p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/tiaozhizhidingdehang.png" alt><br>
-第一个g小写，第二个行后的G大写</p>
-<h3 id="退出">退出</h3>
-<p>存盘退出：<code>ZZ</code><br>
-不存盘退出：<code>ZQ</code></p>
-<h3 id="进入插入模式">进入插入模式</h3>
-<p>(仍然必须在命令行模式下，输入下面操作，光标移到这些位置，然后进入插入模式，从这些位置开始可以被编辑)</p>
+<h3 id="复制某区域"><a href="#复制某区域" class="headerlink" title="复制某区域"></a>复制某区域</h3><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/fuzhimoquyu.png" alt></p>
+<h3 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h3><p>y，以字为单位</p>
+<h3 id="替换操作"><a href="#替换操作" class="headerlink" title="替换操作"></a>替换操作</h3><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/tihuancaozuo.png" alt></p>
+<h3 id="撤销上一次操作"><a href="#撤销上一次操作" class="headerlink" title="撤销上一次操作"></a>撤销上一次操作</h3><p><code>u</code>，多次u，多次撤销</p>
+<h3 id="跳至指定的行"><a href="#跳至指定的行" class="headerlink" title="跳至指定的行"></a>跳至指定的行</h3><p><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/tiaozhizhidingdehang.png" alt><br>第一个g小写，第二个行后的G大写</p>
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p>存盘退出：<code>ZZ</code><br>不存盘退出：<code>ZQ</code></p>
+<h3 id="进入插入模式"><a href="#进入插入模式" class="headerlink" title="进入插入模式"></a>进入插入模式</h3><p> (仍然必须在命令行模式下，输入下面操作，光标移到这些位置，然后进入插入模式，从这些位置开始可以被编辑)</p>
 <ul>
-<li>I行首		<br>
-i光标当前位置		<br>
-A行末</li>
-<li>a光标下一个位置<br>
-O 光标上一行插入一行</li>
-<li>o 光标下一行插入一行，从行首开始输<br>
-S 删除光标所在行</li>
+<li>I行首<br> i光标当前位置<br>  A行末        </li>
+<li>a光标下一个位置<br> O 光标上一行插入一行        </li>
+<li>o 光标下一行插入一行，从行首开始输<br> S 删除光标所在行        </li>
 <li>s 删除光标位置的一个字符</li>
 <li><img src="https://songzi-picture.oss-cn-shenzhen.aliyuncs.com/blog_bg/ezgif-com-gif-maker.gif" data-original="https://raw.githubusercontent.com/ShortPupil/wordpress_picture/master/linux_4/yigezifu.png" alt></li>
 </ul>
 <p>S和dd的区别是，dd只删，S删完之后进入插入模式</p>
-<h3 id="进入末行模式">进入末行模式</h3>
-<p>确保先按“ESC”进入命令行模式，再按“：”进入末行模式</p>
+<h3 id="进入末行模式"><a href="#进入末行模式" class="headerlink" title="进入末行模式"></a>进入末行模式</h3><p>确保先按“ESC”进入命令行模式，再按“：”进入末行模式</p>
 <p>末行模式：将文件保存或退出编辑器，也可以设置编辑环境，如寻找字符串、列出行号等。</p>
-<h3 id="保存文件">保存文件</h3>
-<p><code>w</code>:在冒号后输入字母“w”就可以将文件保存起来。</p>
+<h3 id="保存文件"><a href="#保存文件" class="headerlink" title="保存文件"></a>保存文件</h3><p><code>w</code>:在冒号后输入字母“w”就可以将文件保存起来。</p>
 <p>离开vi编辑器操作如下</p>
-<p><code>q</code>:按“q”即退出vi,如果无法离开vi,可以在“q”后跟一个“!”强制符离开vi</p>
+<p><code>q</code>:按“q”即退出vi,如果无法离开vi,可以在“q”后跟一个“!”强制符离开vi </p>
 <p><code>wq</code>:一般建议离开时,搭配“w”一起使用,这样在退出的时候还可以保存文件</p>
 
       
@@ -3775,7 +3722,7 @@ S 删除光标所在行</li>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">113</span>
+                <span class="site-state-item-count">114</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -3850,28 +3797,6 @@ S 删除光标所在行</li>
                 </a>
               </span>
             
-              <span class="links-of-author-item">
-                <a href="https://weibo.com/3229275825/" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                    
-                      Weibo
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.douban.com/people/200367416/" target="_blank" title="Douban">
-                  
-                    <i class="fa fa-fw fa-book"></i>
-                  
-                    
-                      Douban
-                    
-                </a>
-              </span>
-            
           
         </div>
 
@@ -3934,7 +3859,7 @@ S 删除光标所在行</li>
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">480k</span>
+      <span title="post.totalcount">479k</span>
     
 </div>
 

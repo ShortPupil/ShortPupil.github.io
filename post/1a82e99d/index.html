@@ -3109,12 +3109,12 @@ font-display: swap;
 
 
 
-<meta name="description" content="目录 课程链接 作业一 1. SimpleDB体系结构 Consists of  包含字段、元组、元组架构的类。Classes that represent fields, tuples, and tuple schemas; 将谓词和条件应用于元组的类。Classes that apply predicates and conditions to tuples; 一种或多种访问方式——将关系存储">
+<meta name="description" content="目录课程链接 作业一1. SimpleDB体系结构Consists of  包含字段、元组、元组架构的类。Classes that represent fields, tuples, and tuple schemas; 将谓词和条件应用于元组的类。Classes that apply predicates and conditions to tuples; 一种或多种访问方式——将关系存储在磁盘">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单数据库实现一">
 <meta property="og:url" content="https://songzi.info/post/1a82e99d/index.html">
 <meta property="og:site_name" content="毫末室">
-<meta property="og:description" content="目录 课程链接 作业一 1. SimpleDB体系结构 Consists of  包含字段、元组、元组架构的类。Classes that represent fields, tuples, and tuple schemas; 将谓词和条件应用于元组的类。Classes that apply predicates and conditions to tuples; 一种或多种访问方式——将关系存储">
+<meta property="og:description" content="目录课程链接 作业一1. SimpleDB体系结构Consists of  包含字段、元组、元组架构的类。Classes that represent fields, tuples, and tuple schemas; 将谓词和条件应用于元组的类。Classes that apply predicates and conditions to tuples; 一种或多种访问方式——将关系存储在磁盘">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-10-18T11:40:24.000Z">
 <meta property="article:modified_time" content="2022-03-25T18:50:28.259Z">
@@ -3458,7 +3458,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  2.3k
+                  2.9k
                 </span>
               
 
@@ -3474,7 +3474,7 @@ font-display: swap;
                   <span class="post-meta-item-text">Reading time</span>
                 
                 <span title="Reading time">
-                  2 mins.
+                  3 mins.
                 </span>
               
             </div>
@@ -3495,11 +3495,8 @@ font-display: swap;
       
 
       
-        <h1 id="目录">目录</h1>
-<p><a target="_blank" rel="noopener" href="https://sites.google.com/site/cs186fall2013">课程链接</a></p>
-<h2 id="作业一">作业一</h2>
-<h3 id="1-simpledb体系结构">1. SimpleDB体系结构</h3>
-<p>Consists of</p>
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><a target="_blank" rel="noopener" href="https://sites.google.com/site/cs186fall2013">课程链接</a></p>
+<h2 id="作业一"><a href="#作业一" class="headerlink" title="作业一"></a>作业一</h2><h3 id="1-simpledb体系结构"><a href="#1-SimpleDB体系结构" class="headerlink" title="1. SimpleDB体系结构"></a>1. SimpleDB体系结构</h3><p>Consists of</p>
 <ul>
 <li><strong>包含字段、元组、元组架构的类</strong>。Classes that represent fields, tuples, and tuple schemas;</li>
 <li><strong>将谓词和条件应用于元组的类</strong>。Classes that apply predicates and conditions to tuples;</li>
@@ -3508,26 +3505,21 @@ font-display: swap;
 <li><strong>缓冲池</strong>，用于在内存中缓存活动的元组和页面，并处理并发控制和事务。demo已经做好了</li>
 <li><strong>存储有关可用表及其模式的信息的目录</strong>。A catalog that stores information about available tables and their schemas.</li>
 </ul>
-<h4 id="11-class-database">1.1 Class: Database</h4>
-<p>Database类提供<strong>对静态对象集合的访问</strong>，这些静态对象是数据库的<strong>全局对象</strong>。特别是，这包括访问目录（数据库中所有表的列表），缓冲池（当前驻留在内存中的数据库文件页面的集合）和日志文件的方法。</p>
-<h4 id="12-field-tuple">1.2 Field  Tuple</h4>
-<p><strong>实现非常基本</strong>。包含一组 <code>Field</code>对象，每个字段一个<code>Tuple</code>。</p>
+<h4 id="11-class-database"><a href="#1-1-Class-Database" class="headerlink" title="1.1 Class: Database"></a>1.1 Class: Database</h4><p>Database类提供<strong>对静态对象集合的访问</strong>，这些静态对象是数据库的<strong>全局对象</strong>。特别是，这包括访问目录（数据库中所有表的列表），缓冲池（当前驻留在内存中的数据库文件页面的集合）和日志文件的方法。</p>
+<h4 id="12-field-tuple"><a href="#1-2-Field-Tuple" class="headerlink" title="1.2 Field  Tuple"></a>1.2 Field  Tuple</h4><p><strong>实现非常基本</strong>。包含一组 <code>Field</code>对象，每个字段一个<code>Tuple</code>。 </p>
 <p><code>Field</code>是不同数据类型 (integer, string…) 实现的接口。</p>
 <p><code>Tuple</code>对象是由基础访问方法(heap file, B-trees)创建的。</p>
 <p>元组还具有一种由对象表示的类型（或架构），称为<em>元组描述符</em><code>TupleDesc</code>。</p>
 <p>该对象由对象的集合组成，<code>Type</code>元组中的每个字段一个，每个对象描述相应字段的类型。</p>
-<h4 id="13-class-catalog">1.3 Class: Catalog</h4>
-<p>由<strong>table lists</strong>和<strong>数据库中当前存在的表的schemas</strong>组成。</p>
+<h4 id="13-class-catalog"><a href="#1-3-Class-Catalog" class="headerlink" title="1.3 Class: Catalog"></a>1.3 Class: Catalog</h4><p>由<strong>table lists</strong>和<strong>数据库中当前存在的表的schemas</strong>组成。</p>
 <p><strong>添加新表</strong>以及<strong>获取有关特定表的信息</strong>的功能需要用到这个类。</p>
 <p>与每个表相关联的是一个<code>TupleDesc</code>对象，该对象可以确定<strong>表中字段的类型和数量</strong>。</p>
 <p>The global catalog是<code>Catalog</code>为整个SimpleDB进程分配的<strong>单个实例</strong>。 可用方法<code>Database.getCatalog()</code>。</p>
-<h4 id="14-class-bufferpool">1.4 Class: BufferPool</h4>
-<p>负责在内存中<strong>缓存最近被读页面</strong>。</p>
+<h4 id="14-class-bufferpool"><a href="#1-4-Class-BufferPool" class="headerlink" title="1.4 Class: BufferPool"></a>1.4 Class: BufferPool</h4><p>负责在内存中<strong>缓存最近被读页面</strong>。</p>
 <p>所有操作都通过缓冲池<strong>从磁盘上的各种文件读取和写入页面</strong>。</p>
 <p>它由固定数量的页面组成，由构造函数的<code>numPages</code>参数定义 <code>BufferPool</code>。</p>
 <p><code>Database</code>类提供一个获取BufferPool的静态方法，其中 <code>Database.getBufferPool()</code>即返回到单个缓冲池实例的引用整个SimpleDB的过程。</p>
-<h4 id="15-heapfile-access-method">1.5 HeapFile access method</h4>
-<p>堆文件访问方法提供了一种<strong>从磁盘中读取或写入以特定方式排列的数据的方法</strong>。</p>
+<h4 id="15-heapfile-access-method"><a href="#1-5-HeapFile-access-method" class="headerlink" title="1.5 HeapFile access method"></a>1.5 HeapFile access method</h4><p>堆文件访问方法提供了一种<strong>从磁盘中读取或写入以特定方式排列的数据的方法</strong>。</p>
 
       
     </div>
@@ -3734,7 +3726,7 @@ font-display: swap;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">113</span>
+                <span class="site-state-item-count">114</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -3809,28 +3801,6 @@ font-display: swap;
                 </a>
               </span>
             
-              <span class="links-of-author-item">
-                <a href="https://weibo.com/3229275825/" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                    
-                      Weibo
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.douban.com/people/200367416/" target="_blank" title="Douban">
-                  
-                    <i class="fa fa-fw fa-book"></i>
-                  
-                    
-                      Douban
-                    
-                </a>
-              </span>
-            
           
         </div>
 
@@ -3893,7 +3863,7 @@ font-display: swap;
       
         <span class="post-meta-item-text">Posts total count&#58;</span>
       
-      <span title="post.totalcount">480k</span>
+      <span title="post.totalcount">479k</span>
     
 </div>
 
